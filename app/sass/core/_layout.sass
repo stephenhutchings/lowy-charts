@@ -1,0 +1,90 @@
+.content-wrap
+  width: 830px
+  max-width: 100%
+  margin: 0 auto
+  padding: 0 1.6rem
+  box-sizing: border-box
+
+  @media (max-width: 768px)
+    width: 660px
+
+aside,
+article
+  max-width: 100%
+  padding: 2.5rem 2rem
+  width: 640px
+  margin: auto
+  box-sizing: border-box
+
+aside section
+  transform-origin: top center
+  @extend %transition-sm
+
+  .hide-nav &
+    opacity: 0
+    transform: scale3d(1, 1.1, 1)
+
+.page-gallery article
+  width: auto
+
+@media (max-width: 480px)
+  aside
+    padding: 2.4rem 1.6rem
+
+  article
+    padding: 0 1.6rem
+
+  footer
+    padding-top: 2.4em
+
+@media (min-width: 1000px) and (min-height: 720px)
+  .stretch
+    min-height: 100vh
+
+  aside
+    padding: 10vh 0
+    left: 8%
+    position: fixed
+    width: 280px
+    min-height: 100%
+    box-sizing: border-box
+
+  article
+    margin-left: 40%
+    margin-left: calc(16% + 280px)
+    height: 100%
+    width: auto
+    display: flex
+    justify-content: flex-end
+    flex-direction: column
+    overflow: hidden
+    box-sizing: border-box
+    padding: 10vh 8%
+    position: relative
+
+    &.stretch:before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      z-index: 100
+      width: 200px
+      pointer-events: none
+      background: linear-gradient(to right, rgba($dark, 0.04), transparent), url(/img/art/dither.png)
+      background-size: 100%, 200px 40px
+
+  .article-header
+    margin: -10vh -20% 0
+    padding-bottom: 12%
+    width: 140%
+    max-width: none
+
+@media (min-width: 1200px) and (min-height: 840px)
+  aside,
+  article
+    padding-top: 15vh
+    padding-bottom: 15vh
+
+  .article-header
+    margin-top: -15vh

@@ -1,0 +1,25 @@
+colors:
+  dark: "#002a45"
+  highlight: "#539ed4"
+  muted: "#e1e5e8"
+  background: "#f5f6f7"
+
+
+font:
+  family: "Semi, sans-serif"
+
+  style:
+    labelLeft:
+      text-anchor: "start"
+      font-size: 17
+      font-family: "Semi, sans-serif"
+
+    labelMiddle:
+      text-anchor: "middle"
+      font-size: 17
+      font-family: "Semi, sans-serif"
+
+    labelRight:
+      text-anchor: "middle"
+      font-size: 17
+      font-family: "Semi, sans-serif"

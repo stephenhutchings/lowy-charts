@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+}
+select {
+  -webkit-appearance: none;
+  border: none;
+  background: #eceff1;
+  font: inherit;
+  padding: 8px 0 8px 12px;
+  line-height: 1;
+  font-size: 16px;
+  width: 300px;
+  text-overflow: ellipsis;
+  position: absolute;
+  z-index: 1;
+}
+select:focus {
+  background: #e1e5e8;
+  outline: none;
+}
+.chart {
+  max-width: 100%
+}

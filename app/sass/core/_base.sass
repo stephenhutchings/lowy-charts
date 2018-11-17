@@ -1,0 +1,61 @@
+h1, h2, h3, h4, h5, h6, p, body, a, img, ul, ol, blockquote, pre
+  margin: 0
+  padding: 0
+  border: 0
+
+html,
+body
+  min-height: 100%
+
+html
+  font-size: 7px
+
+body
+  font-size: 20px
+  color: $dark
+  background: white
+  font-family: $sans
+  line-height: (28px / 20px)
+  text-rendering: optimizeLegibility
+  text-size-adjust: 100%
+  font-feature-settings: "ss01" 1, "ss02" 1
+  font-feature-settings: "ss01" 1, "ss02" 1
+  -webkit-tap-highlight-color: transparent
+  -webkit-overflow-scrolling: touch
+
+  @media (max-width: 480px)
+    font-size: 19px
+
+.of-hidden
+  overflow: hidden
+.of-auto
+  overflow: auto
+
+a
+  color: inherit
+  text-decoration: underline
+  cursor: hand
+  cursor: pointer
+
+  &[href*=".png"],
+  &[href*=".jpg"]
+    cursor: zoom-in
+
+  &:hover,
+  &:focus
+    color: $highlight
+
+  &:focus
+    outline: none
+
+.clearfix
+  @extend %clearfix
+
+\::selection
+  background-color: rgba(#666, 0.2)
+
+img,
+svg
+  max-width: 100%
+  display: block
+  object-fit: cover

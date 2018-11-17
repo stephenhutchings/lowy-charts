@@ -1,0 +1,22 @@
+{
+  "name": "s-ings.com",
+  "version": "0.0.0",
+  "authors": [
+    "stephenhutchings <stephen@creativelicence.com.au>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "jquery": "~3.2.1",
+    "iostap": "~1.2.2",
+    "Snap.svg": "snap.svg#^0.5.1"
+  }
+}

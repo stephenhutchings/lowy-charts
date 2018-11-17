@@ -1,0 +1,22 @@
+%p-first
+  padding-top: 0
+%p-last
+  padding-bottom: 0
+
+=make-block($size, $padding, $media: false)
+  .p-h-#{$size}
+    padding-left: $padding
+    padding-right: $padding
+
+  .p-v-#{$size}
+    padding-top: $padding
+    padding-bottom: $padding
+
+  .p-#{$size}
+    padding: $padding
+
++make-block(xxl, 10vh)
++make-block(xl, 12.0rem)
++make-block(lg,  8.0rem)
++make-block(md,  6.0rem)
++make-block(sm,  2.0rem)

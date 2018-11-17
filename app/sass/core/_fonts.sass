@@ -1,0 +1,16 @@
+=font-face($name, $path, $weight, $style)
+  $path: "../fonts/#{$path}"
+  @font-face
+    font-family: "#{$name}"
+    src: url("#{$path}.ttf") format("truetype"), url("#{$path}.woff") format("woff"), url("#{$path}.woff2") format("woff2")
+    font-weight: $weight
+    font-style: $style
+
+$weights: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black"
+
+@each $weight in $weights
+  $i: index($weights, $weight)
+  +font-face("Sans", "BlighSt-#{$weight}", $i * 100, normal)
+  +font-face("Cond", "BlighSt-#{$weight}Condensed", $i * 100, normal)
+  +font-face("Semi", "BlighSt-#{$weight}SemiCondensed", $i * 100, normal)
+  +font-face("Wide", "BlighSt-#{$weight}Expanded", $i * 100, normal)

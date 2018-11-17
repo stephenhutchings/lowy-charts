@@ -1,0 +1,20 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Gender Splits across Australia’s IR Agencies"
+  - var chart  = data.getOne("static/charts/apsed-agency-gender-splits/data")
+
+block page
+  div(style="width: 600px; height: 300px; margin: 20px auto; max-width: 100%")
+    script
+      != `window.chart = ${JSON.stringify(chart)};`
+    .wrapper(data-view="apsed" data-souce="chart")
+      h1 Gender Splits across Australia’s IR Agencies
+      select
+        for k in chart.agencies
+          option= k.name
+      svg.chart(width=600 height=300)
+
+block append css
+  style
+    include style.css

@@ -1,0 +1,91 @@
+.col-wrap
+  clear: both
+  margin: 0 -2.5rem
+  @extend %clearfix
+
+.col-fluid,
+.col-xs,
+.col-sm,
+.col-md,
+.col-lg,
+.col-full
+  max-width: 100%
+  float: left
+  padding: 0 2.5rem
+  box-sizing: border-box
+  flex-shrink: 0
+
+.col-full
+  width: 100%
+
+.col-xs
+  width: 20%
+
+.col-sm
+  width: 33.3333%
+
+.col-md
+  width: 50%
+
+.col-lg
+  width: 60%
+
+.col-newline
+  clear: left
+
+%p-first
+  padding-top: 0
+%p-last
+  padding-bottom: 0
+
+=make-block($size, $padding, $media: false)
+  .p-h-#{$size}
+    padding-left: $padding
+    padding-right: $padding
+
+  .p-v-#{$size}
+    padding-top: $padding
+    padding-bottom: $padding
+
+  .p-#{$size}
+    padding: $padding
+
++make-block(xxl, 10vh)
++make-block(xl, 12.0rem)
++make-block(lg,  8.0rem)
++make-block(md,  6.0rem)
++make-block(sm,  2.0rem)
+
+@media (max-width: $header-breakpoint)
+  .col-wrap
+    margin: 0 -2.5rem
+
+  .col-fluid,
+  .col-xs,
+  .col-sm,
+  .col-md,
+  .col-lg,
+  .col-full
+    padding: 0 2.5rem
+
+  .col-xs
+    width: 50%
+
+  .col-sm,
+  .col-md,
+  .col-lg
+    width: 100%
+
+  +make-block(xl,  3.0rem, true)
+  +make-block(lg,  2.5rem, true)
+  +make-block(md,  2.5rem, true)
+  +make-block(sm,  2.5rem, true)
+
+@media (min-width: 1200px) and (min-height: 840px)
+  +make-block(xxl, 15vh, true)
+
+.fl-r
+  float: right
+
+.fl-l
+  float: left

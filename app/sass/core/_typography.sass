@@ -1,0 +1,260 @@
+// Face
+
+small,
+blockquote,
+.txt-sans,
+.chart
+  font-family: $sans
+  font-weight: 400
+
+.txt-wide
+  font-family: "Wide"
+
+.txt-cond
+  font-family: "Cond"
+
+h1, h2, h3, h4
+// , small, .txt-sans
+  text-rendering: geometricPrecision
+
+
+// Alignment
+.txt-left
+  text-align: left
+.txt-right
+  text-align: right
+.txt-center
+  text-align: center
+  hyphens: none
+.txt-justify
+  text-align: justify
+  @media (max-width: 560px)
+    text-align: unset
+
+.txt-bare
+  border-bottom: none
+
+.txt-hyphens
+  -webkit-hyphens: auto
+  -moz-hyphens: auto
+  -ms-hyphens: auto
+  hyphens: auto
+
+a
+  -webkit-hyphens: none
+  -moz-hyphens: none
+  -ms-hyphens: none
+  hyphens: none
+
+.txt-ulc
+  position: relative
+  z-index: 0
+
+.txt-ul
+  position: relative
+  z-index: -1
+  text-shadow: 0.1em 0 #fff, -0.1em 0 #fff, 0.1em 0.05em #fff, -0.1em 0.05em #fff, 0 0.05em #fff
+
+  &:after
+    content: ""
+    position: absolute
+    left: 0.04em
+    right: 0.04em
+    bottom: 0.03em
+    border-bottom: 0.09em solid
+    z-index: -1
+    opacity: 0.25
+
+// Wrapping
+.txt-nowrap
+  white-space: nowrap
+.txt-pre
+  white-space: pre-line
+.txt-ellipsis
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+// Style
+.txt-italic, em
+  font-style: italic
+h1 > em, .txt-roman
+  font-style: normal
+
+// Weight
+strong, b
+  font-weight: 700
+h1, h3, h4, i, dt, .txt-bold
+  letter-spacing: -0.01em
+  // font-family: $serif
+  font-weight: 600
+.txt-cnd
+  letter-spacing: -0.04em
+.txt-normal
+  font-weight: normal
+.txt-light
+  font-weight: 300
+
+// Size
+.txt-xxl
+  font-size: 44px
+  line-height: 48px
+  @media (max-width: 480px)
+    font-size: 32px
+    line-height: 36px
+
+h1, .txt-xl
+  font-size: 28px
+  line-height: 40px
+
+  @media (max-width: 480px)
+    font-size: 24px
+    line-height: 32px
+
+h1 > em, .txt-lg
+  font-size: 21px
+  line-height: 1.3
+h2
+  font-size: 18px
+h3
+  font-size: 16px
+h4, .txt-sm, small
+  font-size: 16px
+
+@media (max-width: 480px)
+  .t-1
+    font-size: 20px !important
+  .t-2
+    font-size: 24px !important
+  .t-3, .t-4
+    font-size: 36px !important
+  .t-5, .t-6
+    font-size: 60px !important
+
+// Normalization
+sub, sup
+  font-size: 50%
+  line-height: 0
+
+// OpenType features
+.num-tf
+  font-feature-settings: "tnum"
+
+.num-osf
+  font-feature-settings: "onum"
+
+.num-tosf
+  font-feature-settings: "onum","tnum"
+
+.num-frac
+  font-feature-settings: "frac" 1,"kern" 1
+
+.txt-dnom
+  font-feature-settings: "dnom"
+
+.txt-numr
+  font-feature-settings: "numr"
+
+.txt-dlig
+  font-feature-settings: "kern" 1,"dlig" 1
+
+.txt-sc
+  font-feature-settings: "c2sc"
+
+.txt-sup
+  font-feature-settings: "sups"
+
+.txt-sub
+  font-feature-settings: "subs"
+
+.ss-01
+  font-feature-settings: "kern" 1,"liga" 1,"ss01" 1
+
+.ss-02
+  font-feature-settings: "kern" 1,"liga" 1,"ss02" 1
+
+.ss-03
+  font-feature-settings: "kern" 1,"liga" 1,"ss03" 1
+
+.ss-04
+  font-feature-settings: "kern" 1,"liga" 1,"ss04" 1
+
+.ss-05
+  font-feature-settings: "kern" 1,"liga" 1,"ss05" 1
+
+.ss-06
+  font-feature-settings: "kern" 1,"liga" 1,"ss06" 1
+
+.txt-sup, .txt-sub
+  font: inherit
+  vertical-align: inherit
+
+// Color
+.txt-white
+  color: #fff
+.txt-faint
+  color: #f5f5f5
+.txt-muted
+  color: $muted
+
+// Transformation
+.txt-lowercase
+  text-transform: lowercase
+h4, .txt-uppercase
+  text-transform: uppercase
+  letter-spacing: 0.06em
+.txt-capitalize
+  text-transform: capitalize
+
+// Margins and Spacing
+h2, h3, h4
+  margin-top: 0
+  margin-bottom: 0.5em
+
+h1
+  margin-bottom: 0.3125em
+
+ol, ul, dd, figure
+  margin: 0
+
+p, pre, dl, dd, ul, ol, svg
+  margin-bottom: (28em / 20)
+
+ol, ul
+  padding: 0 0 0 1.1em
+
+  &.list-bare
+    padding: 0
+    list-style: none
+
+li
+  line-height: (24em / 17)
+  margin-bottom: (28em / 17) - 1.2em
+
+h1, h2, h3, h4, h5, ul, ol, li, dl, dd, fieldset, p, blockquote, svg
+  &:last-child
+    margin-bottom: 0
+
+blockquote
+  border-top: 1px solid #eee
+  border-bottom: 1px solid #eee
+  margin: 1.5em 0
+  padding: 1em 0
+  font-style: italic
+  color: #555
+  line-height: 1.6em
+  font-size: 16px
+
+hr
+  border: 0
+  border-bottom: 1px solid
+  height: 0
+  margin: 26px 0 27px
+  clear: both
+
+.tight
+  margin-top: 0
+  margin-bottom: 0
+
+.glyph
+  padding: 0 2px
