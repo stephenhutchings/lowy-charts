@@ -1,0 +1,13 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Australia’s Key Heads of Mission"
+  - var chart  = data.getOne("static/charts/australian-heads-of-mission/data")
+
+block page
+  div(style="width: 900px; height: 300px; margin: 20px auto; max-width: 100%")
+    script
+      != `window.chart = ${JSON.stringify(chart)};`
+    .wrapper(data-view="australian-heads-of-mission" data-source="chart")
+      h1= page.title
+      svg.chart(width="100%" height=360)

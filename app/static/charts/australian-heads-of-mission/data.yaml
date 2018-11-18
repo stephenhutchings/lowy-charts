@@ -1,0 +1,783 @@
+locations:
+  -
+    name: US
+    list:
+      -
+        name: Frederic Eggleston
+        start: 19 July 1946
+        end: 5 September 1946
+      -
+        name: Norman Makin
+        start: 5 September 1946
+        end: 1 January 1951
+      -
+        name: Percy Spender
+        start: 31 May 1951
+        end: 1 January 1957
+      -
+        name: Howard Beale
+        start: 20 March 1958
+        end: 1 April 1964
+      -
+        name: James Plimsoll
+        start: 8 June 1970
+        end: 1 January 1973
+      -
+        name: Patrick Shaw
+        start: 21 February 1974
+        end:  27 December 1975
+      -
+        name: Nick Parkinson
+        start: 8 March 1976
+        end:  1 February 1977
+      -
+        name: Alan Renouf
+        start: 1978
+        end: 20 May 1979
+      -
+        name: Nick Parkinson
+        start: 13 November 1979
+        end:  15 July 1982
+      -
+        name: Bob Cotton
+        start: 16 August 1982
+        end:  1 June 1985
+      -
+        name: Rawdon Dalrymple
+        start: 26 June 1985
+        end:  1 April 1989
+      -
+        name: Michael Cook
+        start: 20 April 1989
+        end: 1 August 1993
+      -
+        name: Don Russell
+        start: 22 August 1993
+        end: 1 December 1995
+      -
+        name: John McCarthy
+        start: 5 December 1995
+        end: 1 February 1997
+      -
+        name: Andrew Peacock
+        start: 2 February 1997
+        end: 27 February 1999
+      -
+        name: Michael Thawley
+        start: 2 February 2000
+        end: 1 June 2005
+      -
+        name: Dennis Richardson
+        start: 20 June 2005
+        end: 1 February 2010
+      -
+        name: Kim Beazley
+        start: 17 February 2010
+        end: 22 January 2016
+      -
+        name: Joe Hockey
+        start: 29 January 2016
+        end: present
+  -
+    name: Indonesia
+    list:
+      -
+        name: John Hood April
+        start: 1950
+        end: 1953
+      -
+        name: Charles Kevin
+        start: 1953
+        end: 1955
+      -
+        name: Walter Crocker
+        start: 1955
+        end: 1957
+      -
+        name: Laurence McIntyre
+        start: 1957
+        end: 1960
+      -
+        name: Patrick Shaw
+        start: 1960
+        end: 1962
+      -
+        name: K.C.O. Shann
+        start: 1962
+        end: 1966
+      -
+        name: Max Loveday
+        start: 1966
+        end: 1969
+      -
+        name: Gordon Jockel
+        start: 1969
+        end: 1972
+      -
+        name: Robert Furlonger
+        start: 1972
+        end: 1975
+      -
+        name: Richard Woolcott
+        start: 1975
+        end: 1978
+      -
+        name: Tom Critchley
+        start: 1978
+        end: 1981
+      -
+        name: Rawdon Dalrymple
+        start: 1981
+        end: 1985
+      -
+        name: Bill Morrison
+        start: 1985
+        end: 1989
+      -
+        name: Philip Flood
+        start: 1989
+        end: 1993
+      -
+        name: Allan Taylor
+        start: 1993
+        end: 1996
+      -
+        name: John McCarthy
+        start: 1997
+        end: 2001
+      -
+        name: Richard Smith
+        start: 2001
+        end: 2003
+      -
+        name: David Ritchie
+        start: 2003
+        end: 2005
+      -
+        name: Bill Farmer
+        start: 2005
+        end: 2010
+      -
+        name: Greg Moriarty
+        start: 2010
+        end: 2014
+      -
+        name: Paul Grigson
+        start: 2015
+        end: 27 February 2018
+      -
+        name: Gary Quinlan
+        start: 27 February 2018
+        end: present
+
+  -
+    name: Papua New Guinea
+    list:
+      -
+        name: Les Johnson
+        start: 1973
+        end: 1974
+      -
+        name: Tom Critchley
+        start: 1974
+        end: 1978
+      -
+        name: Gerry Nutter
+        start: 1978
+        end: 1981
+      -
+        name: Robert Birch
+        start: 1981
+        end: 1984
+      -
+        name: Michael Wilson
+        start: 1984
+        end: 1987
+      -
+        name: Lance Joseph
+        start: 1987
+        end: 1989
+      -
+        name: Allan Taylor
+        start: 1989
+        end: 1993
+      -
+        name: Bill Farmer
+        start: 1993
+        end: 1995
+      -
+        name: David Irvine
+        start: 1996
+        end: 1999
+      -
+        name: Nick Warner
+        start: 1999
+        end: 2003
+      -
+        name: Michael Potts
+        start: 2003
+        end: 2006
+      -
+        name: Chris Moraitis
+        start: 2006
+        end: 2010
+      -
+        name: Ian Kemish
+        start: 2010
+        end: 2013
+      -
+        name: Deborah Stokes
+        start: 2013
+        end: 2 December 2015
+      -
+        name: Bruce Davis
+        start: 2 December 2015
+        end: present
+  -
+    name: UK
+    list:
+      -
+        name: Sir George Reid
+        start: 22 January 1910
+        end: 10 January 1916
+      -
+        name: Andrew Fisher
+        start: 22 January 1916
+        end: 21 April 1921
+      -
+        name: Malcolm Shepherd (Acting)
+        start: 21 April 1921
+        end: 11 November 1921
+      -
+        name: Sir Joseph Cook
+        start: 11 November 1921
+        end: 10 May 1927
+      -
+        name: Sir Granville Ryrie
+        start: 11 May 1927
+        end: 10 May 1932
+      -
+        name: Stanley Bruce
+        start: 12 September 1932
+        end: 6 October 1933
+        resident: true
+      -
+        name: Stanley Bruce
+        start: 6 October 1933
+        end: 6 October 1945
+      -
+        name: Herbert Vere Evatt
+        start: 7 October 1945
+        end: January 1946
+        resident: true
+      -
+        name: Jack Beasley
+        start: January 1946
+        end: 14 August 1946
+        resident: true
+      -
+        name: Jack Beasley
+        start: 14 August 1946
+        end: 2 September 1949
+      -
+        name: Norman Mighell (Acting)
+        start: 2 September 1949
+        end: 19 April 1950
+      -
+        name: Eric Harrison
+        start: 19 April 1950
+        end: 19 April 1951
+      -
+        name: Sir Thomas White
+        start: 21 June 1951
+        end: 20 June 1956
+      -
+        name: Sir Eric Harrison
+        start: 25 October 1956
+        end: 25 October 1964
+      -
+        name: Sir Alexander Downer
+        start: 25 October 1964
+        end: December 1972
+      -
+        name: John Armstrong
+        start: December 1972
+        end: 31 January 1975
+      -
+        name: Sir John Bunting
+        start: 1 February 1975
+        end: March 1977
+      -
+        name: Sir Gordon Freeth March
+        start: 1977
+        end: 1980
+      -
+        name: Sir James Plimsoll
+        start: 1980
+        end: 1981
+      -
+        name: Sir Victor Garland
+        start: 1981
+        end: 1983
+      -
+        name: Alfred Parsons
+        start: 1983
+        end: 1987
+      -
+        name: Doug McClelland
+        start: 1987
+        end: 1991
+      -
+        name: Richard Smith
+        start: 1991
+        end: 1994
+      -
+        name: Neal Blewett
+        start: April 1994
+        end: 20 March 1998
+      -
+        name: Philip Flood
+        start: 20 March 1998
+        end: August 2000
+      -
+        name: Michael L'Estrange
+        start: August 2000
+        end: February 2005
+      -
+        name: Richard Alston
+        start: February 2005
+        end: September 2008
+      -
+        name: John Dauth
+        start: September 2008
+        end: 23 August 2012
+      -
+        name: Mike Rann
+        start: 23 August 2012
+        end: 31 March 2014
+      -
+        name: Alexander Downer
+        start: 31 March 2014
+        end: 27 April 2018
+      -
+        name: George Brandis
+        start: 3 May 2018
+        end: present
+
+  -
+    name: India
+    list:
+      -
+        name: Iven Mackay
+        start: November 1943
+        end: 1948
+      -
+        name: Charles Kevin (acting)
+        start: 1948
+        end: 1948
+      -
+        name: Roy Gollan
+        start: 1948
+        end: 1952
+      -
+        name: Walter Crocker
+        start: 1952
+        end: 1955
+      -
+        name: Peter Heydon
+        start: 1955
+        end: 1958
+      -
+        name: Walter Crocker
+        start: 1958
+        end: 1962
+      -
+        name: Bill Pritchett (acting)
+        start: 1962
+        end: 1963
+      -
+        name: James Plimsoll
+        start: 1963
+        end: 1965
+      -
+        name: Arthur Tange
+        start: 1965
+        end: 1969
+      -
+        name: Patrick Shaw
+        start: 1970
+        end: 1973
+      -
+        name: Bruce Grant
+        start: 1973
+        end: 1976
+      -
+        name: Peter Curtis
+        start: 1976
+        end: 1979
+      -
+        name: Gordon Upton
+        start: 1979
+        end: 1984
+      -
+        name: Graham Feakes
+        start: 1984
+        end: 1990
+      -
+        name: David Evans
+        start: 1990
+        end: 1993
+      -
+        name: Darren Gribble
+        start: 1994
+        end: 1997
+      -
+        name: Rob Laurie
+        start: 1997
+        end: 2001
+      -
+        name: Penny Wensley
+        start: 2001
+        end: 2004
+        gender: f
+      -
+        name: John McCarthy
+        start: 2004
+        end: 2009
+      -
+        name: Peter Varghese
+        start: 2009
+        end: 2012
+      -
+        name: Patrick Suckling
+        start: 2012
+        end: 11 February 2016
+      -
+        name: Harinder Sidhu
+        start: 11 February 2016
+        end: present
+        gender: f
+  -
+    name: Thailand
+    list:
+      -
+        name: Bertram Ballard
+        start: 1952
+        end: 1955
+      -
+        name: David Hay
+        start: 1955
+        end: 1957
+      -
+        name: Keith Waller
+        start: 1958
+        end: 1961
+      -
+        name: Malcolm Booker
+        start: 1962
+        end: 1963
+      -
+        name: Allan Loomes
+        start: 1964
+        end: 1968
+      -
+        name: David McNicol
+        start: 1968
+        end: 1969
+      -
+        name: Tom Critchley
+        start: 1969
+        end: 1973
+      -
+        name: D.C. Goss
+        start: 1974
+        end: 1975
+      -
+        name: Marshall Johnston
+        start: 1975
+        end: 1978
+      -
+        name: Gordon Jockel
+        start: 1978
+        end: 1985
+      -
+        name: Richard Smith
+        start: 1985
+        end: 1988
+      -
+        name: Richard Butler
+        start: 1989
+        end: 1992
+      -
+        name: John McCarthy
+        start: 1992
+        end: 1994
+      -
+        name: Cavan Hogue
+        start: 1994
+        end: 1997
+      -
+        name: William Fisher
+        start: 1998
+        end: 2000
+      -
+        name: Miles Kupa
+        start: 2000
+        end: 2005
+      -
+        name: Bill Paterson
+        start: 2005
+        end: 2008
+      -
+        name: Paul Grigson
+        start: 2008
+        end: 2010
+      -
+        name: James Wise
+        start: 2010
+        end: October 2014
+      -
+        name: Paul Robilliard
+        start: October 2014
+        end: present
+  -
+    name: China
+    list:
+      -
+        name: Stephen FitzGerald
+        start: 1973
+        end: 1976
+      -
+        name: Garry Woodard
+        start: 1976
+        end: 1980
+      -
+        name: Hugh Alexander Dunn
+        start: 1980
+        end: 1984
+      -
+        name: Dennis Argall
+        start: 1984
+        end: 1985
+      -
+        name: Ross Garnaut
+        start: 1985
+        end: 1988
+      -
+        name: David Sadleir
+        start: 1988
+        end: 1991
+      -
+        name: Michael Lightowler
+        start: 1991
+        end: 1996
+      -
+        name: Ric Smith
+        start: 1996
+        end: 2000
+      -
+        name: David Irvine
+        start: 2000
+        end: 2003
+      -
+        name: Alan Thomas
+        start: 2003
+        end: 2007
+      -
+        name: Geoff Raby
+        start: 2007
+        end: 2011
+      -
+        name: Frances Adamson
+        start: 2011
+        end: 2015
+        gender: f
+      -
+        name: Jan Elizabeth Adams
+        start: 2016
+        end: present
+        gender: f
+  -
+    name: Philippines
+    list:
+      -
+        name: Mick Shann
+        start: 1957
+        end: 1959
+      -
+        name: Alfred Stirling
+        start: 1959
+        end: 1963
+      -
+        name: Bill Cutts
+        start: 1963
+        end: 1966
+      -
+        name: Francis Hamilton Stuart
+        start: 1966
+        end: 1970
+      -
+        name: James Ingram
+        start: 1970
+        end: 1973
+      -
+        name: Peter Henderson
+        start: 1973
+        end: 1975
+      -
+        name: Gerry Nutter
+        start: 1975
+        end: 1978
+      -
+        name: Richard Woolcott
+        start: 1978
+        end: 1982
+      -
+        name: Roy Fernandez
+        start: 1982
+        end: 1986
+      -
+        name: John Holloway
+        start: 1986
+        end: 1989
+      -
+        name: Mack Williams
+        start: 1989
+        end: 1994
+      -
+        name: Richard Smith
+        start: 1994
+        end: 1996
+      -
+        name: Miles Kupa
+        start: 1996
+        end: 1999
+      -
+        name: John Buckley
+        start: 1999
+        end: 2002
+      -
+        name: Ruth Pearce
+        start: 2002
+        end: 2005
+        gender: f
+      -
+        name: Tony Hely
+        start: 2005
+        end: 2008
+      -
+        name: Rod Smith
+        start: 2008
+        end: 2012
+      -
+        name: Bill Tweddell
+        start: 2012
+        end: 2016
+      -
+        name: Amanda Gorely
+        start: 2016
+        end: present
+        gender: f
+  -
+    name: Timor-Leste
+    list:
+      -
+        name: James Batley
+        start: 20 May 2002
+        end: 30 May 2002
+      -
+        name: Paul Foley
+        start: 30 May 2002
+        end: 7 April 2004
+      -
+        name: Margaret Twomey
+        start: 7 April 2004
+        end: 2008
+        gender: f
+      -
+        name: Peter Heyward
+        start: 2008
+        end: 2011
+      -
+        name: Miles Armitage
+        start: 2011
+        end: 2014
+      -
+        name: Peter Doyle
+        start: 12 February 2014
+        end: 4 January 2018
+      -
+        name: Peter Roberts OAM
+        start: 4 January 2018
+        end: present
+  -
+    name: Japan
+    list:
+      -
+        name: Edward Ronald Walker
+        start: 18 April 1952
+        end: 1955
+      -
+        name: Alan Watt
+        start: 1956
+        end: 1960
+      -
+        name: Laurence McIntyre
+        start: 1960
+        end: 1965
+      -
+        name: Allen Brown
+        start: 1965
+        end: 1970
+      -
+        name: Gordon Freeth
+        start: 1970
+        end: 1973
+      -
+        name: Mick Shann
+        start: 1973
+        end: 1977
+      -
+        name: John Menadue
+        start: 1977
+        end: 1980
+      -
+        name: James Plimsoll
+        start: 1981
+        end: 1982
+      -
+        name: Neil Currie
+        start: 1982
+        end: 1986
+      -
+        name: Geoff Miller
+        start: 1986
+        end: 1989
+      -
+        name: Rawdon Dalrymple
+        start: 1989
+        end: 1993
+      -
+        name: Ashton Calvert
+        start: 1993
+        end: 1998
+      -
+        name: Peter Grey
+        start: 1998
+        end: 2001
+      -
+        name: John McCarthy
+        start: 2001
+        end: 2004
+      -
+        name: Murray McLean
+        start: 2004
+        end: 2011
+      -
+        name: Bruce Miller
+        start: August 2011
+        end: December 2016
+      -
+        name: Richard Court
+        start: April 2017
+        end: present
