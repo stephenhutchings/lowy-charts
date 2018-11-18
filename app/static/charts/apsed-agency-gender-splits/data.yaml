@@ -80,13 +80,6 @@ agencies:
     notes: "Source: Institutional responses to our questionnaire."
 
   -
-    name: "Australian Secret Intelligence Service"
-    data:
-      Total: [ [], [], [], [56], [], [], []]
-      SES:   [ [], [], [], [24], [], [], []]
-      SES3:  [ [], [], [], [0], [], [], []]
-    notes: "Source: Institutional responses to our questionnaire."
-  -
     name: "Defence Intelligence Agencies (Army, Navy, Air Force)"
     data:
       Total: [ [], [], [106, 320], [98, 281], [112, 262], [], []]
