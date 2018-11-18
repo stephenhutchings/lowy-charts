@@ -29,9 +29,9 @@ module.exports =
         labelW: labelW
         buffer: buffer
         barsH: 20
-        barsW: (width - labelW) / 3
+        barsW: (width - labelW) / 3 - buffer / 1.5
         barsX: labelW
-        barsY: 56
+        barsY: 48
 
       @paper ?= window.Snap(@$(".chart").get(0), @config.w, @config.h)
 
@@ -49,41 +49,22 @@ module.exports =
         y = @config.barsY + nb * @config.barsH + @config.buffer * nb
         line = @paper.line(x, @config.barsY - @config.buffer, x, y)
         line.attr(stroke: "#e1e5e8")
-        text = @paper.text(x, y + @config.buffer + 10, key)
+        text = @paper.text(x, y + @config.buffer + 8, key)
         text.attr(font.style.labelMiddle)
         @levels.push Snap.set(line, text)
 
-      fbox = @paper.rect(320, 6, 20, 20)
-      ftxt = @paper.text(348, 21, "Female").data("label": "Female")
-      mbox = @paper.rect(416, 6, 20, 20)
-      mtxt = @paper.text(444, 21, "Male").data("label": "Male")
-      xbox = @paper.rect(504, 6, 20, 20)
-      xtxt = @paper.text(532, 21, "No Data").data("label": "No Data")
+      mbox = @paper.rect(@config.w - 20, 6, 20, 20)
+      mtxt = @paper.text(@config.w - 28, 21, "Male Staff").data("label": "Male Staff")
+      fbox = @paper.rect(@config.w - 180, 6, 20, 20)
+      ftxt = @paper.text(@config.w - 188, 21, "Female Staff").data("label": "Female Staff")
 
-      ftxt.attr(font.style.labelLeft)
-      mtxt.attr(font.style.labelLeft)
-      xtxt.attr(font.style.labelLeft)
-
-      fn = (lbl) -> (x) ->
-        if x >= 0
-          x.toFixed?(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-        else
-          lbl
-
-      ftxt.data(format: fn("Female"))
-      mtxt.data(format: fn("Male"))
-      xtxt.data(format: (x) ->
-        if x >= 0
-          "#{(x * 100).toFixed(0)}%"
-        else
-          "No Data"
-      )
+      ftxt.attr(font.style.labelRight)
+      mtxt.attr(font.style.labelRight)
 
       fbox.attr("fill": colors.highlight, "stroke": "none")
       mbox.attr("fill": colors.dark, "stroke": "none")
-      xbox.attr("fill": colors.muted, "stroke": "none")
 
-      @legend = Snap.set(ftxt, mtxt, xtxt)
+      @legend = Snap.set(ftxt, mtxt)
 
 
     render: ({name, data}) ->
@@ -122,8 +103,6 @@ module.exports =
             {bg, set} = @bars[key][i]
             [fr, mr] = set.children()
 
-            bg.stop().animate({x, width: @config.barsW}, @config.duration, ease)
-
             if ff + mf > 0
               fr.stop().animate({opacity: 1, width: ff * @config.barsW, x}, @config.duration, ease)
               mr.stop().animate({opacity: 1, width: mf * @config.barsW, x: x + ff * @config.barsW}, @config.duration, ease)
@@ -131,21 +110,26 @@ module.exports =
               fr.stop().animate({opacity: 0}, @config.duration, ease)
               mr.stop().animate({opacity: 0}, @config.duration, ease)
 
+            if not f?
+              bg.stop().animate({x, width: @config.barsW, fill: colors.muted}, @config.duration, ease)
+            else
+              bg.stop().animate({x, width: @config.barsW, fill: "#b6c1c6"}, @config.duration, ease)
+
           else
             bg = @paper.rect(x, y, @config.barsW, @config.barsH)
             fr = @paper.rect(x, y, ff * @config.barsW, @config.barsH)
             mr = @paper.rect(x + ff * @config.barsW, y, mf * @config.barsW, @config.barsH)
             set = @paper.group(fr, mr)
             @bars[key].push({ set, bg })
-            bg.attr("fill": colors.muted, "stroke": "none")
-            fr.attr("fill": colors.highlight, "stroke": "none")
-            mr.attr("fill": colors.dark, "stroke": "none")
+            bg.attr(fill: colors.muted, stroke: "none")
+            fr.attr(fill: colors.highlight, stroke: "none")
+            mr.attr(fill: colors.dark, stroke: "none")
 
             @bindMouseEvents(set)
 
           fr.data(value: f)
           mr.data(value: m)
-          set.data({value: ff, empty})
+          set.data({ff, mf, empty})
 
     bindMouseEvents: (set) ->
       ease = mina.easeinout
@@ -161,13 +145,28 @@ module.exports =
         [fl, ml, bl] = @legend.items
 
         if f? and m?
-          fl.attr({text: utils.toThousands(f)})
-          ml.attr({text: utils.toThousands(m)})
+          fl.attr({text: """
+            #{utils.toThousands(f)} Women
+            (#{utils.toPercent(set.data("ff"))})
+          """})
+          ml.attr({text: """
+            #{utils.toThousands(m)} Men
+            (#{utils.toPercent(set.data("mf"))})
+          """})
+        else if set.data("ff")
+          fl.attr({text: """
+            Women
+            (#{utils.toPercent(set.data("ff"))})
+          """})
+          ml.attr({text: """
+            Men
+            (#{utils.toPercent(1 - set.data("mf"))})
+          """})
 
-        if f is 0 and m is 0
-          bl.attr(text: "No Staff")
-        else
-          bl.attr(text: utils.toPercent(set.data("value")))
+        # if f is 0 and m is 0
+        #   bl.attr(text: "No Staff")
+        # else
+        #   bl.attr(text: utils.toPercent(set.data("value")))
 
         for key, bars of @bars
           for bar in bars when bar.set isnt set
@@ -185,5 +184,5 @@ module.exports =
           for el, i in set.children()
             @legend.items[i].attr({text: @legend.items[i].data("label")})
 
-          @legend.items[2].attr(text: @legend.items[2].data("label"))
+          # @legend.items[2].attr(text: @legend.items[2].data("label"))
         , 300

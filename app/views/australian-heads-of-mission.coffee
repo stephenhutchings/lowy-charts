@@ -111,11 +111,13 @@ module.exports =
         my = (data.length + 1) * (@config.barsH + @config.buffer) - @config.buffer
         fy = new Date(dmin).getFullYear()
         yn = fy + i
-        dc = (yn % 10 is 0) or yn is 2019
+        dc = (yn % 10 is 0) or yn is 2019 or i is 0
         yx = x + (-dmin % year) / year + (year / len) * i * (w - 2)
         y1 = @config.barsY + if dc then 0 else 4
         y2 = @config.barsY + my - 16
         y2 += 4 if dc
+
+        yx = Math.min(yx, w)
 
         line = @paper.line(yx, y1, yx, y2).attr
           stroke: colors.stroke
