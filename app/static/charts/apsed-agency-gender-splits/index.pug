@@ -9,7 +9,6 @@ block page
     script
       != `window.chart = ${JSON.stringify(chart)};`
     .wrapper(data-view="apsed" data-souce="chart")
-      h1 Gender Splits across Australia’s IR Agencies
       label.select-wrap
         select
           for k in chart.agencies

@@ -9,5 +9,4 @@ block page
     script
       != `window.chart = ${JSON.stringify(chart)};`
     .wrapper(data-view="australian-heads-of-mission" data-source="chart")
-      h1= page.title
       svg.chart(width="100%" height=360)
