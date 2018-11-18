@@ -55,9 +55,7 @@ module.exports =
       mbox.attr("fill": colors.dark, "stroke": "none")
 
       text = """
-        Only
-        #{utils.toPercent(@data.split.f.length / @data.posts.length)}
-        Heads of Mission are currently women
+        Only 1 in 3 Heads of Mission Are Women
       """
 
       @current = @paper
