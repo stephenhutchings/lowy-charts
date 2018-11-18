@@ -13,13 +13,16 @@ font:
       text-anchor: "start"
       font-size: 17
       font-family: "Semi, sans-serif"
+      fill: "#3a3c40"
 
     labelMiddle:
       text-anchor: "middle"
       font-size: 17
       font-family: "Semi, sans-serif"
+      fill: "#3a3c40"
 
     labelRight:
       text-anchor: "middle"
       font-size: 17
       font-family: "Semi, sans-serif"
+      fill: "#3a3c40"

@@ -18,18 +18,18 @@ module.exports =
       @onResize()
 
     onResize: ->
-      width = Math.min(600, @$el.width())
+      width = Math.min(900, @$el.width())
       buffer = 8
       labelW = 48
 
       @config =
         w: width
         h: 360
-        duration: 300
+        duration: 400
         labelW: labelW
         buffer: buffer
         barsH: 20
-        barsW: (width - labelW) / 3 - buffer
+        barsW: (width - labelW) / 3
         barsX: labelW
         barsY: 56
 
@@ -50,15 +50,16 @@ module.exports =
         y = @config.barsY + i * @config.barsH + @config.buffer * i
         @paper.text(0, y + (@config.barsH / 2 + 5), year).attr(font.style.labelLeft)
 
+      @levels = Snap.set()
       for key, i in _.keys(data)
         nb = @data.axis.length
         x = @config.barsX + (@config.barsW + @config.buffer) * i + @config.barsW / 2
         y = @config.barsY + nb * @config.barsH + @config.buffer * nb
-        @paper
-          .path("M#{x},#{@config.barsY - @config.buffer}V#{y}")
-          .attr(stroke: "#e1e5e8")
-        @paper.text(x, y + @config.buffer + 10, key).attr(font.style.labelMiddle)
-
+        line = @paper.line(x, @config.barsY - @config.buffer, x, y)
+        line.attr(stroke: "#e1e5e8")
+        text = @paper.text(x, y + @config.buffer + 10, key)
+        text.attr(font.style.labelMiddle)
+        @levels.push Snap.set(line, text)
 
       fbox = @paper.rect(320, 6, 20, 20)
       ftxt = @paper.text(348, 21, "Female").data("label": "Female")
@@ -90,7 +91,7 @@ module.exports =
       mbox.attr("fill": colors.dark, "stroke": "none")
       xbox.attr("fill": colors.muted, "stroke": "none")
 
-      @labels = Snap.set(ftxt, mtxt, xtxt)
+      @legend = Snap.set(ftxt, mtxt, xtxt)
 
 
     render: ({name, data}) ->
@@ -104,8 +105,10 @@ module.exports =
       for key, j in _.keys(data)
         list = data[key]
         x = @config.barsX + j * (@config.barsW + @config.buffer)
+        cx = x + @config.barsW / 2
 
         @bars[key] ?= []
+        @levels.items[j].animate({x: cx, x1: cx, x2: cx}, @config.duration, ease)
 
         for [f, m], i in list
           y = @config.barsY + i * @config.barsH + @config.buffer * i
@@ -135,6 +138,7 @@ module.exports =
             else
               fr.stop().animate({opacity: 0}, @config.duration, ease)
               mr.stop().animate({opacity: 0}, @config.duration, ease)
+
           else
             bg = @paper.rect(x, y, @config.barsW, @config.barsH)
             fr = @paper.rect(x, y, ff * @config.barsW, @config.barsH)
@@ -162,13 +166,11 @@ module.exports =
 
         window.clearTimeout @timeout
 
-        [fl, ml, bl] = @labels.items
+        [fl, ml, bl] = @legend.items
 
-        for el, i in set.children()
-          if el.data("value") >= 0
-            @labels.items[i].attr({text: utils.toThousands(el.data("value"))})
-          else
-            @labels.items[i].attr({text: @labels.items[i].data("label")})
+        if f? and m?
+          fl.attr({text: utils.toThousands(f)})
+          ml.attr({text: utils.toThousands(m)})
 
         if f is 0 and m is 0
           bl.attr(text: "No Staff")
@@ -189,7 +191,7 @@ module.exports =
         window.clearTimeout @timeout
         @timeout = window.setTimeout =>
           for el, i in set.children()
-            @labels.items[i].attr({text: @labels.items[i].data("label")})
+            @legend.items[i].attr({text: @legend.items[i].data("label")})
 
-          @labels.items[2].attr(text: @labels.items[2].data("label"))
+          @legend.items[2].attr(text: @legend.items[2].data("label"))
         , 300
