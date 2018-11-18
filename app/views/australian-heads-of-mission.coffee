@@ -159,6 +159,7 @@ module.exports =
               text = [
                 d.name
                 if d.resident then "(Resident Minister)"
+                if d.acting then "(Acting)"
                 "(#{format(d.start)} – #{format(d.end)})"
               ].join(" ")
 

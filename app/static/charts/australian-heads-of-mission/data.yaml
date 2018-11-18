@@ -245,9 +245,10 @@ locations:
         start: 22 January 1916
         end: 21 April 1921
       -
-        name: Malcolm Shepherd (Acting)
+        name: Malcolm Shepherd
         start: 21 April 1921
         end: 11 November 1921
+        acting: true
       -
         name: Sir Joseph Cook
         start: 11 November 1921
@@ -280,9 +281,10 @@ locations:
         start: 14 August 1946
         end: 2 September 1949
       -
-        name: Norman Mighell (Acting)
+        name: Norman Mighell
         start: 2 September 1949
         end: 19 April 1950
+        acting: true
       -
         name: Eric Harrison
         start: 19 April 1950
@@ -372,9 +374,10 @@ locations:
         start: November 1943
         end: 1948
       -
-        name: Charles Kevin (Acting)
+        name: Charles Kevin
         start: 1948
         end: 1948
+        acting: true
       -
         name: Roy Gollan
         start: 1948
@@ -392,9 +395,10 @@ locations:
         start: 1958
         end: 1962
       -
-        name: Bill Pritchett (Acting)
+        name: Bill Pritchett
         start: 1962
         end: 1963
+        acting: true
       -
         name: James Plimsoll
         start: 1963
