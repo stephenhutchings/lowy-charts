@@ -6,6 +6,9 @@ class MainView extends Backbone.View
     $target = $(window)
     timeouts = {}
 
+    if window.parent is window
+      $(".wrapper").css(margin: "20px auto")
+
     for evt in ["scroll", "resize"]
       do (evt, timeouts) =>
         _debounced = =>

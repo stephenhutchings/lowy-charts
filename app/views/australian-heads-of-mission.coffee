@@ -25,14 +25,14 @@ module.exports =
       for { list } in @data.locations
         for el in list
           if el.start.toString().match(/^\d{4}$/)
-            startDate = new Date("July 30 #{el.start}").getTime()
+            startDate = new Date("June 30 #{el.start}").getTime()
           else
             startDate = new Date(el.start.toString()).getTime()
           endDate =   new Date(el.end.toString()).getTime()
           endDate =   now if el.end is "present"
 
           if el.end.toString().match(/^\d{4}$/)
-            endDate = new Date("June 1 #{el.end}").getTime()
+            endDate = new Date("July 1 #{el.end}").getTime()
 
           console.error(el) unless(startDate - endDate <= 0)
 
