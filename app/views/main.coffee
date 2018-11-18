@@ -22,6 +22,7 @@ class MainView extends Backbone.View
             window.setTimeout fn(), 0
 
           timeouts[evt] = window.setTimeout fn, 300
+          return true
 
         $target.on evt, _debounced
 
