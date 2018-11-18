@@ -1,8 +1,5 @@
 { colors, font } = require("data/theme")
-
-utils =
-  toPercent: (n, d = 0) -> "#{(n * 100).toFixed(d)}%"
-  toThousands: (n, d = 0) -> n.toFixed(d).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+utils = require("lib/utils")
 
 # When this data was collected
 now = 1542517640615

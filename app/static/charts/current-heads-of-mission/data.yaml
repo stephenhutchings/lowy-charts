@@ -1,0 +1,536 @@
+posts:
+  -
+    country: Brazil
+    city: Sao Paolo
+    type: C-G Austrade
+    gender: M
+  -
+    country: Canada
+    city: Toronto
+    type: C-G Austrade
+    gender: M
+  -
+    country: Germany
+    city: Frankfurt
+    type: C-G Austrade
+    gender: M
+  -
+    country: Italy
+    city: Milan
+    type: C-G Austrade
+    gender: M
+  -
+    country: Japan
+    city: Fukuoka
+    type: C-G Austrade
+    gender: M
+  -
+    country: Japan
+    city: Nagoya
+    type: C-G Austrade
+    gender: 0
+  -
+    country: Japan
+    city: Osaka
+    type: C-G Austrade
+    gender: M
+  -
+    country: Japan
+    city: Sapporo
+    type: C-G Austrade
+    gender: M
+  -
+    country: Japan
+    city: Sendai
+    type: C-G Austrade
+    gender: 0
+  -
+    country: New Zealand
+    city: Auckland
+    type: C-G Austrade
+    gender: M
+  -
+    country: Palestine*
+    city: Ramallah
+    type: Representative Office
+    gender: 0
+  -
+    country: Turkey
+    city: Istanbul
+    type: C-G Austrade
+    gender: 0
+  -
+    country: United Arab Emirates
+    city: Dubai
+    type: C-G Austrade
+    gender: M
+  -
+    country: USA
+    city: Atlanta
+    type: C-G Austrade
+    gender: 0
+  -
+    country: USA
+    city: San Francisco
+    type: C-G Austrade
+    gender: 0
+  -
+    country: Bangladesh
+    city: Dhaka
+    type: High Commission
+    gender: F
+  -
+    country: Brunei Darussalam
+    city: Bandar Seri Begawan
+    type: High Commission
+    gender: F
+  -
+    country: Cambodia
+    city: Phnom Penh
+    type: Embassy
+    gender: F
+  -
+    country: Croatia
+    city: Zagreb
+    type: Embassy
+    gender: F
+  -
+    country: Germany
+    city: Berlin
+    type: Embassy
+    gender: F
+  -
+    country: Holy See (Vatican City State)
+    city: Holy See
+    type: Embassy
+    gender: F
+  -
+    country: Indonesia
+    city: Bali
+    type: Consulate-General
+    gender: F
+  -
+    country: Malta
+    city: Malta (Ta'xbiex)
+    type: High Commission
+    gender: F
+  -
+    country: Mauritius
+    city: Port Louis
+    type: High Commission
+    gender: F
+  -
+    country: Pakistan
+    city: Islamabad
+    type: High Commission
+    gender: F
+  -
+    country: Samoa
+    city: Apia
+    type: High Commission
+    gender: F
+  -
+    country: Serbia (formerly Yugoslavia
+    city: Belgrade
+    type: Embassy
+    gender: F
+  -
+    country: Spain
+    city: Madrid
+    type: Embassy
+    gender: F
+  -
+    country: USA
+    city: Los Angeles
+    type: Consulate-General
+    gender: F
+  -
+    country: Zimbabwe
+    city: Harare
+    type: Embassy
+    gender: F
+  -
+    country: Afghanistan
+    city: Kabul
+    type: Embassy
+    gender: F
+  -
+    country: Canada
+    city: Ottawa
+    type: High Commission
+    gender: F
+  -
+    country: China
+    city: Hong Kong
+    type: Consulate-General
+    gender: F
+  -
+    country: Columbia
+    city: Bogota
+    type: Embasy
+    gender: F
+  -
+    country: Denmark
+    city: Copenhagen
+    type: Embassy
+    gender: F
+  -
+    country: Greece
+    city: Athens
+    type: Embassy
+    gender: F
+  -
+    country: India
+    city: Chennai
+    type: Consulate-General
+    gender: F
+  -
+    country: Iraq
+    city: Baghdad
+    type: Embassy
+    gender: F
+  -
+    country: Kenya
+    city: Nairobi
+    type: High Commission
+    gender: F
+  -
+    country: Lebanon
+    city: Beirut
+    type: Embassy
+    gender: F
+  -
+    country: Morocco
+    city: Rabat
+    type: Embassy
+    gender: F
+  -
+    country: Nauru
+    city: Nauru
+    type: High Commission
+    gender: F
+  -
+    country: Switzerland
+    city: Geneva
+    type: Mission to UN
+    gender: F
+  -
+    country: Switzerland
+    city: Geneva
+    type: Mission to WTO
+    gender: F
+  -
+    country: Ukraine
+    city: Kiev
+    type: Embassy
+    gender: F
+  -
+    country: USA
+    city: Honolulu
+    type: Consulate-General
+    gender: F
+  -
+    country: Vanuatu
+    city: Port Vila
+    type: High Commission
+    gender: F
+  -
+    country: China
+    city: Chengdu
+    type: Consulate-General
+    gender: M
+  -
+    country: Fiji
+    city: Suva
+    type: High Commission
+    gender: M
+  -
+    country: Ireland
+    city: Dublin
+    type: Embassy
+    gender: M
+  -
+    country: Taiwan*
+    city: Taipei
+    type: The Australian Office
+    gender: M
+  -
+    country: USA
+    city: New York - UN
+    type: Ambassador
+    gender: M
+  -
+    country: Vietnam
+    city: Ho Chi Minh City
+    type: Consulate-General
+    gender: F
+  -
+    country: Argentina
+    city: Buenos Aires
+    type: Embassy
+    gender: M
+  -
+    country: Austria
+    city: Vienna
+    type: Embassy & Mission to UN
+    gender: M
+  -
+    country: Belgium
+    city: Brussels
+    type: Embassy & Mission to EU
+    gender: M
+  -
+    country: Brazil
+    city: Brasilia
+    type: Embassy
+    gender: M
+  -
+    country: Chile
+    city: Santiago
+    type: Embassy
+    gender: M
+  -
+    country: China
+    city: Guangzhou
+    type: Consulate-General
+    gender: M
+  -
+    country: China
+    city: Shanghai
+    type: Consulate-General
+    gender: M
+  -
+    country: Cyprus
+    city: Nicosia
+    type: High Commission
+    gender: M
+  -
+    country: Egypt
+    city: Cairo
+    type: Embassy
+    gender: M
+  -
+    country: Ethiopia
+    city: Addis Ababa
+    type: Embassy
+    gender: M
+  -
+    country: France
+    city: Paris
+    type: Embassy
+    gender: M
+  -
+    country: France
+    city: Paris
+    type: Mission to OECD
+    gender: M
+  -
+    country: Ghana
+    city: Accra
+    type: High Commission
+    gender: M
+  -
+    country: India
+    city: Mumbai
+    type: C-G Austrade/FULL 2010
+    gender: M
+  -
+    country: Indonesia
+    city: Surabaya
+    type: Consulate-General
+    gender: M
+  -
+    country: Indonesia
+    city: Makassar
+    type: Consulate-General
+    gender: M
+  -
+    country: Iran Islamic Republic of
+    city: Tehran
+    type: Embassy
+    gender: M
+  -
+    country: Israel
+    city: Tel Aviv
+    type: Embassy
+    gender: M
+  -
+    country: Italy
+    city: Rome
+    type: Embassy & Mission to FAO
+    gender: M
+  -
+    country: Jordan
+    city: Amman
+    type: Embassy
+    gender: M
+  -
+    country: Kiribati
+    city: Tarawa
+    type: High Commission
+    gender: M
+  -
+    country: Korea Republic of (South Korea)
+    city: Seoul
+    type: Embassy
+    gender: M
+  -
+    country: Kuwait
+    city: Kuwait City
+    type: Embassy
+    gender: M
+  -
+    country: Lao People's Democratic Republic
+    city: Vientiane
+    type: Embassy
+    gender: M
+  -
+    country: Malaysia
+    city: Kuala Lumpur
+    type: High Commission
+    gender: M
+  -
+    country: Mexico
+    city: Mexico City
+    type: Embassy
+    gender: M
+  -
+    country: Micronesia Federated States of
+    city: Pohnpei
+    type: Embassy
+    gender: M
+  -
+    country: Mongolia
+    city: Ulaanbaatar
+    type: Embassy
+    gender: M
+  -
+    country: Myanmar/Burma
+    city: Yangon/Rangoon
+    type: Embassy
+    gender: M
+  -
+    country: Nepal
+    city: Kathmandu
+    type: Embassy
+    gender: M
+  -
+    country: Netherlands
+    city: The Hague
+    type: Embassy
+    gender: M
+  -
+    country: New Caledonia
+    city: Noumea
+    type: Consulate-General
+    gender: M
+  -
+    country: New Zealand
+    city: Wellington
+    type: High Commission
+    gender: M
+  -
+    country: Nigeria
+    city: Abuja
+    type: High Commission
+    gender: M
+  -
+    country: Papua New Guinea
+    city: Lae
+    type: Consulate-General
+    gender: M
+  -
+    country: Peru
+    city: Lima
+    type: Embassy (2014) C-G Austrade
+    gender: M
+  -
+    country: Poland
+    city: Warsaw
+    type: Embassy
+    gender: M
+  -
+    country: Portugal
+    city: Lisbon
+    type: Embassy
+    gender: M
+  -
+    country: Qatar
+    city: Doha
+    type: Embassy
+    gender: M
+  -
+    country: Russian Federation
+    city: Moscow
+    type: Embassy
+    gender: M
+  -
+    country: Saudi Arabia
+    city: Riyadh
+    type: Embassy
+    gender: M
+  -
+    country: Singapore
+    city: Singapore
+    type: High Commission
+    gender: M
+  -
+    country: Solomon Islands
+    city: Honiara
+    type: High Commission
+    gender: M
+  -
+    country: South Africa
+    city: Pretoria
+    type: High Commission
+    gender: M
+  -
+    country: Sri Lanka
+    city: Colombo
+    type: High Commission
+    gender: M
+  -
+    country: Sweden
+    city: Stockholm
+    type: Embassy
+    gender: M
+  -
+    country: Thailand
+    city: Phuket
+    type: Consulate-General
+    gender: M
+  -
+    country: Tonga
+    city: Nuku'Alofa
+    type: High Commission
+    gender: M
+  -
+    country: Trinidad and Tobago
+    city: Port of Spain
+    type: High Commission
+    gender: M
+  -
+    country: Turkey
+    city: Ankara
+    type: Embassy
+    gender: M
+  -
+    country: United Arab Emirates
+    city: Abu Dhabi
+    type: Embassy
+    gender: M
+  -
+    country: USA
+    city: Chicago
+    type: Consulate-General
+    gender: M
+  -
+    country: USA
+    city: New York
+    type: Consulate-General
+    gender: M
+  -
+    country: Vietnam
+    city: Hanoi
+    type: Embassy
+    gender: M

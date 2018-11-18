@@ -1,0 +1,11 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Current Heads of Mission"
+  - var chart  = data.getOne("static/charts/current-heads-of-mission/data")
+
+block page
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+  .wrapper(data-view="current-heads-of-mission" data-source="chart")
+    svg.chart(width="340" height="180")
