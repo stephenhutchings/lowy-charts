@@ -33,15 +33,7 @@ module.exports =
         barsX: labelW
         barsY: 56
 
-      if @paper
-        # Snap.setViewBox(0, 0, @config.w, @config.h, true)
-      else
-        window.p = @paper = window.Snap(@$(".chart").get(0), @config.w, @config.h)
-        # Snap.setViewBox(0, 0, @config.w, @config.h, true)
-        # Snap.setSize('100%', '100%')
-        # @paper.customAttributes.active = (t) -> t
-        # @paper.customAttributes.raw = (n) ->
-        #   @data("format") and { text: @data("format")(n) }
+      @paper ?= window.Snap(@$(".chart").get(0), @config.w, @config.h)
 
       @render _.find(@data.agencies, name: @$("select").val())
 
