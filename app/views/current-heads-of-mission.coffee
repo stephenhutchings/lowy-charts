@@ -63,7 +63,6 @@ module.exports =
         .attr(font.style.labelLeft)
         .attr({text})
         .data({text})
-        # .attr(opacity: 0)
 
     render: (data) ->
       @createLegend() if not @posts
@@ -75,7 +74,6 @@ module.exports =
         y = @config.barsY + Math.floor(i * @config.barsH / @config.w) * @config.barsH
 
         if @posts.items.length is i
-          console.log x, y
           rect = @paper
             .rect(x, y, @config.barsH, @config.barsH)
             .data(post)
