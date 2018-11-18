@@ -66,7 +66,6 @@ module.exports =
 
       @legend = Snap.set(ftxt, mtxt)
 
-
     render: ({name, data}) ->
       ease = mina.easeinout
 
@@ -145,12 +144,12 @@ module.exports =
         [fl, ml, bl] = @legend.items
 
         if f? and m?
-          fl.attr({text: """
-            #{utils.toThousands(f)} Women
+          fl.attr text: """
+            #{utils.toThousands(f)} #{if f is 1 then "Woman" else "Women"}
             (#{utils.toPercent(set.data("ff"))})
-          """})
-          ml.attr({text: """
-            #{utils.toThousands(m)} Men
+          """
+          ml.attr text: """
+            #{utils.toThousands(m)} #{if m is 1 then "Man" else "Men"}
             (#{utils.toPercent(set.data("mf"))})
           """
         else if set.data("ff")?
@@ -163,9 +162,7 @@ module.exports =
 
         for key, bars of @bars
           for bar in bars when bar.set isnt set
-            bar.set
-              .stop()
-              .animate({opacity: 0.5}, @config.duration, ease)
+            bar.set.stop().animate({opacity: 0.5}, @config.duration, ease)
 
       set.mouseout =>
         for key, bars of @bars
@@ -177,5 +174,4 @@ module.exports =
           for el, i in set.children()
             @legend.items[i].attr({text: @legend.items[i].data("label")})
 
-          # @legend.items[2].attr(text: @legend.items[2].data("label"))
         , 300
