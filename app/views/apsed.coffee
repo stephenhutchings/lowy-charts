@@ -152,21 +152,14 @@ module.exports =
           ml.attr({text: """
             #{utils.toThousands(m)} Men
             (#{utils.toPercent(set.data("mf"))})
-          """})
-        else if set.data("ff")
-          fl.attr({text: """
-            Women
-            (#{utils.toPercent(set.data("ff"))})
-          """})
-          ml.attr({text: """
-            Men
-            (#{utils.toPercent(1 - set.data("mf"))})
-          """})
-
-        # if f is 0 and m is 0
-        #   bl.attr(text: "No Staff")
-        # else
-        #   bl.attr(text: utils.toPercent(set.data("value")))
+          """
+        else if set.data("ff")?
+          fl.attr text: """
+            Women (#{utils.toPercent(set.data("ff"))})
+          """
+          ml.attr text: """
+            Men (#{utils.toPercent(1 - set.data("ff"))})
+          """
 
         for key, bars of @bars
           for bar in bars when bar.set isnt set
