@@ -8,11 +8,15 @@ block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
   .wrapper(data-view="apsed" data-souce="chart")
-    label.select-wrap
-      select
-        for k in chart.agencies
-          option= k.name
-      span.select-caret
+    .chart-nav
+      label.fl-l.select-wrap
+        select
+          for k in chart.agencies
+            option= k.name
+        span.select-caret
+
+      button.btn.btn-l.fl-l &larr;
+      button.btn.btn-r.fl-l &rarr;
     svg.chart(width="100%" height="260")
 
 block append css
