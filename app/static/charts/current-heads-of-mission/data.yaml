@@ -332,7 +332,7 @@ posts:
   -
     country: India
     city: Mumbai
-    type: C-G Austrade/FULL 2010
+    type: Consulate-General
     gender: M
   -
     country: Indonesia
@@ -445,7 +445,7 @@ posts:
   -
     country: Peru
     city: Lima
-    type: Embassy (2014) C-G Austrade
+    type: Embassy
     gender: M
   -
     country: Poland
@@ -613,5 +613,5 @@ posts:
     body: Ambassador for The Environment
     gender: M
   -
-    body: Ambassador for Women and Girls
+    body: Ambassador for Women & Girls
     gender: F
