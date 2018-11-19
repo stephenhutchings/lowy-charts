@@ -11,18 +11,20 @@ module.exports =
       @onResize()
 
     normalizeData: ->
-      m = _.where(@data.posts, {gender: "M"})
-      f = _.where(@data.posts, {gender: "F"})
+      posts = @data.posts.filter ({type}) ->
+        type isnt "C-G Austrade" and type isnt "Representative Office"
+
+      m = _.where(posts, {gender: "M"})
+      f = _.where(posts, {gender: "F"})
 
       m = _.sortBy(m, "country")
       f = _.sortBy(f, "country")
-
       @data.posts = f.concat(m)
       @data.split = { m, f }
 
     onResize: ->
       barSize = 20
-      width = Math.min(340, @$el.width())
+      width = @$(".chart").width()
       width = width - width % barSize
       buffer = 8
       labelW = 128
@@ -91,9 +93,11 @@ module.exports =
     bindMouseEvents: (el) ->
       data = el.data()
       el.mouseover =>
-        @current.attr(text: """
-          #{data.type} in #{data.city}, #{data.country}
-        """
+        @current.attr(text:
+          data.body or
+          """
+            #{data.type} in #{data.city}, #{data.common or data.country}
+          """
         )
         # .animate({opacity: 1}, @config.duration, mina.easeinout)
 
