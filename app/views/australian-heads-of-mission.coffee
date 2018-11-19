@@ -146,9 +146,9 @@ module.exports =
         for el, i in list
           do (el, i) =>
             x1 = (w * (el.startDate - dmin) / len)
-            x1 = Math.max(x1, prevX + 1)
+            x1 = ~~Math.max(x1, prevX + 1)
             x2 = w * (el.endDate - dmin) / len
-            x2 = Math.max(x2, x1 + 3)
+            x2 = ~~Math.max(x2, x1 + 3)
             prevX = x2
             rect = @paper.rect(x + x1, y, x2 - x1, @config.barsH).attr
               fill: if el.gender is "f" then colors.highlight else colors.dark
