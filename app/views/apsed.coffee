@@ -36,11 +36,11 @@ module.exports =
     onResize: ->
       width = Math.min(900, @$el.width())
       buffer = 8
-      labelW = 48
+      labelW = 72
 
       @config =
         w: width
-        h: 360
+        h: @$el.height()
         duration: 400
         labelW: labelW
         buffer: buffer
@@ -54,18 +54,21 @@ module.exports =
       @render _.find(@data.agencies, name: @$("select").val())
 
     createLegend: (data) ->
+      @paper.text(0, 267, "APS Avg.").attr(font.style.labelLeft)
+      @paper.line(0, 244, @config.w, 244).attr(stroke: "#e1e5e8")
+
       for year, i in @data.axis
-        y = @config.barsY + i * @config.barsH + @config.buffer * i
-        @paper.text(0, y + (@config.barsH / 2 + 5), year).attr(font.style.labelLeft)
+        y = @config.barsY + i * (@config.barsH + @config.buffer)
+        @paper.text(60, y + (@config.barsH / 2 + 5), year).attr(font.style.labelRight)
 
       @levels = Snap.set()
       for key, i in _.keys(data)
-        nb = @data.axis.length
+        nb = @data.axis.length + 1
         x = @config.barsX + (@config.barsW + @config.buffer) * i + @config.barsW / 2
-        y = @config.barsY + nb * @config.barsH + @config.buffer * nb
+        y = @config.barsY + nb * @config.barsH + @config.buffer * (nb + 1)
         line = @paper.line(x, @config.barsY - @config.buffer, x, y)
         line.attr(stroke: "#e1e5e8")
-        text = @paper.text(x, y + @config.buffer + 8, key)
+        text = @paper.text(x, y + @config.buffer + 9, key)
         text.attr(font.style.labelMiddle)
         @levels.push Snap.set(line, text)
 
@@ -84,9 +87,9 @@ module.exports =
 
     render: ({name, data}) ->
       ease = mina.easeinout
+      isFirstRun = not @bars
 
-      if not @bars
-        @createLegend(data)
+      @createLegend(data) if isFirstRun
 
       @bars ?= {}
 
@@ -99,7 +102,7 @@ module.exports =
         @levels.items[j].animate({x: cx, x1: cx, x2: cx}, @config.duration, ease)
 
         for [f, m], i in list
-          y = @config.barsY + i * @config.barsH + @config.buffer * i
+          y = @config.barsY + i * (@config.barsH + @config.buffer)
           empty = false
 
           if not f?
@@ -114,8 +117,19 @@ module.exports =
             ff = if f is 0 then 0 else f / (m + f)
             mf = if m is 0 then 0 else m / (m + f)
 
-          if @bars[key][i]
+          if isFirstRun
+            bg = @paper.rect(x, y, @config.barsW, @config.barsH)
+            fr = @paper.rect(x, y, ff * @config.barsW, @config.barsH)
+            mr = @paper.rect(x + ff * @config.barsW, y, mf * @config.barsW, @config.barsH)
+            set = @paper.group(fr, mr)
+            @bars[key].push({ set, bg })
+            bg.attr(fill: colors.muted, stroke: "none")
             fr.attr(fill: colors.contrast, stroke: "none")
+            mr.attr(fill: colors.dark, stroke: "none")
+
+            @bindMouseEvents(set)
+
+          else
             {bg, set} = @bars[key][i]
             [fr, mr] = set.children()
 
@@ -131,20 +145,27 @@ module.exports =
             else
               bg.stop().animate({x, width: @config.barsW, fill: "#b6c1c6"}, @config.duration, ease)
 
-          else
-            bg = @paper.rect(x, y, @config.barsW, @config.barsH)
-            fr = @paper.rect(x, y, ff * @config.barsW, @config.barsH)
-            mr = @paper.rect(x + ff * @config.barsW, y, mf * @config.barsW, @config.barsH)
-            set = @paper.group(fr, mr)
-            @bars[key].push({ set, bg })
-            bg.attr(fill: colors.muted, stroke: "none")
-            mr.attr(fill: colors.dark, stroke: "none")
-
-            @bindMouseEvents(set)
 
           fr.data(value: f)
           mr.data(value: m)
           set.data({ff, mf, empty})
+
+        if isFirstRun
+          y = 252
+          v = @data.totals[key]
+          set = @paper.group(
+            @paper
+              .rect(x, y, v * @config.barsW, @config.barsH)
+              .attr(fill: colors.contrast, stroke: "none")
+          ,
+            @paper
+              .rect(x + v * @config.barsW, y, (1 - v) * @config.barsW, @config.barsH)
+              .attr(fill: colors.dark, stroke: "none")
+          ).data({ff: v, mf: 1 - v})
+
+          @bindMouseEvents(set)
+          @bars[key].push({ set })
+
 
     bindMouseEvents: (set) ->
       ease = mina.easeinout
