@@ -7,7 +7,10 @@ class MainView extends Backbone.View
     timeouts = {}
 
     if window.parent is window
-      $(".wrapper").css(margin: "20px auto")
+      $wrapper = $(".wrapper")
+      innerH = $wrapper.height()
+      outerH = @$el.height()
+      $wrapper.css(margin: "#{(outerH - innerH) / 2}px auto")
 
     for evt in ["scroll", "resize"]
       do (evt, timeouts) =>
