@@ -51,7 +51,7 @@ module.exports =
       ftxt.attr(font.style.labelLeft)
       mtxt.attr(font.style.labelLeft)
 
-      fbox.attr("fill": colors.highlight, "stroke": "none")
+      fbox.attr("fill": colors.contrast, "stroke": "none")
       mbox.attr("fill": colors.dark, "stroke": "none")
 
       text = """
@@ -78,7 +78,7 @@ module.exports =
             .rect(x, y, @config.barsH, @config.barsH)
             .data(post)
             .attr(
-              fill: if post.gender is "M" then colors.dark else colors.highlight
+              fill: if post.gender is "M" then colors.dark else colors.contrast
               stroke: "#fff"
             )
 

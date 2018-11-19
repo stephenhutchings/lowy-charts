@@ -90,7 +90,7 @@ module.exports =
       ftxt.attr(font.style.labelRight)
       mtxt.attr(font.style.labelRight)
 
-      fbox.attr("fill": colors.highlight, "stroke": "none")
+      fbox.attr("fill": colors.contrast, "stroke": "none")
       mbox.attr("fill": colors.dark, "stroke": "none")
 
       @legend = Snap.set(ftxt, mtxt, mbox, fbox)
@@ -151,7 +151,7 @@ module.exports =
             x2 = ~~Math.max(x2, x1 + 3)
             prevX = x2
             rect = @paper.rect(x + x1, y, x2 - x1, @config.barsH).attr
-              fill: if el.gender is "f" then colors.highlight else colors.dark
+              fill: if el.gender is "f" then colors.contrast else colors.dark
               stroke: "none"
 
             homs.push(rect)

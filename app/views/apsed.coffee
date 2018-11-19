@@ -77,7 +77,7 @@ module.exports =
       ftxt.attr(font.style.labelRight)
       mtxt.attr(font.style.labelRight)
 
-      fbox.attr("fill": colors.highlight, "stroke": "none")
+      fbox.attr("fill": colors.contrast, "stroke": "none")
       mbox.attr("fill": colors.dark, "stroke": "none")
 
       @legend = Snap.set(ftxt, mtxt)
@@ -115,6 +115,7 @@ module.exports =
             mf = if m is 0 then 0 else m / (m + f)
 
           if @bars[key][i]
+            fr.attr(fill: colors.contrast, stroke: "none")
             {bg, set} = @bars[key][i]
             [fr, mr] = set.children()
 
@@ -137,7 +138,6 @@ module.exports =
             set = @paper.group(fr, mr)
             @bars[key].push({ set, bg })
             bg.attr(fill: colors.muted, stroke: "none")
-            fr.attr(fill: colors.highlight, stroke: "none")
             mr.attr(fill: colors.dark, stroke: "none")
 
             @bindMouseEvents(set)

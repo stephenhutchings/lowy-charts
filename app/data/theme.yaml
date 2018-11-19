@@ -5,7 +5,7 @@ colors:
   background: "#f5f6f7"
   text: "#4b4f56"
   stroke: "#cbd0d3"
-
+  contrast: "#ff4637"
 
 font:
   family: "Semi, sans-serif"
