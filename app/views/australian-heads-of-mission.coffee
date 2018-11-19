@@ -69,7 +69,7 @@ module.exports =
 
       @current = @paper.text(
         0
-        16
+        15
       ).attr(font.style.labelLeft)
 
       n = _.chain(data).pluck("list").flatten().countBy({gender: "f"}).value()
@@ -93,7 +93,7 @@ module.exports =
       fbox.attr("fill": colors.highlight, "stroke": "none")
       mbox.attr("fill": colors.dark, "stroke": "none")
 
-      @legend = Snap.set(ftxt, mtxt)
+      @legend = Snap.set(ftxt, mtxt, mbox, fbox)
 
     render: (data) ->
       ease = mina.easeinout
@@ -167,7 +167,8 @@ module.exports =
                 "(#{format(d.start)} – #{format(d.end)})"
               ].join(" ")
 
-              text = d.name if @config.w < 700
+              if @config.isMobile
+                @legend.animate({opacity: 0}, @config.duration, mina.easeinout)
 
               @current.attr({text})
 
@@ -187,5 +188,8 @@ module.exports =
                 hom.stop().animate({
                   opacity: 1
                 }, @config.duration, mina.easeinout)
+
+              if @config.isMobile
+                @legend.animate({opacity: 1}, @config.duration, mina.easeinout)
 
       _.last(homs.items).after(@current)
