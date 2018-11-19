@@ -37,8 +37,10 @@ module.exports =
 
     onResize: ->
       width = Math.min(900, @$el.width())
+      isMobile = width < 400
       buffer = 8
       labelW = 128
+      labelW = 80 if isMobile
 
       @config =
         w: width
@@ -50,6 +52,7 @@ module.exports =
         barsW: (width - labelW) / 3
         barsX: 0
         barsY: 40
+        isMobile: isMobile
 
       @paper ?= window.Snap(@$(".chart").get(0), @config.w, @config.h)
 
@@ -58,9 +61,10 @@ module.exports =
     createLegend: (data) ->
       x = @config.w - @config.labelW
 
-      for { name, list }, i in data
+      for { name, mobileName, list }, i in data
         y = @config.barsY + i * (@config.barsH + @config.buffer) + @config.buffer
         text = @paper.text(x, y + @config.buffer + 7, name)
+        text.attr(text: mobileName) if @config.isMobile and mobileName
         text.attr(font.style.labelLeft)
 
       @current = @paper.text(
@@ -77,6 +81,8 @@ module.exports =
       @current.attr({text: ""}) if @config.w < 700
 
       lx = @config.w - @config.labelW - @config.buffer - 20
+      lx = @config.w - (@config.w - 240) / 2 if @config.isMobile
+
       fbox = @paper.rect(lx, 0, 20, 20)
       ftxt = @paper.text(lx - 8, 15, "Female Postings")
       mbox = @paper.rect(lx - 160, 0, 20, 20)
@@ -109,6 +115,7 @@ module.exports =
         fy = new Date(dmin).getFullYear()
         yn = fy + i
         dc = (yn % 10 is 0) or yn is 2019 or i is 0
+
         yx = x + (-dmin % year) / year + (year / len) * i * (w - 2)
         y1 = @config.barsY + if dc then 0 else 4
         y2 = @config.barsY + my - 16
@@ -119,7 +126,7 @@ module.exports =
         line = @paper.line(yx, y1, yx, y2).attr
           stroke: colors.stroke
 
-        if (yn % 10 is 0) and i > 0
+        if (yn % (if @config.isMobile then 30 else 10) is 0) and i > 0
           @paper.text(yx, @config.barsY + my + 4, yn).attr(font.style.labelMiddle)
 
         unless dc
@@ -162,9 +169,7 @@ module.exports =
 
               text = d.name if @config.w < 700
 
-              @current
-                .attr({text})
-                # .animate({opacity: 1}, @config.duration, mina.easeinout)
+              @current.attr({text})
 
               for hom in homs
                 if hom.data("name") is d.name
@@ -177,7 +182,6 @@ module.exports =
                   }, @config.duration, mina.easeinout)
 
             rect.mouseout =>
-              # @current.animate({opacity: 0}, @config.duration, mina.easeinout)
               @current.attr(text: if @config.w < 700 then "" else @current.data("text"))
               for hom in homs
                 hom.stop().animate({

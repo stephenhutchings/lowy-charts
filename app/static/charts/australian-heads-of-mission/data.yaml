@@ -172,6 +172,7 @@ locations:
 
   -
     name: Papua New Guinea
+    mobileName: PNG
     list:
       -
         name: Les Johnson
