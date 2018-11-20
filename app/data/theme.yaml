@@ -7,6 +7,10 @@ colors:
   stroke: "#cbd0d3"
   contrast: "#ff4637"
 
+  pale:
+    contrast: "#ff9395"
+    dark: "#8b9eae"
+
 font:
   family: "Semi, sans-serif"
 

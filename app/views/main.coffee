@@ -5,8 +5,11 @@ class MainView extends Backbone.View
   initialize: ->
     $target = $(window)
     timeouts = {}
+    isEmbed  = window.parent is window
 
-    if window.parent is window
+    @$el.addClass("embed-#{isEmbed.toString()}")
+
+    if isEmbed
       $wrapper = $(".wrapper")
       innerH = $wrapper.height()
       outerH = @$el.height()
