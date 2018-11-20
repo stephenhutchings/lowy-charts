@@ -2,22 +2,22 @@ extend /partials/layout
 
 block append config
   - page.title = "Gender Splits across Australia’s IR Agencies"
-  - var chart  = data.getOne("static/charts/apsed-agency-gender-splits/data")
+  - var chart  = data.getOne("static/charts/apsed-agency-gender-splits/apsed")
 
 block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
-  .wrapper(data-view="apsed" data-souce="chart")
+  .wrapper(data-view="apsed-2" data-souce="chart")
     .chart-nav
       label.fl-l.select-wrap
         select
-          for k in chart.agencies
-            option= k.name
+          for k, i in chart.agencies
+            option(value=i)= k.name
         span.select-caret
 
       button.btn.btn-l.fl-l &larr;
       button.btn.btn-r.fl-l &rarr;
-    svg.chart(width="100%" height="300")
+    svg.chart(width="100%" height="720")
 
 block append css
   style
