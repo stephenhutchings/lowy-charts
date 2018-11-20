@@ -54,8 +54,8 @@ module.exports =
       @render _.find(@data.agencies, name: @$("select").val())
 
     createLegend: (data) ->
-      @paper.text(0, 267, "APS Avg.").attr(font.style.labelLeft)
-      @paper.line(0, 244, @config.w, 244).attr(stroke: "#e1e5e8")
+      @paper.text(0, 240, "APS Avg.").attr(font.style.labelLeft)
+      @paper.line(0, 216, @config.w, 216).attr(stroke: "#e1e5e8")
 
       for year, i in @data.axis
         y = @config.barsY + i * (@config.barsH + @config.buffer)
@@ -151,7 +151,7 @@ module.exports =
           set.data({ff, mf, empty})
 
         if isFirstRun
-          y = 252
+          y = 224
           v = @data.totals[key]
           set = @paper.group(
             @paper
