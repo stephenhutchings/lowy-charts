@@ -58,8 +58,8 @@ block page
                 text(x="100%" y=15 text-anchor="end") F = Female Respondents
                 text(x="100%" y=43 text-anchor="end") M = Male Respondents
 
-      .col-wrap.p-v-md
-        .col-md.txt-left
+      .clearfix.p-v-md
+        .fl-l.txt-left
           if _q > 1
             a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q - 1}`) 
               span.txt-bare.fl-l &larr;&ensp;
@@ -67,7 +67,7 @@ block page
           else
               | &nbsp;
         
-        .col-md.txt-right
+        .fl-r.txt-right
           if _q < 31
             a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q + 1}`)
               | Question #{_q + 1}
