@@ -7,7 +7,7 @@ axis:
   - "Very important"
   - "Somewhat important"
   - "Not important"
-  - "Don't know/no view"
+  - "Don’t know/no view"
 
 responses:
   -
@@ -60,7 +60,7 @@ responses:
       t: [ 332, 100, 20, 3, 455 ]
 
   -
-    text: "Tackling the stigma associated with men working part-time and accessing longer paternity and carers' leave arrangements"
+    text: "Tackling the stigma associated with men working part-time and accessing longer paternity and carers’ leave arrangements"
     results:
       f: [ 248, 62, 13, 5, 328 ]
       m: [ 66, 42, 14, 5, 127 ]

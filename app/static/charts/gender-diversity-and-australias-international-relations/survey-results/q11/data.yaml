@@ -3,7 +3,7 @@ type: splits
 axis:
   - "Yes"
   - "No"
-  - "Don't know/no view"
+  - "Don’t know/no view"
 
 question: >
   Have you ever decided not to apply for a promotion?

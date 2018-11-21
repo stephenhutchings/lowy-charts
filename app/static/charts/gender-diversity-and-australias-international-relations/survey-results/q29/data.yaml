@@ -5,7 +5,7 @@ axis:
   - "Somewhat agree"
   - "Somewhat disagree"
   - "Strongly disagree"
-  - "Don't know/no view"
+  - "Don’t know/no view"
 
 question: >
   Now thinking about the same policy areas, please indicate whether your organisation has effective policies in place for:
@@ -40,7 +40,7 @@ responses:
       t: [ 17, 98, 144, 116, 71, 446 ]
 
   -
-    text: "'Keep-in-touch' policies for employees on maternity, paternity and carers leave (e.g. email, building & parking access and opportunities for staff get-togethers)"
+    text: "‘Keep-in-touch’ policies for employees on maternity, paternity and carers leave (e.g. email, building & parking access and opportunities for staff get-togethers)"
     results:
       f: [ 43, 121, 70, 43, 46, 323 ]
       m: [ 9, 39, 22, 20, 33, 123 ]

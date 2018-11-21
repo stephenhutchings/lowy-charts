@@ -5,10 +5,10 @@ axis:
   - "Somewhat agree"
   - "Somewhat disagree"
   - "Strongly disagree"
-  - "Don't know/no view"
+  - "Don’t know/no view"
 
 question: >
-  Please say whether you agree or disagree with the following reasons why people may decide not to report bullying and harassment (and please note, with our apologies, the reverse order of the 'strongly' and 'somewhat disagree' responses in this question):
+  Please say whether you agree or disagree with the following reasons why people may decide not to report bullying and harassment (and please note, with our apologies, the reverse order of the ‘strongly’ and ‘somewhat disagree’ responses in this question):
 
 responses:
   -

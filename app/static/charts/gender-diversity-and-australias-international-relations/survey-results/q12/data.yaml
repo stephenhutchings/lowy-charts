@@ -4,10 +4,10 @@ axis:
   - "Very important"
   - "Somewhat important"
   - "Not important"
-  - "Don't know/no view"
+  - "Don’t know/no view"
 
 question: >
-  In your decision not to apply, please say how important each of the following factors were in this decision:
+  In your decision not to apply, please say how important each of the following factors were in this decision:
 
 responses:
   -
@@ -32,7 +32,7 @@ responses:
       t: [ 44, 60, 63, 195, 362 ]
 
   -
-    text: "The role didn't allow for flexible and/or part-time hours"
+    text: "The role didn’t allow for flexible and/or part-time hours"
     results:
       f: [ 54, 53, 56, 97, 260 ]
       m: [ 7, 15, 38, 42, 102 ]

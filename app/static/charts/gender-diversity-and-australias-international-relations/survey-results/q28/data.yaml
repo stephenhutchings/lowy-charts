@@ -7,7 +7,7 @@ axis:
   - "Very important"
   - "Somewhat important"
   - "Not important"
-  - "Don't know/no view"
+  - "Don’t know/no view"
 
 responses:
   -
@@ -39,7 +39,7 @@ responses:
       t: [ 211, 191, 26,  18,  446 ]
 
   -
-    text: "'Keep-in-touch' policies for employees on maternity, paternity and carers' leave (e.g. email, building & parking access and opportunities for staff get-togethers)"
+    text: "‘Keep-in-touch’ policies for employees on maternity, paternity and carers’ leave (e.g. email, building & parking access and opportunities for staff get-togethers)"
     results:
       f: [ 175, 128, 10,  10,  323 ]
       m: [ 35,  66,  9, 13,  123 ]

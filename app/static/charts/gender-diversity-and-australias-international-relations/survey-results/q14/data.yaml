@@ -5,7 +5,7 @@ axis:
   - "Somewhat agree"
   - "Somewhat disagree"
   - "Strongly disagree"
-  - "Don't know/no view"
+  - "Don’t know/no view"
 
 question: >
   Thinking about the career trajectory of senior men and women in your
@@ -20,7 +20,7 @@ responses:
       t: [ 15, 104, 212, 175, 47, 553 ]
 
   -
-    text: "'Merit based' recruitment and promotions are not always based genuinely on merit"
+    text: "‘Merit based’ recruitment and promotions are not always based genuinely on merit"
     results:
       f: [ 191, 139, 18, 16, 16, 380 ]
       m: [ 58, 65, 31, 11, 8, 173 ]

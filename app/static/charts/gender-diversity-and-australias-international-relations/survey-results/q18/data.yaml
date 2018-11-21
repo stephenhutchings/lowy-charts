@@ -4,10 +4,10 @@ axis:
   - "Very important"
   - "Somewhat important"
   - "Not important"
-  - "Don't know/no view"
+  - "Don’t know/no view"
 
 question: >
-  The following is a list of factors which may have an impact on women's progress in this sector. Please indicate how important you believe each factor is:
+  The following is a list of factors which may have an impact on women’s progress in this sector. Please indicate how important you believe each factor is:
 
 responses:
     -
@@ -59,7 +59,7 @@ responses:
         m: [33, 72, 25, 7, 137, 2.06]
         t: [232, 195, 40, 12, 479]
     -
-      text: "'Presenteeism' (e.g. office presence) rather than outcomes rewarded"
+      text: "‘Presenteeism’ (e.g. office presence) rather than outcomes rewarded"
       results:
         f: [157, 137, 30, 18, 342, 2.39]
         m: [32, 59, 28, 18, 137, 2.03]
@@ -107,7 +107,7 @@ responses:
         m: [13, 60, 42, 22, 137, 1.75]
         t: [121, 216, 81, 61, 479]
     -
-      text: "'Boys club' networking and decision-making"
+      text: "‘Boys club’ networking and decision-making"
       results:
         f: [228, 91, 13, 10, 342, 2.65]
         m: [41, 54, 32, 10, 137, 2.07]

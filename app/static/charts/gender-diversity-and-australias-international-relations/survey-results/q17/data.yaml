@@ -5,10 +5,10 @@ axis:
   - "Somewhat agree"
   - "Somewhat disagree"
   - "Strongly disagree"
-  - "Don't know/no view"
+  - "Don’t know/no view"
 
 question: >
-  Please say whether you agree or disagree with the following statements. Women's access to overseas work opportunities is affected by:
+  Please say whether you agree or disagree with the following statements. Women’s access to overseas work opportunities is affected by:
 
 responses:
   -
@@ -33,7 +33,7 @@ responses:
       t: [75, 189, 74, 37, 130, 505]
 
   -
-    text: "A lack of financial support from organisations to cover carers' costs incurred because of overseas-based work"
+    text: "A lack of financial support from organisations to cover carers’ costs incurred because of overseas-based work"
     results:
       f: [96, 115, 42, 19, 84, 356, 0.83]
       m: [13, 50, 19, 15, 52, 149, 0.28]
