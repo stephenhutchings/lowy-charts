@@ -1,14 +1,22 @@
+mixin animate-transform(prop, vals, dur)
+  animateTransform(
+   attributeName="transform" 
+   dur=dur
+   type=prop
+   values=vals
+   repeatCount="1" 
+   calcMode="spline"
+   keySplines="0.455 0.03 0.515 0.955"
+ )
+
 mixin chart-likert(data, index, chart)
   - var colors = ["#002a45", "#8b9eae", "#ff9395", "#ff4637", "#e1e5e8"];
 
-  if data.text
-    .response-text.flex-end.p-v-sm= data.text
-
   .bg-lt.p-sm
-    svg.chart(width="100%" height="64")
+    svg.chart(data-view="likert" width="100%" height="88")
       g
         for g, i in ["f", "m"]
-          - var tx, ta, txt, w, y = (i * 28);
+          - var tx, ta, txt, w, y = 0 + (i * 52);
           - var results = data.results[g];
           - var total = _.sum(results.slice(0, 5));
 
@@ -28,82 +36,82 @@ mixin chart-likert(data, index, chart)
               - ta = "start"
               - txt = `&ensp;${g.toUpperCase()}`
 
-            text(y=(y + 23) x=tx text-anchor=ta)!= txt
-              animate(
-                attributeName="opacity" 
-                dur="1000ms" 
-                values="0 ; 0 ; 1"
-                repeatCount="1" 
-              )
-            rect(fill=colors[3] y=y + 8 x=`${(50 - 50 * (sd + d + n / 2))}%` width=`${sd * 50}%` height="20" title=results[3])
-              animateTransform(
-               attributeName="transform" 
-               dur="600ms" 
-               type="scale" 
-               values="0 1 ; 1 1" 
-               repeatCount="1" 
-               calcMode="spline"
-               keySplines="0.455 0.03 0.515 0.955"
-             )
+            rect(
+              fill=colors[i == 0 ? 3 : 0]
+              opacity=1
+              y=y + 8
+              x=`${(50 - 50 * (sd + d + n / 2))}%`
+              width=`${sd * 50}%`
+              height="20"
+              data-percent=((sd * 100).toFixed(0) + "% " + chart.axis[3])
+              data-value=results[3]
+              data-target=".t1"
+            )
+              +animate-transform("scale", "0 1 ; 1 1", "600ms")
 
-            rect(fill=colors[0] y=y + 8 x=`${(50 + 50 * (a + n / 2))}%`      width=`${sa * 50}%` height="20" title=results[0])
-              animateTransform(
-               attributeName="transform" 
-               dur="600ms" 
-               type="scale" 
-               values="0 1 ; 1 1" 
-               repeatCount="1" 
-               calcMode="spline"
-               keySplines="0.455 0.03 0.515 0.955"
-             )
+            rect(
+              fill=colors[i == 0 ? 3 : 0]
+              opacity=1
+              y=y + 8
+              x=`${(50 + 50 * (a + n / 2))}%`
+              width=`${sa * 50}%`
+              height="20"
+              data-percent=((sa * 100).toFixed(0) + "% " + chart.axis[0])
+              data-value=results[0]
+              data-target=".t2"
+            )
+              +animate-transform("scale", "0 1 ; 1 1", "600ms")
 
-            rect(fill=colors[2] y=y + 8 x=`${(50 - 50 * (d + n / 2))}%`      width=`${d  * 50}%` height="20" title=results[2])
-              animateTransform(
-               attributeName="transform" 
-               dur="600ms" 
-               type="scale" 
-               values="0 1 ; 1 1" 
-               repeatCount="1" 
-               calcMode="spline"
-               keySplines="0.455 0.03 0.515 0.955"
-             )
+            rect(
+              fill=colors[i == 0 ? 3 : 0]
+              opacity=0.6
+              y=y + 8
+              x=`${(50 - 50 * (d + n / 2))}%`
+              width=`${d  * 50}%`
+              height="20"
+              data-percent=((d * 100).toFixed(0) + "% " + chart.axis[2])
+              data-value=results[2]
+              data-target=".t1"
+            )
+              +animate-transform("scale", "0 1 ; 1 1", "600ms")
 
-            rect(fill=colors[1] y=y + 8 x=`${(50 + 50 * (n / 2))}%`          width=`${a  * 50}%` height="20" title=results[1])
-              animateTransform(
-               attributeName="transform" 
-               dur="600ms" 
-               type="scale" 
-               values="0 1 ; 1 1" 
-               repeatCount="1" 
-               calcMode="spline"
-               keySplines="0.455 0.03 0.515 0.955"
-             )
+            rect(
+              fill=colors[i == 0 ? 3 : 0]
+              opacity=0.6
+              y=y + 8
+              x=`${(50 + 50 * (n / 2))}%`
+              width=`${a  * 50}%`
+              height="20"
+              data-percent=((a * 100).toFixed(0) + "% " + chart.axis[1])
+              data-value=results[1]
+              data-target=".t2"
+            )
+              +animate-transform("scale", "0 1 ; 1 1", "600ms")
 
-            rect(fill=colors[4] y=y + 8 x=`${(50 - 50 * (n / 2))}%`          width=`${n  * 50}%` height="20" title=results[4])
-              animateTransform(
-               attributeName="transform" 
-               dur="600ms" 
-               type="scale" 
-               values="0 1 ; 1 1" 
-               repeatCount="1" 
-               calcMode="spline"
-               keySplines="0.455 0.03 0.515 0.955"
-             )
+            rect(
+              fill=colors[i == 0 ? 3 : 0]
+              opacity=0.3
+              y=y + 8
+              x=`${(50 - 50 * (n / 2))}%`
+              width=`${n  * 50}%`
+              height="20"
+              data-percent=((n * 100).toFixed(0) + "% " + chart.axis[4])
+              data-value=results[4]
+              data-target=".t2"
+            )
+              +animate-transform("scale", "0 1 ; 1 1", "600ms")
 
+      g
+        text.t1(y=49 x="0" text-anchor="start") Disagree
+        text.t2(y=49 x="100%" text-anchor="end") Agree
+        line(x1="50%" x2="50%" y1=0 y2="100%")
 
-        g
-          line(x1="50%" x2="50%" y1=0 y2="100%")
-          //- for n, i in (new Array((l = 8) + 1))
-            line(x1=`${i * 100 / l}%` x2=`${i * 100 / l}%` y1=0 y2="100%")
 
   .txt-sm.txt-muted.p-v-sm
      | #{_.sum(data.results.t.slice(0, 5))} of 645 responses
 
 mixin chart-splits(data, index, chart)
   - var colors = colors || ["#002a45", "#ff4637", "#e1e5e8"];
-
-  if data.text
-    .response-text.flex-end.p-v-sm= data.text
 
   .bg-lt.p-sm
     svg.chart(width="100%" height=(chart.axis ? chart.axis.length * 68 : 36))
@@ -125,8 +133,9 @@ mixin chart-splits(data, index, chart)
       //- - if (len == 1) scale = total / _.max([maxF, maxM]) * 0.8;
 
       if chart.axis
+        - var y = 24;
         for label, i in chart.axis
-          - var y = 24 + i * 68;
+          - if (i > 0) y += 68;
           - var f = data.results.f[i];
           - var m = data.results.m[i];
 
@@ -137,6 +146,9 @@ mixin chart-splits(data, index, chart)
 
           g
             text.label(x="50%" y=y - 4 text-anchor="middle")= label
+              //- for row, k in _.reduce(label, function(m, el){var l = _.last(m); console.log(m); m.length === 0 || (el === " " && l.length > 30) ? m.push(el) : m[m.length - 1] = l + el; return m;}, [])
+                tspan(x="50%" y=y + 4)= row
+                - y += 16;
 
             text(x=`${50 - 50 * scale * (m / mt)}%` y=(y + 27) text-anchor="end") #{(m / mt * 100).toFixed(0)}%&ensp;
               animate(

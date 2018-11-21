@@ -1,5 +1,6 @@
 rect {
   transform-origin: center;
+  transition: opacity 300ms;
 }
 
 text {
@@ -8,12 +9,12 @@ text {
 }
 
 text.label {
-  fill: currentColor
+  fill: currentColor;
 }
 
 line {
-  stroke: #c1d1db;
-  mix-blend-mode: multiply;
+  stroke: rgba(0, 41, 71, 0.22);
+  pointer-events: none
 }
 
 .wrapper {
@@ -43,4 +44,18 @@ line {
 .question-btn:hover {
   background: #e4e6e8;
   color: inherit;
+}
+
+
+.group-hover rect:nth-child(1),
+.group-hover rect:nth-child(2) {
+  opacity: 0.5;
+}
+.group-hover rect:nth-child(3),
+.group-hover rect:nth-child(4) {
+  opacity: 0.4;
+}
+
+.group-hover .rect-hover {
+  opacity: 1 !important;
 }
