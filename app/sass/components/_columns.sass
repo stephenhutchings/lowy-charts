@@ -30,33 +30,16 @@
 .col-lg
   width: 60%
 
-.col-newline
+.col-break
   clear: left
 
-%p-first
-  padding-top: 0
-%p-last
-  padding-bottom: 0
+.fl-r
+  float: right
 
-=make-block($size, $padding, $media: false)
-  .p-h-#{$size}
-    padding-left: $padding
-    padding-right: $padding
+.fl-l
+  float: left
 
-  .p-v-#{$size}
-    padding-top: $padding
-    padding-bottom: $padding
-
-  .p-#{$size}
-    padding: $padding
-
-+make-block(xxl, 10vh)
-+make-block(xl, 12.0rem)
-+make-block(lg,  8.0rem)
-+make-block(md,  6.0rem)
-+make-block(sm,  2.0rem)
-
-@media (max-width: $header-breakpoint)
+@media screen and (max-width: $header-breakpoint)
   .col-wrap
     margin: 0 -2.5rem
 
@@ -76,16 +59,15 @@
   .col-lg
     width: 100%
 
-  +make-block(xl,  3.0rem, true)
-  +make-block(lg,  2.5rem, true)
-  +make-block(md,  2.5rem, true)
-  +make-block(sm,  2.5rem, true)
+@media print
+  .col-xs
+    width: 20%
 
-@media (min-width: 1200px) and (min-height: 840px)
-  +make-block(xxl, 15vh, true)
+  .col-sm
+    width: 33.3333%
 
-.fl-r
-  float: right
+  .col-md
+    width: 50%
 
-.fl-l
-  float: left
+  .col-lg
+    width: 60%

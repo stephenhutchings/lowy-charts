@@ -1,0 +1,28 @@
+type: splits
+
+axis:
+  - "Part-time schedules"
+  - "Reduced schedules (e.g. ability to leave workplace early)"
+  - "Telecommuting/work from home"
+  - "Job sharing programs"
+  - "Leaves of absence/sabbaticals"
+  - "Maternity leave"
+  - "Paternity leave"
+  - "Extended maternity policies"
+  - "Extended paternity policies"
+  - "Program to smooth transition before, during and after maternity leave"
+  - "In-house or subsidised external childcare facilities"
+  - "Company-sponsored peer networking group for parents"
+  - "Services for sick children (e.g. onsite clinic)"
+  - "None of the above"
+
+question: >
+  Which of the following work support/flexibility programs have you participated in at your organisation in the last three years? (Select all that apply)
+
+responses:
+  -
+    responses: 612
+    results:
+      f: [ 106, 74, 127, 11, 59, 105, 2, 30, 1, 10, 19, 5, 5, 155, 411 ]
+      m: [ 31, 50, 61, 3, 33, 3, 40, 2, 6, 3, 7, 3, 5, 81, 201 ]
+      t: [ 137, 124, 188, 14, 92, 108, 42, 32, 7, 13, 26, 8, 10, 236, 612 ]

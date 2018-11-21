@@ -1,0 +1,67 @@
+type: likert
+
+axis:
+  - "Strongly agree"
+  - "Somewhat agree"
+  - "Somewhat disagree"
+  - "Strongly disagree"
+  - "Don't know/no view"
+
+question: >
+  Please say whether you personally agree or disagree with each of the following statements:
+
+responses:
+  -
+    text: "It's hard to recruit and promote women into senior positions because women generally assume more responsibility for child-rearing which places some limits on their capacity                        "
+    results:
+      f: [ 31, 78, 69, 146, 4, 328 ]
+      m: [ 5, 37, 40, 32, 13, 127 ]
+      t: [ 36, 115, 109, 178, 17, 455 ]
+  -
+    text: "Usually when there are panels of all-male speakers at conferences, it is because there were no women qualified for the panel                        "
+    results:
+      f: [ 5, 17, 56, 240, 10, 328 ]
+      m: [ 2, 15, 50, 50, 10, 127 ]
+      t: [ 7, 32, 106, 290, 20, 455 ]
+  -
+    text: "Unconscious bias and hidden stereotypes affect recruitments, promotions, staff retention and international work opportunities                       "
+    results:
+      f: [  209, 101, 6, 4, 8, 328 ]
+      m: [  41, 60, 15, 5, 6, 127 ]
+      t: [  250, 161, 21, 9, 14, 455 ]
+  -
+    text: "My organisation has done everything it can to tackle gender inequality                        "
+    results:
+      f: [ 8, 57, 125, 121, 17, 328 ]
+      m: [ 12, 34, 44, 29, 8, 127 ]
+      t: [ 20, 91, 169, 150, 25, 455 ]
+  -
+    text: "My organisation introduced a gender equity strategy but has done little to implement it                       "
+    results:
+      f: [  40, 103, 101, 38, 46, 328 ]
+      m: [ 0, 31, 50, 29, 17, 127 ]
+      t: [ 40, 134, 151, 67, 63, 455 ]
+  -
+    text: "My organisation promotes gender diversity but does little to address the cultural and structural issues within the organisation which are holding women back                        "
+    results:
+      f: [  113, 124, 62, 18, 11, 328 ]
+      m: [  23, 33, 37, 27, 7, 127 ]
+      t: [  136, 157, 99, 45, 18, 455 ]
+  -
+    text: "My organisation should use secondments and temporary transfers from other organisations in order to improve its gender balance in the senior management                       "
+    results:
+      f: [  54, 118, 74, 37, 45, 328 ]
+      m: [ 11, 32, 37, 28, 19, 127 ]
+      t: [  65, 150, 111, 65, 64, 455 ]
+  -
+    text: "Targets and quotas for gender balance can undermine merit-based promotions                        "
+    results:
+      f: [ 32, 80, 83, 125, 8, 328 ]
+      m: [  36, 42, 27, 13, 9, 127 ]
+      t: [  68, 122, 110, 138, 17, 455 ]
+  -
+    text: "Many offenders who have engaged in bullying, sexual harassment and/or assault are still working in my organisation                        "
+    results:
+      f: [  141, 87, 19, 16, 65, 328 ]
+      m: [  17, 46, 14, 17, 33, 127 ]
+      t: [  158, 133, 33, 33, 98, 455 ]

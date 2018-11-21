@@ -1,0 +1,144 @@
+type: splits
+
+question: >
+  Thinking about the policies that some organisations are putting in place, please say how important you think the following policies are for improving gender balance:
+
+axis:
+  - "Very important"
+  - "Somewhat important"
+  - "Not important"
+  - "Don't know/no view"
+
+responses:
+  -
+    text: "In-house childcare or preferential childcare arrangements"
+    results:
+      f: [ 171, 128, 13,  11,  323 ]
+      m: [ 47,  59,  9, 8, 123 ]
+      t: [ 218, 187, 22,  19,  446 ]
+
+  -
+    text: "Flexible work practices"
+    results:
+      f: [ 274, 46,  3, 0, 323 ]
+      m: [ 88,  30,  3, 2, 123 ]
+      t: [ 362, 76,  6, 2, 446 ]
+
+  -
+    text: "A public gender strategy"
+    results:
+      f: [ 140, 156, 25,  2, 323 ]
+      m: [ 29,  62,  25,  7, 123 ]
+      t: [ 169, 218, 50,  9, 446 ]
+
+  -
+    text: "Compulsory and substantial unconscious bias and stereotype training"
+    results:
+      f: [ 180, 127, 10,  6, 323 ]
+      m: [ 31,  64,  16,  12,  123 ]
+      t: [ 211, 191, 26,  18,  446 ]
+
+  -
+    text: "'Keep-in-touch' policies for employees on maternity, paternity and carers' leave (e.g. email, building & parking access and opportunities for staff get-togethers)"
+    results:
+      f: [ 175, 128, 10,  10,  323 ]
+      m: [ 35,  66,  9, 13,  123 ]
+      t: [ 210, 194, 19,  23,  446 ]
+
+  -
+    text: "Monitoring and evaluation of gender equality progress"
+    results:
+      f: [ 209, 99,  12,  3, 323 ]
+      m: [ 43,  62,  13,  5, 123 ]
+      t: [ 252, 161, 25,  8, 446 ]
+
+  -
+    text: "Benchmarks and targets (not quotas) for the ratio of women in leadership roles"
+    results:
+      f: [ 199, 106, 14,  4, 323 ]
+      m: [ 43,  53,  21,  6, 123 ]
+      t: [ 242, 159, 35,  10,  446 ]
+
+  -
+    text: "Enforced quotas for the ratio of women in leadership roles"
+    results:
+      f: [ 110, 122, 75,  16,  323 ]
+      m: [ 16,  35,  59,  13,  123 ]
+      t: [ 126, 157, 134, 29,  446 ]
+
+  -
+    text: "Blind recruitment and promotion practices"
+    results:
+      f: [ 164, 109, 21,  29,  323 ]
+      m: [ 39,  44,  24,  16,  123 ]
+      t: [ 203, 153, 45,  45,  446 ]
+
+  -
+    text: "A formal mentoring program for women"
+    results:
+      f: [ 137, 159, 19,  8, 323 ]
+      m: [ 19,  58,  27,  19,  123 ]
+      t: [ 156, 217, 46,  27,  446 ]
+
+  -
+    text: "Better and more flexible family leave provisions provided during overseas deployments (e.g. postings, fieldwork and placements)"
+    results:
+      f: [ 192, 104, 8, 19,  323 ]
+      m: [ 50,  43,  14,  16,  123 ]
+      t: [ 242, 147, 22,  35,  446 ]
+
+  -
+    text: "Naming of rooms, buildings, prizes and scholarships after women"
+    results:
+      f: [ 66,  155, 91,  11,  323 ]
+      m: [ 17,  52,  46,  8, 123 ]
+      t: [ 83,  207, 137, 19,  446 ]
+
+  -
+    text: "Equal representation of men and women on recruitment and conference panels"
+    results:
+      f: [ 219, 92,  11,  1, 323 ]
+      m: [ 47,  57,  17,  2, 123 ]
+      t: [ 266, 149, 28,  3, 446 ]
+
+  -
+    text: "Gender-specific recruitment, retention and promotion policies"
+    results:
+      f: [ 133, 116, 53,  21,  323 ]
+      m: [ 15,  42,  49,  17,  123 ]
+      t: [ 148, 158, 102, 38,  446 ]
+
+  -
+    text: "Independent reviews of organisational progress"
+    results:
+      f: [ 172, 122, 22,  7, 323 ]
+      m: [ 41,  62,  17,  3, 123 ]
+      t: [ 213, 184, 39,  10,  446 ]
+
+  -
+    text: "Gender/diversity committees"
+    results:
+      f: [ 106, 157, 53,  7, 323 ]
+      m: [ 17,  56,  39,  11,  123 ]
+      t: [ 123, 213, 92,  18,  446 ]
+
+  -
+    text: "Greater public promotion of female staff achievements. For example, featuring photographs and stories in key public workspaces or hosting more former female staff at events"
+    results:
+      f: [ 117, 148, 48,  10,  323 ]
+      m: [ 21,  58,  36,  8, 123 ]
+      t: [ 138, 206, 84,  18,  446 ]
+
+  -
+    text: "Prioritising greater diversity in senior leadership positions based overseas"
+    results:
+      f: [ 204, 97,  13,  9, 323 ]
+      m: [ 34,  49,  23,  17,  123 ]
+      t: [ 238, 146, 36,  26,  446 ]
+
+  -
+    text: "Actively encouraging women for promotions and work opportunities"
+    results:
+      f: [ 268, 48,  6, 1, 323 ]
+      m: [ 55,  46,  15,  7, 123 ]
+      t: [ 323, 94,  21,  8, 446 ]

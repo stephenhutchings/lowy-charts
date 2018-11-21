@@ -1,0 +1,26 @@
+type: likert
+
+axis:
+  - "Strongly agree"
+  - "Somewhat agree"
+  - "Somewhat disagree"
+  - "Strongly disagree"
+  - "Don't know/no view"
+
+question: >
+  Please say whether you agree or disagree with the following statements:
+
+responses:
+    -
+      text: "Women have equal access to long-term overseas based career opportunities (e.g. international placements, fieldwork, postings etc.)"
+      results:
+        f: [46,  114, 115, 55,  26,  356, -0.06]
+        m: [60,  51,  17,  1, 20,  149, 1.18]
+        t: [106, 165, 132, 56,  46,  505]
+
+    -
+      text: "Women have equal access to short-term overseas based career opportunities (e.g. work trips, short-term placements etc.)"
+      results:
+        f: [44,  127, 108, 59,  18,  356, -0.03]
+        m: [60,  54,  16,  1, 18,  149, 1.19]
+        t: [104, 181, 124, 60,  36,  505]

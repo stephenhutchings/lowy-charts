@@ -1,0 +1,87 @@
+type: likert
+
+axis:
+  - "Strongly agree"
+  - "Somewhat agree"
+  - "Somewhat disagree"
+  - "Strongly disagree"
+  - "Don't know/no view"
+
+question: "Thinking about career progression, leadership and the gender balance in this sector, please say whether you agree or disagree with the following&nbsp;statements:"
+
+responses:
+  -
+    text: Men and women apply for promotions equally often and at similar career stages
+    results:
+      f: [ 10, 47, 140, 133, 32 ]
+      m: [ 12, 33, 60,  13,  37 ]
+      t: [ 22, 80, 200, 146, 69 ]
+  -
+    text: Women often lack the confidence to put themselves forward for work opportunities
+    results:
+      f: [ 154, 158, 35, 7, 8 ]
+      m: [ 9, 69, 31, 16, 30 ]
+      t: [ 163, 227, 66, 23, 38 ]
+
+  -
+    text: Men often lack the confidence to put themselves forward for work opportunities
+    results:
+      f: [ 2, 8, 67, 268, 17 ]
+      m: [ 0, 17, 78, 44, 16 ]
+      t: [ 2, 25, 145, 312, 33 ]
+
+  -
+    text: Selection panels for recruitment and promotions are dominated by men
+    results:
+      f: [ 60, 103, 122, 31, 46 ]
+      m: [ 7, 44, 49, 26, 29 ]
+      t: [ 67, 147, 171, 57, 75 ]
+
+  -
+    text: Selection panels for recruitment and promotions are dominated by women
+    results:
+      f: [ 0, 25, 141, 150, 46 ]
+      m: [ 4, 7, 76, 41, 27 ]
+      t: [ 4, 32, 217, 191, 73 ]
+
+  -
+    text: Women are more likely to be supported by their supervisors for promotion than men
+    results:
+      f: [ 1, 16, 164, 94, 87 ]
+      m: [ 6, 12, 57, 17, 63 ]
+      t: [ 7, 28, 221, 111, 150 ]
+
+  -
+    text: Men are more likely to be supported by their supervisors for promotion than women
+    results:
+      f: [ 76, 133, 58, 11, 84 ]
+      m: [ 2, 33, 47, 31, 42 ]
+      t: [ 78, 166, 105, 42, 126 ]
+
+  -
+    text: Hiring and promotions are too often made on the basis of networks rather than ability
+    results:
+      f: [ 136, 181, 25, 5, 15 ]
+      m: [ 44, 60, 32, 11, 8 ]
+      t: [ 180, 241, 57, 16, 23 ]
+
+  -
+    text: Hiring and promotions are too often made on the basis of interview performance rather than ability
+    results:
+      f: [ 115, 154, 50, 8, 35 ]
+      m: [ 30, 62, 35, 11, 17 ]
+      t: [ 145, 216, 85, 19, 52 ]
+
+  -
+    text: International, technical and operational experience is too often valued over good management skills
+    results:
+      f: [ 103, 140, 46, 18, 55 ]
+      m: [ 25, 53, 30, 13, 34 ]
+      t: [ 128, 193, 76, 31, 89 ]
+
+  -
+    text: There is a lack of flexible working arrangements for men and women with young families and those with responsibility for the care of other relatives
+    results:
+      f: [ 83, 126, 103, 26, 24 ]
+      m: [ 23, 48, 45, 22, 17 ]
+      t: [ 106, 174, 148, 48, 41 ]

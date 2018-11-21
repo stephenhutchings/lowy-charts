@@ -1,0 +1,22 @@
+type: splits
+
+question: >
+  How would you describe the result of your report? (Select all that apply)
+
+axis:
+  - "Nothing happened"
+  - "An investigation was carried out"
+  - "The person was warned about their behaviour"
+  - "The person was fired from that organisation"
+  - "It had a negative impact on my career with that organisation"
+  - "The organisation offered me substantial and valuable support"
+  - "Don't know/no view"
+  - "Other (please specify)"
+
+responses:
+  -
+    responses: 82
+    results:
+      f: [ 39, 9, 22, 1, 25, 8, 1, 8 ]
+      m: [ 3, 1, 2, 0, 4, 0, 0, 1 ]
+      t: [ 42, 10, 24, 1, 29, 8, 1, 9 ]

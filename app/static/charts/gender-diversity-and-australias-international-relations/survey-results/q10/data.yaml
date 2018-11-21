@@ -1,0 +1,17 @@
+type: splits
+
+axis:
+  - "More likely to apply"
+  - "Less likely to apply"
+  - "It would make no difference"
+  - "Don't know/no view"
+
+question: >
+  If encouraged by a supervisor or senior colleague to apply for a promotion, would you be more or less likely to apply, or would it make no difference?
+
+responses:
+  -
+    results:
+      f: [ 361, 1, 37, 6, 405 ]
+      m: [ 146, 1, 34, 11, 192 ]
+      t: [ 507, 2, 71, 17, 597 ]

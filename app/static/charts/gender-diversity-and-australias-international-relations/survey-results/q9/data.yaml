@@ -1,0 +1,17 @@
+type: splits
+
+axis:
+  - "Yes, by male supervisors/senior colleagues"
+  - "Yes, by female supervisors/senior colleagues"
+  - "Yes, by both male and female supervisors/senior colleagues"
+  - "No"
+
+question: >
+  Have you ever been encouraged by your supervisors/senior colleagues to apply for a promotion in a workplace?
+
+responses:
+  -
+    results:
+      f: [ 55, 59, 197, 94, 405 ]
+      m: [ 26, 17, 105, 44, 192 ]
+      t: [ 81, 76, 302, 138, 597 ]

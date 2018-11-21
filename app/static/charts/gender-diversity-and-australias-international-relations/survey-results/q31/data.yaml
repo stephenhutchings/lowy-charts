@@ -1,0 +1,68 @@
+type: likert
+
+axis:
+  - "Strongly agree"
+  - "Somewhat agree"
+  - "Somewhat disagree"
+  - "Strongly disagree"
+  - "Don't know/no view"
+
+question: >
+  Now thinking about the same professions, do you agree or disagree that there is a clear and supportive career progression path (right to the top) for women working in:
+
+responses:
+  -
+    text: Defence force and policing
+    results:
+      f: [ 6, 64, 75, 68, 105, 318 ]
+      m: [ 10, 35, 30, 12, 35, 122 ]
+      t: [ 16, 99, 105, 80, 140, 440 ]
+
+  -
+    text: Diplomacy
+    results:
+      f: [ 25, 110, 89, 42, 52, 318 ]
+      m: [ 31, 48, 13, 3, 27, 122 ]
+      t: [ 56, 158, 102, 45, 79, 440 ]
+
+  -
+    text: Intelligence agencies
+    results:
+      f: [ 1, 45, 56, 50, 166, 318 ]
+      m: [ 8, 23, 14, 10, 67, 122 ]
+      t: [ 9, 68, 70, 60, 233, 440 ]
+
+  -
+    text: International businesses
+    results:
+      f: [ 11, 71, 73, 36, 127, 318 ]
+      m: [ 9, 32, 28, 6, 47, 122 ]
+      t: [ 20, 103, 101, 42, 174, 440 ]
+
+  -
+    text: International development
+    results:
+      f: [ 51, 126, 58, 21, 62, 318 ]
+      m: [ 33, 39, 7, 3, 40, 122 ]
+      t: [ 84, 165, 65, 24, 102, 440 ]
+
+  -
+    text: Media
+    results:
+      f: [ 15, 72, 62, 30, 139, 318 ]
+      m: [ 10, 36, 13, 10, 53, 122 ]
+      t: [ 25, 108, 75, 40, 192, 440 ]
+
+  -
+    text: Trade and economics
+    results:
+      f: [ 4, 61, 71, 43, 139, 318 ]
+      m: [ 8, 22, 23, 9, 60, 122 ]
+      t: [ 12, 83, 94, 52, 199, 440 ]
+
+  -
+    text: Universities and think tanks
+    results:
+      f: [ 27, 107, 56, 33, 95, 318 ]
+      m: [ 24, 47, 14, 2, 35, 122 ]
+      t: [ 51, 154, 70, 35, 130, 440 ]

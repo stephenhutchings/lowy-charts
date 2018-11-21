@@ -9,14 +9,24 @@ cache = {}
 
 getAll = (type) ->
   cache[type] or glob
-    .sync("#{root}/**/#{type}/*/")
+    .sync("#{root}/**/#{type}/*/*.yaml")
 
     .map((m) ->
-      getOne type, m.replace(type, "").replace(root, "").replace(/\//g, "")
+      getOne m.replace("#{root}/", "").replace(".yaml", "")
     )
 
     .sort((a, b) ->
-      moment(new Date b.date).toDate() - moment(new Date a.date).toDate()
+      if a.date or b.date
+        # Newest
+        moment(new Date b.date).toDate() - moment(new Date a.date).toDate()
+      else if a.path.match(/\d+/) or b.path.match(/\d+/)
+        # Numerically first
+        an = +a.path.match(/\d+/)[0]
+        bn = +b.path.match(/\d+/)[0]
+        an - bn
+      else
+        # Alphabetically first
+        a.path.localeCompare(b.path)
     )
 
     .filter((m) ->

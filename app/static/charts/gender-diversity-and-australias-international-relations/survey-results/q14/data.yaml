@@ -1,0 +1,83 @@
+type: likert
+
+axis:
+  - "Strongly agree"
+  - "Somewhat agree"
+  - "Somewhat disagree"
+  - "Strongly disagree"
+  - "Don't know/no view"
+
+question: >
+  Thinking about the career trajectory of senior men and women in your
+  organisation, please say whether you agree or disagree with the following:
+
+responses:
+  -
+    text: "Senior men and senior women have had similar career trajectories"
+    results:
+      f: [ 7, 43, 152, 153, 25, 380 ]
+      m: [ 8, 61, 60, 22, 22, 173 ]
+      t: [ 15, 104, 212, 175, 47, 553 ]
+
+  -
+    text: "'Merit based' recruitment and promotions are not always based genuinely on merit"
+    results:
+      f: [ 191, 139, 18, 16, 16, 380 ]
+      m: [ 58, 65, 31, 11, 8, 173 ]
+      t: [ 249, 204, 49, 27, 24, 553 ]
+
+  -
+    text: "Senior men have often had to work much harder for their position than their female peers"
+    results:
+      f: [ 4, 4, 76, 277, 19, 380 ]
+      m: [ 5, 11, 66, 61, 30, 173 ]
+      t: [ 9, 15, 142, 338, 49, 553 ]
+
+  -
+    text: "Senior women have often had to work much harder for their position than their male peers"
+    results:
+      f: [ 201, 143, 16, 2, 18, 380 ]
+      m: [ 24, 61, 40, 15, 33, 173 ]
+      t: [ 225, 204, 56, 17, 51, 553 ]
+
+  -
+    text: "Senior men have often succeeded because they have had good sponsors or mentors in the organisation"
+    results:
+      f: [ 157, 140, 22, 6, 55, 380 ]
+      m: [ 26, 90, 19, 1, 37, 173 ]
+      t: [ 183, 230, 41, 7, 92, 553 ]
+
+  -
+    text: "Senior women have often succeeded because they have had good sponsors or mentors in the organisation"
+    results:
+      f: [ 115, 169, 31, 8, 57, 380 ]
+      m: [ 24, 75, 17, 2, 55, 173 ]
+      t: [ 139, 244, 48, 10, 112, 553 ]
+
+  -
+    text: "Senior men have often had to sacrifice family life in order to succeed"
+    results:
+      f: [ 40, 110, 83, 119, 28, 380 ]
+      m: [ 39, 81, 26, 13, 14, 173 ]
+      t: [ 79, 191, 109, 132, 42, 553 ]
+
+  -
+    text: "Senior women have often had to sacrifice family life in order to succeed"
+    results:
+      f: [ 203, 137, 19, 6, 15, 380 ]
+      m: [ 48, 81, 17, 1, 26, 173 ]
+      t: [ 251, 218, 36, 7, 41, 553 ]
+
+  -
+    text: "Senior men often do not help or mentor other men once they are promoted"
+    results:
+      f: [ 11, 32, 104, 113, 120, 380 ]
+      m: [ 7, 42, 64, 24, 36, 173 ]
+      t: [ 18, 74, 168, 137, 156, 553 ]
+
+  -
+    text: "Senior women often do not help or mentor other women once they are promoted"
+    results:
+      f: [ 36, 134, 126, 50, 34, 380 ]
+      m: [ 6, 36, 36, 22, 73, 173 ]
+      t: [ 42, 170, 162, 72, 107, 553 ]

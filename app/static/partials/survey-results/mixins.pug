@@ -1,0 +1,223 @@
+mixin chart-likert(data, index, chart)
+  - var colors = ["#002a45", "#8b9eae", "#ff9395", "#ff4637", "#e1e5e8"];
+
+  if data.text
+    .response-text.flex-end.p-v-sm= data.text
+
+  .bg-lt.p-sm
+    svg.chart(width="100%" height="64")
+      g
+        for g, i in ["f", "m"]
+          - var tx, ta, txt, w, y = (i * 28);
+          - var results = data.results[g];
+          - var total = _.sum(results.slice(0, 5));
+
+          - var sd = results[3] / total;
+          - var  d = results[2] / total;
+          - var  n = results[4] / total;
+          - var  a = results[1] / total;
+          - var sa = results[0] / total;
+
+          g
+            if sd + d < a + sa
+              - tx = (50 - 50 * (sd + d + n / 2)) + "%"
+              - ta = "end"
+              - txt = `${g.toUpperCase()}&ensp;`
+            else
+              - tx =(50 + 50 * (sa + a + n / 2)) + "%"
+              - ta = "start"
+              - txt = `&ensp;${g.toUpperCase()}`
+
+            text(y=(y + 23) x=tx text-anchor=ta)!= txt
+              animate(
+                attributeName="opacity" 
+                dur="1000ms" 
+                values="0 ; 0 ; 1"
+                repeatCount="1" 
+              )
+            rect(fill=colors[3] y=y + 8 x=`${(50 - 50 * (sd + d + n / 2))}%` width=`${sd * 50}%` height="20" title=results[3])
+              animateTransform(
+               attributeName="transform" 
+               dur="600ms" 
+               type="scale" 
+               values="0 1 ; 1 1" 
+               repeatCount="1" 
+               calcMode="spline"
+               keySplines="0.455 0.03 0.515 0.955"
+             )
+
+            rect(fill=colors[0] y=y + 8 x=`${(50 + 50 * (a + n / 2))}%`      width=`${sa * 50}%` height="20" title=results[0])
+              animateTransform(
+               attributeName="transform" 
+               dur="600ms" 
+               type="scale" 
+               values="0 1 ; 1 1" 
+               repeatCount="1" 
+               calcMode="spline"
+               keySplines="0.455 0.03 0.515 0.955"
+             )
+
+            rect(fill=colors[2] y=y + 8 x=`${(50 - 50 * (d + n / 2))}%`      width=`${d  * 50}%` height="20" title=results[2])
+              animateTransform(
+               attributeName="transform" 
+               dur="600ms" 
+               type="scale" 
+               values="0 1 ; 1 1" 
+               repeatCount="1" 
+               calcMode="spline"
+               keySplines="0.455 0.03 0.515 0.955"
+             )
+
+            rect(fill=colors[1] y=y + 8 x=`${(50 + 50 * (n / 2))}%`          width=`${a  * 50}%` height="20" title=results[1])
+              animateTransform(
+               attributeName="transform" 
+               dur="600ms" 
+               type="scale" 
+               values="0 1 ; 1 1" 
+               repeatCount="1" 
+               calcMode="spline"
+               keySplines="0.455 0.03 0.515 0.955"
+             )
+
+            rect(fill=colors[4] y=y + 8 x=`${(50 - 50 * (n / 2))}%`          width=`${n  * 50}%` height="20" title=results[4])
+              animateTransform(
+               attributeName="transform" 
+               dur="600ms" 
+               type="scale" 
+               values="0 1 ; 1 1" 
+               repeatCount="1" 
+               calcMode="spline"
+               keySplines="0.455 0.03 0.515 0.955"
+             )
+
+
+        g
+          line(x1="50%" x2="50%" y1=0 y2="100%")
+          //- for n, i in (new Array((l = 8) + 1))
+            line(x1=`${i * 100 / l}%` x2=`${i * 100 / l}%` y1=0 y2="100%")
+
+  .txt-sm.txt-muted.p-v-sm
+     | #{_.sum(data.results.t.slice(0, 5))} of 645 responses
+
+mixin chart-splits(data, index, chart)
+  - var colors = colors || ["#002a45", "#ff4637", "#e1e5e8"];
+
+  if data.text
+    .response-text.flex-end.p-v-sm= data.text
+
+  .bg-lt.p-sm
+    svg.chart(width="100%" height=(chart.axis ? chart.axis.length * 68 : 36))
+      - var len = chart.axis ? chart.axis.length : 1;
+      - var total = data.responses || _.sum(data.results.t.slice(0, chart.axis.length));
+      - var maxM  = _.max(data.results.m.slice(0, len));
+      - var maxF  = _.max(data.results.f.slice(0, len));
+      - var scale = 1;
+
+    
+      //- if chart.responses.length == 1
+        if maxF > maxM
+          - var tF = _.last(data.results.f);
+          - scale = tF / maxF * 0.8
+        else
+          - var tM = _.last(data.results.m);
+          - scale = tM / maxM * 0.8
+
+      //- - if (len == 1) scale = total / _.max([maxF, maxM]) * 0.8;
+
+      if chart.axis
+        for label, i in chart.axis
+          - var y = 24 + i * 68;
+          - var f = data.results.f[i];
+          - var m = data.results.m[i];
+
+          - var ft = _.sum(data.results.f.slice(0, chart.axis.length));
+          - if (data.results.f.length > chart.axis.length) ft = data.results.f[chart.axis.length];
+          - var mt = _.sum(data.results.m.slice(0, chart.axis.length));
+          - if (data.results.m.length > chart.axis.length) mt = data.results.m[chart.axis.length];
+
+          g
+            text.label(x="50%" y=y - 4 text-anchor="middle")= label
+
+            text(x=`${50 - 50 * scale * (m / mt)}%` y=(y + 27) text-anchor="end") #{(m / mt * 100).toFixed(0)}%&ensp;
+              animate(
+                attributeName="opacity" 
+                dur="1000ms" 
+                values="0 ; 0 ; 1"
+                repeatCount="1" 
+              )
+            rect(fill=colors[0] y=(y + 12) x=`${50 - 50 * scale * (m / mt)}%` width=`${50 * scale * (m / mt)}%` height="20" )
+              animateTransform(
+               attributeName="transform" 
+               dur="600ms" 
+               type="scale" 
+               values="0 1 ; 1 1" 
+               repeatCount="1" 
+               calcMode="spline"
+               keySplines="0.455 0.03 0.515 0.955"
+             )
+
+            rect(fill=colors[1] y=(y + 12) x="50%" width=`${50 * scale * (f / ft)}%` height="20" )
+              animateTransform(
+               attributeName="transform" 
+               dur="600ms" 
+               type="scale" 
+               values="0 1 ; 1 1" 
+               repeatCount="1" 
+               calcMode="spline"
+               keySplines="0.455 0.03 0.515 0.955"
+             )
+
+            text(x=`${50 + 50 * scale * (f / ft)}%` y=(y + 27) text-anchor="start") &ensp;#{(f / ft * 100).toFixed(0)}%
+              animate(
+                attributeName="opacity" 
+                dur="1000ms" 
+                values="0 ; 0 ; 1"
+                repeatCount="1" 
+              )
+            line(x1="50%" x2="50%" y1=(y + 4) y2=(y + 40))
+      else
+        - var y = 8;
+        - var f = data.results.f[0];
+        - var m = data.results.m[0];
+        - var t = data.results.t[0];
+        g
+          text(x=`${50 - 50 * scale * (m / t)}%` y=y + 15 text-anchor="end") #{(m / t * 100).toFixed(0)}%&ensp;
+            animate(
+              attributeName="opacity" 
+              dur="1000ms" 
+              values="0 ; 0 ; 1"
+              repeatCount="1" 
+            )
+          rect(fill=colors[0] y=y x=`${50 - 50 * scale * (m / t)}%` width=`${50 * scale * (m / t)}%` height="20" )
+              animateTransform(
+               attributeName="transform" 
+               dur="600ms" 
+               type="scale" 
+               values="0 1 ; 1 1" 
+               repeatCount="1" 
+               calcMode="spline"
+               keySplines="0.455 0.03 0.515 0.955"
+             )
+
+          rect(fill=colors[1] y=y x="50%" width=`${50 * scale * (f / t)}%` height="20" )
+              animateTransform(
+               attributeName="transform" 
+               dur="600ms" 
+               type="scale" 
+               values="0 1 ; 1 1" 
+               repeatCount="1" 
+               calcMode="spline"
+               keySplines="0.455 0.03 0.515 0.955"
+             )
+          text(x=`${50 + 50 * scale * (f / t)}%` y=y + 15 text-anchor="start") &ensp;#{(f / t * 100).toFixed(0)}%
+            animate(
+              attributeName="opacity" 
+              dur="1000ms" 
+              values="0 ; 0 ; 1"
+              repeatCount="1" 
+            )
+
+
+    .txt-sm.txt-muted.p-v-sm
+       | #{total} 
+       | of 645 responses

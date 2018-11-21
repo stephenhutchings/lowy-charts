@@ -1,0 +1,18 @@
+type: splits
+
+axis:
+  - "There are more men than women in senior management roles"
+  - "The balance is about equal"
+  - "There are more women than men in senior management roles"
+  - "Don't know/no view"
+
+question: >
+  In your organisation, what is the balance of men and women in senior management roles?
+
+responses:
+  -
+    text: "Senior men and senior women have had similar career trajectories"
+    results:
+      f: [ 317, 35, 17, 11 ]
+      m: [ 122, 31, 17, 3 ]
+      t: [ 439, 66, 34, 14 ]

@@ -1,0 +1,46 @@
+rect {
+  transform-origin: center;
+}
+
+text {
+  font-size: 16px;
+  fill: #869096;
+}
+
+text.label {
+  fill: currentColor
+}
+
+line {
+  stroke: #c1d1db;
+  mix-blend-mode: multiply;
+}
+
+.wrapper {
+  margin: 40px auto !important;
+}
+
+.bg-lt {
+  background: #f5f6f7;
+  display: block;
+}
+
+.chart-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ }
+
+.chart-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-btn {
+  transition: background 300ms;
+}
+
+.question-btn:hover {
+  background: #e4e6e8;
+  color: inherit;
+}

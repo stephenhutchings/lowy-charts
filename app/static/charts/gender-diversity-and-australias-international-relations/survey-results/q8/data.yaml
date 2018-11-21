@@ -1,0 +1,15 @@
+type: splits
+
+axis:
+  - "Yes"
+  - "No"
+
+question: >
+  Have you ever felt that your gender has played a role in achieving a raise, promotion, key assignment, or chance to get ahead?
+
+responses:
+  -
+    results:
+      f: [ 120, 285, 405 ]
+      m: [ 41, 151, 192 ]
+      t: [ 161, 436, 597 ]

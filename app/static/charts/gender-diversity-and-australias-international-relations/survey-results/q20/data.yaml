@@ -1,0 +1,20 @@
+type: splits
+
+question: >
+  Now thinking about your entire career, do you believe you have ever been bullied or harassed on the basis of gender in the workplace?
+
+axis:
+  - "Yes, many times"
+  - "Yes, a small number of times"
+  - "Yes, once"
+  - "No, never"
+  - "Don't know/no view"
+
+responses:
+  -
+    results:
+      f: [ 42, 147, 46, 95, 3, 333 ]
+      m: [ 1, 19, 11, 100, 2, 133 ]
+      t: [ 43, 166, 57, 195, 5, 466 ]
+
+

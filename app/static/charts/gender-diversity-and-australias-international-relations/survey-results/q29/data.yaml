@@ -1,0 +1,145 @@
+type: likert
+
+axis:
+  - "Strongly agree"
+  - "Somewhat agree"
+  - "Somewhat disagree"
+  - "Strongly disagree"
+  - "Don't know/no view"
+
+question: >
+  Now thinking about the same policy areas, please indicate whether your organisation has effective policies in place for:
+
+responses:
+  -
+    text: "In-house childcare or preferential childcare arrangements"
+    results:
+      f: [ 62, 104, 45, 74, 38, 323 ]
+      m: [ 21, 35, 17, 24, 26, 123 ]
+      t: [ 83, 139, 62, 98, 64, 446 ]
+
+  -
+    text: "Flexible work practices"
+    results:
+      f: [ 83, 172, 44, 21, 3, 323 ]
+      m: [ 29, 68, 15, 4, 7, 123 ]
+      t: [ 112, 240, 59, 25, 10, 446 ]
+
+  -
+    text: "A public gender strategy"
+    results:
+      f: [ 85, 129, 52, 27, 30, 323 ]
+      m: [ 34, 55, 14, 4, 16, 123 ]
+      t: [ 119, 184, 66, 31, 46, 446 ]
+
+  -
+    text: "Compulsory and substantial unconscious bias and stereotype training"
+    results:
+      f: [ 10, 68, 103, 95, 47, 323 ]
+      m: [ 7, 30, 41, 21, 24, 123 ]
+      t: [ 17, 98, 144, 116, 71, 446 ]
+
+  -
+    text: "'Keep-in-touch' policies for employees on maternity, paternity and carers leave (e.g. email, building & parking access and opportunities for staff get-togethers)"
+    results:
+      f: [ 43, 121, 70, 43, 46, 323 ]
+      m: [ 9, 39, 22, 20, 33, 123 ]
+      t: [ 52, 160, 92, 63, 79, 446 ]
+
+  -
+    text: "Monitoring and evaluation of gender equality progress"
+    results:
+      f: [ 27, 114, 76, 50, 56, 323 ]
+      m: [ 14, 53, 27, 8, 21, 123 ]
+      t: [ 41, 167, 103, 58, 77, 446 ]
+
+  -
+    text: "Benchmarks and targets (not quotas) for the ratio of women in leadership roles"
+    results:
+      f: [ 29, 103, 53, 81, 57, 323 ]
+      m: [ 14, 40, 22, 15, 32, 123 ]
+      t: [ 43, 143, 75, 96, 89, 446 ]
+
+  -
+    text: "Enforced quotas for the ratio of women in leadership roles"
+    results:
+      f: [ 9, 33, 70, 144, 67, 323 ]
+      m: [ 6, 12, 33, 38, 34, 123 ]
+      t: [ 15, 45, 103, 182, 101, 446 ]
+
+  -
+    text: "Blind recruitment and promotion practices"
+    results:
+      f: [ 6, 19, 80, 161, 57, 323 ]
+      m: [ 4, 12, 36, 43, 28, 123 ]
+      t: [ 10, 31, 116, 204, 85, 446 ]
+
+  -
+    text: "A formal mentoring program for women"
+    results:
+      f: [ 14, 57, 99, 122, 31, 323 ]
+      m: [ 7, 30, 33, 14, 39, 123 ]
+      t: [ 21, 87, 132, 136, 70, 446 ]
+
+  -
+    text: "Better and more flexible family leave provisions provided during overseas deployments (e.g. postings, fieldwork, placements etc.)"
+    results:
+      f: [ 11, 49, 85, 102, 76, 323 ]
+      m: [ 4, 34, 26, 15, 44, 123 ]
+      t: [ 15, 83, 111, 117, 120, 446 ]
+
+  -
+    text: "Naming of rooms, buildings, prizes and scholarships after women"
+    results:
+      f: [ 58, 105, 41, 78, 41, 323 ]
+      m: [ 28, 25, 16, 21, 33, 123 ]
+      t: [ 86, 130, 57, 99, 74, 446 ]
+
+  -
+    text: "Equal representation of men and women on recruitment and conference panels"
+    results:
+      f: [ 28, 111, 79, 60, 45, 323 ]
+      m: [ 14, 44, 23, 10, 32, 123 ]
+      t: [ 42, 155, 102, 70, 77, 446 ]
+
+  -
+    text: "Gender-specific recruitment, retention and promotion policies"
+    results:
+      f: [ 7, 56, 97, 102, 61, 323 ]
+      m: [ 12, 22, 37, 14, 38, 123 ]
+      t: [ 19, 78, 134, 116, 99, 446 ]
+
+  -
+    text: "Independent reviews of organisational progress"
+    results:
+      f: [ 22, 77, 74, 75, 75, 323 ]
+      m: [ 13, 31, 25, 17, 37, 123 ]
+      t: [ 35, 108, 99, 92, 112, 446 ]
+
+  -
+    text: "Gender/diversity committees"
+    results:
+      f: [ 69, 128, 43, 37, 46, 323 ]
+      m: [ 21, 50, 15, 11, 26, 123 ]
+      t: [ 90, 178, 58, 48, 72, 446 ]
+
+  -
+    text: "Greater public promotion of female staff achievements. For example featuring their photographs and stories in key public workspaces,or hosting more former female staff at events"
+    results:
+      f: [ 28, 99, 92, 58, 46, 323 ]
+      m: [ 17, 54, 19, 8, 25, 123 ]
+      t: [ 45, 153, 111, 66, 71, 446 ]
+
+  -
+    text: "Prioritising greater diversity in senior leadership positions based overseas"
+    results:
+      f: [ 12, 68, 89, 76, 78, 323 ]
+      m: [ 12, 42, 18, 8, 43, 123 ]
+      t: [ 24, 110, 107, 84, 121, 446 ]
+
+  -
+    text: "Actively encouraging women for promotions and work opportunities"
+    results:
+      f: [ 16, 86, 118, 70, 33, 323 ]
+      m: [ 20, 51, 19, 3, 30, 123 ]
+      t: [ 36, 137, 137, 73, 63, 446 ]

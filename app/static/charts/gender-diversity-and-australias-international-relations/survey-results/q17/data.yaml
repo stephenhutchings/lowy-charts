@@ -1,0 +1,40 @@
+type: likert
+
+axis:
+  - "Strongly agree"
+  - "Somewhat agree"
+  - "Somewhat disagree"
+  - "Strongly disagree"
+  - "Don't know/no view"
+
+question: >
+  Please say whether you agree or disagree with the following statements. Women's access to overseas work opportunities is affected by:
+
+responses:
+  -
+    text: "The selection process which is subject to conscious and/or unconscious bias"
+    results:
+      f: [135, 138, 27, 10, 46, 356, 1.16]
+      m: [10, 62, 23, 19, 35, 149, 0.18]
+      t: [145, 200, 50, 29, 81, 505]
+
+  -
+    text: "A lack of transparency surrounding some overseas work opportunities"
+    results:
+      f: [116, 141, 40, 8, 51, 356, 1.04]
+      m: [21, 49, 21, 18, 40, 149, 0.31]
+      t: [137, 190, 61, 26, 91, 505]
+
+  -
+    text: "Senior decision-makers who take the family circumstances of employees into consideration when allocating overseas work opportunities"
+    results:
+      f: [70, 139, 49, 20, 78, 356, 0.68]
+      m: [5, 50, 25, 17, 52, 149, 0.01]
+      t: [75, 189, 74, 37, 130, 505]
+
+  -
+    text: "A lack of financial support from organisations to cover carers' costs incurred because of overseas-based work"
+    results:
+      f: [96, 115, 42, 19, 84, 356, 0.83]
+      m: [13, 50, 19, 15, 52, 149, 0.28]
+      t: [109, 165, 61, 34, 136, 505]

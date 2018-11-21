@@ -1,0 +1,76 @@
+extend /partials/layout
+
+include mixins
+
+block append config
+  - page.title = `Question ${_q}`
+  - var width = 320;
+  - var chart  = data.getOne(`static/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q}/data`)
+
+block page
+  style
+    include style.css
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+  
+  .wrapper.txt-center.p-v-lg.p-h-md
+    h1
+      a.txt-bare(href="/charts/gender-diversity-and-australias-international-relations/survey-results")
+        | Gender diversity and Australia's international relations
+    
+    hr
+    
+    strong.txt-sm.txt-uppercase.p-v-sm= page.title
+    h1.txt-normal.txt-lg.chart-question!= chart.question
+
+    .col-wrap.chart-row
+      for response, j in chart.responses
+        .p-v-sm.chart-col(class=chart.responses.length > 1 ? "col-md" : "col-full")
+          case chart.type 
+            when "splits"
+              +chart-splits(response, j, chart)
+            when "likert"
+              +chart-likert(response, j, chart)
+            default
+              p.txt-sm.txt-muted No chart type for "#{response.text}"
+      
+    .p-v-lg
+      .p-v-md(style="border: solid #c4d1da; border-width: 1px 0;")
+        case chart.type 
+          when "splits"
+            svg.chart(width="100%" height="48")
+              g
+                rect(x=0  y=0  width="20" height="20" fill="#ff4637")
+                text(x=28 y=15 text-anchor="start") Female Respondents
+              g
+                rect(x=0  y=28 width="20" height="20" fill="#002a45")
+                text(x=28 y=43 text-anchor="start") Male Respondents
+ 
+          when "likert"
+            svg.chart(width="100%" height="132")
+              - var colors = ["#002a45", "#8b9eae", "#ff9395", "#ff4637", "#e1e5e8"];
+              g
+                for label, i in chart.axis
+                  rect(x=0  y=(i * 28) width=20 height=20 fill=colors[i])
+                  text(x=28 y=15 + (i * 28) text-anchor="start")=label  
+
+              g
+                text(x="100%" y=15 text-anchor="end") F = Female Respondents
+                text(x="100%" y=43 text-anchor="end") M = Male Respondents
+
+      .col-wrap.p-v-md
+        .col-md.txt-left
+          if _q > 1
+            a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q - 1}`) 
+              span.txt-bare.fl-l &larr;&ensp;
+              | Question #{_q - 1}
+          else
+              | &nbsp;
+        
+        .col-md.txt-right
+          if _q < 31
+            a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q + 1}`)
+              | Question #{_q + 1}
+              span.txt-bare.fl-r &ensp;&rarr;
+          else
+            | &nbsp; 

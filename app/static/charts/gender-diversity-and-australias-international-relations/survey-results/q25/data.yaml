@@ -1,0 +1,82 @@
+type: likert
+
+axis:
+  - "Strongly agree"
+  - "Somewhat agree"
+  - "Somewhat disagree"
+  - "Strongly disagree"
+  - "Don't know/no view"
+
+question: >
+  Please say whether you agree or disagree with the following reasons why people may decide not to report bullying and harassment (and please note, with our apologies, the reverse order of the 'strongly' and 'somewhat disagree' responses in this question):
+
+responses:
+  -
+    text: Shame and confusion
+    results:
+      f: [ 109,  157,  16,   40,   10,   332 ]
+      m: [ 25,   61,   9,  18,   15,   128 ]
+      t: [ 134,  218,  25,   58,   25,   460 ]
+
+  -
+    text: They are concerned about professional consequences
+    results:
+      f: [ 232,  91,   0,  7,  2,  332 ]
+      m: [ 60,   56,   3,  4,  5,  128 ]
+      t: [ 292,  147,  3,  11,   7,  460 ]
+
+  -
+    text: They are concerned it will affect promotion opportunities
+    results:
+      f: [ 203,  107,  7,  10,   5,  332 ]
+      m: [ 54,   58,   4,  8,  4,  128 ]
+      t: [ 257,  165,  11,   18,   9,  460 ]
+
+  -
+    text: They are concerned that others in the organisation might find out
+    results:
+      f: [ 129,  148,  7,  35,   13,   332 ]
+      m: [ 28,   72,   8,  15,   5,  128 ]
+      t: [ 157,  220,  15,   50,   18,   460 ]
+
+  -
+    text: They are concerned about how the person will react to the complaint
+    results:
+      f: [ 168,  141,  8,  10,   5,  332 ]
+      m: [ 36,   64,   3,  17,   8,  128 ]
+      t: [ 204,  205,  11,   27,   13,   460 ]
+
+  -
+    text: They are concerned about whether management will appropriately and professionally deal with the report
+    results:
+      f: [ 209,  106,  4,  10,   3,  332 ]
+      m: [ 55,   54,   5,  9,  5,  128 ]
+      t: [ 264,  160,  9,  19,   8,  460 ]
+
+  -
+    text: There is no appropriate and effective in-confidence reporting mechanism
+    results:
+      f: [ 121,  117,  21,   55,   18,   332 ]
+      m: [ 28,   41,   13,   34,   12,   128 ]
+      t: [ 149,  158,  34,   89,   30,   460 ]
+
+  -
+    text: It is easier to move work positions than to deal with the consequences of making such a report
+    results:
+      f: [ 180,  116,  2,  21,   13,   332 ]
+      m: [ 37,   56,   9,  15,   11,   128 ]
+      t: [ 217,  172,  11,   36,   24,   460 ]
+
+  -
+    text: Because often little action is taken against offenders
+    results:
+      f: [ 197,  110,  1,  18,   6,  332 ]
+      m: [ 50,   49,   5,  13,   11,   128 ]
+      t: [ 247,  159,  6,  31,   17,   460 ]
+
+  -
+    text: Those in government are concerned about the potential impact on their security clearances
+    results:
+      f: [ 46,   51,   60,   63,   112,  332 ]
+      m: [ 8,  24,   19,   27,   50,   128 ]
+      t: [ 54,   75,   79,   90,   162,  460 ]

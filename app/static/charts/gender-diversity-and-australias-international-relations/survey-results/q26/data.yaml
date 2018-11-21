@@ -1,0 +1,109 @@
+type: splits
+
+question: >
+  Now thinking about the conditions you believe are necessary to make progress on gender equality. How important would you say the following factors are in improving gender equality in your organisation?
+
+axis:
+  - "Very important"
+  - "Somewhat important"
+  - "Not important"
+  - "Don't know/no view"
+
+responses:
+  -
+    text: "Cultural change"
+    results:
+      f: [ 277, 41, 8, 2, 328 ]
+      m: [ 66, 47, 13, 1, 127 ]
+      t: [ 343, 88, 21, 3, 455 ]
+
+  -
+    text: "Greater work flexibility"
+    results:
+      f: [ 217, 99, 10, 2, 328 ]
+      m: [ 51, 53, 16, 7, 127 ]
+      t: [ 268, 152, 26, 9, 455 ]
+
+  -
+    text: "Tone set from the very top of the organisation"
+    results:
+      f: [ 293, 32, 3, 0, 328 ]
+      m: [ 90, 31, 6, 0, 127 ]
+      t: [ 383, 63, 9, 0, 455 ]
+
+  -
+    text: "Greater accountability mechanisms put in place"
+    results:
+      f: [ 184, 125, 12, 7, 328 ]
+      m: [ 42, 58, 21, 6, 127 ]
+      t: [ 226, 183, 33, 13, 455 ]
+
+  -
+    text: "Greater transparency"
+    results:
+      f: [ 204, 104, 14, 6, 328 ]
+      m: [ 44, 53, 19, 11, 127 ]
+      t: [ 248, 157, 33, 17, 455 ]
+
+  -
+    text: "A proactive gender diversity strategy"
+    results:
+      f: [ 198, 108, 19, 3, 328 ]
+      m: [ 36, 65, 21, 5, 127 ]
+      t: [ 234, 173, 40, 8, 455 ]
+
+  -
+    text: "More diverse leadership in terms of gender, background and experience"
+    results:
+      f: [ 260, 65, 3, 0, 328 ]
+      m: [ 72, 35, 17, 3, 127 ]
+      t: [ 332, 100, 20, 3, 455 ]
+
+  -
+    text: "Tackling the stigma associated with men working part-time and accessing longer paternity and carers' leave arrangements"
+    results:
+      f: [ 248, 62, 13, 5, 328 ]
+      m: [ 66, 42, 14, 5, 127 ]
+      t: [ 314, 104, 27, 10, 455 ]
+
+  -
+    text: "More senior female mentors"
+    results:
+      f: [ 215, 96, 13, 4, 328 ]
+      m: [ 43, 53, 23, 8, 127 ]
+      t: [ 258, 149, 36, 12, 455 ]
+
+  -
+    text: "Better and more transparent processes in place to effectively deal with those who engage in bullying and sexual harassment"
+    results:
+      f: [ 216, 99, 10, 3, 328 ]
+      m: [ 66, 48, 7, 6, 127 ]
+      t: [ 282, 147, 17, 9, 455 ]
+
+  -
+    text: "Formal mentoring systems (whether male or female mentors) designed for women"
+    results:
+      f: [ 149, 154, 20, 5, 328 ]
+      m: [ 23, 61, 30, 13, 127 ]
+      t: [ 172, 215, 50, 18, 455 ]
+
+  -
+    text: "Compulsory and substantial training for managers (e.g stereotyping and unconscious bias training)"
+    results:
+      f: [ 195, 118, 9, 6, 328 ]
+      m: [ 44, 62, 17, 4, 127 ]
+      t: [ 239, 180, 26, 10, 455 ]
+
+  -
+    text: "More action in publicly promoting equality"
+    results:
+      f: [ 172, 124, 24, 8, 328 ]
+      m: [ 27, 74, 23, 3, 127 ]
+      t: [ 199, 198, 47, 11, 455 ]
+
+  -
+    text: "Public commitments to gender equality  (e.g. male champions of change, conference panel parity pledges etc.)"
+    results:
+      f: [ 147, 138, 35, 8, 328 ]
+      m: [ 26, 67, 27, 7, 127 ]
+      t: [ 173, 205, 62, 15, 455 ]

@@ -1,0 +1,20 @@
+extends /partials/layout
+
+block page
+  - var list = data.getAll("charts/gender-diversity-and-australias-international-relations/survey-results")
+
+  style
+    include /partials/survey-results/style.css
+
+  .wrapper.txt-center.p-v-lg.p-h-md
+    h1
+      | Gender diversity and Australia's international relations
+    
+    hr
+    
+    ol.list-bare
+      for el, i in list
+        li
+          a.question-btn.d-b.p-lg.bg-lt.txt-bare(href=`/${el.path.replace(/^static\/|data$/g, "")}`)
+            strong.txt-uppercase.txt-sm Question #{i + 1}
+            p!= el.question

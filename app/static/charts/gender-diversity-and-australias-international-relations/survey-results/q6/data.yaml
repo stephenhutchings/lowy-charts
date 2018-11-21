@@ -1,0 +1,17 @@
+type: splits
+
+axis:
+  - "Stayed the same"
+  - "Improved"
+  - "Been reduced"
+  - "Don't know/no view"
+
+question: >
+  If an employee in your organisation works part-time or flexibly, do you believe their opportunities for career advancement have:
+
+responses:
+  -
+    results:
+      f: [ 110, 23, 232, 46, 411 ]
+      m: [ 63, 14, 82, 42, 201 ]
+      t: [ 173, 37, 314, 88, 612 ]

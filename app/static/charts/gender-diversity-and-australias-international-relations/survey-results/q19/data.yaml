@@ -1,0 +1,59 @@
+type: splits
+axis:
+  - "Very likely"
+  - "Somewhat likely"
+  - "Unlikely"
+  - "Don't know/no view"
+
+question: >
+  Gender bias may occur at a number of stages and places during a career. In your personal view, please indicate how likely it is that bias (either conscious or unconscious) will occur on the following occasions:
+
+responses:
+  -
+    text: "At meetings"
+    results:
+      f: [ 177, 121, 31, 4, 333 ]
+      m: [ 22, 59, 47, 5, 133 ]
+      t: [ 199, 180, 78, 9, 466 ]
+
+  -
+    text: "At work-related conferences"
+    results:
+      f: [ 119, 154, 51, 9, 333 ]
+      m: [ 18, 52, 51, 12, 133 ]
+      t: [ 137, 206, 102, 21, 466 ]
+
+  -
+    text: "During interview panels"
+    results:
+      f: [ 126, 162, 31, 14, 333 ]
+      m: [ 18, 63, 42, 10, 133 ]
+      t: [ 144, 225, 73, 24, 466 ]
+
+  -
+    text: "During promotion rounds"
+    results:
+      f: [ 148, 150, 25, 10, 333 ]
+      m: [ 16, 71, 37, 9, 133 ]
+      t: [ 164, 221, 62, 19, 466 ]
+
+  -
+    text: "During selection for additional roles such as committee membership"
+    results:
+      f: [ 116, 151, 44, 22, 333 ]
+      m: [ 11, 60, 49, 13, 133 ]
+      t: [ 127, 211, 93, 35, 466 ]
+
+  -
+    text: "When overseas opportunities are being decided"
+    results:
+      f: [ 128, 148, 34, 23, 333 ]
+      m: [ 13, 60, 42, 18, 133 ]
+      t: [ 141, 208, 76, 41, 466 ]
+
+  -
+    text: "When very senior positions are being decided (e.g. heads and deputy heads of organisations)"
+    results:
+      f: [ 191, 107, 19, 16, 333 ]
+      m: [ 23, 68, 32, 10, 133 ]
+      t: [ 214, 175, 51, 26, 466 ]

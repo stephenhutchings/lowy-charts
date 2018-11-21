@@ -1,0 +1,67 @@
+type: splits
+
+question: >
+  In your experience working in, engaging or observing the following professions, please say how committed you believe they are today to achieving real progress on gender equality:
+
+axis:
+  - "Very committed"
+  - "Somewhat committed"
+  - "Not committed"
+  - "Don't know/no view"
+
+responses:
+  -
+    text: Defence force and policing
+    results:
+      f: [ 19, 158, 86, 55, 318 ]
+      m: [ 19, 52, 23, 28, 122 ]
+      t: [ 38, 210, 109, 83, 440 ]
+
+  -
+    text: Diplomacy
+    results:
+      f: [ 46, 187, 46, 39, 318 ]
+      m: [ 35, 54, 9, 24, 122 ]
+      t: [ 81, 241, 55, 63, 440 ]
+
+  -
+    text: Intelligence agencies
+    results:
+      f: [ 7, 69, 97, 145, 318 ]
+      m: [ 8, 29, 22, 63, 122 ]
+      t: [ 15, 98, 119, 208, 440 ]
+
+  -
+    text: International businesses
+    results:
+      f: [ 23, 132, 80, 83, 318 ]
+      m: [ 9, 42, 27, 44, 122 ]
+      t: [ 32, 174, 107, 127, 440 ]
+
+  -
+    text: International development
+    results:
+      f: [ 107, 153, 15, 43, 318 ]
+      m: [ 49, 33, 7, 33, 122 ]
+      t: [ 156, 186, 22, 76, 440 ]
+
+  -
+    text: Media
+    results:
+      f: [ 14, 126, 80, 98, 318 ]
+      m: [ 18, 39, 23, 42, 122 ]
+      t: [ 32, 165, 103, 140, 440 ]
+
+  -
+    text: Trade and economics
+    results:
+      f: [ 5, 93, 103, 117, 318 ]
+      m: [ 6, 33, 28, 55, 122 ]
+      t: [ 11, 126, 131, 172, 440 ]
+
+  -
+    text: Universities and think tanks
+    results:
+      f: [ 43, 171, 43, 61, 318 ]
+      m: [ 23, 62, 8, 29, 122 ]
+      t: [ 66, 233, 51, 90, 440 ]

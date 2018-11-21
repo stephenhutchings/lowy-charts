@@ -1,0 +1,17 @@
+type: splits
+
+question: >
+  Do you believe your report(s) were adequately acted upon?
+
+axis:
+  - "Yes"
+  - "No"
+  - "I don't know as I wasn't kept informed of the process"
+  - "Other (please specify)"
+
+responses:
+  -
+    results:
+      f: [ 17, 54, 17, 4, 92 ]
+      m: [ 1, 5, 1,  1, 8 ]
+      t: [ 18, 59, 18, 5, 100 ]

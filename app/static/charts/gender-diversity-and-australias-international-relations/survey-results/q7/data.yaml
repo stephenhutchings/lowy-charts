@@ -1,0 +1,15 @@
+type: splits
+
+axis:
+  - "Yes"
+  - "No"
+
+question: >
+  Have you ever felt that your gender has played a role in your missing out on a raise, promotion, key assignment, or chance to get ahead?
+
+responses:
+  -
+    results:
+      f: [ 244, 161, 405 ]
+      m: [ 46, 146, 192 ]
+      t: [ 290, 307, 597 ]

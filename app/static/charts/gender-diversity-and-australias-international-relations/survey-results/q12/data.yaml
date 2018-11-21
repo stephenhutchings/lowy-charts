@@ -1,0 +1,42 @@
+type: splits
+
+axis:
+  - "Very important"
+  - "Somewhat important"
+  - "Not important"
+  - "Don't know/no view"
+
+question: >
+  In your decision not to apply, please say how important each of the following factors were in this decision:
+
+responses:
+  -
+    text: "I did not feel sufficiently qualified for the role"
+    results:
+      f: [ 98, 88, 38, 36, 260 ]
+      m: [ 32, 41, 13, 16, 102 ]
+      t: [ 130, 129, 51, 52, 362 ]
+
+  -
+    text: "Family responsibilities"
+    results:
+      f: [ 77, 53, 54, 76, 260 ]
+      m: [ 18, 24, 31, 29, 102 ]
+      t: [ 95, 77, 85, 105, 362 ]
+
+  -
+    text: "I was discouraged from applying by a senior colleague or manager"
+    results:
+      f: [ 34, 46, 38, 142, 260 ]
+      m: [ 10, 14, 25, 53, 102 ]
+      t: [ 44, 60, 63, 195, 362 ]
+
+  -
+    text: "The role didn't allow for flexible and/or part-time hours"
+    results:
+      f: [ 54, 53, 56, 97, 260 ]
+      m: [ 7, 15, 38, 42, 102 ]
+      t: [ 61, 68, 94, 139, 362 ]
+
+
+

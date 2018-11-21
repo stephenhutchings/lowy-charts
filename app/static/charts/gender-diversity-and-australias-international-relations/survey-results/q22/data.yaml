@@ -1,0 +1,17 @@
+type: splits
+
+question: >
+  Did you officially report it to a manager in your organisation?
+
+axis:
+  - "Yes, I reported it on every occasion"
+  - "Yes, I reported it on one or some occasions"
+  - "No, I never reported it"
+  - "Other (please specify)"
+
+responses:
+  -
+    results:
+      f: [ 14, 80, 132,  12 ]
+      m: [ 3, 5, 22,  1 ]
+      t: [ 17, 85, 154,  13 ]

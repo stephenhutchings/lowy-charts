@@ -1,0 +1,18 @@
+type: splits
+
+question: >
+  Was this conducted by:
+
+axis:
+  - "Only men"
+  - "Only women"
+  - "Both men and women"
+
+responses:
+  -
+    results:
+      f: [ 118, 15, 105 ]
+      m: [ 5, 15, 11 ]
+      t: [ 123, 30, 116 ]
+
+

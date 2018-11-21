@@ -1,0 +1,22 @@
+type: splits
+
+axis:
+  - "Trade, economics, finance"
+  - "National security and defence"
+  - "Diplomacy"
+  - "International development"
+  - "Academia and research"
+  - "Media and journalism"
+  - "N/A"
+  - "Other (please specify)"
+
+question: >
+  In your career, which field have you spent the most time in:
+
+responses:
+  -
+    responses: 645
+    results:
+      f: [ 19, 50, 98, 112, 56, 13, 11, 71, 430 ]
+      m: [ 20, 46, 41, 28, 39, 11, 6, 24, 215 ]
+      t: [ 39, 96, 139, 140, 95, 24, 17, 95, 645 ]

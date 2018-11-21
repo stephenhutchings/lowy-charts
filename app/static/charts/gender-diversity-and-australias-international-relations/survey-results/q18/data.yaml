@@ -1,0 +1,114 @@
+type: splits
+
+axis:
+  - "Very important"
+  - "Somewhat important"
+  - "Not important"
+  - "Don't know/no view"
+
+question: >
+  The following is a list of factors which may have an impact on women's progress in this sector. Please indicate how important you believe each factor is:
+
+responses:
+    -
+      text: "Organisational culture"
+      results:
+        f: [250, 82, 6, 4, 342, 2.72]
+        m: [54, 62, 14, 7, 137, 2.31]
+        t: [304, 144, 20, 11, 479]
+    -
+      text: "Lack of flexible work options"
+      results:
+        f: [157, 145, 31, 9, 342, 2.38]
+        m: [41, 58, 23, 15, 137, 2.15]
+        t: [198, 203, 54, 24, 479]
+    -
+      text: "Unconscious bias and stereotypes"
+      results:
+        f: [236, 95, 7, 4, 342, 2.68]
+        m: [46, 67, 11, 13, 137, 2.28]
+        t: [282, 162, 18, 17, 479]
+    -
+      text: "Conscious bias and stereotypes"
+      results:
+        f: [146, 147, 35, 14, 342, 2.34]
+        m: [27, 68, 28, 14, 137, 1.99]
+        t: [173, 215, 63, 28, 479]
+    -
+      text: "A lack of interest and commitment in promoting gender diversity at the very top of an organisation"
+      results:
+        f: [174, 117, 39, 12, 342, 2.41]
+        m: [38, 49, 35, 15, 137, 2.02]
+        t: [212, 166, 74, 27, 479]
+    -
+      text: "A lack of organisational direction and/or strategy on gender diversity"
+      results:
+        f: [132, 159, 38, 13, 342, 2.29]
+        m: [25, 63, 36, 13, 137, 1.91]
+        t: [157, 222, 74, 26, 479]
+    -
+      text: "A lack of transparency and accountability"
+      results:
+        f: [160, 139, 21, 22, 342, 2.43]
+        m: [32, 51, 27, 27, 137, 2.05]
+        t: [192, 190, 48, 49, 479]
+    -
+      text: "A lack of diversity in senior management"
+      results:
+        f: [199, 123, 15, 5, 342, 2.55]
+        m: [33, 72, 25, 7, 137, 2.06]
+        t: [232, 195, 40, 12, 479]
+    -
+      text: "'Presenteeism' (e.g. office presence) rather than outcomes rewarded"
+      results:
+        f: [157, 137, 30, 18, 342, 2.39]
+        m: [32, 59, 28, 18, 137, 2.03]
+        t: [189, 196, 58, 36, 479]
+    -
+      text: "A lack of senior role models for women"
+      results:
+        f: [177, 138, 22, 5, 342, 2.46]
+        m: [26, 59, 37, 15, 137, 1.91]
+        t: [203, 197, 59, 20, 479]
+    -
+      text: "Insufficient or no formal mentoring program"
+      results:
+        f: [117, 183, 28, 14, 342, 2.27]
+        m: [19, 60, 34, 24, 137, 1.87]
+        t: [136, 243, 62, 38, 479]
+    -
+      text: "A failure to deal with managers who display clear gender-related biases and harassment"
+      results:
+        f: [194, 104, 18, 26, 342, 2.56]
+        m: [55, 54, 12, 16, 137, 2.36]
+        t: [249, 158, 30, 42, 479]
+    -
+      text: "A lack of in-confidence feedback loops to report gender discrimination and harassment"
+      results:
+        f: [119, 155, 40, 28, 342, 2.25]
+        m: [28, 61, 24, 24, 137, 2.04]
+        t: [147, 216, 64, 52, 479]
+    -
+      text: "Bullying undertaken by managers"
+      results:
+        f: [103, 139, 58, 42, 342, 2.15]
+        m: [29, 46, 33, 29, 137, 1.96]
+        t: [132, 185, 91, 71, 479]
+    -
+      text: "A lack of reporting from those within government and/or working on national security issues because of concerns related to security clearances"
+      results:
+        f: [37, 77, 92, 136, 342, 1.73]
+        m: [8, 21, 48, 60, 137, 1.48]
+        t: [45, 98, 140, 196, 479]
+    -
+      text: "Managers distributing work in terms of life-cycle and family circumstances rather than capabilities"
+      results:
+        f: [108, 156, 39, 39, 342, 2.23]
+        m: [13, 60, 42, 22, 137, 1.75]
+        t: [121, 216, 81, 61, 479]
+    -
+      text: "'Boys club' networking and decision-making"
+      results:
+        f: [228, 91, 13, 10, 342, 2.65]
+        m: [41, 54, 32, 10, 137, 2.07]
+        t: [269, 145, 45, 20, 479]

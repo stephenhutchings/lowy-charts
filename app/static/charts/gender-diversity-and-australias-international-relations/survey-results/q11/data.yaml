@@ -1,0 +1,16 @@
+type: splits
+
+axis:
+  - "Yes"
+  - "No"
+  - "Don't know/no view"
+
+question: >
+  Have you ever decided not to apply for a promotion?
+
+responses:
+  -
+    results:
+      f: [ 260, 117, 28, 405 ]
+      m: [ 106, 68, 18, 192 ]
+      t: [ 366, 185, 46, 597 ]

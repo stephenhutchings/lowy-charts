@@ -1,0 +1,12 @@
+type: splits
+
+question: >
+  What is your gender?
+
+responses:
+  -
+    responses: 645
+    results:
+      f: [ 430 ]
+      m: [ 215 ]
+      t: [ 645 ]
