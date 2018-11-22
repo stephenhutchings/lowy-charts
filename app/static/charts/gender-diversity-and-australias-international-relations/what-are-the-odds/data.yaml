@@ -19,10 +19,10 @@ facts:
 
   - percent: 18
     text: >
-      2 out of 11 women sit on Parliament’s Joint Committee on Intelligence
-      and Security
+      Women make up 2 of the 11 members on the Parliament’s Joint Committee on
+      Intelligence and Security
     addon: >
-      From 1999 to 2006, and again as recently as in 2015, it was zero.
+      From 1999 to 2006, and again<br>as recently as in 2015, it was zero.
 
   - percent: 2
     text: >

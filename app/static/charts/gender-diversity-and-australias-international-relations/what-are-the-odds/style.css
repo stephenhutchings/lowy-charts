@@ -81,12 +81,12 @@
 
 .circle:nth-child(3n + 0) .circle-percent,
 .circle:nth-child(3n + 0) .circle-fact {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .circle:nth-child(3n + 1) .circle-percent,
 .circle:nth-child(3n + 1) .circle-fact {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 #chart:hover .circle-percent {
@@ -116,24 +116,25 @@
   background: #ff2a24;
 }
 
-#bar {
+#chart-bar {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-.notch {
+.chart-notch {
   position: absolute;
   border-left: 1px solid #e6e6e6;
   height: 16px;
   margin: -8px 0;
 }
 
-.label {
+.chart-label {
   position: absolute;
   text-align: center;
   width: 80px;
   top: 0;
   margin: 12px -40px;
+  line-height: 24px;
 }

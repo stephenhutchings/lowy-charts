@@ -29,10 +29,10 @@ block page
               .circle-addon
                 span.txt-muted!= typogr.typogrify(fact.addon.trim())
 
-      #bar
+      #chart-bar
         for n, i in new Array(11)
-          .notch(style=`left: ${i * 10}%`)
+          .chart-notch(style=`left: ${i * 10}%`)
         for n, i in new Array(3)
-          .label(style=`left: ${i * 50}%`)
+          .chart-label(style=`left: ${i * 50}%`)
             span.txt-muted= i * 25 + "%"
             .txt-nowrap= ["No Chance", "", "Fair Chance"][i]
