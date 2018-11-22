@@ -21,15 +21,9 @@ module.exports =
     normalizeData: ->
       for { list } in @data.locations
         for el in list
-          if el.start.toString().match(/^\d{4}$/)
-            startDate = new Date("January 1 #{el.start}").getTime()
-          else
-            startDate = new Date(el.start.toString()).getTime()
-          endDate =   new Date(el.end.toString()).getTime()
-          endDate =   now if el.end is "present"
-
-          if el.end.toString().match(/^\d{4}$/)
-            endDate = new Date("December 30 #{el.end}").getTime()
+          startDate = utils.toDate(el.start, "January", 1).getTime()
+          endDate = utils.toDate(el.end, "December", 30).getTime()
+          endDate = now if el.end is "present"
 
           console.error(el) unless(startDate - endDate <= 0)
 
