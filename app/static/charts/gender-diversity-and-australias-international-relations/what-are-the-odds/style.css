@@ -1,5 +1,6 @@
 .wrapper {
   height: 280px;
+  overflow: visible;
 }
 
 #chart {
@@ -14,6 +15,10 @@
 
 #chart > ul {
   margin: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
 }
 
 #chart-title {
