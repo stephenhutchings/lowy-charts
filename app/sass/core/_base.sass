@@ -6,11 +6,8 @@ h1, h2, h3, h4, h5, h6, p, body, a, img, ul, ol, blockquote, pre
 html,
 body
   width: 100%
-  overflow-x: hidden
-
-html
-  font-size: 7px
   height: 100%
+  overflow: hidden
 
 body
   font-size: 17px
@@ -25,10 +22,11 @@ body
 
   &.embed-false
     height: 100%
-    overflow: hidden
 
   &.embed-false
     background-color: white
+    overflow-x: hidden
+    overflow-y: visible
 
 .of-hidden
   overflow: hidden
