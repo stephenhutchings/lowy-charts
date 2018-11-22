@@ -81,7 +81,7 @@ module.exports =
             .data(post)
             .attr(
               fill: if post.gender is "M" then colors.dark else colors.contrast
-              stroke: "#fff"
+              stroke: "#f6f7f8"
             )
 
           @posts.push(rect)
