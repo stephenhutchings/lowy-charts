@@ -1,0 +1,78 @@
+facts:
+  - percent: 34.5
+    text: >
+      Australia’s overseas<br>posts led by women
+    addon: >
+      Only 3 of Australia’s 10 biggest overseas posts including Washington DC,
+      Jakarta, Port Moresby, London, New Delhi, Bangkok, Beijing, Manila, Dili
+      & Tokyo
+
+  - percent: 0
+    text: >
+      Every single political appointee<br>to Australia’s
+      10 biggest overseas posts has been a man
+
+  - percent: 25
+    text: >
+      3 out of 12 members of the National Security Secretaries’ Committee are
+      women, up from zero in 2015-16 and the highest in history
+
+  - percent: 18
+    text: >
+      2 out of 11 women sit on Parliament’s Joint Committee on Intelligence
+      and Security
+    addon: >
+      From 1999 to 2006, and again as recently as in 2015, it was zero.
+
+  - percent: 2
+    text: >
+      Women have led Australia’s internationally focused
+      departments* 4 times in history, out of around 200 appointments
+
+    addon: >
+      *including DFAT, AGs, Defence, Immigration (Home Affairs),
+      PM&C, Treasury, AFP, Austrade and intelligence agencies
+
+  - percent: 14
+    text: >
+      2 of 14 heads of the internationally focused government departments
+      and agencies are women
+
+  - percent: 6.5
+    text: >
+      Women involved as author and advisors on major foreign policy,
+      defence, intelligence, or trade white paper, inquiry or review
+
+  - percent: 0
+    text: >
+      No major foreign policy, defence, intelligence, or trade white paper,
+      inquiry or review has been led by a woman
+
+  - percent: 33
+    text: >
+      33% of senior management in the internationally focused government
+      departments & agencies are women
+
+  - percent: 28.7
+    text: >
+      Women in the Australian<br>
+      House of Representatives
+
+  - percent: 36
+    text: >
+      36% of DFAT’s senior executive service are women, even though<br>
+      58% of their staff is female
+
+  - percent: 33
+    text: >
+      1 in 3 Defence senior executive positions are held by women,
+      despite a workforce that is 42% female
+
+  - percent: 12.5
+    text: >
+      Women in senior leadership<br>positions in the ADF
+
+  # - percent: 35
+  #   text: >
+  #     35% increase in likelihood peace agreements will hold more than 15
+  #     years if women are included in negotiations<sup>1</sup>

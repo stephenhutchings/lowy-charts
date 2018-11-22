@@ -1,0 +1,38 @@
+extends /partials/layout
+
+block append config
+  - var chart  = data.getOne("static/charts/gender-diversity-and-australias-international-relations/what-are-the-odds/data")
+
+block page
+  style
+    include style.css
+
+  .wrapper
+    #chart
+      #chart-title
+        h1.txt-uppercase.txt-cond What are the odds?
+        p Explore the likelihood of women holding various roles in Australia’s IR&nbsp;sector
+
+      ul.list-bare
+        for fact in _.sortBy(chart.facts, "percent")
+          li.circle
+            .circle-percent(
+              style=`left: ${fact.percent * 2}%`
+            )
+              = fact.percent + "%"
+            .circle-fact.flex-center(
+              style=`left: ${fact.percent * 2}%`
+              class=fact.percent < 25 ? "l" : "r"
+            )
+              span!= typogr.typogrify(fact.text.trim())
+            if fact.addon
+              .circle-addon
+                span.txt-muted!= typogr.typogrify(fact.addon.trim())
+
+      #bar
+        for n, i in new Array(11)
+          .notch(style=`left: ${i * 10}%`)
+        for n, i in new Array(3)
+          .label(style=`left: ${i * 50}%`)
+            span.txt-muted= i * 25 + "%"
+            .txt-nowrap= ["No Chance", "", "Fair Chance"][i]

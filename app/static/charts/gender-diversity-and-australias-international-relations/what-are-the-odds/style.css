@@ -1,0 +1,132 @@
+#chart {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px solid #e6e6e6;
+  pointer-events: none;
+  line-height: 1.1764705882em;
+  z-index: 0;
+}
+
+#chart-title {
+  position: absolute;
+  left: 80%;
+  width: 23%;
+}
+
+#chart-title h1 {
+  font-size: 40px;
+  letter-spacing: -0.02em;
+}
+
+.circle {
+  text-align: center;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.circle-percent {
+  background: #ff2a24;
+  border-radius: 50%;
+  top: 0;
+  position: absolute;
+  color: rgba(255,255,255,0);
+  height: 64px;
+  width: 64px;
+  margin: 0 -32px;
+  line-height: 64px;
+  pointer-events: all;
+  transform: scale(0.5);
+  transition: all 300ms;
+  font-size: 21px;
+}
+
+.circle-fact {
+  position: absolute;
+  width: 274px;
+  min-height: 100px;
+  top: -18px;
+  opacity: 0;
+  padding: 0 20px;
+  transition: all 300ms;
+  background: radial-gradient(#f6f7f8, rgba(246, 247, 248, 0) 60%);
+  background-size: 100% 100%;
+}
+
+.circle-fact.l {
+  margin-left: 30px;
+  text-align: left;
+}
+
+.circle-fact.r {
+  margin-left: -340px;
+  text-align: right;
+}
+
+.circle-addon {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: 16px;
+  max-width: 360px;
+  transition: all 300ms;
+  text-align: left;
+}
+
+.circle:nth-child(3n + 0) .circle-percent,
+.circle:nth-child(3n + 0) .circle-fact {
+  margin-top: 30px;
+}
+
+.circle:nth-child(3n + 1) .circle-percent,
+.circle:nth-child(3n + 1) .circle-fact {
+  margin-top: 60px;
+}
+
+#chart:hover .circle-percent {
+  background: #edeff1;
+  z-index: -1;
+}
+
+.circle:hover .circle-fact {
+  opacity: 1;
+  transition-delay: 200ms;
+}
+
+#chart .circle:hover .circle-percent,
+#chart .circle:hover .circle-addon {
+  opacity: 1;
+  z-index: 10;
+}
+
+#chart .circle:hover .circle-addon {
+  transition-delay: 600ms
+}
+
+#chart .circle:hover .circle-percent {
+  transform: scale(1);
+  color: #fff;
+  background: #ff2a24;
+}
+
+#bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.notch {
+  position: absolute;
+  border-left: 1px solid #e6e6e6;
+  height: 16px;
+  margin: -8px 0;
+}
+
+.label {
+  position: absolute;
+  text-align: center;
+  width: 80px;
+  top: 0;
+  margin: 12px -40px;
+}
