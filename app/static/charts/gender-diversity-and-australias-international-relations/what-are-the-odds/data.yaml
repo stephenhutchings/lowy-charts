@@ -9,6 +9,11 @@ facts:
 
   - percent: 0
     text: >
+      No major foreign policy, defence, intelligence, or trade white paper,
+      inquiry or review has been led by a woman
+
+  - percent: 0
+    text: >
       Every single political appointee<br>to Australia’s
       10 biggest overseas posts has been a man
 
@@ -42,11 +47,6 @@ facts:
     text: >
       Women involved as author and advisors on major foreign policy,
       defence, intelligence, or trade white paper, inquiry or review
-
-  - percent: 0
-    text: >
-      No major foreign policy, defence, intelligence, or trade white paper,
-      inquiry or review has been led by a woman
 
   - percent: 33
     text: >
