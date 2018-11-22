@@ -16,7 +16,7 @@ html
 body
   font-size: 17px
   color: $text
-  background: white
+  background: transparent
   font-family: $sans
   line-height: 1.4
   text-rendering: optimizeLegibility
@@ -24,8 +24,8 @@ body
   -webkit-tap-highlight-color: transparent
   -webkit-overflow-scrolling: touch
 
-  &.embed-true
-    background-color: transparent
+  &.embed-false
+    background-color: white
 
 .of-hidden
   overflow: hidden
