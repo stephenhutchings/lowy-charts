@@ -19,8 +19,9 @@
 }
 
 #chart-title h1 {
-  font-size: 40px;
+  font-size: 28px;
   letter-spacing: -0.02em;
+  margin-bottom: 16px;
 }
 
 .circle {

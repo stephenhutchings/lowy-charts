@@ -12,7 +12,7 @@ class MainView extends Backbone.View
     if not isEmbed
       $wrapper = $(".wrapper")
       innerH = $wrapper.outerHeight()
-      outerH = @$el.height()
+      outerH = $("html").height()
       $wrapper.css(margin: "#{(outerH - innerH) / 2}px auto")
 
     for evt in ["scroll", "resize"]
