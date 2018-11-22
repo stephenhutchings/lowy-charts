@@ -36,30 +36,36 @@
   margin: 0 -32px;
   line-height: 64px;
   pointer-events: all;
-  transform: scale(0.5);
+  transform: scale3d(0.5, 0.5, 0.5);
   transition: all 300ms;
   font-size: 21px;
 }
 
 .circle-fact {
   position: absolute;
-  width: 274px;
+  max-width: 274px;
   min-height: 100px;
   top: -18px;
   opacity: 0;
   padding: 0 20px;
   transition: all 300ms;
-  background: radial-gradient(#f6f7f8, rgba(246, 247, 248, 0) 60%);
+}
+
+.circle-fact,
+.circle-addon {
+  background: radial-gradient(#f6f7f8 20%, rgba(246, 247, 248, 0) 60%);
   background-size: 100% 100%;
 }
 
 .circle-fact.l {
   margin-left: 30px;
   text-align: left;
+  transform: translate3d(0, 0, 0);
 }
 
 .circle-fact.r {
-  margin-left: -340px;
+  margin-left: -30px;
+  transform: translate3d(-100%, 0, 0);
   text-align: right;
 }
 
@@ -67,8 +73,8 @@
   opacity: 0;
   position: absolute;
   left: 0;
-  bottom: 16px;
-  max-width: 360px;
+  bottom: 20px;
+  max-width: 450px;
   transition: all 300ms;
   text-align: left;
 }
@@ -86,6 +92,7 @@
 #chart:hover .circle-percent {
   background: #edeff1;
   z-index: -1;
+  opacity:  0.5;
 }
 
 .circle:hover .circle-fact {
@@ -104,7 +111,7 @@
 }
 
 #chart .circle:hover .circle-percent {
-  transform: scale(1);
+  transform: scale3d(1, 1, 1);
   color: #fff;
   background: #ff2a24;
 }
