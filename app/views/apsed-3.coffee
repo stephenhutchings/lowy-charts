@@ -113,7 +113,7 @@ module.exports =
         y = @config.barsY + nb * (@config.barsH + @config.vBuffer)
         line = @paper.line(x, @config.barsY - @config.vBuffer, x, y)
         line.attr(stroke: "#e1e5e8", opacity: 0)
-        text = @paper.text(x, y + @config.vBuffer + 9, key)
+        text = @paper.text(x, y + @config.vBuffer + 15, key)
         text.attr(font.style.labelMiddle)
         @levels.push Snap.set(line, text)
 
