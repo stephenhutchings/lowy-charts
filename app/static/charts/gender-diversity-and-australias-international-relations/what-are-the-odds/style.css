@@ -29,9 +29,10 @@
 }
 
 #chart-title h1 {
+  margin-top: 12px;
   font-size: 28px;
   letter-spacing: -0.02em;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .circle {
@@ -82,12 +83,12 @@
 
 .circle-fact.l {
   text-align: left;
-  padding-right: 20px;
+  padding-right: 0;
 }
 
 .circle-fact.r {
   text-align: right;
-  padding-left: 20px;
+  padding-left: 0;
 }
 
 .circle-addon {
@@ -177,25 +178,46 @@
     width: auto;
   }
   #chart-title h1 {
-    margin-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 4px;
   }
   .circle-fact {
     width: auto;
   }
   .circle-fact.l {
-    right: 0;
+    right: -8px;
+    padding-left: 36px;
   }
   .circle-fact.r {
-    left: 0;
+    left: -8px;
+    padding-right: 36px;
+  }
+  .circle-fact br {
+    display: inline;
   }
   .circle-fact br,
   .circle-addon {
-    display: none;
   }
 
+  .circle-percent {
+    height: 56px;
+    line-height: 56px;
+    width: 56px;
+    margin: -28px;
+  }
+
+  .circle:nth-child(3n + 0) .circle-percent,
+  .circle:nth-child(3n + 0) .circle-fact {
+    margin-top: 28px;
+  }
+
+  .circle:nth-child(3n + 1) .circle-percent,
+  .circle:nth-child(3n + 1) .circle-fact {
+    margin-top: 60px;
+  }
   .circle:nth-child(3n + 2) .circle-percent,
   .circle:nth-child(3n + 2) .circle-fact {
-    margin-top: 120px;
+    margin-top: 92px;
   }
 
   .chart-label:first-child {
