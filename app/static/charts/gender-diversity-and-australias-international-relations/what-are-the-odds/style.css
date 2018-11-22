@@ -1,3 +1,7 @@
+.wrapper {
+  height: 280px;
+}
+
 #chart {
   position: relative;
   width: 100%;
