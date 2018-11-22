@@ -1,6 +1,7 @@
 .wrapper {
   height: 256px;
   overflow: visible;
+  pointer-events: none;
 }
 
 #chart {
@@ -8,17 +9,17 @@
   width: 100%;
   height: 200px;
   border-bottom: 1px solid #e6e6e6;
-  pointer-events: none;
   line-height: 1.1764705882em;
   z-index: 0;
 }
 
-#chart > ul {
+#chart-circles {
   margin: 0;
   position: absolute;
   left: 0;
   right: 0;
   height: 100%;
+  z-index: 10;
 }
 
 #chart-title {
@@ -49,10 +50,17 @@
   width: 64px;
   margin: 0 -32px;
   line-height: 64px;
-  pointer-events: all;
   transform: scale3d(0.5, 0.5, 0.5);
   transition: all 300ms;
   font-size: 21px;
+  pointer-events: all;
+}
+
+.circle-percent input {
+  opacity: 0;
+  outline: none;
+  position: absolute;
+  top: -1px;
 }
 
 .circle-fact {
@@ -61,8 +69,9 @@
   min-height: 100px;
   top: -18px;
   opacity: 0;
-  padding: 0 20px;
+  padding: 0 48px;
   transition: all 300ms;
+  pointer-events: none;
 }
 
 .circle-fact,
@@ -72,15 +81,13 @@
 }
 
 .circle-fact.l {
-  margin-left: 30px;
   text-align: left;
-  transform: translate3d(0, 0, 0);
+  padding-right: 20px;
 }
 
 .circle-fact.r {
-  margin-left: -30px;
-  transform: translate3d(-100%, 0, 0);
   text-align: right;
+  padding-left: 20px;
 }
 
 .circle-addon {
@@ -152,4 +159,51 @@
   top: 0;
   margin: 12px -40px;
   line-height: 24px;
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    height: 312px;
+  }
+  #chart {
+    top: 52px;
+    margin: 0 20px;
+    width: auto;
+  }
+  #chart-title {
+    top: -52px;
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+  #chart-title h1 {
+    margin-bottom: 8px;
+  }
+  .circle-fact {
+    width: auto;
+  }
+  .circle-fact.l {
+    right: 0;
+  }
+  .circle-fact.r {
+    left: 0;
+  }
+  .circle-fact br,
+  .circle-addon {
+    display: none;
+  }
+
+  .circle:nth-child(3n + 2) .circle-percent,
+  .circle:nth-child(3n + 2) .circle-fact {
+    margin-top: 120px;
+  }
+
+  .chart-label:first-child {
+    text-align: left;
+    margin-left: 0;
+  }
+  .chart-label:last-child {
+    text-align: right;
+    margin-left: -80px;
+  }
 }

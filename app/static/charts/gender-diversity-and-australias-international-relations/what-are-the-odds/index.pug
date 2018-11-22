@@ -7,21 +7,23 @@ block page
   style
     include style.css
 
-  .wrapper
+  .wrapper(ontouchstart="")
     #chart
       #chart-title
         h1.txt-uppercase What are the odds?
         p Explore the likelihood of women holding various roles in Australia’s IR&nbsp;sector
 
-      ul.list-bare
+      ul#chart-circles.list-bare
         for fact in _.sortBy(chart.facts, "percent")
+          - var style = fact.percent < 25 ? ("left:" + fact.percent * 2 + "%") : ("right:" + (100 - fact.percent * 2) + "%")
           li.circle
-            .circle-percent(
-              style=`left: ${fact.percent * 2}%`
+            label.circle-percent(
+              style=style
             )
+              input(type="checkbox")
               = fact.percent + "%"
             .circle-fact.flex-center(
-              style=`left: ${fact.percent * 2}%`
+              style=style
               class=fact.percent < 25 ? "l" : "r"
             )
               span!= typogr.typogrify(fact.text.trim())
@@ -30,9 +32,12 @@ block page
                 span.txt-muted!= typogr.typogrify(fact.addon.trim())
 
       #chart-bar
-        for n, i in new Array(11)
-          .chart-notch(style=`left: ${i * 10}%`)
-        for n, i in new Array(3)
-          .chart-label(style=`left: ${i * 50}%`)
-            span.txt-muted= i * 25 + "%"
-            .txt-nowrap= ["No Chance", "", "Fair Chance"][i]
+        #chart-notches
+          for n, i in new Array(11)
+            .chart-notch(style=`left: ${i * 10}%`)
+
+        #chart-labels
+          for n, i in new Array(3)
+            .chart-label(style=`left: ${i * 50}%`)
+              span.txt-muted= i * 25 + "%"
+              .txt-nowrap= ["No Chance", "", "Fair Chance"][i]
