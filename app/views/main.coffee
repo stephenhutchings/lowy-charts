@@ -15,7 +15,7 @@ class MainView extends Backbone.View
       outerH = $("html").height()
       $wrapper.css(margin: "#{(outerH - innerH) / 2}px auto")
 
-    for evt in ["scroll", "resize"]
+    for evt in ["resize"]
       do (evt, timeouts) =>
         _debounced = =>
           fn = =>
@@ -28,7 +28,7 @@ class MainView extends Backbone.View
             window.setTimeout fn(), 0
 
           timeouts[evt] = window.setTimeout fn, 300
-          return true
+          return
 
         $target.on evt, _debounced
 
