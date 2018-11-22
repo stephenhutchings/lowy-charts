@@ -39,7 +39,7 @@ module.exports =
       width = Math.min(900, @$el.width())
       isMobile = width < 400
       buffer = 8
-      labelW = 128
+      labelW = 136
       labelW = 80 if isMobile
 
       @config =
