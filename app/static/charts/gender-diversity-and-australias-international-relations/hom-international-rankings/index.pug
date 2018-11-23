@@ -1,0 +1,27 @@
+extend /partials/layout
+
+include /partials/survey-results/mixins
+
+block append config
+  - page.title = "Current Heads of Mission"
+  - var chart  = data.getOne("static/charts/gender-diversity-and-australias-international-relations/hom-international-rankings/data")
+
+block page
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+
+  .wrapper.bg-lt.p-sm
+    .rows
+      for el, i in _.sortBy(chart.list, "ratio").reverse()
+        - var mf = 1 - (el.ratio / 100), ff = 1 - mf;
+        .clearfix.chart
+          span.txt-right.fl-l.label
+            span.country= el.country
+            span.ratio #{el.ratio}% Women
+
+          svg.fl-r.bars(width="200" height="20")
+            rect.m(y=0 x=0 width=`${mf * 100}%` height="20" )
+            rect.f(y=0 x=`${mf * 100}%` width=`${ff * 100}%` height="20" )
+
+  style
+    include style.css
