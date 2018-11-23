@@ -10,7 +10,7 @@ block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
 
-  .wrapper
+  .wrapper(ontouchstart="")
     .rows
       for el, i in _.sortBy(chart.list, "ratio").reverse()
         - var mf = 1 - (el.ratio / 100), ff = 1 - mf;
