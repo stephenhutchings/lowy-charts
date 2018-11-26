@@ -1,0 +1,29 @@
+mixin social(url, title)
+  - title = encodeURIComponent(title).replace(/'/g, "\\'")
+
+  .social.clearfix
+    a(
+      href="javascript:;"
+      onclick=`window.open('http://www.twitter.com/share?text=“${title}”&amp;url=${url}','','width=600, height=400')`
+    )
+      span.icon.icon-social-twitter
+
+    a(
+      href="javascript:;"
+      onclick=`window.open('http://www.facebook.com/sharer/sharer.php?u=${url}','','width=600, height=400')`
+    )
+      span.icon.icon-social-facebook
+
+    a( 
+      href=`mailto:?Body=${url}&amp;Subject=${title}`
+    )
+      span.icon.icon-mail
+
+mixin ga(id)
+  script(async src=`https://www.googletagmanager.com/gtag/js?id=${id}`)
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '#{id}');
+

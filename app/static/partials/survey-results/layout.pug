@@ -13,16 +13,27 @@ block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
   
-  .wrapper.txt-center.p-v-lg.p-h-md
-    h1
-      a.txt-bare(href="/charts/gender-diversity-and-australias-international-relations/survey-results")
-        | Gender diversity and Australia's international relations
-    
-    hr
-    
-    .p-v-sm
+  include /partials/survey-results/nav
+
+  .crumbs
+    .wrapper.p-sm.txt-sm
+      .fl-l
+        a(href="/charts/gender-diversity-and-australias-international-relations/survey-results/")
+          | Survey Results
+        | &ensp;/&ensp;Question #{_q}
+      .fl-r
+        if _q < 31
+          a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q + 1}`)
+            | Question #{_q + 1}
+            span.txt-bare.fl-r &ensp;&rarr;
+
+
+  .wrapper.p-sm.txt-center
+    .p-v-xs
       strong.txt-sm.txt-uppercase= page.title
-    h1.txt-normal.txt-lg.chart-question!= typogr.typogrify(chart.question.trim())
+      h1.txt-normal.txt-lg.chart-question.p-v-xs
+        != typogr.typogrify(chart.question.trim())
+
     if chart.multiple
       small.text-muted Select all that apply
 
@@ -41,7 +52,7 @@ block page
             default
               p.txt-sm.txt-muted No chart type for "#{response.text}"
       
-    .p-v-lg
+    .p-v-md
       .p-v-md(style="border: solid #c4d1da; border-width: 1px 0;")
         svg.chart(width="100%" height="48")
           g

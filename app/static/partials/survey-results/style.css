@@ -1,3 +1,64 @@
+.nav-bar {
+  background: #002a45;
+  text-align: center;
+  color: #fff;
+}
+
+.nav-bar #logo {
+  width: 172px;
+  margin-right: 12px;
+  position: absolute;
+  left: 0;
+  top: 36px;
+}
+
+.nav-bar h1 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.nav-bar a {
+  transition: color 300ms;
+}
+
+.nav-bar a:hover,
+.nav-bar a:focus {
+  color: #539ed4;
+}
+
+.social {
+  position: absolute;
+  right: 0;
+  top: 24px;
+  text-align: center;
+  margin: 0 -4px;
+}
+
+.social a {
+  float: left;
+  margin: 0 4px;
+}
+
+.social .icon {
+  font-size: 24px;
+  display: inline-block;
+  padding: 8px;
+  line-height: 1;
+  height: 24px;
+  border: 1px solid;
+  border-radius: 50%
+}
+
+.wrapper {
+  margin: 0px auto !important;
+  position: relative;
+}
+
+.crumbs {
+  background: #f5f6f7;
+  padding-bottom: 2px;
+}
+
 rect {
   transform-origin: center;
   transition: opacity 300ms;
@@ -15,10 +76,6 @@ text.label {
 line {
   stroke: rgba(0, 41, 71, 0.22);
   pointer-events: none
-}
-
-.wrapper {
-  margin: 40px auto !important;
 }
 
 .bg-lt {
@@ -46,7 +103,6 @@ line {
   color: inherit;
 }
 
-
 .group-hover rect:nth-child(1),
 .group-hover rect:nth-child(2) {
   opacity: 0.5;
@@ -58,4 +114,21 @@ line {
 
 .group-hover .rect-hover {
   opacity: 1 !important;
+}
+
+@media (max-width: 1000px) {
+  .nav-bar #logo {
+    position: static;
+    margin: 0 auto 20px;
+    float: none;
+  }
+
+  .social {
+    position: static;
+    margin: 12px auto -8px;
+  }
+
+  .social a {
+    float: none;
+  }
 }

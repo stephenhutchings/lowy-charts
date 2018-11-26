@@ -5,17 +5,16 @@ block page
 
   style
     include /partials/survey-results/style.css
+  
+  include /partials/survey-results/nav
 
-  .wrapper.txt-center.p-v-lg.p-h-md
-    h1
-      | Gender diversity and Australia's international relations
-    
+  .wrapper.txt-center.p-sm
+    h1 Survey Results
     hr
     
     ol.list-bare
       for el, i in list
         li
           a.question-btn.d-b.p-md.bg-lt.txt-bare(href=`/${el.path.replace(/^static\/|data$/g, "")}`)
-            .p-v-xs
-              strong.txt-uppercase.txt-sm Question #{i + 1}
+            strong.txt-uppercase.txt-sm Question #{i + 1}
             h2.p-v-xs!= el.question

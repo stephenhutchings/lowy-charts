@@ -1,3 +1,5 @@
+include mixins
+
 block config
   - var page = {};
   - page.description  = "Lowy Institute Charts";
@@ -68,3 +70,5 @@ html.no-js(lang="en")
         $(document).ready(function(){
           require("app").initialize();
         })
+
+      +ga("UA-3115931-15")
