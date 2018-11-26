@@ -1,7 +1,7 @@
 type: splits
 
 question: >
-  Was this conducted by:
+  Was this conducted by..?
 
 axis:
   - "Only men"

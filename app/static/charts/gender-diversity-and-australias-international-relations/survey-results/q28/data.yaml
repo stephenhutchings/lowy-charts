@@ -1,7 +1,9 @@
 type: splits
 
 question: >
-  Thinking about the policies that some organisations are putting in place, please say how important you think the following policies are for improving gender balance:
+  Thinking about the policies that some organisations are putting in place,
+  how important you think the following policies are for improving
+  gender balance?
 
 axis:
   - "Very important"

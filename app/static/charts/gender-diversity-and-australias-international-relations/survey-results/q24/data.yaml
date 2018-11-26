@@ -1,7 +1,9 @@
 type: splits
 
 question: >
-  How would you describe the result of your report? (Select all that apply)
+  How would you describe the result of your report?
+
+multiple: true
 
 axis:
   - "Nothing happened"
@@ -11,7 +13,7 @@ axis:
   - "It had a negative impact on my career with that organisation"
   - "The organisation offered me substantial and valuable support"
   - "Don’t know/no view"
-  - "Other (please specify)"
+  - "Other"
 
 responses:
   -

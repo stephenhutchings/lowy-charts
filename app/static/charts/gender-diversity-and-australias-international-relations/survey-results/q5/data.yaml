@@ -17,7 +17,10 @@ axis:
   - "None of the above"
 
 question: >
-  Which of the following work support/flexibility programs have you participated in at your organisation in the last three years? (Select all that apply)
+  Which of the following work support/flexibility programs have you
+  participated in at your organisation in the last three years?
+
+multiple: true
 
 responses:
   -

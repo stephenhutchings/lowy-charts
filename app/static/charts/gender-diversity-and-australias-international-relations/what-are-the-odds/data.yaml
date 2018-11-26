@@ -60,7 +60,7 @@ facts:
 
   - percent: 36
     text: >
-      36% of DFAT’s senior executive service are women, even though<br>
+      36% of DFAT’s senior executive service&nbsp;are women, even though<br>
       58% of their staff is female
 
   - percent: 33

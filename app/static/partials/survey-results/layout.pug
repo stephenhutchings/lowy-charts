@@ -20,8 +20,11 @@ block page
     
     hr
     
-    strong.txt-sm.txt-uppercase.p-v-sm= page.title
+    .p-v-sm
+      strong.txt-sm.txt-uppercase= page.title
     h1.txt-normal.txt-lg.chart-question!= typogr.typogrify(chart.question.trim())
+    if chart.multiple
+      small.text-muted Select all that apply
 
     .col-wrap.chart-row
       for response, j in chart.responses

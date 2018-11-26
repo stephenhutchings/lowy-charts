@@ -8,10 +8,10 @@ axis:
   - "Academia and research"
   - "Media and journalism"
   - "N/A"
-  - "Other (please specify)"
+  - "Other"
 
 question: >
-  In your career, which field have you spent the most time in:
+  In your career, which field have you spent the most time in?
 
 responses:
   -

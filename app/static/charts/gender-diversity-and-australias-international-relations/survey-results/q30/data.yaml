@@ -1,7 +1,9 @@
 type: splits
 
 question: >
-  In your experience working in, engaging or observing the following professions, please say how committed you believe they are today to achieving real progress on gender equality:
+  In your experience working in, engaging or observing the following
+  professions, how committed you believe they are today to achieving
+  real progress on gender equality?
 
 axis:
   - "Very committed"
