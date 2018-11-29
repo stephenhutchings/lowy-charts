@@ -46,6 +46,9 @@
   outline: none;
 }
 
+.no-touch {
+  pointer-events: none
+}
 
 @media (max-width: 480px) {
   .select-wrap {

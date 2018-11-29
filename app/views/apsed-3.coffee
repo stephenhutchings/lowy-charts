@@ -37,40 +37,54 @@ module.exports =
     normalizeData: ->
       [total, junior, senior] = @data.xAxis
 
+      combine = (keys, g, i) ->
+        _.chain(agency.bands)
+          .pick(keys)
+          .values()
+          .reduce(((m, e) -> m + (e[g][i] or 0)), 0)
+          .value()
+
       for agency in @data.agencies
-        agency.totals = {}
+        agency.totals ?= {}
 
         # Check for bands with missing data
-        for band, list of agency.bands
-          console.error(agency) if list.m.length isnt 23
-          console.error(agency) if list.f.length isnt 23
+        if agency.bands
+          for band, list of agency.bands
+            console.error(agency) if list.m.length isnt agency.years.length
+            console.error(agency) if list.f.length isnt agency.years.length
 
-        # Combine different bands into three grades
-        for g in ["f", "m"]
-          agency.totals[junior] ?= {}
-          agency.totals[junior][g] =
-            for i in [0...@data.yAxis.length]
-              agency.bands["Trainee & Graduate"][g][i] +
-              agency.bands["APS 1"][g][i] +
-              agency.bands["APS 2"][g][i] +
-              agency.bands["APS 3"][g][i] +
-              agency.bands["APS 4"][g][i] +
-              agency.bands["APS 5"][g][i] +
-              agency.bands["APS 6"][g][i] +
-              agency.bands["EL 1"][g][i] +
-              agency.bands["EL 2"][g][i]
+            for g in ["f", "m"]
+              agency.bands[band][g] = (
+                for year in @data.yAxis
+                  i = agency.years.indexOf(year)
+                  if i >= 0 then list[g][i]
+              )
 
-          agency.totals[senior] ?= {}
-          agency.totals[senior][g] =
-            for i in [0...@data.yAxis.length]
-              agency.bands["SES 1"][g][i] +
-              agency.bands["SES 2"][g][i] +
-              agency.bands["SES 3"][g][i]
+          # Combine different bands into three grades
+          for g in ["f", "m"]
+            agency.totals[junior] ?= {}
+            agency.totals[junior][g] =
+              combine(@data.defs.junior, g, i) for y, i in @data.yAxis
 
-          agency.totals[total] ?= {}
-          agency.totals[total][g] =
-            for i in [0...@data.yAxis.length]
-              agency.bands["Total"][g][i]
+            agency.totals[senior] ?= {}
+            agency.totals[senior][g] =
+              combine(@data.defs.senior, g, i) for y, i in @data.yAxis
+
+            agency.totals[total] ?= {}
+            agency.totals[total][g] =
+              combine(["Total"], g, i) for y, i in @data.yAxis
+
+        else
+          # Some agencies just include total band data
+          if not agency.totals
+            console.error "#{agency.name} has no data"
+
+          for g in ["f", "m"]
+            for key, val of agency.totals
+              agency.totals[key][g] =
+                for year in @data.yAxis
+                  i = agency.years.indexOf(year)
+                  if i >= 0 then val[g][i] else 0
 
         # Unset non-numeric data
         for key, list of agency.totals
@@ -82,7 +96,7 @@ module.exports =
       width = Math.min(900, @$el.width())
       vBuffer = 4
       hBuffer = 12
-      labelW = 40
+      labelW = 57
 
       @config =
         w: width
@@ -107,15 +121,17 @@ module.exports =
         t.attr(opacity: 0.3) if year % 5 isnt 0
 
       @levels = Snap.set()
+
+      @paper.line(0, 512, @config.w, 512).attr(stroke: "#e1e5e8")
+      @paper.text(@config.labelW + 4, y + 45, "APS Avg.").attr(font.style.labelRight)
+
       for key, i in @data.xAxis
         nb = @data.yAxis.length
         x = @config.barsX + (@config.barsW + @config.hBuffer) * i + @config.barsW / 2
-        y = @config.barsY + nb * (@config.barsH + @config.vBuffer)
-        line = @paper.line(x, @config.barsY - @config.vBuffer, x, y)
-        line.attr(stroke: "#e1e5e8", opacity: 0)
+        y = @config.barsY + nb * (@config.barsH + @config.vBuffer) + 32
         text = @paper.text(x, y + @config.vBuffer + 15, key)
         text.attr(font.style.labelMiddle)
-        @levels.push Snap.set(line, text)
+        @levels.push Snap.set(text)
 
       mbox = @paper.rect(@config.w - 20, 6, 20, 20)
       mtxt = @paper.text(@config.w - 28, 21, "Male Staff").data("label": "Male Staff")
@@ -130,7 +146,7 @@ module.exports =
 
       @legend = Snap.set(ftxt, mtxt)
 
-    render: ({name, bands, totals}) ->
+    render: ({name, years, bands, totals}) ->
       ease = mina.easeinout
       isFirstRun = not @bars
 
@@ -179,22 +195,54 @@ module.exports =
             {bg, set} = @bars[key][i]
             [fr, mr] = set.children()
 
+            bg.stop().animate({width: @config.barsW, x}, @config.duration, ease)
+
             if ff + mf > 0
+              fr.removeClass("no-touch")
+              mr.removeClass("no-touch")
               fr.stop().animate({opacity: 1, width: ff * @config.barsW / 2, x: x + mf * @config.barsW / 2}, @config.duration, ease)
               mr.stop().animate({opacity: 1, width: mf * @config.barsW / 2, x: x + @config.barsW / 2}, @config.duration, ease)
             else
+              fr.addClass("no-touch")
+              mr.addClass("no-touch")
               fr.stop().animate({opacity: 0}, @config.duration, ease)
               mr.stop().animate({opacity: 0}, @config.duration, ease)
 
             if not f?
               bg.stop().animate({x, width: @config.barsW, fill: colors.muted}, @config.duration, ease)
-            # else
-            #   bg.stop().animate({x, width: @config.barsW, fill: "#b6c1c6"}, @config.duration, ease)
-
 
           fr.data(value: f)
           mr.data(value: m)
           set.data({ff, mf, empty})
+
+        if isFirstRun
+          y = 520
+          v = @data.totals[key]
+          bg = @paper.rect(x, y + @config.barsH / 2 - 1.5, @config.barsW, 3)
+          bg.attr(fill: colors.muted, stroke: "none")
+
+          set = @paper.group(
+            @paper
+              .rect(x + ((1 - v) * @config.barsW / 2), y, v * @config.barsW / 2, @config.barsH)
+              .attr(fill: colors.contrast, stroke: "none")
+              .data(color: "contrast")
+          ,
+            @paper
+              .rect(x + @config.barsW / 2, y, (1 - v) * @config.barsW / 2, @config.barsH)
+              .attr(fill: colors.dark, stroke: "none")
+              .data(color: "dark")
+          ).data({ff: v, mf: 1 - v})
+
+          @bars[key].push({ set, bg })
+          @bindMouseEvents(set)
+
+        else
+          { set, bg } = _.last(@bars[key])
+          bg.stop().animate({width: @config.barsW, x}, @config.duration, ease)
+          [r1, r2] = set.children()
+          v = set.data("ff")
+          r1.stop().animate({x: x + ((1 - v) * @config.barsW / 2), width: v * @config.barsW / 2}, @config.duration, ease)
+          r2.stop().animate({x: x + @config.barsW / 2, width: (1 - v) * @config.barsW / 2}, @config.duration, ease)
 
 
     bindMouseEvents: (set) ->
