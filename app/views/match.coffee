@@ -8,6 +8,8 @@ class MatchView extends Backbone.View
     @$links = @$("[data-link]")
 
   onEnter: (e) ->
+    e.preventDefault()
+
     $a = $(e.currentTarget)
     id = $a.attr("data-id")
 

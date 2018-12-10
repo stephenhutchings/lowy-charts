@@ -1,5 +1,6 @@
 body {
   background-color: #f5f5f5 !important;
+  user-select: none;
 }
 
 .wrapper {
@@ -35,6 +36,7 @@ svg {
   height: 100%;
   position: relative;
   top: -8%;
+  left: 3%;
 }
 
 .list-item {
@@ -71,25 +73,28 @@ path.active {
   padding: 0 12px;
   position: absolute;
   bottom: 80px;
+  width: 100%;
 }
 
+.cols,
 .col {
-  width: 38%;
-  float: left;
   box-sizing: border-box;
-  padding: 0 20px;
 }
 
 .col-left {
   padding: 0 4px 0 0;
   text-align: left;
+  max-width: 256px;
+  width: 39%;
+  float: left;
 }
 
 .col-right {
   padding: 0 0 0 4px;
   text-align: right;
   float: right;
-  width: 47%;
+  width: 50%;
+  max-width: 320px;
 }
 
 .hint {
@@ -131,8 +136,13 @@ path.active {
     padding-top: 204px;
   }
 
+  .wrapper:after {
+    background: linear-gradient(to bottom, #f5f5f5 50%, rgba(255,255,255,0));
+    height: 200px;
+  }
+
   svg {
-    top: -12%;
+    top: 8%;
     left: 5%;
   }
 
@@ -143,7 +153,9 @@ path.active {
 
   .cols {
     position: absolute;
-    bottom: 40px;
+    bottom: auto;
+    top: 20px;
+    z-index: 1;
   }
 
   .label {
@@ -153,6 +165,6 @@ path.active {
   .hint {
     left: 20px;
     right: 20px;
-    bottom: 4px;
+    bottom: 8px;
   }
 }

@@ -5,7 +5,7 @@ block append config
   - var chart  = data.getOne("static/charts/the-interpreter/india-sector-and-states/data")
 
 block page
-  .wrapper.flex-center(data-view="match")
+  .wrapper.flex-center(data-view="match" ontouchstart="")
     #map
       include india.svg
 
