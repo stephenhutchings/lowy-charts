@@ -3,14 +3,13 @@
 <svg version="1.1" id="Layer_1" data-link="layer-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1600 1800" style="enable-background:new 0 0 1600 1800;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#DEDEDE;stroke:#666666;}
-	.st1{fill:#DEDEDE;stroke:#666666;stroke-miterlimit:10;}
-	.st2{fill:#FFFFFF;stroke:#231F20;stroke-width:1.5;}
-	.st3{fill:#FFFFFF;}
+	.st0{fill:#DEDEDE;stroke:#aaa;stroke-width:2;}
+	.st2{fill:#FFF;stroke:#aaa;stroke-width:2;}
+	.st3{fill:#FFF;}
 	.st4{fill:none;}
-	.st5{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-dasharray:6,4;}
-	.st6{fill:none;stroke:#666666;}
-	.st7{fill:#F5F5F5;stroke:#666666;}
+	.st5{fill:none;stroke:#FFF;stroke-width:2;stroke-dasharray:6,4;}
+	.st6{fill:none;stroke:#aaa;;stroke-width:2}
+	.st7{fill:#F5F5F5;stroke:#aaa;;stroke-width:2}
 	.st8{fill:#F5F5F5;}
   .st9{fill:url(#SVGID_1_);}
   .st10{fill:url(#SVGID_2_);}
@@ -494,7 +493,7 @@
 				c1.1,5.9,6.9,6,12.1,5.8c0.2-2.4,0.3-4.9,0.2-7.2C335,915.4,334.9,915.3,334.7,915.3z"/>
 			<path id="mahe_pondicherry_2_" data-link="mahe-pondicherry-2-" class="st0" d="M428.6,1396.3c-0.3,0.3-0.7,0.5-0.9,0.7c-1.7,1.2-4.8,0.1-5.1-2.2
 				c-0.2-2.4,4-1.5,5.7-1.3C430.6,1393.7,430.4,1394.8,428.6,1396.3z"/>
-			<path id="andaman_and_nicobar_2_" data-link="andaman-and-nicobar-2-" class="st1" d="M1543.1,1603.6c24.8-58.5,19.8-125.8,7.7-186.3c-8.3-41-13.1-95.8-35.3-132.1
+			<path id="andaman_and_nicobar_2_" data-link="andaman-and-nicobar-2-" class="st0" d="M1543.1,1603.6c24.8-58.5,19.8-125.8,7.7-186.3c-8.3-41-13.1-95.8-35.3-132.1
 				c-7.7-12.6-18.7-18.5-35.5-22.9c-28.6-7.4-93.2-13.1-117.3,4.6c-19.1,14-31.6,36-44,56.4c-21.3,35-15.8,78.6-12.2,118.7
 				c4.1,46.3,19.2,91.5,42.5,130.9c16.6,28,24.5,59.8,41.6,85.3c6.6,9.9,11.3,26.2,20.7,32.3c7,4.6,19.4,2.3,27.5,3.1
 				c13.4,1.3,31.2,5.9,44.2,1.3C1524.6,1680.4,1528,1639.2,1543.1,1603.6z"/>
