@@ -1,0 +1,46 @@
+extend /partials/layout
+
+block append config
+  - page.title = "India's Potential Growth Sectors and States"
+  - var chart  = data.getOne("static/charts/the-interpreter/india-sector-and-states/data")
+
+block page
+  .wrapper.flex-center(data-view="match")
+    #map
+      include india.svg
+    .cols.clearfix
+      .col.col-left.flex-stretch
+        strong.txt-uppercase.txt-center States
+        ul.list-bare.flex-center.flex-row.flex-wrap
+          for k, i in chart.states
+            if k.active
+              li
+                a.button(
+                  data-id=written.hyphenCase(k.name)
+                  data-list=k.sectors.join(" ")
+                )= k.name
+
+      .col.col-right.flex-stretch
+        strong.txt-uppercase.txt-center Sectors
+        ul.list-bare.flex-center.flex-row.flex-wrap
+          for k, i in chart.sectors
+            li
+              a.button(
+                data-id=k.id
+                data-list=(
+                  _.chain(chart.states).filter(function(e){
+                    return _.includes(e.sectors, k.id)
+                  }).map(function(e){
+                    return written.hyphenCase(e.name)
+                  }).value().join(" ")
+                )
+              )= k.name
+
+    p.txt-muted.txt-center
+      | Hover over each item to see which key sectors and states are linked
+      | to each other.
+
+
+block append css
+  style
+    include style.css
