@@ -10,8 +10,8 @@ block page
       include india.svg
     .cols.clearfix
       .col.col-left.flex-stretch
-        strong.txt-uppercase.txt-center States
-        ul.list-bare.flex-center.flex-row.flex-wrap
+        strong.txt-uppercase States
+        ul.list-bare
           for k, i in chart.states
             if k.active
               li
@@ -21,8 +21,8 @@ block page
                 )= k.name
 
       .col.col-right.flex-stretch
-        strong.txt-uppercase.txt-center Sectors
-        ul.list-bare.flex-center.flex-row.flex-wrap
+        strong.txt-uppercase Sectors
+        ul.list-bare
           for k, i in chart.sectors
             li
               a.button(
