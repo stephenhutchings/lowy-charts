@@ -39,7 +39,7 @@ block page
                 class="bar-" + i
                 style={height: (h / d) * y + "px"}
               )
-                .bar-label= bar + "%"
+                .bar-label= bar.toFixed(1) + "%"
 
             .bar-group-label= xaxis[j]
             if j === 1
