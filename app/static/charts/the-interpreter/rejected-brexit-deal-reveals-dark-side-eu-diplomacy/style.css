@@ -148,9 +148,8 @@ body {
   width: 16px;
   height: 16px;
   position: static;
-  margin-right: 4px;
   float: left;
-  margin-top: 3px;
+  margin: 3px 8px 0 0;
 }
 
 
