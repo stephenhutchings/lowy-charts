@@ -35,6 +35,12 @@ exports.config =
         package:  require("./package.json")
         data:     data
         version:  hash
+      filters:
+        sass: (data) ->
+          require("node-sass").renderSync({
+            data
+            indentedSyntax: true
+          }).css.toString()
 
     sass:
       mode: "native"
@@ -68,6 +74,13 @@ exports.config =
       plugins:
         pug:
           staticPretty: false
+          filters:
+            sass: (data) ->
+              require("node-sass").renderSync({
+                data
+                indentedSyntax: true
+                outputStyle: "compressed"
+              }).css.toString()
 
   files:
     javascripts:

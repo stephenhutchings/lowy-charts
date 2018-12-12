@@ -1,0 +1,52 @@
+mixin interpreter-bar-chart(data)
+  strong.chart-title= data.title
+  - var yo = 20
+  - var yh = data.yh || 52
+  - var height = data.height || yo + (data.yaxis.length - 1) * yh + 24
+  - data.highlights = data.highlights || {}
+  - data.tooltips   = data.tooltips   || []
+
+  .chart(style={height: height + "px", width: "100%"})
+    .bg
+      for label, i in data.yaxis
+        - var y = (data.yaxis.length - i - 1) * yh
+        .bg-y(style={top: yo + y + "px"})
+          .label-y #{label}%
+          .stroke-y
+
+    .bars.flex-center.flex-row
+      for group, j in data.values
+        - var y = (data.yaxis.length - 1) * yh
+        - var w = 100 / (data.xaxis.length + 1) + "%"
+        .bar-group(
+          style={width: w, height: yo + y + "px"}
+          class=(data.highlights[j] ? "highlight" : "")
+        )
+
+          .bar-frame.flex-row.flex-center
+            for bar, i in group
+              - var ho = (_.last(data.yaxis) - _.first(data.yaxis))
+              - var hi = (bar - _.first(data.yaxis))
+
+              .bar(
+                class="bar-" + i
+                style={height: (hi / ho) * y + "px"}
+              )
+                .bar-rect
+                .bar-label
+                  | #{data.precision ? bar.toFixed(data.precision) : bar}%
+
+            .bar-group-label= data.xaxis[j]
+
+            if data.highlights[j]
+              .bar-group-highlight-label!= data.highlights[j]
+
+  ul.legend.list-bare
+    for label, i in data.legend
+      li
+        .bar(class="bar-" + i)
+        != label
+
+block append css
+  style
+    include:sass bar-chart.sass

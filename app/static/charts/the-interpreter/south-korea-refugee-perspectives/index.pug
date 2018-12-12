@@ -1,0 +1,45 @@
+extend /partials/layout
+
+include /partials/the-interpreter/bar-chart
+
+block append config
+  - page.title = "South Korea should accept Yemeni refugees"
+
+block page
+  .wrapper(
+    ontouchstart=""
+    class=written.hyphenCase(page.title)
+    style={height: "400px"}
+  )
+    +interpreter-bar-chart({
+      title: page.title,
+      yaxis: [0, 10, 20, 30, 40, 50, 60],
+      xaxis: [
+        "V1", 
+        "V2", 
+        "V3", 
+        "V4", 
+        "V5"
+      ],
+      values: [
+        [19.01, 46.28], 
+        [16.53, 47.93], 
+        [13.23, 47.93], 
+        [10.75, 51.24], 
+        [16.53, 60.33]
+      ],
+      yh: 36,
+      legend: [
+        "Agree",
+        "Disagree"
+      ],
+      tooltips: [
+        "Version 1: The civil war in Yemen has created an international refugee crisis. Some claim that as a humanitarian crisis, it is the duty of other states to take in refugees. Others claim that taking in refugees creates a potential security risk.",
+        "Version 2: The civil war in Yemen has created an international refugee crisis. Some claim that as a humanitarian crisis, it is the duty of other states to take in refugees. Others claim that taking in refugees creates a potential security risk.<strong>Approximately 500 Yemenis have arrived in South Korea in 2018.</strong>",
+        "Version 3: The civil war in Yemen has created an international refugee crisis. Some claim that as a humanitarian crisis, it is the duty of other states to take in refugees. Others claim that taking in refugees creates a potential security risk.<strong>Of the approximately 300,000 who have fled Yemen, approximately 500 Yemenis have arrived in South Korea in 2018.</strong>",
+        "Version 4: The civil war in Yemen has created an international refugee crisis. Some claim that as a humanitarian crisis, it is the duty of other states to take in refugees. Others claim that taking in refugees creates a potential security risk.<strong>Approximately 500 Yemenis have arrived in South Korea in 2018. Most of these arrivals are Muslim.</strong>",
+        "Version 5: The civil war in Yemen has created an international refugee crisis. Some claim that as a humanitarian crisis, it is the duty of other states to take in refugees. Others claim that taking in refugees creates a potential security risk.<strong>Of the approximately 300,000 who have fled Yemen, approximately 500 Yemenis have arrived in South Korea in 2018. Most of these arrivals are Muslim.</strong>",
+      ]
+    })
+
+block scripts

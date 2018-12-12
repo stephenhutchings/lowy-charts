@@ -1,0 +1,235 @@
+body
+  user-select: none
+  display: flex
+  justify-content: center
+  align-items: center
+
+.wrapper
+  position: relative
+  font-size: 15px
+  width: 100%
+
+.chart
+  position: relative
+  pointer-events: none
+
+.chart-title
+  text-align: center
+  display: block
+
+.bg-y,
+.stroke-y,
+.label-y,
+.bars,
+.bar-group-label,
+.bar-label,
+.bar-group-highlight-label,
+.bar-label:after,
+.bar-group.highlight .bar-frame:before
+  position: absolute
+
+.bars
+  top: 0
+  left: 0
+  right: 0
+  padding-left: 32px
+  bottom: 24px
+
+.bar-group
+  pointer-events: all
+
+.bar-group-label
+  width: 100%
+  text-align: center
+  top: 100%
+  padding-top: 6px
+
+.bar
+  width: 40px
+  bottom: 0
+  margin: 0 2px
+  background-color: #fff
+  position: relative
+  height: 100%
+
+.bar-rect
+  width: 100%
+  height: 100%
+  position: relative
+  z-index: 0
+  transition: opacity 400ms
+
+.bar-label
+  opacity: 0
+  color: #fff
+  transition: all 300ms
+  background-color: inherit
+  padding: 4px
+  line-height: 20px
+  top: -14px
+  pointer-events: none
+  z-index: 10
+
+  &:after
+    content: ""
+    border: solid transparent
+    border-width: 14px 4px
+    top: 0
+
+.bar-group:last-child .bar-1,
+.bar-0
+  .bar-label
+    right: 100%
+    left: auto
+    margin: 0 4px 0 0
+    padding: 4px 4px 4px 6px
+    transform: translate3d(-12px, 0, 0)
+
+    &:after
+      right: -8px
+      left: auto
+
+.bar-group:first-child .bar-0,
+.bar-1
+  .bar-label
+    left: 100%
+    right: auto
+    margin: 0 0 0 4px
+    padding: 4px 6px 4px 4px
+    transform: translate3d(12px, 0, 0)
+
+    &:after
+      left: -8px
+      right: auto
+
+.bar-group:hover
+  z-index: 1
+
+.bar-group:hover .bar .bar-label
+  opacity: 1
+  transform: translate3d(0, 0, 0)
+
+.bar-group.highlight .bar-frame:before
+  content: ""
+  background-color: #f5f5f5
+  left: 0
+  right: 0
+  bottom: -32px
+  top: 8px
+  z-index: -1
+
+.bar-group-highlight-label
+  left: 8px
+  right: 8px
+  top: 24px
+  text-align: center
+
+.bar-0 .bar-rect,
+.bar-0 .bar-label,
+.legend .bar-0
+  background: #ff9400
+
+.bar-1 .bar-rect,
+.bar-1 .bar-label,
+.legend .bar-1
+  background: #31363c
+
+.bar-0 .bar-label:after
+  border-left-color: #ff9400
+
+.bar-1 .bar-label:after
+  border-right-color: #31363c
+
+.bar-group:last-child .bar-1 .bar-label:after
+  border-left-color: #31363c
+  border-right-color: transparent
+
+.bar-group:first-child .bar-0 .bar-label:after
+  border-right-color: #ff9400
+  border-left-color: transparent
+
+.chart:hover .bar-group .bar-rect
+  opacity: 0.4
+
+.chart .bar-group:hover .bar-rect
+  opacity: 1
+
+.bar-frame
+  position: relative
+  height: 100%
+  width: 100%
+  z-index: 0
+  align-items: flex-end
+
+.bg-y
+  width: 100%
+  height: 0
+
+.label-y
+  color: #999
+  top: -0.7em
+  min-width: 28px
+  text-align: right
+  z-index: 1
+  padding-right: 4px
+  background-color: #fff
+
+.stroke-y
+  border-top: 1px solid #eee
+  left: 0
+  right: 0
+  top: -1px
+
+.legend
+  text-align: center
+  margin-top: 16px
+  line-height: 16px
+
+  li
+    display: inline-block
+    margin: 0 8px
+
+  .bar
+    width: 16px
+    height: 16px
+    position: static
+    float: left
+    margin: 3px 8px 0 0
+
+@media (max-width: 660px)
+  .bar-group.highlight:before
+    left: -60px
+    right: -60px
+
+  .bar
+    width: 28px
+
+  .bars
+    margin: 0 -8%
+
+@media (max-width: 480px)
+  .wrapper
+    font-size: 14px
+
+  .hidden-sm
+    display: none
+
+  .bar
+    width: 20px
+    margin: 0 1px
+
+  .bar-group-label
+    padding-top: 4px
+    line-height: 1
+
+  .bar-group.highlight:before
+    left: -32px
+    right: -32px
+    bottom: -36px
+
+  .legend .bar
+    margin-top: 2px
+
+  .bar-group-highlight-label
+    left: -24px
+    right: -24px

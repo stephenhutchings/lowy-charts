@@ -1,5 +1,7 @@
 extend /partials/layout
 
+include /partials/the-interpreter/bar-chart
+
 block append config
   - page.title = "Change in EU as partner in trade in vehicles"
 
@@ -8,47 +10,16 @@ block page
     ontouchstart=""
     class=written.hyphenCase(page.title)
   )
-    strong.chart-title= page.title
-    - bars = [[73.5, 85.1], [44.7, 83.8]]
-    - yaxis = [30, 50, 70, 90]
-    - xaxis = [1998, 2017]
-    - yo = 20
-    - yh = 52
+    +interpreter-bar-chart({
+      title: page.title,
+      yaxis: [30, 50, 70, 90],
+      xaxis: [1998, 2017],
+      values: [[73.5, 85.1], [44.7, 83.8]],
+      yh: 52,
+      legend: [
+        "Share of exports<span class=\"hidden-sm\"> to EU</span>",
+        "Share of imports<span class=\"hidden-sm\"> to EU</span>"
+      ] 
+    })
 
-    .chart(style={height: "200px", width:"100%"})
-      .bg
-        for label, i in yaxis
-          - var y = (yaxis.length - i - 1) * yh
-          .bg-y(style={top: yo + y + "px"})
-            .label-y #{label}%
-            .stroke-y
-
-      for group, j in bars
-        - var y = (yaxis.length - 1) * yh
-        - var x = (100 / (xaxis.length + 1) * (j + 1)) + "%"
-        .bar-group(style={left: x, top: yo + y + "px"})
-          for bar, i in group
-            - var d = (_.last(yaxis) - _.first(yaxis))
-            - var h = (bar - _.first(yaxis))
-
-
-            .bar(
-              class="bar-" + i
-              style={height: (h / d) * y + "px"}
-            )
-              .bar-label= bar + "%"
-
-          .bar-group-label= xaxis[j]
-
-    ul.legend.list-bare
-      li
-        .bar.bar-0
-        | Share of exports to EU
-      li
-        .bar.bar-1
-        | Share of imports from EU
-
-
-block append css
-  style
-    include style.css
+block scripts
