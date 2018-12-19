@@ -20,10 +20,6 @@ module.exports =
         year:    @$(".year")
         years:   @$("#axis-years-list")
 
-      @config =
-        barH: @$elements.country.outerHeight()
-        barW: @$elements.country.outerWidth()
-
       @reset()
 
     render: (t) ->
@@ -50,7 +46,7 @@ module.exports =
           transform: "translate3d(#{-100 + value / max * 100}%, 0, 0)"
 
         @$elements.country.eq(index).css
-          transform: "translate3d(0, #{rank * @config.barH}px, 0)"
+          transform: "translate3d(0, #{rank * 100}%, 0)"
 
         @$elements.labels.eq(index).html "$#{toThousands(value)}M"
 

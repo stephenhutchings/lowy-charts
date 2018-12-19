@@ -50,7 +50,6 @@ body
   height: 20px
   padding: 4px 0
   margin: 0
-  line-height: 20px
   font-size: 12px
 
   .playing &
@@ -148,14 +147,14 @@ body
   .playing &
     transition: none
 
-  .year
-    box-sizing: border-box
-    text-align: center
-    font-size: 16px
-    transition: color 800ms
+.year
+  box-sizing: border-box
+  text-align: center
+  font-size: 16px
+  transition: color 800ms
 
-    &.active
-      color: #fff
+  &.active
+    color: #fff
 
 #btn-play,
 #btn-pause,
@@ -205,3 +204,46 @@ body
   bottom: 4px
   color: #7e8d94
   text-transform: none
+
+@media (max-height: 840px), (max-width: 800px)
+  #wrapper
+    line-height: 16px
+    height: 20px * 25
+
+  .country,
+  .country-bar
+    height: 16px
+
+  .country
+    padding: 2px
+    font-size: 10px
+
+  .year
+    font-size: 12px
+
+  #chart-title
+    font-size: 16px
+    width: 240px
+    right: 140px
+    margin-top: -32px
+
+  .chart-title-small,
+  #chart-source
+    font-size: 10px
+
+  #chart-source
+    max-width: 50%
+    text-align: right
+    line-height: 12px
+
+  #btn-play,
+  #btn-pause,
+  #btn-reset
+    width: 12px
+
+  .btn-icon
+    width: 12px
+    height: 12px
+
+  #controls
+    margin-top: -122px

@@ -14,13 +14,14 @@ block page
       span.chart-title-main Military Expenditure
       small.chart-title-small
         | Constant 2015 dollars
-        | at current&#8209;year&#8209;average market exchange rate
+        | at current&#8209;year&#8209;average
+        | market&nbsp;exchange&nbsp;rate
 
     ul#axis-countries.list-bare
       for country, i in chart.countries
         - var p = country.data[0] / inOrder[0].data[0];
         - var r = inOrder.indexOf(country);
-        li.country(style=`transform: translate3d(0, ${r * 28}px, 0)`)
+        li.country(style=`transform: translate3d(0, ${r * 100}%, 0)`)
           label.country-name= country.name
           .country-bar
             .country-bar-block(
