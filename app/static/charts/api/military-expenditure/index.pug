@@ -1,0 +1,65 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Military Expenditure"
+  - var chart  = data.getOne("static/charts/api/military-expenditure/data")
+  - var byValue = function(e){return -e.data[0]};
+  - var inOrder = _.sortBy(chart.countries, byValue);
+
+block page
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+  #wrapper(data-view="api-military-expenditure" data-source="chart")
+    h1#chart-title
+      span.chart-title-main Military Expenditure
+      small.chart-title-small
+        | Constant 2015 Dollars
+        | at current&#8209;year&#8209;average MER
+
+    ul#axis-countries.list-bare
+      for country, i in chart.countries
+        - var p = country.data[0] / inOrder[0].data[0];
+        - var r = inOrder.indexOf(country);
+        li.country(style=`transform: translate3d(0, ${r * 28}px, 0)`)
+          label.country-name= country.name
+          .country-bar
+            .country-bar-block(
+              style=`transform: scale(${p}, 1)`
+            )
+              .country-bar-label
+
+    #controls
+      a#btn-play(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          polygon.btn-icon-shape(points="0,24 0,0 24,12 ")
+
+      a#btn-pause(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+          rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+
+      a#btn-reset(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+          polygon.btn-icon-shape(points="24,24 24,0 8,12 ")
+
+      #axis-years.list-bare
+        ul#axis-years-list
+          for year in chart.years
+            li.year= year
+
+    small#chart-source
+      | Source: US Department of State,
+      | World Military Expenditures and Arms Transfers 2017
+
+
+block css
+  link(
+    type="text/css"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
+    media="all"
+  )
+
+  style
+    include:sass style.sass

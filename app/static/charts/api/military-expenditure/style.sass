@@ -1,0 +1,207 @@
+html, body
+  height: 100%
+  box-sizing: border-box
+
+body
+  padding: 40px
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #2d3440
+  color: #fff
+
+#wrapper
+  height: 700px
+  width: 100%
+  max-width: 1600px
+  margin: auto
+  position: relative
+  line-height: 20px
+  font-family: Montserrat, sans-serif
+  text-transform: uppercase
+  z-index: 0
+
+#axis-countries,
+.country
+  width: 100%
+
+#axis-countries,
+#axis-years-list
+  list-style: none
+  padding: 0
+  margin: 0
+  z-index: -1
+
+#axis-countries,
+#axis-years,
+#controls,
+#axis-years-list,
+#chart-title,
+#chart-source,
+.country,
+.country-name,
+.country-bar,
+.country-bar-label
+  position: absolute
+
+.country
+  top: 0
+  height: 20px
+  padding: 4px 0
+  margin: 0
+  line-height: 20px
+  font-size: 12px
+
+  .playing &
+    transition: transform 600ms
+
+.country-name
+  width: 120px
+  z-index: 10
+  padding-right: 8px
+  text-align: right
+  font-weight: bold
+  letter-spacing: 0.05em
+
+.country-bar
+  left: 128px
+  right: 0
+  padding-right: 80px
+  height: 20px
+  overflow: hidden
+  border-left: 1px solid #00fade
+  background: linear-gradient(to right, #353e4a, #2d3440 75%)
+
+.country-bar-block
+  height: 100%
+  background: #00fade
+  transform-origin: left center
+
+.country-bar-label
+  left: 100%
+  bottom: 0
+  margin-left: 8px
+  color: #7e8d94
+
+#controls
+  top: 50%
+  right: 0
+  margin-top: -128px
+  width: 120px
+  padding: 80px 0
+  overflow: hidden
+  color: #7e8d94
+
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    left: 44px
+    z-index: 10
+
+  &:before
+    top: 80px
+    bottom: 80px
+    border-left: 1px solid
+
+  &:after
+    top: 50%
+    margin: -4px
+    height: 8px
+    width: 8px
+    background: #2d3440
+    border-top: 1px solid
+    border-right: 1px solid
+    transform: rotate(45deg) translateY(-0.5px)
+
+#axis-years
+  top: 0
+  left: 44px
+  right: 0
+  bottom: 0
+
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    left: 0
+    right: 0
+    height: 80px
+    z-index: 10
+
+  &:before
+    top: 0
+    background: linear-gradient(to bottom, #2d3440, rgba(#2d3440, 0))
+
+  &:after
+    bottom: 0
+    background: linear-gradient(to bottom, rgba(#2d3440, 0), #2d3440)
+
+#axis-years-list
+  width: 100%
+  height: 20px
+  top: 50%
+  margin-top: -10px
+  transition: transform 600ms
+
+  .playing &
+    transition: none
+
+  .year
+    box-sizing: border-box
+    text-align: center
+    font-size: 16px
+    transition: color 800ms
+
+    &.active
+      color: #fff
+
+#btn-play,
+#btn-pause,
+#btn-reset
+  padding: 8px
+  width: 16px
+  cursor: pointer
+  display: block
+
+  &:focus
+    outline: none
+
+    .btn-icon
+      fill: #fff
+
+.btn-icon
+  width: 16px
+  height: 16px
+  display: block
+  transition: fill 300ms
+  fill: #7e8d94
+
+  &:hover
+    fill: rgba(#fff, 1)
+
+#chart-title
+  right: 180px
+  top: 50%
+  margin: -32px 0
+  width: 296px
+  font-size: 20px
+  text-align: right
+  letter-spacing: 0.05em
+  line-height: 1.2
+  font-weight: bold
+
+.chart-title-small
+  display: block
+  color: #7e8d94
+  font-weight: bold
+  font-size: 14px
+  margin-top: 8px
+  font-weight: normal
+
+#chart-source
+  right: 24px
+  bottom: 4px
+  color: #7e8d94
+  text-transform: none
