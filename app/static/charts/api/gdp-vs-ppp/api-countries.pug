@@ -2,8 +2,10 @@ extend /partials/layout
 
 block append config
   - page.title = "Military Expenditure"
-  - var chart  = data.getOne("static/charts/api/military-expenditure/data")
+  - var chart  = data.getOne("static/charts/api/gdp-vs-ppp/data")
   - var byValue = function(e){return -e.gdp[0]};
+  - var filter = ["Australia", "Bangladesh", "Brunei", "Cambodia", "China", "India", "Indonesia", "Japan", "North Korea", "South Korea", "Laos", "Malaysia", "Mongolia", "Myanmar", "Nepal", "New Zealand", "Pakistan", "Philippines", "Russia", "Singapore", "Sri Lanka", "Taiwan", "Thailand", "United States", "Vietnam"]
+  - chart.countries = chart.countries.filter(function(c){ return _.includes(filter, c.aka) || _.includes(filter, c.name)})
   - var inOrder = _.sortBy(chart.countries, byValue);
 
 block page
@@ -11,22 +13,14 @@ block page
     != `window.chart = ${JSON.stringify(chart)};`
   #wrapper(data-view="time-series")
     #chart-title
-      h1.chart-title-main Military Expenditure
-      small.chart-title-small.constant
-        | Current dollars converted<br>
-        | at current&#8209;year&#8209;average<br>
-        | market&nbsp;exchange&nbsp;rate
-
-      small.chart-title-small.projected
-        | Projected expenditure<br>
-        | at constant 2015 prices
+      h1.chart-title-main GDP at current prices
 
     ul#axis-countries.list-bare
       for country in chart.countries
-        - var p = country.gdp[0] / inOrder[0].gdp[0];
+        - var p = (country.gdp[0] / inOrder[0].gdp[0]) || 0;
         - var r = inOrder.indexOf(country);
         li.country(style=`transform: translate3d(0, ${r * 100}%, 0)`)
-          label.country-name= country.name
+          label.country-name= country.aka || country.name
           .country-bar
             for key, i in chart.keys
               .country-bar-block(
@@ -41,11 +35,12 @@ block page
         for n, i in new Array(25)
           .rank
             .rank-label(style={opacity: (50 - i) / 50})= i + 1
+
     #scale
       #scale-strokes
-        for n, i in new Array(10)
-          .scale-stroke
-            span.scale-stroke-label $#{i * 100}B
+        for n, i in new Array(25)
+          .scale-stroke(style={opacity: (25 - i) / 50})
+            span.scale-stroke-label $#{i}T
 
     #controls
       a#btn-reset.btn(tabindex="0")
@@ -74,8 +69,7 @@ block page
               a.year-link(data-index=i)= year
 
     small#chart-source
-      | Source: US Department of State,
-      | World Military Expenditures and Arms Transfers 2017
+      | Source: IMF World Economic Outlook, October 2018
 
     a#chart-logo(href="https://www.lowyinstitute.org/")
       img(src="/img/lowyinstitute-logo.png")
@@ -95,4 +89,4 @@ block css
   )
 
   style
-    include:sass ../gdp-vs-ppp/style.sass
+    include:sass style.sass

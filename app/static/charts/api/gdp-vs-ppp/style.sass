@@ -1,0 +1,507 @@
+html, body
+  height: 100%
+  box-sizing: border-box
+
+body
+  padding: 20px 80px
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #2d3440
+  color: #fff
+
+#wrapper
+  height: 700px
+  width: 100%
+  max-width: 1600px
+  margin: auto
+  position: relative
+  line-height: 20px
+  font-family: Montserrat, sans-serif
+  text-transform: uppercase
+  z-index: 0
+  padding: 4px 0 24px
+  overflow: hidden
+
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(to right, rgba(#2d3440, 0), #2d3440)
+    pointer-events: none
+
+#axis-countries,
+.country
+  width: 100%
+
+#axis-countries,
+#axis-years-list
+  list-style: none
+  padding: 0
+  margin: 0
+  white-space: nowrap
+
+#axis-countries,
+#axis-years,
+#controls,
+#axis-years-list,
+#chart-title,
+#chart-source,
+#scale,
+#ranks,
+#chart-logo,
+.country,
+.country-name,
+.country-bar,
+.country-bar-block,
+.country-bar-label,
+.scale-stroke-label
+  position: absolute
+
+.country
+  top: 0
+  height: 20px
+  padding: 4px 0
+  margin: 0
+  font-size: 12px
+  transition: all 800ms 400ms cubic-bezier(0.666, 0, 0.333, 1)
+
+  .playing &
+    transition-delay: 0ms
+
+.country-name
+  width: 120px
+  z-index: 10
+  padding-right: 8px
+  text-align: right
+  font-weight: bold
+  letter-spacing: 0.05em
+
+.country-bar
+  left: 148px
+  right: 0
+  height: 20px
+  overflow: hidden
+  border-left: 1px solid #00fade
+  background: linear-gradient(to right, rgba(#fff, 0.03), rgba(#fff, 0))
+
+  // .estimate &
+    border-left-color: #dbde00
+
+.country-bar-block
+  top: 0
+  left: 0
+  right: 80px
+  height: 100%
+  background: #00fade
+  transform-origin: left center
+  box-sizing: border-box
+  transition: transform 800ms
+
+  .playing &
+    transition: none
+
+  // .estimate &
+    background-color: #dbde00
+
+  &.ppp
+    background-color: rgba(#2c3441, 0.5)
+    border: 1px solid rgba(#00fade, 0.5)
+
+  &.gdp
+    z-index: 1
+
+.country-bar-label
+  left: 100%
+  bottom: 0
+  margin-left: 8px
+  color: #7e8d94
+  text-shadow: 0 0 3px #36414e, 0 0 3px #36414e
+
+#ranks
+  left: 124px
+  font-size: 12px
+  right: 0
+  text-align: center
+  // pointer-events: none
+
+.rank
+  position: relative
+  padding: 4px 0
+  &:after
+    content: ""
+    position: absolute
+    top: 4px
+    left: 24px
+    right: 0
+    bottom: 4px
+    background-color: #353e4a
+    z-index: -1
+
+  &:hover:after
+    background-color: #4d5567
+
+.rank-label
+  width: 20px
+
+#scale
+  top: 0
+  left: 148px
+  right: 80px
+  bottom: 20px
+  text-align: center
+  color: #7e8d94
+  font-size: 12px
+  z-index: -1
+
+#scale-strokes
+  width: 100%
+  height: 100%
+  transform-origin: left center
+  transition: transform 800ms
+  display: flex
+  flex-direction: row
+
+  .playing &
+    transition: none
+
+.scale-stroke
+  flex: 1
+  border-left: 1px solid #4d5567
+  margin-right: -1px
+  float: left
+  height: 100%
+  position: relative
+  transform-origin: left center
+  transition: transform 800ms
+
+  .playing &
+    transition: none
+
+.scale-stroke-label
+  bottom: -20px
+  left: -20px
+  width: 40px
+
+#controls
+  top: 50%
+  right: 0
+  margin-top: -128px
+  width: 104px
+  padding: 80px 0
+  overflow: hidden
+  color: #7e8d94
+
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    left: 44px
+    z-index: 10
+
+  &:before
+    top: 64px
+    bottom: 64px
+    border-left: 1px solid
+
+  &:after
+    top: 50%
+    margin: -4px
+    height: 8px
+    width: 8px
+    background: #2d3440
+    border-top: 1px solid
+    border-right: 1px solid
+    transform: rotate(45deg) translateY(-0.5px)
+
+#axis-years
+  top: 0
+  width: 40px
+  right: 0
+  bottom: 0
+  font-size: 14px
+  text-align: center
+
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    left: 0
+    right: 0
+    height: 80px
+    z-index: 10
+    pointer-events: none
+
+  &:before
+    top: 0
+    background: linear-gradient(to bottom, #2d3440, rgba(#2d3440, 0))
+
+  &:after
+    bottom: 0
+    background: linear-gradient(to bottom, rgba(#2d3440, 0), #2d3440)
+
+#axis-years-list
+  width: 100%
+  height: 20px
+  top: 50%
+  margin-top: -10px
+  transition: transform 600ms
+
+  .playing &
+    transition: none
+
+.year
+  box-sizing: border-box
+  transition: color 800ms
+
+  &.active
+    color: #fff
+
+  &:hover
+    color: #00fade
+
+.year-link
+  display: block
+  cursor: pointer
+
+.btn
+  padding: 8px
+  width: 16px
+  cursor: pointer
+  display: block
+
+  &:focus
+    outline: none
+
+    .btn-icon
+      fill: #fff
+
+#btn-pause
+  display: none
+
+  .playing &
+    display: block
+
+#btn-play
+  .playing &
+    display: none
+
+.btn-icon
+  width: 16px
+  height: 16px
+  display: block
+  transition: fill 300ms
+  fill: #7e8d94
+
+  &:hover
+    fill: rgba(#fff, 1)
+
+#chart-title
+  right: 120px
+  top: 50%
+  transform: translateY(-50%)
+  text-align: right
+  letter-spacing: 0.05em
+  line-height: 1.2
+  font-weight: bold
+  z-index: 10
+
+.chart-title-main
+  font-size: 20px
+  margin: 0
+
+.chart-title-small,
+.chart-title-label
+  display: block
+  font-weight: bold
+  font-size: 14px
+  margin-top: 8px
+  font-weight: normal
+
+.chart-title-small
+  opacity: 0
+  color: #7e8d94
+  transition: opacity 300ms
+
+  &.projected
+    position: absolute
+    top: 37px
+    right: 0
+    .projected &
+      opacity: 1
+
+  &.constant
+    .constant &
+      opacity: 1
+
+.chart-title-label
+  text-transform: none
+  letter-spacing: 0
+
+  &:after
+    content: ""
+    width: 1em
+    height: 1em
+    box-sizing: border-box
+    display: inline-block
+    vertical-align: middle
+    margin-left: 0.5em
+    position: relative
+    top: -2px
+
+  &.gdp:after
+    background-color: #00fade
+
+  &.ppp:after
+    border: 1px solid rgba(#00fade, 0.5)
+
+#chart-source
+  right: 0
+  bottom: 28px
+  color: #7e8d94
+  text-transform: none
+
+#chart-logo
+  bottom: 0px
+  right: 0
+  opacity: 0.5
+  width: 120px
+
+  img
+    width: 100%
+
+  &:hover
+    opacity: 1
+
+#chart-legend
+  position: absolute
+  right: 0
+  bottom: 80px
+  text-align: right
+
+@media (max-height: 840px), (max-width: 800px)
+  body
+    padding: 20px
+
+  #wrapper
+    line-height: 16px
+    height: 20px * 25
+
+  .country,
+  .country-bar,
+  #axis-years-list
+    height: 16px
+
+  #axis-years-list
+    margin-top: -8px
+
+  .country,
+  .rank
+    padding: 2px
+    font-size: 10px
+
+  .rank:after
+    top: 2px
+    bottom: 2px
+
+  .year,
+  .chart-title-label
+    font-size: 12px
+
+  #chart-title
+    right: 140px
+
+  .chart-title-main
+    font-size: 16px
+
+  .chart-title-small,
+  #chart-source
+    font-size: 10px
+
+  #chart-source
+    max-width: 50%
+    text-align: right
+    line-height: 12px
+
+  .btn
+    width: 12px
+
+  .btn-icon
+    width: 12px
+    height: 12px
+
+  #controls
+    margin-top: -122px
+
+@media (max-width: 600px)
+  body
+    padding: 12px
+
+  #chart-title
+    height: 80px
+    text-align: center
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    padding-bottom: 12px
+
+  #axis-countries
+    position: relative
+    height: 20px * 25
+    top: auto
+    overflow: hidden
+    margin-bottom: 32px
+
+  #wrapper
+    padding: 0
+    position: relative
+    overflow: visible
+    height: 592px
+
+  .country-name
+    width: 100px
+
+  .chart-title-small.projected
+    left: 0
+
+  .scale-stroke:nth-child(4n + 0),
+  .scale-stroke:nth-child(4n + 2),
+  .scale-stroke:nth-child(4n + 3)
+    color: transparent
+
+  #ranks
+    left: 104px
+
+  #scale,
+  .country-bar
+    left: 128px
+
+  #wrapper:before,
+  #scale,
+  #ranks
+    top: 92px
+    bottom: 0
+
+  #chart-title,
+  #chart-logo,
+  #chart-source
+    position: static
+    transform: none
+
+  #chart-logo,
+  #chart-source
+    display: block
+    margin: 20px auto
+    text-align: center
+    max-width: none
+
+  #chart-legend
+    bottom: 2px
+
+  .chart-title-label
+    font-size: 10px
