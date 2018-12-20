@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Military Expenditure"
+  - page.title = "GDP at current prices, top 25 countries"
   - var chart  = data.getOne("static/charts/api/gdp-vs-ppp/data")
   - var byValue = function(e){return -e.gdp[0]};
   - var inOrder = _.sortBy(chart.countries, byValue);

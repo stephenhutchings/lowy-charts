@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Military Expenditure"
+  - page.title = "GDP at current prices"
   - var chart  = data.getOne("static/charts/api/gdp-vs-ppp/data")
   - var byValue = function(e){return -e.gdp[0]};
   - var filter = ["Australia", "Bangladesh", "Brunei", "Cambodia", "China", "India", "Indonesia", "Japan", "North Korea", "South Korea", "Laos", "Malaysia", "Mongolia", "Myanmar", "Nepal", "New Zealand", "Pakistan", "Philippines", "Russia", "Singapore", "Sri Lanka", "Taiwan", "Thailand", "United States", "Vietnam"]
