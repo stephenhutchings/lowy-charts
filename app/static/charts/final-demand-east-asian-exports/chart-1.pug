@@ -22,8 +22,8 @@ block page
           line.st1(
             x1=48
             x2=(chart.width - chart.inset.x)
-            y1=y
-            y2=y
+            y1=(y - 0.5)
+            y2=(y - 0.5)
           )
 
       g
@@ -52,7 +52,7 @@ block page
           - var x = 48 + i * (chart.width - 69) / 22 + 0.5; 
           if i % 2 === 0
             text.tt2.tt3(x=x y=280 text-anchor="middle")= 1995 + i
-          line.st1(x1=x x2=x y1=256 y2=260)
+          line.st1(x1=x x2=x y1=256 y2=262)
 
       g
         g(data-id="2" data-link="2")
@@ -72,7 +72,7 @@ block page
       :sass
         .st1 
           fill: none
-          stroke: #cbd0d3
+          stroke: #e4e8ea
         .st2 
           fill: #002B45
         .st3 

@@ -20,13 +20,17 @@ block page
       g
         for n, i in (new Array(7))
           - var y = (chart.inset.y + i * (chart.height - chart.inset.y * 2) / 6)
-          text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=y + 4)= 90 - i * 5
-          text.tt2.tt3(text-anchor="start" x=(chart.width - chart.inset.x * 2) y=y + 4)= 30 - i * 5
+          if i < 4
+            text.tt2.tt3.st4(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
+              | #{90 - i * 5}%
+          if i >= 3
+            text.tt2.tt3.st5(text-anchor="start" x=(chart.width - chart.inset.x * 2) y=y + 4)
+              | #{30 - i * 5}%
           line.st1(
             x1=48
             x2=512
-            y1=y
-            y2=y
+            y1=(y - 0.5)
+            y2=(y - 0.5)
           )
 
       g
@@ -47,12 +51,11 @@ block page
           - var x = 48 + i * (chart.width - 97) / 22 + 0.5; 
           if i % 2 === 0
             text.tt2.tt3(x=x y=280 text-anchor="middle")= 1995 + i
-          line.st1(x1=x x2=x y1=256 y2=260)
+          line.st1(x1=x x2=x y1=256 y2=262)
 
           g.label
-            rect.label-bg(x=(x - 12) width=24 y=chart.inset.y height=196)
+            rect.label-bg(x=(x - 12) width=24 y=chart.inset.y height=220)
             line.st1.st6(x1=x x2=x  y1=chart.inset.y y2=chart.inset.y + 196)
-            //- rect.bg.st4(x=x-24 width=48 y=chart.data.ap[i] - 32 height=24)
             polygon.bg.st4(
               points=[
                 `${x - 24},${chart.data.ap[i] - 28}`,
@@ -99,7 +102,7 @@ block page
           opacity: 0
         .st1 
           fill: none
-          stroke: #cbd0d3
+          stroke: #e4e8ea
         .st2 
           fill: none
           stroke: #002B45
