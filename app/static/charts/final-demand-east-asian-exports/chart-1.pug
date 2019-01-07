@@ -1,0 +1,103 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Chart 1: Final demand for East Asian exports"
+  - var chart = { height: 320, width: 560, inset: { x: 20, y: 64 } }
+
+block page
+  .wrapper
+    svg(
+      width=`${chart.width}px`
+      height=`${chart.height}px`
+      viewBox=`0 0 ${chart.width} ${chart.height}`
+      data-view="match"
+    )
+      text.text-bold(text-anchor="middle" x=chart.width / 2 y=16) Chart 1: Final demand for East Asian exports
+      text.tt2(text-anchor="middle" x=chart.width / 2 y=40) Selected economies, Current US$ billions
+      g
+        for n, i in (new Array(6))
+          - var y = (chart.inset.y + i * (chart.height - chart.inset.y * 2) / 5)
+          text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
+            = written.prettyNumber((5 - i) * 1000)
+          line.st1(
+            x1=48
+            x2=(chart.width - chart.inset.x)
+            y1=y
+            y2=y
+          )
+
+      g
+        polygon.st2(
+          data-link="2"
+          data-id="2"
+          points="48,239 70.5,237.5 91.5,237.5 114,242 136.5,240.5 159,237.5 181.5,239 204,237.5 226.5,234.5 249,228.5 271.5,227 294,224 316.5,219.5 339,213.5 360,218 382.5,206 405,195.5 427.5,194 450,191 472.5,191 495,195.5 517.5,198.5 540,191 540,255.5 517.5,255.5 495,255.5 472.5,255.5 450,255.5 427.5,255.5 405,255.5 382.5,255.5 360,255.5 339,255.5 316.5,255.5 294,255.5 271.5,255.5 249,255.5 226.5,255.5 204,255.5 181.5,255.5 159,255.5 136.5,255.5 114,255.5 91.5,255.5 70.5,255.5 48,255.5"
+        )
+        polygon.st3(
+          data-link="3"
+          data-id="3"
+          points="48,230 70.5,228.5 91.5,228.5 114,233 136.5,230 159,225.5 181.5,228.5 204,227 226.5,221 249,212 271.5,207.5 294,201.5 316.5,192.5 339,183.5 360,195.5 382.5,179 405,167 427.5,167 450,165.5 472.5,162.5 495,167 517.5,171.5 540,162.5 540,191 517.5,198.5 495,195.5 472.5,191 450,191 427.5,194 405,195.5 382.5,206 360,218 339,213.5 316.5,219.5 294,224 271.5,227 249,228.5 226.5,234.5 204,237.5 181.5,239 159,237.5 136.5,240.5 114,242 91.5,237.5 70.5,237.5 48,239"
+        )
+        polygon.st4(
+          data-link="4"
+          data-id="4"
+          points="48,218 70.5,216.5 91.5,215 114,219.5 136.5,215 159,207.5 181.5,212 204,210.5 226.5,203 249,191 271.5,183.5 294,173 316.5,162.5 339,155 360,171.5 382.5,147.5 405,134 427.5,131 450,129.5 472.5,125 495,129.5 517.5,134 540,122 540,162.5 517.5,171.5 495,167 472.5,162.5 450,165.5 427.5,167 405,167 382.5,179 360,195.5 339,183.5 316.5,192.5 294,201.5 271.5,207.5 249,212 226.5,221 204,227 181.5,228.5 159,225.5 136.5,230 114,233 91.5,228.5 70.5,228.5 48,230"
+        )
+        polygon.st5(
+          data-link="5"
+          data-id="5"
+          points="48,207.5 70.5,206 91.5,204.5 114,209 136.5,204.5 159,195.5 181.5,201.5 204,198.5 226.5,189.5 249,173 271.5,161 294,146 316.5,126.5 339,111.5 360,134 382.5,99.5 405,78.5 427.5,72.5 450,68 472.5,63.5 495,72.5 517.5,81.5 540,62 540,122 517.5,134 495,129.5 472.5,125 450,129.5 427.5,131 405,134 382.5,147.5 360,171.5 339,155 316.5,162.5 294,173 271.5,183.5 249,191 226.5,203 204,210.5 181.5,212 159,207.5 136.5,215 114,219.5 91.5,215 70.5,216.5 48,218"
+        )
+      g
+        for n, i in (new Array(23))
+          - var x = 48 + i * (chart.width - 69) / 22 + 0.5; 
+          if i % 2 === 0
+            text.tt2.tt3(x=x y=280 text-anchor="middle")= 1995 + i
+          line.st1(x1=x x2=x y1=256 y2=260)
+
+      g
+        g(data-id="2" data-link="2")
+          rect.st2(x=92 y=305 width=12 height=12)
+          text.tt2.tt3(x=108 y=316) East Asia
+        g(data-id="3" data-link="3")
+          rect.st3(x=172 y=305 width=12 height=12)
+          text.tt2.tt3(x=188 y=316) European Union
+        g(data-id="4" data-link="4")
+          rect.st4(x=296 y=305 width=12 height=12)
+          text.tt2.tt3(x=312 y=316) United States
+        g(data-id="5" data-link="5")
+          rect.st5(x=404 y=305 width=12 height=12)
+          text.tt2.tt3(x=420 y=316) Rest of world
+
+    style
+      :sass
+        .st1 
+          fill: none
+          stroke: #cbd0d3
+        .st2 
+          fill: #002B45
+        .st3 
+          fill: #f7931e
+        .st4 
+          fill: #539ed4
+        .st5 
+          fill: #9DB4C4
+        .tt2
+          fill: #666
+        .tt3
+          font-size: 14px
+
+        .st2,.st3,.st4,.st5
+          stroke: #fff
+          stroke-opacity: 0
+
+        .inactive
+          opacity: 0.5
+          fill: #bbb
+          stroke-opacity: 1
+          > rect
+            fill: inherit
+        .active
+          opacity: 1
+          stroke-opacity: 1
+        [data-id]
+          transition: all 300ms

@@ -1,0 +1,115 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Chart 2: Sources of final export demand "
+  - var chart = { height: 320, width: 560, inset: { x: 20, y: 64 } }
+
+block page
+  .wrapper
+    svg(
+      width=`${chart.width}px`
+      height=`${chart.height}px`
+      viewBox=`0 0 ${chart.width} ${chart.height}`
+      data-view="match"
+    )
+      text.text-bold(text-anchor="middle" x=chart.width / 2 y=16) Chart 2: Sources of final export demand 
+      text.tt2(text-anchor="middle" x=chart.width / 2 y=40) % of total
+      g
+        for n, i in (new Array(6))
+          - var y = (chart.inset.y + i * (chart.height - chart.inset.y * 2) / 5)
+          text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=y + 4)= 100 - i * 20
+          line.st1(
+            x1=48
+            x2=(chart.width - chart.inset.x)
+            y1=y
+            y2=y
+          )
+
+
+      g.bars
+        g(data-link="2" data-id="2")
+          rect.st2(x=120 y=119.92 width=96 height=70.83)
+          text.tt1.tt3(text-anchor="middle" y=160 x=168) 37.3%
+        g(data-link="3" data-id="3")
+          rect.st3(x=120 y=190.76 width=96 height=26.1)
+          text.tt1.tt3(text-anchor="middle" y=208 x=168) 13.5%
+        g(data-link="4" data-id="4")
+          rect.st4(x=120 y=216.85 width=96 height=39.15)
+          text.tt1.tt3(text-anchor="middle" y=240 x=168) 19.8%
+        g(data-link="5" data-id="5")
+          rect.st5(x=120 y=64     width=96 height=55.92)
+          text.tt1.tt3(text-anchor="middle" y=96  x=168) 29.4%
+          
+
+        text.tt2.tt3(text-anchor="middle" y=280 x=168) East Asia, excluding China
+
+      g.bars
+        g(data-link="2" data-id="2")
+          rect.st2(x=352 y=129.24 width=96 height=48.47)
+          text.tt1.tt3(text-anchor="middle" y=156 x=400) 24.7%
+        g(data-link="3" data-id="3")
+          rect.st3(x=352 y=177.71 width=96 height=33.55)
+          text.tt1.tt3(text-anchor="middle" y=200 x=400) 17.8%
+        g(data-link="4" data-id="4")
+          rect.st4(x=352 y=211.26 width=96 height=44.74)
+          text.tt1.tt3(text-anchor="middle" y=240 x=400) 22.9%
+        g(data-link="5" data-id="5")
+          rect.st5(x=352 y=64     width=96 height=65.24)
+          text.tt1.tt3(text-anchor="middle" y=100 x=400) 34.6%
+          
+
+        text.tt2.tt3(text-anchor="middle" y=280 x=400) China
+
+      g
+        g(data-link="2" data-id="2")
+          rect.st2(x=92 y=305 width=12 height=12)
+          text.tt2.tt3(x=108 y=316) East Asia
+        g(data-link="3" data-id="3")
+          rect.st3(x=172 y=305 width=12 height=12)
+          text.tt2.tt3(x=188 y=316) European Union
+        g(data-link="4" data-id="4")
+          rect.st4(x=296 y=305 width=12 height=12)
+          text.tt2.tt3(x=312 y=316) United States
+        g(data-link="5" data-id="5")
+          rect.st5(x=404 y=305 width=12 height=12)
+          text.tt2.tt3(x=420 y=316) Rest of world
+
+    style
+      :sass
+        .st1 
+          fill: none
+          stroke: #cbd0d3
+        .st2 
+          fill: #002B45
+        .st3 
+          fill: #f7931e
+        .st4 
+          fill: #539ed4
+        .st5 
+          fill: #9DB4C4
+        .tt1
+          fill: #fff
+        .tt2
+          fill: #666
+        .tt3
+          font-size: 14px
+
+        .bars
+          .st2,.st3,.st4,.st5
+            stroke: #fff
+            stroke-opacity: 0
+            transition: inherit
+
+        .inactive
+          opacity: 0.5
+          rect
+            fill: #bbb
+            .bars &
+              stroke-opacity: 1
+        .active
+          opacity: 1
+          rect
+            .bars &
+              stroke-opacity: 1
+        [data-id]
+          transition: all 300ms
