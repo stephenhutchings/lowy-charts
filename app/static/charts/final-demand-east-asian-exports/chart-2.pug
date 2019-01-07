@@ -17,7 +17,8 @@ block page
       g
         for n, i in (new Array(6))
           - var y = (chart.inset.y + i * (chart.height - chart.inset.y * 2) / 5)
-          text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=y + 4)= 100 - i * 20
+          text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
+            | #{100 - i * 20}%
           line.st1(
             x1=48
             x2=(chart.width - chart.inset.x)
