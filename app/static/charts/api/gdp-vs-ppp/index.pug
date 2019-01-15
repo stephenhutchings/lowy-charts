@@ -1,23 +1,27 @@
 extend /partials/layout
 
 block append config
-  - page.title = "GDP at current prices, top 25 countries"
   - var chart  = data.getOne("static/charts/api/gdp-vs-ppp/data")
   - var byValue = function(e){return -e.gdp[0]};
   - var inOrder = _.sortBy(chart.countries, byValue);
+  - page.title = `GDP at current prices, top #{chart.limit} countries`
 
 block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
   #wrapper(data-view="time-series")
     #chart-title
-      h1.chart-title-main GDP at current prices<br>the top 25 countries
+      h1.chart-title-main
+        | GDP at current prices<br>the top #{chart.limit} countries
 
     ul#axis-countries.list-bare
       for country in chart.countries
         - var p = country.gdp[0] / inOrder[0].gdp[0];
         - var r = inOrder.indexOf(country);
-        li.country(style=`transform: translate3d(0, ${r * 100}%, 0)`)
+        li.country(
+          style=`transform: translate3d(0, ${r * 100}%, 0)`
+          class=`country-${written.hyphenCase(country.aka || country.name)}`
+        )
           label.country-name= country.aka || country.name
           .country-bar
             for key, i in chart.keys
@@ -25,19 +29,20 @@ block page
                 style=`transform: translate3d(${-100 + p * 100}%, 0, 0)`
                 class=key
               )
-                if i === 0
-                  .country-bar-label
+                .country-bar-label(class=key)
 
     #ranks
       #rank-list
-        for n, i in new Array(25)
+        for n, i in new Array(chart.limit)
           .rank
-            .rank-label(style={opacity: (50 - i) / 50})= i + 1
+            .rank-label(style={
+              opacity: ((chart.limit * 2) - i) / (chart.limit * 2)
+            })= i + 1
 
     #scale
       #scale-strokes
         for n, i in new Array(25)
-          .scale-stroke(style={opacity: (25 - i) / 50})
+          .scale-stroke(style={opacity: (25 - i) / 25})
             span.scale-stroke-label $#{i}T
 
     #controls
@@ -74,7 +79,7 @@ block page
 
     legend#chart-legend
       label.chart-title-label.gdp
-        | US Dollars
+        | Market Exchange Rates
       label.chart-title-label.ppp
         | Purchasing Power Parity
 

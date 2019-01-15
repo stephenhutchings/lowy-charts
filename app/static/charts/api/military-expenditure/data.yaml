@@ -4,6 +4,7 @@ scaleFactor: 100000
 duration: 40000
 prefix: "$"
 suffix: "&thinsp;M"
+limit: 20
 classes:
   0: "constant"
   0.4617105412258535: "projected"
