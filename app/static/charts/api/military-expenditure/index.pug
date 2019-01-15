@@ -2,8 +2,8 @@ extend /partials/layout
 
 block append config
   - page.title = "Military Expenditure"
-  - var chart  = data.getOne("static/charts/api/military-expenditure/data")
-  - var byValue = function(e){return -e.gdp[0]};
+  - var chart  = data.getOne("static/charts/api/military-expenditure/1995-2023")
+  - var byValue = function(e){return -e.me[0]};
   - var inOrder = _.sortBy(chart.countries, byValue);
 
 block page
@@ -23,10 +23,10 @@ block page
 
     ul#axis-countries.list-bare
       for country in chart.countries
-        - var p = country.gdp[0] / inOrder[0].gdp[0];
+        - var p = country.me[0] / inOrder[0].me[0];
         - var r = inOrder.indexOf(country);
         li.country(style=`transform: translate3d(0, ${r * 100}%, 0)`)
-          label.country-name= country.name
+          label.country-name= country.aka || country.name
           .country-bar
             for key, i in chart.keys
               .country-bar-block(
@@ -34,13 +34,15 @@ block page
                 class=key
               )
                 if i === 0
-                  .country-bar-label
+                  .country-bar-label(class=key)
 
     #ranks
       #rank-list
-        for n, i in new Array(25)
+        for n, i in new Array(chart.limit)
           .rank
-            .rank-label(style={opacity: (50 - i) / 50})= i + 1
+            .rank-label(style={
+              opacity: ((chart.limit * 2) - i) / (chart.limit * 2)
+            })= i + 1
     #scale
       #scale-strokes
         for n, i in new Array(10)
@@ -75,16 +77,10 @@ block page
 
     small#chart-source
       | Source: US Department of State,
-      | World Military Expenditures and Arms Transfers 2017
+      | World Military Expenditures and Arms Transfers
 
     a#chart-logo(href="https://www.lowyinstitute.org/")
       img(src="/img/lowyinstitute-logo.png")
-
-    legend#chart-legend
-      label.chart-title-label.gdp
-        | US Dollars
-      label.chart-title-label.ppp
-        | Purchasing Power Parity
 
 block css
   link(
@@ -96,3 +92,12 @@ block css
 
   style
     include:sass ../gdp-vs-ppp/style.sass
+
+    :sass
+      #scale,
+      .country-bar-block
+        right: 0
+
+      #chart-source
+        max-width: 300px
+        text-align: right
