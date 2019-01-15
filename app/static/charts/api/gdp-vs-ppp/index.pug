@@ -93,3 +93,24 @@ block css
 
   style
     include:sass style.sass
+
+    :sass
+      .country-bar-block
+        .country-china &,
+        .country-united-states &,
+        .country-india &,
+        .country-japan &,
+        .country-germany &
+          background-color: #dbde00
+
+          &.ppp
+            border-color: rgba(#dbde00, 0.5)
+            background-color: rgba(#2c3441, 0.5)
+
+      .country-bar
+        .country-china &,
+        .country-united-states &,
+        .country-india &,
+        .country-japan &,
+        .country-germany &
+          border-left-color: #dbde00

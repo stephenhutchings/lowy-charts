@@ -13,19 +13,19 @@ block page
     #chart-title
       h1.chart-title-main Military Expenditure
       small.chart-title-small.constant
-        | Current dollars converted<br>
-        | at current&#8209;year&#8209;average<br>
-        | market&nbsp;exchange&nbsp;rate
+        | at current prices
 
       small.chart-title-small.projected
-        | Projected expenditure<br>
-        | at constant 2015 prices
+        | forecast at constant 2015 prices
 
     ul#axis-countries.list-bare
       for country in chart.countries
         - var p = country.me[0] / inOrder[0].me[0];
         - var r = inOrder.indexOf(country);
-        li.country(style=`transform: translate3d(0, ${r * 100}%, 0)`)
+        li.country(
+          style=`transform: translate3d(0, ${r * 100}%, 0)`
+          class=`country-${written.hyphenCase(country.aka || country.name)}`
+        )
           label.country-name= country.aka || country.name
           .country-bar
             for key, i in chart.keys
@@ -76,8 +76,7 @@ block page
               a.year-link(data-index=i)= year
 
     small#chart-source
-      | Source: US Department of State,
-      | World Military Expenditures and Arms Transfers
+      | Source: US Department of State; Lowy Institute
 
     a#chart-logo(href="https://www.lowyinstitute.org/")
       img(src="/img/lowyinstitute-logo.png")
@@ -94,10 +93,26 @@ block css
     include:sass ../gdp-vs-ppp/style.sass
 
     :sass
-      #scale,
-      .country-bar-block
-        right: 0
 
-      #chart-source
-        max-width: 300px
-        text-align: right
+      .country-bar-label
+        right: auto
+        left: 100%
+        margin: 0 0 0 8px
+        color: #7a8d95
+        opacity: 1 !important
+
+      .country-bar-block
+        .country-united-states &,
+        .country-china &,
+        .country-saudi-arabia &,
+        .country-india &,
+        .country-russia &
+          background-color: #dbde00
+
+      .country-bar
+        .country-united-states &,
+        .country-china &,
+        .country-saudi-arabia &,
+        .country-india &,
+        .country-russia &
+          border-left-color: #dbde00

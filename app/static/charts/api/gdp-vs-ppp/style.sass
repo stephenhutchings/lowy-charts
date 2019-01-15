@@ -88,13 +88,6 @@ body
   border-left: 1px solid #00fade
   background: linear-gradient(to right, rgba(#fff, 0.03), rgba(#fff, 0))
 
-  .country-china &,
-  .country-united-states &,
-  .country-india &,
-  .country-japan &,
-  .country-germany &
-    border-left-color: #dbde00
-
 .country-bar-block
   top: 0
   left: 0
@@ -114,17 +107,6 @@ body
 
   &.gdp
     z-index: 1
-
-  .country-china &,
-  .country-united-states &,
-  .country-india &,
-  .country-japan &,
-  .country-germany &
-    background-color: #dbde00
-
-    &.ppp
-      border-color: rgba(#dbde00, 0.5)
-      background-color: rgba(#2c3441, 0.5)
 
 .country-bar-label
   right: 0
@@ -345,8 +327,9 @@ body
 
   &.projected
     position: absolute
-    top: 37px
+    top: 24px
     right: 0
+    white-space: nowrap
     .projected &
       opacity: 1
 

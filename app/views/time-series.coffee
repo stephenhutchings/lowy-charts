@@ -1,7 +1,7 @@
 easie = require("lib/easie")
 
-interpolate = (x, y, p) -> if x >= 0 and y >= 0 then Math.round x + (y - x) * p
-toThousands = (n) -> n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+interpolate = (x, y, p) -> if x >= 0 and y >= 0 then x + (y - x) * p
+toThousands = (n) -> Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 
 module.exports =
   class Chart extends Backbone.View
@@ -82,7 +82,7 @@ module.exports =
         for { value, index }, rank in l
           value ?= 0
           pct    = value / max
-          strlen = value.toString().length
+          strlen = Math.round(value).toString().length
           @$elements.blocks[key].eq(index).css(
             transform: "translate3d(#{-100 + pct * 100}%, 0, 0)"
           )
