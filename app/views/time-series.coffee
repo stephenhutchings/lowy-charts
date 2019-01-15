@@ -13,19 +13,24 @@ module.exports =
       "click #btn-reset": "reset"
       "click #btn-end": "end"
       "click .year-link": "goToYear"
+      "click .chart-title-label": "selectKey"
 
     initialize: ->
       @$elements =
         blocks:  {}
+        labels:  {}
         country: @$(".country")
-        labels:  @$(".country-bar-label")
         year:    @$(".year")
         years:   @$("#axis-years-list")
         scale:   @$("#scale-strokes")
         strokes: @$(".scale-stroke")
+        keys:    @$(".chart-title-label")
 
       for key in @data.keys
         @$elements.blocks[key] = @$(".country-bar-block.#{key}")
+        @$elements.labels[key] = @$(".country-bar-label.#{key}")
+
+      @selectKey()
 
       @reset()
       window.setTimeout (=> @play()), 600
@@ -48,7 +53,7 @@ module.exports =
           .sortBy((c) -> if c.value? then -c.value else Infinity)
           .value()
 
-      list = lists[0]
+      list = lists[@activeIndex]
       max = _.chain(lists).flatten().pluck("value").max().value()
 
       length = @$elements.strokes.length
@@ -76,24 +81,35 @@ module.exports =
         key = @data.keys[i]
         for { value, index }, rank in l
           value ?= 0
-          @$elements.blocks[key].eq(index).css
-            transform: "translate3d(#{-100 + value / max * 100}%, 0, 0)"
+          pct    = value / max
+          strlen = value.toString().length
+          @$elements.blocks[key].eq(index).css(
+            transform: "translate3d(#{-100 + pct * 100}%, 0, 0)"
+          )
+          #.toggleClass("show-label", pct * 100 > strlen + 2)
+
+          if rank < @data.limit
+            @$elements.labels[key].eq(index).html(
+              if value
+                [@data.prefix, toThousands(value), @data.suffix].join("")
+              else
+                "No Data"
+            ).css(
+              opacity:
+                if i is 0
+                  (pct * 100 - (strlen + 2))
+                else
+                  2 * (value - _.find(lists[0], {index}).value) / value
+            )
 
       for { value, index, isEstimate }, rank in list
         @$elements.country.eq(index)
           .toggleClass("estimate", isEstimate)
           .css
-            transform: "translate3d(0, #{Math.min(rank, 25) * 100}%, 0)"
+            transform: "translate3d(0, #{Math.min(rank, @data.limit) * 100}%, 0)"
             opacity: 1
 
-        if rank < 25
-          @$elements.labels.eq(index).html(
-            if value
-              [@data.prefix, toThousands(value), @data.suffix].join("")
-            else
-              "No Data"
-          )
-        else
+        if rank >= @data.limit
           @$elements.country.eq(index).css opacity: 0
 
     play: ->
@@ -103,10 +119,11 @@ module.exports =
 
       @$el.addClass("playing")
 
-      @currentTime ?= 0
+      if @currentTime is 1 or not @currentTime?
+        @currentTime = 0
+
       max = @data.scale.length - 1
       now = Date.now() - @currentTime * @data.duration
-      console.log @currentTime
 
       do repeat = =>
         d = Date.now() - now
@@ -120,7 +137,7 @@ module.exports =
           @loop = window.requestAnimationFrame(repeat)
         else if @playing
           @$el.removeClass("playing")
-          @currentTime = 0
+          @currentTime = 1
           @playing = false
 
     pause: ->
@@ -139,18 +156,24 @@ module.exports =
     end: ->
       t = @data.scale.length - 1
       window.setTimeout (=> @render(t)), if @playing then 100 else 0
+      @currentTime = 1
       @playing = false
       @$el.removeClass("playing")
 
     goToYear: (e) ->
-      # -.5 * (m.cos(m.PI * t) - 1)
       r = (t) -> (Math.acos(-2 * t + 1)) / Math.PI
       n = (@data.scale.length - 1)
       t = @$(e.currentTarget).data("index") / n
-      console.log t, r(t)
       @currentTime = r(t)
       @playing = false
       @$el.removeClass("playing")
       window.setTimeout (=>
         @render(t * n)
       ), 100
+
+    selectKey: (e) ->
+      @activeIndex = if e then @$(e.currentTarget).index() else 0
+      @$elements.keys.removeClass("active").eq(@activeIndex).addClass("active")
+
+      if not @playing
+        @render(easie.sineInOut(@currentTime) * (@data.scale.length - 1))
