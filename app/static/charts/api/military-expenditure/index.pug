@@ -12,11 +12,12 @@ block page
   #wrapper(data-view="time-series")
     #chart-title
       h1.chart-title-main Military Expenditure
+
       small.chart-title-small.constant
-        | at current prices
+        | At current prices
 
       small.chart-title-small.projected
-        | forecast at constant 2015 prices
+        | Forecast at current prices
 
     ul#axis-countries.list-bare
       for country in chart.countries
@@ -93,6 +94,9 @@ block css
     include:sass ../gdp-vs-ppp/style.sass
 
     :sass
+      .chart-title-small.projected
+        @media (max-width: 600px)
+          top: 41px
 
       .country-bar-label
         right: auto

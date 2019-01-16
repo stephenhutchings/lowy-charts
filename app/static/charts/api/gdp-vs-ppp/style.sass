@@ -444,6 +444,9 @@ body
   body
     padding: 12px
 
+  #wrapper
+    line-height: 16px
+
   #chart-title
     height: 80px
     text-align: center
@@ -455,16 +458,35 @@ body
 
   #axis-countries
     position: relative
-    height: 20px * 25
+    height: 20px * 20
     top: auto
     overflow: hidden
     margin-bottom: 32px
+
+  .country,
+  .country-bar,
+  #axis-years-list
+    height: 16px
+
+  .chart-title-small,
+  #chart-source,
+  .country,
+  .rank
+    font-size: 11px
+
+  .year,
+  .chart-title-label
+    font-size: 13px
+
+  .chart-title-label
+    margin-top: 4px
+
 
   #wrapper
     padding: 0
     position: relative
     overflow: visible
-    height: 592px
+    height: 492px
 
   .country-name
     width: 100px
@@ -483,6 +505,9 @@ body
   #scale,
   .country-bar
     left: 128px
+
+  #scale
+    overflow: hidden
 
   #wrapper:before,
   #scale,

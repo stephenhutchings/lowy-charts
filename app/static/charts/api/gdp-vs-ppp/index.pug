@@ -14,6 +14,12 @@ block page
       h1.chart-title-main
         | GDP at current prices<br>the top #{chart.limit} countries
 
+      small.chart-title-small.constant
+        | At current prices
+
+      small.chart-title-small.projected
+        | Forecast at current prices
+
     ul#axis-countries.list-bare
       for country in chart.countries
         - var p = country.gdp[0] / inOrder[0].gdp[0];
@@ -95,6 +101,12 @@ block css
     include:sass style.sass
 
     :sass
+      .chart-title-small.projected
+        top: 48px
+
+        @media (max-width: 600px)
+          top: 53px
+
       .country-bar-block
         .country-china &,
         .country-united-states &,
