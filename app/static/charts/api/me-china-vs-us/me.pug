@@ -14,16 +14,19 @@ block page
   #wrapper(data-view="gdp-vs-me")
     #chart-title
       h1.chart-title-main 
-        | Military Expenditure<br>China &amp; the US
+        | Military Expenditure<br>
 
     #countries
+      .line-label.txt-cn(style={left: "3%", top: "87%"}) China
+      .line-label.txt-us(style={left: "3%", top: "47%"}) US
+
       svg(
         width="100%"
         height="100%"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
-
       )
+
         for country in chart.countries
           polyline.country(class=[
             `country-${country.code}`,
@@ -101,8 +104,8 @@ block css
     include:sass ../gdp-vs-ppp/style.sass
 
     :sass
-      #wrapper
-        overflow: visible
+      .line-label
+        position: absolute
 
       #chart-title
         left: 120px
@@ -204,14 +207,17 @@ block css
           top: 4px
           z-index: -1
 
-        // .scenario-2 &
-          opacity: 0.5
-
         .country-us &
           background-color: #00fade
 
         .country-cn &
           background-color: #dbde00
+
+      .txt-us
+        color: #00fade
+
+      .txt-cn
+        color: #dbde00
 
       .chart-title-label:after
         content: none
