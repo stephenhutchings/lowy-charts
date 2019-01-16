@@ -4,6 +4,10 @@ block append config
   - page.title = "Military Expenditure – China vs US"
   - var chart  = data.getOne("static/charts/api/me-china-vs-us/data")
 
+  //- Trimmed to match ME/GDP relative values
+  - chart.scale = chart.scale.slice(10)
+  - chart.countries.forEach(function(e){e.gdp = e.gdp.slice(10), e.me = e.me.slice(10)})
+
 block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
@@ -25,6 +29,13 @@ block page
             `country-${country.code}`,
             `scenario-${country.scenario}`
           ])
+
+      for country in chart.countries
+        .country-label(class=[
+          `country-${country.code}`,
+          `scenario-${country.scenario}`
+        ])
+          .country-label-text
 
     #axis-me
       for n, i in new Array(13)
@@ -64,11 +75,13 @@ block page
 
     legend#chart-legend
       label.chart-title-label.scenario-1
-        | Scenario 1
-        svg: line.country.scenario-1(x1=2 x2=24 y1=6 y2=6)
+        span.txt-muted Scenario 1&ensp;
+        | Current Trends
+        svg: line.country.scenario-1(x1=2 x2=43 y1=6 y2=6)
       label.chart-title-label.scenario-2
-        | Scenario 2
-        svg: line.country.scenario-2(x1=2 x2=21 y1=6 y2=6)
+        span.txt-muted Scenario 2&ensp;
+        | Economic Cold War
+        svg: line.country.scenario-2(x1=2 x2=45 y1=6 y2=6)
 
     small#chart-source
       | Source: US Department of State; Lowy Institute
@@ -139,6 +152,9 @@ block css
         border-radius: 50%
         background: #71798a
 
+      .txt-muted
+        color: #7a8d95
+
       .country
         stroke-width: 3px
         fill: none
@@ -148,10 +164,7 @@ block css
         .playing &
           transition: none
 
-        // &.scenario-2
-          color: #2d3440
-
-        &.scenario-1
+        &.scenario-2
           stroke-dasharray: 0 5px
 
         &.country-cn
@@ -160,21 +173,59 @@ block css
         &.country-us
           stroke: #00fade
 
+      .country-label
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+
+      .country-label-text
+        float: left
+        padding: 0 8px 0 4px
+        height: 28px
+        line-height: 28px
+        margin: -14px 0
+        margin-left: 10px
+        text-align: center
+        color: #2d3440
+        position: relative
+
+        $size: (1.4142135624 * 14px)
+        &:after
+          content: ""
+          position: absolute
+          display: block
+          height: $size
+          width: $size
+          transform:  scale(0.75, 1) rotate(45deg)
+          background-color: inherit
+          left: -10px
+          top: 4px
+          z-index: -1
+
+        // .scenario-2 &
+          opacity: 0.5
+
+        .country-us &
+          background-color: #00fade
+
+        .country-cn &
+          background-color: #dbde00
+
       .chart-title-label:after
         content: none
 
       .chart-title-label svg
-        width: 24px
+        width: 48px
         height: 12px
-        margin-left: 4px
+        margin-left: 8px
+
+      .chart-title-label-text
+        width: 240px
 
       .chart-title-label line
         stroke: #fff
-
-      .chart-title-label.scenario-1:after
-        background-color: #fff
-      .chart-title-label.scenario-2:after
-        border: 1px solid #fff
 
       .country-name
         width: auto
@@ -234,7 +285,7 @@ block css
         flex-wrap: nowrap
 
         .axis-label
-          width: (100%/ (2030 - 1995 + 1))
+          width: (100%/ (25 + 1))
           padding-top: 8px
           flex-shrink: 0
           color: transparent
@@ -263,142 +314,5 @@ block css
 
 block customScripts
   script
-    :coffee
-      require.register "views/gdp-vs-me", (exports, require, module) ->
-        easie = require("lib/easie")
-        interpolate = (x, y, p) -> if x >= 0 and y >= 0 then x + (y - x) * p
-
-        class CustomView extends Backbone.View
-          data: window.chart
-
-          events:
-            "click #btn-play": "play"
-            "click #btn-pause": "pause"
-            "click #btn-reset": "reset"
-            "click #btn-end": "end"
-            "click .year-link": "goToYear"
-
-          initialize: ->
-            @$elements =
-              blocks:  {}
-              labels:  {}
-              countries: @$("#countries")
-              country: @$(".country")
-              year:    @$(".year")
-              years:   @$("#axis-years-list")
-              keys:    @$(".chart-title-label")
-
-            for key in @data.keys
-              @$elements.blocks[key] = @$(".country-bar-block.#{key}")
-              @$elements.labels[key] = @$(".country-bar-label.#{key}")
-
-            @values =
-              _.chain(@data.countries)
-              .map((country, index) =>
-                {
-                  name: country.name
-                  index
-                  values: for year, i in @data.scale
-                    100 - country.me[i] / 1200  * 100
-                }
-              )
-              .value()
-
-            @reset()
-            window.setTimeout (=> @play()), 600
-
-          render: (t) ->
-            x = Math.floor(t)
-            y = Math.min(x + 1, @data.scale.length - 1)
-            p = t - x
-
-            width  = @$elements.countries.width()
-            height = @$elements.countries.height()
-
-            @$elements.year
-              .removeClass("active")
-              .eq(Math.round(t))
-              .addClass("active")
-
-            match = false
-            for key in _.keys(@data.classes).reverse()
-              t1  = easie.sineInOut(parseFloat(key)) * (@data.scale.length - 1)
-              val = @data.classes[key]
-              @$el.toggleClass(val, not(match) and t >= t1)
-              match = match or t >= t1
-
-            @$elements.years.css transform: "translate3d(0, #{-t * 100}%, 0)"
-
-            for { name, values, index }, j in @values
-              $el = @$elements.country.eq(index)
-              pts = values
-                .slice(0, y)
-                .concat(cy = interpolate(values[x], values[y], p))
-                .map((v, i) =>
-                  #tn = if i <= x then i else t
-                  "#{(Math.min(i, t) / (@data.scale.length)) * 100},#{v}"
-                )
-                .join(" ")
-
-              $el.attr("points", pts)
-
-          play: ->
-            window.cancelAnimationFrame(@loop)
-
-            @playing = true
-
-            @$el.addClass("playing")
-
-            if @currentTime is 1 or not @currentTime?
-              @currentTime = 0
-
-            max = @data.scale.length - 1
-            now = Date.now() - @currentTime * @data.duration
-
-            do repeat = =>
-              d = Date.now() - now
-              t = d / @data.duration
-              t = Math.min(t, 1)
-
-              @render(easie.sineInOut(t) * max)
-
-              if t < 1 and @playing
-                @currentTime = t
-                @loop = window.requestAnimationFrame(repeat)
-              else if @playing
-                @$el.removeClass("playing")
-                @currentTime = 1
-                @playing = false
-
-          pause: ->
-            if @playing
-              @playing = false
-              @$el.removeClass("playing")
-            else
-              @play()
-
-          reset: (e) ->
-            window.cancelAnimationFrame(@loop)
-            @currentTime = 0
-            @$el.removeClass("playing")
-            @render(0)
-
-          end: ->
-            t = @data.scale.length - 1
-            window.setTimeout (=> @render(t)), if @playing then 100 else 0
-            @currentTime = 1
-            @playing = false
-            @$el.removeClass("playing")
-
-          goToYear: (e) ->
-            r = (t) -> (Math.acos(-2 * t + 1)) / Math.PI
-            n = (@data.scale.length - 1)
-            t = @$(e.currentTarget).data("index") / n
-            @currentTime = r(t)
-            @playing = false
-            @$el.removeClass("playing")
-            window.setTimeout (=>
-              @render(t * n)
-            ), 100
-
-          module.exports = CustomView
+    include:coffee me.coffee
+      

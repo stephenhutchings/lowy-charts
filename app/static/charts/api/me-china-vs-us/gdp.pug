@@ -4,6 +4,10 @@ block append config
   - page.title = "Military Expenditure – China vs US"
   - var chart  = data.getOne("static/charts/api/me-china-vs-us/data")
 
+  //- Trimmed to match ME/GDP relative values
+  - chart.scale = chart.scale.slice(10)
+  - chart.countries.forEach(function(e){e.gdp = e.gdp.slice(10), e.me = e.me.slice(10)})
+
 block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
@@ -64,11 +68,13 @@ block page
 
     legend#chart-legend
       label.chart-title-label.scenario-1
-        | Scenario 1
-        svg: line.country.scenario-1(x1=2 x2=24 y1=6 y2=6)
+        span.txt-muted Scenario 1&ensp;
+        | Current Trends
+        svg: line.country.scenario-1(x1=2 x2=43 y1=6 y2=6)
       label.chart-title-label.scenario-2
-        | Scenario 2
-        svg: line.country.scenario-2(x1=2 x2=21 y1=6 y2=6)
+        span.txt-muted Scenario 2&ensp;
+        | Economic Cold War
+        svg: line.country.scenario-2(x1=2 x2=45 y1=6 y2=6)
 
     small#chart-source
       | Source: US Department of State; Lowy Institute
@@ -101,6 +107,9 @@ block css
 
       .chart-title-main
         text-align: left
+
+      .txt-muted
+        color: #7a8d95
 
       #countries
         position: absolute
@@ -148,10 +157,7 @@ block css
         .playing &
           transition: none
 
-        // &.scenario-2
-          color: #2d3440
-
-        &.scenario-1
+        &.scenario-2
           stroke-dasharray: 0 5px
 
         &.country-cn
@@ -164,17 +170,15 @@ block css
         content: none
 
       .chart-title-label svg
-        width: 24px
+        width: 48px
         height: 12px
-        margin-left: 4px
+        margin-left: 8px
+
+      .chart-title-label-text
+        width: 240px
 
       .chart-title-label line
         stroke: #fff
-
-      .chart-title-label.scenario-1:after
-        background-color: #fff
-      .chart-title-label.scenario-2:after
-        border: 1px solid #fff
 
       .country-name
         width: auto
@@ -234,7 +238,7 @@ block css
         flex-wrap: nowrap
 
         .axis-label
-          width: (100%/ (2030 - 1995 + 1))
+          width: (100%/ (25 + 1))
           padding-top: 8px
           flex-shrink: 0
           color: transparent
