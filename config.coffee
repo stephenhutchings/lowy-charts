@@ -42,6 +42,9 @@ exports.config =
             indentedSyntax: true
           }).css.toString()
 
+        coffee: (data) ->
+          require("coffeescript").compile(data)
+
     sass:
       mode: "native"
 
