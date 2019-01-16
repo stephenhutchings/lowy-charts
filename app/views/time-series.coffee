@@ -32,8 +32,13 @@ module.exports =
 
       @selectKey()
 
+      @$el.addClass("loading")
       @reset()
-      window.setTimeout (=> @play()), 600
+
+      window.setTimeout (=>
+        @play()
+        @$el.removeClass("loading")
+      ), 600
 
     render: (t) ->
       x = Math.floor(t)

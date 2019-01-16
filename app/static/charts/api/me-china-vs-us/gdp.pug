@@ -80,7 +80,7 @@ block page
         svg: line.country.scenario-2(x1=2 x2=45 y1=6 y2=6)
 
     small#chart-source
-      | Source: US Department of State; Lowy Institute
+      | Source: IMF World Economic Outlook; Lowy Institute
 
     a#chart-logo(href="https://www.lowyinstitute.org/")
       img(src="/img/lowyinstitute-logo.png")
@@ -199,6 +199,7 @@ block css
       .axis-label
         position: relative
         color: #7a8d95
+        font-size: 14px
 
       .axis-label-text
         width: 80px
@@ -247,6 +248,25 @@ block css
         flex-direction: row
         flex-wrap: nowrap
 
+        &:before
+          content: ""
+          position: absolute
+          right: 61px
+          bottom: 0
+          height: 24px
+          width: 200px
+          background: #2d3440
+          z-index: 1
+
+        &:after
+          content: ""
+          position: absolute
+          right: 0
+          bottom: 0
+          height: 40px
+          width: 60px
+          background-color: #2d3440
+
         .axis-label
           width: (100%/ (25 + 1))
           padding-top: 8px
@@ -265,7 +285,8 @@ block css
             height: 8px
             border-left-width: 1px
 
-      #controls
+      #controls,
+      #chart-logo
         z-index: 10
 
       #chart-source
@@ -345,14 +366,18 @@ block customScripts
 
             for { name, values, index }, j in @values
               $el = @$elements.country.eq(index)
-              pts = values
-                .slice(0, y)
-                .concat(cy = interpolate(values[x], values[y], p))
-                .map((v, i) =>
-                  #tn = if i <= x then i else t
-                  "#{(Math.min(i, t) / (@data.scale.length )) * 100},#{v}"
-                )
-                .join(" ")
+              if t is 0
+                pts = ""
+              else
+                pts = values
+                  .slice(0, y)
+                  .concat(cy = interpolate(values[x], values[y], p))
+                  .map((v, i) =>
+                    if v
+                      #tn = if i <= x then i else t
+                      "#{(Math.min(i, t) / (@data.scale.length )) * 100},#{v}"
+                  )
+                  .join(" ")
 
               $el.attr("points", pts)
 

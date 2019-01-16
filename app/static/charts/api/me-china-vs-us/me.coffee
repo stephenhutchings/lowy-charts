@@ -60,19 +60,25 @@ require.register "views/gdp-vs-me", (exports, require, module) ->
 
       for { name, values, index }, j in @values
         $el = @$elements.country.eq(index)
-        pts = values
-          .slice(0, y)
-          .concat(cy = interpolate(values[x], values[y], p))
-          .map((v, i) =>
-            "#{(Math.min(i, t) / (@data.scale.length)) * 100},#{v}"
-          )
-          .join(" ")
+        cy = interpolate(values[x], values[y], p)
+
+        if t is 0
+          pts = ""
+        else
+          pts = values
+            .slice(0, y)
+            .concat(cy)
+            .map((v, i) =>
+              "#{(Math.min(i, t) / (@data.scale.length)) * 100},#{v}"
+            )
+            .join(" ")
 
         $el.attr("points", pts)
 
         @$elements.label.eq(index).css(
           transform: "translate3d(#{t / (@data.scale.length) * 100}%, #{cy}%, 0)"
         ).children().first().html(@data.countries[index].rel[x])
+
 
     play: ->
       window.cancelAnimationFrame(@loop)

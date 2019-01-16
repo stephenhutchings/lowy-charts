@@ -122,7 +122,7 @@ block css
         position: absolute
         top: 12px
         left: 80px
-        right: 140px
+        right: 100px
         bottom: 32px
         z-index: 1
 
@@ -242,6 +242,7 @@ block css
       .axis-label
         position: relative
         color: #7a8d95
+        font-size: 14px
 
       .axis-label-text
         width: 80px
@@ -281,7 +282,7 @@ block css
         position: absolute
         left: 80px
         right: 0
-        padding-right: 140px
+        padding-right: 100px
         bottom: 0
         height: 32px
         border-top: 1px solid #71798a
@@ -289,6 +290,25 @@ block css
         display: flex
         flex-direction: row
         flex-wrap: nowrap
+
+        &:before
+          content: ""
+          position: absolute
+          right: 61px
+          bottom: 0
+          height: 24px
+          width: 200px
+          background: #2d3440
+          z-index: 1
+
+        &:after
+          content: ""
+          position: absolute
+          right: 0
+          bottom: 0
+          height: 40px
+          width: 60px
+          background-color: #2d3440
 
         .axis-label
           width: (100%/ (25 + 1))
@@ -308,14 +328,9 @@ block css
             height: 8px
             border-left-width: 1px
 
-      #controls
-        z-index: 10
-
-      #chart-source
-        bottom: 48px
-
+      #controls,
       #chart-logo
-        bottom: 2px
+        z-index: 10
 
 
 block customScripts

@@ -12,7 +12,7 @@ block page
   #wrapper(data-view="time-series")
     #chart-title
       h1.chart-title-main
-        | GDP at current prices<br>the top #{chart.limit} countries
+        | Gross Domestic Product
 
       small.chart-title-small.constant
         | At current prices
@@ -101,12 +101,6 @@ block css
     include:sass style.sass
 
     :sass
-      .chart-title-small.projected
-        top: 48px
-
-        @media (max-width: 600px)
-          top: 53px
-
       .country-bar-block
         .country-china &,
         .country-united-states &,
