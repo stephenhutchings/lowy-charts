@@ -1,0 +1,408 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Military Expenditure – China vs US"
+  - var chart  = data.getOne("static/charts/api/me-china-vs-us/data")
+
+block page
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+  #wrapper(data-view="gdp-vs-me")
+    #chart-title
+      h1.chart-title-main 
+        | Gross Domestic Product<br>China &amp; the US
+
+    #countries
+      svg(
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+
+      )
+        for country in chart.countries
+          polyline.country(class=[
+            `country-${country.code}`,
+            `scenario-${country.scenario}`
+          ])
+
+    #axis-y
+      for n, i in new Array(11)
+        .axis-label
+          .axis-label-text $#{(10 - i) * 3}T
+    
+    #axis-x
+      for year, i in chart.scale
+        .axis-label
+          .axis-label-text= year
+
+    #controls
+      a#btn-reset.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+          polygon.btn-icon-shape(points="24,24 24,0 8,12 ")
+
+      a#btn-play.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          polygon.btn-icon-shape(points="0,24 0,0 24,12 ")
+
+      a#btn-pause.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+          rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+      
+      a#btn-end.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+          polygon.btn-icon-shape(points="0,0 0,24 16,12 ")
+
+      #axis-years.list-bare
+        ul#axis-years-list
+          for year, i in chart.scale
+            li.year
+              a.year-link(data-index=i)= year
+
+    legend#chart-legend
+      label.chart-title-label.scenario-1
+        | Scenario 1
+        svg: line.country.scenario-1(x1=2 x2=24 y1=6 y2=6)
+      label.chart-title-label.scenario-2
+        | Scenario 2
+        svg: line.country.scenario-2(x1=2 x2=21 y1=6 y2=6)
+
+    small#chart-source
+      | Source: US Department of State; Lowy Institute
+
+    a#chart-logo(href="https://www.lowyinstitute.org/")
+      img(src="/img/lowyinstitute-logo.png")
+
+block css
+  link(
+    type="text/css"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
+    media="all"
+  )
+
+  style
+    include:sass ../gdp-vs-ppp/style.sass
+
+    :sass
+      #wrapper
+        overflow: visible
+
+      #chart-title
+        left: 120px
+        right: auto
+        top: 8px
+        margin: 0
+        max-width: 320px
+        transform: none
+
+      .chart-title-main
+        text-align: left
+
+      #countries
+        position: absolute
+        top: 12px
+        left: 80px
+        right: 160px
+        bottom: 32px
+        z-index: 1
+
+      #angle
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        height: (3.5% * 30000 / 1200)
+        z-index: 0
+
+      #angle-label
+        position: absolute
+        left: 50%
+        top: 50%
+        width: 200px
+        height: 32px
+        line-height: 32px
+        text-align: center
+        margin: -16px -100px
+        z-index: 1
+        background-color: #2d3440
+        color: #7a8d95
+
+      .angle-point
+        position: absolute
+        width: 3px
+        height: 3px
+        margin: -1px
+        border-radius: 50%
+        background: #71798a
+
+      .country
+        stroke-width: 3px
+        fill: none
+        vector-effect: non-scaling-stroke
+        stroke-linecap: round
+
+        .playing &
+          transition: none
+
+        // &.scenario-2
+          color: #2d3440
+
+        &.scenario-1
+          stroke-dasharray: 0 5px
+
+        &.country-cn
+          stroke: #dbde00
+
+        &.country-us
+          stroke: #00fade
+
+      .chart-title-label:after
+        content: none
+
+      .chart-title-label svg
+        width: 24px
+        height: 12px
+        margin-left: 4px
+
+      .chart-title-label line
+        stroke: #fff
+
+      .chart-title-label.scenario-1:after
+        background-color: #fff
+      .chart-title-label.scenario-2:after
+        border: 1px solid #fff
+
+      .country-name
+        width: auto
+        padding: 0 20px
+        position: static
+        text-align: center
+
+      .axis-label
+        position: relative
+        color: #7a8d95
+
+      .axis-label-text
+        width: 80px
+        line-height: 24px
+
+        &:before
+          content: ""
+          position: absolute
+          border: 0px solid #71798a
+
+      #axis-y
+        position: absolute
+        top: 12px
+        left: 0
+        bottom: 32px
+        width: 80px
+        border-right: 1px solid #71798a
+        text-align: right
+
+        .axis-label
+          height: (100% / 11)
+          padding: 1px 0 0
+          margin-bottom: -1px
+
+        .axis-label-text
+          margin-top: -12px
+          padding-right: 16px
+          width: auto
+
+          &:before
+            top: 0
+            right: 0
+            width: 8px
+            border-top-width: 1px
+
+      #axis-x
+        position: absolute
+        left: 80px
+        right: 0
+        padding-right: 160px
+        bottom: 0
+        height: 32px
+        border-top: 1px solid #71798a
+        text-align: center
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+
+        .axis-label
+          width: (100%/ (2030 - 1995))
+          padding-top: 8px
+          flex-shrink: 0
+          color: transparent
+          
+          &:nth-child(5n + 1)
+            color: #7a8d95
+
+        .axis-label-text
+          margin-left: -40px
+
+          &:before
+            top: -1px
+            left: 0
+            height: 8px
+            border-left-width: 1px
+
+      #controls
+        z-index: 10
+
+      #chart-source
+        bottom: 48px
+
+      #chart-logo
+        bottom: 2px
+
+
+block customScripts
+  script
+    :coffee
+      require.register "views/gdp-vs-me", (exports, require, module) ->
+        easie = require("lib/easie")
+        interpolate = (x, y, p) -> if x >= 0 and y >= 0 then x + (y - x) * p
+
+        class CustomView extends Backbone.View
+          data: window.chart
+
+          events:
+            "click #btn-play": "play"
+            "click #btn-pause": "pause"
+            "click #btn-reset": "reset"
+            "click #btn-end": "end"
+            "click .year-link": "goToYear"
+
+          initialize: ->
+            @$elements =
+              blocks:  {}
+              labels:  {}
+              countries: @$("#countries")
+              country: @$(".country")
+              year:    @$(".year")
+              years:   @$("#axis-years-list")
+              keys:    @$(".chart-title-label")
+
+            for key in @data.keys
+              @$elements.blocks[key] = @$(".country-bar-block.#{key}")
+              @$elements.labels[key] = @$(".country-bar-label.#{key}")
+
+            @values =
+              _.chain(@data.countries)
+              .map((country, index) =>
+                {
+                  name: country.name
+                  index
+                  values: for year, i in @data.scale
+                    100 - country.gdp[i] / 30000  * 100
+                }
+              )
+              .value()
+
+            @reset()
+            window.setTimeout (=> @play()), 600
+
+          render: (t) ->
+            x = Math.floor(t)
+            y = Math.min(x + 1, @data.scale.length - 1)
+            p = t - x
+
+            width  = @$elements.countries.width()
+            height = @$elements.countries.height()
+
+            @$elements.year
+              .removeClass("active")
+              .eq(Math.round(t))
+              .addClass("active")
+
+            match = false
+            for key in _.keys(@data.classes).reverse()
+              t1  = easie.sineInOut(parseFloat(key)) * (@data.scale.length - 1)
+              val = @data.classes[key]
+              @$el.toggleClass(val, not(match) and t >= t1)
+              match = match or t >= t1
+
+            @$elements.years.css transform: "translate3d(0, #{-t * 100}%, 0)"
+
+            for { name, values, index }, j in @values
+              $el = @$elements.country.eq(index)
+              pts = values
+                .slice(0, y)
+                .concat(cy = interpolate(values[x], values[y], p))
+                .map((v, i) =>
+                  #tn = if i <= x then i else t
+                  "#{(Math.min(i, t) / (@data.scale.length - 1)) * 100},#{v}"
+                )
+                .join(" ")
+
+              $el.html """
+                <text x=#{t / (@data.scale.length - 1) * 100} y=#{cy}>#{name}</text>
+              """              
+
+              $el.attr("points", pts)
+
+          play: ->
+            window.cancelAnimationFrame(@loop)
+
+            @playing = true
+
+            @$el.addClass("playing")
+
+            if @currentTime is 1 or not @currentTime?
+              @currentTime = 0
+
+            max = @data.scale.length - 1
+            now = Date.now() - @currentTime * @data.duration
+
+            do repeat = =>
+              d = Date.now() - now
+              t = d / @data.duration
+              t = Math.min(t, 1)
+
+              @render(easie.sineInOut(t) * max)
+
+              if t < 1 and @playing
+                @currentTime = t
+                @loop = window.requestAnimationFrame(repeat)
+              else if @playing
+                @$el.removeClass("playing")
+                @currentTime = 1
+                @playing = false
+
+          pause: ->
+            if @playing
+              @playing = false
+              @$el.removeClass("playing")
+            else
+              @play()
+
+          reset: (e) ->
+            window.cancelAnimationFrame(@loop)
+            @currentTime = 0
+            @$el.removeClass("playing")
+            @render(0)
+
+          end: ->
+            t = @data.scale.length - 1
+            window.setTimeout (=> @render(t)), if @playing then 100 else 0
+            @currentTime = 1
+            @playing = false
+            @$el.removeClass("playing")
+
+          goToYear: (e) ->
+            r = (t) -> (Math.acos(-2 * t + 1)) / Math.PI
+            n = (@data.scale.length - 1)
+            t = @$(e.currentTarget).data("index") / n
+            @currentTime = r(t)
+            @playing = false
+            @$el.removeClass("playing")
+            window.setTimeout (=>
+              @render(t * n)
+            ), 100
+
+          module.exports = CustomView
