@@ -106,7 +106,7 @@ block css
         position: absolute
         top: 12px
         left: 80px
-        right: 160px
+        right: 140px
         bottom: 32px
         z-index: 1
 
@@ -224,7 +224,7 @@ block css
         position: absolute
         left: 80px
         right: 0
-        padding-right: 160px
+        padding-right: 140px
         bottom: 0
         height: 32px
         border-top: 1px solid #71798a
@@ -234,7 +234,7 @@ block css
         flex-wrap: nowrap
 
         .axis-label
-          width: (100%/ (2030 - 1995))
+          width: (100%/ (2030 - 1995 + 1))
           padding-top: 8px
           flex-shrink: 0
           color: transparent
@@ -336,13 +336,9 @@ block customScripts
                 .concat(cy = interpolate(values[x], values[y], p))
                 .map((v, i) =>
                   #tn = if i <= x then i else t
-                  "#{(Math.min(i, t) / (@data.scale.length - 1)) * 100},#{v}"
+                  "#{(Math.min(i, t) / (@data.scale.length )) * 100},#{v}"
                 )
                 .join(" ")
-
-              $el.html """
-                <text x=#{t / (@data.scale.length - 1) * 100} y=#{cy}>#{name}</text>
-              """              
 
               $el.attr("points", pts)
 
