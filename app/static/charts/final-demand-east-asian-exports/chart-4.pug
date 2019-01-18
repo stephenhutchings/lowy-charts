@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Figure 2: A big shift towards East Asian demand"
+  - page.title = "Figure 4: Chinese exports are still reliant on the West"
   - var chart = { height: 320, width: 560, inset: { x: 20, y: 20 } }
 
 block page
@@ -14,7 +14,7 @@ block page
     )
       g
         for n, i in (new Array(6))
-          - var y = (chart.inset.y + i * (chart.height - 20-64) / 5)
+          - var y = (chart.inset.y + i * (chart.height - 20 - 64) / 5)
           text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
             | #{100 - i * 20}%
           line.st1(
@@ -24,42 +24,41 @@ block page
             y2=y
           )
 
-
       g.bars
         g(data-link="2" data-id="2")
-          rect.st2(x="156" y="205.55" width="96" height="50.45")
-          text.tt1.tt3(text-anchor="middle" y=(5 + 205.55 + (50.95 / 2)) x=204) 21.1%
+          rect.st2(x="156" y="194.82" width="96" height="61.18")
+          text.tt1.tt3(text-anchor="middle" y=(5 + 194.82 + (61.68 / 2)) x=204) 26.3%
         g(data-link="3" data-id="3")
-          rect.st3(x="156" y="159.95" width="96" height="45.59")
-          text.tt1.tt3(text-anchor="middle" y=(5 + 159.95 + (45.59 / 2)) x=204) 19.3%
+          rect.st3(x="156" y="141.18" width="96" height="53.64")
+          text.tt1.tt3(text-anchor="middle" y=(5 + 141.18 + (53.64 / 2)) x=204) 22.3%
         g(data-link="4" data-id="4")
-          rect.st4(x="156" y="149.23" width="96" height="10.73")
-          text.tt1.tt3(text-anchor="middle" y=(5 + 149.23 + (10.73 / 2)) x=204) 5.1%
+          rect.st4(x="156" y="130.45" width="96" height="10.73")
+          text.tt1.tt3(text-anchor="middle" y=(5 + 130.45 + (10.73 / 2)) x=204) 5.4%
         g(data-link="5" data-id="5")
-          rect.st5(x="156" y="71.45" width="96" height="77.77")
-          text.tt1.tt3(text-anchor="middle" y=(5 + 71.45 + (77.77 / 2))  x=204) 32.0%
+          rect.st5(x="156" y="79.5" width="96" height="50.95")
+          text.tt1.tt3(text-anchor="middle" y=(5 + 79.5 + (50.95 / 2))  x=204) 21.2%
         g(data-link="6" data-id="6")
-          rect.st6(x="156" y="20" width="96" height="51.45")
-          text.tt1.tt3(text-anchor="middle" y=(5 + 20.5 + (50.95 / 2))  x=204) 22.5%
+          rect.st6(x="156" y="20" width="96" height="59.5")
+          text.tt1.tt3(text-anchor="middle" y=(5 + 20.5 + (59 / 2))  x=204) 24.8%
 
         text.tt2.tt3(text-anchor="middle" y=280 x=204) 2007
 
       g.bars
         g(data-link="2" data-id="2")
-          rect.st2(x="348" y="216.27" width="96" height="39.73")
-          text.tt1.tt3(text-anchor="middle" y=(5 + 216.27 + (40.23 / 2)) x=396) 17.2%
+          rect.st2(x="348" y="197.5" width="96" height="58.5")
+          text.tt1.tt3(text-anchor="middle" y=(5 + 197.5 + (59 / 2)) x=396) 24.9%
         g(data-link="3" data-id="3")
-          rect.st3(x="348" y="181.41" width="96" height="34.86")
-          text.tt1.tt3(text-anchor="middle" y=(5 + 181.41 + (34.86 / 2)) x=396) 14.1%
+          rect.st3(x="348" y="154.59" width="96" height="42.91")
+          text.tt1.tt3(text-anchor="middle" y=(5 + 154.59 + (42.91 / 2)) x=396) 18.1%
         g(data-link="4" data-id="4")
-          rect.st4(x="348" y="170.68" width="96" height="10.73")
-          text.tt1.tt3(text-anchor="middle" y=(5 + 170.68 + (10.73 / 2)) x=396) 4.3%
+          rect.st4(x="348" y="141.18" width="96" height="13.41")
+          text.tt1.tt3(text-anchor="middle" y=(5 + 141.18 + (13.41 / 2)) x=396) 5.5%
         g(data-link="5" data-id="5")
-          rect.st5(x="348" y="76.82" width="96" height="93.86")
-          text.tt1.tt3(text-anchor="middle" y=(5 + 76.82 + (93.86 / 2)) x=396) 40.3%
+          rect.st5(x="348" y="90.23" width="96" height="50.95")
+          text.tt1.tt3(text-anchor="middle" y=(5 + 90.23 + (50.95 / 2)) x=396) 22.4%
         g(data-link="6" data-id="6")
-          rect.st6(x="348" y="20" width="96" height="56.82")
-          text.tt1.tt3(text-anchor="middle" y=(5 + 20.5 + (56.32 / 2)) x=396) 24.1%
+          rect.st6(x="348" y="20" width="96" height="70.23")
+          text.tt1.tt3(text-anchor="middle" y=(5 + 20.5 + (69.73 / 2)) x=396) 29.2%
           
         text.tt2.tt3(text-anchor="middle" y=280 x=396) 2017
 

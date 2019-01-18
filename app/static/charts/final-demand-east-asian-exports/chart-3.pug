@@ -1,12 +1,12 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Chart 3: Final demand for East Asian production"
-  - var chart = { height: 320, width: 560, inset: { x: 20, y: 64 }, data: {} }
-  - chart.data.a = [89.2, 88.6, 87.0, 85.3, 86.3, 85.6, 86.0, 85.3, 84.2, 82.4, 80.5, 77.9, 76.3, 77.1, 82.3, 80.7, 81.1, 81.9, 81.7, 81.6, 82.7, 84.1, 83.3]
-  - chart.data.b = [7.4, 7.8, 8.8, 10.1, 9.8, 10.4, 10.0, 10.3, 11.0, 12.1, 12.9, 14.1, 14.4, 13.2, 9.8, 10.5, 9.9, 9.3, 9.3, 9.5, 9.2, 8.7, 9.0]
-  - chart.data.ap = [70.29, 73.6, 83.53, 95.12, 88.5, 93.47, 90.16, 95.12, 101.74, 113.33, 124.91, 141.47, 151.4, 148.09, 113.33, 124.91, 121.6, 116.64, 118.29, 118.29, 111.67, 103.4, 108.36]
-  - chart.data.bp = [209.33, 206.02, 199.4, 191.12, 194.43, 189.47, 192.78, 189.47, 186.16, 179.53, 174.57, 166.29, 164.64, 171.26, 192.78, 189.47, 192.78, 196.09, 196.09, 196.09, 197.74, 201.05, 197.74]
+  - page.title = "Figure 3: China vs the United States"
+  - var chart = { height: 320, width: 560, inset: { x: 20, y: 20 }, data: {} }
+  - chart.data.a = [24.09654152, 23.44007338, 24.48094866, 27.52164968, 29.13241439, 29.48179216, 29.28396763, 28.9172908,  26.47407395, 25.42276041, 24.70437528, 23.72810472, 21.14524059, 18.25541547, 17.50750071, 16.64825307, 15.31402874, 15.87196209, 15.81205059, 16.06236496, 18.0155721,  18.65708916, 17.17626973]
+  - chart.data.b = [4.125738772, 4.349596692, 4.834684066, 4.880639655, 5.55969701,  6.283740518, 7.35481236,  9.038389822, 10.59012502, 11.65138302, 11.20365928, 11.23586267, 11.51979534, 12.340822, 14.6808473,  15.41713558, 16.90059068, 16.64352811, 18.0601847,  19.13696191, 19.42091604, 18.74536693, 19.75181501]
+  - chart.data.ap = [25.17, 26.89, 30.34, 49.28, 56.18, 63.07, 69.96, 90.63, 113.02, 118.19, 125.08, 135.42, 131.97, 131.97, 130.25, 114.74, 109.58, 121.64]
+  - chart.data.bp = [206.04, 197.43, 185.37, 173.31, 164.7, 168.15, 168.15, 164.7, 159.53, 140.58, 135.42, 123.36, 125.08, 114.74, 106.13, 104.41, 109.58, 100.96]
 
 block page
   .wrapper
@@ -15,79 +15,102 @@ block page
       height=`${chart.height}px`
       viewBox=`0 0 ${chart.width} ${chart.height}`
     )
-      text.text-bold(text-anchor="middle" x=chart.width / 2 y=16) Chart 3: Final demand for East Asian production
-      text.tt2(text-anchor="middle" x=chart.width / 2 y=40) % of total
-      g
-        for n, i in (new Array(7))
-          - var y = (chart.inset.y + i * (chart.height - chart.inset.y * 2) / 6)
-          if i < 4
+      g(transform="translate(0 4)")
+        g
+          for n, i in (new Array(7))
+            - var y = (chart.inset.y + i * (chart.height - 64 - 20) / 6)
             text.tt2.tt3.st4(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
-              | #{90 - i * 5}%
-          if i >= 3
-            text.tt2.tt3.st5(text-anchor="start" x=(chart.width - chart.inset.x * 2) y=y + 4)
               | #{30 - i * 5}%
-          line.st1(
-            x1=48
-            x2=512
-            y1=(y - 0.5)
-            y2=(y - 0.5)
+            line.st1(
+              x1=48
+              x2=528
+              y1=(y - 0.5)
+              y2=(y - 0.5)
+            )
+
+        g
+          polyline.st2(
+            points=(_.reduce(chart.data.ap, function(m, e, i){
+              var x = 48 + i * (chart.width - 81) / 17 + 0.5; 
+              return `${m} ${x},${e}`
+            }, ""))
           )
+          polyline.st3(
+            points=(_.reduce(chart.data.bp, function(m, e, i){
+              var x = 48 + i * (chart.width - 81) / 17 + 0.5; 
+              return `${m} ${x},${e}`
+            }, ""))
+          )
+        g
+          for n, i in (new Array(18))
+            - var x = 48 + i * (chart.width - 81) / 17 + 0.5; 
+            if i % 2 === 1
+              text.tt2.tt3(x=x y=280 text-anchor="middle")= 2000 + i
+            line.st1(x1=x x2=x y1=256 y2=262)
 
-      g
-        polyline.st2(
-          points=(_.reduce(chart.data.ap, function(m, e, i){
-            var x = 48 + i * (chart.width - 97) / 22 + 0.5; 
-            return `${m} ${x},${e}`
-          }, ""))
-        )
-        polyline.st3(
-          points=(_.reduce(chart.data.bp, function(m, e, i){
-            var x = 48 + i * (chart.width - 97) / 22 + 0.5; 
-            return `${m} ${x},${e}`
-          }, ""))
-        )
-      g
-        for n, i in (new Array(23))
-          - var x = 48 + i * (chart.width - 97) / 22 + 0.5; 
-          if i % 2 === 0
-            text.tt2.tt3(x=x y=280 text-anchor="middle")= 1995 + i
-          line.st1(x1=x x2=x y1=256 y2=262)
+            g.label
+              rect.label-bg(x=(x - 16) width=32 y=chart.inset.y height=220)
+              line.st1.st6(x1=x x2=x  y1=chart.inset.y y2=chart.inset.y + 196)
+              if i < 11
+                polygon.bg.st4(
+                  points=[
+                    `${x - 24},${chart.data.ap[i] - 28}`,
+                    `${x + 24},${chart.data.ap[i] - 28}`,
+                    `${x + 24},${chart.data.ap[i] - 4}`,
+                    `${x + 4},${chart.data.ap[i] - 4}`,
+                    `${x},${chart.data.ap[i]}`,
+                    `${x - 4},${chart.data.ap[i] - 4}`,
+                    `${x - 24},${chart.data.ap[i] - 4}`
+                  ].join(" ")
+                )
+                polygon.bg.st5(
+                  points=[
+                    `${x - 24},${chart.data.bp[i] + 28}`,
+                    `${x + 24},${chart.data.bp[i] + 28}`,
+                    `${x + 24},${chart.data.bp[i] + 4}`,
+                    `${x + 4},${chart.data.bp[i] + 4}`,
+                    `${x},${chart.data.bp[i]}`,
+                    `${x - 4},${chart.data.bp[i] + 4}`,
+                    `${x - 24},${chart.data.bp[i] + 4}`
+                  ].join(" ")
+                )
+                text.bg.tt3(x=x y=chart.data.ap[i] - 12 text-anchor="middle")
+                  = written.prettyNumber(chart.data.a[i], 1) + "%"
+                text.bg.tt3(x=x y=chart.data.bp[i] + 20 text-anchor="middle")
+                  = written.prettyNumber(chart.data.b[i], 1) + "%"
+              else
+                polygon.bg.st5(
+                  points=[
+                    `${x - 24},${chart.data.bp[i] - 28}`,
+                    `${x + 24},${chart.data.bp[i] - 28}`,
+                    `${x + 24},${chart.data.bp[i] - 4}`,
+                    `${x + 4},${chart.data.bp[i] - 4}`,
+                    `${x},${chart.data.bp[i]}`,
+                    `${x - 4},${chart.data.bp[i] - 4}`,
+                    `${x - 24},${chart.data.bp[i] - 4}`
+                  ].join(" ")
+                )
+                polygon.bg.st4(
+                  points=[
+                    `${x - 24},${chart.data.ap[i] + 28}`,
+                    `${x + 24},${chart.data.ap[i] + 28}`,
+                    `${x + 24},${chart.data.ap[i] + 4}`,
+                    `${x + 4},${chart.data.ap[i] + 4}`,
+                    `${x},${chart.data.ap[i]}`,
+                    `${x - 4},${chart.data.ap[i] + 4}`,
+                    `${x - 24},${chart.data.ap[i] + 4}`
+                  ].join(" ")
+                )
+                text.bg.tt3(x=x y=chart.data.bp[i] - 12 text-anchor="middle")
+                  = written.prettyNumber(chart.data.a[i], 1) + "%"
+                text.bg.tt3(x=x y=chart.data.ap[i] + 20 text-anchor="middle")
+                  = written.prettyNumber(chart.data.b[i], 1) + "%"
 
-          g.label
-            rect.label-bg(x=(x - 12) width=24 y=chart.inset.y height=220)
-            line.st1.st6(x1=x x2=x  y1=chart.inset.y y2=chart.inset.y + 196)
-            polygon.bg.st4(
-              points=[
-                `${x - 24},${chart.data.ap[i] - 28}`,
-                `${x + 24},${chart.data.ap[i] - 28}`,
-                `${x + 24},${chart.data.ap[i] - 4}`,
-                `${x + 4},${chart.data.ap[i] - 4}`,
-                `${x},${chart.data.ap[i]}`,
-                `${x - 4},${chart.data.ap[i] - 4}`,
-                `${x - 24},${chart.data.ap[i] - 4}`
-              ].join(" ")
-            )
-            polygon.bg.st5(
-              points=[
-                `${x - 24},${chart.data.bp[i] + 28}`,
-                `${x + 24},${chart.data.bp[i] + 28}`,
-                `${x + 24},${chart.data.bp[i] + 4}`,
-                `${x + 4},${chart.data.bp[i] + 4}`,
-                `${x},${chart.data.bp[i]}`,
-                `${x - 4},${chart.data.bp[i] + 4}`,
-                `${x - 24},${chart.data.bp[i] + 4}`
-              ].join(" ")
-            )
-            text.bg.tt3(x=x y=chart.data.ap[i] - 12 text-anchor="middle")
-              = written.prettyNumber(chart.data.a[i], 1) + "%"
-            text.bg.tt3(x=x y=chart.data.bp[i] + 20 text-anchor="middle")
-              = written.prettyNumber(chart.data.b[i], 1) + "%"
-
-      g
-        line.st2(x1=128 y1=312 x2=160 y2=312)
-        text.tt2.tt3(x=168 y=316) East Asia
-        line.st3(x1=288 y1=312 x2=320 y2=312)
-        text.tt2.tt3(x=328 y=316) Western Markets
+        g
+          line.st2(x1=168 y1=312 x2=200 y2=312)
+          text.tt2.tt3(x=208 y=316) US
+          line.st3(x1=288 y1=312 x2=320 y2=312)
+          text.tt2.tt3(x=328 y=316) China
 
     style
       :sass
@@ -95,7 +118,6 @@ block page
           fill: #fff
         polygon.bg
           stroke: #fff
-          // stroke-width: 4
           stroke-opacity: 0.2
         .label-bg
           fill: #fff
@@ -110,13 +132,13 @@ block page
           stroke-linecap: round
         .st3 
           fill: none
-          stroke: #9DB4C4
+          stroke: #f7931e
           stroke-width: 3
           stroke-linecap: round
         .st4 
           fill: #002B45
         .st5 
-          fill: #9DB4C4
+          fill: #f7931e
         .st6
           opacity: 0.4
         .tt2

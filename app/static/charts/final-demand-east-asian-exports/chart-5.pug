@@ -1,0 +1,131 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Figure 5: East Asia is now far more internally driven"
+  - var chart = { height: 320, width: 560, inset: { x: 20, y: 20 }, data: {} }
+  - chart.data.a = [89.5,  89.0,  87.3,  85.7,  86.7,  86.0,  86.4,  85.7,  84.6,  82.8,  81.0,  78.6,  76.9,  77.6,  82.7,  81.1,  81.1,  81.7,  81.3,  81.1,  82.1,  83.5,  82.7]
+  - chart.data.b = [7.9, 8.4, 9.5, 10.8,  10.5,  11.0,  10.6,  11.0,  11.8,  13.0,  14.0,  15.1,  15.6,  14.4,  10.8,  11.5,  11.0,  10.5,  10.6,  10.9,  10.7,  10.1,  10.5]
+  - chart.data.ap = [25.8, 28.46, 41.71, 54.97, 47.02, 52.32, 49.67, 54.97, 62.93, 78.84, 92.1, 110.66, 123.92, 118.61, 78.84, 92.1, 92.1, 86.79, 89.44, 92.1, 84.14, 73.53, 78.84,]
+  - chart.data.bp = [195.51, 190.21, 182.25, 171.65, 174.3, 168.99, 174.3, 168.99, 163.69, 155.74, 147.78, 137.17, 134.52, 145.13, 171.65, 166.34, 168.99, 174.3, 174.3, 171.65, 171.65, 176.95, 174.3,]
+
+block page
+  .wrapper
+    svg(
+      width=`${chart.width}px`
+      height=`${chart.height}px`
+      viewBox=`0 0 ${chart.width} ${chart.height}`
+    )
+      g(transform="translate(0 4)")
+        g
+          for n, i in (new Array(7))
+            - var y = (chart.inset.y + i * (chart.height - 64 - 20) / 6)
+            if i < 4
+              text.tt2.tt3.st4(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
+                | #{90 - i * 5}%
+            if i >= 3
+              text.tt2.tt3.st5(text-anchor="start" x=(chart.width - chart.inset.x * 2) y=y + 4)
+                | #{30 - i * 5}%
+            line.st1(
+              x1=48
+              x2=512
+              y1=(y - 0.5)
+              y2=(y - 0.5)
+            )
+
+        g
+          polyline.st2(
+            points=(_.reduce(chart.data.ap, function(m, e, i){
+              var x = 48 + i * (chart.width - 97) / 22 + 0.5; 
+              return `${m} ${x},${e}`
+            }, ""))
+          )
+          polyline.st3(
+            points=(_.reduce(chart.data.bp, function(m, e, i){
+              var x = 48 + i * (chart.width - 97) / 22 + 0.5; 
+              return `${m} ${x},${e}`
+            }, ""))
+          )
+        g
+          for n, i in (new Array(23))
+            - var x = 48 + i * (chart.width - 97) / 22 + 0.5; 
+            if i % 2 === 0
+              text.tt2.tt3(x=x y=280 text-anchor="middle")= 1995 + i
+            line.st1(x1=x x2=x y1=256 y2=262)
+
+            g.label
+              rect.label-bg(x=(x - 12) width=24 y=chart.inset.y height=220)
+              line.st1.st6(x1=x x2=x  y1=chart.inset.y y2=chart.inset.y + 196)
+              polygon.bg.st4(
+                points=[
+                  `${x - 24},${chart.data.ap[i] - 28}`,
+                  `${x + 24},${chart.data.ap[i] - 28}`,
+                  `${x + 24},${chart.data.ap[i] - 4}`,
+                  `${x + 4},${chart.data.ap[i] - 4}`,
+                  `${x},${chart.data.ap[i]}`,
+                  `${x - 4},${chart.data.ap[i] - 4}`,
+                  `${x - 24},${chart.data.ap[i] - 4}`
+                ].join(" ")
+              )
+              polygon.bg.st5(
+                points=[
+                  `${x - 24},${chart.data.bp[i] + 28}`,
+                  `${x + 24},${chart.data.bp[i] + 28}`,
+                  `${x + 24},${chart.data.bp[i] + 4}`,
+                  `${x + 4},${chart.data.bp[i] + 4}`,
+                  `${x},${chart.data.bp[i]}`,
+                  `${x - 4},${chart.data.bp[i] + 4}`,
+                  `${x - 24},${chart.data.bp[i] + 4}`
+                ].join(" ")
+              )
+              text.bg.tt3(x=x y=chart.data.ap[i] - 12 text-anchor="middle")
+                = written.prettyNumber(chart.data.a[i], 1) + "%"
+              text.bg.tt3(x=x y=chart.data.bp[i] + 20 text-anchor="middle")
+                = written.prettyNumber(chart.data.b[i], 1) + "%"
+
+        g
+          line.st2(x1=128 y1=312 x2=160 y2=312)
+          text.tt2.tt3(x=168 y=316) East Asia (RHS)
+          line.st3(x1=288 y1=312 x2=320 y2=312)
+          text.tt2.tt3(x=328 y=316) Western Markets (LHS)
+
+    style
+      :sass
+        .bg
+          fill: #fff
+        polygon.bg
+          stroke: #fff
+          // stroke-width: 4
+          stroke-opacity: 0.2
+        .label-bg
+          fill: #fff
+          opacity: 0
+        .st1 
+          fill: none
+          stroke: #e4e8ea
+        .st2 
+          fill: none
+          stroke: #002B45
+          stroke-width: 3
+          stroke-linecap: round
+        .st3 
+          fill: none
+          stroke: #9DB4C4
+          stroke-width: 3
+          stroke-linecap: round
+        .st4 
+          fill: #002B45
+        .st5 
+          fill: #9DB4C4
+        .st6
+          opacity: 0.4
+        .tt2
+          fill: #666
+        .tt3
+          font-size: 14px
+        .label
+          opacity: 0
+          transition: opacity 150ms
+          &:hover
+            opacity: 1
+
+
