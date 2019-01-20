@@ -2,7 +2,7 @@ extend /partials/layout
 
 block append config
   - page.title = "Figure 3: China vs the United States"
-  - var chart = { height: 320, width: 560, inset: { x: 20, y: 20 }, data: {} }
+  - var chart = { height: 320, width: 560, inset: { x: 20, y: 28 }, data: {} }
   - chart.data.a = [24.09654152, 23.44007338, 24.48094866, 27.52164968, 29.13241439, 29.48179216, 29.28396763, 28.9172908,  26.47407395, 25.42276041, 24.70437528, 23.72810472, 21.14524059, 18.25541547, 17.50750071, 16.64825307, 15.31402874, 15.87196209, 15.81205059, 16.06236496, 18.0155721,  18.65708916, 17.17626973]
   - chart.data.b = [4.125738772, 4.349596692, 4.834684066, 4.880639655, 5.55969701,  6.283740518, 7.35481236,  9.038389822, 10.59012502, 11.65138302, 11.20365928, 11.23586267, 11.51979534, 12.340822, 14.6808473,  15.41713558, 16.90059068, 16.64352811, 18.0601847,  19.13696191, 19.42091604, 18.74536693, 19.75181501]
   - chart.data.ap = [25.17, 26.89, 30.34, 49.28, 56.18, 63.07, 69.96, 90.63, 113.02, 118.19, 125.08, 135.42, 131.97, 131.97, 130.25, 114.74, 109.58, 121.64]
@@ -15,12 +15,14 @@ block page
       height=`${chart.height}px`
       viewBox=`0 0 ${chart.width} ${chart.height}`
     )
-      g(transform="translate(0 4)")
+      rect(width="100%" height="100%" fill="none")
+      g
         g
+          text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=10) %
           for n, i in (new Array(7))
             - var y = (chart.inset.y + i * (chart.height - 64 - 20) / 6)
             text.tt2.tt3.st4(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
-              | #{30 - i * 5}%
+              | #{30 - i * 5}
             line.st1(
               x1=48
               x2=528
@@ -28,7 +30,7 @@ block page
               y2=(y - 0.5)
             )
 
-        g
+        g(transform="translate(0 8)")
           polyline.st2(
             points=(_.reduce(chart.data.ap, function(m, e, i){
               var x = 48 + i * (chart.width - 81) / 17 + 0.5; 
@@ -41,7 +43,8 @@ block page
               return `${m} ${x},${e}`
             }, ""))
           )
-        g
+
+        g(transform="translate(0 8)")
           for n, i in (new Array(18))
             - var x = 48 + i * (chart.width - 81) / 17 + 0.5; 
             if i % 2 === 1
@@ -49,8 +52,8 @@ block page
             line.st1(x1=x x2=x y1=256 y2=262)
 
             g.label
-              rect.label-bg(x=(x - 16) width=32 y=chart.inset.y height=220)
-              line.st1.st6(x1=x x2=x  y1=chart.inset.y y2=chart.inset.y + 196)
+              rect.label-bg(x=(x - 16) width=32 y=20 height=236)
+              line.st1.st6(x1=x x2=x  y1=20 y2=256)
               if i < 11
                 polygon.bg.st4(
                   points=[
@@ -107,10 +110,10 @@ block page
                   = written.prettyNumber(chart.data.b[i], 1) + "%"
 
         g
-          line.st2(x1=168 y1=312 x2=200 y2=312)
-          text.tt2.tt3(x=208 y=316) US
-          line.st3(x1=288 y1=312 x2=320 y2=312)
-          text.tt2.tt3(x=328 y=316) China
+          line.st2(x1=208 y1=312 x2=240 y2=312)
+          text.tt2.tt3(x=248 y=316) US
+          line.st3(x1=304 y1=312 x2=336 y2=312)
+          text.tt2.tt3(x=344 y=316) China
 
     style
       :sass
@@ -140,7 +143,7 @@ block page
         .st5 
           fill: #f7931e
         .st6
-          opacity: 0.4
+          stroke: rgba(2, 16, 20, 0.08)
         .tt2
           fill: #666
         .tt3

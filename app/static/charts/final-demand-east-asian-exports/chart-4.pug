@@ -2,7 +2,7 @@ extend /partials/layout
 
 block append config
   - page.title = "Figure 4: Chinese exports are still reliant on the West"
-  - var chart = { height: 320, width: 560, inset: { x: 20, y: 20 } }
+  - var chart = { height: 320, width: 560, inset: { x: 20, y: 28 } }
 
 block page
   .wrapper
@@ -12,11 +12,13 @@ block page
       viewBox=`0 0 ${chart.width} ${chart.height}`
       data-view="match"
     )
+      rect(width="100%" height="100%" fill="none")
       g
+        text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=10) %
         for n, i in (new Array(6))
-          - var y = (chart.inset.y + i * (chart.height - 20 - 64) / 5)
+          - var y = (chart.inset.y + i * (chart.height - chart.inset.y - 56) / 5)
           text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
-            | #{100 - i * 20}%
+            | #{100 - i * 20}
           line.st1(
             x1=48
             x2=(chart.width - chart.inset.x)
@@ -24,7 +26,7 @@ block page
             y2=y
           )
 
-      g.bars
+      g.bars(transform="translate(0 8)")
         g(data-link="2" data-id="2")
           rect.st2(x="156" y="194.82" width="96" height="61.18")
           text.tt1.tt3(text-anchor="middle" y=(5 + 194.82 + (61.68 / 2)) x=204) 26.3%
@@ -43,7 +45,7 @@ block page
 
         text.tt2.tt3(text-anchor="middle" y=280 x=204) 2007
 
-      g.bars
+      g.bars(transform="translate(0 8)")
         g(data-link="2" data-id="2")
           rect.st2(x="348" y="197.5" width="96" height="58.5")
           text.tt1.tt3(text-anchor="middle" y=(5 + 197.5 + (59 / 2)) x=396) 24.9%
@@ -63,19 +65,19 @@ block page
         text.tt2.tt3(text-anchor="middle" y=280 x=396) 2017
 
       g
-        g(data-link="2" data-id="2" transform="translate(80 0)")
+        g(data-link="2" data-id="2" transform="translate(68 0)")
           rect.st2(x=0 y=305 width=12 height=12)
           text.tt2.tt3(x=16 y=316) US
-        g(data-link="3" data-id="3" transform="translate(128 0)")
+        g(data-link="3" data-id="3" transform="translate(116 0)")
           rect.st3(x=0 y=305 width=12 height=12)
           text.tt2.tt3(x=16 y=316) EU
-        g(data-link="4" data-id="4" transform="translate(176 0)")
+        g(data-link="4" data-id="4" transform="translate(164 0)")
           rect.st4(x=0 y=305 width=12 height=12)
           text.tt2.tt3(x=16 y=316) Other Western economies
-        g(data-link="5" data-id="5" transform="translate(360 0)")
+        g(data-link="5" data-id="5" transform="translate(348 0)")
           rect.st5(x=0 y=305 width=12 height=12)
           text.tt2.tt3(x=16 y=316) East Asia
-        g(data-link="6" data-id="6" transform="translate(444 0)")
+        g(data-link="6" data-id="6" transform="translate(432 0)")
           rect.st6(x=0 y=305 width=12 height=12)
           text.tt2.tt3(x=16 y=316) Rest of world
 
@@ -85,17 +87,21 @@ block page
           fill: none
           stroke: #e4e8ea
         .st2 
-          fill: #002B45
+          fill: #002b45
         .st3 
-          fill: #f7931e
+          fill: #2e75b6
         .st4 
           fill: #539ed4
         .st5 
-          fill: #9DB4C4
+          fill: #f7931e
         .st6
-          fill: #64869c
+          fill: #f7711e
+        .st7
+          stroke: none !important
         .tt1
           fill: #fff
+          opacity: 0
+          transition: opacity 300ms
         .tt2
           fill: #666
         .tt3
@@ -118,5 +124,8 @@ block page
           rect
             .bars &
               stroke-opacity: 1
+          .tt1
+            opacity: 1
+
         [data-id]
           transition: all 300ms
