@@ -1,0 +1,128 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Figure 2: A big shift towards East Asian demand"
+  - var chart = { height: 320, width: 640, inset: { x: 20, y: 28 } }
+
+block page
+  .wrapper.txt-center
+    .label.txt-uppercase
+      strong Share of World GDP
+      | &nbsp;(PPP ex. Rates)
+
+    svg(
+      width=`${chart.width}px`
+      height=`${chart.height}px`
+      viewBox=`0 0 ${chart.width} ${chart.height}`
+      data-view="match"
+    )
+      rect(width="100%" height="100%" fill="none")
+      g
+        text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=10) %
+        for n, i in (new Array(6))
+          - var y = (chart.inset.y + i * (chart.height - chart.inset.y - 56) / 5)
+          text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
+            | #{100 - i * 20}
+          line.st1(
+            x1=48
+            x2=(chart.width - chart.inset.x)
+            y1=y
+            y2=y
+          )
+
+      g.bars(transform="translate(92 8)")
+        - var count = 0
+        for n, i in [15,11,14,19,8,10,23]
+          - var h = (n / 100 * 236)
+          - var y = (count / 100 * 236)
+          - count += n;
+          g(id=`id${2+ i}` data-link=2 + i data-id=2 + i)
+            rect.rect.st2(x=0 y=(20 + y) width="96" height=h class=`st${2 + i}`)
+            text.tt1.tt3(text-anchor="middle" y=(25 + y + h / 2) x=48) #{n}%
+
+        text.tt2.tt3(text-anchor="middle" y=280 x=48) 2018
+
+      
+      g.bars(transform="translate(240 8)")
+        - var count = 0
+        for n, i in [14,8,11,17,15,12,23]
+          - var h = (n / 100 * 236)
+          - var y = (count / 100 * 236)
+          - count += n;
+          g(id=`id${2+ i}` data-link=2 + i data-id=2 + i)
+            rect.rect.st2(x=0 y=(20 + y) width="96" height=h class=`st${2 + i}`)
+            text.tt1.tt3(text-anchor="middle" y=(25 + y + h / 2) x=48) #{n}%
+
+        text.tt2.tt3(text-anchor="middle" y=280 x=48) 2040
+
+
+      g
+        rect.bg(x=392 y=36 width=228 height=220)
+        for l, i in ["US", "Eurozone", "Other advanced economies", "China", "India", "Other emerging markets (Asia)", "Emerging markets outside Asia"]
+          g(data-link=2 + i data-id=2 + i transform="translate(412 32)")
+            rect.bg(x=-12 y=2 + i * 32 height=32 width=244)
+            rect.rect(x=0 y=12 + i * 32 width=12 height=12 class=`st${2 + i}`)
+            text.tt2.tt3(x=20 y=23 + i * 32)= l
+
+    style
+      :sass
+        svg
+          display: block
+          margin: 0
+        .bg
+          fill: #fff
+        .st1 
+          fill: none
+          stroke: #e4e8ea
+        .st2
+          fill:#231F20
+        .st3
+          fill:#5A5758
+        .st4
+          fill:#7B7979
+        .st5
+          fill:#9C9A9A
+        .st6
+          fill:#FF9400
+        .st7
+          fill:#FFB400
+        .st8
+          fill:#E6E7E8
+        .tt1
+          fill: #fff
+          opacity: 0
+          transition: opacity 300ms
+        .tt2
+          fill: #666
+        .tt3
+          font-size: 14px
+
+        .bars
+          .st2,.st3,.st4,.st5
+            stroke: #fff
+            stroke-opacity: 0
+            transition: inherit
+
+        .inactive
+          opacity: 0.5
+          .rect
+            fill: #bbb
+            .bars &
+              stroke-opacity: 1
+        .active
+          opacity: 1
+          .rect
+            .bars &
+              stroke-opacity: 1
+          .tt1
+            opacity: 1
+
+        [data-id]
+          transition: all 300ms
+
+        .label
+          font-size: 14px
+
+        #id8
+          text
+            fill: #333
