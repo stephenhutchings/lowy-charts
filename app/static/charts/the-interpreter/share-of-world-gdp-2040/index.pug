@@ -2,7 +2,7 @@ extend /partials/layout
 
 block append config
   - page.title = "Figure 2: A big shift towards East Asian demand"
-  - var chart = { height: 320, width: 640, inset: { x: 20, y: 28 } }
+  - var chart = { height: 300, width: 640, inset: { x: 20, y: 28 } }
 
 block page
   .wrapper.txt-center
@@ -18,11 +18,11 @@ block page
     )
       rect(width="100%" height="100%" fill="none")
       g
-        text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=10) %
+
         for n, i in (new Array(6))
-          - var y = (chart.inset.y + i * (chart.height - chart.inset.y - 56) / 5)
+          - var y = (chart.inset.y + i * 236 / 5)
           text.tt2.tt3(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
-            | #{100 - i * 20}
+            | #{100 - i * 20}%
           line.st1(
             x1=48
             x2=(chart.width - chart.inset.x)
@@ -30,7 +30,7 @@ block page
             y2=y
           )
 
-      g.bars(transform="translate(92 8)")
+      g.bars(transform="translate(96 8)")
         - var count = 0
         for n, i in [15,11,14,19,8,10,23]
           - var h = (n / 100 * 236)
@@ -43,7 +43,7 @@ block page
         text.tt2.tt3(text-anchor="middle" y=280 x=48) 2018
 
       
-      g.bars(transform="translate(240 8)")
+      g.bars(transform="translate(248 8)")
         - var count = 0
         for n, i in [14,8,11,17,15,12,23]
           - var h = (n / 100 * 236)
@@ -63,6 +63,9 @@ block page
             rect.bg(x=-12 y=2 + i * 32 height=32 width=244)
             rect.rect(x=0 y=12 + i * 32 width=12 height=12 class=`st${2 + i}`)
             text.tt2.tt3(x=20 y=23 + i * 32)= l
+
+      g
+        text.tt3.st5(x=464 y=288) Source: Capital Economics
 
     style
       :sass
