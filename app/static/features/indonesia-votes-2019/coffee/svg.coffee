@@ -9,13 +9,8 @@ require.register "views/svg", (exports, require, module) ->
 
     initialize: ->
       $svg = @$("svg")
-      w = $svg.outerWidth()
-      h = $svg.outerHeight()
 
-      $svg
-        .attr("height", "#{Math.round h}px")
-        .attr("width", "#{Math.round w}px")
-        .attr("viewBox", "#{-w/2} #{-h/2} #{w} #{h}")
+      @onResize()
 
       @$circles = @$("circle").map(->
         cx = parseFloat this.attributes.cx.value
@@ -32,6 +27,7 @@ require.register "views/svg", (exports, require, module) ->
       ).toArray()
 
       @onHide()
+      @listenTo(this, "resize", @onResize)
 
     onShow: ->
       now = Date.now()
@@ -89,5 +85,16 @@ require.register "views/svg", (exports, require, module) ->
       for { $el, a, d } in @$circles
         $el.attr
           "fill-opacity": 0
+
+    onResize: ->
+      $svg = @$("svg")
+
+      w = $svg.outerWidth()
+      h = $svg.outerHeight()
+
+      $svg
+        .attr("height", "#{Math.round h}px")
+        .attr("width", "#{Math.round w}px")
+        .attr("viewBox", "#{-w/2} #{-h/2} #{w} #{h}")
 
   module.exports = SvgView
