@@ -136,6 +136,9 @@ sub, sup
   line-height: 0
 
 // OpenType features
+.num-lf
+  font-feature-settings: "pnum"
+
 .num-tf
   font-feature-settings: "tnum"
 
@@ -199,7 +202,7 @@ sub, sup
 // Transformation
 .txt-lowercase
   text-transform: lowercase
-h4, .txt-uppercase
+h4, .txt-uppercase, .txt-tu
   text-transform: uppercase
   letter-spacing: 0.06em
 .txt-capitalize
