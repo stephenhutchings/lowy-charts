@@ -1,7 +1,20 @@
 fs   = require("fs")
 data = require("./utils/data")
 git  = require("git-rev-sync")
+glob = require("glob")
 hash = git.short()
+
+
+glob "app/static/**/*.pug", (err, list) ->
+  console.log list.map((e) ->
+    e
+      .replace("app/static/", "http://localhost:4000/")
+      .replace("index.pug", "")
+      .replace(".pug", ".html")
+
+  ).filter((e) -> not e.match(/partials|survey-results\/q/)
+  ).join("\n")
+
 
 exports.config =
   paths:
