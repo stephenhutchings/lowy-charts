@@ -1,0 +1,54 @@
+extend /partials/layout
+
+block page
+  include partials/other/header
+
+  mixin item(index)
+    .scroll-item(id=`scroll-item-${index + 1}`)
+      block
+
+  #scroller(
+    data-view="scroller" 
+    data-pager=".pager-page" 
+    data-index=".pager-index"
+    data-min="1"
+    data-max="12"
+  )
+    +item("intro")
+      include partials/slides/intro
+    +item(0)
+      include partials/slides/01
+    +item(1)
+      include partials/slides/02
+    +item(2)
+      include partials/slides/03
+    +item(3)
+      include partials/slides/04
+    +item(4)
+      include partials/slides/05
+    +item(5)
+      include partials/slides/06
+    +item(6)
+      include partials/slides/07
+    +item(7)
+      include partials/slides/10
+    +item(8)
+      include partials/slides/08
+    +item(9)
+      include partials/slides/09
+    +item(10)
+      include partials/slides/11
+    +item(11)
+      include partials/slides/12
+
+  include partials/other/footer
+
+block append css
+  style
+    include:sass styles.sass
+
+block append scripts
+  script
+    include:coffee coffee/scroller.coffee
+    include:coffee coffee/counter.coffee
+    include:coffee coffee/svg.coffee

@@ -1,0 +1,468 @@
+// Vars
+$color-hl: #fc5839
+$color-dk: #1c0a13
+$color-lt: #e1dbd6
+$color-ff: #fff
+
+// Colors
+.bg-hl
+  background: $color-hl
+.bg-dk
+  background: $color-dk
+.bg-lt
+  background: $color-lt
+.bg-ff
+  background: $color-ff
+
+.txt-hl
+  color: $color-hl
+.txt-dk
+  color: $color-dk
+.txt-lt
+  color: $color-lt
+.txt-ff
+  color: $color-ff
+
+// Grid
+.row
+  display: flex
+  flex-direction: row
+  width: 100%
+  height: 60%
+
+  &:only-child
+    height: 100%
+
+  + .row
+    height: 40%
+
+.col-fw,
+.col-1-2,
+.col-1-3,
+.col-2-3
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-shrink: 0
+  flex-grow: 0
+  overflow: hidden
+  position: relative
+
+.caption
+  position: absolute
+  bottom: 10%
+  left: 20px
+  right: 20px
+  text-align: center
+  text-transform: uppercase
+  font-size: 13px
+
+.col-fw
+  width: 100%
+  flex-basis: 100%
+.col-1-2
+  width: 50%
+  flex-basis: 50%
+.col-1-3
+  width: 33.33%
+  flex-basis: 33.33%
+.col-2-3
+  width: 66.67%
+  flex-basis: 66.67%
+
+.bg-img
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.img-pan
+  width: 100%
+  height: 100%
+  .bg-img
+    width: 120%
+    max-width: none
+
+    .active &
+      transition: transform 12s
+      transform: translate3d(-10%, 0, 0)
+
+.frame
+  position: relative
+  z-index: 1
+
+// Font size
+.txt-xxl
+  font-size: 144px
+  line-height: 0.875
+  font-weight: 100
+  letter-spacing: 0.04em
+  font-family: Sans
+.txt-xl
+  font-size: 120px
+  line-height: 1
+  font-family: Sans
+  font-weight: 100
+.txt-title
+  font-size: 80px
+  line-height: 1
+  letter-spacing: -0.02em
+  font-weight: 200
+.txt-lg
+  font-size: 40px
+  line-height: inherit
+  letter-spacing: 0.007em
+  margin-bottom: 4px
+.txt-md
+  font-size: 32px
+  line-height: inherit
+.txt-sm
+  font-size: 13px
+  line-height: inherit
+  font-family: Sans
+
+.sine-lt,
+.sine-ff,
+.sine-dk
+  height: 6px
+  width: 80px
+  display: block
+  margin: 8px auto 8px 0
+  background-repeat: repeat-x
+  background-size: 20px 6px
+
+  .txt-right &
+    margin-left: auto
+    margin-right: 0
+
+  .txt-center &
+    margin-left: auto
+    margin-right: auto
+
+  .active &
+    animation: sine 400ms infinite linear
+
+.sine-lt
+  background-image: url("./img/sine-lt.png")
+
+.sine-ff
+  background-image: url("./img/sine-ff.png")
+
+.sine-dk
+  background-image: url("./img/sine-dk.png")
+
+@keyframes sine
+  to
+    background-position: -20px 0
+
+svg, img
+  margin: auto
+  max-height: 100%
+
+body
+  font-family: Cond
+  text-align: center
+  font-size: 24px
+  line-height: 1.25
+  overflow: hidden
+  font-weight: 300
+  color: $color-dk
+  text-rendering: geometricPrecision
+  display: flex
+  flex-direction: column
+
+strong, em, .txt-tu, .caption
+  font-family: Sans
+  font-weight: 600
+  font-style: normal
+
+.row,
+.container
+  max-width: 1280px
+  width: 100%
+  padding: 0 8px
+  margin: auto
+  box-sizing: border-box
+
+#header
+  line-height: 64px
+  height: 64px
+  margin: auto
+
+  .header-page
+    width: 80px
+    margin: auto
+    transition: all 300ms
+
+    .page-0 &
+      opacity: 0
+
+  .header-title
+    float: left
+    transition: opacity 300ms
+
+    .page-0 &
+      opacity: 0
+
+  .header-logo
+    float: right
+    transition: color 300ms
+
+    &:hover
+      color: $color-hl
+
+#footer
+  line-height: 60px
+
+  .scroll-prompt
+    float: left
+    transition: opacity 300ms
+    opacity: 0
+
+    .page-0 &
+      opacity: 1
+
+  .social-share
+    float: right
+
+    .icon
+      width: 40px
+      height: 40px
+      line-height: 40px
+      border-radius: 20px
+      border: 1px solid transparent
+      color: $color-ff
+      background-color: $color-lt
+      display: inline-block
+      box-sizing: border-box
+      transition: background-color 300ms
+
+      + .icon
+        margin-left: 8px
+
+      &:hover
+        background-color: $color-dk
+
+#header,
+#footer
+  position: relative
+  &:before
+    content: ""
+    position: absolute
+    left: 0
+    right: 0
+    z-index: 10
+    border-top: 1px solid mix($color-lt, $color-ff)
+    mix-blend-mode: darken
+
+#header:before
+  top: 100%
+
+#footer:before
+  bottom: 100%
+
+.pager
+  margin: auto
+  width: -moz-fit-content
+  width: fit-content
+  position: relative
+
+  .pager-page
+    position: absolute
+    left: 8px
+    top: 50%
+    width: 8px
+    margin: -4px
+    z-index: 1
+    transition: opacity 300ms
+
+    .page-0 &
+      opacity: 0
+
+    .pager-page-start,
+    .pager-page-middle,
+    .pager-page-end
+      height: 8px
+      background: $color-hl
+      position: absolute
+      left: 0
+      transform-origin: left center
+
+    .pager-page-start
+      width: 50%
+      border-radius: 4px 0 0 4px
+
+    .pager-page-middle
+      width: 200%
+      left: 4px
+      transform: scale(0.1, 1)
+
+    .pager-page-end
+      width: 50%
+      left: auto
+      right: 0
+      border-radius: 0 4px 4px 0
+
+  .pager-list
+    list-style: none
+    font-size: 16px
+    background: white
+    text-align: center
+    padding: 0
+    overflow: hidden
+
+  .pager-item
+    margin: 0
+    float: left
+
+  .pager-link
+    display: block
+    text-decoration: none
+    text-align: center
+    width: 16px
+    height: 60px
+    position: relative
+
+    &:before
+      content: ""
+      position: absolute
+      left: 50%
+      top: 50%
+      width: 8px
+      height: 8px
+      margin: -4px
+      border-radius: 4px
+      background: $color-lt
+      transition: background 300ms
+
+    &:hover:before,
+    &:focus:before
+      background: $color-dk
+
+
+#scroller
+  margin: auto
+  height: 100%
+  width: 100%
+  overflow: auto
+  scroll-behavior: smooth
+  scroll-snap-type: y mandatory
+
+.scroll-item
+  width: 100%
+  height: 100%
+  scroll-snap-align: start
+  position: relative
+
+@keyframes rotate
+  0%
+    transform: scale(1, 1) rotate(0deg)
+  50%
+    transform: scale(1.5, 1) rotate(180deg)
+  100%
+    transform: scale(1, 1) rotate(360deg)
+
+
+.digit
+  overflow: hidden
+  display: inline-block
+  position: relative
+  width: 0.55em
+  height: 1em
+  line-height: 1
+  vertical-align: bottom
+
+  ul
+    list-style: none
+    padding: 0
+    position: absolute
+    left: 0
+    top: 0
+    height: 10em
+
+  li
+    margin: 0
+    line-height: inherit
+
+#map
+  #map-surrounds,
+  #map-indonesia
+    transform: scale3d(0.9, 0.9, 0.9)
+    transform-origin: center
+    path
+      opacity: 0
+      fill: $color-ff
+
+  #map-indonesia path
+    fill: $color-hl
+
+  .page-4 &
+    #map-surrounds,
+    #map-indonesia
+      transition: transform 5000ms
+      transform: scale3d(1, 1, 1)
+
+      path
+        transition: all 2000ms
+        opacity: 1
+
+
+@media (max-width: 960px)
+  .txt-xxl
+    font-size: 96px
+  .txt-xl,
+  .txt-title
+    font-size: 72px
+  .txt-lg
+    font-size: 32px
+  .txt-md
+    font-size: 24px
+  body
+    font-size: 20px
+
+@media (max-width: 600px)
+  .header-title,
+  .scroll-prompt
+    display: none
+
+  br
+    display: inline
+    padding-left: 0.4em
+
+  .header-page
+    float: left
+    text-align: left
+
+  .pager
+    float: left
+
+  .txt-xxl
+    font-size: 64px
+  .txt-xl,
+  .txt-title
+    font-size: 40px
+  .txt-lg
+    font-size: 20px
+  .txt-md
+    font-size: 17px
+  body
+    font-size: 15px
+
+  .row, .row + .row
+    height: 50%
+
+  #scroller .txt-sm
+    font-size: 11px
+
+  .caption
+    font-size: 10px
+    bottom: 12px
+
+  .col-1-3,
+  .col-2-3
+    width: 50%
+    flex-basis: 50%
+
+  #header,
+  #footer
+    &:before
+      mix-blend-mode: normal

@@ -1,0 +1,19 @@
+.container
+  footer#footer
+    .scroll-prompt
+      strong.txt-sm.txt-tu.txt-lt Scroll Down
+
+    .social-share
+      a.icon.icon-social-facebook(href="")
+      a.icon.icon-social-twitter(href="")
+
+    nav.pager
+      .pager-page
+        span.pager-page-start
+        span.pager-page-middle
+        span.pager-page-end
+
+      ul.pager-list
+        for item, i in new Array(12)
+          li.pager-item
+            a.pager-link(href=`#scroll-item-${i + 1}` tabindex="0")
