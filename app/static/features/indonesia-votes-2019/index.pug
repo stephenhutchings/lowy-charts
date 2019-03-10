@@ -1,7 +1,11 @@
 extend /partials/layout
 
 block append config
+  - page.url = "https://lowy-charts.netlify.com/features/indonesia-votes/"
   - page.class = "page-0"
+  - page.title = "The 2019 Indonesian Election in 12 Facts"
+  - page.description = "Why Indonesian elections are unlike any other in the world";
+  - page.image = "./img/thumbnail.png"
 
 block page
   include partials/other/header

@@ -4,8 +4,21 @@
       strong.txt-sm.txt-tu.txt-lt Scroll Down
 
     .social-share
-      a.icon.icon-social-facebook(href="")
-      a.icon.icon-social-twitter(href="")
+      a.icon.icon-social-facebook(
+        href=[
+          "https://www.facebook.com/sharer.php?u=",
+          encodeURIComponent(page.url),
+        ]
+      )
+      a.icon.icon-social-twitter(
+        href=[
+          "https://twitter.com/share?url=",
+          encodeURIComponent(page.url),
+          "&text=",
+          encodeURIComponent(page.title),
+          "&via=LowyInstitute"
+        ].join("")
+      )
 
     nav.pager
       .pager-page
