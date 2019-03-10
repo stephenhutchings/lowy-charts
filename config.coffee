@@ -28,7 +28,7 @@ exports.config =
     ignored: [
       /[\\/]_/
       "node_modules"
-      /^app\/static\/partials/
+      /\/partials\//
       /^app\/static(\/|\\)(.+)\.yaml$/
       /\.(tmp\$\$)$/
     ]
