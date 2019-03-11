@@ -102,6 +102,7 @@ $color-ff: #fff
   line-height: 1
   font-family: Sans
   font-weight: 100
+  margin: -4px 0 4px
 .txt-title
   font-size: 80px
   line-height: 1
@@ -111,8 +112,7 @@ $color-ff: #fff
   font-size: 40px
   line-height: inherit
   letter-spacing: 0.007em
-  margin-top: -4px
-  margin-bottom: 4px
+  margin: -4px 0 4px
 .txt-md
   font-size: 32px
   line-height: inherit
@@ -157,10 +157,6 @@ a
   &:hover,
   &:focus
     color: $color-hl
-
-@keyframes sine
-  to
-    background-position: -20px 0
 
 svg, img
   margin: auto
@@ -219,12 +215,13 @@ strong, em, .txt-tu, .caption
     display: none
 
 #footer
-  line-height: 60px
+  line-height: 64px
 
   .scroll-prompt
     float: left
     transition: opacity 300ms
     opacity: 0
+    animation: prompt 3s infinite linear alternate
 
     .page-0 &
       opacity: 1
@@ -363,15 +360,6 @@ strong, em, .txt-tu, .caption
   scroll-snap-align: start
   position: relative
 
-@keyframes rotate
-  0%
-    transform: scale(1, 1) rotate(0deg)
-  50%
-    transform: scale(1.5, 1) rotate(180deg)
-  100%
-    transform: scale(1, 1) rotate(360deg)
-
-
 .digit
   overflow: hidden
   display: inline-block
@@ -434,7 +422,9 @@ strong, em, .txt-tu, .caption
   .header-title,
   .header-page,
   .scroll-prompt,
-  #footer .social-share
+  #footer .social-share,
+  #intro-logo,
+  #col-seats-and-parties
     display: none
 
   #header .social-share
@@ -489,6 +479,17 @@ strong, em, .txt-tu, .caption
   #footer
     &:before
       mix-blend-mode: normal
+      border-color: rgba($color-dk, 0.1)
+
+  .page-0 #header
+    opacity: 1
+
+  #header
+    line-height: 56px
+    height: 56px
+
+    .header-logo
+      padding: 16px 0
 
   #footer
     line-height: 40px
@@ -498,3 +499,33 @@ strong, em, .txt-tu, .caption
 
   dd
     font-size: 24px
+
+  #scroll-item-intro
+    .row:first-child
+      height: 60%
+    .row:last-child
+      height: 40%
+
+  .intro-description
+    max-width: 240px
+    margin: auto
+
+  #scroll-item-2 .txt-lg
+    font-size: 28px
+
+  #scroll-item-3 .txt-xxl
+    font-size: 48px
+
+  #col-members
+    width: 100%
+    flex-basis: 100%
+    padding: 12px
+    box-sizing: border-box
+
+@keyframes prompt
+  to
+    color: $color-dk
+
+@keyframes sine
+  to
+    background-position: -20px 0
