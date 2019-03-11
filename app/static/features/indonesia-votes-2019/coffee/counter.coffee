@@ -31,7 +31,7 @@ require.register "views/counter", (exports, require, module) ->
 
     onShow: ->
       now = Date.now()
-      dur = 2400
+      dur = 1500
 
       @playing = true
       @$el.addClass("playing")

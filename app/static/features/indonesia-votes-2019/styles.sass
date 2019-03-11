@@ -196,20 +196,37 @@ strong, em, .txt-tu, .caption
   .page-0 &
     opacity: 0
 
-  .header-page
-    width: 80px
-    float: right
-    text-align: right
-
   .header-title
     margin: auto
 
-  .header-logo
-    float: left
+  .header-logo,
+  .header-page
     width: 80px
     line-height: 12px
-    text-align: left
     padding: 20px 0
+
+  .header-page
+    float: right
+    text-align: right
+
+    .pager-index
+      width: 48px
+
+    .pager-total
+      position: relative
+      &:before
+        content: ""
+        position: absolute
+        left: 40px
+        bottom: 2px
+        width: 44px
+        border-top: 1px solid
+        transform: rotate(-32deg)
+        transform-origin: left center
+
+  .header-logo
+    float: left
+    text-align: left
 
   .social-share
     display: none
@@ -506,6 +523,7 @@ strong, em, .txt-tu, .caption
     .row:last-child
       height: 40%
 
+  .txt-title,
   .intro-description
     max-width: 240px
     margin: auto
