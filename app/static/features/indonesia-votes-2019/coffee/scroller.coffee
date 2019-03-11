@@ -12,7 +12,6 @@ require.register "views/scroller", (exports, require, module) ->
       @data = @$el.data()
 
       @data.support = window.CSS?.supports("scroll-snap-type: y mandatory")
-      # console.log @data.support
 
       @$elements =
         pager: $(@$el.data("pager"))
@@ -35,6 +34,9 @@ require.register "views/scroller", (exports, require, module) ->
       if @$el.outerWidth() < 600
         $("br").each (i, el) ->
           $(el).replaceWith(" ")
+
+      $(window).on "hashchange", (e) ->
+        console.log(e.preventDefault())
 
     onScroll: ->
       i  = Math.floor @el.scrollTop / @el.offsetHeight

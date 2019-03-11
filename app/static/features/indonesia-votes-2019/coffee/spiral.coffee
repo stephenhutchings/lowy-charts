@@ -2,42 +2,43 @@ require.register "views/spiral", (exports, require, module) ->
   easie = require("lib/easie")
   utils = require("lib/utils")
 
+  dpi = window.devicePixelRatio or window.webkitDevicePixelRatio or 1
+  red = "#fc5839"
+  black = "#1C0A13"
+
   class SpiralView extends Backbone.View
     events:
       "show": "onShow"
       "hide": "onHide"
 
     initialize: ->
-      $svg = @$("svg")
+      { source } = @$el.data()
 
-      @onResize()
+      @$canvas = $("<canvas class='svg-canvas' />")
+      @context = @$canvas.get(0).getContext("2d")
+      @$el.append @$canvas
 
-      @$circles = @$("circle").map(->
-        $el = $(this)
-        cx = parseFloat this.attributes.cx.value
-        cy = parseFloat this.attributes.cy.value
-
-        $el.css("transition", "fill 600ms")
-        $el.attr("opacity", "0") if $el.index() is 0
-
-        {
-          $el, original: { cx, cy }
-          group: $el.parent().index()
-        }
-
-      ).toArray()
-
-      @onHide()
       @listenTo(this, "resize", @onResize)
 
+      @circles = require(source).map (el) ->
+        _.extend {
+          original: { cx: el.cx, cy: el.cy }
+        }, el
+
+      @onResize()
+      @onHide()
+
     onShow: ->
+      return unless @$el.is(":visible")
+
       now = Date.now()
 
-      groups = _.groupBy(@$circles, "group")
+      groups = _.groupBy(@circles, "set")
       group.reverse() for id, group of groups
 
-      duration = 1000
+      duration = 600
       delay = duration / _.size(groups)
+
 
       @playing = true
       @$el.addClass("playing")
@@ -46,46 +47,64 @@ require.register "views/spiral", (exports, require, module) ->
       do repeat = =>
         return unless @playing
 
+        w = @context.canvas.width
+        h = @context.canvas.height
+        x = (w / 2)
+        y = (h / 2)
+
         window.requestAnimationFrame(repeat)
+
+        @context.clearRect(0, 0, w, h)
 
         for id, group of groups
           j = parseInt(id)
-          for { $el, ms, original }, i in group
+          for el, i in group
             t = ((Date.now() - now) / (duration * 2 - j * delay)) % 1
 
             next = group[i + 1]?.original
 
             if next
-              group[i].cx = original.cx + (next.cx - original.cx) * t
-              group[i].cy = original.cy + (next.cy - original.cy) * t
-              opacity =
-                if i is 0 then t
-                else if i is group.length - 2 then 1 - t
-                else 1
+              el.cx = el.original.cx + (next.cx - el.original.cx) * t
+              el.cy = el.original.cy + (next.cy - el.original.cy) * t
 
-              $el.attr
-                "cx": group[i].cx
-                "cy": group[i].cy
-                "opacity": opacity
+            el.cx *= dpi
+            el.cy *= dpi
+
+            n = 8
+
+            r =
+              if i is 0 then t
+              else if i is group.length - 2 then 1 - t
+              else 1
+
+            l = 1
+            l = (i + t) / n if i < n
+            l = ((-i + group.length) + (1 - t)) / n if i > group.length - n
+            l = Math.pow(l, 0.8)
+
+            el.r = r * l * 3 * dpi
+
+        @context.beginPath()
+
+        for { cx, cy, r } in @circles
+          @context.moveTo(x + cx + r, y + cy)
+          @context.arc(x + cx + r, y + cy, r, 0, Math.PI * 2, 0)
+
+        @context.fill()
+
 
     onHide: ->
+      return unless @$el.is(":visible")
+
       @playing = false
       @$el.removeClass("playing")
-
-      for { $el, original } in @$circles
-        $el.attr
-          "cx": original.cx
-          "cy": original.cy
+      @context.clearRect(0, 0, @context.canvas.width, @context.canvas.height)
 
     onResize: ->
-      $svg = @$("svg")
+      w = @$el.width()
+      h = @$el.height()
 
-      w = $svg.outerWidth()
-      h = $svg.outerHeight()
-
-      $svg
-        .attr("height", "#{Math.round h}px")
-        .attr("width", "#{Math.round w}px")
-        .attr("viewBox", "#{-w/2} #{-h/2} #{w} #{h}")
+      @context.canvas.width  = w * dpi
+      @context.canvas.height = h * dpi
 
   module.exports = SpiralView
