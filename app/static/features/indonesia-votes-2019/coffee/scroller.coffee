@@ -47,15 +47,21 @@ require.register "views/scroller", (exports, require, module) ->
 
       w = t2
       x = if t1 > 0.5 then (1-t2) else 0
+      k = 0
+
+      if i < 0
+        k = 2
+        x -= k
+        w += k
 
       @$elements.index.html(i2)
       @$elements.pager.css "transform": "translateX(#{i * 200}%)"
 
       @$elements.pager.children().eq(0).css
-        "transform": "translate3d(#{x * 400}%, 0, 0)"
+        "transform": "translate3d(#{x * 400 + k * (1-t2) * 400}%, 0, 0)"
 
       @$elements.pager.children().eq(1).css
-        "transform": "translate3d(#{x * 100}%, 0, 0) scale(#{t2}, 1)"
+        "transform": "translate3d(#{x * 100 + k * (1-t2) * 100}%, 0, 0) scale(#{t2 * (k + 1)}, 1)"
 
       @$elements.pager.children().eq(2).css
         "transform": "translate3d(#{(x + w) * 400}%, 0, 0)"
