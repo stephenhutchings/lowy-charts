@@ -1,0 +1,246 @@
+$blue: #539fd5
+
+*
+  box-sizing: border-box
+
+body
+  font-size: 15px
+  line-height: 1.2
+
+#controls
+  position: absolute
+  z-index: 10
+  left: 60px
+  bottom: 120px
+
+.btn
+  width: 40px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  color: #aaa
+  border: 1px solid
+  border-radius: 20px
+  float: left
+  margin-right: 8px
+  transition: all 300ms
+  cursor: pointer
+
+  &:hover,
+  &:focus
+    outline: none
+    color: #fff
+    border-color: #002B45
+    background: #002B45
+
+.wrapper
+  height: 464px
+  margin: 80px auto
+  width: 960px
+  max-width: 100%
+  position: relative
+
+#years
+  position: absolute
+  top: 50%
+  left: 0
+  right: 0
+  height: 40px
+  margin-top: -20px
+  border-left: 44px solid transparent
+  border-right: 20px solid transparent
+  background: #eee
+  background: linear-gradient(to right, #fff, #eee 5%, #eee 95%, #fff)
+  background-size: calc(100% + 64px)
+  background-position: -44px 0
+
+.year
+  position: absolute
+  top: 0
+  bottom: 0
+  border-left: 1px solid transparent
+
+  &.dec
+    // top: 75%
+    border-left-color: #fff
+
+  &.cen
+    top: 0
+    bottom: 0
+    border-left: 1px solid #fff
+    border-right: 1px solid #fff
+    width: 3px
+    margin-left: -1px
+
+.year-label
+  position: absolute
+  line-height: 16px
+  font-size: 13px
+  width: 36px
+  z-index: 2
+  letter-spacing: 0.02em
+  font-feature-settings: "onum" 1
+  background: #eee
+
+  &.dec
+    text-align: center
+    margin-left: -18px
+    color: #aaa
+
+  &.cen
+    margin-left: 6px
+    font-weight: bold
+
+#events
+  position: absolute
+  top: 0
+  left: 44px
+  right: 20px
+  bottom: 0
+
+.event
+  position: absolute
+  border-left: 1px solid
+  border-color: rgba(#000, 0.0625)
+  transition: border-color 300ms
+  cursor: pointer
+  z-index: 1
+  transform: translate3d(0, 0, 0)
+
+  &:after
+    content: ""
+    position: absolute
+    top: -12px
+    bottom: -12px
+    left: -12px
+    right: -12px
+
+  &:before
+    content: ""
+    position: absolute
+    width: 8px
+    border-top: 1px solid
+    border-color: inherit
+
+  @for $i from 0 through 7
+    &.item-#{$i})
+      height: 80px + $i * 20px
+
+  &.top
+    bottom: 50%
+
+    &:before
+      top: 0
+
+    .event-marker
+      bottom: 0
+
+    .event-content
+      top: 0
+
+    .event-text
+      top: 0
+      transform: translate3d(0, 24px, 0)
+
+  &.bottom
+    top: 50%
+
+    &:before
+      bottom: 0
+
+    .event-marker
+      top: 0
+
+    .event-content
+      bottom: 0
+
+    .event-text
+      bottom: 0
+      transform: translate3d(0, -24px, 0)
+
+  &.right
+    .event-year
+      right: 8px
+
+    .event-text
+      left: 0
+      text-align: left
+
+    &:before
+      right: 0
+
+  &.left
+    z-index: 2
+    .event-year
+      left: 8px
+
+    .event-text
+      right: 0
+      text-align: right
+
+    &:before
+      left: 0
+
+  &:hover
+    border-color: #ccc
+    .event-year
+      color: #666
+
+  &.active,
+  &:focus
+    outline: none
+    border-color: $blue
+    z-index: 3
+
+    .event-year
+      color: inherit
+      font-weight: bold
+
+    .event-marker
+      background: $blue
+      transform: translate3d(-0.5px, 0, 0) scale(1)
+
+    .event-text
+      opacity: 1
+      transform: translate3d(0, 0, 0) !important
+
+.event-content
+  position: absolute
+
+.event-year
+  position: relative
+  white-space: nowrap
+  background: #fff
+  color: #aaa
+  font-size: 14px
+  line-height: 15px
+  position: absolute
+  top: -14px
+  padding: 6px
+  transition: color 300ms
+  font-feature-settings: "onum" 1
+
+.event-marker
+  position: absolute
+  width: 6px
+  height: 6px
+  border-radius: 50%
+  margin: -3px
+  z-index: -1
+  background: #ccc
+  transform: translate3d(-0.5px, 0, 0) scale(0.667)
+  transition: all 300ms
+
+.event-text
+  position: absolute
+  z-index: 10
+  opacity: 0
+  padding: 8px 12px
+  pointer-events: none
+  width: 280px
+  width: max-content
+  max-width: 320px
+  color: #fff
+  background: $blue
+  transition: all 300ms
+  z-index: 1
