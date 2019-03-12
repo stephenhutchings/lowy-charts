@@ -68,4 +68,5 @@ html.no-js(lang="en")
         })
 
     block analytics
-      +ga("UA-3115931-15")
+      if this.process.env.NODE_ENV == "production"
+        +ga("UA-3115931-15")
