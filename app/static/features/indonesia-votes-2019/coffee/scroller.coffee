@@ -35,9 +35,6 @@ require.register "views/scroller", (exports, require, module) ->
         $("br").each (i, el) ->
           $(el).replaceWith(" ")
 
-      $(window).on "hashchange", (e) ->
-        console.log(e.preventDefault())
-
     onScroll: ->
       i  = Math.floor @el.scrollTop / @el.offsetHeight
       i2 = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
