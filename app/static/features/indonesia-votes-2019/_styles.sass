@@ -247,6 +247,7 @@ strong, em, .txt-tu, .caption
 
 #footer
   line-height: 64px
+  height: 64px
 
   .scroll-prompt
     float: left
@@ -261,16 +262,19 @@ strong, em, .txt-tu, .caption
     float: right
 
 .social-share
+  display: flex
+  height: 100%
+
   .icon
     width: 40px
     height: 40px
     line-height: 40px
     border-radius: 20px
-    vertical-align: middle
+    display: inline-block
     border: 1px solid transparent
     color: $color-ff
     background-color: $color-lt
-    display: inline-block
+    margin: auto
     box-sizing: border-box
     transition: background-color 300ms
 
@@ -461,7 +465,7 @@ strong, em, .txt-tu, .caption
     display: none
 
   #header .social-share
-    display: block
+    display: flex
     float: right
 
   .row-sm
@@ -526,6 +530,7 @@ strong, em, .txt-tu, .caption
 
   #footer
     line-height: 40px
+    height: 40px
 
   .pager .pager-link
     height: 40px
