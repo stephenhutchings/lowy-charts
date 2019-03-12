@@ -94,7 +94,7 @@ block append scripts
             offset -= - $active.find(".event-year").width() - 20
           }
           $frame.css({
-            transform: "translate3d(" + (-offset ) + "px,0,0)"
+            transform: "translate3d(" + (-Math.max(offset, 0) ) + "px,0,0)"
           })
         } else {
           $frame.css({
