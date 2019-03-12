@@ -13,6 +13,11 @@ body
   left: 60px
   bottom: 120px
 
+  @media (max-width: 600px)
+    left: 50%
+    margin-left: -44px
+    bottom: 0
+
 .btn
   width: 40px
   height: 40px
@@ -40,12 +45,24 @@ body
   max-width: 100%
   position: relative
 
+#frame
+  top: 0
+  bottom: 0
+  width: 100%
+  min-width: 600px
+  position: absolute
+  transition: transform 800ms
+
+  @media (max-width: 600px)
+    bottom: 48px
+
 #years
   position: absolute
   top: 50%
   left: 0
   right: 0
   height: 40px
+  z-index: -1
   margin-top: -20px
   border-left: 44px solid transparent
   border-right: 20px solid transparent
@@ -61,7 +78,6 @@ body
   border-left: 1px solid transparent
 
   &.dec
-    // top: 75%
     border-left-color: #fff
 
   &.cen
@@ -86,6 +102,9 @@ body
     text-align: center
     margin-left: -18px
     color: #aaa
+
+    @media (max-width: 600px)
+      display: none
 
   &.cen
     margin-left: 6px
@@ -126,6 +145,9 @@ body
     &.item-#{$i})
       height: 80px + $i * 20px
 
+      @media (max-width: 600px)
+        height: 80px + $i * 16px
+
   &.top
     bottom: 50%
 
@@ -164,7 +186,6 @@ body
 
     .event-text
       left: 0
-      text-align: left
 
     &:before
       right: 0
@@ -176,7 +197,6 @@ body
 
     .event-text
       right: 0
-      text-align: right
 
     &:before
       left: 0
@@ -220,6 +240,10 @@ body
   transition: color 300ms
   font-feature-settings: "onum" 1
 
+  @media (max-width: 600px)
+    padding: 2px 4px
+    top: -10px
+
 .event-marker
   position: absolute
   width: 6px
@@ -244,3 +268,4 @@ body
   background: $blue
   transition: all 300ms
   z-index: 1
+  text-align: center
