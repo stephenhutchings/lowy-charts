@@ -38,23 +38,24 @@ block page
             data-i=i
           )
             .event-marker
-            .event-content
-              .event-year
-                if e.end
-                  | #{e.start}–#{e.end.toString().slice(2)}
-                else
-                  | #{e.start}
+            .event-year
+              if e.end
+                | #{e.start}–#{e.end.toString().slice(2)}
+              else
+                | #{e.start}
 
+            .event-content
               p.event-text!= e.text
 
       #years
         for n, i in new Array(len - 6)
           - var j = (min + i);
           - var c = j % 100 == 0 ? "cen" : j % 10 == 0 ? "dec" : "";
-          .year(
-            style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
-            class=c
-          )
+          if j % 10 == 0
+            .year(
+              style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
+              class=c
+            )
           if j % 20 == 0
             .year-label(
               style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
@@ -84,16 +85,14 @@ block append scripts
         inner = $("body").outerWidth()
         offset = $active.position().left + 40
         offset += $active.find(".event-text").position().left
-        width = $active.find(".event-text").outerWidth()
 
         if (inner < outer) {
           if ($active.hasClass("right")) {
             offset -= 40
           } else {
-            offset -= Math.max(inner - width, 0) - $active.find(".event-year").width() - 20
-            offset = Math.min(offset, outer - inner)
+            offset -= inner
+            offset -= - $active.find(".event-year").width() - 20
           }
-
           $frame.css({
             transform: "translate3d(" + (-offset ) + "px,0,0)"
           })
