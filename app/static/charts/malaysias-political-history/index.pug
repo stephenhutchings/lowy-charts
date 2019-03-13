@@ -10,6 +10,7 @@ block append config
   - vals = vals.concat(vals).sort()
 
   - var p = function(i){return vals[i]}
+  - order = [[3,4,5,6,0,3,4,5,6,7,8,9,9,8,7,6,5,4,3,2,1,0,0,1,2,3,4,5,6,7,9,8,7,6,5,4,3,2,1], [1,2,3,4,5,6,7,8,9,8,7,6,5,4,3,2,1]]
 
 block page
   .wrapper
@@ -25,29 +26,36 @@ block page
 
     #frame
       #events
-        for e, i in events
-          - var k = (e.start - min), left = _.sum(vals.slice(0, k));
-          .event.js-year(
-            tabindex="0"
-            style={left: (100 * left) + "%"}
-            class=[
-              i == 0 ? "active" : "",
-              left < 0.33 ? "right" : "left",
-              i % 2 == 0 ? "top" : "bottom",
-              `item-${7 - ~~(((i + 15) % 16) / 2)}`,
-              _.includes([1,2,7,16,17,18,19], i) ? "spaced" : "middle"
-            ].join(" ")
-            data-i=i
-          )
-            .event-marker
-            .event-year
-              if e.end
-                | #{e.start}–#{e.end.toString().slice(2)}
-              else
-                | #{e.start}
+        for list, j in _.groupBy(_.sortBy(events, "start"), "highlight")
+          - j = j == "true" ? 22 : 0; m = 0;
+          for e, i in list
+            - var k = (e.start - min), left = _.sum(vals.slice(0, k));
+            - var dir = Math.floor(i / 10) % 2 == 0 ? -1 : 1
 
-            .event-content
-              p.event-text!= e.text
+            .event.js-year(
+              tabindex="0"
+              style={left: (100 * left) + "%"}
+              class=[
+                i == 0 ? "active" : "",
+                order[j > 0 ? 1 : 0][i] > m ? "right" : "left",
+                !e.highlight ? "top" : "bottom",
+                `item-${order[j > 0 ? 1 : 0][i]}`,
+                _.includes([1,2,12,13,14,15,23,27,28,32], i+j) ? "spaced" : "middle",
+                e.highlight ? "highlight" : ""
+              ].join(" ")
+              data-i=i+j
+            )
+              .event-marker
+              .event-year
+                if e.end
+                  | #{e.start}–#{e.end.toString().slice(2)}
+                else
+                  | #{e.start}
+
+              .event-content
+                p.event-text!= e.text
+
+            - m = order[j > 0 ? 1 : 0][i]
 
       #years
         for n, i in new Array(len - 6)

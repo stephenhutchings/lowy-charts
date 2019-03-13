@@ -150,15 +150,12 @@ body
     border-top: 1px solid
     border-color: inherit
 
-  @for $i from 0 through 7
+  @for $i from 0 through 9
     &.item-#{$i})
-      height: 57px + $i * 20px
+      height: 57px + $i * 16px
 
       @media (max-width: 600px)
-        height: 57px + $i * 16px
-
-  &:first-child
-    height: 116px
+        height: 32px + $i * 16px
 
   &.top
     bottom: 50%
@@ -227,31 +224,34 @@ body
       opacity: 1
       transform: translate3d(0, -50%, 0)
 
-  &.middle.bottom
+  &.active.highlight
+    border-color: orange
+
+    .event-marker,
+    .event-text
+      background: orange
+
+  &.middle
     .event-marker
-      margin-top: -17px
-      position: relative
       &:before
         content: ""
         position: absolute
-        top: 100%
-        border-right: 1px solid #cdced6
+        width: 1px
+        background: inherit
         height: 16px
         left: 3px
 
-  &.middle.top
-    .event-marker
+    &.bottom .event-marker
+      margin-top: -17px
+      &:before
+        top: 100%
+
+    &.top .event-marker
       margin-bottom: -18px
       &:before
-        content: ""
-        position: absolute
         bottom: 100%
-        border-right: 1px solid #cdced6
-        height: 16px
-        left: 3px
 
   &.middle.active .event-marker:before
-    border-color: $blue
     transform: scale(1)
 
 .event-content
@@ -301,6 +301,9 @@ body
   transition: all 300ms
   z-index: 1
   text-align: center
+
+  .highlight &
+    background: orange
 
 #pager
   display: none

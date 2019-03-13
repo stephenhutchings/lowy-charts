@@ -26,6 +26,7 @@ events:
       <br>unified as Federation of Malaya
 
   - start: 1955
+    highlight: true
     text: >
       General election for
       <br>Federal Legislative Council
@@ -35,6 +36,7 @@ events:
       Federation of Malaya independence
 
   - start: 1959
+    highlight: true
     text: >
       General election for 1st Parliament
       <br>of the Federation of Malaya: Prime
@@ -49,8 +51,9 @@ events:
       <br>(now Sabah), Sarawak and Singapore
 
   - start: 1964
+    highlight: true
     text: >
-      General election for 1st Parliament
+      General election for 2nd Parliament
       <br>of the new Federation of Malaysia
 
   - start: 1965
@@ -58,8 +61,9 @@ events:
       Singapore withdraws from Malaysia
 
   - start: 1969
+    highlight: true
     text: >
-      General election for 2nd
+      General election for 3rd
       <br>Parliament of Malaysia; race riots
       <br>between Malays and non-Malays
 
@@ -101,9 +105,12 @@ events:
       <br>sodomy and corruption charges
 
   - start: 1999
+    highlight: true
     text: >
       Anwar Ibrahim sentenced
-      <br>to six years for corruption
+      <br>to six years for corruption;
+      <br>General election for 9th
+      <br>Parliament of Malaysia
 
   - start: 2000
     text: >
@@ -116,11 +123,15 @@ events:
       <br>succeeded by Abdullah Ahmad Badawi
 
   - start: 2004
+    highlight: true
     text: >
-      Anwar Ibrahim’s sodomy
+      General election for 11th
+      <br>Parliament of Malaysia;
+      <br>Anwar Ibrahim’s sodomy
       <br>conviction overturned
 
   - start: 2008
+    highlight: true
     text: >
       General election for 12th
       <br>Parliament of Malaysia: for the
@@ -166,6 +177,7 @@ events:
       <br>announces seizure of 1MDB assets
 
   - start: 2018
+    highlight: true
     text: >
       General election for 14th Parliament of
       <br>Malaysia: won by Pakatan Harapan coalition
@@ -174,3 +186,45 @@ events:
       <br>Ibrahim released from prison after being
       <br>granted a royal pardon by Malaysian King;
       <br>Anwar elected to Parliament in a by-election
+  -
+    start: 1974
+    highlight: true
+    text: >
+      General election for 4rd
+      <br>Parliament of Malaysia
+  -
+    start: 1978
+    highlight: true
+    text: >
+      General election for 5th
+      <br>Parliament of Malaysia
+  -
+    start: 1982
+    highlight: true
+    text: >
+      General election for 6th
+      <br>Parliament of Malaysia
+  -
+    start: 1986
+    highlight: true
+    text: >
+      General election for 7th
+      <br>Parliament of Malaysia
+  -
+    start: 1990
+    highlight: true
+    text: >
+      General election for 8th
+      <br>Parliament of Malaysia
+  -
+    start: 1995
+    highlight: true
+    text: >
+      General election for 9th
+      <br>Parliament of Malaysia
+  -
+    start: 2013
+    highlight: true
+    text: >
+      General election for 13th
+      <br>Parliament of Malaysia
