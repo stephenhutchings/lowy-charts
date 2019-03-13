@@ -27,7 +27,7 @@ block page
     #frame
       #events
         for list, j in _.groupBy(_.sortBy(events, "start"), "highlight")
-          - j = j == "true" ? 22 : 0; m = 0;
+          - j = j == "true" ? 21 : 0; m = 0;
           for e, i in list
             - var k = (e.start - min), left = _.sum(vals.slice(0, k));
             - var dir = Math.floor(i / 10) % 2 == 0 ? -1 : 1
@@ -40,7 +40,7 @@ block page
                 order[j > 0 ? 1 : 0][i] > m ? "right" : "left",
                 !e.highlight ? "top" : "bottom",
                 `item-${order[j > 0 ? 1 : 0][i]}`,
-                _.includes([1,2,12,13,14,15,23,27,28,32], i+j) ? "spaced" : "middle",
+                _.includes([1,2,12,13,14,15,22,26,27,31], i+j) ? "spaced" : "middle",
                 e.highlight ? "highlight" : ""
               ].join(" ")
               data-i=i+j
