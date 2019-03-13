@@ -3,7 +3,7 @@ require.register "views/spin", (exports, require, module) ->
   utils = require("lib/utils")
 
   dpi = window.devicePixelRatio or window.webkitDevicePixelRatio or 1
-  red = "#fc5839"
+  red = "#f44336"
   black = "#1C0A13"
 
   class SpinView extends Backbone.View

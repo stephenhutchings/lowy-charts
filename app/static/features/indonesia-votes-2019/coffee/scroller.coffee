@@ -61,14 +61,13 @@ require.register "views/scroller", (exports, require, module) ->
         "transform": "translate3d(#{x * 400 + k * (1-t2) * 400}%, 0, 0)"
 
       @$elements.pager.children().eq(1).css
-        "transform": "translate3d(#{x * 100 + k * (1-t2) * 100}%, 0, 0) scale(#{t2 * (k + 1)}, 1)"
+        "transform": "translate3d(#{-4 + x * 100 + k * (1-t2) * 100}%, 0, 0) scale(#{t2 * (k + 1) + 0.1}, 1)"
 
       @$elements.pager.children().eq(2).css
         "transform": "translate3d(#{(x + w) * 400}%, 0, 0)"
 
     onScrollEnd: ->
       index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      index = Math.min(index, @data.max)
 
       unless @data.support
         @el.scrollTo top: index * @el.offsetHeight, behavior: 'smooth'

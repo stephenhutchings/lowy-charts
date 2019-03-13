@@ -3,7 +3,7 @@ require.register "views/spiral", (exports, require, module) ->
   utils = require("lib/utils")
 
   dpi = window.devicePixelRatio or window.webkitDevicePixelRatio or 1
-  red = "#fc5839"
+  red = "#f44336"
   black = "#1C0A13"
 
   class SpiralView extends Backbone.View
@@ -26,9 +26,9 @@ require.register "views/spiral", (exports, require, module) ->
         }, el
 
       @onResize()
-      @onHide()
+      @onShow()
 
-    onShow: ->
+    onShow: (e) ->
       return unless @$el.is(":visible")
 
       now = Date.now()
@@ -52,7 +52,7 @@ require.register "views/spiral", (exports, require, module) ->
         x = (w / 2)
         y = (h / 2)
 
-        window.requestAnimationFrame(repeat)
+        window.requestAnimationFrame(repeat) if e?
 
         @context.clearRect(0, 0, w, h)
 
@@ -98,7 +98,6 @@ require.register "views/spiral", (exports, require, module) ->
 
       @playing = false
       @$el.removeClass("playing")
-      @context.clearRect(0, 0, @context.canvas.width, @context.canvas.height)
 
     onResize: ->
       w = @$el.width()

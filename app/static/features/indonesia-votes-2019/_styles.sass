@@ -1,5 +1,5 @@
 // Vars
-$color-hl: #fc5839
+$color-hl: #f44336
 $color-dk: #1c0a13
 $color-lt: #e1dbd6
 $color-ff: #fff
@@ -15,7 +15,7 @@ $color-ff: #fff
   background: $color-ff
 
 .txt-hl
-  color: $color-hl
+  color: lighten($color-hl, 2)
 .txt-dk
   color: $color-dk
 .txt-lt
@@ -273,10 +273,13 @@ strong, em, .txt-tu, .caption
     display: inline-block
     border: 1px solid transparent
     color: $color-ff
-    background-color: $color-lt
+    background-color: darken($color-lt, 8)
     margin: auto
     box-sizing: border-box
     transition: background-color 300ms
+
+    @media (color-gamut: p3)
+      background-color: $color-lt
 
     + .icon
       margin-left: 8px
@@ -317,7 +320,8 @@ strong, em, .txt-tu, .caption
     z-index: 1
     transition: opacity 300ms
 
-    .page-0 &
+    .page-0 &,
+    .page-13 &
       opacity: 0
 
     .pager-page-start,
@@ -373,13 +377,15 @@ strong, em, .txt-tu, .caption
       height: 8px
       margin: -4px
       border-radius: 4px
-      background: $color-lt
       transition: background 300ms
+      background: darken($color-lt, 8)
+
+      @media (color-gamut: p3)
+        background: $color-lt
 
     &:hover:before,
     &:focus:before
       background: $color-dk
-
 
 #scroller
   margin: auto
@@ -394,6 +400,21 @@ strong, em, .txt-tu, .caption
   height: 100%
   scroll-snap-align: start
   position: relative
+
+#scroll-item-outro
+  .social-share .icon
+    width: auto
+    padding: 0 0.75em
+    background-color: $color-hl
+
+    &:hover
+      background-color: $color-dk
+
+    strong
+      vertical-align: top
+
+    &:before
+      margin-right: 0.5em
 
 .digit
   overflow: hidden

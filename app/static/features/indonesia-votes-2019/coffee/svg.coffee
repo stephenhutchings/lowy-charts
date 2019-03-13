@@ -74,7 +74,7 @@ require.register "views/svg", (exports, require, module) ->
           if fill
             for { $el }, i in _.sortBy(@$circles, "cy").reverse()
               if i < @$circles.length * fill
-                $el.attr("fill", "#fc5839")
+                $el.attr("fill", "#f44336")
               else
                 $el.attr("fill", "")
 
