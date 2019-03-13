@@ -36,7 +36,7 @@ block page
               tabindex="0"
               style={left: (100 * left) + "%"}
               class=[
-                i == 0 ? "active" : "",
+                (j + i) == 0 ? "active" : "",
                 order[j > 0 ? 1 : 0][i] > m ? "right" : "left",
                 !e.highlight ? "top" : "bottom",
                 `item-${order[j > 0 ? 1 : 0][i]}`,
