@@ -1,10 +1,11 @@
 extend /partials/layout
 
 block append config
+  - page.title = "‘New Malaysia’: Four key challenges in the near term"
   - var events = data.getOne("static/charts/malaysias-political-history/events").events
   - var years = _.pluck(events, "start")
 
-  - vals = (0).toPrecision(99).split("").map(function(e, i){return 1 + Math.pow(i,0.6)})
+  - vals = (0).toPrecision(99).split("").map(function(e, i){return 1 + Math.pow(i,1)})
   - vals = vals.map(function(e){ return +(e / (_.sum(vals) * 2).toFixed(4))});
   - vals = vals.concat(vals).sort()
 
@@ -31,9 +32,10 @@ block page
             style={left: (100 * left) + "%"}
             class=[
               i == 0 ? "active" : "",
-              left < 0.3 ? "right" : "left",
+              left < 0.33 ? "right" : "left",
               i % 2 == 0 ? "top" : "bottom",
-              `item-${7 - ~~(((i + 15) % 16) / 2)}`
+              `item-${7 - ~~(((i + 15) % 16) / 2)}`,
+              _.includes([1,2,7,16,17,18,19], i) ? "spaced" : "middle"
             ].join(" ")
             data-i=i
           )
@@ -56,30 +58,43 @@ block page
               style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
               class=c
             )
-          if j % 20 == 0
+          if j % 20 == 0 && j > 1840
             .year-label(
               style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
               class=c
             )
               = j
 
+    #pager
+      span#page 1 
+      | &ensp;/&ensp;#{events.length}
+
 
 block append scripts
   script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.2.1/balancetext.js")
   script.
     $(document).ready(function(){
-      var count = 0, $events = $(".event"), $frame = $("#frame");
+      var count = 0,
+          $events = $(".event"),
+          $frame = $("#frame"),
+          $page = $("#page");
 
       $(".js-next").click(function(){count++; update()})
       $(".js-prev").click(function(){count--; update()})
       $(".js-year").click(function(){count = $(this).data("i"); update()})
+      $(".js-year").hover(function(){count = $(this).data("i"); update()})
 
       function update() {
-        count = ($events.length + count) % $events.length;
+        if (document.activeElement) document.activeElement.blur()
+        
+        count = ($events.length + count) % $events.length
+        
         $active = $events
           .removeClass("active")
           .eq(count)
           .addClass("active")
+
+        $page.html(count + 1)
 
         outer = $frame.width()
         inner = $("body").outerWidth()

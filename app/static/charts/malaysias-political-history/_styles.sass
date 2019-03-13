@@ -10,8 +10,8 @@ body
 #controls
   position: absolute
   z-index: 10
-  left: 60px
-  bottom: 120px
+  left: 0
+  bottom: 100px
 
   @media (max-width: 600px)
     left: 50%
@@ -69,13 +69,23 @@ body
   height: 56px
   z-index: -1
   margin-top: -28px
-  padding-top: 4px
+  padding-top: 16px
   border-left: 44px solid transparent
   border-right: 20px solid transparent
-  background: #eee
-  background: linear-gradient(to right, #fff, #eee 5%, #eee 95%, #fff)
+  background: #e9eaec
+  // background: linear-gradient(to right, #fff, #e9eaec 5%, #e9eaec 95%, #fff)
   background-size: calc(100% + 64px)
   background-position: -44px 0
+
+  &:before
+    content: ""
+    position: absolute
+    left: -44px
+    right: -20px
+    top: -8px
+    bottom: -8px
+    border-left: 1px solid #e9eaec
+    border-right: 1px solid #e9eaec
 
 .year
   position: absolute
@@ -87,33 +97,30 @@ body
     border-left-color: #fff
 
   &.cen
-    top: 0
-    bottom: 0
-    border-left: 1px solid #fff
-    border-right: 1px solid #fff
-    width: 3px
-    margin-left: -1px
+    border-left: 5px solid #fff
+    // border-right: 1px solid #fff
+    // width: 5px
+    margin-left: -2px
 
 .year-label
   position: absolute
-  line-height: 16px
+  line-height: 24px
   font-size: 13px
   width: 36px
   z-index: 2
   letter-spacing: 0.02em
   font-feature-settings: "onum" 1
-  background: #eee
+  background: #e9eaec
   margin-left: -18px
   text-align: center
 
   &.dec
-    color: #aaa
+    color: #58595b
 
     @media (max-width: 600px)
       display: none
 
   &.cen
-    // margin-left: 6px
     font-weight: bold
 
 #events
@@ -149,44 +156,41 @@ body
 
   @for $i from 0 through 7
     &.item-#{$i})
-      height: 80px + $i * 20px
+      height: 57px + $i * 20px
 
       @media (max-width: 600px)
-        height: 80px + $i * 16px
+        height: 57px + $i * 16px
+
+  &:first-child
+    height: 116px
 
   &.top
     bottom: 50%
+    margin-bottom: 12px
 
-    &:before
+    &:before,
+    .event-year
       top: 0
 
     .event-marker
       bottom: 0
 
-    .event-content,
-    .event-year
-      top: 0
-
     .event-text
-      top: 0
-      transform: translate3d(0, 24px, 0)
+      transform: translate3d(0, calc(-50% + 12px), 0)
 
   &.bottom
     top: 50%
+    margin-top: 12px
 
-    &:before
+    &:before,
+    .event-year
       bottom: 0
 
     .event-marker
       top: 0
 
-    .event-content,
-    .event-year
-      bottom: 0
-
     .event-text
-      bottom: 0
-      transform: translate3d(0, -24px, 0)
+      transform: translate3d(0, calc(-50% - 12px), 0)
 
   &.right
     .event-year
@@ -226,11 +230,37 @@ body
 
     .event-marker
       background: $blue
-      transform: translate3d(-0.5px, 0, 0) scale(1)
+      transform: scale(1)
 
     .event-text
       opacity: 1
-      transform: translate3d(0, 0, 0) !important
+      transform: translate3d(0, -50%, 0)
+
+  &.middle.bottom
+    .event-marker
+      margin-top: -16px
+      position: relative
+      &:before
+        content: ""
+        position: absolute
+        top: 100%
+        border-right: 1px solid #dadbdd
+        height: 16px
+        left: 3px
+
+  &.middle.top
+    .event-marker
+      margin-bottom: -15px
+      &:before
+        content: ""
+        position: absolute
+        bottom: 100%
+        border-right: 1px solid #dadbdd
+        height: 16px
+        left: 3px
+
+  &.middle.active .event-marker:before
+    border-color: $blue
 
 .event-content
   position: absolute
@@ -238,6 +268,8 @@ body
   width: max-content
   max-width: 320px
   pointer-events: none
+  top: 50%
+  margin: 0 4px
 
 .event-year
   position: relative
@@ -253,14 +285,18 @@ body
 
 .event-marker
   position: absolute
-  width: 6px
-  height: 6px
+  width: 7px
+  height: 7px
   border-radius: 50%
   margin: -3px
-  z-index: -1
+  margin-left: -4px
+  z-index: 1
   background: #ccc
-  transform: translate3d(-0.5px, 0, 0) scale(0.667)
+  transform: scale(0.667)
   transition: all 300ms
+
+  &:before
+    transition: border-color 300ms
 
 .event-text
   z-index: 10
@@ -272,3 +308,29 @@ body
   transition: all 300ms
   z-index: 1
   text-align: center
+
+#pager
+  display: none
+
+@media (max-width: 600px)
+  #pager
+    position: absolute
+    right: 8px
+    top: 50%
+    margin-top: -9px
+    font-size: 14px
+    color: #aaa
+    display: block
+    top: auto
+    bottom: 0
+    right: 0
+    white-space: nowrap
+    padding: 4px 10px 4px 8px
+    background:  #e9eaec
+    border-radius: 12px
+    color: #58595b
+
+    #page
+      display: inline-block
+      width: 14px
+      text-align: center
