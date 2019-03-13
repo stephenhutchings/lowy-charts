@@ -167,13 +167,9 @@ events:
 
   - start: 2016
     text: >
-      Prime Minister Najib
-      <br>cleared by attorney general
-      <br>in relation to 1MDB fraud
-
-  - start: 2016
-    text: >
-      US Department of Justice
+      Prime Minister Najib cleared by
+      <br>attorney general in relation to 1MDB
+      <br>fraud; US Department of Justice
       <br>announces seizure of 1MDB assets
 
   - start: 2018
@@ -190,7 +186,7 @@ events:
     start: 1974
     highlight: true
     text: >
-      General election for 4rd
+      General election for 4th
       <br>Parliament of Malaysia
   -
     start: 1978
