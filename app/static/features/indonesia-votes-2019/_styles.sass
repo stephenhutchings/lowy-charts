@@ -181,7 +181,7 @@ body
   display: flex
   flex-direction: column
 
-strong, em, .txt-tu, .caption
+strong, .txt-tu, .caption
   font-family: Sans
   font-weight: 600
   font-style: normal
@@ -402,6 +402,17 @@ strong, em, .txt-tu, .caption
   position: relative
 
 #scroll-item-outro
+  li
+    line-height: 1.25
+  li a
+    text-decoration: none
+    border-bottom: 1px solid $color-lt
+    display: inline-block
+    line-height: 1
+
+  hr
+    border-color: darken($color-lt, 4)
+
   .social-share .icon
     width: auto
     padding: 0 0.75em
@@ -505,6 +516,9 @@ strong, em, .txt-tu, .caption
   br
     display: inline
     padding-left: 0.4em
+
+  hr
+    margin: 0.4em 0
 
   .txt-xxl
     font-size: 64px
