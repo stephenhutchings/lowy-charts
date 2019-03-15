@@ -1,0 +1,7 @@
+/* small fix to not show scrollbars, make insert section taller */
+.tag-generator-panel .insert-box {
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 90px;
+}
+

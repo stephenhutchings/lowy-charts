@@ -1,0 +1,194 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#"><head><meta name="viewport" content="width=device-width,initial-scale=1" /><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-3115931-6', 'auto');
+ga('send', 'pageview');
+</script>
+<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<script src="script/theme.js"></script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@LowyInstitute">
+<meta name="twitter:creator" content="@LowyInstitute">
+<meta name="twitter:title" content="History of US Freedom of Navigation Operations">
+<meta name="twitter:description" content="These maps show freedom of navigation operations conducted by US Navy vessels, in order to challenge maritime claims that the US interprets as inconsistent with international law, as listed by the US Department of Defense.">
+<meta name="twitter:image" content="http://interactives.lowyinstitute.org/fonops_maps/test/images/FONOPS_Twitter3.jpg">
+<meta property="og:image" content="http://interactives.lowyinstitute.org/fonops_maps/test/images/FONOPS_Twitter3.jpg" />
+  <meta property="og:title" content="History of US Freedom of Navigation Operations" />
+  <meta property="og:description" content="These maps show freedom of navigation operations conducted by US Navy vessels, in order to challenge maritime claims that the US interprets as inconsistent with international law, as listed by the US Department of Defense." />
+  <meta property="og:url" content="http://interactives.lowyinstitute.org/fonops_maps/2000-2003.html" />
+<title>Lowy Institute |   History of Freedom of Navigation Operations</title>
+<link rel="stylesheet" href="script/style.css">
+<script src="https://use.typekit.net/oet7qgf.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script type="text/javascript">
+
+
+/**
+ * Define SVG path for target icon
+ */
+var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
+
+/**
+ * Create the map
+ */
+var map = AmCharts.makeChart( "chartdiv", {
+  "type": "map",
+  "projection": "miller",
+  "theme": "light",
+  "dragMap":true,
+  "fontFamily":"proxima-nova",
+  "fontSize":"12",
+  "imagesSettings": {
+    "rollOverColor": "#70eaf4",
+    "rollOverScale": 2,
+    "selectedScale": 2,
+    "selectedColor": "#70eaf4",
+    "color": "#70eaf4",
+  },
+  
+  "zoomControl": {
+		"zoomControlEnabled": true,
+		"homeButtonEnabled":false,
+	},
+  
+  "balloon": {
+    "adjustBorderColor": false,
+    "borderThickness": 0,
+    "color": "#000000",
+    "cornerRadius": 2,
+    "fillColor": "#70eaf4",
+         "verticalPadding": 13,
+    "horizontalPadding":13,
+    "fontFamily":"proxima-nova",
+   
+  },
+  
+  "balloonText": {
+    "fontFamily":"proxima-nova",
+   
+  },
+
+  "areasSettings": {
+    "unlistedAreasColor": "rgb(36,42,54)",
+    "outlineThickness": 0.1,
+    "outlineColor":"#000",
+  },
+
+   "dataProvider": {
+    "map": "worldLow",
+       "areas": [
+       
+   { "id": "AL", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>ALBANIA</strong><br><br>The US challenged Albania's requirement that it grant prior authorisation for warships to enter its territorial sea."},
+     { "id": "DZ", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>ALGERIA</strong><br><br>The US challenged Algeria's requirement that it grant prior authorisation for warships to enter its territorial sea."},
+     { "id": "BD", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>BANGLADESH</strong><br><br>The US challenged Bangladesh's excessive use of straight baselines in defining waters in which it has maritime rights."},
+     { "id": "MM", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>MYANMAR</strong><br><br>The US challenged Myanmar's claim to a 24nm security zone,  as well as  Myanmar's excessive use of straight baselines in defining waters in which it has maritime rights, and Myanmar's claimed authority to regulate overflight in international airspace."},
+     { "id": "KH", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>CAMBODIA</strong><br><br>The US challenged Cambodia's claim to a 24nm security zone as well as Cambodia's excessive use of straight baselines in defining waters in which it has maritime rights."},
+    { "id": "HR", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>CROATIA</strong><br><br>The US challenged Croatia's requirement that it grant prior authorisation for warships to enter its territorial sea."},
+     { "id": "EC", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>ECUADOR</strong><br><br>The US challenged Ecuador's claim to a 200nm territorial sea."},
+     { "id": "EG", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>EGYPT</strong><br><br>The US challenged Egypt's requirement that it receive prior notice before warships and nuclear-powered vessels enter its territorial sea and exclusive economic zone."},
+     { "id": "SV", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>EL SALVADOR</strong><br><br>The US challenged El Salvador's claim to a 200nm territorial sea."},
+     { "id": "IN", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>INDIA</strong><br><br>The US challenged India's claim to a 24nm security zone, as well as India's requirement that it grant authorisation for warships to enter its territorial sea."},
+    { "id": "ID", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>INDONESIA</strong><br><br>The US challenged Indonesia's requirement that it receive prior notification before warships enter its territorial sea."},
+     { "id": "LY", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>LIBYA</strong><br><br>The US challenged Libya's historical claim to the Gulf of Sidra, which would allow Libya to define the Gulf as internal waters."},
+     { "id": "MY", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>MALAYSIA</strong><br><br>The US challenged Malaysia's requirement that it grant prior authorisation for military activities within the Malaysian exclusive economic zone. "},
+     { "id": "PA", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>PANAMA</strong><br><br>The US challenged Panama's claim to a 200nm territorial sea."},
+     { "id": "PH", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>PHILIPPINES:</strong><br><br>The US challenged the Philippines' excessive use of straight baselines in defining waters in which it has maritime rights, as well as the Philippines' claims defining archipelagic waters as internal waters."},
+    { "id": "LK", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>SRI LANKA</strong><br><br>The US challenged Sri Lanka's claim to a security zone, as well as Sri Lanka's requirement that it grant prior permission for warships to enter its territorial sea."},
+     { "id": "SY", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>SYRIA</strong><br><br>The US challenged Syria's claim to a 35nm territorial sea, as well as Syria's requirement that it grant prior permission for warships to enter its territorial sea."},
+     { "id": "TW", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>TAIWAN</strong><br><br>The US challenged Taiwan's excessive use of straight baselines in defining waters in which it has maritime rights, as well as Taiwan's claim to a 24nm security zone. While the Clinton Administration classified this as a challenge to Chinese claims, the Bush Administration classified it as a challenge to Taiwanese claims."},
+     { "id": "VE", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>VENEZUELA</strong><br><br>The US challenged Venezuela's claim to a security zone."},
+     { "id": "VN", "color": "#70eaf4", "title":"", "rollOverColor": "#70eaf4", "balloonText": "<strong>VIETNAM</strong><br><br>The US challenged Vietnam's excessive use of straight baselines in defining waters in which it has maritime rights, as well as Vietnam's requirement that it grant prior permission for ships to enter its territorial sea."},
+
+     ],
+     
+     
+     "images": [
+     
+     {
+      "svgPath": targetSVG,
+      "zoomLevel": 3,
+      "scale":0.75,
+      "title": "<strong>MALDIVES</strong><br><br>The US challenged the Maldives' requirement that it receive prior notification before warships enter its territorial sea.",
+      "latitude": 4.1755,
+      "longitude": 73.5093
+    },
+    
+            {
+      "svgPath": targetSVG,
+      "zoomLevel": 3,
+      "scale":0.75,
+      "title": "<strong>MALTA</strong><br><br>The US challenged Malta's requirement that it grant prior authorisation for warships to enter its territorial sea.",
+  "latitude": 35.9042,
+      "longitude": 14.5189
+    }
+     ]
+  
+  },
+  "export": {
+    "enabled": false
+  }
+} );</script>
+
+</head>
+<body>
+<div class="top_bar">
+<div class="logo"><a href="https://www.lowyinstitute.org" target="_blank"><img src="https://interactives.lowyinstitute.org/publications/assets/Lowy_LogoRev300.png"></a></div>
+<div class="heading_large">History of US Freedom of Navigation Operations</div></div>
+<div class="arrow_left"><a href="2000.html"><button class="arrow left">
+  <svg width="30px" height="30px" viewBox="0 0 50 80" xml:space="preserve">
+    <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+	45.63,75.8 0.375,38.087 45.63,0.375 "/>
+  </svg>  
+</button></a></div>
+
+<div class="arrow_left2"><a href="2000.html"><img src="images/left.png"></a></div>
+<div id="chartdiv"></div><div class="arrow_right2"><a href="2004.html"><img src="images/right.png"></a></div>
+  
+  <div class="arrow_right"><a href="2004.html"><button class="arrow right">
+  <svg width="30px" height="30px" viewBox="0 0 50 80" xml:space="preserve">
+    <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+	0.375,0.375 45.63,38.087 0.375,75.8 "/>
+  </svg>
+</button></a></div>
+<div class="timeline_links">
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="Overview.html" class="bottom_link_timeline">Overview </a></div>
+<div class="link_angle"><a href="1991.html" class="bottom_link_timeline"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;">1991</a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="1992.html" class="bottom_link_timeline">1992 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="1993.html" class="bottom_link_timeline">1993 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="1994.html" class="bottom_link_timeline">1994 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="1995.html" class="bottom_link_timeline">1995 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="1996.html" class="bottom_link_timeline">1996 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="1997.html" class="bottom_link_timeline">1997 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="1998.html" class="bottom_link_timeline">1998 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="1999.html" class="bottom_link_timeline">1999 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2000.html" class="bottom_link_timeline">2000 </a></div>
+<div class="link_angle_current"><img src="images/tl_current.png" class="timeline_circle" style="margin-right:5px;"><a href="2000-2003.html" class="bottom_link_timeline_current">2000-03</a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2004.html" class="bottom_link_timeline">2004 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2005.html" class="bottom_link_timeline">2005 </a></div>
+<div class="link_angle"><img src="images/tl.png"  class="timeline_circle" style="margin-right:5px;"><a href="2006.html" class="bottom_link_timeline">2006 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2007.html" class="bottom_link_timeline">2007 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2008.html" class="bottom_link_timeline">2008 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2009.html" class="bottom_link_timeline">2009 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2010.html" class="bottom_link_timeline">2010 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2011.html" class="bottom_link_timeline">2011 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2012.html" class="bottom_link_timeline">2012 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2013.html" class="bottom_link_timeline">2013 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2014.html" class="bottom_link_timeline">2014 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2015.html" class="bottom_link_timeline">2015 </a></div>
+<div class="link_angle"><img src="images/tl.png" class="timeline_circle" style="margin-right:5px;"><a href="2016.html" class="bottom_link_timeline">2016 </a></div>
+</div>
+<div class="timeline_bottom"></div>
+<div class="blurb_wide">These maps show freedom of navigation operations conducted by US Navy vessels, in order to challenge maritime claims that the US interprets as inconsistent with international law, as listed by the US Department of Defense.<br>
+</div>
+<div class="blurb_small">These maps show FONOPs conducted by US Navy vessels to challenge maritime claims that the US interprets as inconsistent with international law.<br>
+</div>
+<div class="footnotes"><strong>Researchers:</strong> <a href="https://www.lowyinstitute.org/people/experts/bio/aaron-l-connelly" target="_blank">Aaron L. Connelly</a>, Michael Coyne. <strong>Digital:</strong> <a href="https://www.lowyinstitute.org/people/experts/bio/erin-harris" target="_blank">Erin Harris.</a><br><br><strong>Under the Bush Administration, the US Department of Defense did not issue annual Freedom of Navigation reports for the 2001, 2002, and 2003 fiscal years, instead issuing a single report covering the four years from 2000-2003 in May 2004. There are some discrepancies between this report and the Clinton Administration's 2000 Freedom of Navigation report, which appears under a separate entry for that year.</strong><br><br>Source: US Department of Defense Annual Freedom of Navigation Reports. <br>All years are US fiscal years and start on 1 October of the previous year and end on 30 September of the given year.</div><div style="clear:both;"></div>
+
+</body>
+</html>
