@@ -3,8 +3,8 @@ margin:0;
 font-family: "Roboto Slab",serif;
 overflow-wrap: break-word;
   word-wrap: break-word;}
-  
-  
+
+
   a {
     color: #93b6c9;
 }
@@ -14,7 +14,7 @@ a:hover {
 }
 
 body.home {
-background-image: url("http://interactives.lowyinstitute.org/publications/PNGin2017/images/home_bg.jpg");
+background-image: url("/archive/png-in-2017/images/home_bg.jpg");
 background-size: cover;
 }
 
@@ -71,7 +71,7 @@ ol {
     text-align: justify;
     color: #696969;
     font-size: 15px;
-    line-height: 1.9;   
+    line-height: 1.9;
 }
 
 
@@ -188,7 +188,7 @@ background-color:#002b45;
 min-height:70px;
   position: fixed;
   z-index: 999;}
-  
+
 
 .logo {
     margin-bottom: 30px;
@@ -257,7 +257,7 @@ font-weight:700;
 text-decoration:underline;
 color:#586d81;
 }
- 
+
 
 .feature_image_society {
 background-image: url("../images/png_society_feature_image.jpg");
@@ -407,7 +407,7 @@ padding: 10px;
 .arrow_right a{
     color: #002b45;
     text-decoration:none;
-    font-size:10px;  
+    font-size:10px;
 
 }
 
@@ -459,7 +459,7 @@ color:#CEC6BD;
     font-size: 15px;
     line-height:1.7;
     }
-    
+
 .hundred_grey {
     background: #f3f3f3 none repeat scroll 0 0;
     margin-top: 30px;
@@ -920,7 +920,7 @@ min-height:150px!important;}
     max-width: 300px;
     text-align: center;
     width: 90%;
-    
+
 }
 
 .logo {
@@ -1090,7 +1090,7 @@ hr {
 .two_col h1 {
     width: 70%;
     margin: 0 auto !important;
-    
+
 }
 
 .spacer {
@@ -1107,9 +1107,9 @@ h5 {width: 90%;}
 
 ol {
     width: 80%;}
-    
+
     p{width: 90%;}
-    
+
 .paper_header_box {
     width: 80%;
 }
