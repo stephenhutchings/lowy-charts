@@ -1,4 +1,5 @@
 # Redirect archival content from old servers
+# interactives.lowyinstitute.org
 /fonops_maps/Overview.html                         /archive/fonops/                             301
 /fonops_maps/*                                     /archive/fonops/                             301
 
@@ -6,3 +7,6 @@
 /publications/pacific-aid-map-country-profiles/    /archive/pacific-aid-map-country-profiles/   301
 /publications/PNGin2017/png-in-2017-home.html      /archive/png-in-2017/                        301
 /publications/PNGin2017/*                          /archive/png-in-2017/:splat                  301
+
+# publications.lowyinstitute.org
+/shanahan/charities-and-terrorism-lessons-from-the-syrian-crisis.html /archive/charities-and-terrorism-lessons-from-the-syrian-crisis 301
