@@ -1,6 +1,6 @@
 # Redirect archival content from old servers
 /fonops_maps/Overview.html                         /archive/fonops/                             301
-/fonops_maps/                                      /archive/fonops/                             301
+/fonops_maps/*                                     /archive/fonops/                             301
 
 /publications/the-prime-ministers-in-america/      /archive/the-prime-ministers-in-america/     301
 /publications/pacific-aid-map-country-profiles/    /archive/pacific-aid-map-country-profiles/   301
