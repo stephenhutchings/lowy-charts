@@ -45,6 +45,9 @@ require.register "views/scroller", (exports, require, module) ->
 
       i2 = Math.max(Math.min(i2, @data.max), @data.min)
 
+      if t1 < 0.5 and i < 0
+        t2 = 1
+
       w = t2
       x = if t1 > 0.5 then (1-t2) else 0
       k = 0
