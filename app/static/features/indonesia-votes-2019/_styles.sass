@@ -615,3 +615,52 @@ strong, .txt-tu, .caption
 @keyframes sine
   to
     background-position: -20px 0
+
+@media print
+  html, body
+    display: block
+    overflow: visible
+    height: auto
+
+  #footer,
+  .social-share
+    display: none !important
+
+  #scroller
+    height: auto
+    overflow: visible
+
+  .txt-hl, .txt-dk, .txt-lt, .txt-ff
+    color: $color-dk
+
+  .bg-hl, .bg-dk, .bg-lt, .bg-ff
+    background: $color-ff
+    border-top: 1px solid $color-lt
+    border-bottom: 1px solid $color-lt
+    margin: -1px 0 0
+
+  .scroll-item
+    height: 13cm
+    page-break-inside: avoid
+
+  .row
+    padding: 0
+
+    > div + div
+      border-left: 1px solid $color-lt
+
+  #header
+    opacity: 1 !important
+
+  #map-surrounds path
+    stroke: $color-lt
+
+  #map-surrounds path,
+  #map-indonesia path
+    opacity: 1
+
+  #scroll-item-12 .col-1-2.bg-lt
+    border-left: none
+
+@media print
+  size: A4 portrait
