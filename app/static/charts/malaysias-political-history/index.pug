@@ -43,7 +43,7 @@ block page
                 _.includes([1,2,12,13,14,15,22,26,27,31], i+j) ? "spaced" : "middle",
                 e.highlight ? "highlight" : ""
               ].join(" ")
-              data-i=i+j
+              data-i=_.sortBy(events, "start").indexOf(e)
             )
               .event-marker
               .event-year
@@ -96,10 +96,10 @@ block append scripts
         if (document.activeElement) document.activeElement.blur()
         
         count = ($events.length + count) % $events.length
-        
+
         $active = $events
           .removeClass("active")
-          .eq(count)
+          .filter("[data-i='" + count + "']")
           .addClass("active")
 
         $page.html(count + 1)
