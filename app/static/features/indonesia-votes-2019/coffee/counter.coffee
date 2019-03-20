@@ -27,6 +27,8 @@ require.register "views/counter", (exports, require, module) ->
           </ul>
         """
 
+        $el.find("li").eq(val).addClass("active")
+
       @onHide()
 
     onShow: ->
