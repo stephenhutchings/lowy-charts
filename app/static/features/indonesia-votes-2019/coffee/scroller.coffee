@@ -88,4 +88,6 @@ require.register "views/scroller", (exports, require, module) ->
             if i is @data.i then "show" else "hide"
           )
 
+        window.ga?("send", "event", "Scroller", "show", document.title, index)
+
   module.exports = ScrollerView
