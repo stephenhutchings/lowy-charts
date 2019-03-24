@@ -15,6 +15,8 @@ if process.env.NODE_ENV is "development"
     ).filter((e) -> not e.match(/partials|survey-results\/q/)
     ).join("\n")
 
+marked = (data) ->
+  require("marked")(data, { smartypants: true, headerIds: false })
 
 exports.config =
   paths:
@@ -44,8 +46,8 @@ exports.config =
         moment:   require("moment")
         typogr:   require("typogr")
         written:  require("written")
-        marked:   require("marked")
         package:  require("./package.json")
+        marked:   marked
         data:     data
         version:  hash
       filters:
@@ -57,6 +59,8 @@ exports.config =
 
         coffee: (data) ->
           require("coffeescript").compile(data)
+
+        marked: marked
 
     sass:
       mode: "native"
