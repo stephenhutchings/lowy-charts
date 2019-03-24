@@ -6,6 +6,7 @@ block config
   - page.style        = {};
   - page.author       = package.author;
   - page.copyright    = `${page.author} ${(new Date().getFullYear())}`
+  - page.robots       = "index, follow"
 
 doctype html
 html.no-js(lang="en")
@@ -34,7 +35,7 @@ html.no-js(lang="en")
       meta(name="og:site_name"        content="Lowy Institute – Charts & More")
       meta(name="author"              content=page.author)
       meta(name="copyright"           content=page.copyright)
-      meta(name="robots"              content="index, follow")
+      meta(name="robots"              content=page.robots)
 
       meta(http-equiv="content-type" content="text/html;UTF-8")
       meta(http-equiv="cache-control" content="cache")
@@ -42,6 +43,17 @@ html.no-js(lang="en")
       meta(http-equiv="revisit-after" content="31 days")
 
       link(rel="shortcut icon" href="/img/favicon.png")
+      link(
+        rel="canonical"
+        href=[
+          "http://interactives.lowyinstitute.org/",
+          __.filepath
+            .replace("app/static/", "")
+            .replace("index.pug", "")
+            .replace(".pug", ".html")
+        ].join("")
+      )
+
 
       block css
         link(
