@@ -34,7 +34,7 @@
     "moment": "^2.10.3",
     "node-sass": "^4.9.3",
     "postcss-brunch": "^2.1.0",
-    "pugjs-brunch": "^2.10.1",
+    "pugjs-brunch": "https://github.com/stephenhutchings/pugjs-brunch.git",
     "sass-brunch": "2.10.5",
     "typogr": "^0.6.8",
     "uglify-js-brunch": "^2.10.0",
