@@ -15,6 +15,10 @@ class MainView extends Backbone.View
       outerH = $("html").height()
       $wrapper.css(margin: "#{(outerH - innerH) / 2}px auto")
 
+    @$("[data-src]").each (i, el) ->
+      $el = $(el)
+      $el.attr("src", $el.data("src"))
+
     for evt in ["resize"]
       do (evt, timeouts) =>
         _debounced = =>
