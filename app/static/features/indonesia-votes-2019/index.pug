@@ -1,12 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.url = "https://interactives.lowyinstitute.org/features/indonesia-votes/"
-  - page.class = "page-0"
-  - page.title = "Indonesia’s Incredible Elections"
-  - page.metaTitle = "Indonesia’s Incredible Elections - Lowy Institute"
-  - page.description = "Why Indonesian elections are unlike any other in the world";
-  - page.image = "./img/thumbnail.png"
+  - _.extend(page, data.getOne("static/features/indonesia-votes-2019/data"))
 
 block page
   include partials/other/header
