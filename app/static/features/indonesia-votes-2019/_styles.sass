@@ -395,11 +395,17 @@ strong, .txt-tu, .caption
   scroll-behavior: smooth
   scroll-snap-type: y mandatory
 
+  &.scrolling
+    scroll-behavior: initial
+
 .scroll-item
   width: 100%
   height: 100%
   scroll-snap-align: start
   position: relative
+
+  .scrolling &
+    scroll-snap-align: none
 
 #scroll-item-outro
   li
@@ -477,6 +483,9 @@ strong, .txt-tu, .caption
       transition: all 2000ms
       opacity: 1
 
+#controls
+  display: none
+
 @media (max-width: 960px), (max-height: 800px)
   .txt-xxl
     font-size: 96px
@@ -490,7 +499,7 @@ strong, .txt-tu, .caption
   body
     font-size: 20px
 
-@media (max-width: 600px)
+@media (max-width: 760px)
   .hidden-sm,
   .header-title,
   .header-page,
@@ -664,3 +673,67 @@ strong, .txt-tu, .caption
 
 @media print
   size: A4 portrait
+
+.embed-true
+  .row
+    padding: 0
+
+  @media (max-width: 760px)
+    #header
+      display: none
+
+    .container
+      padding: 0
+
+    #footer,
+    .pager .pager-link
+      line-height: 28px
+      height: 28px
+
+    .txt-title
+      max-width: none
+
+    #scroller,
+    #header,
+    #footer
+      padding-right: 40px
+      box-sizing: border-box
+
+  #controls
+    display: block
+    position: fixed
+    right: 0
+    top: 64px
+    bottom: 64px
+    width: 40px
+    z-index: 10
+
+    @media (max-width: 760px)
+      top: 0
+      bottom: 28px
+
+  #scroll-item-10
+    .col-2-3 br
+      display: none
+
+  #btn-prev,
+  #btn-next
+    width: 100%
+    height: 50%
+    line-height: 40px
+    color: $color-dk
+    background-color: lighten($color-lt, 4)
+    transition: all 300ms
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 24px
+    cursor: pointer
+
+    &:hover
+      background-color: darken($color-lt, 4)
+
+  &.page-0 #btn-prev,
+  &.page-13 #btn-next
+    color: transparent
+    pointer-events: none

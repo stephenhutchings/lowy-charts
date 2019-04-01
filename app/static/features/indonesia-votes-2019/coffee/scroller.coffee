@@ -7,7 +7,6 @@ require.register "views/scroller", (exports, require, module) ->
       "show": "onShow"
       "hide": "onHide"
 
-
     initialize: ->
       @data = @$el.data()
 
@@ -18,6 +17,9 @@ require.register "views/scroller", (exports, require, module) ->
         index: $(@$el.data("index"))
 
       timeout = null
+
+      $("#btn-prev").click (e) => @onPrev(e)
+      $("#btn-next").click (e) => @onNext(e)
 
       @$el.on("scroll", (e) =>
         @onScroll()
@@ -31,7 +33,7 @@ require.register "views/scroller", (exports, require, module) ->
         @onScrollEnd()
       , 1
 
-      if @$el.outerWidth() < 600
+      if @$el.outerWidth() <= 600
         $("br").each (i, el) ->
           $(el).replaceWith(" ")
 
@@ -73,7 +75,7 @@ require.register "views/scroller", (exports, require, module) ->
       index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
 
       unless @data.support
-        @el.scrollTo top: index * @el.offsetHeight, behavior: 'smooth'
+        @scrollTo(index)
 
       if index isnt @data.i
         $("body")
@@ -92,5 +94,18 @@ require.register "views/scroller", (exports, require, module) ->
           )
 
         window.ga?("send", "event", "Scroller", "show", document.title, index)
+
+    onPrev: ->
+      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
+      @scrollTo(index - 1)
+
+    onNext: ->
+      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
+      @scrollTo(index + 1)
+
+    scrollTo: (i) ->
+      @$el.addClass("scrolling")
+      @$el.scrollTo i * @el.offsetHeight, =>
+        @$el.removeClass("scrolling")
 
   module.exports = ScrollerView
