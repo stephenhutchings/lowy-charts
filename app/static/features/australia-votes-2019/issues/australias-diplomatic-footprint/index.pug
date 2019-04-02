@@ -1,0 +1,142 @@
+extend ../../partials/issue
+
+block append config
+  - page.title = "Australia’s Diplomatic Footprint"
+
+block scroller
+  +item(0)
+    .row
+      .col-1-2
+        .fill
+          .row
+            .col-fw
+              .block
+                span.p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
+                .txt-xxl.pv-md= page.title
+          .row.bg-lt
+            .col-fw
+              .img-pan
+                img.bg-img(data-src="../../img/embassy.jpg")
+                .caption.txt-ff
+                  | Photo: 
+                  a(href="https://www.flickr.com/photos/jasewong/3690602038")
+                    | Jason Wong/Flickr
+
+      .col-1-2.bg-dk.txt-ff
+        .txt-lg.p-lg
+          :marked
+            Australia’s diplomatic footprint is comprised of the diplomats and
+            officials we have posted overseas and the ‘soft power’ our nation
+            can bring to bear. A larger footprint provides greater influence
+            and access for Australian officials, businesses and citizens. The
+            Liberal and Labor parties have both committed to increasing
+            Australia’s diplomatic footprint, particularly in the Pacific.
+  
+  +item(1)
+    .row
+      .col-1-2.bg-dk.txt-ff
+        .block
+          .pv-xs.txt-sm.txt-tu.txt-hl= page.title
+          .txt-xxl.pv-xs The Government
+
+      .col-1-2.p-md.bg-dk.txt-ff
+        .block.txt-left
+          .txt-lg.txt-border.ph-md(style="max-width: 420px")
+            :marked
+              The Liberal Party has promised to increase the nation’s 
+              diplomatic footprint as part of its pivot to the Pacific.  
+
+          //- p.pv-sm
+            | Read the media statement by the Prime Minister,<br>
+            | Minister of Foreign Affairs and the Minister for Defence
+
+    .row
+      .col-fw.bg-hl.txt-ff.frame
+        .caption
+          | Photo: 
+          a(href="https://www.flickr.com/photos/93527318@N05/28759639086")
+            | Trish_of_Wgtn / Flickr
+            
+        img.bg-img.bg-img-abs(src="../../img/nuie.jpg")
+        .p-md.txt-xl(data-view="counter" style="text-shadow: 0 0 12px #0371b3;")
+          | Australia has committed to opening a diplomatic mission on<br>
+          | Niue whose population is only around 1,700.
+
+
+  +item(2)
+    .row
+      .col-1-2.bg-dk.txt-ff
+        .block
+          .pv-xs.txt-sm.txt-tu.txt-hl= page.title
+          .txt-xxl.pv-xs The Opposition
+
+      .col-1-2.p-md.bg-dk.txt-ff
+        .txt-lg.txt-border.ph-md.txt-left(style="max-width: 420px")
+          :marked
+            The Labor party has also committed to establishing four new posts
+            in the Indo&#8209;Pacific, as well as establishing
+            ‘Geo&#8209;economic counsellors’ at key locations in the diplomatic
+            network.
+
+          //- 
+            The Shadow Minister for Foreign Affairs gave a speech on the 
+            matter here.
+
+    .row
+      .col-fw.bg-lt
+        .map-caption.txt-sans.txt-ff.bg-hl.txt-left
+          :marked
+            Australia’s diplomatic footprint is relatively small for its size –
+            a 2017 Lowy Global Diplomacy Index rated our footprint as just
+            below Pakistan’s.  The Department of Foreign Affairs and Trade has
+            been underfunded for several years with limited government
+            investment.
+
+        img.fill(src="../../img/posts.png")
+
+  +item(3)
+    .row
+      .col-1-2
+        .fill
+          .row
+            .col-fw.bg-dk.txt-ff
+              .block
+                .pv-xs.txt-sm.txt-tu.txt-hl= page.title
+                .txt-xxl.pv-xs What Our Expert Says
+          .row.bg-hl
+            .col-fw.txt-lg
+              ul.txt-highlight
+                li.pv-xs.ph-sm.bg-ff.txt-dk
+                  | This is essentially a pull quote
+                li.pv-xs.ph-sm.bg-ff.txt-dk
+                  | Or three separate, snappy lines of text
+                li.pv-xs.ph-sm.bg-ff.txt-dk
+                  | Whatever works best for the piece
+
+      .col-1-2.p-lg
+        .block.txt-sans.txt-left
+          .pv-md
+            :marked
+              This is where our expert will have the opportunity to give their
+              impression of the issue and where they think we should be headed.
+              This text is 160 words long, which is all we need.
+
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+              commodo consequat. Duis autem vel eum iriure dolor in hendrerit
+              in vulputate velit esse molestie consequat, vel illum dolore eu
+              feugiat nulla facilisis at vero eros et accumsan et iusto odio
+              dignissim qui blandit praesent luptatum zzril delenit augue duis
+              dolore te feugait nulla facilisi.
+
+              Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed
+              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+              commodo consequat.
+
+          .txt-sm.txt-tu
+            | Alex Oliver<br>
+            span.txt-mt Director of Research

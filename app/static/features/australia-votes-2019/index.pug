@@ -1,0 +1,92 @@
+extend /partials/layout
+
+block append config
+  script.
+    console.warn("Remember to update the metadata before publishing.")
+  - page.url = "https://interactives.lowyinstitute.org/features/australia-votes-2019/"
+  - page.class = "page-0 page-menu"
+  - page.title = "Australia's Election"
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.description = "";
+  - page.image = "./img/thumbnail.png"
+  - page.robots = "noindex, nofollow"
+
+block page
+  include partials/header
+
+  mixin item(index)
+    .scroll-item(
+      id=`scroll-item-${index}`
+      class=(index == "index" ? "active" : null)
+    )
+      block
+
+  #scroller(
+    data-view="scroller" 
+    data-pager=".pager-page" 
+    data-index=".pager-index"
+    data-min="1"
+    data-max="12"
+  )
+    +item("intro")
+      .row
+        .col-1-2.num-lf
+          .txt-center
+            .txt-sm.txt-tu.ph-sm.pv-xs Lowy Institute
+
+            .txt-xxl.ph-sm
+              | Coverage of the Australian 2019 Election&nbsp;Title 
+            
+            .pv-md
+              .stripe-lt
+
+            .ph-sm.intro-description.txt-sans.mxw(style="max-width: 330px") 
+              :marked
+                With an election around the corner, there is no better time to
+                understand our place in the world, where we are headed and what
+                is needed to get there. So how do the major parties compare on
+                critical areas of our foreign policy, and what do the experts
+                say? Explore the issues to find out how the goverment, the
+                opposition and the experts plan to tackle them.
+
+        .col-1-2.bg-dk.txt-ff
+          .block
+            .txt-sm.txt-tu.ph-sm.pv-xs.txt-hl The Issues
+            ul.list-bare.txt-xl
+              li
+                a.txt-bare(href="issues/defence-spending")
+                  | Defence Spending
+              li
+                a.txt-bare(href="issues/relations-with-china")
+                  | Relations with China
+              li
+                a.txt-bare(href="issues/relations-with-the-us")
+                  | Relations with the US
+              li
+                a.txt-bare(href="issues/foreign-aid")
+                  | Foreign Aid
+              li
+                a.txt-bare(href="issues/pacific-islands")
+                  | Pacific Islands
+              li
+                a.txt-bare(href="issues/climate-change")
+                  | Climate Change
+              li
+                a.txt-bare(href="issues/australias-diplomatic-footprint")
+                  | Australia’s Diplomatic Footprint
+              li
+                a.txt-bare(href="issues/trade-policy")
+                  | Trade Policy
+
+  .container
+    footer#footer
+
+
+block append css
+  style
+    include:sass _styles.sass
+
+block append scripts
+  script
+    include:coffee coffee/scroller.coffee
+    include:coffee coffee/counter.coffee

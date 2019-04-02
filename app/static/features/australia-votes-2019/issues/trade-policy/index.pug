@@ -1,0 +1,129 @@
+extend ../../partials/issue
+
+block append config
+  - page.title = "Trade Policy"
+
+block scroller
+  +item(0)
+    .row
+      .col-1-2
+        .fill
+          .row
+            .col-fw
+              .block
+                span.p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
+                .txt-xxl.pv-md= page.title
+          .row.bg-lt
+            .col-fw
+              .img-pan
+                img.bg-img(src="../../img/trade.jpg")
+              .caption.txt-ff
+                | Photo: 
+                a(href="https://unsplash.com/photos/G7PV6gd-w4g")
+                  | chuttersnap / unsplash
+
+      .col-1-2.bg-dk.txt-ff
+        .txt-lg.p-lg
+          :marked
+            Trade remains crucial to the ongoing prosperity of Australia. Our
+            exports have helped to fuel China’s rapid growth while in turn we
+            import a bevy of items, among them cars, petroleum and computers,
+            from around the world. Ensuring our ongoing freedom of trade is an
+            important element of Australian foreign policy.
+  
+  +item(1)
+    .row
+      .col-1-2.bg-dk.txt-ff
+        .block
+          .pv-xs.txt-sm.txt-tu.txt-hl= page.title
+          .txt-xxl.pv-xs The Government
+
+      .col-1-2.p-md.bg-dk.txt-ff
+        .txt-lg.txt-border.ph-md.txt-left(style="max-width: 460px")
+          :marked
+            The Liberals argue that Australia is a trading nation, and that our
+            exports are crucial to the economy’s health. And they recognise the
+            importance of increasing trade with India, at least in principle.
+ 
+    .row
+      .col-fw.bg-hl.txt-ff.frame
+        .txt-xl
+          .pv-sm
+            | In 2018, Australia exported approximately
+            br
+            span(data-view="counter") 850 million
+            |  litres of wine
+
+          .txt-sm.txt-tu.pv-sm
+            | That’s enough to fill 340 Olympic swimming pools
+ 
+  +item(2)
+    .row
+      .col-1-2.bg-dk.txt-ff
+        .block
+          .pv-xs.txt-sm.txt-tu.txt-hl= page.title
+          .txt-xxl.pv-xs The Opposition
+
+      .col-1-2.p-md.bg-dk.txt-ff
+        .txt-lg.txt-border.ph-md.txt-left(style="max-width: 460px")
+          :marked
+            Labor believes trade is important to Australia, but one possible
+            wrench in the works is the possibility of Labor seeking to
+            renegotiate the landmark Trans-Pacific Partnership if it forms
+            government.
+ 
+    .row
+      .col-fw.bg-lt
+        .txt-lg(style="max-width: 720px")
+          :marked
+            The Comprehensive and Progressive Agreement for Trans-Pacific
+            Partnership (the successor to the ill-fated TPP agreement) which
+            Australia joined in 2018, is the third largest free trade zone
+            worldwide.
+ 
+  +item(3)
+    .row
+      .col-1-2
+        .fill
+          .row
+            .col-fw.bg-dk.txt-ff
+              .block
+                .pv-xs.txt-sm.txt-tu.txt-hl= page.title
+                .txt-xxl.pv-xs What Our Expert Says
+          .row.bg-hl
+            .col-fw.txt-lg
+              ul.txt-highlight
+                li.pv-xs.ph-sm.bg-ff.txt-dk
+                  | This is essentially a pull quote
+                li.pv-xs.ph-sm.bg-ff.txt-dk
+                  | Or three separate, snappy lines of text
+                li.pv-xs.ph-sm.bg-ff.txt-dk
+                  | Whatever works best for the piece
+
+      .col-1-2.p-lg
+        .block.txt-sans.txt-left
+          .pv-md
+            :marked
+              This is where our expert will have the opportunity to give their
+              impression of the issue and where they think we should be headed.
+              This text is 160 words long, which is all we need.
+
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+              commodo consequat. Duis autem vel eum iriure dolor in hendrerit
+              in vulputate velit esse molestie consequat, vel illum dolore eu
+              feugiat nulla facilisis at vero eros et accumsan et iusto odio
+              dignissim qui blandit praesent luptatum zzril delenit augue duis
+              dolore te feugait nulla facilisi.
+
+              Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed
+              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+              commodo consequat.
+
+          .txt-sm.txt-tu
+            | Expert<br>
+            span.txt-mt Expert Position
