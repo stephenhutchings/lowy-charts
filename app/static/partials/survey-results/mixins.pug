@@ -107,7 +107,7 @@ mixin chart-likert(data, index, chart)
         line(x1="50%" x2="50%" y1=0 y2="100%")
 
 
-  .txt-sm.txt-muted.p-v-sm
+  .txt-sm.txt-muted.pv-sm
      | #{_.sum(data.results.t.slice(0, 5))} of 645 responses
 
 mixin chart-splits(data, index, chart)
@@ -230,6 +230,6 @@ mixin chart-splits(data, index, chart)
             )
 
 
-    .txt-sm.txt-muted.p-v-sm
+    .txt-sm.txt-muted.pv-sm
        | #{total} 
        | of 645 responses
