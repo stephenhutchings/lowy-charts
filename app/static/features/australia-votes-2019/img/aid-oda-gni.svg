@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" viewBox="0 0 660 360">
+  <style>
+    text {
+      font-family: Semi;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+    .grid text {
+      font-size: 16px;
+      fill: #4b4e56;
+    }
+
+    .chart text {
+      font-size: 18px;
+    }
+
+    .title {
+      font-weight: 600;
+      color: #002a45;
+    }
+
+    .stroke {
+      stroke: #E6EBF0;
+      fill: none;
+    }
+
+  </style>
+  <title>Official Development Assistance, % of Gross National Income</title>
+  <g class="grid">
+    <line x1="50.1" y1="328" x2="50.1" y2="320" class="stroke"/>
+    <text transform="translate(31.8 348)">1960</text>
+    <line x1="102.7" y1="328" x2="102.7" y2="320" class="stroke"/>
+    <text transform="translate(84.5 348)">1965</text>
+    <line x1="155.3" y1="328" x2="155.3" y2="320" class="stroke"/>
+    <text transform="translate(137.2 348)">1970</text>
+    <line x1="207.9" y1="328" x2="207.9" y2="320" class="stroke"/>
+    <text transform="translate(189.8 348)">1975</text>
+    <line x1="260.5" y1="328" x2="260.5" y2="320" class="stroke"/>
+    <text transform="translate(242.4 348)">1980</text>
+    <line x1="313.2" y1="328" x2="313.2" y2="320" class="stroke"/>
+    <text transform="translate(295.1 348)">1985</text>
+    <line x1="365.8" y1="328" x2="365.8" y2="320" class="stroke"/>
+    <text transform="translate(347.7 348)">1990</text>
+    <line x1="418.4" y1="328" x2="418.4" y2="320" class="stroke"/>
+    <text transform="translate(400.3 348)">1995</text>
+    <line x1="471" y1="328" x2="471" y2="320" class="stroke"/>
+    <text transform="translate(452.8 348)">2000</text>
+    <line x1="523.7" y1="328" x2="523.7" y2="320" class="stroke"/>
+    <text transform="translate(505.5 348)">2005</text>
+    <line x1="576.3" y1="328" x2="576.3" y2="320" class="stroke"/>
+    <text transform="translate(558.2 348)">2010</text>
+    <line x1="628.9" y1="328" x2="628.9" y2="320" class="stroke"/>
+    <text transform="translate(610.8 348)">2015</text>
+    <text transform="translate(13.8 265.4)">0.2</text>
+    <text transform="translate(13.8 325.4)">0.0</text>
+    <text transform="translate(13.8 205.4)">0.4</text>
+    <text transform="translate(13.8 145.4)">0.6</text>
+    <line x1="50" y1="110" x2="650" y2="110" fill="none" stroke="#002a45"/>
+    <text transform="translate(13.8 85.4)">0.8</text>
+    <text transform="translate(14 25.4)">1.0</text>
+  </g>
+  <text transform="translate(652 40)" text-anchor="end" fill="#848F9D" font-size="16">Source: OECD</text>
+  <g>
+    <line x1="42" y1="20" x2="650" y2="20" class="stroke"/>
+    <line x1="42" y1="260" x2="650" y2="260" class="stroke"/>
+    <line x1="42" y1="200" x2="650" y2="200" class="stroke"/>
+    <line x1="42" y1="260" x2="650" y2="260" class="stroke"/>
+    <line x1="42" y1="140" x2="650" y2="140" class="stroke"/>
+    <line x1="42" y1="80" x2="650" y2="80" class="stroke"/>
+    <line x1="42" y1="320" x2="650" y2="320" class="stroke"/>
+  </g>
+  <g class="chart">
+    <path d="M50,167l10.5-9,10.6,3,10.5,6,10.5,9h10.6l10.5,12,10.5,9h10.5l10.6,12,10.5,12,10.5,3,10.5-6,10.6,21,10.5-15,10.5-6,10.5,9H229l10.5-6H250l10.5-6,10.6,9,10.5-12,10.5,6h10.5l10.6,3,10.5-3,10.5,3,10.5-3,10.6,9,10.5-3h21l10.6,9h10.5l10.5,9,10.5,6,10.6,6,10.5-3,10.5,3H471l10.6,3,10.5-6,10.5-3,10.5-3,10.6-21,10.5,6,10.5,9,10.5-9,10.6-3h21l10.5,9,10.6-6h21l10.6-6,10.5,3" fill="none" stroke="gray"/>
+    <path d="M50,208.9l10.5-20.5,10.6,3.8,10.5-24.5,10.5,7.8,10.6-14.1,10.5-8.3,10.5-17.6,10.5,15,10.6-10.1,10.5-5,10.5,16.2,10.5-16.2,10.6,44.7,10.5-25.5,10.5-31.1,10.5,74.2,10.6-3.5,10.5-38,10.5,5.4,10.5,13.3,10.6,21.8,10.5-45L292.1,173l10.5,11.9,10.6-9.8,10.5,5.2,10.5,39.1,10.5-37.7,10.6,25.5L365.8,218l10.5-10.6,10.5,2.8,10.6,5.7,10.5,1.6,10.5-.3,10.5,20.7,10.6,1,10.5-.3,10.5,4.3L471,240l10.6,4.4,10.5-1.1,10.5,2.5,10.5.7,10.6-.8,10.5-14.2,10.5-8.3,10.5,2,10.6,6.7,10.5-8.7,10.5-6.3,10.5-5.2,10.6,9,10.5,5,10.5,7,10.6,7.6L650,250.4" fill="none" stroke="#00b4ff"/>
+    <text transform="translate(358 102)" fill="#002a45">United Nations target of 0.7%</text>
+    <text transform="translate(366 174)" fill="#00b4ff">Australia</text>
+    <text transform="translate(376 284)" fill="gray">Development Assistance<tspan y="20" x="12">Committee Countries</tspan></text>
+    <text class="title" transform="translate(60 45)">Official Development Assistance,<tspan y="20" x="0">% of Gross National Income</tspan></text>
+  </g>
+</svg>

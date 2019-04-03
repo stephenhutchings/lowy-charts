@@ -3,39 +3,29 @@ extend ../../partials/issue
 block append config
   - page.title = "Relations with the US"
 
-block scroller
-  +item(0)
-    .row
-      .col-1-2
-        .fill
-          .row
-            .col-fw
-              .block
-                span.p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
-                .txt-xxl.pv-md= page.title
-          .row.bg-lt
-            .col-fw
-              .img-pan
-                img.bg-img(src="../../img/trump-morrison.jpg")
+block intro-image
+  img.bg-img(data-src="../../img/trump-morrison.jpg")
 
+block intro-caption
+  :marked
+    Photo: [WikiCommons](https://commons.wikimedia.org/wiki/File:President_Donald_J._Trump_at_the_G20_Summit_%2846120553691%29.jpg)
 
-      .col-1-2.bg-dk.txt-ff
-        .txt-lg.p-lg
-          :marked
-            Australia’s alliance with the US is deep and enduring. In 2016, an
-            Obama Administration official said [“Our allies all give us
-            headaches, except for Australia. You can always count on
-            Australia.”][1]
+block intro-description
+  :marked
+    Australia’s alliance with the US is deep and enduring. In 2016, an Obama
+    Administration official said [“Our allies all give us headaches, except for
+    Australia. You can always count on Australia.”][1]
 
-            President Trump is suspicious of alliances, and he
-            had a testy early phone call with Prime Minister Turnbull. But
-            historian James Curran says [“there is nothing new in leaders of 
-            the United States and Australia adopting contrasting positions and
-            policies on how to approach challenges in Asia.”][2]
+    President Trump is suspicious of alliances, and he had a testy early phone
+    call with Prime Minister Turnbull. But historian James Curran says [“there
+    is nothing new in leaders of the United States and Australia adopting
+    contrasting positions and policies on how to approach challenges in
+    Asia.”][2]
 
-            [1]: https://www.theatlantic.com/international/archive/2016/03/obama-goldberg-world-leaders/473367/
-            [2]: https://interactives.lowyinstitute.org/archive/the-prime-ministers-in-america/
-  
+    [1]: https://www.theatlantic.com/international/archive/2016/03/obama-goldberg-world-leaders/473367/
+    [2]: https://interactives.lowyinstitute.org/archive/the-prime-ministers-in-america/
+
+block scroller  
   +item(1)
     .row
       .col-1-2.bg-dk.txt-ff
@@ -94,7 +84,8 @@ block scroller
             ANZUS alliance helps anchor that engagement.”
  
     .row
-      .col-fw.bg-hl.txt-ff
+      .col-fw.bg-hl.txt-ff.frame
+        img.bg-img.bg-img-abs(src="../../img/wtc.jpg")
         .txt-lg.ph-md(style="max-width: 640px")
           :marked
             While the ANZUS treaty has underpinned Australia-US relations for

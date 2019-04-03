@@ -3,24 +3,18 @@ extend ../../partials/issue
 block append config
   - page.title = "Climate Change"
 
-block scroller
-  +item(0)
-    .row
-      .col-1-2
-        .fill
-          .row
-            .col-fw
-              .block
-                span.p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
-                .txt-xxl.pv-md= page.title
-          .row.bg-lt
-            .col-fw
-              .img-pan
-                img.bg-img(src="../../img/climate.jpg")
+block intro-image
+  img.bg-img(data-src="../../img/climate.jpg")
 
-      .col-1-2.bg-dk.txt-ff
-        .txt-lg.p-lg
-  
+block intro-caption
+  :marked
+    Photo: [Takver / Flickr](https://www.flickr.com/photos/takver/5531144919)
+
+block intro-description
+  :marked
+    -
+
+block scroller  
   +item(1)
     .row
       .col-1-2.bg-dk.txt-ff
@@ -29,11 +23,16 @@ block scroller
           .txt-xxl.pv-xs The Government
 
       .col-1-2.p-md.bg-dk.txt-ff
-        .txt-lg.txt-border.ph-md.txt-left(style="max-width: 440px")
+        .txt-md.txt-border.ph-md.txt-left(style="max-width: 440px")
           :marked
-            The Liberal Party has committed to reducing emissions via various
-            government funds and agencies setup to reduce emissions by
-            investment, loans and grants.
+            The Liberal Party has committed to reducing emissions via a
+            competition policy using various government funds and agencies
+            setup to reduce emissions by investment, loans and grants.  The
+            part is aiming for an emissions reduction of 26-28% below 2005
+            levels.  The Liberals have also highlighted Australia’s success in
+            meeting or exceeding the Kyoto protocol targets. Countries earn
+            credits for exceeding the emissions targets at Kyoto that can then
+            be carried forward to meet the Paris Climate Agreement targets.
  
     .row
       .col-fw.bg-hl.txt-ff.frame
@@ -50,11 +49,20 @@ block scroller
           .txt-xxl.pv-xs The Opposition
 
       .col-1-2.p-md.bg-dk.txt-ff
-        .txt-lg.txt-border.ph-md.txt-left(style="max-width: 440px")
+        .txt-md.txt-border.ph-md.txt-left(style="max-width: 440px")
           :marked
             The Labor Party has highlighted some government bodies it could use
-            to reduce emissions, but has also put forward a 45% target for
-            electricity emissions by 2030.
+            to reduce emissions, as part of its climate policy. It has also put
+            forward a 45% target for electricity emissions by 2030.  It has
+            also been reported that a Labor government will effectively
+            introduce a “baseline and credit” emissions credit scheme if
+            elected. The party’s plan includes lowering the current government
+            emissions cap of 100,000 tonnes of carbon per year to 25,000
+            tonnes. This is estimated to affect 250 businesses, up from the 140
+            businesses the cap currently covers.   The Labor Party has
+            expressed hesitancy on using any Australian credits from the Kyoto
+            Protocol to meet the Paris Climate Agreements.
+
     .row
       .col-1-2
         .txt-lg.txt-border.ph-md.txt-left(style="max-width: 372px")
@@ -66,9 +74,11 @@ block scroller
 
       .col-1-2.bg-lt
         .txt-lg
-          | Australian emissions per capita
+          | Australian emissions per capita have 
           br
-          | have fallen from their peak in 2007
+          | fallen from their peak in 2007, but Australia’s 
+          br
+          | total emissions have risen since 2012.
  
   +item(3)
     .row
@@ -93,25 +103,43 @@ block scroller
         .block.txt-sans.txt-left
           .pv-md
             :marked
-              This is where our expert will have the opportunity to give their
-              impression of the issue and where they think we should be headed.
-              This text is 160 words long, which is all we need.
+              We all remember Kevin Rudd declaring climate change “the most
+              urgent moral challenge of our generation”. It was 2007, and as
+              foreign as the concept may seem today, Australia had had the same
+              Prime Minister for 11 years.
 
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
-              commodo consequat. Duis autem vel eum iriure dolor in hendrerit
-              in vulputate velit esse molestie consequat, vel illum dolore eu
-              feugiat nulla facilisis at vero eros et accumsan et iusto odio
-              dignissim qui blandit praesent luptatum zzril delenit augue duis
-              dolore te feugait nulla facilisi.
+              At that time, the annual Lowy Institute Poll found that 68% of
+              Australians believed global warming was a serious and pressing
+              problem, and that we should begin taking steps now, even if this
+              involves significant costs. Rudd swept to power with a promise to
+              introduce a comprehensive emissions trading scheme.
 
-              Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed
-              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
-              commodo consequat.
+              But as the drought eased, concerns about climate change waned.
+              Rudd’s government lost momentum on emissions legislation and he
+              was rolled as Prime Minister. By the time Julia Gillard had
+              legislated a price on carbon, the belief that global warming was
+              a “serious and pressing problem” had almost halved (36% in 2012).
+               
+              Climate-sceptic Tony Abbott was elected in 2013 and repealed
+              Gillard’s carbon price. Drought conditions also returned to
+              Australia in 2013. These events coincide with support for climate
+              action rebounding. By 2018, 59% of Australians said steps should
+              be taken to address global warming, even at significant cost.
+
+              Australia has been mired in political debates about energy
+              security, electricity supply and a once-bipartisan-now-dead
+              National Energy Guarantee. The majority of Australians (84%)
+              believe the government should focus on renewables, even if this
+              means we may need to invest in more infrastructure to make the
+              system more reliable (2018).
+
+              In the 2018 Lowy Institute Poll, Australians ranked climate
+              change as the third most critical threat to Australia, only
+              behind international terrorism and North Korea’s nuclear
+              programs. Schoolkids are striking and #climateelection is
+              trending. Support for action may not have yet returned to its
+              2006 high, but climate change will again be a major election
+              issue in 2019.
 
           .txt-sm.txt-tu
             | Expert<br>

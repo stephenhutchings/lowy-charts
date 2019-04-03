@@ -3,28 +3,18 @@ extend ../../partials/issue
 block append config
   - page.title = "Foreign Aid"
 
-block scroller
-  +item(0)
-    .row
-      .col-1-2
-        .fill
-          .row
-            .col-fw
-              .block
-                span.p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
-                .txt-xxl.pv-md= page.title
-          .row.bg-lt
-            .col-fw
-              .img-pan
-                img.bg-img(src="../../img/foreign-aid.jpg")
-              .caption.txt-ff
-                | Photo: 
-                a(href="https://www.flickr.com/photos/dfataustralianaid/10693642694")
-                  | DFAT / Flickr
+block intro-image
+  img.bg-img(data-src="../../img/foreign-aid.jpg")
 
-      .col-1-2.bg-dk.txt-ff
-        .txt-lg.p-lg
-  
+block intro-caption
+  :marked
+    Photo: [DFAT / Flickr](https://www.flickr.com/photos/dfataustralianaid/10693642694)
+
+block intro-description
+  :marked
+    -
+
+block scroller  
   +item(1)
     .row
       .col-1-2.bg-dk.txt-ff
@@ -42,10 +32,16 @@ block scroller
             foreign aid.
  
     .row
-      .col-fw.bg-hl.txt-ff.frame
-        .txt-md
+      .col-1-2
+        include ../../img/aid-oda-gni.svg
+
+      .col-1-2.bg-lt
+        .txt-lg(style="max-width: 400px;")
           :marked
-            Currently Australian aid is at an all-time low, having been slashed dramatically from 2013-2014 when it was 0.37% of gross national income or $5.7b and now makes up only 0.22% of gross national income. The international average is 0.31%.   
+            Currently Australian aid is at an all&#8209;time low, having been
+            slashed dramatically from 2013-2014 when it was 0.37% of gross
+            national income (or $5.7b), and now makes up only 0.22% of gross
+            national income. The international average is 0.31%.
  
   +item(2)
     .row
@@ -97,41 +93,25 @@ block scroller
         .block.txt-sans.txt-left
           .pv-md
             :marked
-              Australia’s aid program has always had an electoral challenge –
-              it’s simply not a vote winner. Not enough Australians care or
-              understand its value. So in the absence of any definitive
-              election statement about its future aid program, the Coalition
-              Government’s actions since coming to power in 2013 – abolition of
-              the aid program’s expert agency and decimation of the aid budget
-              – are the best indicators of what their future aid program would
-              look like.  Dismal, if you do appreciate its national interest
-              and humanitarian value.
+              This is where our expert will have the opportunity to give their
+              impression of the issue and where they think we should be headed.
+              This text is 160 words long, which is all we need.
 
-              The Greens say they are aiming for an aid budget which is the
-              unreachable 0.7% of gross national income (GNI) – a UN target
-              since 1970 that has been aspired to by many nations but achieved
-              by only a handful in almost 50 years. It is a straw man promise
-              appealing to ideal rather than the possible.
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+              commodo consequat. Duis autem vel eum iriure dolor in hendrerit
+              in vulputate velit esse molestie consequat, vel illum dolore eu
+              feugiat nulla facilisis at vero eros et accumsan et iusto odio
+              dignissim qui blandit praesent luptatum zzril delenit augue duis
+              dolore te feugait nulla facilisi.
 
-              The ALP has seized the raiding of the aid budget under the
-              Coalition Government as an opportunity to present itself as the
-              aid program’s champion by promising to reverse the downward
-              spiral and increase the budget/GNI ratio every year it is in
-              office. Arguably an easy promise because such a turn around
-              would not require much, if any budget pain, particularly if they
-              return to the Rudd Government’s approach of promising the big
-              increases in the rolling forward estimates, like some tantalizing
-              mirage. As for a target, there is none; not even a return to the
-              Rudd/Gillard Government promises of a 0.5%/GNI target – also
-              never reached.
-              
-              But where the ALP does stand out is its recognition of the
-              deleterious effect of the Abbott Government’s abolition of the
-              aid agency on the quality of the aid program.  While not
-              promising to resurrect the dead and buried AusAID, there is a
-              commitment to rebuild the development capability of the officials
-              responsible for managing the program.
-
+              Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed
+              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+              commodo consequat.
 
           .txt-sm.txt-tu
             | Expert<br>

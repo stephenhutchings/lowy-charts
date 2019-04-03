@@ -1,0 +1,133 @@
+extend ../../partials/issue
+
+block append config
+  - page.title = "Migration Policy"
+
+block intro-image
+  img.bg-img(data-src="../../img/migration-policy.jpg")
+
+block intro-caption
+  :marked
+    Photo: Ryan Pierse/Getty
+
+block intro-description
+  :marked
+    Australia is a growing nation with a sizable migrant population, but the
+    issue of how many migrants to take and where to take them from has been
+    long contested. With our sustained population growth year on year made
+    possible by immigrants, successive governments have had to balance the
+    clear economic and social benefits of migration with concerns about
+    overcrowding and service delivery.
+
+block scroller
+  +item(1)
+    .row
+      .col-1-2.bg-dk.txt-ff
+        .block
+          .pv-xs.txt-sm.txt-tu.txt-hl= page.title
+          .txt-xxl.pv-xs The Government
+
+      .col-1-2.p-md.bg-dk.txt-ff
+        .txt-md.txt-border.ph-md.txt-left(style="max-width: 460px")
+          :marked
+            The Liberal Party has pledged to cap permanent migration at 160,000
+            a year for the next four years, the previous cap was 190,000. In
+            addition it will introduce a new skilled worker visa program for
+            23,000 migrants requiring them to spend 3 years in regional
+            Australia to earn permanent residency.  Redistributing migrants to
+            regional Australia to reduce congestion in major cities has been a
+            major Coalition policy.
+ 
+    .row
+      .col-fw.bg-hl.txt-ff.frame
+        .pv-xs.txt-xl The top five birthplaces of migrants to Australia are
+        .pv-xs.txt-xl
+          .bg-ff.txt-hl.ph-sm.pv-xs
+            | India, China, The United Kingdom, The Philippines &amp; Iraq
+
+  +item(2)
+    .row
+      .col-1-2.bg-dk.txt-ff
+        .block
+          .pv-xs.txt-sm.txt-tu.txt-hl= page.title
+          .txt-xxl.pv-xs The Opposition
+
+      .col-1-2.p-md.bg-dk.txt-ff
+        .txt-md.txt-border.ph-md.txt-left(style="max-width: 460px")
+          :marked
+            The Labor Party attempts to balance the need for skilled migrants
+            with a focus on attempting to train domestic workers first. It
+            states that Permanent migrants provide a stable, effective and
+            targeted source of skilled workers” Labor has also pledged to
+            progressively increase the annual refugee intake to 27,000. This
+            number might eventually rise to 32,000 with the expansion of a
+            community sponsorship program.
+ 
+    .row
+      .col-fw.bg-lt.frame.txt-lg
+        div(style="max-width: 520px")
+          | Between September 2017 and September 2018 the Australian 
+          | population grew 1.6%, with net overseas migration making up 60% of 
+          | that growth.
+          hr          
+          .pv-xs.lead-tight
+            | That is an increase of 
+            span(data-view="counter") 395,000
+            |  people in real terms.
+
+  +item(3)
+    .row
+      .col-1-2
+        .fill
+          .row
+            .col-fw.bg-dk.txt-ff
+              .block
+                .pv-xs.txt-sm.txt-tu.txt-hl= page.title
+                .txt-xxl.pv-xs What Our Expert Says
+          .row.bg-hl
+            .col-fw.txt-lg
+              ul.txt-highlight
+                li.pv-xs.ph-sm.bg-ff.txt-dk
+                  | This is essentially a pull quote
+                li.pv-xs.ph-sm.bg-ff.txt-dk
+                  | Or three separate, snappy lines of text
+                li.pv-xs.ph-sm.bg-ff.txt-dk
+                  | Whatever works best for the piece
+
+      .col-1-2.p-lg
+        .block.txt-sans.txt-left
+          .pv-md
+            :marked
+              This is where our expert will have the opportunity to give their
+              impression of the issue and where they think we should be headed.
+              This text is 250 words long, which is all we need.
+
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+              commodo consequat. Duis autem vel eum iriure dolor in hendrerit
+              in vulputate velit esse molestie consequat, vel illum dolore eu
+              feugiat nulla facilisis at vero eros et accumsan et iusto odio
+              dignissim qui blandit praesent luptatum zzril delenit augue duis
+              dolore te feugait nulla facilisi.
+
+              Duis autem vel eum iriure dolor in hendrerit in vulputate velit
+              esse molestie consequat, vel illum dolore eu feugiat nulla
+              facilisis at vero eros et accumsan et iusto odio dignissim qui
+              blandit praesent luptatum zzril delenit augue duis dolore te
+              feugait nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer
+              adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+              laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim
+              veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+              nisl ut aliquip ex ea commodo consequat.
+
+              Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed
+              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+              commodo consequat.
+
+          .txt-sm.txt-tu
+            | Expert<br>
+            span.txt-mt Expert Position

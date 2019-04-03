@@ -3,35 +3,22 @@ extend ../../partials/issue
 block append config
   - page.title = "Defence Spending"
 
-block scroller
-  +item(0)
-    .row
-      .col-1-2
-        .fill
-          .row
-            .col-fw
-              .block
-                span.p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
-                .txt-xxl.pv-md= page.title
-          .row.bg-lt
-            .col-fw
-              .img-pan
-                img.bg-img(data-src="../../img/defence-spending.jpg")
-                .caption.txt-ff
-                  | Photo: 
-                  a(href="https://www.flickr.com/photos/johnbrawley/1594605606")
-                    | John Brawley/Flickr
+block intro-image
+  img.bg-img(data-src="../../img/defence-spending.jpg")
 
-      .col-1-2.bg-dk.txt-ff
-        .txt-lg.p-lg
-          :marked
-            The 2018-2019 budget provided $36.4 billion for the defence
-            department. Over the past year both major parties have committed 
-            to eventually increase that number, raising Australian defence
-            spending to 2% of GDP. There has been significant focus on
-            increasing the domestic defence industry, with politicians
-            spruiking the creation and maintenance of Australian jobs.
-  
+block intro-caption
+  :marked
+    Photo: [John Brawley/Flickr](https://www.flickr.com/photos/johnbrawley/1594605606)
+
+block intro-description
+  :marked
+    The 2018-2019 budget provided $36.4 billion for the defence department.
+    Over the past year both major parties have committed to eventually increase
+    that number, raising Australian defence spending to 2% of GDP. There has
+    been significant focus on increasing the domestic defence industry, with
+    politicians spruiking the creation and maintenance of Australian jobs.
+
+block scroller
   +item(1)
     .row
       .col-1-2.bg-dk.txt-ff

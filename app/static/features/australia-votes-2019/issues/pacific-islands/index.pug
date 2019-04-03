@@ -3,24 +3,16 @@ extend ../../partials/issue
 block append config
   - page.title = "Pacific Islands"
 
-block scroller
-  +item(0)
-    .row
-      .col-1-2
-        .fill
-          .row
-            .col-fw
-              .block
-                span.p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
-                .txt-xxl.pv-md= page.title
-          .row.bg-lt
-            .col-fw
-              .img-pan
-                img.bg-img(src="../../img/pacific.jpg")
+block intro-image
+  img.bg-img(data-src="../../img/pacific.jpg")
 
-      .col-1-2.bg-dk.txt-ff
-        .txt-lg.p-lg
-  
+block intro-caption
+
+block intro-description
+  :marked
+    -
+
+block scroller  
   +item(1)
     .row
       .col-1-2.bg-dk.txt-ff

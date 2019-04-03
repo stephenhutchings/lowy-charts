@@ -3,34 +3,22 @@ extend ../../partials/issue
 block append config
   - page.title = "Trade Policy"
 
-block scroller
-  +item(0)
-    .row
-      .col-1-2
-        .fill
-          .row
-            .col-fw
-              .block
-                span.p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
-                .txt-xxl.pv-md= page.title
-          .row.bg-lt
-            .col-fw
-              .img-pan
-                img.bg-img(src="../../img/trade.jpg")
-              .caption.txt-ff
-                | Photo: 
-                a(href="https://unsplash.com/photos/G7PV6gd-w4g")
-                  | chuttersnap / unsplash
+block intro-image
+  img.bg-img(data-src="../../img/trade.jpg")
 
-      .col-1-2.bg-dk.txt-ff
-        .txt-lg.p-lg
-          :marked
-            Trade remains crucial to the ongoing prosperity of Australia. Our
-            exports have helped to fuel China’s rapid growth while in turn we
-            import a bevy of items, among them cars, petroleum and computers,
-            from around the world. Ensuring our ongoing freedom of trade is an
-            important element of Australian foreign policy.
-  
+block intro-caption
+  :marked
+    Photo: [chuttersnap / unsplash](https://unsplash.com/photos/G7PV6gd-w4g)
+
+block intro-description
+  :marked
+    Trade remains crucial to the ongoing prosperity of Australia. Our exports
+    have helped to fuel China’s rapid growth while in turn we import a bevy of
+    items, among them cars, petroleum and computers, from around the world.
+    Ensuring our ongoing freedom of trade is an important element of Australian
+    foreign policy.
+
+block scroller
   +item(1)
     .row
       .col-1-2.bg-dk.txt-ff
@@ -73,7 +61,9 @@ block scroller
             government.
  
     .row
-      .col-fw.bg-lt
+      .col-fw.bg-lt.frame  
+        include ../../img/cptpp.svg
+
         .txt-lg(style="max-width: 720px")
           :marked
             The Comprehensive and Progressive Agreement for Trans-Pacific
@@ -104,25 +94,41 @@ block scroller
         .block.txt-sans.txt-left
           .pv-md
             :marked
-              This is where our expert will have the opportunity to give their
-              impression of the issue and where they think we should be headed.
-              This text is 160 words long, which is all we need.
-
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
-              commodo consequat. Duis autem vel eum iriure dolor in hendrerit
-              in vulputate velit esse molestie consequat, vel illum dolore eu
-              feugiat nulla facilisis at vero eros et accumsan et iusto odio
-              dignissim qui blandit praesent luptatum zzril delenit augue duis
-              dolore te feugait nulla facilisi.
-
-              Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed
-              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-              exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
-              commodo consequat.
+              There is considerable consensus between the major parties on
+              pursuing broadly open trade and investment policies,
+              notwithstanding some specific areas of disagreement. In a
+              difficult international context, the Coalition government did
+              well to work with other countries, notably Japan, to get the
+              CPTPP over the line after the US withdrew. Labor for its part
+              has supported the CPTPP but taken issue with certain elements,
+              notably the waiving of labour market testing for temporary
+              foreign workers and the inclusion of investor state dispute
+              settlement (ISDS) provisions.
+              
+              Though politically salient, the economic consequences of any
+              changes in these areas may not be especially material. Firms
+              generally prefer to use local labour where they can, so mandating
+              labour market testing may not change much. With regard to ISDS,
+              many economists, including Australia’s Productivity Commission,
+              question whether this adds any value in terms of facilitating
+              greater cross-border investment, especially enough to justify the
+              risks in terms of the potential for foreign companies to
+              challenge government policies in the legitimate public interest
+              or otherwise cause ‘regulatory chill’. In any case, ISDS has
+              always been a politically tough sell in many countries and the
+              international tide might now be turning against seeking to
+              include it in future agreements.
+              
+              Labor has also said it would change the way future agreements
+              are negotiated to bring more transparency around the process and
+              independent assessments of the potential economic and social
+              impacts. While this could complicate deal making in the
+              short-term, these are useful steps in strengthening community
+              confidence that such agreements are indeed in the broad interests
+              of the Australian public. Lowy Institute polling suggests that
+              attitudes in Australia are largely favourable to open trade and
+              investment. But this cannot be taken for granted given the
+              backlash against globalisation seen elsewhere in the world.
 
           .txt-sm.txt-tu
             | Expert<br>

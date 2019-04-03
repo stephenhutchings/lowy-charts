@@ -30,6 +30,25 @@ block page
     data-index=".pager-index"
     data-offset="1"
   )
+    +item("intro")
+      .row
+        .col-1-2
+          .fill
+            .row
+              .col-fw.p-md
+                .p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
+                .txt-xxl.pv-sm= page.title
+            .row.bg-lt
+              .col-fw
+                .img-pan
+                  block intro-image
+                .caption.txt-ff
+                  block intro-caption
+
+        .col-1-2.bg-dk.txt-ff
+          .txt-lg.p-lg
+            block intro-description
+
     block scroller
 
     +item("links")

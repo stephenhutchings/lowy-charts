@@ -3,35 +3,23 @@ extend ../../partials/issue
 block append config
   - page.title = "Australia’s Diplomatic Footprint"
 
-block scroller
-  +item(0)
-    .row
-      .col-1-2
-        .fill
-          .row
-            .col-fw
-              .block
-                span.p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
-                .txt-xxl.pv-md= page.title
-          .row.bg-lt
-            .col-fw
-              .img-pan
-                img.bg-img(data-src="../../img/embassy.jpg")
-                .caption.txt-ff
-                  | Photo: 
-                  a(href="https://www.flickr.com/photos/jasewong/3690602038")
-                    | Jason Wong/Flickr
+block intro-image
+  img.bg-img(data-src="../../img/embassy.jpg")
 
-      .col-1-2.bg-dk.txt-ff
-        .txt-lg.p-lg
-          :marked
-            Australia’s diplomatic footprint is comprised of the diplomats and
-            officials we have posted overseas and the ‘soft power’ our nation
-            can bring to bear. A larger footprint provides greater influence
-            and access for Australian officials, businesses and citizens. The
-            Liberal and Labor parties have both committed to increasing
-            Australia’s diplomatic footprint, particularly in the Pacific.
-  
+block intro-caption
+  :marked
+    Photo: [Jason Wong/Flickr](https://www.flickr.com/photos/jasewong/3690602038)
+
+block intro-description
+  :marked
+    Australia’s diplomatic footprint is comprised of the diplomats and
+    officials we have posted overseas and the ‘soft power’ our nation
+    can bring to bear. A larger footprint provides greater influence
+    and access for Australian officials, businesses and citizens. The
+    Liberal and Labor parties have both committed to increasing
+    Australia’s diplomatic footprint, particularly in the Pacific.
+
+block scroller
   +item(1)
     .row
       .col-1-2.bg-dk.txt-ff

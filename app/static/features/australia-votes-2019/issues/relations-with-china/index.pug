@@ -3,25 +3,18 @@ extend ../../partials/issue
 block append config
   - page.title = "Relations with China"
 
+block intro-image
+  img.bg-img(data-src="../../img/xi.jpg")
+
+block intro-caption
+  :marked
+    Photo: [United Nations / Flickr ](https://www.flickr.com/photos/un_photo/21766728656)
+
+block intro-description
+  :marked
+    -
+
 block scroller
-  +item(0)
-    .row
-      .col-1-2
-        .fill
-          .row
-            .col-fw
-              .block
-                span.p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
-                .txt-xxl.pv-md= page.title
-          .row.bg-lt
-            .col-fw
-              .img-pan
-                img.bg-img(src="../../img/xi.jpg")
-
-      .col-1-2.bg-dk.txt-ff
-        .txt-lg.p-lg
-
-  
   +item(1)
     .row
       .col-1-2.bg-dk.txt-ff
