@@ -14,6 +14,8 @@ $color-mt: #7c94a2
   background: $color-lt
 .bg-ff
   background: $color-ff
+.bg-ffs
+  box-shadow: -8px 0 $color-ff, 8px 0 $color-ff
 
 .txt-hl
   color: lighten($color-hl, 2)
@@ -86,10 +88,24 @@ $color-mt: #7c94a2
   width: 100%
   height: 100%
   object-fit: cover
-
+.bg-img-top
+  object-position: top center
 .bg-img-abs
   position: absolute
   z-index: -1
+
+.bg-bar
+  height: 100%
+  position: absolute
+  transform: translate3d(-100%, 0, 0)
+  transition: transform 1.5s
+  opacity: 0.1
+  top: 0
+  left: 0
+
+  .active &
+    transform: translate3d(0, 0, 0)
+
 
 .img-pan
   width: 100%

@@ -36,10 +36,11 @@ block scroller
  
     .row
       .col-fw.bg-hl.txt-ff.frame
-        .txt-lg.ph-md(style="max-width: 480px")
-          :marked
-            58% of Australians rate climate change as a critical threat, third
-            behind international terrorism and North Korea’s nuclear program.
+        .txt-xl.ph-md(style="max-width: 720px")
+          .bg-bar.bg-ff(style="width: 58%")
+          span(data-view="counter") 58% of Australians
+          |  rate climate change as a critical threat, third
+          | behind international terrorism and North Korea’s nuclear program.
  
   +item(2)
     .row
@@ -90,14 +91,8 @@ block scroller
                 .pv-xs.txt-sm.txt-tu.txt-hl= page.title
                 .txt-xxl.pv-xs What Our Expert Says
           .row.bg-hl
-            .col-fw.txt-lg
-              ul.txt-highlight
-                li.pv-xs.ph-sm.bg-ff.txt-dk
-                  | This is essentially a pull quote
-                li.pv-xs.ph-sm.bg-ff.txt-dk
-                  | Or three separate, snappy lines of text
-                li.pv-xs.ph-sm.bg-ff.txt-dk
-                  | Whatever works best for the piece
+            .col-fw
+              include ../../img/climate-change-poll.svg
 
       .col-1-2.p-lg
         .block.txt-sans.txt-left
