@@ -1,0 +1,127 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Figure 3: China vs the United States"
+  - var chart = { height: 320, width: 600, inset: { x: 20, y: 20 }, data: {} }
+  - chart.data.a = [0.27, 0.25, 0.25, 0.27, 0.24, 0.24, 0.24, 0.24, 0.25, 0.28, 0.29, 0.28, 0.31, 0.31, 0.32, 0.33, 0.34, 0.33, 0.32, 0.25, 0.22, 0.22, 0.22, 0.21, 0.2, 0.19, 0.19]
+  - map = function(e){return chart.inset.y + (1 - (e) / 4 * 10) * (chart.height - 64 - 20)}
+  - chart.data.ap = chart.data.a.map(map)
+  - ynb = chart.data.a.length - 1
+
+block page
+  .wrapper
+    .txt-center
+      strong Australian aid generosity over time
+    svg(
+      width=`${chart.width}px`
+      height=`${chart.height}px`
+      viewBox=`0 0 ${chart.width} ${chart.height}`
+    )
+      rect(width="100%" height="100%" fill="none")
+      g
+        g
+          for n, i in (new Array(5))
+            - var y = (chart.inset.y + i * (chart.height - 64 - 20) / 4)
+            text.tt2.tt3.st4(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
+              | 0.#{4 - i}%
+            line.st1(
+              x1=48
+              x2=568
+              y1=(y - 0.5)
+              y2=(y - 0.5)
+            )
+
+        g
+          for i in [10, 17]
+            - var x = 48 + i * (chart.width - 81) / ynb + 0.5; 
+            line.st1(x1=x x2=x y1=20 y2=256)
+
+
+          for label in [["Howard", 5], ["Rudd/Gillard", 13.5], ["Abbott/Turnbull/Morrison",ynb-4.5]]
+            - var x = 48 + [label[1]] * (chart.width - 81) / ynb + 0.5; 
+            text.tt2.tt3(x=x y=240 text-anchor="middle") #{label[0]}
+
+        g
+          for set, i in [[0,22],[21,ynb+1]]
+            polyline.st2(
+              class=`set-${i}`
+              points=(_.reduce(chart.data.ap.slice(set[0],set[1]), function(m, e, i){
+                var x = 48 + (i + set[0]) * (chart.width - 81) / ynb + 0.5; 
+                return `${m} ${x},${e}`
+              }, ""))
+            )
+
+        g
+          for n, i in (new Array(ynb+1))
+            - var x = 48 + i * (chart.width - 81) / ynb + 0.5; 
+            if i % 4 === 1
+              text.tt2.tt3(x=x y=280 text-anchor="middle")
+                | #{(1996 + i)}-#{(1997 + i).toString().slice(2)}
+              line.st1(x1=x x2=x y1=256 y2=266)
+            else
+              line.st1(x1=x x2=x y1=256 y2=262)
+
+            g.label
+              rect.label-bg(x=(x - 16) width=32 y=28 height=236)
+              line.st1.st6(x1=x x2=x y1=20 y2=256)
+
+              polygon.bg.st4(
+                points=[
+                  `${x - 24},${chart.data.ap[i] - 28}`,
+                  `${x + 24},${chart.data.ap[i] - 28}`,
+                  `${x + 24},${chart.data.ap[i] - 4}`,
+                  `${x + 4},${chart.data.ap[i] - 4}`,
+                  `${x},${chart.data.ap[i]}`,
+                  `${x - 4},${chart.data.ap[i] - 4}`,
+                  `${x - 24},${chart.data.ap[i] - 4}`
+                ].join(" ")
+              )
+              text.bg.tt3(x=x y=chart.data.ap[i] - 12 text-anchor="middle")
+                | #{chart.data.a[i]}%
+
+
+        g
+          g(transform="translate(64 312)")
+            line.st2(x1=0 y1=0 x2=32 y2=0)
+            text.tt2.tt3.txt-tu.txt-bold(x=40 y=4)
+              | Official Development Aid, % of Gross National Income
+
+    style
+      :sass
+        .wrapper
+          padding: 12px 0
+          font-family: Sans, sans-serif
+        strong, .txt-bold
+          font-weight: 600
+        .bg
+          fill: #fff
+        polygon.bg
+          stroke: #fff
+          stroke-opacity: 0.2
+        .label-bg
+          fill: #fff
+          opacity: 0
+        .st1 
+          fill: none
+          stroke: #e4e8ea
+        .st2 
+          fill: none
+          stroke: #f7931e
+          stroke-width: 3
+          stroke-linecap: round
+        .st4 
+          fill: #f7931e
+        .st6
+          stroke: rgba(2, 16, 20, 0.08)
+        .set-1
+          stroke-dasharray: 0px 5px
+        .tt2
+          fill: #666
+        .tt3
+          font-size: 13px
+        .label
+          opacity: 0
+          transition: opacity 150ms
+          &:hover
+            opacity: 1
+
