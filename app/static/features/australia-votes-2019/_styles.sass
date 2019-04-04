@@ -193,7 +193,7 @@ sup
   max-width: 512px
 
   > p
-    margin: -6px 0 -8px
+    margin: -0.2em 0 -0.3em
 
 .stripe-lt,
 .stripe-ff,
@@ -535,6 +535,7 @@ p > a
       justify-content: center
       position: relative
       z-index: 1
+      box-sizing: border-box
 
       &:before
         content: ""
@@ -588,6 +589,8 @@ p > a
   .scroll-item
     height: auto
     scroll-snap-align: none
+    border-top: 1px solid rgba(#fff, 0.2)
+    margin-top: -1px
 
   .row
     flex-direction: column
@@ -602,12 +605,15 @@ p > a
   .fd-r
     flex-direction: column
 
+  .bg-dk > .txt-border
+    margin: -16px 0 16px
+
   .scroll-item > .row,
   .scroll-item > .container
     padding: 0
 
   .img-pan
-    max-height: 320px
+    max-height: 240px
 
   .fill
     height: auto
@@ -619,6 +625,9 @@ p > a
   hr
     margin: 0.4em 0
 
+  .map-caption
+    position: static
+
   .p-md, .p-lg
     padding: 16px
 
@@ -629,6 +638,14 @@ p > a
   .ph-md, .ph-lg
     padding-left: 16px
     padding-right: 16px
+
+  .p-xs, .pv-xs
+    padding-top: 4px
+    padding-bottom: 4px
+
+  .p-xs, .ph-xs
+    padding-left: 4px
+    padding-right: 4px
 
   .txt-xxl
     font-size: 32px
@@ -646,7 +663,7 @@ p > a
     font-size: 11px
 
   .caption
-    font-size: 10px
+    font-size: 12px
     bottom: 12px
 
   #header,

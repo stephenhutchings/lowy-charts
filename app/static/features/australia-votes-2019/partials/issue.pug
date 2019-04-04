@@ -34,7 +34,7 @@ block page
       .row
         .col-1-2
           .fill
-            .row
+            .row.pv-sm
               .col-fw.p-md
                 .p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
                 .txt-xxl.pv-sm= page.title
@@ -45,8 +45,8 @@ block page
                 .caption.txt-ff
                   block intro-caption
 
-        .col-1-2.bg-dk.txt-ff
-          .txt-lg.p-lg
+        .col-1-2.bg-dk.txt-ff.p-lg
+          .txt-lg
             block intro-description
 
     block scroller
@@ -58,10 +58,10 @@ block page
           for issue in page.feature.issues
             if issue.href != page.issue
               li.col-1-2
-                a.txt-bare(
+                a.txt-bare.p-sm(
                   href=`/features/australia-votes-2019/issues/${issue.href}`
                 )
-                  span.txt-xl!= issue.title
+                  span.txt-xl!= typogr.typogrify(issue.title)
 
   include footer
 

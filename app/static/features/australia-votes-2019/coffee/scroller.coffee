@@ -36,10 +36,6 @@ require.register "views/scroller", (exports, require, module) ->
         @onScrollEnd()
       , 1
 
-      if @$el.outerWidth() < 600
-        $("br").each (i, el) ->
-          $(el).replaceWith(" ")
-
     onResize: ->
 
 
