@@ -9,5 +9,5 @@
       ul.pager-list
         for item, i in ["The Issue", "Government", "Opposition", "The Expert"]
           li.pager-item(class=(i == 0 ? "active" : ""))
-            a.pager-link(href=`#scroll-item-${i}` tabindex="0")
+            a.pager-link(href=`#scroll-item-${i || "intro"}` tabindex="0")
               = item
