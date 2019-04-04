@@ -9,7 +9,7 @@ block append config
   - ynb = chart.data.a.length - 1
 
 block page
-  .wrapper
+  #wrapper
     .txt-center
       strong= page.title
     svg(
@@ -86,42 +86,54 @@ block page
             text.tt2.tt3.txt-tu.txt-bold(x=40 y=4)
               | Official Development Aid, % of Gross National Income
 
-    style
-      :sass
-        .wrapper
-          padding: 12px 0
-          font-family: Sans, sans-serif
-        strong, .txt-bold
-          font-weight: 600
-        .bg
-          fill: #fff
-        polygon.bg
-          stroke: #fff
-          stroke-opacity: 0.2
-        .label-bg
-          fill: #fff
-          opacity: 0
-        .st1 
-          fill: none
-          stroke: #e4e8ea
-        .st2 
-          fill: none
-          stroke: #f7931e
-          stroke-width: 3
-          stroke-linecap: round
-        .st4 
-          fill: #f7931e
-        .st6
-          stroke: rgba(2, 16, 20, 0.08)
-        .set-1
-          stroke-dasharray: 0px 5px
-        .tt2
-          fill: #666
-        .tt3
-          font-size: 13px
-        .label
-          opacity: 0
-          transition: opacity 150ms
-          &:hover
-            opacity: 1
+  style
+    :sass
+      body
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        font-family: Sans, sans-serif
+      #wrapper
+        padding: 12px 0
+      strong, .txt-bold
+        font-weight: 600
+      .bg
+        fill: #fff
+      polygon.bg
+        stroke: #fff
+        stroke-opacity: 0.2
+      .label-bg
+        fill: #fff
+        opacity: 0
+      .st1 
+        fill: none
+        stroke: #e4e8ea
+      .st2 
+        fill: none
+        stroke: #f7931e
+        stroke-width: 3
+        stroke-linecap: round
+      .st4 
+        fill: #f7931e
+      .st6
+        stroke: rgba(2, 16, 20, 0.08)
+      .set-1
+        stroke-dasharray: 0px 5px
+      .tt2
+        fill: #666
+      .tt3
+        font-size: 13px
+      .label
+        opacity: 0
+        transition: opacity 150ms
+        &:hover
+          opacity: 1
 
+      @media (max-width: 600px)
+        .tt3
+          font-size: 15px
+        svg
+          height: auto
+        .txt-tu
+          letter-spacing: 0.03em
