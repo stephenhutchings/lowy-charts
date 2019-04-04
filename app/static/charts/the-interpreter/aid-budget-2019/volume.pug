@@ -76,57 +76,57 @@ block page
               if i > ynb - 5
                 polygon.bg.st4(
                   points=[
-                    `${x - 24},${chart.data.ap[i] - 28}`,
-                    `${x + 24},${chart.data.ap[i] - 28}`,
-                    `${x + 24},${chart.data.ap[i] - 4}`,
+                    `${x - 30},${chart.data.ap[i] - 28}`,
+                    `${x + 30},${chart.data.ap[i] - 28}`,
+                    `${x + 30},${chart.data.ap[i] - 4}`,
                     `${x + 4},${chart.data.ap[i] - 4}`,
                     `${x},${chart.data.ap[i]}`,
                     `${x - 4},${chart.data.ap[i] - 4}`,
-                    `${x - 24},${chart.data.ap[i] - 4}`
+                    `${x - 30},${chart.data.ap[i] - 4}`
                   ].join(" ")
                 )
                 polygon.bg.st5(
                   points=[
-                    `${x - 24},${chart.data.bp[i] + 28}`,
-                    `${x + 24},${chart.data.bp[i] + 28}`,
-                    `${x + 24},${chart.data.bp[i] + 4}`,
+                    `${x - 30},${chart.data.bp[i] + 28}`,
+                    `${x + 30},${chart.data.bp[i] + 28}`,
+                    `${x + 30},${chart.data.bp[i] + 4}`,
                     `${x + 4},${chart.data.bp[i] + 4}`,
                     `${x},${chart.data.bp[i]}`,
                     `${x - 4},${chart.data.bp[i] + 4}`,
-                    `${x - 24},${chart.data.bp[i] + 4}`
+                    `${x - 30},${chart.data.bp[i] + 4}`
                   ].join(" ")
                 )
                 text.bg.tt3(x=x y=chart.data.ap[i] - 12 text-anchor="middle")
-                  | $#{written.prettyNumber(chart.data.a[i])}
+                  | $#{written.prettyNumber(chart.data.a[i])}M
                 text.bg.tt3(x=x y=chart.data.bp[i] + 20 text-anchor="middle")
-                  | $#{written.prettyNumber(chart.data.b[i])}
+                  | $#{written.prettyNumber(chart.data.b[i])}M
               else
                 polygon.bg.st5(
                   points=[
-                    `${x - 24},${chart.data.bp[i] - 28}`,
-                    `${x + 24},${chart.data.bp[i] - 28}`,
-                    `${x + 24},${chart.data.bp[i] - 4}`,
+                    `${x - 30},${chart.data.bp[i] - 28}`,
+                    `${x + 30},${chart.data.bp[i] - 28}`,
+                    `${x + 30},${chart.data.bp[i] - 4}`,
                     `${x + 4},${chart.data.bp[i] - 4}`,
                     `${x},${chart.data.bp[i]}`,
                     `${x - 4},${chart.data.bp[i] - 4}`,
-                    `${x - 24},${chart.data.bp[i] - 4}`
+                    `${x - 30},${chart.data.bp[i] - 4}`
                   ].join(" ")
                 )
                 polygon.bg.st4(
                   points=[
-                    `${x - 24},${chart.data.ap[i] + 28}`,
-                    `${x + 24},${chart.data.ap[i] + 28}`,
-                    `${x + 24},${chart.data.ap[i] + 4}`,
+                    `${x - 30},${chart.data.ap[i] + 28}`,
+                    `${x + 30},${chart.data.ap[i] + 28}`,
+                    `${x + 30},${chart.data.ap[i] + 4}`,
                     `${x + 4},${chart.data.ap[i] + 4}`,
                     `${x},${chart.data.ap[i]}`,
                     `${x - 4},${chart.data.ap[i] + 4}`,
-                    `${x - 24},${chart.data.ap[i] + 4}`
+                    `${x - 30},${chart.data.ap[i] + 4}`
                   ].join(" ")
                 )
                 text.bg.tt3(x=x y=chart.data.bp[i] - 12 text-anchor="middle")
-                  | $#{written.prettyNumber(chart.data.b[i])}
+                  | $#{written.prettyNumber(chart.data.b[i])}M
                 text.bg.tt3(x=x y=chart.data.ap[i] + 20 text-anchor="middle")
-                  | $#{written.prettyNumber(chart.data.a[i])}
+                  | $#{written.prettyNumber(chart.data.a[i])}M
 
         g
           g(transform="translate(84 312)")
