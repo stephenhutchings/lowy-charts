@@ -456,8 +456,9 @@ strong, .txt-tu, .caption
 
 p > a
   text-decoration: none
-  background: linear-gradient(to bottom, transparent 1.05em, $color-hl 1.05em, $color-hl 1.1em, transparent 1.1em)
+  background: linear-gradient(to bottom, transparent 0, rgba($color-hl, 0.7) 0, rgba($color-hl, 0.7) 1px, transparent 1px)
   background-repeat: repeat-x
+  background-position: 0 1.05em
 
 .price-tag
   position: relative
@@ -476,7 +477,8 @@ p > a
   right: 5%
   bottom: 16%
   padding: 16px
-  max-width: 248px
+  max-width: 160px
+  background-color: #007dba
 
 #scroller
   margin: auto
@@ -625,8 +627,12 @@ p > a
   hr
     margin: 0.4em 0
 
-  .map-caption
+  .map-caption,
+  .flags-caption
     position: static
+    text-align: center
+    max-width: 300px
+    background-color: transparent
 
   .p-md, .p-lg
     padding: 16px
@@ -650,7 +656,7 @@ p > a
   .txt-xxl
     font-size: 32px
   .txt-xl,
-  .txt-title
+  .txt-links
     font-size: 24px
   .txt-lg
     font-size: 20px
