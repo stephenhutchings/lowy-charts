@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Figure 3: China vs the United States"
+  - page.title = "Australian aid generosity over time"
   - var chart = { height: 320, width: 600, inset: { x: 20, y: 20 }, data: {} }
   - chart.data.a = [0.27, 0.25, 0.25, 0.27, 0.24, 0.24, 0.24, 0.24, 0.25, 0.28, 0.29, 0.28, 0.31, 0.31, 0.32, 0.33, 0.34, 0.33, 0.32, 0.25, 0.22, 0.22, 0.22, 0.21, 0.2, 0.19, 0.19]
   - map = function(e){return chart.inset.y + (1 - (e) / 4 * 10) * (chart.height - 64 - 20)}
@@ -11,7 +11,7 @@ block append config
 block page
   .wrapper
     .txt-center
-      strong Australian aid generosity over time
+      strong= page.title
     svg(
       width=`${chart.width}px`
       height=`${chart.height}px`

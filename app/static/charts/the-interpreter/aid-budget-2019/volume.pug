@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Figure 3: China vs the United States"
+  - page.title = "Volume of Australian aid over time"
   - var chart = { height: 320, width: 600, inset: { x: 20, y: 20 }, data: {} }
   - chart.data.a = [1432, 1443, 1529, 1749, 1623, 1755, 1831, 1973, 2198, 2684, 2978, 3115, 3737, 3878, 4303, 4825, 5053, 5049, 5028, 4052, 3828, 3912, 4329, 4044, 4000, 4000, 4100]
   - chart.data.b = [2650, 2636, 2779, 3098, 2754, 2908, 2943, 3062, 3280, 3807, 4027, 4029, 4591, 4717, 4935, 5429, 5553, 5386, 5283, 4216, 3905, 3912, 4231, 3864, 3726, 3633, 3631]
@@ -13,7 +13,7 @@ block append config
 block page
   .wrapper
     .txt-center
-      strong Volume of Australian aid over time
+      strong= page.title
     svg(
       width=`${chart.width}px`
       height=`${chart.height}px`
