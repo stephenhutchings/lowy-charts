@@ -1,0 +1,46 @@
+extend /partials/layout
+
+include /partials/the-interpreter/bar-chart
+
+block append config
+  - page.title = "Treatment Effects of Park/Lee and Examining Candidates"
+
+block page
+  .wrapper(
+    ontouchstart=""
+    class=written.hyphenCase(page.title)
+  )
+    +interpreter-bar-chart({
+      title: page.title,
+      subtitle: "% agreeing",
+      yaxis: [0, 2, 4, 6, 8, 10, 12],
+      xaxis: [
+        "Overall", 
+        "Liberal", 
+        "Moderate", 
+        "Conservative", 
+        "Male",
+        "Female"
+      ],
+      values: [
+        [7.92], 
+        [6.79], 
+        [11.41], 
+        [5.96], 
+        [10.98], 
+        [4.70]
+      ],
+      yh: 36
+    })
+
+block scripts
+
+block append css
+  style
+    :sass
+      @media (max-width: 600px)
+        .bar-group-label
+          max-width: 52px
+          overflow: hidden
+          white-space: nowrap
+          text-overflow: ellipsis

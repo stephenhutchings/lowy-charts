@@ -1,5 +1,7 @@
 mixin interpreter-bar-chart(data)
-  strong.chart-title= data.title
+  strong.chart-title!= typogr.typogrify(data.title)
+  if data.subtitle
+    .chart-subtitle!= typogr.typogrify(data.subtitle)
   - var yo = 20
   - var yh = data.yh || 52
   - var height = data.height || yo + (data.yaxis.length - 1) * yh + 24
