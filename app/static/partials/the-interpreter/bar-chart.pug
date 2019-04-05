@@ -49,6 +49,13 @@ mixin interpreter-bar-chart(data)
         .bar(class="bar-" + i)
         != label
 
+  if data.legend
+    ul.legend.list-bare
+      for label, i in data.legend
+        li
+          .bar(class="bar-" + i)
+          != label
+
 block append css
   style
     include:sass bar-chart.sass
