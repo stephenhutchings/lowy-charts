@@ -43,11 +43,6 @@ mixin interpreter-bar-chart(data)
             if data.highlights[j]
               .bar-group-highlight-label!= data.highlights[j]
 
-  ul.legend.list-bare
-    for label, i in data.legend
-      li
-        .bar(class="bar-" + i)
-        != label
 
   if data.legend
     ul.legend.list-bare
