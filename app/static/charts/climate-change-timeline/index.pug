@@ -13,7 +13,16 @@ block append config
 
 block page
 
-  .wrapper
+  #wrapper
+    //- #content
+      :marked
+        Since 2007 Australia’s response to climate change has featured prominently in federal elections with close scrutiny given to party policies. It has been suggested that two federal political leaders have lost their position in part because of their policies on climate change (Malcolm Turnbull as Leader of the Opposition in 2009 and Prime Minister Kevin Rudd in 2010). 
+        
+        The inconsistent nature of Australian climate policy cannot be fully explained by looking at which political party was in government at the time. Both Labor and Liberal Governments have advanced (and sometimes regressed) on climate change. For example, in 1990 Labor was in government. It resisted adopting an emissions reduction target canvassed by its own Minister for Environment, only doing so with a ‘no regrets’ proviso, which rendered the target ineffectual. Yet a Labor Government was also responsible for Australia’s 2020 emissions reduction targets. 
+        
+        Public opinion towards action on climate policy has waxed and waned. Political infighting and leadership churn could have contributed to the sharp dip in concern about climate change in 2012, but so too could the lifting of drought conditions. With the axeing of a price on carbon and the hottest summer on record in 2018-19, the Australian public is almost at the 2006 levels of concern about climate change. 
+
+
     #timeline
       #controls
         .btn.js-prev(tabindex="0")
@@ -35,7 +44,8 @@ block page
               .event-content
                 .event-text
                   strong= e.date
-                  p.balance-text!= typogr.typogrify(e.text.trim())
+                  p(class=i > 0 ? "balance-text" : "")
+                    != typogr.typogrify(e.text.trim())
 
               if e.change
                 .event-change(style={left: (100 * x) + "%", "z-index": e.change ? 0 : 1})
@@ -66,20 +76,26 @@ block page
                 .line-label.txt-muted
                   = (100 - y) / 100 * 80 - 10 + "%"
 
-          svg#chart
+          #chart-label
 
-            for list, i in chart.values
-              g.chart-group(id=`chart-group-${i}`)
+          svg#chart
+            for list, j in chart.values
+              g.chart-group(id=`chart-group-${j}`)
                 - var line = []
                 for v, i in list
-                  - var j = chart.years[i] - chart.years[0]
-                  - var x = j / (list.length) * 100
+                  - var d = chart.years[i] - chart.years[0]
+                  - var x = d / (list.length) * 100
                   - var y = (70 - v) / 70 * 100
                   - line.push([x, y])
 
                 g
                   for p, i in line
-                    circle.bg(r=8 cx=`${p[0]}%` cy=`${p[1]}%` data-value=list[i])
+                    circle.circle-bg.js-circ(
+                      r=8 cx=`${p[0]}%` cy=`${p[1]}%`
+                      data-value=list[i]
+                      data-index=i
+                      data-group=j
+                    )
 
                 svg.path-svg(width="100%" height="100%" viewBox="0 0 100 100" x=0 y=0 preserveAspectRatio="none")
                   path.bg(
@@ -91,7 +107,7 @@ block page
 
                 g
                   for p, i in line
-                    circle(r=3 cx=`${p[0]}%` cy=`${p[1]}%`)
+                    circle.circle-fg(r=3 cx=`${p[0]}%` cy=`${p[1]}%`)
 
       ul#legend.txt-muted
         li#legend-key-0.legend-key
@@ -126,10 +142,7 @@ block append scripts
 
   script.
     $(document).ready(function(){
-      
-      window.setTimeout(function(){
-        window.balanceText(".balance-text")
-      }, 100)
+      window.balanceText(".balance-text")
 
       var count = 0,
           $events = $(".event"),
@@ -139,7 +152,10 @@ block append scripts
       $(".js-next").click(function(){count++; update()})
       $(".js-prev").click(function(){count--; update()})
       $(".js-year").click(function(){count = $(this).data("i"); update()})
-      //- $(".js-year").hover(function(){count = $(this).data("i"); update()})
+      $(".js-circ")
+        .hover(function(e){onHover(e)})
+        .mouseleave(function(e){onHover(e)})
+
 
       function update() {
         if (document.activeElement) document.activeElement.blur()
@@ -159,7 +175,6 @@ block append scripts
         offset += $active.find(".event-marker, .event-change").position().left
 
         if (inner < outer) {
-          console.log(offset)
           $frame.css({
             transform: "translate3d(" + (-Math.max(offset-inner/2, 0) ) + "px,0,0)"
           })
@@ -169,6 +184,29 @@ block append scripts
           })
         }
       }
+
+      function onHover(e) {
+        var $el = $(e.currentTarget),
+            i = $el.data("index"),
+            j = $el.data("group"),
+            value = $el.data("value"),
+            $label = $("#chart-label"),
+            $circl = $("#chart-group-" + j + " .circle-fg").eq(i);
+
+        if (e.type === "mouseleave") {
+
+          $label.removeClass("active")
+          $circl.removeClass("active")
+        } else {
+          var pos = $el.position();
+          $circl.addClass("active")
+          $label
+            .html("<span class='chart-group-" + j + "'>"+value+"%</span>")
+            .css({left: pos.left, top: pos.top})
+            .addClass("active")
+        }
+      }
+
     })
 
 

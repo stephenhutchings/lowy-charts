@@ -6,6 +6,9 @@ $blue: #539fd5
 body
   font-size: 15px
   line-height: 1.2
+  display: flex
+  justify-content: center
+  align-items: center
 
 #controls
   position: absolute
@@ -44,7 +47,7 @@ body
     border-color: #002B45
     background: #002B45
 
-.wrapper
+#wrapper
   width: 960px
   max-width: 100%
   position: relative
@@ -63,7 +66,7 @@ body
   top: 0
   bottom: 0
   left: 0
-  right: 12px
+  right: 0
   min-width: 600px
   position: absolute
   transition: transform 800ms
@@ -223,7 +226,7 @@ body
     stroke: #fff !important
     stroke-width: 5
 
-  circle.bg
+  .circle-bg
     pointer-events: all
     stroke: none !important
 
@@ -231,16 +234,62 @@ body
 #legend-key-0
   circle, path, line
     stroke: rgb(243, 115, 32)
+  .circle-fg.active
+    fill: rgb(243, 115, 32)
 
 #chart-group-1,
 #legend-key-1
   circle, path, line
     stroke: rgb(112, 211, 211)
+  .circle-fg.active
+    fill: rgb(112, 211, 211)
 
 #chart-group-2,
 #legend-key-2
   circle, path, line
     stroke: rgb(0, 80, 107)
+  .circle-fg.active
+    fill: rgb(0, 80, 107)
+
+#chart-label
+  position: fixed
+  width: 0
+  margin-left: 8px
+  opacity: 0
+  transition: opacity 300ms
+
+  &.active
+    opacity: 1
+
+  span
+    width: 36px
+    margin-left: -18px
+    display: block
+    text-align: center
+    color: #fff
+    margin-top: -20px
+    position: relative
+
+    &:before
+      content: ""
+      position: absolute
+      left: 50%
+      top: 100%
+      margin-left: -4px
+      border: 4px solid transparent
+
+    &.chart-group-0
+      background: rgb(243, 115, 32)
+      &:before
+        border-top-color: rgb(243, 115, 32)
+    &.chart-group-1
+      background: rgb(112, 211, 211)
+      &:before
+        border-top-color: rgb(112, 211, 211)
+    &.chart-group-2
+      background: rgb(0, 80, 107)
+      &:before
+        border-top-color: rgb(0, 80, 107)
 
 #chart-grid
   width: 100%
