@@ -90,12 +90,8 @@ block page
 
                 g
                   for p, i in line
-                    circle.circle-bg.js-circ(
-                      r=8 cx=`${p[0]}%` cy=`${p[1]}%`
-                      data-value=list[i]
-                      data-index=i
-                      data-group=j
-                    )
+                    circle.circle-bg(
+                      r=8 cx=`${p[0]}%` cy=`${p[1]}%`)
 
                 svg.path-svg(width="100%" height="100%" viewBox="0 0 100 100" x=0 y=0 preserveAspectRatio="none")
                   path.bg(
@@ -107,6 +103,12 @@ block page
 
                 g
                   for p, i in line
+                    circle.js-circ(
+                      r=16 cx=`${p[0]}%` cy=`${p[1]}%`
+                      data-value=list[i]
+                      data-index=i
+                      data-group=j
+                    )
                     circle.circle-fg(r=3 cx=`${p[0]}%` cy=`${p[1]}%`)
 
       ul#legend.txt-muted
@@ -194,15 +196,14 @@ block append scripts
             $circl = $("#chart-group-" + j + " .circle-fg").eq(i);
 
         if (e.type === "mouseleave") {
-
           $label.removeClass("active")
           $circl.removeClass("active")
         } else {
-          var pos = $el.position();
+          var pos = $el.position(), r = +$el.attr("r");
           $circl.addClass("active")
           $label
             .html("<span class='chart-group-" + j + "'>"+value+"%</span>")
-            .css({left: pos.left, top: pos.top})
+            .css({left: pos.left + r, top: pos.top + r})
             .addClass("active")
         }
       }

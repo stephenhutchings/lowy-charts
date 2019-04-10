@@ -27,7 +27,6 @@ body
   height: 40px
   line-height: 40px
   text-align: center
-  // color: #969ba4
   border: 1px solid
   border-radius: 50%
   float: left
@@ -51,6 +50,9 @@ body
   width: 960px
   max-width: 100%
   position: relative
+
+  circle, path
+    stroke-width: 1.2
 
 #content
   padding-bottom: 20px
@@ -216,10 +218,8 @@ body
 .chart-group
   circle
     fill: #fff
-    stroke-width: 1.2
   path
     fill: none
-    stroke-width: 1.2
     vector-effect: non-scaling-stroke
 
   path.bg
@@ -227,8 +227,12 @@ body
     stroke-width: 5
 
   .circle-bg
-    pointer-events: all
     stroke: none !important
+
+  .js-circ
+    stroke: none !important
+    fill: none !important
+    pointer-events: all
 
 #chart-group-0,
 #legend-key-0
@@ -254,7 +258,6 @@ body
 #chart-label
   position: fixed
   width: 0
-  margin-left: 8px
   opacity: 0
   transition: opacity 300ms
 
@@ -267,7 +270,7 @@ body
     display: block
     text-align: center
     color: #fff
-    margin-top: -20px
+    margin-top: -28px
     position: relative
 
     &:before
