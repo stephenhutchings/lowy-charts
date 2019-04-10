@@ -1,0 +1,178 @@
+extend /partials/layout
+
+block append config
+  - page.title = "History of Australian Attitudes to Climate Change"
+  - var events = data.getOne("static/charts/climate-change-timeline/data").events
+  - var chart = data.getOne("static/charts/climate-change-timeline/data").chart
+  - events.forEach(function(e){e.year = +e.date.match(/\d{4}/)[0]; e._date = new Date(e.date)})
+  - var years = _.pluck(events, "year")
+
+  - var max = _.last(years)
+  - var min = _.first(years)
+  - var len = max - min
+
+block page
+
+  .wrapper
+    #timeline
+      #controls
+        .btn.js-prev(tabindex="0")
+          .icon.icon-left-arrow
+        .btn.js-next(tabindex="0")
+          .icon.icon-right-arrow
+
+      #frame
+        #events
+          - d1997 = new Date("Jan 1997")
+          - d2018 = new Date("Jan 2019")
+          for e, i in _.sortBy(events, "_date")
+            - var x = (e._date - d1997) / (d2018 - d1997)
+            .event.js-year(
+              data-i=i
+              class=(i == 0 ? "active" : "")
+            )
+
+              .event-content
+                .event-text
+                  strong= e.date
+                  p.balance-text!= typogr.typogrify(e.text.trim())
+
+              if e.change
+                .event-change(style={left: (100 * x) + "%", "z-index": e.change ? 0 : 1})
+                  if typeof e.change == "string"
+                    .event-change-label.txt-muted.txt-tu= e.change
+
+              else
+                .event-marker(style={left: (100 * x) + "%", "z-index": e.change ? 0 : 1})
+
+        #years
+          #years-inner
+            for n, i in new Array(len + 1)
+              - var j = (min + i);
+              - var c = j % 100 == 0 ? "cen" : j % 10 == 0 ? "dec" : "";
+              .year(
+                style={left: (100 * (i / (len + 1)) + "%"), width: (100 / (len + 1) + "%")}
+                class=c
+              )
+                .year-border
+                if j % 2 == 0
+                  .year-label= j
+
+        #chart-wrapper
+          #chart-grid
+            for n, i in new Array(8)
+              - var y = i / 8 * 100
+              .line
+                .line-label.txt-muted
+                  = (100 - y) / 100 * 80 - 10 + "%"
+
+          svg#chart
+
+            for list, i in chart.values
+              g.chart-group(id=`chart-group-${i}`)
+                - var line = []
+                for v, i in list
+                  - var j = chart.years[i] - chart.years[0]
+                  - var x = j / (list.length) * 100
+                  - var y = (70 - v) / 70 * 100
+                  - line.push([x, y])
+
+                g
+                  for p, i in line
+                    circle.bg(r=8 cx=`${p[0]}%` cy=`${p[1]}%` data-value=list[i])
+
+                svg.path-svg(width="100%" height="100%" viewBox="0 0 100 100" x=0 y=0 preserveAspectRatio="none")
+                  path.bg(
+                    d=`M ${line.map(function(e){return e.join(" ")}).join(" L")}`
+                  )
+                  path(
+                    d=`M ${line.map(function(e){return e.join(" ")}).join(" L")}`
+                  )
+
+                g
+                  for p, i in line
+                    circle(r=3 cx=`${p[0]}%` cy=`${p[1]}%`)
+
+      ul#legend.txt-muted
+        li#legend-key-0.legend-key
+          svg
+            line(x1=0 x2="100%" y1="50%" y2="50%")
+            circle(r=3 cx="50%" cy="50%")
+
+          | Global warming is a serious and pressing problem. We should
+          | begin taking steps now even if this involves significant costs
+        
+        li#legend-key-1.legend-key
+          svg
+            line(x1=0 x2="100%" y1="50%" y2="50%")
+            circle(r=3 cx="50%" cy="50%")
+          | The problem of global warming should be addressed, but its
+          | effects will be gradual, so we can deal with the problem
+          | gradually by taking steps that are low in cost
+        
+        li#legend-key-2.legend-key
+          svg
+            line(x1=0 x2="100%" y1="50%" y2="50%")
+            circle(r=3 cx="50%" cy="50%")
+          | Until we are sure that global warming is really a problem, we
+          | should not take any steps that would have economic costs
+
+      #pager
+        span#page 1 
+        | &ensp;/&ensp;#{events.length}
+
+block append scripts
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.2.1/balancetext.js")
+
+  script.
+    $(document).ready(function(){
+      
+      window.setTimeout(function(){
+        window.balanceText(".balance-text")
+      }, 100)
+
+      var count = 0,
+          $events = $(".event"),
+          $frame = $("#frame"),
+          $page = $("#page");
+
+      $(".js-next").click(function(){count++; update()})
+      $(".js-prev").click(function(){count--; update()})
+      $(".js-year").click(function(){count = $(this).data("i"); update()})
+      //- $(".js-year").hover(function(){count = $(this).data("i"); update()})
+
+      function update() {
+        if (document.activeElement) document.activeElement.blur()
+        
+        count = ($events.length + count) % $events.length
+
+        $active = $events
+          .removeClass("active")
+          .filter("[data-i='" + count + "']")
+          .addClass("active")
+
+        $page.html(count + 1)
+
+        outer = $frame.width()
+        inner = $("body").outerWidth()
+        offset = $active.position().left + 40
+        offset += $active.find(".event-marker, .event-change").position().left
+
+        if (inner < outer) {
+          console.log(offset)
+          $frame.css({
+            transform: "translate3d(" + (-Math.max(offset-inner/2, 0) ) + "px,0,0)"
+          })
+        } else {
+          $frame.css({
+            transform: ""
+          })
+        }
+      }
+    })
+
+
+block append css
+  style
+    include:sass _styles.sass
+      

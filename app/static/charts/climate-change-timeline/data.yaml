@@ -1,0 +1,175 @@
+events:
+  -
+    date: "Nov 1997"
+    text: >
+      Environment Minister Robert Hill is dispatched from the brand-new Howard
+      government to the Kyoto Climate Summit. Australia emerges with
+      large concessions for its agricultural activities and is one of
+      only three countries permitted to increase its emissions under the
+      deal.
+  -
+    date: "April 2001"
+    text: >
+      Initial enthusiasm for the Kyoto Protocol wanes and John Howard’s Cabinet
+      resolves not to ratify the Kyoto Treaty after all.
+  -
+    date: "2006"
+    text: >
+      For many parts of Australia, this is the driest year on record and the
+      peak of a drought that stretched from 1996 to 2009.
+  -
+    date: "March 2007"
+    text: >
+      Kevin Rudd, having become the leader of the Labor Party in December 2006,
+      famously says “Climate change is the great moral challenge of our
+      generation”.
+  -
+    date: "June 2007"
+    text: >
+      Prime Minister John Howard announces the Federal Government will
+      introduce emissions trading domestic emissions trading system, that's a
+      cap and trade system beginning no later than 2012
+  -
+    date: "November 2007"
+    text: >
+      The Labor Party elected to Federal Government, with Kevin Rudd as Prime
+      Minister
+    change: "Rudd"
+  -
+    date: "December 2007"
+    text: >
+      The first official act of the new Government is to ratify the Kyoto
+      Protocol. Two weeks later, Kevin Rudd addresses the Bali
+      Conference saying “climate change is a top priority of the new
+      Australian Government.”
+  -
+    date: "November 2009"
+    text: >
+      It is reported that Prime Minister Kevin Rudd and Climate Change Minister
+      Penny Wong have secured a deal with Opposition Leader Malcolm Turnbull
+      and Shadow Environment Minister Ian MacFarlane to pass the Carbon
+      Pollution Reduction Scheme
+  -
+    date: "December 2009"
+    text: >
+      The Liberal party room is divided over the deal, and Tony Abbott,
+      following a widely reported “climate change is crap” comment, wins a
+      leadership vote to become the new Opposition Leader.
+  -
+    date: "December 2009"
+    text: >
+      Without Opposition or Green support , the CPRS fails. Malcolm Turnbull
+      crosses the floor to support the bill. Prime Minister Rudd and Climate
+      Change Minister Wong attend the Copenhagen climate summit but do not
+      reach consensus in the international community.
+  -
+    date: "April 2010"
+    text: >
+      Prime Minister Rudd announces that the emissions trading legislation will
+      be put on hold until the end of 2012.
+  -
+    date: "June 2010"
+    text: >
+      Prime Minister resigns and Julia Gillard becomes Australia’s 24th Prime
+      Minister.  She pledges to re-prosecute the case for a carbon price at
+      home and abroad.
+    change: "Gillard"
+  -
+    date: "September 2010"
+    text: >
+      Prime Minister Gillard promises there will be no ‘carbon tax’ under her
+      government. After a hung parliament in the election, Prime Minister
+      Julia Gillard forms a minority government by signing an agreement
+      with the Australian Greens ‘Australia must tackle climate change
+      and that reducing carbon pollution by 2020 will require a price on
+      carbon’.
+  -
+    date: "November 2011"
+    text: >
+      The Parliament passes the Clean Energy Act 2011, a package of 18 Bills
+      that provides the framework for an ETS starting with a three-year
+      fixed-price phase . It follows the creation of a Climate Commission
+      earlier in 2010 and the Government’s stated plan to cut 159 million
+      tonnes a year of greenhouse gases by 2020 .
+  -
+    date: "June/July 2012"
+    text: >
+      $10 billion Clean Energy Finance Corporation (CEFC) legislated:
+      Legislation is passed for the CEFC, a $10 billion fund dedicated to
+      investing in clean energy. An unlimited number of carbon units become
+      available for purchase at a fixed price of $23. Part of the profit from
+      the carbon price will be used to compensate householders as a ‘low income
+      tax offset’. The Government establishes an independent advisory body on
+      climate change, as well as an agency for funding development of renewable
+      energy technology in Australia.
+  -
+    date: "June 2013"
+    text: >
+      Labor Member Kevin Rudd becomes Prime Minister after internal party
+      challenge.
+    change: true
+  -
+    date: "September 2013"
+    text: >
+      Abbott government takes office after campaigning on a ‘axe the tax’
+      platform and immediately starts disbanding Climate Commission and
+      drafting legislation to repeal the Clean Energy Act.
+    change: "Abbott"
+  -
+    date: "October 2013"
+    text: >
+      Funded by $900,000 in private donations, the Climate Council is launched
+      to continue the work of the disbanded Climate Commission.
+  -
+    date: "July 2014"
+    text: >
+      Carbon Price Mechanism repealed: The eight ‘carbon tax repeal’ bills are
+      passed by the Senate, coming into effect on 1 July 2014. Australia is
+      described as the first nation to reverse action on climate change .
+  -
+    date: "August 2015"
+    text: >
+      Federal Government announces 2030 emissions reduction target of 26-28%
+      below 2005 levels by 2030.
+  -
+    date: "September 2015"
+    text: >
+      Minister Malcolm Turnbull becomes Prime Minister after internal party
+      challenge
+    change: "Turnbull"
+  -
+    date: "December 2015"
+    text: >
+      Australia agrees to adopt the Paris Agreement in which all nations
+      submit, revise and review national emissions reduction pledges with a
+      view to keeping the global temperature increase well below 2°C and aiming
+      for 1.5°C. Australia also commits $1 billion over five years from the
+      existing aid budget towards building climate resilience and reducing
+      emissions in vulnerable nations.
+  -
+    date: "April 2016"
+    text: >
+      Australia is among 175 countries to sign Paris Agreement in New York.
+      Minister Hunt announces that Australia will aim to ratify the
+      Agreement by the end of the year.
+  -
+    date: "August 2018"
+    text: >
+      Coalition party room endorses the National Energy Guarantee (again)?
+
+  -
+    date: "August 2018"
+    text: >
+      Scott Morrison becomes Prime Minister.
+    change: "Morrison"
+
+
+chart:
+  years: [
+    2006, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+  ]
+
+  values:
+    - [  7,  8, 13, 13, 19, 18, 16, 15, 12, 11,  9, 10 ]
+    - [ 24, 32, 39, 40, 40, 45, 44, 38, 38, 36, 37, 31 ]
+    - [ 68, 60, 48, 46, 41, 36, 40, 45, 50, 53, 54, 59 ]

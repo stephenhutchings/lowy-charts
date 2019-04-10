@@ -1,0 +1,322 @@
+$blue: #539fd5
+
+*
+  box-sizing: border-box
+
+body
+  font-size: 15px
+  line-height: 1.2
+
+#controls
+  position: absolute
+  z-index: 10
+  left: 0
+  top: 240px
+  margin-top: 40px
+
+  @media (max-width: 600px)
+    left: 50%
+    margin-left: -44px
+    bottom: 0
+
+.btn
+  width: 40px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  // color: #969ba4
+  border: 1px solid
+  border-radius: 50%
+  float: left
+  margin-right: 8px
+  transition: all 300ms
+  cursor: pointer
+
+  @media (max-width: 600px)
+    width: 52px
+    height: 52px
+    line-height: 52px
+
+  &:hover,
+  &:focus
+    outline: none
+    color: #fff
+    border-color: #002B45
+    background: #002B45
+
+.wrapper
+  width: 960px
+  max-width: 100%
+  position: relative
+
+#content
+  padding-bottom: 20px
+
+#timeline
+  position: relative
+  height: 340px
+
+  @media (max-width: 800px)
+    height: 400px
+
+#frame
+  top: 0
+  bottom: 0
+  left: 0
+  right: 12px
+  min-width: 600px
+  position: absolute
+  transition: transform 800ms
+  border-top: 1px solid
+
+#years
+  position: absolute
+  top: 240px
+  left: 0
+  right: 0
+  height: 9px
+  z-index: -1
+  margin-top: -4px
+  border-left: 2px solid
+  border-right: 2px solid
+  line-height: 20px
+
+#years-inner
+  margin: 0 -3px
+  position: relative
+
+.year
+  position: absolute
+  top: 4px
+  bottom: 0
+  padding: 0 2px
+
+.year-border
+  border-top: 1px solid
+
+.year-label
+  padding-top: 4px
+  font-size: 13px
+  z-index: 2
+  letter-spacing: 0.02em
+  font-feature-settings: "onum" 1
+
+  &.dec
+    color: #58595b
+
+    @media (max-width: 600px)
+      display: none
+
+  &.cen
+    font-weight: bold
+
+#events
+  position: absolute
+  top: 240px
+  left: 0
+  right: 0
+
+.event
+  &.active
+    .event-text
+      opacity: 1
+
+    .event-marker,
+    .event-change
+      background: currentColor
+
+.event-marker
+  position: absolute
+  border: 1px solid
+  width: 9px
+  height: 9px
+  margin: -4px
+  background: #fff
+  border-radius: 50%
+  transition: border-color 300ms
+  cursor: pointer
+  z-index: 1
+  transform: translate3d(0, 0, 0)
+
+  &:after
+    content: ""
+    position: absolute
+    top: -12px
+    left: 0
+    right: 0
+    bottom: -12px
+
+.event-change
+  background: #cdced6
+  width: 5px
+  margin-left: -2px
+  border-left: 2px solid #fff
+  border-right: 2px solid #fff
+  position: absolute
+  bottom: 8px
+  height: 224px
+  cursor: pointer
+
+  &:after
+    content: ""
+    position: absolute
+    top: 0
+    left: -4px
+    right: -4px
+    bottom: 0
+
+.event-change-label
+  position: absolute
+  top: -20px
+  left: 2px
+  padding: 2px 0
+  font-size: 13px
+  transform-origin: left bottom
+  transform: rotate(90deg)
+  background: #fff
+
+.event-content
+  position: absolute
+  width: 320px
+  max-width: 100%
+  pointer-events: none
+  top: -240px
+  margin-top: 8px
+
+.event-text
+  z-index: 10
+  opacity: 0
+  float: left
+  transition: all 300ms
+  z-index: 1
+  text-align: left
+
+  .highlight &
+    background: orange
+
+#chart-wrapper
+  position: absolute
+  left: 40.909090909090914%
+  right: 4.545454545454546%
+  margin-right: -4px
+  top: 4px
+  height: 232px
+  pointer-events: none
+
+  svg
+    overflow: visible
+
+#chart
+  width: 100%
+  height: 100%
+
+.chart-group
+  circle
+    fill: #fff
+    stroke-width: 1.2
+  path
+    fill: none
+    stroke-width: 1.2
+    vector-effect: non-scaling-stroke
+
+  path.bg
+    stroke: #fff !important
+    stroke-width: 5
+
+  circle.bg
+    pointer-events: all
+    stroke: none !important
+
+#chart-group-0,
+#legend-key-0
+  circle, path, line
+    stroke: rgb(243, 115, 32)
+
+#chart-group-1,
+#legend-key-1
+  circle, path, line
+    stroke: rgb(112, 211, 211)
+
+#chart-group-2,
+#legend-key-2
+  circle, path, line
+    stroke: rgb(0, 80, 107)
+
+#chart-grid
+  width: 100%
+  top: -1px
+  bottom: -1px
+  position: absolute
+  z-index: -1
+
+.line
+  margin-right: -40px
+  height: (100% / 7)
+  border-top: 1px dotted #cdced6
+  position: relative
+
+  &:first-child,
+  &:last-child
+    opacity: 0
+
+.line-label
+  position: absolute
+  top: -8px
+  right: 100%
+  margin-right: 8px
+  font-size: 13px
+
+#legend
+  position: absolute
+  left: 120px
+  right: -20px
+  bottom: 0px
+  list-style: none
+  padding: 0
+  margin: 0
+  font-size: 13px
+
+.legend-key
+  padding-left: 24px
+  position: relative
+  width: 33%
+  float: left
+  margin: 0
+  padding-right: 20px
+  line-height: 16px
+
+  svg
+    width: 16px
+    height: 16px
+    position: absolute
+    top: 0
+    left: 0
+
+  circle
+    fill: #fff
+
+#pager
+  display: none
+
+@media (max-width: 800px)
+  #pager
+    position: absolute
+    right: 8px
+    top: 50%
+    margin-top: -9px
+    font-size: 14px
+    color: #aaa
+    display: block
+    top: auto
+    bottom: 0
+    right: 0
+    white-space: nowrap
+    padding: 4px 10px 4px 8px
+    background:  #e9eaec
+    border-radius: 12px
+    color: #58595b
+
+    #page
+      display: inline-block
+      width: 14px
+      text-align: center
