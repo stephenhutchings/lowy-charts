@@ -4,6 +4,7 @@ class MatchView extends Backbone.View
     "mouseleave [data-id]": "onLeave"
 
   initialize: ->
+    @splitter = @$el.data("splitter") or " "
     @$elements = @$("[data-id]")
     @$links = @$("[data-link]")
 
@@ -21,9 +22,9 @@ class MatchView extends Backbone.View
 
     @$elements
       .not($a)
-      .each (i, el) ->
+      .each (i, el) =>
         $b = $(el)
-        bl = $b.attr("data-list")?.split(" ")
+        bl = $b.attr("data-list")?.split(@splitter)
         $b
           .toggleClass("active", _.includes(bl, id))
           .toggleClass("inactive", not _.includes(bl, id))
