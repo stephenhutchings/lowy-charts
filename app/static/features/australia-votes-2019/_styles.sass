@@ -678,7 +678,7 @@ p > a
   .txt-md
     font-size: 18px
 
-@media (max-width: 600px)
+@media (max-width: 600px), (max-height: 720px)
   .hidden-sm,
   .page-issue .header-logo,
   .header-page,
@@ -725,6 +725,9 @@ p > a
 
   .bg-dk > .txt-border
     margin: -16px 0 48px
+
+    &:last-child
+      margin-bottom: 16px
 
   .scroll-item > .row,
   .scroll-item > .container
