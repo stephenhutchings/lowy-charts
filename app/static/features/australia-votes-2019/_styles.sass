@@ -96,8 +96,10 @@ $color-mt: #7c94a2
   width: 100%
   height: 100%
   object-fit: cover
+
 .bg-img-top
   object-position: top center
+
 .bg-img-abs
   position: absolute
   z-index: -1
@@ -114,7 +116,6 @@ $color-mt: #7c94a2
 
   .active &
     transform: translate3d(0, 0, 0)
-
 
 .img-pan
   width: 100%
@@ -550,6 +551,19 @@ p > a
   scroll-snap-align: start
   position: relative
 
+.txt-expert-author
+  position: relative
+  padding-top: 40px
+
+  &:before
+    content: ""
+    position: absolute
+    top: 12px
+    left: 50%
+    width: 24px
+    margin-left: -12px
+    border-top: 1px solid
+
 .digit
   overflow: hidden
   display: inline-block
@@ -631,6 +645,27 @@ p > a
 
       &:nth-child(#{$i})
         background: mix($color-dk, $color-hl, $ratio * 100%)
+
+@media (max-width: 1320px)
+  .container,
+  .scroll-item .row
+    max-width: none
+
+@media (max-width: 1280px), (max-height: 920px)
+  .txt-xxl
+    font-size: 48px
+  .txt-xl,
+  .txt-title
+    font-size: 32px
+  .txt-lg
+    font-size: 22px
+  .txt-md
+    font-size: 21px
+  .txt-expert-content
+    padding: 20px
+  .txt-border
+    max-width: none
+    padding-right: 0
 
 @media (max-width: 1000px), (max-height: 720px)
   .txt-xxl
