@@ -17,6 +17,10 @@ if process.env.NODE_ENV is "development"
 
 marked = (data) ->
   require("marked")(data, { smartypants: true, headerIds: false })
+    .replace(
+      /(<a href="http[^>]+)>/g,
+      "$1 target=\"_blank\" rel=\"noreferrer\">"
+    )
 
 exports.config =
   paths:
@@ -127,9 +131,10 @@ exports.config =
   framework: "backbone"
 
   hooks:
-    onCompile: ->
-      fs.rename(
-        "#{__dirname}/build/redirects",
-        "#{__dirname}/build/_redirects", (err) ->
-          console.log err if err?
-      )
+    onCompile: (generatedFiles, changedAssets) ->
+      if _.find(changedAssets, path: "app/assets/redirects")
+        fs.rename(
+          "#{__dirname}/build/redirects",
+          "#{__dirname}/build/_redirects", (err) ->
+            console.log err if err?
+        )
