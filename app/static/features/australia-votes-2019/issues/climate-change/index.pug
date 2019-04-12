@@ -45,8 +45,10 @@ block scroller
  
     .row
       .col-fw.bg-hl.txt-ff.frame
-        img.bg-img.bg-img-abs(src="../../img/coal-station.jpg")
-        .caption.txt-dk Photo: Pete the Poet / Flickr
+        img.bg-img.bg-img-abs(data-src="../../img/coal-station.jpg")
+        .caption.txt-dk
+          :marked
+            Photo: [Pete the Poet / Flickr][https://www.flickr.com/photos/17674930@N07/28793387965]
         .txt-lg.p-md(style="max-width: 720px;line-height: 1")
           .bg-bar.bg-dk(style="width: 58%")
           span(data-view="counter") 58% of Australians

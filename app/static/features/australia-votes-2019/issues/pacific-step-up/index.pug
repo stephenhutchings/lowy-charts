@@ -1,12 +1,17 @@
 extend ../../partials/issue
 
 block append config
-  - page.title = "Pacific Islands"
+  - page.title = "Pacific Step-up"
 
 block intro-image
-  img.bg-img(data-src="../../img/pacific.jpg")
+  img.bg-img.bg-img-abs(data-src="../../img/pacific.jpg")
+  img.bg-img-abs(data-src="../../img/pam-mask.png" width="100%" height="100%")
 
 block intro-caption
+  :marked
+    [The Pacific Aid Map][1] tracks all aid spending in the Pacific
+
+    [1]: https://pacificaidmap.lowyinstitute.org/
 
 block intro-description
   :marked
@@ -33,16 +38,16 @@ block scroller
       .col-1-2.p-md.bg-dk.txt-ff
         .txt-md.txt-border.ph-md.txt-left
           :marked
-            To reassert Australia’s position as the ‘partner of
-            choice’, and signal to China to steer clear of investments that
-            threaten Australia’s position in the region, the government has
-            announced more resources for the Pacific. In the last six months
-            they have committed to sizable aid increases,
-            allocating $1.4 billion in foreign aid in 2019-20 to the Pacific.
-            More investment includes a $2 billion infrastructure lending
-            facility and a $1 billion capital guarantee to Australia’s Export
-            Finance and Insurance Corporation. The government will also open
-            new diplomatic missions, and a Pacific office within DFAT.
+            To reassert Australia’s position as the ‘partner of choice’, and
+            signal to China to steer clear of investments that threaten
+            Australia’s position in the region, the government has announced
+            more resources for the Pacific. In the last six months they have
+            committed to sizable aid increases, allocating $1.4 billion in
+            foreign aid in 2019-20 to the Pacific. More investment includes a
+            $2 billion infrastructure lending facility and a $1 billion capital
+            guarantee to Australia’s Export Finance and Insurance Corporation.
+            The government will also open new diplomatic missions, and a
+            Pacific office within DFAT.
  
     .row
       .col-fw.bg-hl.txt-ff.frame
@@ -62,7 +67,15 @@ block scroller
       .col-1-2.p-md.bg-dk.txt-ff
         .txt-md.txt-border.ph-md.txt-left
           :marked
-            Speaking at the Lowy Institute in 2018, opposition leader Bill Shorten affirmed that the Pacific is crucial to Australia’s future and that Labor supported an increased focus on the region. It is unlikely that any of the recent announcements will be reversed or markedly changed. Climate change policy, both domestically and in the Pacific, will stand out as a major point of difference. The ALP’s commitments will remain larger the same as the Coalition, although it will push for a Pacific Bank instead of an infrastructure lend facility.
+            Speaking at the Lowy Institute in 2018, opposition leader Bill
+            Shorten affirmed that the Pacific is crucial to Australia’s future
+            and that Labor supported an increased focus on the region. It is
+            unlikely that any of the recent announcements will be reversed or
+            markedly changed. Climate change policy, both domestically and in
+            the Pacific, will stand out as a major point of difference. The
+            ALP’s commitments will remain larger the same as the Coalition,
+            although it will push for a Pacific Bank instead of an
+            infrastructure lend facility.
  
     .row
       .col-fw.bg-lt.frame
