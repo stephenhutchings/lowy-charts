@@ -206,10 +206,12 @@ sup
   position: absolute
   right: 0
   bottom: 12px
-  background: $color-hl
   color: $color-ff
   padding: 8px
   font-family: Sans, sans-serif
+
+  &:not([class*="bg"])
+    background: $color-hl
 
   &.txt-source-border
     border: 1px solid
