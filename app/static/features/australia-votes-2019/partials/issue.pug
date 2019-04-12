@@ -12,7 +12,7 @@ block append config
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/australia-votes-2019/"
   - page.url += "issues/" + page.issue
-  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.metaTitle = `${page.title} - Australian Election 2019 – Lowy Insitute`
 
 block page
   include header
@@ -34,10 +34,11 @@ block page
       .row
         .col-1-2
           .fill
-            .row.pv-sm
+            .row
               .col-fw.p-md
-                .p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
-                .txt-xxl.pv-sm= page.title
+                .pv-xs
+                  .p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
+                .txt-xxl.pv-xs= page.title
             .row.bg-lt
               .col-fw
                 .img-pan

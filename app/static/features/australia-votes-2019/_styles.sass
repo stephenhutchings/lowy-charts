@@ -190,7 +190,8 @@ sup
 
 .txt-border
   border-left: 4px solid #30b3ff
-  max-width: 512px
+  max-width: 480px
+  position: relative
 
   > p
     margin: -0.2em 0 -0.3em
@@ -465,6 +466,20 @@ p > a
   background: url("/features/australia-votes-2019/img/price-tag.svg") no-repeat center
   background-size: 640px
 
+.bar-wrap
+  margin-right: 32px
+
+.bar
+  position: relative
+  height: 20px
+  line-height: 20px
+  margin: 4px 0 8px
+
+  .bar-label
+    position: absolute
+    left: 100%
+    margin-left: 8px
+
 .map-caption
   position: absolute
   left: 0
@@ -472,13 +487,18 @@ p > a
   padding: 16px
   max-width: 424px
 
+  a
+    text-decoration: underline
+    &:hover
+      color: $color-dk
+
 .flags-caption
   position: absolute
   right: 5%
   bottom: 16%
   padding: 16px
   max-width: 160px
-  background-color: #007dba
+  // background-color: #007dba
 
 #scroller
   margin: auto
@@ -528,6 +548,10 @@ p > a
     float: left
     position: relative
 
+    a > span
+      border-bottom: 1px solid transparent
+      transition: all 450ms cubic-bezier(0.7, 0.7, 0.3, 1)
+
     a
       display: block
       height: 100%
@@ -546,15 +570,25 @@ p > a
         left: 0
         right: 0
         bottom: 0
-        background-color: $color-ff
-        transform: translate3d(70%, 0, 0) skewX(-30deg)
+        background-color: $color-dk
+        transform: translate3d(120%, 0, 0) skewX(-30deg)
         transition: all 450ms cubic-bezier(0.7, 0.7, 0.3, 1)
         z-index: -1
-        opacity: 0
+        // opacity: 0
 
-      &:hover:before
-        opacity: 1
-        transform: translate3d(0, 0, 0)
+      &:hover
+        color: $color-ff
+
+        span
+          border-bottom-color: $color-hl
+
+        &:before
+          opacity: 1
+          transform: translate3d(0, 0, 0) !important
+
+    &:nth-child(2n)
+      a:before
+        transform: translate3d(-120%, 0, 0) skewX(-30deg)
 
     @for $i from 1 through 10
       $ratio: 1 - ($i - 1) / 9
