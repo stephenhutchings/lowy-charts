@@ -689,7 +689,7 @@ p > a
     flex-direction: column
 
   .bg-dk > .txt-border
-    margin: -16px 0 16px
+    margin: -16px 0 48px
 
   .scroll-item > .row,
   .scroll-item > .container
@@ -771,6 +771,23 @@ p > a
 
   .link-grid li a > span
     border: none
+
+  .txt-source
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    padding-right: 40px
+    max-width: 280px
+
+    em
+      margin-right: -40px
+      position: absolute
+      right: 0
+      top: 0
+      margin: 0
+
+    p
+      display: inline
 
 @keyframes prompt
   to
