@@ -1,3 +1,4 @@
+_    = require("lodash")
 fs   = require("fs")
 data = require("./utils/data")
 git  = require("git-rev-sync")
