@@ -645,15 +645,26 @@ p > a
 
 @media (max-width: 600px)
   .hidden-sm,
-  .header-title,
+  .page-issue .header-logo,
   .header-page,
   .scroll-prompt,
+  .social-share-label,
   #footer
     display: none
+
+  .page-issue #header .header-title
+    line-height: 16px
+    text-align: left
+    padding: 12px 0px
+    max-width: 240px
+    margin-left: 0
 
   #header .social-share
     display: flex
     float: right
+
+  #header:before
+    margin: 0 -8px
 
   #scroller
     scroll-snap-type: none
@@ -748,9 +759,6 @@ p > a
       mix-blend-mode: normal
       border-color: rgba($color-dk, 0.1)
 
-  .page-0 #header
-    opacity: 1
-
   #header
     line-height: 56px
     height: 56px
@@ -758,15 +766,11 @@ p > a
     .header-logo
       padding: 16px 0
 
-  #footer
-    line-height: 40px
-    height: 40px
-
-  .pager .pager-link
-    height: 40px
-
   .container
     padding: 0 8px
+
+  .link-grid li a > span
+    border: none
 
 @keyframes prompt
   to

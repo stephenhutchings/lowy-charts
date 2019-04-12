@@ -3,7 +3,7 @@ extend /partials/layout
 block append config
   script.
     console.warn("Remember to update the metadata before publishing.")
-  - page.class = "page-0"
+  - page.class = "page-issue page-0"
   - page.image = "./img/thumbnail.png"
   - page.issue = __.filepath.match(/([^\/]+)\/index.pug$/)[1]
   - page.feature = data.getOne("static/features/australia-votes-2019/data")
