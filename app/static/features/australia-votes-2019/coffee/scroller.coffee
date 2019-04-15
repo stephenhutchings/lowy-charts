@@ -1,6 +1,7 @@
 require.register "views/scroller", (exports, require, module) ->
   easie = require("lib/easie")
   utils = require("lib/utils")
+  keycode  = require("lib/keycode")
 
   class ScrollerView extends Backbone.View
     events:
@@ -18,9 +19,7 @@ require.register "views/scroller", (exports, require, module) ->
         index: $(@$el.data("index"))
         items: $(".pager-item")
 
-      @onResize()
       @listenTo this, "resize", @onResize
-
 
       timeout = null
 
@@ -32,18 +31,35 @@ require.register "views/scroller", (exports, require, module) ->
         , if @data.support then 10 else 300
       )
 
+      $(window).on "keydown", _.bind(@onKey, this)
+
       timeout = window.setTimeout =>
         @onScrollEnd()
+        @onResize()
       , 1
 
     onResize: ->
+      @inactive = $(window).width() < 600 or $(window).height() < 720
 
+      if @inactive
+        @$elements.items.addClass("active")
+        @$el.children().addClass("active")
+        @$("[data-view]").trigger("show")
 
     onScroll: ->
+      return if @inactive
+
       i  = Math.floor @el.scrollTop / @el.offsetHeight
       i2 = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
       t1 = (@el.scrollTop / @el.offsetHeight) % 1
       t2 = Math.sin(Math.PI * t1)
+
+      unless @data.support
+        window.clearTimeout(@timeout)
+        @timeout = window.setTimeout =>
+          index = Math.round @el.scrollTop / @el.offsetHeight
+          @el.scrollTo top: index * @el.offsetHeight, behavior: 'smooth'
+        , 40
 
       w  = 120
       r  = 10
@@ -72,11 +88,24 @@ require.register "views/scroller", (exports, require, module) ->
       @$elements.pager.children().eq(2).css
         "transform": "translate3d(#{w * ((ow) / r) * 100}%, 0, 0)"
 
-    onScrollEnd: ->
-      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
+    onKey: (e) ->
+      type = keycode(e)
+      height = @el.offsetHeight
+      index = Math.round @el.scrollTop / height
 
-      unless @data.support
-        @el.scrollTo top: index * @el.offsetHeight, behavior: 'smooth'
+      if type is "UP" or type is "LEFT"
+        e.preventDefault()
+        @el.scrollTo top: (index - 1) * height, behavior: 'smooth'
+
+      if type is "DOWN" or type is "RIGHT"
+        e.preventDefault()
+        @el.scrollTo top: (index + 1) * height, behavior: 'smooth'
+
+    onScrollEnd: ->
+      return if @inactive
+
+      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
+      isEnd = @el.scrollTop % @el.offsetHeight is 0
 
       if index isnt @data.i
         $("body")
@@ -88,11 +117,14 @@ require.register "views/scroller", (exports, require, module) ->
           h: @el.offsetHeight
           i: index
 
+       if isEnd
         for child, i in @el.children
           child.classList.toggle("active", i is @data.i)
+
           $("[data-view]", child).trigger(
             if i is @data.i then "show" else "hide"
           )
+
 
         window.ga?("send", "event", "Scroller", "show", document.title, index)
 

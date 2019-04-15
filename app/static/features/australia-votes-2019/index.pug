@@ -3,11 +3,12 @@ extend /partials/layout
 block append config
   script.
     console.warn("Remember to update the metadata before publishing.")
+  - page.includeFonts = false
   - page.url = "https://interactives.lowyinstitute.org/features/australia-votes-2019/"
   - page.class = "page-0 page-menu"
-  - page.title = "Australia's Election"
+  - page.title = "Australian Election 2019: Where the parties stand"
   - page.metaTitle = `${page.title} - Lowy Institute`
-  - page.description = "";
+  - page.description = "Discover what the government, Opposition, Lowy Institute experts, and the Australian public say about the key policies shaping Australia’s place in the world.";
   - page.image = "./img/thumbnail.png"
   - page.robots = "noindex, nofollow"
   - page.feature = data.getOne("static/features/australia-votes-2019/data")
@@ -22,13 +23,7 @@ block page
     )
       block
 
-  #scroller(
-    data-view="scroller" 
-    data-pager=".pager-page" 
-    data-index=".pager-index"
-    data-min="1"
-    data-max="12"
-  )
+  #scroller
     +item("intro")
       .row
         .col-1-2.num-lf.pv-md
@@ -38,7 +33,7 @@ block page
             .txt-xxl.ph-sm.pv-xs(style="max-width: 440px") 
               | Australian election 2019: Where the parties&nbsp;stand
             
-            .pv-sm
+            .pv-sm.active
               .stripe-lt
 
             .ph-sm.intro-description.txt-sans.mxw.pv-xs(style="max-width: 400px") 
@@ -66,12 +61,6 @@ block page
   .container
     footer#footer
 
-
 block append css
   style
     include:sass _styles.sass
-
-block append scripts
-  script
-    include:coffee coffee/scroller.coffee
-    include:coffee coffee/counter.coffee

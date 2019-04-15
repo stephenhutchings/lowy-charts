@@ -2,6 +2,7 @@ include mixins
 
 block config
   - var page = {};
+  - page.includeFonts = true
   - page.description  = "Lowy Institute Charts";
   - page.style        = {};
   - page.author       = "Lowy Institute";
@@ -56,12 +57,13 @@ html.no-js(lang="en")
 
 
       block css
-        link(
-          type="text/css"
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Montserrat:500"
-          media="all"
-        )
+        if page.includeFonts
+          link(
+            type="text/css"
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Montserrat:500"
+            media="all"
+          )
 
         link(rel="stylesheet" href=`/css/app.${version}.css`)
 

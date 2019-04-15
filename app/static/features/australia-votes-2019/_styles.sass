@@ -15,7 +15,19 @@ $color-mt: #7c94a2
 .bg-ff
   background: $color-ff
 .bg-ffs
-  box-shadow: -8px 0 $color-ff, 8px 0 $color-ff
+  box-shadow: -32px 0 $color-ff, 32px 0 $color-ff
+  line-height: 1.5
+  padding: 6px 0
+  transform: translate3d(0, 40px, 0)
+  color: transparent !important
+  opacity: 0
+
+  .active &
+    transition: all 800ms, color 800ms 300ms
+    opacity: 1
+    box-shadow: -8px 0 $color-ff, 8px 0 $color-ff
+    transform: translate3d(0, 0, 0)
+    color: $color-dk !important
 
 .txt-hl
   color: lighten($color-hl, 2)
@@ -133,10 +145,10 @@ $color-mt: #7c94a2
   z-index: 1
 
 .txt-sans
-  font-family: Sans
+  font-family: Sans, sans-serif
 
 .txt-cond
-  font-family: Cond
+  font-family: Cond, sans-serif
 
 // Font size
 .txt-xxl
@@ -158,26 +170,13 @@ $color-mt: #7c94a2
 .txt-sm
   font-size: 14px
   line-height: inherit
-  font-family: Sans
+  font-family: Sans, sans-serif
 
 .txt-links
   font-size: 32px
 
 .lead-tight
   line-height: 1
-
-.txt-highlight
-  display: flex
-  flex-direction: column
-  align-items: center
-  list-style: none
-
-  span + span
-    margin-top: -8px
-    padding-top: 4px
-
-  li
-    margin: 4px 0
 
 sup
   a
@@ -205,9 +204,10 @@ sup
 .txt-source
   position: absolute
   right: 0
-  bottom: 12px
+  bottom: 8px
   color: $color-ff
   padding: 8px
+  font-weight: 400
   font-family: Sans, sans-serif
 
   &:not([class*="bg"])
@@ -303,6 +303,10 @@ strong, .txt-tu, .caption
   padding: 0 12px
   margin: auto
   box-sizing: border-box
+
+#scroll-item-links
+  .container
+    height: 100%
 
 #header-bg
   position: absolute
@@ -519,6 +523,18 @@ p > a
     left: 100%
     margin-left: 8px
 
+.mx-480,
+.mx-320,
+.mx-240
+  margin: auto
+
+.mx-480
+  max-width: 480px
+.mx-320
+  max-width: 320px
+.mx-240
+  max-width: 240px
+
 .map-caption
   position: absolute
   left: 0
@@ -561,6 +577,8 @@ p > a
 .txt-expert-author
   position: relative
   padding-top: 40px
+  max-width: 280px
+  margin: auto
 
   &:before
     content: ""
@@ -631,9 +649,9 @@ p > a
         transform: translate3d(100%, 0, 0)
         transition: all 450ms cubic-bezier(0.7, 0.7, 0.3, 1)
         z-index: -1
-        // opacity: 0
 
-      &:hover
+      &:hover,
+      &:focus
         color: $color-ff
 
         span
@@ -665,25 +683,39 @@ p > a
   .txt-title
     font-size: 32px
   .txt-lg
-    font-size: 22px
+    font-size: 26px
   .txt-md
     font-size: 21px
   .txt-expert-content
-    padding: 20px
+    padding: 20px 40px
   .txt-border
     max-width: none
     padding-right: 0
 
+  #header
+    line-height: 56px
+    height: 56px
+
+    .header-logo
+      padding: 16px 0
+
+
+  #footer, .pager .pager-link
+    height: 48px
+    line-height: 48px
+
 @media (max-width: 1000px), (max-height: 720px)
   .txt-xxl
-    font-size: 48px
+    font-size: 44px
   .txt-xl,
   .txt-title
-    font-size: 24px
+    font-size: 28px
   .txt-lg
-    font-size: 20px
+    font-size: 24px
   .txt-md
     font-size: 18px
+  .txt-expert-content
+    padding: 20px
 
 @media (max-width: 600px), (max-height: 720px)
   .hidden-sm,
@@ -804,13 +836,6 @@ p > a
       mix-blend-mode: normal
       border-color: rgba($color-dk, 0.1)
 
-  #header
-    line-height: 56px
-    height: 56px
-
-    .header-logo
-      padding: 16px 0
-
   .container
     padding: 0 8px
 
@@ -833,6 +858,49 @@ p > a
 
     p
       display: inline
+
+  #scroll-item-1,
+  #scroll-item-2,
+  #scroll-item-3
+    margin-top: 20px
+    padding-top: 12px
+    position: relative
+
+    &:before
+      content: ""
+      position: absolute
+      left: 16px
+      right: 16px
+      border-top: 1px solid $color-lt
+      top: 0
+
+  .page-issue .bg-dk
+    background: transparent
+
+    &.txt-ff,
+    .txt-ff
+      color: $color-dk
+
+  .row > .bg-hl,
+  .row > .bg-lt
+    border-left: 16px solid #fff
+    border-right: 16px solid #fff
+    box-sizing: border-box
+
+  .txt-expert-content .block
+    max-height: none
+
+  .price-tag
+    background-size: 400px
+
+  .link-grid
+    height: auto
+
+    li
+      height: 96px
+
+  .txt-source
+    border: 1px solid $color-hl
 
 @keyframes prompt
   to
