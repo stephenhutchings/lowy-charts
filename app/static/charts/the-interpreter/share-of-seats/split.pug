@@ -3,132 +3,142 @@ extend /partials/layout
 block append config
   - page.data = data.getOne("static/charts/the-interpreter/share-of-seats/split")
   - page.data.elections.forEach(function(e){e.date = new Date(e.start); })
-  - page.data.elections = _.sortBy(page.data.elections, "date").filter((e) => e.date - new Date("1 January 1985") > 0)
+  - page.data.elections = _.sortBy(page.data.elections, "date").filter((e) => e.date - new Date("May 18 1965") > 0)
   - helpers = r("./" + __.directory + "/utils.coffee")
 
 block page
-  - var d1 = new Date(page.data.elections.slice(-1)[0].date);
-  - var d0 = new Date(page.data.elections[0].date);
+  - var d1 = new Date("May 18 2019");
+  - var d0 = new Date("May 18 1969");
   - var dd = moment(d1).diff(d0);
-  - var h = 800, w = 1200
+  - var w = 1000
 
-  //- 
-    svg(width=w + 8*2 height=h)
-      - var paths = [[],[],[]];
-      rect(x=0 y=0 width=w height=h fill="#fff")
+  .pv-md
+    h4.txt-bold Share of Power
+    p
+      | 1969–2019
+      br
+      | Coalition / Labor / Others
+      br
+      | Normalised across change in number of members.
 
-      for e,i in page.data.elections
-        - var d = new Date(e.date)
-        - x = ((d - d0) / dd) * w
-        g(transform="translate(8 0)" data-total=e.coalition + e.labor + e.others)
-          - y = (1 - e.coalition / 600) * h
-          - y2 = (1 - e.labor / 600) * h
-          circle(cx=x cy=y r=3 fill="blue")
-          line(x1=x x2=x y1=y y2=y2 stroke="blue")
-          - paths[0][i] = {x:x,y:y}
-
-          - y = (1 - e.labor / 600) * h
-          //- circle(cx=x cy=y r=3 fill="red")
-          //- line(x1=x x2=x y1=y y2=h stroke="red")
-          - paths[1][i] = {x:x,y:y}
-
-          - y = (1 - e.others / 600) * h
-          //- circle(cx=x cy=y r=3 fill="grey")
-          //- line(x1=x x2=x y1=y y2=h stroke="grey")
-          - paths[2][i] = {x:x,y:y}
-
-
-          - y = (1 - ((e.coalition + e.labor) / 2) / 600) * h
-          circle(cx=x cy=y r=3 fill="lightgrey")
-
-      g(transform="translate(8 0)")
-        - c = function(p){return `M 0,${h} ${helpers.simplify(helpers.interpolate(p), 20).map(function(e){return `L ${e.x},${e.y}`}).join(" ")} L ${w},${h} Z`}
-        - c = function(p){return `M 0,${h} ${helpers.catmullRomBezier(helpers.simplify(helpers.interpolate(p), 33, true), 0.5)} L ${w},${h} Z`}
-        path.a0(d=c(paths[0]))
-        path.a1(d=c(paths[1]))
-        path.a2(d=c(paths[2]))
-
-  for filter in [{house: "lower", government: "FED"}, {house: "lower", government: "NSW"}, {house: "lower", government: "VIC"}, {house: "lower", government: "QLD"}, {house: "lower", government: "WA"}, {house: "lower", government: "SA"}, {house: "lower", government: "NT"}, {house: "lower", government: "ACT"}, {house: "upper", government: "FED"}, {house: "upper", government: "NSW"}, {house: "upper", government: "TAS"}, {house: "upper", government: "WA"}]
-    - var paths = [[],[],[]], h = 400;
+  for filter in [{government: "FED", house: "lower"},{government: "FED", house: "upper"},{government: "ACT", house: "lower"},{government: "NSW", house: "lower"},{government: "NSW", house: "upper"},{government: "NT", house: "lower"},{government: "QLD", house: "lower"},{government: "SA", house: "lower"},{government: "TAS", house: "upper", },{government: "VIC", house: "lower"},{government: "WA", house: "lower"},{government: "WA", house: "upper"}]
+    - var paths = [[],[],[]], h = 240;
     - var list = _.where(page.data.elections, filter)
 
-    p
-      span
-        | Government: #{filter.government}
-        | House: #{filter.house}
+    .pv-sm
+      p
+        strong
+          | #{filter.government} –
+          | #{written.capitalize(filter.house)} House
 
-    //- svg(width=w + 8*2 height=h)
-      rect(x=0 y=0 width=w height=h fill="#fff")
+      p Top dawg
+        svg(width=w+40 height=h viewBox="-20 0 1040 240")
+          rect(x=0 y=0 width=w height=h fill="#fff")
 
-      for e, i in list
-        - var d = new Date(e.date)
-        - var max = _.max(list.map(function(e){return Math.max(e.coalition, e.labor, e.other)}))
-        - x = ((d - d0) / dd) * w
-        - if (i == 0) x0 = x
-        g(transform="translate(8 0)" data-total=e.coalition + e.labor + e.other)
-          - t = e.coalition + e.labor + e.other
-          - y = (1 - e.coalition / t) * h
-          circle(cx=x cy=y r=3 fill="blue")
-          //- line(x1=x x2=x y1=y y2=h stroke="blue")
-          - paths[0][i] = {x:x,y:y}
+          g
+            for n, i in new Array(51)
+              - d = i / 50
+              line.tick(
+                x1=d*w
+                x2=d*w
+                y1=28
+                y2="100%"
+                class=(i % 5 === 0 ? "y5" : "y1")
+              )
+              if i % 5 === 0
+                text(text-anchor="middle" x=d*w y=20)= 1969 + d * 50
 
-          - y = (1 - e.labor / t) * h
-          circle(cx=x cy=y r=3 fill="red")
-          //- line(x1=x x2=x y1=y y2=h stroke="red")
-          - paths[1][i] = {x:x,y:y}
+          for e, i in list
+            - var d = new Date(e.date)
+            - var max = _.max(list.map(function(e){return Math.max(e.coalition, e.labor, e.other)}))
+            - x = ((d - d0) / dd) * w
+            - if (i == 0) x0 = x
+            g
+              - t = e.coalition + e.labor + e.other
+              - y = (1 - e.coalition / t) * h
+              circle(cx=x cy=y r=3 fill="blue")
+              if e.coalition > 0
+                text(x=x y=(e.coalition > e.labor ? y - 8 : y + 16) text-anchor="middle")= e.coalition
+              - paths[0][i] = {x:x,y:y}
 
-          - y = (1 - e.other / t) * h
-          circle(cx=x cy=y r=3 fill="#fff")
-          //- line(x1=x x2=x y1=y y2=h stroke="grey")
-          - paths[2][i] = {x:x,y:y}
+              - y = (1 - e.labor / t) * h
+              circle(cx=x cy=y r=3 fill="red")
+              if e.labor > 0
+                text(x=x y=(e.coalition < e.labor ? y - 8 : y + 16) text-anchor="middle")= e.labor
+              - paths[1][i] = {x:x,y:y}
+
+              - y = (1 - e.other / t) * h
+              circle(cx=x cy=y r=3 fill="#ccc")
+              if e.other > 0
+                text(x=x y=(e.other / t < .1 ? y - 8 : y + 16) text-anchor="middle" data-d=e.other / t)= e.other
+              - paths[2][i] = {x:x,y:y}
 
 
-          - y = (1 - ((e.coalition + e.labor) / 2) / max) * h
-          //- circle(cx=x cy=y r=3 fill="lightgrey")
+              - y = (1 - ((e.coalition + e.labor) / 2) / max) * h
 
-      g(transform="translate(8 0)")
-        - c = function(p){return `M ${x0},${h} ${helpers.catmullRomBezier(p, 0.5)} L ${x},${h} Z`}
-        - cc = function(p){return `M ${p[0].x},${p[0].y} ${helpers.catmullRomBezier(p, 0.5)}`}
-        path.a0(d=c(paths[0]))
-        path.a1(d=c(paths[1]))
-        path.a2(d=cc(paths[2]))
+          g
+            - c = function(p){return `M ${x0},${h} ${helpers.catmullRomBezier(p, 0.5)} L ${w},${h} Z`}
+            - cc = function(p){return `M ${p[0].x},${p[0].y} ${helpers.catmullRomBezier(p, 0.5)}`}
+            path.a0(d=c(paths[0].concat({y:_.last(paths[0]).y,x:w})))
+            path.a1(d=c(paths[1].concat({y:_.last(paths[1]).y,x:w})))
+            path.a2(d=cc(paths[2].concat({y:_.last(paths[2]).y,x:w})))
 
-    - h = 120
-    - var max = _.max(list.map(function(e){return e.coalition + e.labor + e.other}))
+      - h = 200
+      - var max = _.max(list.map(function(e){return e.coalition + e.labor + e.other}))
 
-    svg(width=w + 8*2 height=h data-list=list)
-      rect(x=.5 y=.5 width=w-1 height=h-1 fill="#fff" stroke="#eee")
+      p Trend
+        svg(width=w height=h)
+          rect(x=.5 y=.5 width=w-1 height=h-1 fill="#fff")
 
-      for e, i in list
-        - var d = new Date(e.date)
-        - x = ((d - d0) / dd) * w
-        - t = e.coalition + e.labor + e.other
+          for e, i in list
+            - var d = new Date(e.date)
+            - x = ((d - d0) / dd) * w
+            - t = e.coalition + e.labor + e.other
 
-        - y = (1 - e.coalition / t) * h
-        - paths[0][i] = {x:x,y:y}
+            - y = (1 - e.coalition / t) * h
+            - paths[0][i] = {x:x,y:y}
 
-        - y = (1 - (e.coalition + e.other) / t) * h
-        - paths[1][i] = {x:x,y:y}
+            - y = (1 - (e.coalition + e.other) / t) * h
+            - paths[1][i] = {x:x,y:y}
 
-      - paths[0] = _.filter(paths[0], ((e) => e.y >= 0))
-      - paths[0].push({y: _.last(paths[0]).y, x: w})
-      - paths[1] = _.filter(paths[1], ((e) => e.y >= 0))
-      - paths[1].push({y: _.last(paths[1]).y, x: w})
+          - paths[0] = _.filter(paths[0], ((e) => e.y >= 0))
+          - paths[0].push({y: _.last(paths[0]).y, x: w})
+          - paths[1] = _.filter(paths[1], ((e) => e.y >= 0))
+          - paths[1].push({y: _.last(paths[1]).y, x: w})
 
-      g(data-paths=paths)
-        - c = function(p){return `M ${_.first(p).x},${h} ${helpers.catmullRomBezier(p, 1)} L ${_.last(p).x},${h} Z`}
-        - cc = function(p){return `M ${_.first(p).x},${0} ${helpers.catmullRomBezier(p, 1)} L ${_.last(p).x},${0} Z`}
-        - ccc = function(p){return `M ${p[0].x},${p[0].y} ${helpers.catmullRomBezier(p, 1)}`}
-        - cx = function(p){return `M ${p[0].x},${p[0].y} ${p.map((e,i) => [e.x,e.y].join(",")+ " L " + [(p[i+1]||{x:w}).x,e.y].join(",")).join(" L ")}`}
-        path.a4(d=c(paths[0]) fill="blue")
-        path.a5(d=cc(paths[1]) fill="red")
-        //- path(d=ccc(paths[0]) stroke="blue" fill="none")
-        //- path(d=ccc(paths[1]) stroke="red" fill="none")
+          g(data-paths=paths)
+            - c1 = function(p){return `M ${_.first(p).x},${h} ${helpers.catmullRomBezier(p, 1)} L ${_.last(p).x},${h} Z`}
+            - c2 = function(p){return `M ${_.first(p).x},${0} ${helpers.catmullRomBezier(p, 1)} L ${_.last(p).x},${0} Z`}
+            path.a4(d=c1(paths[0]) fill="blue")
+            path.a5(d=c2(paths[1]) fill="red")
 
-        path(d=cx(paths[0]) stroke="blue" fill="none")
-        path(d=cx(paths[1]) stroke="red" fill="none")
-        line(stroke="#000" x1=_.first(paths[0]).x x2=_.last(paths[0]).x y1="50%" y2="50%")
-        //- path.a3(d=ccc(paths[0], paths[1].reverse()))
+      p Actual
+        svg(width=w height=h)
+          rect(x=.5 y=.5 width=w-1 height=h-1 fill="#fff")
+
+          for e, i in list
+            - var d = new Date(e.date)
+            - x = ((d - d0) / dd) * w
+            - t = e.coalition + e.labor + e.other
+
+            - y = (1 - e.coalition / t) * h
+            - paths[0][i] = {x:x,y:y}
+
+            - y = (1 - (e.coalition + e.other) / t) * h
+            - paths[1][i] = {x:x,y:y}
+
+          - paths[0] = _.filter(paths[0], ((e) => e.y >= 0))
+          - paths[0].push({y: _.last(paths[0]).y, x: w})
+          - paths[1] = _.filter(paths[1], ((e) => e.y >= 0))
+          - paths[1].push({y: _.last(paths[1]).y, x: w})
+
+          g(data-paths=paths)
+            - c1 = function(p){return `M ${_.first(p).x},${h} ${p.map((e,i) => [e.x,e.y].join(",")+ " L " + [(p[i+1]||{x:w}).x,e.y].join(",")).join(" L ")} L ${_.last(p).x},${h} Z`}
+            - c2 = function(p){return `M ${_.first(p).x},${0} ${p.map((e,i) => [e.x,e.y].join(",")+ " L " + [(p[i+1]||{x:w}).x,e.y].join(",")).join(" L ")} L ${_.last(p).x},${0} Z`}
+            rect(fill="none" stroke="#ccc" x=0 y=0 width=w height=h)
+            path.a4(d=c1(paths[0]))
+            path.a5(d=c2(paths[1]))
+            line(stroke="#000" x1=_.first(paths[0]).x x2=_.last(paths[0]).x y1="50%" y2="50%")
 
   svg
     defs
@@ -139,14 +149,25 @@ block page
         stop(offset="0%"   stop-color="rgba(230,50,50,1.00)")
         stop(offset="100%" stop-color="rgba(230,50,50,0.25)")
       linearGradient(x1="0%" y1="0%" x2="0%" y2="100%" id="g-coalition-2")
-        stop(offset="0%"   stop-color="rgba(50,80,230,0.2)")
-        stop(offset="100%" stop-color="rgba(50,80,230,0)")
+        stop(offset="0%"   stop-color="rgba(50,80,230,0.6)")
+        stop(offset="100%" stop-color="rgba(50,80,230,0.2)")
       linearGradient(x1="0%" y1="100%" x2="0%" y2="0%" id="g-labor-2")
-        stop(offset="0%"   stop-color="rgba(230,50,50,0.2)")
-        stop(offset="100%" stop-color="rgba(230,50,50,0)")
+        stop(offset="0%"   stop-color="rgba(230,50,50,0.6)")
+        stop(offset="100%" stop-color="rgba(230,50,50,0.2)")
+
 
   style
     :sass
+      body, h1, h2, h3, h4
+        font-family: Sans, sans-serif
+      body
+        font-size: 14px
+        text-align: center
+
+      svg
+        margin: auto
+        overflow: visible
+
       .a0,
       .a1
         fill-opacity: 0.85
@@ -154,6 +175,13 @@ block page
 
       line
         stroke-opacity: 0.2
+
+      .tick.y1
+        stroke: #eee
+        stroke-opacity: 1
+      .tick.y5
+        stroke: #ccc
+        stroke-opacity: 1
 
       .a0
         fill: blue
@@ -168,8 +196,8 @@ block page
         fill: red
         fill: url(#g-labor-2)
       .a2
-        stroke: #fff
+        stroke: #ccc
         fill: none
-        mix-blend-mode: screen
+        mix-blend-mode: luminosity
       .a3
         fill: #ccc

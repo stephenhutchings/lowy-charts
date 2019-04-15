@@ -1,0 +1,64 @@
+extend /partials/layout
+
+block append config
+  - page.data = data.getOne("static/charts/the-interpreter/share-of-seats/data")
+  - page.data.elections.forEach(function(e){e.date = new Date(e.date); })
+  - page.data.elections = _.sortBy(page.data.elections, "date")
+  - helpers = r("./" + __.directory + "/utils.coffee")
+
+block page
+  - var d1 = new Date(page.data.elections.slice(-1)[0].date);
+  - var d0 = new Date(page.data.elections[0].date);
+  - var dd = moment(d1).diff(d0);
+  - var h = 800, w = 1200
+    svg(width=w + 8*2 height=h)
+      - var paths = [[],[],[]];
+      rect(x=0 y=0 width=w height=h fill="#fff")
+
+
+      for e,i in page.data.elections
+        - var d = new Date(e.date)
+        - x = ((d - d0) / dd) * w
+        g(transform="translate(8 0)" data-total=e.coalition + e.labor + e.others)
+          - y = (1 - e.coalition / 600) * h
+          - y2 = (1 - e.labor / 600) * h
+          circle(cx=x cy=y r=3 fill="blue")
+          line(x1=x x2=x y1=y y2=y2 stroke="blue")
+          - paths[0][i] = {x:x,y:y}
+
+          - y = (1 - e.labor / 600) * h
+          circle(cx=x cy=y r=3 fill="red")
+          - paths[1][i] = {x:x,y:y}
+
+          - y = (1 - e.others / 600) * h
+          - paths[2][i] = {x:x,y:y}
+
+
+          - y = (1 - ((e.coalition + e.labor) / 2) / 600) * h
+          circle(cx=x cy=y r=3 fill="lightgrey")
+
+      g(transform="translate(8 0)")
+        - c = function(p){return `M 0,${h} ${helpers.simplify(helpers.interpolate(p), 20).map(function(e){return `L ${e.x},${e.y}`}).join(" ")} L ${w},${h} Z`}
+        - c = function(p){return `M 0,${h} ${helpers.catmullRomBezier(helpers.simplify(helpers.interpolate(p), 33, true), 0.5)} L ${w},${h} Z`}
+        path.a0(d=c(paths[0]))
+        path.a1(d=c(paths[1]))
+        path.a2(d=c(paths[2]))
+
+      style
+        :sass
+          .a0,
+          .a1,
+          .a2
+            fill-opacity: 0.25
+            mix-blend-mode: multiply
+
+          line
+            stroke-opacity: 0.2
+
+          .a0
+            fill: blue
+          .a1
+            fill: red
+          .a2
+            fill: #fff
+            mix-blend-mode: screen

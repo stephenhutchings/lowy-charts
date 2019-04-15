@@ -1,5185 +1,5833 @@
 elections:
   -
-    government: "TAS"
-    house: "lower"
-    coalition: 13
-    labor: 10
-    other: 2
-    start: "3 March 2018"
-    end: "Current"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 25
-    labor: 19
-    other: 3
-    start: "17 March 2018"
-    end: "Current"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 38
-    labor: 47
-    other: 3
-    start: "29 November 2014"
-    end: "24 November 2018"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 54
-    labor: 34
-    other: 5
-    start: "28 March 2015"
-    end: "Current"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 27
-    labor: 55
-    other: 6
-    start: "24 November 2018"
-    end: "Current"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 2
-    labor: 18
-    other: 5
-    start: "27 August 2016"
-    end: "Current"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 39
-    labor: 48
-    other: 6
-    start: "25 November 2017"
-    end: "Current"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 18
-    labor: 41
-    other: 0
-    start: "11 March 2017"
-    end: "Current"
-  -
-    government: "ACT"
-    house: "lower"
+    government: ACT
+    house: lower
     coalition: 11
     labor: 12
     other: 2
+    total: 25
     start: "15 October 2016"
     end: "Current"
   -
-    government: "QLD"
-    house: "lower"
-    coalition: 42
-    labor: 44
-    other: 3
-    start: "31 January 2015"
-    end: "25 November 2017"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 15
-    labor: 7
-    other: 3
-    start: "15 March 2014"
-    end: "3 March 2018"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 16
-    labor: 8
-    other: 1
-    start: "25 August 2012"
-    end: "27 August 2016"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 22
-    labor: 23
-    other: 2
-    start: "15 March 2014"
-    end: "17 March 2018"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 69
-    labor: 20
-    other: 4
-    start: "26 March 2011"
-    end: "28 March 2015"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 45
-    labor: 43
-    other: 0
-    start: "27 November 2010"
-    end: "29 November 2014"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 38
-    labor: 21
-    other: 0
-    start: "9 March 2013"
-    end: "11 March 2017"
-  -
-    government: "ACT"
-    house: "lower"
+    government: ACT
+    house: lower
     coalition: 8
     labor: 8
     other: 1
+    total: 17
     start: "20 October 2012"
     end: "15 October 2016"
   -
-    government: "SA"
-    house: "lower"
-    coalition: 18
-    labor: 26
-    other: 3
-    start: "20 March 2010"
-    end: "15 March 2014"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 78
-    labor: 7
-    other: 4
-    start: "24 March 2012"
-    end: "31 January 2015"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 11
-    labor: 13
-    other: 1
-    start: "9 August 2008"
-    end: "25 August 2012"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 10
-    labor: 10
-    other: 5
-    start: "20 March 2010"
-    end: "15 March 2014"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 35
-    labor: 52
-    other: 6
-    start: "24 March 2007"
-    end: "26 March 2011"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 32
-    labor: 55
-    other: 1
-    start: "25 November 2006"
-    end: "27 November 2010"
-  -
-    government: "ACT"
-    house: "lower"
+    government: ACT
+    house: lower
     coalition: 6
     labor: 7
     other: 4
+    total: 17
     start: "18 October 2008"
     end: "20 October 2012"
   -
-    government: "WA"
-    house: "lower"
-    coalition: 28
-    labor: 28
-    other: 3
-    start: "6 September 2008"
-    end: "9 March 2013"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 25
-    labor: 59
-    other: 5
-    start: "9 September 2006"
-    end: "21 March 2009"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 16
-    labor: 28
-    other: 3
-    start: "18 March 2006"
-    end: "20 March 2010"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 4
-    labor: 19
-    other: 2
-    start: "18 June 2005"
-    end: "9 August 2008"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 34
-    labor: 51
-    other: 4
-    start: "21 March 2009"
-    end: "24 March 2012"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 32
-    labor: 55
-    other: 6
-    start: "22 March 2003"
-    end: "24 March 2007"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 24
-    labor: 62
-    other: 2
-    start: "30 November 2002"
-    end: "25 November 2006"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 23
-    labor: 32
-    other: 2
-    start: "26 February 2005"
-    end: "6 September 2008"
-  -
-    government: "ACT"
-    house: "lower"
+    government: ACT
+    house: lower
     coalition: 7
     labor: 9
     other: 1
+    total: 17
     start: "16 October 2004"
     end: "18 October 2008"
   -
-    government: "TAS"
-    house: "lower"
-    coalition: 7
-    labor: 14
-    other: 4
-    start: "18 March 2006"
-    end: "20 March 2010"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 20
-    labor: 63
-    other: 6
-    start: "7 February 2004"
-    end: "9 September 2006"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 21
-    labor: 23
-    other: 3
-    start: "9 February 2002"
-    end: "18 March 2006"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 10
-    labor: 13
-    other: 2
-    start: "18 August 2001"
-    end: "18 June 2005"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 43
-    labor: 42
-    other: 3
-    start: "18 September 1999"
-    end: "30 November 2002"
-  -
-    government: "ACT"
-    house: "lower"
+    government: ACT
+    house: lower
     coalition: 7
     labor: 8
     other: 2
+    total: 17
     start: "20 October 2001"
     end: "16 October 2004"
   -
-    government: "TAS"
-    house: "lower"
-    coalition: 7
-    labor: 14
-    other: 4
-    start: "20 July 2002"
-    end: "18 March 2006"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 33
-    labor: 55
-    other: 5
-    start: "27 March 1999"
-    end: "22 March 2003"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 15
-    labor: 66
-    other: 8
-    start: "17 February 2001"
-    end: "7 February 2004"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 32
-    labor: 44
-    other: 13
-    start: "13 June 1998"
-    end: "17 February 2001"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 21
-    labor: 32
-    other: 4
-    start: "10 February 2001"
-    end: "26 February 2005"
-  -
-    government: "ACT"
-    house: "lower"
+    government: ACT
+    house: lower
     coalition: 7
     labor: 6
     other: 4
+    total: 17
     start: "21 February 1998"
     end: "20 October 2001"
   -
-    government: "NT"
-    house: "lower"
-    coalition: 18
-    labor: 7
-    other: 0
-    start: "30 August 1997"
-    end: "18 August 2001"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 24
-    labor: 21
-    other: 2
-    start: "11 October 1997"
-    end: "9 February 2002"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 10
-    labor: 14
-    other: 1
-    start: "29 August 1998"
-    end: "20 July 2002"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 58
-    labor: 29
-    other: 1
-    start: "30 March 1996"
-    end: "18 September 1999"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 43
-    labor: 45
-    other: 1
-    start: "15 July 1995"
-    end: "13 June 1998"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 46
-    labor: 50
-    other: 3
-    start: "25 March 1995"
-    end: "27 March 1999"
-  -
-    government: "ACT"
-    house: "lower"
+    government: ACT
+    house: lower
     coalition: 7
     labor: 6
     other: 4
+    total: 17
     start: "18 February 1995"
     end: "21 February 1998"
   -
-    government: "NT"
-    house: "lower"
-    coalition: 17
-    labor: 7
-    other: 1
-    start: "4 June 1994"
-    end: "30 August 1997"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 35
-    labor: 19
-    other: 3
-    start: "14 December 1996"
-    end: "10 February 2001"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 37
-    labor: 10
-    other: 0
-    start: "11 December 1993"
-    end: "11 October 1997"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 61
-    labor: 27
-    other: 0
-    start: "3 October 1992"
-    end: "30 March 1996"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 32
-    labor: 24
-    other: 1
-    start: "6 February 1993"
-    end: "14 December 1996"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 35
-    labor: 54
-    other: 0
-    start: "19 September 1992"
-    end: "15 July 1995"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 16
-    labor: 14
-    other: 5
-    start: "24 February 1996"
-    end: "29 August 1998"
-  -
-    government: "ACT"
-    house: "lower"
+    government: ACT
+    house: lower
     coalition: 6
     labor: 8
     other: 3
+    total: 17
     start: "15 February 1992"
     end: "18 February 1995"
   -
-    government: "NSW"
-    house: "lower"
-    coalition: 49
-    labor: 46
-    other: 4
-    start: "25 May 1991"
-    end: "25 March 1995"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 14
-    labor: 9
-    other: 2
-    start: "27 October 1990"
-    end: "4 June 1994"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 35
-    labor: 54
-    other: 0
-    start: "2 December 1989"
-    end: "19 September 1992"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 22
-    labor: 22
-    other: 3
-    start: "25 November 1989"
-    end: "11 December 1993"
-  -
-    government: "ACT"
-    house: "lower"
+    government: ACT
+    house: lower
     coalition: 4
     labor: 5
     other: 8
+    total: 17
     start: "4 March 1989"
     end: "15 February 1992"
   -
-    government: "TAS"
-    house: "lower"
-    coalition: 19
-    labor: 11
-    other: 5
-    start: "1 February 1992"
-    end: "24 February 1996"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 26
-    labor: 31
-    other: 0
-    start: "4 February 1989"
-    end: "6 February 1993"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 42
-    labor: 46
-    other: 0
-    start: "1 October 1988"
-    end: "3 October 1992"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 59
-    labor: 43
-    other: 7
-    start: "19 March 1988"
-    end: "25 May 1991"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 17
-    labor: 6
-    other: 2
-    start: "7 March 1987"
-    end: "27 October 1990"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 59
-    labor: 30
-    other: 0
-    start: "1 November 1986"
-    end: "2 December 1989"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 17
-    labor: 13
-    other: 5
-    start: "13 May 1989"
-    end: "1 February 1992"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 25
-    labor: 32
-    other: 0
-    start: "8 February 1986"
-    end: "4 February 1989"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 16
-    labor: 27
-    other: 4
-    start: "7 December 1985"
-    end: "25 November 1989"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 37
-    labor: 58
-    other: 4
-    start: "24 March 1984"
-    end: "19 March 1988"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 41
-    labor: 47
-    other: 0
-    start: "2 March 1985"
-    end: "1 October 1988"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 19
-    labor: 6
-    other: 0
-    start: "3 December 1983"
-    end: "7 March 1987"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 49
-    labor: 32
-    other: 1
-    start: "22 October 1983"
-    end: "1 November 1986"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 22
-    labor: 32
-    other: 3
-    start: "19 February 1983"
-    end: "8 February 1986"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 21
-    labor: 24
-    other: 2
-    start: "6 November 1982"
-    end: "7 December 1985"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 19
-    labor: 14
-    other: 2
-    start: "8 February 1986"
-    end: "13 May 1989"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 32
-    labor: 49
-    other: 0
-    start: "3 April 1982"
-    end: "2 March 1985"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 14
-    labor: 69
-    other: 16
-    start: "19 September 1981"
-    end: "24 March 1984"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 57
-    labor: 25
-    other: 0
-    start: "29 November 1980"
-    end: "22 October 1983"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 11
-    labor: 7
-    other: 1
-    start: "7 June 1980"
-    end: "3 December 1983"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 29
-    labor: 23
-    other: 3
-    start: "23 February 1980"
-    end: "19 February 1983"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 25
-    labor: 19
-    other: 3
-    start: "15 September 1979"
-    end: "6 November 1982"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 49
-    labor: 32
-    other: 0
-    start: "5 May 1979"
-    end: "3 April 1982"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 18
-    labor: 63
-    other: 18
-    start: "7 October 1978"
-    end: "19 September 1981"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 59
-    labor: 23
-    other: 0
-    start: "12 November 1977"
-    end: "29 November 1980"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 17
-    labor: 27
-    other: 3
-    start: "17 September 1977"
-    end: "15 September 1979"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 12
-    labor: 6
-    other: 1
-    start: "13 August 1977"
-    end: "7 June 1980"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 27
-    labor: 22
-    other: 6
-    start: "19 February 1977"
-    end: "23 February 1980"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 19
-    labor: 14
-    other: 2
-    start: "15 May 1982"
-    end: "8 February 1986"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 30
-    labor: 50
-    other: 19
-    start: "1 May 1976"
-    end: "7 October 1978"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 59
-    labor: 21
-    other: 1
-    start: "20 March 1976"
-    end: "5 May 1979"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 20
-    labor: 23
-    other: 4
-    start: "12 July 1975"
-    end: "17 September 1977"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 69
-    labor: 11
-    other: 2
-    start: "7 December 1974"
-    end: "12 November 1977"
-  -
-    government: "NT"
-    house: "lower"
-    coalition: 17
-    labor: 0
-    other: 2
-    start: "19 October 1974"
-    end: "13 August 1977"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 23
-    labor: 22
-    other: 6
-    start: "30 March 1974"
-    end: "19 February 1977"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 34
-    labor: 44
-    other: 21
-    start: "17 November 1973"
-    end: "1 May 1976"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 15
-    labor: 20
-    other: 0
-    start: "28 July 1979"
-    end: "15 May 1982"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 46
-    labor: 18
-    other: 9
-    start: "19 May 1973"
-    end: "20 March 1976"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 26
-    other: 21
-    start: "10 March 1973"
-    end: "12 July 1975"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 21
-    labor: 33
-    other: 28
-    start: "27 May 1972"
-    end: "7 December 1974"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 17
-    labor: 26
-    other: 8
-    start: "20 February 1971"
-    end: "30 March 1974"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 32
-    labor: 45
-    other: 19
-    start: "13 February 1971"
-    end: "17 November 1973"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 27
-    other: 20
-    start: "30 May 1970"
-    end: "10 March 1973"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 42
-    labor: 22
-    other: 9
-    start: "30 May 1970"
-    end: "19 May 1973"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 19
-    labor: 31
-    other: 28
-    start: "17 May 1969"
-    end: "27 May 1972"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 17
-    labor: 18
-    other: 0
-    start: "11 December 1976"
-    end: "28 July 1979"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 23
-    other: 28
-    start: "23 March 1968"
-    end: "20 February 1971"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 19
-    other: 20
-    start: "2 March 1968"
-    end: "30 May 1970"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 36
-    labor: 39
-    other: 19
-    start: "24 February 1968"
-    end: "13 February 1971"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 44
-    labor: 16
-    other: 13
-    start: "29 April 1967"
-    end: "30 May 1970"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 20
-    labor: 26
-    other: 32
-    start: "28 May 1966"
-    end: "17 May 1969"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 31
-    labor: 45
-    other: 18
-    start: "1 May 1965"
-    end: "24 February 1968"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 21
-    other: 18
-    start: "6 March 1965"
-    end: "2 March 1968"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 14
-    labor: 21
-    other: 0
-    start: "22 April 1972"
-    end: "11 December 1976"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 21
-    other: 29
-    start: "20 February 1965"
-    end: "23 March 1968"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 17
-    labor: 17
-    other: 1
-    start: "10 May 1969"
-    end: "22 April 1972"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 18
-    other: 48
-    start: "27 June 1964"
-    end: "29 April 1967"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 20
-    labor: 26
-    other: 32
-    start: "1 June 1963"
-    end: "28 May 1966"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 24
-    other: 26
-    start: "31 March 1962"
-    end: "20 February 1965"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 25
-    labor: 54
-    other: 15
-    start: "3 March 1962"
-    end: "1 May 1965"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 19
-    other: 20
-    start: "3 March 1962"
-    end: "6 March 1965"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 17
-    other: 49
-    start: "15 July 1961"
-    end: "27 June 1964"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 20
-    labor: 25
-    other: 33
-    start: "28 May 1960"
-    end: "1 June 1963"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 28
-    labor: 49
-    other: 17
-    start: "21 March 1959"
-    end: "3 March 1962"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 23
-    other: 27
-    start: "21 March 1959"
-    end: "31 March 1962"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 17
-    other: 22
-    start: "7 March 1959"
-    end: "3 March 1962"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 18
-    other: 48
-    start: "31 May 1958"
-    end: "15 July 1961"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 18
-    labor: 20
-    other: 37
-    start: "3 August 1957"
-    end: "28 May 1960"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 16
-    labor: 19
-    other: 0
-    start: "2 May 1964"
-    end: "10 May 1969"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 8
-    labor: 49
-    other: 18
-    start: "19 May 1956"
-    end: "3 August 1957"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 29
-    other: 21
-    start: "7 April 1956"
-    end: "21 March 1959"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 27
-    labor: 50
-    other: 17
-    start: "3 March 1956"
-    end: "21 March 1959"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 16
-    labor: 17
-    other: 2
-    start: "2 May 1959"
-    end: "2 May 1964"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 15
-    other: 24
-    start: "3 March 1956"
-    end: "7 March 1959"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 20
-    other: 46
-    start: "28 May 1955"
-    end: "31 May 1958"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 8
-    labor: 50
-    other: 17
-    start: "7 March 1953"
-    end: "19 May 1956"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 15
-    other: 24
-    start: "7 March 1953"
-    end: "3 March 1956"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 15
-    labor: 15
-    other: 0
-    start: "13 October 1956"
-    end: "2 May 1959"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 22
-    labor: 57
-    other: 15
-    start: "14 February 1953"
-    end: "3 March 1956"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 26
-    other: 24
-    start: "14 February 1953"
-    end: "7 April 1956"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 37
-    other: 28
-    start: "6 December 1952"
-    end: "28 May 1955"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 29
-    labor: 46
-    other: 19
-    start: "17 June 1950"
-    end: "14 February 1953"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 24
-    other: 41
-    start: "13 May 1950"
-    end: "6 December 1952"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 15
-    labor: 15
-    other: 0
-    start: "19 February 1955"
-    end: "13 October 1956"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 11
-    labor: 42
-    other: 22
-    start: "29 April 1950"
-    end: "7 March 1953"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 23
-    other: 27
-    start: "25 March 1950"
-    end: "14 February 1953"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 12
-    other: 27
-    start: "4 March 1950"
-    end: "7 March 1953"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 27
-    labor: 17
-    other: 22
-    start: "8 November 1947"
-    end: "13 May 1950"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 19
-    labor: 52
-    other: 19
-    start: "3 May 1947"
-    end: "17 June 1950"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 35
-    other: 27
-    start: "3 May 1947"
-    end: "29 April 1950"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 13
-    labor: 23
-    other: 14
-    start: "15 March 1947"
-    end: "25 March 1950"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 14
-    labor: 15
-    other: 1
-    start: "6 May 1950"
-    end: "19 February 1955"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 13
-    other: 26
-    start: "8 March 1947"
-    end: "4 March 1950"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 10
-    labor: 31
-    other: 24
-    start: "10 November 1945"
-    end: "8 November 1947"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 1
-    labor: 56
-    other: 33
-    start: "27 May 1944"
-    end: "3 May 1947"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 12
-    labor: 15
-    other: 3
-    start: "21 August 1948"
-    end: "6 May 1950"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 16
-    other: 23
-    start: "29 April 1944"
-    end: "8 March 1947"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 37
-    other: 25
-    start: "15 April 1944"
-    end: "3 May 1947"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 30
-    other: 20
-    start: "20 November 1943"
-    end: "15 March 1947"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 22
-    other: 43
-    start: "12 June 1943"
-    end: "10 November 1945"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 54
-    other: 36
-    start: "10 May 1941"
-    end: "27 May 1944"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 12
-    labor: 16
-    other: 2
-    start: "23 November 1946"
-    end: "21 August 1948"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 41
-    other: 21
-    start: "29 March 1941"
-    end: "15 April 1944"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 11
-    other: 28
-    start: "29 March 1941"
-    end: "29 April 1944"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 22
-    other: 43
-    start: "16 March 1940"
-    end: "12 June 1943"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 27
-    other: 23
-    start: "18 March 1939"
-    end: "20 November 1943"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 44
-    other: 18
-    start: "2 April 1938"
-    end: "29 March 1941"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 28
-    other: 62
-    start: "26 March 1938"
-    end: "10 May 1941"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 9
-    other: 30
-    start: "19 March 1938"
-    end: "29 March 1941"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 20
-    other: 10
-    start: "13 December 1941"
-    end: "23 November 1946"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 20
-    other: 45
-    start: "2 October 1937"
-    end: "16 March 1940"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 26
-    other: 24
-    start: "15 February 1936"
-    end: "18 March 1939"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 90
-    start: "11 May 1935"
-    end: "26 March 1938"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 46
-    other: 16
-    start: "11 May 1935"
-    end: "2 April 1938"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 17
-    other: 48
-    start: "2 March 1935"
-    end: "2 October 1937"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 6
-    other: 40
-    start: "8 April 1933"
-    end: "19 March 1938"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 30
-    other: 20
-    start: "8 April 1933"
-    end: "15 February 1936"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 90
-    start: "11 June 1932"
-    end: "11 May 1935"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 33
-    other: 29
-    start: "11 June 1932"
-    end: "11 May 1935"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 18
-    other: 12
-    start: "20 February 1937"
-    end: "13 December 1941"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 16
-    other: 49
-    start: "14 May 1932"
-    end: "2 March 1935"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 55
-    other: 35
-    start: "25 October 1930"
-    end: "11 June 1932"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 23
-    other: 27
-    start: "12 April 1930"
-    end: "8 April 1933"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 13
-    labor: 30
-    other: 3
-    start: "5 April 1930"
-    end: "8 April 1933"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 14
-    other: 16
-    start: "9 June 1934"
-    end: "20 February 1937"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 2
-    labor: 30
-    other: 33
-    start: "30 November 1929"
-    end: "14 May 1932"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 27
-    other: 45
-    start: "11 May 1929"
-    end: "11 June 1932"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 40
-    other: 50
-    start: "8 October 1927"
-    end: "25 October 1930"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 2
-    labor: 28
-    other: 35
-    start: "9 April 1927"
-    end: "30 November 1929"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 28
-    labor: 16
-    other: 2
-    start: "26 March 1927"
-    end: "5 April 1930"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 10
-    other: 20
-    start: "9 May 1931"
-    end: "9 June 1934"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 43
-    other: 29
-    start: "8 May 1926"
-    end: "11 May 1929"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 46
-    other: 44
-    start: "30 May 1925"
-    end: "8 October 1927"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 5
-    labor: 27
-    other: 33
-    start: "26 June 1924"
-    end: "9 April 1927"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 27
-    other: 23
-    start: "26 March 1927"
-    end: "12 April 1930"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 17
-    labor: 27
-    other: 2
-    start: "5 April 1924"
-    end: "26 March 1927"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 14
-    other: 16
-    start: "30 May 1928"
-    end: "9 May 1931"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 27
-    other: 23
-    start: "22 March 1924"
-    end: "26 March 1927"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 43
-    other: 29
-    start: "12 May 1923"
-    end: "8 May 1926"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 36
-    other: 54
-    start: "25 March 1922"
-    end: "30 May 1925"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 21
-    other: 44
-    start: "30 August 1921"
-    end: "26 June 1924"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 4
-    labor: 16
-    other: 10
-    start: "3 June 1925"
-    end: "30 May 1928"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 25
-    labor: 16
-    other: 5
-    start: "9 April 1921"
-    end: "5 April 1924"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 20
-    other: 45
-    start: "21 October 1920"
-    end: "30 August 1921"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 38
-    other: 34
-    start: "9 October 1920"
-    end: "12 May 1923"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 43
-    other: 47
-    start: "20 March 1920"
-    end: "25 March 1922"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 12
-    other: 18
-    start: "10 June 1922"
-    end: "3 June 1925"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 17
-    other: 33
-    start: "12 March 1921"
-    end: "22 March 1924"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 28
-    labor: 17
-    other: 1
-    start: "6 April 1918"
-    end: "9 April 1921"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 48
-    other: 24
-    start: "16 March 1918"
-    end: "9 October 1920"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 18
-    other: 47
-    start: "15 November 1917"
-    end: "21 October 1920"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 8
-    labor: 15
-    other: 27
-    start: "29 September 1917"
-    end: "12 March 1921"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 33
-    other: 57
-    start: "24 March 1917"
-    end: "20 March 1920"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 21
-    labor: 45
-    other: 6
-    start: "22 May 1915"
-    end: "16 March 1918"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 20
-    labor: 26
-    other: 0
-    start: "27 March 1915"
-    end: "6 April 1918"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 43
-    labor: 22
-    other: 0
-    start: "26 November 1914"
-    end: "15 November 1917"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 13
-    other: 17
-    start: "31 May 1919"
-    end: "10 June 1922"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 16
-    labor: 26
-    other: 8
-    start: "21 October 1914"
-    end: "29 September 1917"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 28
-    labor: 49
-    other: 13
-    start: "6 December 1913"
-    end: "24 March 1917"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 25
-    other: 47
-    start: "27 April 1912"
-    end: "22 May 1915"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 16
-    other: 24
-    start: "10 February 1912"
-    end: "27 March 1915"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 15
-    labor: 14
-    other: 1
-    start: "25 March 1916"
-    end: "31 May 1919"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 43
-    labor: 20
-    other: 2
-    start: "16 November 1911"
-    end: "26 November 1914"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 16
-    labor: 34
-    other: 0
-    start: "3 October 1911"
-    end: "21 October 1914"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 16
-    labor: 14
-    other: 0
-    start: "30 April 1912"
-    end: "23 January 1913"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 37
-    labor: 46
-    other: 7
-    start: "14 October 1910"
-    end: "6 December 1913"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 22
-    other: 20
-    start: "2 April 1910"
-    end: "10 February 1912"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 27
-    other: 45
-    start: "2 October 1909"
-    end: "27 April 1912"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 16
-    labor: 14
-    other: 0
-    start: "23 January 1913"
-    end: "25 March 1916"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 22
-    other: 28
-    start: "11 September 1908"
-    end: "3 October 1911"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 19
-    labor: 21
-    other: 25
-    start: "29 December 1908"
-    end: "16 November 1911"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 22
-    other: 50
-    start: "5 February 1908"
-    end: "2 October 1909"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 45
-    labor: 32
-    other: 13
-    start: "10 September 1907"
-    end: "14 October 1910"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 18
-    other: 54
-    start: "18 May 1907"
-    end: "5 February 1908"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 14
-    other: 51
-    start: "15 March 1907"
-    end: "29 December 1908"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 42
-    start: "3 November 1906"
-    end: "2 April 1910"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 8
-    other: 27
-    start: "29 March 1906"
-    end: "30 April 1909"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 14
-    other: 36
-    start: "27 October 1905"
-    end: "11 September 1908"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 12
-    other: 18
-    start: "30 April 1909"
-    end: "30 April 1912"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 15
-    other: 27
-    start: "27 May 1905"
-    end: "3 November 1906"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 34
-    other: 38
-    start: "27 August 1904"
-    end: "18 May 1907"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 45
-    labor: 25
-    other: 20
-    start: "6 August 1904"
-    end: "10 September 1907"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 22
-    other: 28
-    start: "28 June 1904"
-    end: "27 October 1905"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 18
-    other: 50
-    start: "1 June 1904"
-    end: "15 March 1907"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 3
-    other: 32
-    start: "2 April 1903"
-    end: "29 March 1906"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 12
-    other: 83
-    start: "1 October 1902"
-    end: "1 June 1904"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 12
-    labor: 5
-    other: 25
-    start: "3 May 1902"
-    end: "27 May 1905"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 25
-    other: 47
-    start: "11 March 1902"
-    end: "27 August 1904"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 37
-    labor: 24
-    other: 64
-    start: "3 July 1901"
-    end: "6 August 1904"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 6
-    other: 44
-    start: "24 April 1901"
-    end: "28 June 1904"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 44
-    labor: 0
-    other: 51
-    start: "1 November 1900"
-    end: "1 October 1902"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 38
-    start: "9 March 1900"
-    end: "2 April 1903"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 14
-    labor: 11
-    other: 29
-    start: "29 April 1899"
-    end: "3 May 1902"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 21
-    other: 51
-    start: "11 March 1899"
-    end: "11 March 1902"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 19
-    other: 106
-    start: "27 July 1898"
-    end: "3 July 1901"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 95
-    start: "14 October 1897"
-    end: "1 November 1900"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 44
-    start: "27 April 1897"
-    end: "24 April 1901"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 37
-    start: "20 January 1897"
-    end: "9 March 1900"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 15
-    labor: 12
-    other: 27
-    start: "25 April 1896"
-    end: "29 April 1899"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 20
-    other: 52
-    start: "21 March 1896"
-    end: "11 March 1899"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 18
-    other: 107
-    start: "24 July 1895"
-    end: "27 July 1898"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 95
-    start: "20 September 1894"
-    end: "14 October 1897"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 14
-    other: 111
-    start: "17 July 1894"
-    end: "24 July 1895"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 33
-    start: "14 June 1894"
-    end: "27 April 1897"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 36
-    start: "19 December 1893"
-    end: "20 January 1897"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 16
-    other: 56
-    start: "29 April 1893"
-    end: "21 March 1896"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 23
-    labor: 10
-    other: 21
-    start: "15 April 1893"
-    end: "25 April 1896"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 36
-    other: 105
-    start: "17 June 1891"
-    end: "17 July 1894"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 36
-    start: "22 May 1891"
-    end: "19 December 1893"
-  -
-    government: "WA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 30
-    start: "5 December 1890"
-    end: "14 June 1894"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 54
-    start: "9 April 1890"
-    end: "15 April 1893"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 2
-    labor: 0
-    other: 93
-    start: "28 March 1889"
-    end: "20 April 1892"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 52
-    start: "19 March 1887"
-    end: "9 April 1890"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 36
-    start: "26 July 1886"
-    end: "22 May 1891"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 137
-    start: "1 February 1889"
-    end: "17 June 1891"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 86
-    start: "5 March 1886"
-    end: "28 March 1889"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 72
-    start: "28 April 1888"
-    end: "29 April 1893"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 52
-    start: "8 April 1884"
-    end: "19 March 1887"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 124
-    start: "4 February 1887"
-    end: "1 February 1889"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 86
-    start: "22 February 1883"
-    end: "5 March 1886"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 32
-    start: "25 May 1882"
-    end: "26 July 1886"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 122
-    start: "16 October 1885"
-    end: "4 February 1887"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 46
-    start: "8 April 1881"
-    end: "8 April 1884"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 55
-    start: "10 August 1883"
-    end: "28 April 1888"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 0
-    start: "20 April 1892"
-    end: "20 September 1894"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 86
-    start: "14 July 1880"
-    end: "22 February 1883"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 86
-    start: "28 February 1880"
-    end: "14 July 1880"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 113
-    start: "30 November 1882"
-    end: "16 October 1885"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 46
-    start: "2 April 1878"
-    end: "8 April 1881"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 108
-    start: "18 November 1880"
-    end: "30 November 1882"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 32
-    start: "30 May 1877"
-    end: "25 May 1882"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 86
-    start: "11 May 1877"
-    end: "28 February 1880"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 55
-    start: "14 November 1878"
-    end: "10 August 1883"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 46
-    start: "10 February 1875"
-    end: "2 April 1878"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 78
-    start: "25 March 1874"
-    end: "11 May 1877"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 73
-    start: "24 October 1877"
-    end: "18 November 1880"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 32
-    start: "5 September 1872"
-    end: "30 May 1877"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 36
-    start: "14 December 1871"
-    end: "10 February 1875"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 72
-    start: "8 December 1874"
-    end: "24 October 1877"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 32
-    start: "6 September 1871"
-    end: "5 September 1872"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 42
-    start: "4 November 1873"
-    end: "14 November 1878"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 78
-    start: "14 February 1871"
-    end: "25 March 1874"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 72
-    start: "13 February 1872"
-    end: "8 December 1874"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 36
-    start: "28 March 1870"
-    end: "14 December 1871"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 32
-    start: "8 July 1871"
-    end: "4 November 1873"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 36
-    start: "6 April 1868"
-    end: "28 March 1870"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 78
-    start: "21 January 1868"
-    end: "14 February 1871"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 32
-    start: "27 July 1870"
-    end: "8 July 1871"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 30
-    start: "3 October 1866"
-    end: "6 September 1871"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 72
-    start: "3 December 1869"
-    end: "13 February 1872"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 78
-    start: "30 December 1865"
-    end: "21 January 1868"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 32
-    start: "14 September 1868"
-    end: "27 July 1870"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 36
-    start: "1 March 1865"
-    end: "6 April 1868"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 32
-    start: "18 June 1867"
-    end: "14 September 1868"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 78
-    start: "5 October 1864"
-    end: "30 December 1865"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 36
-    start: "10 November 1862"
-    end: "1 March 1865"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 30
-    start: "6 November 1862"
-    end: "3 October 1866"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 78
-    start: "2 August 1861"
-    end: "5 October 1864"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 72
-    start: "22 November 1864"
-    end: "3 December 1869"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 30
-    start: "29 May 1861"
-    end: "6 November 1862"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 26
-    start: "30 May 1863"
-    end: "18 June 1867"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 36
-    start: "13 March 1860"
-    end: "10 November 1862"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 78
-    start: "26 August 1859"
-    end: "2 August 1861"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 72
-    start: "6 December 1860"
-    end: "22 November 1864"
-  -
-    government: "SA"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 36
-    start: "9 March 1857"
-    end: "13 March 1860"
-  -
-    government: "VIC"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 60
-    start: "23 September 1856"
-    end: "26 August 1859"
-  -
-    government: "QLD"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 26
-    start: "27 April 1860"
-    end: "30 May 1863"
-  -
-    government: "TAS"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 30
-    start: "8 September 1856"
-    end: "29 May 1861"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 20
-    labor: 12
-    other: 10
-    start: "28 March 2015"
-    end: "Current"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 15
-    labor: 19
-    other: 8
-    start: "24 March 2007"
-    end: "26 March 2011"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 13
-    labor: 18
-    other: 11
-    start: "22 March 2003"
-    end: "24 March 2007"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 13
-    labor: 16
-    other: 13
-    start: "27 March 1999"
-    end: "22 March 2003"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 18
-    labor: 17
-    other: 7
-    start: "25 March 1995"
-    end: "27 March 1999"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 21
-    labor: 19
-    other: 4
-    start: "25 May 1991"
-    end: "25 March 1995"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 19
-    labor: 21
-    other: 5
-    start: "19 March 1988"
-    end: "25 May 1991"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 18
-    labor: 24
-    other: 3
-    start: "24 March 1984"
-    end: "19 March 1988"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 12
-    labor: 24
-    other: 8
-    start: "19 September 1981"
-    end: "24 March 1984"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 14
-    labor: 23
-    other: 6
-    start: "7 October 1978"
-    end: "19 September 1981"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 54
-    start: "13 January 1858"
-    end: "8 June 1859"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 80
-    start: "8 June 1859"
-    end: "6 December 1860"
-  -
-    government: "NSW"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 54
-    start: "11 March 1856"
-    end: "13 January 1858"
-  -
-    government: "NSW"
-    house: "upper"
-    coalition: 19
-    labor: 14
-    other: 9
-    start: "26 March 2011"
-    end: "28 March 2015"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 4
-    other: 10
-    start: "6 May 2017"
-    end: "5 May 2018"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 2
-    labor: 4
-    other: 9
-    start: "5 May 2018"
-    end: "Current"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 2
-    labor: 2
-    other: 11
-    start: "2016"
-    end: "6 May 2017"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 2
-    labor: 1
-    other: 12
-    start: "2015"
-    end: "2016"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 2
-    labor: 1
-    other: 12
-    start: "2014"
-    end: "2015"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 2
-    labor: 1
-    other: 12
-    start: "2013"
-    end: "2014"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 1
-    other: 13
-    start: "2012"
-    end: "2013"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 2
-    other: 12
-    start: "2011"
-    end: "2012"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 3
-    other: 11
-    start: "2010"
-    end: "2011"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 4
-    other: 10
-    start: "2009"
-    end: "2010"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 10
-    start: "2008"
-    end: "2009"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 10
-    start: "2007"
-    end: "2008"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 10
-    start: "2006"
-    end: "2007"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 10
-    start: "2003"
-    end: "2004"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 10
-    start: "2004"
-    end: "2005"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 10
-    start: "2005"
-    end: "2006"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 10
-    start: "2002"
-    end: "2003"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 10
-    start: "2001"
-    end: "2002"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 4
-    other: 14
-    start: "1997"
-    end: "1998"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 4
-    other: 14
-    start: "1998"
-    end: "1999"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 11
-    start: "1999"
-    end: "2000"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 11
-    start: "2000"
-    end: "2001"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 3
-    other: 15
-    start: "1996"
-    end: "1997"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 3
-    other: 16
-    start: "1994"
-    end: "1995"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 3
-    other: 15
-    start: "1995"
-    end: "1996"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1992"
-    end: "1993"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1993"
-    end: "1994"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1990"
-    end: "1991"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1991"
-    end: "1992"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1989"
-    end: "1990"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1987"
-    end: "1988"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1988"
-    end: "1989"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1984"
-    end: "1985"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1986"
-    end: "1987"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1985"
-    end: "1986"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1982"
-    end: "1983"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1983"
-    end: "1984"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 3
-    other: 16
-    start: "1981"
-    end: "1982"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 3
-    other: 16
-    start: "1980"
-    end: "1981"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1978"
-    end: "1979"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 3
-    other: 16
-    start: "1979"
-    end: "1980"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1977"
-    end: "1978"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1976"
-    end: "1977"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1972"
-    end: "1973"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1975"
-    end: "1976"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1974"
-    end: "1975"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1973"
-    end: "1974"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1970"
-    end: "1971"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1969"
-    end: "1970"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 17
-    start: "1968"
-    end: "1969"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 15
-    start: "1967"
-    end: "1968"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 18
-    start: "1971"
-    end: "1972"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 14
-    start: "1966"
-    end: "1967"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 14
-    start: "1964"
-    end: "1965"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 15
-    start: "1962"
-    end: "1963"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 14
-    start: "1965"
-    end: "1966"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 15
-    start: "1963"
-    end: "1964"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 3
-    other: 16
-    start: "1960"
-    end: "1961"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 3
-    other: 16
-    start: "1959"
-    end: "1960"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 15
-    start: "1961"
-    end: "1962"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 14
-    start: "1957"
-    end: "1958"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 3
-    other: 16
-    start: "1958"
-    end: "1959"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 15
-    start: "1956"
-    end: "1957"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 15
-    start: "1954"
-    end: "1955"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 15
-    start: "1953"
-    end: "1954"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 15
-    start: "1955"
-    end: "1956"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 4
-    other: 15
-    start: "1952"
-    end: "1953"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 3
-    other: 15
-    start: "1951"
-    end: "1952"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 3
-    other: 15
-    start: "1950"
-    end: "1951"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 2
-    other: 16
-    start: "1948"
-    end: "1949"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 2
-    other: 16
-    start: "1949"
-    end: "1950"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 1
-    other: 17
-    start: "1947"
-    end: "1948"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 17
-    start: "1945"
-    end: "1946"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 0
-    other: 17
-    start: "1946"
-    end: "1947"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 16
-    start: "1943"
-    end: "1944"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 16
-    start: "1944"
-    end: "1945"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 16
-    start: "1942"
-    end: "1943"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 16
-    start: "1941"
-    end: "1942"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 17
-    start: "1939"
-    end: "1940"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 16
-    start: "1940"
-    end: "1941"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 17
-    start: "1938"
-    end: "1939"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 17
-    start: "1937"
-    end: "1938"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 17
-    start: "1936"
-    end: "1937"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "1932"
-    end: "1933"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 17
-    start: "1935"
-    end: "1936"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 17
-    start: "1934"
-    end: "1935"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 17
-    start: "1933"
-    end: "1934"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "8 May 1928"
-    end: "7 May 1929"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "6 May 1930"
-    end: "1931"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "3 May 1927"
-    end: "8 May 1928"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "1931"
-    end: "1932"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "7 May 1929"
-    end: "6 May 1930"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "4 May 1926"
-    end: "3 May 1927"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "5 May 1925"
-    end: "4 May 1926"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "6 May 1924"
-    end: "5 May 1925"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "8 May 1923"
-    end: "6 May 1924"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "2 May 1922"
-    end: "8 May 1923"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 17
-    start: "3 May 1921"
-    end: "2 May 1922"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 2
-    labor: 1
-    other: 15
-    start: "6 May 1919"
-    end: "4 May 1920"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 2
-    labor: 1
-    other: 15
-    start: "7 May 1918"
-    end: "6 May 1919"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 3
-    labor: 1
-    other: 14
-    start: "2 May 1916"
-    end: "8 May 1917"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 2
-    labor: 0
-    other: 16
-    start: "24 January 1915"
-    end: "2 May 1916"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 3
-    labor: 1
-    other: 14
-    start: "8 May 1917"
-    end: "7 May 1918"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 0
-    other: 17
-    start: "5 May 1914"
-    end: "24 January 1915"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 0
-    other: 17
-    start: "6 May 1913"
-    end: "5 May 1914"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 0
-    other: 17
-    start: "7 May 1912"
-    end: "6 May 1913"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "7 May 1907"
-    end: "4 May 1909"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 0
-    other: 17
-    start: "2 May 1911"
-    end: "7 May 1912"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "8 May 1906"
-    end: "7 May 1907"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 2
-    labor: 1
-    other: 15
-    start: "4 May 1920"
-    end: "3 May 1921"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "2 May 1905"
-    end: "8 May 1906"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "3 May 1904"
-    end: "2 May 1905"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 1
-    labor: 0
-    other: 17
-    start: "3 May 1910"
-    end: "2 May 1911"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "5 May 1903"
-    end: "3 May 1904"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "4 May 1909"
-    end: "3 May 1910"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "18 July 1902"
-    end: "5 May 1903"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "7 May 1901"
-    end: "18 July 1902"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 19
-    start: "8 May 1900"
-    end: "7 May 1901"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 19
-    start: "2 May 1899"
-    end: "8 May 1900"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "3 May 1898"
-    end: "2 May 1899"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "4 May 1897"
-    end: "3 May 1898"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "5 May 1896"
-    end: "4 May 1897"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "7 May 1895"
-    end: "5 May 1896"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "5 May 1891"
-    end: "3 May 1892"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "2 May 1893"
-    end: "8 May 1894"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "3 May 1892"
-    end: "2 May 1893"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "8 May 1894"
-    end: "7 May 1895"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "6 May 1890"
-    end: "5 May 1891"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "7 May 1889"
-    end: "6 May 1890"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "8 May 1888"
-    end: "7 May 1889"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "3 May 1887"
-    end: "8 May 1888"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 18
-    start: "13 July 1886"
-    end: "3 May 1887"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "14 July 1885"
-    end: "13 July 1886"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "23 February 1884"
-    end: "14 July 1885"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "6 March 1882"
-    end: "7 April 1883"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "17 February 1881"
-    end: "6 March 1882"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "7 April 1883"
-    end: "23 February 1884"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "21 July 1879"
-    end: "23 June 1880"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "23 June 1880"
-    end: "17 February 1881"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "10 February 1876"
-    end: "16 July 1877"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "16 July 1877"
-    end: "21 July 1879"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "28 April 1875"
-    end: "10 February 1876"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "15 July 1874"
-    end: "28 April 1875"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "3 September 1873"
-    end: "15 July 1874"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "21 March 1870"
-    end: "6 July 1871"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "6 July 1871"
-    end: "21 June 1872"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "3 March 1869"
-    end: "21 March 1870"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "23 July 1868"
-    end: "3 March 1869"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 16
-    start: "21 June 1872"
-    end: "3 September 1873"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "7 August 1867"
-    end: "23 July 1868"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "15 June 1866"
-    end: "7 August 1867"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "25 June 1865"
-    end: "15 June 1866"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "31 May 1864"
-    end: "25 June 1865"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "1 February 1863"
-    end: "31 May 1864"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "1 December 1862"
-    end: "1 February 1863"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 13
-    labor: 14
-    other: 9
-    start: "11 March 2017"
-    end: "Current"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "1 June 1860"
-    end: "14 August 1861"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "1 May 1858"
-    end: "1 May 1859"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "14 August 1861"
-    end: "1 December 1862"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "1 May 1859"
-    end: "1 June 1860"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "13 May 1857"
-    end: "1 May 1858"
-  -
-    government: "TAS"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 15
-    start: "1 January 1856"
-    end: "13 May 1857"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 22
-    labor: 11
-    other: 3
-    start: "9 March 2013"
-    end: "11 March 2017"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 18
-    labor: 14
-    other: 2
-    start: "6 February 1993"
-    end: "14 December 1996"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 18
-    labor: 16
-    other: 0
-    start: "4 February 1989"
-    end: "6 February 1993"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 18
-    labor: 15
-    other: 1
-    start: "8 February 1986"
-    end: "4 February 1989"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 17
-    labor: 12
-    other: 5
-    start: "14 December 1996"
-    end: "10 February 2001"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 22
-    labor: 11
-    other: 1
-    start: "19 February 1983"
-    end: "8 February 1986"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 19
-    labor: 9
-    other: 4
-    start: "23 March 1980"
-    end: "19 February 1983"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 18
-    labor: 10
-    other: 4
-    start: "19 February 1977"
-    end: "23 March 1980"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 18
-    labor: 9
-    other: 3
-    start: "30 March 1974"
-    end: "19 February 1977"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 9
-    labor: 10
-    other: 11
-    start: "20 February 1971"
-    end: "30 March 1974"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 10
-    other: 20
-    start: "23 March 1968"
-    end: "20 February 1971"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 21
-    labor: 11
-    other: 4
-    start: "6 September 2008"
-    end: "9 March 2013"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 10
-    other: 20
-    start: "20 February 1965"
-    end: "23 March 1968"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 13
-    other: 17
-    start: "12 May 1962"
-    end: "20 February 1965"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 16
-    labor: 16
-    other: 2
-    start: "26 February 2005"
-    end: "6 September 2008"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 13
-    other: 17
-    start: "30 April 1960"
-    end: "12 May 1962"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 13
-    other: 17
-    start: "10 May 1958"
-    end: "30 April 1960"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 13
-    labor: 13
-    other: 8
-    start: "10 February 2001"
-    end: "26 February 2005"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 13
-    other: 17
-    start: "7 April 1956"
-    end: "10 May 1958"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 13
-    other: 17
-    start: "8 May 1954"
-    end: "7 April 1956"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 6
-    labor: 9
-    other: 15
-    start: "3 May 1952"
-    end: "8 May 1954"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 11
-    labor: 8
-    other: 11
-    start: "6 May 1950"
-    end: "3 May 1952"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 10
-    labor: 7
-    other: 13
-    start: "8 May 1948"
-    end: "6 May 1950"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 5
-    labor: 8
-    other: 17
-    start: "4 May 1946"
-    end: "8 May 1948"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 8
-    other: 22
-    start: "11 May 1940"
-    end: "29 April 1944"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 8
-    other: 22
-    start: "29 April 1944"
-    end: "4 May 1946"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 8
-    other: 22
-    start: "7 May 1938"
-    end: "11 May 1940"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 8
-    other: 22
-    start: "9 May 1936"
-    end: "7 May 1938"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 7
-    other: 23
-    start: "12 April 1934"
-    end: "9 May 1936"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 7
-    other: 23
-    start: "7 May 1932"
-    end: "12 April 1934"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 25
-    start: "10 May 1930"
-    end: "7 May 1932"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 6
-    other: 24
-    start: "12 May 1928"
-    end: "10 May 1930"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 5
-    other: 25
-    start: "8 May 1926"
-    end: "12 May 1928"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 6
-    other: 24
-    start: "10 May 1924"
-    end: "8 May 1926"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 3
-    other: 27
-    start: "13 May 1922"
-    end: "10 May 1924"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 5
-    labor: 6
-    other: 19
-    start: "8 May 1920"
-    end: "13 May 1922"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 10
-    labor: 4
-    other: 16
-    start: "11 May 1918"
-    end: "8 May 1920"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 16
-    labor: 7
-    other: 7
-    start: "13 May 1916"
-    end: "11 May 1918"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 11
-    labor: 5
-    other: 14
-    start: "16 May 1914"
-    end: "13 May 1916"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 5
-    labor: 6
-    other: 19
-    start: "14 May 1912"
-    end: "16 May 1914"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 3
-    other: 27
-    start: "13 May 1910"
-    end: "14 May 1912"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 2
-    other: 28
-    start: "13 May 1908"
-    end: "13 May 1910"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 1
-    other: 29
-    start: "14 May 1906"
-    end: "13 May 1908"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 30
-    start: "30 May 1904"
-    end: "14 May 1906"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 30
-    start: "12 May 1902"
-    end: "30 May 1904"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 30
-    start: "5 September 1900"
-    end: "12 May 1902"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 24
-    start: "14 April 1900"
-    end: "5 September 1900"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 24
-    start: "9 May 1898"
-    end: "14 April 1900"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 24
-    start: "29 June 1897"
-    end: "9 May 1898"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 21
-    start: "27 July 1896"
-    end: "29 June 1897"
-  -
-    government: "WA"
-    house: "upper"
-    coalition: 0
-    labor: 0
-    other: 21
-    start: "16 July 1894"
-    end: "27 July 1896"
-  -
-    government: "FED"
-    house: "lower"
+    government: FED
+    house: lower
     coalition: 76
     labor: 69
     other: 5
+    total: 150
     start: "2 July 2016"
     end: "Current"
   -
-    government: "FED"
-    house: "lower"
-    coalition: 81
-    labor: 65
-    other: 4
-    start: "10 November 2001"
-    end: "9 October 2004"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 89
+    government: FED
+    house: lower
+    coalition: 90
     labor: 55
-    other: 6
+    other: 5
+    total: 150
     start: "7 September 2013"
     end: "2 July 2016"
   -
-    government: "FED"
-    house: "lower"
-    coalition: 80
-    labor: 67
-    other: 1
-    start: "3 October 1998"
-    end: "10 November 2001"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 72
+    government: FED
+    house: lower
+    coalition: 73
     labor: 72
-    other: 6
+    other: 5
+    total: 150
     start: "21 August 2010"
     end: "7 September 2013"
   -
-    government: "FED"
-    house: "lower"
-    coalition: 93
-    labor: 49
-    other: 6
-    start: "2 March 1996"
-    end: "3 October 1998"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 65
-    labor: 80
-    other: 2
-    start: "13 March 1993"
-    end: "2 March 1996"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 69
-    labor: 78
-    other: 1
-    start: "24 March 1990"
-    end: "13 March 1993"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 86
-    labor: 60
-    other: 4
-    start: "9 October 2004"
-    end: "24 November 2007"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 62
-    labor: 86
-    other: 0
-    start: "11 July 1987"
-    end: "24 March 1990"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 65
-    labor: 82
-    other: 1
-    start: "1 December 1984"
-    end: "11 July 1987"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 50
-    labor: 75
-    other: 0
-    start: "5 March 1983"
-    end: "1 December 1984"
-  -
-    government: "FED"
-    house: "lower"
+    government: FED
+    house: lower
     coalition: 65
     labor: 83
     other: 2
+    total: 150
     start: "24 November 2007"
     end: "21 August 2010"
   -
-    government: "FED"
-    house: "lower"
-    coalition: 54
-    labor: 51
-    other: 20
-    start: "18 October 1980"
-    end: "5 March 1983"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 66
-    labor: 38
-    other: 20
-    start: "10 December 1977"
-    end: "18 October 1980"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 68
-    labor: 36
-    other: 23
-    start: "13 December 1975"
-    end: "10 December 1977"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 40
-    labor: 66
-    other: 21
-    start: "18 May 1974"
-    end: "13 December 1975"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 38
-    labor: 67
-    other: 20
-    start: "2 December 1972"
-    end: "18 May 1974"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 46
-    labor: 59
-    other: 20
-    start: "25 October 1969"
-    end: "2 December 1972"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 61
-    labor: 41
-    other: 22
-    start: "26 November 1966"
-    end: "25 October 1969"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 52
-    labor: 50
-    other: 20
-    start: "30 November 1963"
-    end: "26 November 1966"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 58
-    labor: 45
-    other: 19
-    start: "22 November 1958"
-    end: "9 December 1961"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 45
+    government: FED
+    house: lower
+    coalition: 87
     labor: 60
-    other: 17
-    start: "9 December 1961"
-    end: "30 November 1963"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 57
-    labor: 47
-    other: 18
-    start: "10 December 1955"
-    end: "22 November 1958"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 47
-    labor: 57
-    other: 17
-    start: "29 May 1954"
-    end: "10 December 1955"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 52
-    labor: 52
-    other: 17
-    start: "28 April 1951"
-    end: "29 May 1954"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 55
-    labor: 47
-    other: 19
-    start: "10 December 1949"
-    end: "28 April 1951"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 15
-    labor: 43
-    other: 16
-    start: "28 September 1946"
-    end: "10 December 1949"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 49
-    other: 25
-    start: "21 August 1943"
-    end: "28 September 1946"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 32
-    other: 42
-    start: "21 September 1940"
-    end: "21 August 1943"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 29
-    other: 45
-    start: "23 October 1937"
-    end: "21 September 1940"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 74
-    start: "15 September 1934"
-    end: "23 October 1937"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 0
-    other: 75
-    start: "19 December 1931"
-    end: "15 September 1934"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 46
-    other: 29
-    start: "12 October 1929"
-    end: "19 December 1931"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 31
-    other: 44
-    start: "17 November 1928"
-    end: "12 October 1929"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 23
-    other: 52
-    start: "14 November 1925"
-    end: "17 November 1928"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 5
-    labor: 29
-    other: 41
-    start: "16 December 1922"
-    end: "14 November 1925"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 26
-    other: 49
-    start: "13 December 1919"
-    end: "16 December 1922"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 22
-    other: 53
-    start: "5 May 1917"
-    end: "13 December 1919"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 32
-    labor: 42
-    other: 1
-    start: "5 September 1914"
-    end: "5 May 1917"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 38
-    labor: 37
-    other: 0
-    start: "31 May 1913"
-    end: "5 September 1914"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 31
-    labor: 43
-    other: 1
-    start: "13 April 1910"
-    end: "31 May 1913"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 26
-    other: 49
-    start: "12 December 1906"
-    end: "13 April 1910"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 23
-    other: 52
-    start: "16 December 1903"
-    end: "12 December 1906"
-  -
-    government: "FED"
-    house: "lower"
-    coalition: 0
-    labor: 14
-    other: 61
-    start: "29 March 1901"
-    end: "16 December 1903"
-  -
-    government: "FED"
-    house: "upper"
-    coalition: 29
-    labor: 26
-    other: 21
-    start: "2 July 2016"
-    end: "Current"
-  -
-    government: "FED"
-    house: "upper"
-    coalition: 34
-    labor: 28
-    other: 14
-    start: "10 November 2001"
-    end: "9 October 2004"
-  -
-    government: "FED"
-    house: "upper"
-    coalition: 34
-    labor: 29
-    other: 13
-    start: "3 October 1998"
-    end: "10 November 2001"
-  -
-    government: "FED"
-    house: "upper"
-    coalition: 33
-    labor: 31
-    other: 12
-    start: "21 August 2010"
-    end: "7 September 2013"
-  -
-    government: "FED"
-    house: "upper"
-    coalition: 36
-    labor: 29
-    other: 11
-    start: "2 March 1996"
-    end: "3 October 1998"
-  -
-    government: "FED"
-    house: "upper"
-    coalition: 35
-    labor: 30
-    other: 11
-    start: "13 March 1993"
-    end: "2 March 1996"
-  -
-    government: "FED"
-    house: "upper"
-    coalition: 33
-    labor: 32
-    other: 11
-    start: "24 March 1990"
-    end: "13 March 1993"
-  -
-    government: "FED"
-    house: "upper"
-    coalition: 38
-    labor: 28
-    other: 10
+    other: 3
+    total: 150
     start: "9 October 2004"
     end: "24 November 2007"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 33
-    labor: 32
-    other: 11
+    government: FED
+    house: lower
+    coalition: 82
+    labor: 65
+    other: 3
+    total: 150
+    start: "10 November 2001"
+    end: "9 October 2004"
+  -
+    government: FED
+    house: lower
+    coalition: 80
+    labor: 67
+    other: 1
+    total: 148
+    start: "3 October 1998"
+    end: "10 November 2001"
+  -
+    government: FED
+    house: lower
+    coalition: 94
+    labor: 49
+    other: 5
+    total: 148
+    start: "2 March 1996"
+    end: "3 October 1998"
+  -
+    government: FED
+    house: lower
+    coalition: 65
+    labor: 80
+    other: 2
+    total: 147
+    start: "13 March 1993"
+    end: "2 March 1996"
+  -
+    government: FED
+    house: lower
+    coalition: 69
+    labor: 78
+    other: 1
+    total: 148
+    start: "24 March 1990"
+    end: "13 March 1993"
+  -
+    government: FED
+    house: lower
+    coalition: 62
+    labor: 86
+    other: 0
+    total: 148
     start: "11 July 1987"
     end: "24 March 1990"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 32
-    labor: 25
-    other: 19
-    start: "7 September 2013"
-    end: "2 July 2016"
-  -
-    government: "FED"
-    house: "upper"
-    coalition: 33
-    labor: 34
-    other: 9
+    government: FED
+    house: lower
+    coalition: 66
+    labor: 82
+    other: 0
+    total: 148
     start: "1 December 1984"
     end: "11 July 1987"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 28
-    labor: 30
-    other: 6
+    government: FED
+    house: lower
+    coalition: 50
+    labor: 75
+    other: 0
+    total: 125
     start: "5 March 1983"
     end: "1 December 1984"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 36
-    labor: 32
-    other: 8
-    start: "24 November 2007"
-    end: "21 August 2010"
-  -
-    government: "FED"
-    house: "upper"
-    coalition: 28
-    labor: 27
-    other: 9
+    government: FED
+    house: lower
+    coalition: 55
+    labor: 51
+    other: 19
+    total: 125
     start: "18 October 1980"
     end: "5 March 1983"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 28
-    labor: 27
-    other: 9
+    government: FED
+    house: lower
+    coalition: 67
+    labor: 38
+    other: 19
+    total: 124
     start: "10 December 1977"
     end: "18 October 1980"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 27
-    labor: 27
-    other: 10
+    government: FED
+    house: lower
+    coalition: 69
+    labor: 36
+    other: 22
+    total: 127
     start: "13 December 1975"
     end: "10 December 1977"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 23
-    labor: 29
-    other: 8
+    government: FED
+    house: lower
+    coalition: 40
+    labor: 66
+    other: 21
+    total: 127
     start: "18 May 1974"
     end: "13 December 1975"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 21
-    labor: 26
-    other: 13
-    start: "21 November 1970"
+    government: FED
+    house: lower
+    coalition: 38
+    labor: 67
+    other: 20
+    total: 125
+    start: "2 December 1972"
     end: "18 May 1974"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 21
-    labor: 27
-    other: 12
-    start: "25 November 1967"
-    end: "21 November 1970"
+    government: FED
+    house: lower
+    coalition: 46
+    labor: 59
+    other: 20
+    total: 125
+    start: "25 October 1969"
+    end: "2 December 1972"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 23
-    labor: 27
-    other: 10
-    start: "5 December 1964"
-    end: "25 November 1967"
+    government: FED
+    house: lower
+    coalition: 61
+    labor: 41
+    other: 22
+    total: 124
+    start: "26 November 1966"
+    end: "25 October 1969"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 24
-    labor: 28
-    other: 8
+    government: FED
+    house: lower
+    coalition: 52
+    labor: 50
+    other: 20
+    total: 122
+    start: "30 November 1963"
+    end: "26 November 1966"
+  -
+    government: FED
+    house: lower
+    coalition: 45
+    labor: 60
+    other: 17
+    total: 122
     start: "9 December 1961"
-    end: "5 December 1964"
+    end: "30 November 1963"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 25
-    labor: 26
-    other: 9
+    government: FED
+    house: lower
+    coalition: 58
+    labor: 45
+    other: 19
+    total: 122
     start: "22 November 1958"
     end: "9 December 1961"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 24
-    labor: 28
-    other: 8
+    government: FED
+    house: lower
+    coalition: 57
+    labor: 47
+    other: 18
+    total: 122
     start: "10 December 1955"
     end: "22 November 1958"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 26
-    labor: 29
-    other: 5
-    start: "9 May 1953"
+    government: FED
+    house: lower
+    coalition: 47
+    labor: 57
+    other: 17
+    total: 121
+    start: "29 May 1954"
     end: "10 December 1955"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 26
-    labor: 28
-    other: 6
+    government: FED
+    house: lower
+    coalition: 52
+    labor: 52
+    other: 17
+    total: 121
     start: "28 April 1951"
-    end: "9 May 1953"
+    end: "29 May 1954"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 21
-    labor: 34
-    other: 5
+    government: FED
+    house: lower
+    coalition: 55
+    labor: 47
+    other: 19
+    total: 121
     start: "10 December 1949"
     end: "28 April 1951"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 2
-    labor: 33
-    other: 1
+    government: FED
+    house: lower
+    coalition: 15
+    labor: 43
+    other: 16
+    total: 74
     start: "28 September 1946"
     end: "10 December 1949"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
-    labor: 22
-    other: 14
+    labor: 49
+    other: 25
+    total: 74
     start: "21 August 1943"
     end: "28 September 1946"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
-    labor: 17
-    other: 19
+    labor: 32
+    other: 42
+    total: 74
     start: "21 September 1940"
     end: "21 August 1943"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
-    labor: 16
-    other: 20
+    labor: 29
+    other: 45
+    total: 74
     start: "23 October 1937"
     end: "21 September 1940"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
     labor: 0
-    other: 36
+    other: 74
+    total: 74
     start: "15 September 1934"
     end: "23 October 1937"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
     labor: 0
-    other: 36
+    other: 75
+    total: 75
     start: "19 December 1931"
     end: "15 September 1934"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
-    labor: 7
+    labor: 46
     other: 29
-    start: "17 November 1928"
+    total: 75
+    start: "12 October 1929"
     end: "19 December 1931"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
-    labor: 8
-    other: 28
+    labor: 31
+    other: 44
+    total: 75
+    start: "17 November 1928"
+    end: "12 October 1929"
+  -
+    government: FED
+    house: lower
+    coalition: 0
+    labor: 23
+    other: 52
+    total: 75
     start: "14 November 1925"
     end: "17 November 1928"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 0
-    labor: 12
-    other: 24
+    government: FED
+    house: lower
+    coalition: 5
+    labor: 29
+    other: 41
+    total: 75
     start: "16 December 1922"
     end: "14 November 1925"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
-    labor: 1
-    other: 35
+    labor: 26
+    other: 49
+    total: 75
     start: "13 December 1919"
     end: "16 December 1922"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
-    labor: 12
-    other: 24
+    labor: 22
+    other: 53
+    total: 75
     start: "5 May 1917"
     end: "13 December 1919"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 5
-    labor: 31
-    other: 0
+    government: FED
+    house: lower
+    coalition: 32
+    labor: 42
+    other: 1
+    total: 75
     start: "5 September 1914"
     end: "5 May 1917"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 7
-    labor: 29
+    government: FED
+    house: lower
+    coalition: 38
+    labor: 37
     other: 0
+    total: 75
     start: "31 May 1913"
     end: "5 September 1914"
   -
-    government: "FED"
-    house: "upper"
-    coalition: 14
-    labor: 22
-    other: 0
+    government: FED
+    house: lower
+    coalition: 31
+    labor: 43
+    other: 1
+    total: 75
     start: "13 April 1910"
     end: "31 May 1913"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
-    labor: 15
-    other: 21
+    labor: 26
+    other: 49
+    total: 75
     start: "12 December 1906"
     end: "13 April 1910"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
     coalition: 0
-    labor: 14
-    other: 22
+    labor: 23
+    other: 52
+    total: 75
     start: "16 December 1903"
     end: "12 December 1906"
   -
-    government: "FED"
-    house: "upper"
+    government: FED
+    house: lower
+    coalition: 0
+    labor: 14
+    other: 61
+    total: 75
+    start: "29 March 1901"
+    end: "16 December 1903"
+  -
+    government: FED
+    house: upper
+    coalition: 30
+    labor: 26
+    other: 20
+    total: 76
+    start: "2 July 2016"
+    end: "Current"
+  -
+    government: FED
+    house: upper
+    coalition: 33
+    labor: 25
+    other: 18
+    total: 76
+    start: "7 September 2013"
+    end: "2 July 2016"
+  -
+    government: FED
+    house: upper
+    coalition: 34
+    labor: 31
+    other: 11
+    total: 76
+    start: "21 August 2010"
+    end: "7 September 2013"
+  -
+    government: FED
+    house: upper
+    coalition: 37
+    labor: 32
+    other: 7
+    total: 76
+    start: "24 November 2007"
+    end: "21 August 2010"
+  -
+    government: FED
+    house: upper
+    coalition: 39
+    labor: 28
+    other: 9
+    total: 76
+    start: "9 October 2004"
+    end: "24 November 2007"
+  -
+    government: FED
+    house: upper
+    coalition: 35
+    labor: 28
+    other: 13
+    total: 76
+    start: "10 November 2001"
+    end: "9 October 2004"
+  -
+    government: FED
+    house: upper
+    coalition: 35
+    labor: 29
+    other: 12
+    total: 76
+    start: "3 October 1998"
+    end: "10 November 2001"
+  -
+    government: FED
+    house: upper
+    coalition: 37
+    labor: 29
+    other: 10
+    total: 76
+    start: "2 March 1996"
+    end: "3 October 1998"
+  -
+    government: FED
+    house: upper
+    coalition: 36
+    labor: 30
+    other: 10
+    total: 76
+    start: "13 March 1993"
+    end: "2 March 1996"
+  -
+    government: FED
+    house: upper
+    coalition: 34
+    labor: 32
+    other: 10
+    total: 76
+    start: "24 March 1990"
+    end: "13 March 1993"
+  -
+    government: FED
+    house: upper
+    coalition: 34
+    labor: 32
+    other: 10
+    total: 76
+    start: "11 July 1987"
+    end: "24 March 1990"
+  -
+    government: FED
+    house: upper
+    coalition: 33
+    labor: 34
+    other: 9
+    total: 76
+    start: "1 December 1984"
+    end: "11 July 1987"
+  -
+    government: FED
+    house: upper
+    coalition: 28
+    labor: 30
+    other: 6
+    total: 64
+    start: "5 March 1983"
+    end: "1 December 1984"
+  -
+    government: FED
+    house: upper
+    coalition: 28
+    labor: 27
+    other: 9
+    total: 64
+    start: "18 October 1980"
+    end: "5 March 1983"
+  -
+    government: FED
+    house: upper
+    coalition: 28
+    labor: 27
+    other: 9
+    total: 64
+    start: "10 December 1977"
+    end: "18 October 1980"
+  -
+    government: FED
+    house: upper
+    coalition: 27
+    labor: 27
+    other: 10
+    total: 64
+    start: "13 December 1975"
+    end: "10 December 1977"
+  -
+    government: FED
+    house: upper
+    coalition: 23
+    labor: 29
+    other: 8
+    total: 60
+    start: "18 May 1974"
+    end: "13 December 1975"
+  -
+    government: FED
+    house: upper
+    coalition: 21
+    labor: 26
+    other: 13
+    total: 60
+    start: "21 November 1970"
+    end: "18 May 1974"
+  -
+    government: FED
+    house: upper
+    coalition: 21
+    labor: 27
+    other: 12
+    total: 60
+    start: "25 November 1967"
+    end: "21 November 1970"
+  -
+    government: FED
+    house: upper
+    coalition: 23
+    labor: 27
+    other: 10
+    total: 60
+    start: "5 December 1964"
+    end: "25 November 1967"
+  -
+    government: FED
+    house: upper
+    coalition: 24
+    labor: 28
+    other: 8
+    total: 60
+    start: "9 December 1961"
+    end: "5 December 1964"
+  -
+    government: FED
+    house: upper
+    coalition: 25
+    labor: 26
+    other: 9
+    total: 60
+    start: "22 November 1958"
+    end: "9 December 1961"
+  -
+    government: FED
+    house: upper
+    coalition: 24
+    labor: 28
+    other: 8
+    total: 60
+    start: "10 December 1955"
+    end: "22 November 1958"
+  -
+    government: FED
+    house: upper
+    coalition: 26
+    labor: 29
+    other: 5
+    total: 60
+    start: "9 May 1953"
+    end: "10 December 1955"
+  -
+    government: FED
+    house: upper
+    coalition: 26
+    labor: 28
+    other: 6
+    total: 60
+    start: "28 April 1951"
+    end: "9 May 1953"
+  -
+    government: FED
+    house: upper
+    coalition: 21
+    labor: 34
+    other: 5
+    total: 60
+    start: "10 December 1949"
+    end: "28 April 1951"
+  -
+    government: FED
+    house: upper
+    coalition: 2
+    labor: 33
+    other: 1
+    total: 36
+    start: "28 September 1946"
+    end: "10 December 1949"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 22
+    other: 14
+    total: 36
+    start: "21 August 1943"
+    end: "28 September 1946"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 17
+    other: 19
+    total: 36
+    start: "21 September 1940"
+    end: "21 August 1943"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 16
+    other: 20
+    total: 36
+    start: "23 October 1937"
+    end: "21 September 1940"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "15 September 1934"
+    end: "23 October 1937"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "19 December 1931"
+    end: "15 September 1934"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 7
+    other: 29
+    total: 36
+    start: "17 November 1928"
+    end: "19 December 1931"
+  -
+    government: FED
+    house: upper
     coalition: 0
     labor: 8
     other: 28
+    total: 36
+    start: "14 November 1925"
+    end: "17 November 1928"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 12
+    other: 24
+    total: 36
+    start: "16 December 1922"
+    end: "14 November 1925"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 35
+    total: 36
+    start: "13 December 1919"
+    end: "16 December 1922"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 12
+    other: 24
+    total: 36
+    start: "5 May 1917"
+    end: "13 December 1919"
+  -
+    government: FED
+    house: upper
+    coalition: 5
+    labor: 31
+    other: 0
+    total: 36
+    start: "5 September 1914"
+    end: "5 May 1917"
+  -
+    government: FED
+    house: upper
+    coalition: 7
+    labor: 29
+    other: 0
+    total: 36
+    start: "31 May 1913"
+    end: "5 September 1914"
+  -
+    government: FED
+    house: upper
+    coalition: 14
+    labor: 22
+    other: 0
+    total: 36
+    start: "13 April 1910"
+    end: "31 May 1913"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 15
+    other: 21
+    total: 36
+    start: "12 December 1906"
+    end: "13 April 1910"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 14
+    other: 22
+    total: 36
+    start: "16 December 1903"
+    end: "12 December 1906"
+  -
+    government: FED
+    house: upper
+    coalition: 0
+    labor: 8
+    other: 28
+    total: 36
     start: "29 March 1901"
     end: "16 December 1903"
+  -
+    government: NSW
+    house: lower
+    coalition: 54
+    labor: 34
+    other: 5
+    total: 93
+    start: "28 March 2015"
+    end: "Current"
+  -
+    government: NSW
+    house: lower
+    coalition: 69
+    labor: 20
+    other: 4
+    total: 93
+    start: "26 March 2011"
+    end: "28 March 2015"
+  -
+    government: NSW
+    house: lower
+    coalition: 35
+    labor: 52
+    other: 6
+    total: 93
+    start: "24 March 2007"
+    end: "26 March 2011"
+  -
+    government: NSW
+    house: lower
+    coalition: 32
+    labor: 55
+    other: 6
+    total: 93
+    start: "22 March 2003"
+    end: "24 March 2007"
+  -
+    government: NSW
+    house: lower
+    coalition: 33
+    labor: 55
+    other: 5
+    total: 93
+    start: "27 March 1999"
+    end: "22 March 2003"
+  -
+    government: NSW
+    house: lower
+    coalition: 46
+    labor: 50
+    other: 3
+    total: 99
+    start: "25 March 1995"
+    end: "27 March 1999"
+  -
+    government: NSW
+    house: lower
+    coalition: 49
+    labor: 46
+    other: 4
+    total: 99
+    start: "25 May 1991"
+    end: "25 March 1995"
+  -
+    government: NSW
+    house: lower
+    coalition: 59
+    labor: 43
+    other: 7
+    total: 109
+    start: "19 March 1988"
+    end: "25 May 1991"
+  -
+    government: NSW
+    house: lower
+    coalition: 37
+    labor: 58
+    other: 4
+    total: 99
+    start: "24 March 1984"
+    end: "19 March 1988"
+  -
+    government: NSW
+    house: lower
+    coalition: 14
+    labor: 69
+    other: 16
+    total: 99
+    start: "19 September 1981"
+    end: "24 March 1984"
+  -
+    government: NSW
+    house: lower
+    coalition: 18
+    labor: 63
+    other: 18
+    total: 99
+    start: "7 October 1978"
+    end: "19 September 1981"
+  -
+    government: NSW
+    house: lower
+    coalition: 30
+    labor: 50
+    other: 19
+    total: 99
+    start: "1 May 1976"
+    end: "7 October 1978"
+  -
+    government: NSW
+    house: lower
+    coalition: 34
+    labor: 44
+    other: 21
+    total: 99
+    start: "17 November 1973"
+    end: "1 May 1976"
+  -
+    government: NSW
+    house: lower
+    coalition: 32
+    labor: 45
+    other: 19
+    total: 96
+    start: "13 February 1971"
+    end: "17 November 1973"
+  -
+    government: NSW
+    house: lower
+    coalition: 36
+    labor: 39
+    other: 19
+    total: 94
+    start: "24 February 1968"
+    end: "13 February 1971"
+  -
+    government: NSW
+    house: lower
+    coalition: 31
+    labor: 45
+    other: 18
+    total: 94
+    start: "1 May 1965"
+    end: "24 February 1968"
+  -
+    government: NSW
+    house: lower
+    coalition: 25
+    labor: 54
+    other: 15
+    total: 94
+    start: "3 March 1962"
+    end: "1 May 1965"
+  -
+    government: NSW
+    house: lower
+    coalition: 28
+    labor: 49
+    other: 17
+    total: 94
+    start: "21 March 1959"
+    end: "3 March 1962"
+  -
+    government: NSW
+    house: lower
+    coalition: 27
+    labor: 50
+    other: 17
+    total: 94
+    start: "3 March 1956"
+    end: "21 March 1959"
+  -
+    government: NSW
+    house: lower
+    coalition: 22
+    labor: 57
+    other: 15
+    total: 94
+    start: "14 February 1953"
+    end: "3 March 1956"
+  -
+    government: NSW
+    house: lower
+    coalition: 29
+    labor: 46
+    other: 19
+    total: 94
+    start: "17 June 1950"
+    end: "14 February 1953"
+  -
+    government: NSW
+    house: lower
+    coalition: 19
+    labor: 52
+    other: 19
+    total: 90
+    start: "3 May 1947"
+    end: "17 June 1950"
+  -
+    government: NSW
+    house: lower
+    coalition: 1
+    labor: 56
+    other: 33
+    total: 90
+    start: "27 May 1944"
+    end: "3 May 1947"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 54
+    other: 36
+    total: 90
+    start: "10 May 1941"
+    end: "27 May 1944"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 28
+    other: 62
+    total: 90
+    start: "26 March 1938"
+    end: "10 May 1941"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 90
+    total: 90
+    start: "11 May 1935"
+    end: "26 March 1938"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 90
+    total: 90
+    start: "11 June 1932"
+    end: "11 May 1935"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 55
+    other: 35
+    total: 90
+    start: "25 October 1930"
+    end: "11 June 1932"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 40
+    other: 50
+    total: 90
+    start: "8 October 1927"
+    end: "25 October 1930"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 46
+    other: 44
+    total: 90
+    start: "30 May 1925"
+    end: "8 October 1927"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 36
+    other: 54
+    total: 90
+    start: "25 March 1922"
+    end: "30 May 1925"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 43
+    other: 47
+    total: 90
+    start: "20 March 1920"
+    end: "25 March 1922"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 33
+    other: 57
+    total: 90
+    start: "24 March 1917"
+    end: "20 March 1920"
+  -
+    government: NSW
+    house: lower
+    coalition: 28
+    labor: 49
+    other: 13
+    total: 90
+    start: "6 December 1913"
+    end: "24 March 1917"
+  -
+    government: NSW
+    house: lower
+    coalition: 37
+    labor: 46
+    other: 7
+    total: 90
+    start: "14 October 1910"
+    end: "6 December 1913"
+  -
+    government: NSW
+    house: lower
+    coalition: 45
+    labor: 32
+    other: 13
+    total: 90
+    start: "10 September 1907"
+    end: "14 October 1910"
+  -
+    government: NSW
+    house: lower
+    coalition: 45
+    labor: 25
+    other: 20
+    total: 90
+    start: "6 August 1904"
+    end: "10 September 1907"
+  -
+    government: NSW
+    house: lower
+    coalition: 37
+    labor: 24
+    other: 64
+    total: 125
+    start: "3 July 1901"
+    end: "6 August 1904"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 19
+    other: 106
+    total: 125
+    start: "27 July 1898"
+    end: "3 July 1901"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 18
+    other: 107
+    total: 125
+    start: "24 July 1895"
+    end: "27 July 1898"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 14
+    other: 111
+    total: 125
+    start: "17 July 1894"
+    end: "24 July 1895"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 36
+    other: 105
+    total: 141
+    start: "17 June 1891"
+    end: "17 July 1894"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 137
+    total: 137
+    start: "1 February 1889"
+    end: "17 June 1891"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 124
+    total: 124
+    start: "4 February 1887"
+    end: "1 February 1889"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 122
+    total: 122
+    start: "16 October 1885"
+    end: "4 February 1887"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 113
+    total: 113
+    start: "30 November 1882"
+    end: "16 October 1885"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 108
+    total: 108
+    start: "18 November 1880"
+    end: "30 November 1882"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 73
+    total: 73
+    start: "24 October 1877"
+    end: "18 November 1880"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 72
+    total: 72
+    start: "8 December 1874"
+    end: "24 October 1877"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 72
+    total: 72
+    start: "13 February 1872"
+    end: "8 December 1874"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 72
+    total: 72
+    start: "3 December 1869"
+    end: "13 February 1872"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 72
+    total: 72
+    start: "22 November 1864"
+    end: "3 December 1869"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 72
+    total: 72
+    start: "6 December 1860"
+    end: "22 November 1864"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 80
+    total: 80
+    start: "8 June 1859"
+    end: "6 December 1860"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 54
+    total: 54
+    start: "13 January 1858"
+    end: "8 June 1859"
+  -
+    government: NSW
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 54
+    total: 54
+    start: "11 March 1856"
+    end: "13 January 1858"
+  -
+    government: NSW
+    house: upper
+    coalition: 20
+    labor: 12
+    other: 10
+    total: 42
+    start: "28 March 2015"
+    end: "Current"
+  -
+    government: NSW
+    house: upper
+    coalition: 19
+    labor: 14
+    other: 9
+    total: 42
+    start: "26 March 2011"
+    end: "28 March 2015"
+  -
+    government: NSW
+    house: upper
+    coalition: 15
+    labor: 19
+    other: 8
+    total: 42
+    start: "24 March 2007"
+    end: "26 March 2011"
+  -
+    government: NSW
+    house: upper
+    coalition: 13
+    labor: 18
+    other: 11
+    total: 42
+    start: "22 March 2003"
+    end: "24 March 2007"
+  -
+    government: NSW
+    house: upper
+    coalition: 13
+    labor: 16
+    other: 13
+    total: 42
+    start: "27 March 1999"
+    end: "22 March 2003"
+  -
+    government: NSW
+    house: upper
+    coalition: 18
+    labor: 17
+    other: 7
+    total: 42
+    start: "25 March 1995"
+    end: "27 March 1999"
+  -
+    government: NSW
+    house: upper
+    coalition: 21
+    labor: 19
+    other: 4
+    total: 44
+    start: "25 May 1991"
+    end: "25 March 1995"
+  -
+    government: NSW
+    house: upper
+    coalition: 19
+    labor: 21
+    other: 5
+    total: 45
+    start: "19 March 1988"
+    end: "25 May 1991"
+  -
+    government: NSW
+    house: upper
+    coalition: 18
+    labor: 24
+    other: 3
+    total: 45
+    start: "24 March 1984"
+    end: "19 March 1988"
+  -
+    government: NSW
+    house: upper
+    coalition: 12
+    labor: 24
+    other: 8
+    total: 44
+    start: "19 September 1981"
+    end: "24 March 1984"
+  -
+    government: NSW
+    house: upper
+    coalition: 14
+    labor: 23
+    other: 6
+    total: 43
+    start: "7 October 1978"
+    end: "19 September 1981"
+  -
+    government: NT
+    house: lower
+    coalition: 2
+    labor: 18
+    other: 5
+    total: 25
+    start: "27 August 2016"
+    end: "Current"
+  -
+    government: NT
+    house: lower
+    coalition: 16
+    labor: 8
+    other: 1
+    total: 25
+    start: "25 August 2012"
+    end: "27 August 2016"
+  -
+    government: NT
+    house: lower
+    coalition: 11
+    labor: 13
+    other: 1
+    total: 25
+    start: "9 August 2008"
+    end: "25 August 2012"
+  -
+    government: NT
+    house: lower
+    coalition: 4
+    labor: 19
+    other: 2
+    total: 25
+    start: "18 June 2005"
+    end: "9 August 2008"
+  -
+    government: NT
+    house: lower
+    coalition: 10
+    labor: 13
+    other: 2
+    total: 25
+    start: "18 August 2001"
+    end: "18 June 2005"
+  -
+    government: NT
+    house: lower
+    coalition: 18
+    labor: 7
+    other: 0
+    total: 25
+    start: "30 August 1997"
+    end: "18 August 2001"
+  -
+    government: NT
+    house: lower
+    coalition: 17
+    labor: 7
+    other: 1
+    total: 25
+    start: "4 June 1994"
+    end: "30 August 1997"
+  -
+    government: NT
+    house: lower
+    coalition: 14
+    labor: 9
+    other: 2
+    total: 25
+    start: "27 October 1990"
+    end: "4 June 1994"
+  -
+    government: NT
+    house: lower
+    coalition: 17
+    labor: 6
+    other: 2
+    total: 25
+    start: "7 March 1987"
+    end: "27 October 1990"
+  -
+    government: NT
+    house: lower
+    coalition: 19
+    labor: 6
+    other: 0
+    total: 25
+    start: "3 December 1983"
+    end: "7 March 1987"
+  -
+    government: NT
+    house: lower
+    coalition: 11
+    labor: 7
+    other: 1
+    total: 19
+    start: "7 June 1980"
+    end: "3 December 1983"
+  -
+    government: NT
+    house: lower
+    coalition: 12
+    labor: 6
+    other: 1
+    total: 19
+    start: "13 August 1977"
+    end: "7 June 1980"
+  -
+    government: NT
+    house: lower
+    coalition: 17
+    labor: 0
+    other: 2
+    total: 19
+    start: "19 October 1974"
+    end: "13 August 1977"
+  -
+    government: QLD
+    house: lower
+    coalition: 39
+    labor: 48
+    other: 6
+    total: 93
+    start: "25 November 2017"
+    end: "Current"
+  -
+    government: QLD
+    house: lower
+    coalition: 42
+    labor: 44
+    other: 3
+    total: 89
+    start: "31 January 2015"
+    end: "25 November 2017"
+  -
+    government: QLD
+    house: lower
+    coalition: 78
+    labor: 7
+    other: 4
+    total: 89
+    start: "24 March 2012"
+    end: "31 January 2015"
+  -
+    government: QLD
+    house: lower
+    coalition: 34
+    labor: 51
+    other: 4
+    total: 89
+    start: "21 March 2009"
+    end: "24 March 2012"
+  -
+    government: QLD
+    house: lower
+    coalition: 25
+    labor: 59
+    other: 5
+    total: 89
+    start: "9 September 2006"
+    end: "21 March 2009"
+  -
+    government: QLD
+    house: lower
+    coalition: 20
+    labor: 63
+    other: 6
+    total: 89
+    start: "7 February 2004"
+    end: "9 September 2006"
+  -
+    government: QLD
+    house: lower
+    coalition: 15
+    labor: 66
+    other: 8
+    total: 89
+    start: "17 February 2001"
+    end: "7 February 2004"
+  -
+    government: QLD
+    house: lower
+    coalition: 32
+    labor: 44
+    other: 13
+    total: 89
+    start: "13 June 1998"
+    end: "17 February 2001"
+  -
+    government: QLD
+    house: lower
+    coalition: 43
+    labor: 45
+    other: 1
+    total: 89
+    start: "15 July 1995"
+    end: "13 June 1998"
+  -
+    government: QLD
+    house: lower
+    coalition: 35
+    labor: 54
+    other: 0
+    total: 89
+    start: "19 September 1992"
+    end: "15 July 1995"
+  -
+    government: QLD
+    house: lower
+    coalition: 35
+    labor: 54
+    other: 0
+    total: 89
+    start: "2 December 1989"
+    end: "19 September 1992"
+  -
+    government: QLD
+    house: lower
+    coalition: 59
+    labor: 30
+    other: 0
+    total: 89
+    start: "1 November 1986"
+    end: "2 December 1989"
+  -
+    government: QLD
+    house: lower
+    coalition: 49
+    labor: 32
+    other: 1
+    total: 82
+    start: "22 October 1983"
+    end: "1 November 1986"
+  -
+    government: QLD
+    house: lower
+    coalition: 57
+    labor: 25
+    other: 0
+    total: 82
+    start: "29 November 1980"
+    end: "22 October 1983"
+  -
+    government: QLD
+    house: lower
+    coalition: 59
+    labor: 23
+    other: 0
+    total: 82
+    start: "12 November 1977"
+    end: "29 November 1980"
+  -
+    government: QLD
+    house: lower
+    coalition: 69
+    labor: 11
+    other: 2
+    total: 82
+    start: "7 December 1974"
+    end: "12 November 1977"
+  -
+    government: QLD
+    house: lower
+    coalition: 21
+    labor: 33
+    other: 28
+    total: 82
+    start: "27 May 1972"
+    end: "7 December 1974"
+  -
+    government: QLD
+    house: lower
+    coalition: 19
+    labor: 31
+    other: 28
+    total: 78
+    start: "17 May 1969"
+    end: "27 May 1972"
+  -
+    government: QLD
+    house: lower
+    coalition: 20
+    labor: 26
+    other: 32
+    total: 78
+    start: "28 May 1966"
+    end: "17 May 1969"
+  -
+    government: QLD
+    house: lower
+    coalition: 20
+    labor: 26
+    other: 32
+    total: 78
+    start: "1 June 1963"
+    end: "28 May 1966"
+  -
+    government: QLD
+    house: lower
+    coalition: 20
+    labor: 25
+    other: 33
+    total: 78
+    start: "28 May 1960"
+    end: "1 June 1963"
+  -
+    government: QLD
+    house: lower
+    coalition: 18
+    labor: 20
+    other: 37
+    total: 75
+    start: "3 August 1957"
+    end: "28 May 1960"
+  -
+    government: QLD
+    house: lower
+    coalition: 8
+    labor: 49
+    other: 18
+    total: 75
+    start: "19 May 1956"
+    end: "3 August 1957"
+  -
+    government: QLD
+    house: lower
+    coalition: 8
+    labor: 50
+    other: 17
+    total: 75
+    start: "7 March 1953"
+    end: "19 May 1956"
+  -
+    government: QLD
+    house: lower
+    coalition: 11
+    labor: 42
+    other: 22
+    total: 75
+    start: "29 April 1950"
+    end: "7 March 1953"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 35
+    other: 27
+    total: 62
+    start: "3 May 1947"
+    end: "29 April 1950"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 37
+    other: 25
+    total: 62
+    start: "15 April 1944"
+    end: "3 May 1947"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 41
+    other: 21
+    total: 62
+    start: "29 March 1941"
+    end: "15 April 1944"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 44
+    other: 18
+    total: 62
+    start: "2 April 1938"
+    end: "29 March 1941"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 46
+    other: 16
+    total: 62
+    start: "11 May 1935"
+    end: "2 April 1938"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 33
+    other: 29
+    total: 62
+    start: "11 June 1932"
+    end: "11 May 1935"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 27
+    other: 45
+    total: 72
+    start: "11 May 1929"
+    end: "11 June 1932"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 43
+    other: 29
+    total: 72
+    start: "8 May 1926"
+    end: "11 May 1929"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 43
+    other: 29
+    total: 72
+    start: "12 May 1923"
+    end: "8 May 1926"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 38
+    other: 34
+    total: 72
+    start: "9 October 1920"
+    end: "12 May 1923"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 48
+    other: 24
+    total: 72
+    start: "16 March 1918"
+    end: "9 October 1920"
+  -
+    government: QLD
+    house: lower
+    coalition: 21
+    labor: 45
+    other: 6
+    total: 72
+    start: "22 May 1915"
+    end: "16 March 1918"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 25
+    other: 47
+    total: 72
+    start: "27 April 1912"
+    end: "22 May 1915"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 27
+    other: 45
+    total: 72
+    start: "2 October 1909"
+    end: "27 April 1912"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 22
+    other: 50
+    total: 72
+    start: "5 February 1908"
+    end: "2 October 1909"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 18
+    other: 54
+    total: 72
+    start: "18 May 1907"
+    end: "5 February 1908"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 34
+    other: 38
+    total: 72
+    start: "27 August 1904"
+    end: "18 May 1907"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 25
+    other: 47
+    total: 72
+    start: "11 March 1902"
+    end: "27 August 1904"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 21
+    other: 51
+    total: 72
+    start: "11 March 1899"
+    end: "11 March 1902"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 20
+    other: 52
+    total: 72
+    start: "21 March 1896"
+    end: "11 March 1899"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 16
+    other: 56
+    total: 72
+    start: "29 April 1893"
+    end: "21 March 1896"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 72
+    total: 72
+    start: "28 April 1888"
+    end: "29 April 1893"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 55
+    total: 55
+    start: "10 August 1883"
+    end: "28 April 1888"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 55
+    total: 55
+    start: "14 November 1878"
+    end: "10 August 1883"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 42
+    total: 42
+    start: "4 November 1873"
+    end: "14 November 1878"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 32
+    total: 32
+    start: "8 July 1871"
+    end: "4 November 1873"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 32
+    total: 32
+    start: "27 July 1870"
+    end: "8 July 1871"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 32
+    total: 32
+    start: "14 September 1868"
+    end: "27 July 1870"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 32
+    total: 32
+    start: "18 June 1867"
+    end: "14 September 1868"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 26
+    total: 26
+    start: "30 May 1863"
+    end: "18 June 1867"
+  -
+    government: QLD
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 26
+    total: 26
+    start: "27 April 1860"
+    end: "30 May 1863"
+  -
+    government: SA
+    house: lower
+    coalition: 25
+    labor: 19
+    other: 3
+    total: 47
+    start: "17 March 2018"
+    end: "Current"
+  -
+    government: SA
+    house: lower
+    coalition: 22
+    labor: 23
+    other: 2
+    total: 47
+    start: "15 March 2014"
+    end: "17 March 2018"
+  -
+    government: SA
+    house: lower
+    coalition: 18
+    labor: 26
+    other: 3
+    total: 47
+    start: "20 March 2010"
+    end: "15 March 2014"
+  -
+    government: SA
+    house: lower
+    coalition: 16
+    labor: 28
+    other: 3
+    total: 47
+    start: "18 March 2006"
+    end: "20 March 2010"
+  -
+    government: SA
+    house: lower
+    coalition: 21
+    labor: 23
+    other: 3
+    total: 47
+    start: "9 February 2002"
+    end: "18 March 2006"
+  -
+    government: SA
+    house: lower
+    coalition: 24
+    labor: 21
+    other: 2
+    total: 47
+    start: "11 October 1997"
+    end: "9 February 2002"
+  -
+    government: SA
+    house: lower
+    coalition: 37
+    labor: 10
+    other: 0
+    total: 47
+    start: "11 December 1993"
+    end: "11 October 1997"
+  -
+    government: SA
+    house: lower
+    coalition: 22
+    labor: 22
+    other: 3
+    total: 47
+    start: "25 November 1989"
+    end: "11 December 1993"
+  -
+    government: SA
+    house: lower
+    coalition: 16
+    labor: 27
+    other: 4
+    total: 47
+    start: "7 December 1985"
+    end: "25 November 1989"
+  -
+    government: SA
+    house: lower
+    coalition: 21
+    labor: 24
+    other: 2
+    total: 47
+    start: "6 November 1982"
+    end: "7 December 1985"
+  -
+    government: SA
+    house: lower
+    coalition: 25
+    labor: 19
+    other: 3
+    total: 47
+    start: "15 September 1979"
+    end: "6 November 1982"
+  -
+    government: SA
+    house: lower
+    coalition: 17
+    labor: 27
+    other: 3
+    total: 47
+    start: "17 September 1977"
+    end: "15 September 1979"
+  -
+    government: SA
+    house: lower
+    coalition: 20
+    labor: 23
+    other: 4
+    total: 47
+    start: "12 July 1975"
+    end: "17 September 1977"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 26
+    other: 21
+    total: 47
+    start: "10 March 1973"
+    end: "12 July 1975"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 27
+    other: 20
+    total: 47
+    start: "30 May 1970"
+    end: "10 March 1973"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 19
+    other: 20
+    total: 39
+    start: "2 March 1968"
+    end: "30 May 1970"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 21
+    other: 18
+    total: 39
+    start: "6 March 1965"
+    end: "2 March 1968"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 19
+    other: 20
+    total: 39
+    start: "3 March 1962"
+    end: "6 March 1965"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 17
+    other: 22
+    total: 39
+    start: "7 March 1959"
+    end: "3 March 1962"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 15
+    other: 24
+    total: 39
+    start: "3 March 1956"
+    end: "7 March 1959"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 15
+    other: 24
+    total: 39
+    start: "7 March 1953"
+    end: "3 March 1956"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 12
+    other: 27
+    total: 39
+    start: "4 March 1950"
+    end: "7 March 1953"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 13
+    other: 26
+    total: 39
+    start: "8 March 1947"
+    end: "4 March 1950"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 16
+    other: 23
+    total: 39
+    start: "29 April 1944"
+    end: "8 March 1947"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 11
+    other: 28
+    total: 39
+    start: "29 March 1941"
+    end: "29 April 1944"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 9
+    other: 30
+    total: 39
+    start: "19 March 1938"
+    end: "29 March 1941"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 6
+    other: 40
+    total: 46
+    start: "8 April 1933"
+    end: "19 March 1938"
+  -
+    government: SA
+    house: lower
+    coalition: 13
+    labor: 30
+    other: 3
+    total: 46
+    start: "5 April 1930"
+    end: "8 April 1933"
+  -
+    government: SA
+    house: lower
+    coalition: 28
+    labor: 16
+    other: 2
+    total: 46
+    start: "26 March 1927"
+    end: "5 April 1930"
+  -
+    government: SA
+    house: lower
+    coalition: 17
+    labor: 27
+    other: 2
+    total: 46
+    start: "5 April 1924"
+    end: "26 March 1927"
+  -
+    government: SA
+    house: lower
+    coalition: 25
+    labor: 16
+    other: 5
+    total: 46
+    start: "9 April 1921"
+    end: "5 April 1924"
+  -
+    government: SA
+    house: lower
+    coalition: 28
+    labor: 17
+    other: 1
+    total: 46
+    start: "6 April 1918"
+    end: "9 April 1921"
+  -
+    government: SA
+    house: lower
+    coalition: 20
+    labor: 26
+    other: 0
+    total: 46
+    start: "27 March 1915"
+    end: "6 April 1918"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 16
+    other: 24
+    total: 40
+    start: "10 February 1912"
+    end: "27 March 1915"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 22
+    other: 20
+    total: 42
+    start: "2 April 1910"
+    end: "10 February 1912"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 42
+    total: 42
+    start: "3 November 1906"
+    end: "2 April 1910"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 15
+    other: 27
+    total: 42
+    start: "27 May 1905"
+    end: "3 November 1906"
+  -
+    government: SA
+    house: lower
+    coalition: 12
+    labor: 5
+    other: 25
+    total: 42
+    start: "3 May 1902"
+    end: "27 May 1905"
+  -
+    government: SA
+    house: lower
+    coalition: 14
+    labor: 11
+    other: 29
+    total: 54
+    start: "29 April 1899"
+    end: "3 May 1902"
+  -
+    government: SA
+    house: lower
+    coalition: 15
+    labor: 12
+    other: 27
+    total: 54
+    start: "25 April 1896"
+    end: "29 April 1899"
+  -
+    government: SA
+    house: lower
+    coalition: 23
+    labor: 10
+    other: 21
+    total: 54
+    start: "15 April 1893"
+    end: "25 April 1896"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 54
+    total: 54
+    start: "9 April 1890"
+    end: "15 April 1893"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 52
+    total: 52
+    start: "19 March 1887"
+    end: "9 April 1890"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 52
+    total: 52
+    start: "8 April 1884"
+    end: "19 March 1887"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 46
+    total: 46
+    start: "8 April 1881"
+    end: "8 April 1884"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 46
+    total: 46
+    start: "2 April 1878"
+    end: "8 April 1881"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 46
+    total: 46
+    start: "10 February 1875"
+    end: "2 April 1878"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "14 December 1871"
+    end: "10 February 1875"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "28 March 1870"
+    end: "14 December 1871"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "6 April 1868"
+    end: "28 March 1870"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "1 March 1865"
+    end: "6 April 1868"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "10 November 1862"
+    end: "1 March 1865"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "13 March 1860"
+    end: "10 November 1862"
+  -
+    government: SA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "9 March 1857"
+    end: "13 March 1860"
+  -
+    government: TAS
+    house: lower
+    coalition: 13
+    labor: 10
+    other: 2
+    total: 25
+    start: "3 March 2018"
+    end: "Current"
+  -
+    government: TAS
+    house: lower
+    coalition: 15
+    labor: 7
+    other: 3
+    total: 25
+    start: "15 March 2014"
+    end: "3 March 2018"
+  -
+    government: TAS
+    house: lower
+    coalition: 10
+    labor: 10
+    other: 5
+    total: 25
+    start: "20 March 2010"
+    end: "15 March 2014"
+  -
+    government: TAS
+    house: lower
+    coalition: 7
+    labor: 14
+    other: 4
+    total: 25
+    start: "18 March 2006"
+    end: "20 March 2010"
+  -
+    government: TAS
+    house: lower
+    coalition: 7
+    labor: 14
+    other: 4
+    total: 25
+    start: "20 July 2002"
+    end: "18 March 2006"
+  -
+    government: TAS
+    house: lower
+    coalition: 10
+    labor: 14
+    other: 1
+    total: 25
+    start: "29 August 1998"
+    end: "20 July 2002"
+  -
+    government: TAS
+    house: lower
+    coalition: 16
+    labor: 14
+    other: 5
+    total: 35
+    start: "24 February 1996"
+    end: "29 August 1998"
+  -
+    government: TAS
+    house: lower
+    coalition: 19
+    labor: 11
+    other: 5
+    total: 35
+    start: "1 February 1992"
+    end: "24 February 1996"
+  -
+    government: TAS
+    house: lower
+    coalition: 17
+    labor: 13
+    other: 5
+    total: 35
+    start: "13 May 1989"
+    end: "1 February 1992"
+  -
+    government: TAS
+    house: lower
+    coalition: 19
+    labor: 14
+    other: 2
+    total: 35
+    start: "8 February 1986"
+    end: "13 May 1989"
+  -
+    government: TAS
+    house: lower
+    coalition: 19
+    labor: 14
+    other: 2
+    total: 35
+    start: "15 May 1982"
+    end: "8 February 1986"
+  -
+    government: TAS
+    house: lower
+    coalition: 15
+    labor: 20
+    other: 0
+    total: 35
+    start: "28 July 1979"
+    end: "15 May 1982"
+  -
+    government: TAS
+    house: lower
+    coalition: 17
+    labor: 18
+    other: 0
+    total: 35
+    start: "11 December 1976"
+    end: "28 July 1979"
+  -
+    government: TAS
+    house: lower
+    coalition: 14
+    labor: 21
+    other: 0
+    total: 35
+    start: "22 April 1972"
+    end: "11 December 1976"
+  -
+    government: TAS
+    house: lower
+    coalition: 17
+    labor: 17
+    other: 1
+    total: 35
+    start: "10 May 1969"
+    end: "22 April 1972"
+  -
+    government: TAS
+    house: lower
+    coalition: 16
+    labor: 19
+    other: 0
+    total: 35
+    start: "2 May 1964"
+    end: "10 May 1969"
+  -
+    government: TAS
+    house: lower
+    coalition: 16
+    labor: 17
+    other: 2
+    total: 35
+    start: "2 May 1959"
+    end: "2 May 1964"
+  -
+    government: TAS
+    house: lower
+    coalition: 15
+    labor: 15
+    other: 0
+    total: 30
+    start: "13 October 1956"
+    end: "2 May 1959"
+  -
+    government: TAS
+    house: lower
+    coalition: 15
+    labor: 15
+    other: 0
+    total: 30
+    start: "19 February 1955"
+    end: "13 October 1956"
+  -
+    government: TAS
+    house: lower
+    coalition: 14
+    labor: 15
+    other: 1
+    total: 30
+    start: "6 May 1950"
+    end: "19 February 1955"
+  -
+    government: TAS
+    house: lower
+    coalition: 12
+    labor: 15
+    other: 3
+    total: 30
+    start: "21 August 1948"
+    end: "6 May 1950"
+  -
+    government: TAS
+    house: lower
+    coalition: 12
+    labor: 16
+    other: 2
+    total: 30
+    start: "23 November 1946"
+    end: "21 August 1948"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 20
+    other: 10
+    total: 30
+    start: "13 December 1941"
+    end: "23 November 1946"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 18
+    other: 12
+    total: 30
+    start: "20 February 1937"
+    end: "13 December 1941"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 14
+    other: 16
+    total: 30
+    start: "9 June 1934"
+    end: "20 February 1937"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 10
+    other: 20
+    total: 30
+    start: "9 May 1931"
+    end: "9 June 1934"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 14
+    other: 16
+    total: 30
+    start: "30 May 1928"
+    end: "9 May 1931"
+  -
+    government: TAS
+    house: lower
+    coalition: 4
+    labor: 16
+    other: 10
+    total: 30
+    start: "3 June 1925"
+    end: "30 May 1928"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 12
+    other: 18
+    total: 30
+    start: "10 June 1922"
+    end: "3 June 1925"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 13
+    other: 17
+    total: 30
+    start: "31 May 1919"
+    end: "10 June 1922"
+  -
+    government: TAS
+    house: lower
+    coalition: 15
+    labor: 14
+    other: 1
+    total: 30
+    start: "25 March 1916"
+    end: "31 May 1919"
+  -
+    government: TAS
+    house: lower
+    coalition: 16
+    labor: 14
+    other: 0
+    total: 30
+    start: "23 January 1913"
+    end: "25 March 1916"
+  -
+    government: TAS
+    house: lower
+    coalition: 16
+    labor: 14
+    other: 0
+    total: 30
+    start: "30 April 1912"
+    end: "23 January 1913"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 12
+    other: 18
+    total: 30
+    start: "30 April 1909"
+    end: "30 April 1912"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 8
+    other: 27
+    total: 35
+    start: "29 March 1906"
+    end: "30 April 1909"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 3
+    other: 32
+    total: 35
+    start: "2 April 1903"
+    end: "29 March 1906"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 38
+    total: 38
+    start: "9 March 1900"
+    end: "2 April 1903"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 37
+    total: 37
+    start: "20 January 1897"
+    end: "9 March 1900"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "19 December 1893"
+    end: "20 January 1897"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "22 May 1891"
+    end: "19 December 1893"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 36
+    total: 36
+    start: "26 July 1886"
+    end: "22 May 1891"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 32
+    total: 32
+    start: "25 May 1882"
+    end: "26 July 1886"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 32
+    total: 32
+    start: "30 May 1877"
+    end: "25 May 1882"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 32
+    total: 32
+    start: "5 September 1872"
+    end: "30 May 1877"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 32
+    total: 32
+    start: "6 September 1871"
+    end: "5 September 1872"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 30
+    total: 30
+    start: "3 October 1866"
+    end: "6 September 1871"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 30
+    total: 30
+    start: "6 November 1862"
+    end: "3 October 1866"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 30
+    total: 30
+    start: "29 May 1861"
+    end: "6 November 1862"
+  -
+    government: TAS
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 30
+    total: 30
+    start: "8 September 1856"
+    end: "29 May 1861"
+  -
+    government: TAS
+    house: upper
+    coalition: 2
+    labor: 4
+    other: 9
+    total: 15
+    start: "5 May 2018"
+    end: "Current"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 4
+    other: 10
+    total: 15
+    start: "6 May 2017"
+    end: "5 May 2018"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "6 May 1930"
+    end: "1931"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "7 May 1929"
+    end: "6 May 1930"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "8 May 1928"
+    end: "7 May 1929"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "3 May 1927"
+    end: "8 May 1928"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "4 May 1926"
+    end: "3 May 1927"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "5 May 1925"
+    end: "4 May 1926"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "6 May 1924"
+    end: "5 May 1925"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "8 May 1923"
+    end: "6 May 1924"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "2 May 1922"
+    end: "8 May 1923"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 17
+    total: 18
+    start: "3 May 1921"
+    end: "2 May 1922"
+  -
+    government: TAS
+    house: upper
+    coalition: 2
+    labor: 1
+    other: 15
+    total: 18
+    start: "4 May 1920"
+    end: "3 May 1921"
+  -
+    government: TAS
+    house: upper
+    coalition: 2
+    labor: 1
+    other: 15
+    total: 18
+    start: "6 May 1919"
+    end: "4 May 1920"
+  -
+    government: TAS
+    house: upper
+    coalition: 2
+    labor: 1
+    other: 15
+    total: 18
+    start: "7 May 1918"
+    end: "6 May 1919"
+  -
+    government: TAS
+    house: upper
+    coalition: 3
+    labor: 1
+    other: 14
+    total: 18
+    start: "8 May 1917"
+    end: "7 May 1918"
+  -
+    government: TAS
+    house: upper
+    coalition: 3
+    labor: 1
+    other: 14
+    total: 18
+    start: "2 May 1916"
+    end: "8 May 1917"
+  -
+    government: TAS
+    house: upper
+    coalition: 2
+    labor: 0
+    other: 16
+    total: 18
+    start: "24 January 1915"
+    end: "2 May 1916"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 0
+    other: 17
+    total: 18
+    start: "5 May 1914"
+    end: "24 January 1915"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 0
+    other: 17
+    total: 18
+    start: "6 May 1913"
+    end: "5 May 1914"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 0
+    other: 17
+    total: 18
+    start: "7 May 1912"
+    end: "6 May 1913"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 0
+    other: 17
+    total: 18
+    start: "2 May 1911"
+    end: "7 May 1912"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 0
+    other: 17
+    total: 18
+    start: "3 May 1910"
+    end: "2 May 1911"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "4 May 1909"
+    end: "3 May 1910"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "7 May 1907"
+    end: "4 May 1909"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "8 May 1906"
+    end: "7 May 1907"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "2 May 1905"
+    end: "8 May 1906"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "3 May 1904"
+    end: "2 May 1905"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "5 May 1903"
+    end: "3 May 1904"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "18 July 1902"
+    end: "5 May 1903"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "7 May 1901"
+    end: "18 July 1902"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 19
+    total: 19
+    start: "8 May 1900"
+    end: "7 May 1901"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 19
+    total: 19
+    start: "2 May 1899"
+    end: "8 May 1900"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "3 May 1898"
+    end: "2 May 1899"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "4 May 1897"
+    end: "3 May 1898"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "5 May 1896"
+    end: "4 May 1897"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "7 May 1895"
+    end: "5 May 1896"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "8 May 1894"
+    end: "7 May 1895"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "2 May 1893"
+    end: "8 May 1894"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "3 May 1892"
+    end: "2 May 1893"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "5 May 1891"
+    end: "3 May 1892"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "6 May 1890"
+    end: "5 May 1891"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "7 May 1889"
+    end: "6 May 1890"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "8 May 1888"
+    end: "7 May 1889"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "3 May 1887"
+    end: "8 May 1888"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "13 July 1886"
+    end: "3 May 1887"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "14 July 1885"
+    end: "13 July 1886"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "23 February 1884"
+    end: "14 July 1885"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "7 April 1883"
+    end: "23 February 1884"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "6 March 1882"
+    end: "7 April 1883"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "17 February 1881"
+    end: "6 March 1882"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "23 June 1880"
+    end: "17 February 1881"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "21 July 1879"
+    end: "23 June 1880"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "16 July 1877"
+    end: "21 July 1879"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "10 February 1876"
+    end: "16 July 1877"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "28 April 1875"
+    end: "10 February 1876"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "15 July 1874"
+    end: "28 April 1875"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "3 September 1873"
+    end: "15 July 1874"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "21 June 1872"
+    end: "3 September 1873"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 16
+    total: 16
+    start: "6 July 1871"
+    end: "21 June 1872"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "21 March 1870"
+    end: "6 July 1871"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "3 March 1869"
+    end: "21 March 1870"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "23 July 1868"
+    end: "3 March 1869"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "7 August 1867"
+    end: "23 July 1868"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "15 June 1866"
+    end: "7 August 1867"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "25 June 1865"
+    end: "15 June 1866"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "31 May 1864"
+    end: "25 June 1865"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "1 February 1863"
+    end: "31 May 1864"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "1 December 1862"
+    end: "1 February 1863"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "14 August 1861"
+    end: "1 December 1862"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "1 June 1860"
+    end: "14 August 1861"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "1 May 1859"
+    end: "1 June 1860"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "1 May 1858"
+    end: "1 May 1859"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "13 May 1857"
+    end: "1 May 1858"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 15
+    total: 15
+    start: "1 January 1856"
+    end: "13 May 1857"
+  -
+    government: TAS
+    house: upper
+    coalition: 2
+    labor: 2
+    other: 11
+    total: 15
+    start: "2016"
+    end: "6 May 2017"
+  -
+    government: TAS
+    house: upper
+    coalition: 2
+    labor: 1
+    other: 12
+    total: 15
+    start: "2015"
+    end: "2016"
+  -
+    government: TAS
+    house: upper
+    coalition: 2
+    labor: 1
+    other: 12
+    total: 15
+    start: "2014"
+    end: "2015"
+  -
+    government: TAS
+    house: upper
+    coalition: 2
+    labor: 1
+    other: 12
+    total: 15
+    start: "2013"
+    end: "2014"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 1
+    other: 13
+    total: 15
+    start: "2012"
+    end: "2013"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 2
+    other: 12
+    total: 15
+    start: "2011"
+    end: "2012"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 3
+    other: 11
+    total: 15
+    start: "2010"
+    end: "2011"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 4
+    other: 10
+    total: 15
+    start: "2009"
+    end: "2010"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 10
+    total: 15
+    start: "2008"
+    end: "2009"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 10
+    total: 15
+    start: "2007"
+    end: "2008"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 10
+    total: 15
+    start: "2006"
+    end: "2007"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 10
+    total: 15
+    start: "2005"
+    end: "2006"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 10
+    total: 15
+    start: "2004"
+    end: "2005"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 10
+    total: 15
+    start: "2003"
+    end: "2004"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 10
+    total: 15
+    start: "2002"
+    end: "2003"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 10
+    total: 15
+    start: "2001"
+    end: "2002"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 11
+    total: 15
+    start: "2000"
+    end: "2001"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 11
+    total: 15
+    start: "1999"
+    end: "2000"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 4
+    other: 14
+    total: 19
+    start: "1998"
+    end: "1999"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 4
+    other: 14
+    total: 19
+    start: "1997"
+    end: "1998"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 3
+    other: 15
+    total: 19
+    start: "1996"
+    end: "1997"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 3
+    other: 15
+    total: 19
+    start: "1995"
+    end: "1996"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 3
+    other: 16
+    total: 19
+    start: "1994"
+    end: "1995"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1993"
+    end: "1994"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1992"
+    end: "1993"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1991"
+    end: "1992"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1990"
+    end: "1991"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1989"
+    end: "1990"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1988"
+    end: "1989"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1987"
+    end: "1988"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1986"
+    end: "1987"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1985"
+    end: "1986"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1984"
+    end: "1985"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1983"
+    end: "1984"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1982"
+    end: "1983"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 3
+    other: 16
+    total: 19
+    start: "1981"
+    end: "1982"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 3
+    other: 16
+    total: 19
+    start: "1980"
+    end: "1981"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 3
+    other: 16
+    total: 19
+    start: "1979"
+    end: "1980"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1978"
+    end: "1979"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1977"
+    end: "1978"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1976"
+    end: "1977"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1975"
+    end: "1976"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1974"
+    end: "1975"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1973"
+    end: "1974"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1972"
+    end: "1973"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1971"
+    end: "1972"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 18
+    total: 19
+    start: "1970"
+    end: "1971"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1969"
+    end: "1970"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 17
+    total: 19
+    start: "1968"
+    end: "1969"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 15
+    total: 19
+    start: "1967"
+    end: "1968"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 14
+    total: 19
+    start: "1966"
+    end: "1967"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 14
+    total: 19
+    start: "1965"
+    end: "1966"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 14
+    total: 19
+    start: "1964"
+    end: "1965"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 15
+    total: 19
+    start: "1963"
+    end: "1964"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 15
+    total: 19
+    start: "1962"
+    end: "1963"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 15
+    total: 19
+    start: "1961"
+    end: "1962"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 3
+    other: 16
+    total: 19
+    start: "1960"
+    end: "1961"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 3
+    other: 16
+    total: 19
+    start: "1959"
+    end: "1960"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 3
+    other: 16
+    total: 19
+    start: "1958"
+    end: "1959"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 14
+    total: 19
+    start: "1957"
+    end: "1958"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 15
+    total: 19
+    start: "1956"
+    end: "1957"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 15
+    total: 19
+    start: "1955"
+    end: "1956"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 15
+    total: 19
+    start: "1954"
+    end: "1955"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 15
+    total: 19
+    start: "1953"
+    end: "1954"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 4
+    other: 15
+    total: 19
+    start: "1952"
+    end: "1953"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 3
+    other: 15
+    total: 19
+    start: "1951"
+    end: "1952"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 3
+    other: 15
+    total: 19
+    start: "1950"
+    end: "1951"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 2
+    other: 16
+    total: 19
+    start: "1949"
+    end: "1950"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 2
+    other: 16
+    total: 19
+    start: "1948"
+    end: "1949"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 1
+    other: 17
+    total: 19
+    start: "1947"
+    end: "1948"
+  -
+    government: TAS
+    house: upper
+    coalition: 1
+    labor: 0
+    other: 17
+    total: 18
+    start: "1946"
+    end: "1947"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 17
+    total: 18
+    start: "1945"
+    end: "1946"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 16
+    total: 18
+    start: "1944"
+    end: "1945"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 16
+    total: 18
+    start: "1943"
+    end: "1944"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 16
+    total: 18
+    start: "1942"
+    end: "1943"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 16
+    total: 18
+    start: "1941"
+    end: "1942"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 16
+    total: 18
+    start: "1940"
+    end: "1941"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 17
+    total: 18
+    start: "1939"
+    end: "1940"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 17
+    total: 18
+    start: "1938"
+    end: "1939"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 17
+    total: 18
+    start: "1937"
+    end: "1938"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 17
+    total: 18
+    start: "1936"
+    end: "1937"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 17
+    total: 18
+    start: "1935"
+    end: "1936"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 17
+    total: 18
+    start: "1934"
+    end: "1935"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 17
+    total: 18
+    start: "1933"
+    end: "1934"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "1932"
+    end: "1933"
+  -
+    government: TAS
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 18
+    total: 18
+    start: "1931"
+    end: "1932"
+  -
+    government: VIC
+    house: lower
+    coalition: 27
+    labor: 55
+    other: 6
+    total: 88
+    start: "24 November 2018"
+    end: "Current"
+  -
+    government: VIC
+    house: lower
+    coalition: 38
+    labor: 47
+    other: 3
+    total: 88
+    start: "29 November 2014"
+    end: "24 November 2018"
+  -
+    government: VIC
+    house: lower
+    coalition: 45
+    labor: 43
+    other: 0
+    total: 88
+    start: "27 November 2010"
+    end: "29 November 2014"
+  -
+    government: VIC
+    house: lower
+    coalition: 32
+    labor: 55
+    other: 1
+    total: 88
+    start: "25 November 2006"
+    end: "27 November 2010"
+  -
+    government: VIC
+    house: lower
+    coalition: 24
+    labor: 62
+    other: 2
+    total: 88
+    start: "30 November 2002"
+    end: "25 November 2006"
+  -
+    government: VIC
+    house: lower
+    coalition: 43
+    labor: 42
+    other: 3
+    total: 88
+    start: "18 September 1999"
+    end: "30 November 2002"
+  -
+    government: VIC
+    house: lower
+    coalition: 58
+    labor: 29
+    other: 1
+    total: 88
+    start: "30 March 1996"
+    end: "18 September 1999"
+  -
+    government: VIC
+    house: lower
+    coalition: 61
+    labor: 27
+    other: 0
+    total: 88
+    start: "3 October 1992"
+    end: "30 March 1996"
+  -
+    government: VIC
+    house: lower
+    coalition: 42
+    labor: 46
+    other: 0
+    total: 88
+    start: "1 October 1988"
+    end: "3 October 1992"
+  -
+    government: VIC
+    house: lower
+    coalition: 41
+    labor: 47
+    other: 0
+    total: 88
+    start: "2 March 1985"
+    end: "1 October 1988"
+  -
+    government: VIC
+    house: lower
+    coalition: 32
+    labor: 49
+    other: 0
+    total: 81
+    start: "3 April 1982"
+    end: "2 March 1985"
+  -
+    government: VIC
+    house: lower
+    coalition: 49
+    labor: 32
+    other: 0
+    total: 81
+    start: "5 May 1979"
+    end: "3 April 1982"
+  -
+    government: VIC
+    house: lower
+    coalition: 59
+    labor: 21
+    other: 1
+    total: 81
+    start: "20 March 1976"
+    end: "5 May 1979"
+  -
+    government: VIC
+    house: lower
+    coalition: 46
+    labor: 18
+    other: 9
+    total: 73
+    start: "19 May 1973"
+    end: "20 March 1976"
+  -
+    government: VIC
+    house: lower
+    coalition: 42
+    labor: 22
+    other: 9
+    total: 73
+    start: "30 May 1970"
+    end: "19 May 1973"
+  -
+    government: VIC
+    house: lower
+    coalition: 44
+    labor: 16
+    other: 13
+    total: 73
+    start: "29 April 1967"
+    end: "30 May 1970"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 18
+    other: 48
+    total: 66
+    start: "27 June 1964"
+    end: "29 April 1967"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 17
+    other: 49
+    total: 66
+    start: "15 July 1961"
+    end: "27 June 1964"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 18
+    other: 48
+    total: 66
+    start: "31 May 1958"
+    end: "15 July 1961"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 20
+    other: 46
+    total: 66
+    start: "28 May 1955"
+    end: "31 May 1958"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 37
+    other: 28
+    total: 65
+    start: "6 December 1952"
+    end: "28 May 1955"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 24
+    other: 41
+    total: 65
+    start: "13 May 1950"
+    end: "6 December 1952"
+  -
+    government: VIC
+    house: lower
+    coalition: 27
+    labor: 17
+    other: 22
+    total: 66
+    start: "8 November 1947"
+    end: "13 May 1950"
+  -
+    government: VIC
+    house: lower
+    coalition: 10
+    labor: 31
+    other: 24
+    total: 65
+    start: "10 November 1945"
+    end: "8 November 1947"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 22
+    other: 43
+    total: 65
+    start: "12 June 1943"
+    end: "10 November 1945"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 22
+    other: 43
+    total: 65
+    start: "16 March 1940"
+    end: "12 June 1943"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 20
+    other: 45
+    total: 65
+    start: "2 October 1937"
+    end: "16 March 1940"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 17
+    other: 48
+    total: 65
+    start: "2 March 1935"
+    end: "2 October 1937"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 16
+    other: 49
+    total: 65
+    start: "14 May 1932"
+    end: "2 March 1935"
+  -
+    government: VIC
+    house: lower
+    coalition: 2
+    labor: 30
+    other: 33
+    total: 65
+    start: "30 November 1929"
+    end: "14 May 1932"
+  -
+    government: VIC
+    house: lower
+    coalition: 2
+    labor: 28
+    other: 35
+    total: 65
+    start: "9 April 1927"
+    end: "30 November 1929"
+  -
+    government: VIC
+    house: lower
+    coalition: 5
+    labor: 27
+    other: 33
+    total: 65
+    start: "26 June 1924"
+    end: "9 April 1927"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 21
+    other: 44
+    total: 65
+    start: "30 August 1921"
+    end: "26 June 1924"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 20
+    other: 45
+    total: 65
+    start: "21 October 1920"
+    end: "30 August 1921"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 18
+    other: 47
+    total: 65
+    start: "15 November 1917"
+    end: "21 October 1920"
+  -
+    government: VIC
+    house: lower
+    coalition: 43
+    labor: 22
+    other: 0
+    total: 65
+    start: "26 November 1914"
+    end: "15 November 1917"
+  -
+    government: VIC
+    house: lower
+    coalition: 43
+    labor: 20
+    other: 2
+    total: 65
+    start: "16 November 1911"
+    end: "26 November 1914"
+  -
+    government: VIC
+    house: lower
+    coalition: 19
+    labor: 21
+    other: 25
+    total: 65
+    start: "29 December 1908"
+    end: "16 November 1911"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 14
+    other: 51
+    total: 65
+    start: "15 March 1907"
+    end: "29 December 1908"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 18
+    other: 50
+    total: 68
+    start: "1 June 1904"
+    end: "15 March 1907"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 12
+    other: 83
+    total: 95
+    start: "1 October 1902"
+    end: "1 June 1904"
+  -
+    government: VIC
+    house: lower
+    coalition: 44
+    labor: 0
+    other: 51
+    total: 95
+    start: "1 November 1900"
+    end: "1 October 1902"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 95
+    total: 95
+    start: "14 October 1897"
+    end: "1 November 1900"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 95
+    total: 95
+    start: "20 September 1894"
+    end: "14 October 1897"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 0
+    total:
+    start: "20 April 1892"
+    end: "20 September 1894"
+  -
+    government: VIC
+    house: lower
+    coalition: 2
+    labor: 0
+    other: 93
+    total: 95
+    start: "28 March 1889"
+    end: "20 April 1892"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 86
+    total: 86
+    start: "5 March 1886"
+    end: "28 March 1889"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 86
+    total: 86
+    start: "22 February 1883"
+    end: "5 March 1886"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 86
+    total: 86
+    start: "14 July 1880"
+    end: "22 February 1883"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 86
+    total: 86
+    start: "28 February 1880"
+    end: "14 July 1880"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 86
+    total: 86
+    start: "11 May 1877"
+    end: "28 February 1880"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 78
+    total: 78
+    start: "25 March 1874"
+    end: "11 May 1877"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 78
+    total: 78
+    start: "14 February 1871"
+    end: "25 March 1874"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 78
+    total: 78
+    start: "21 January 1868"
+    end: "14 February 1871"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 78
+    total: 78
+    start: "30 December 1865"
+    end: "21 January 1868"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 78
+    total: 78
+    start: "5 October 1864"
+    end: "30 December 1865"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 78
+    total: 78
+    start: "2 August 1861"
+    end: "5 October 1864"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 78
+    total: 78
+    start: "26 August 1859"
+    end: "2 August 1861"
+  -
+    government: VIC
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 60
+    total: 60
+    start: "23 September 1856"
+    end: "26 August 1859"
+  -
+    government: WA
+    house: lower
+    coalition: 18
+    labor: 41
+    other: 0
+    total: 59
+    start: "11 March 2017"
+    end: "Current"
+  -
+    government: WA
+    house: lower
+    coalition: 38
+    labor: 21
+    other: 0
+    total: 59
+    start: "9 March 2013"
+    end: "11 March 2017"
+  -
+    government: WA
+    house: lower
+    coalition: 28
+    labor: 28
+    other: 3
+    total: 59
+    start: "6 September 2008"
+    end: "9 March 2013"
+  -
+    government: WA
+    house: lower
+    coalition: 23
+    labor: 32
+    other: 2
+    total: 57
+    start: "26 February 2005"
+    end: "6 September 2008"
+  -
+    government: WA
+    house: lower
+    coalition: 21
+    labor: 32
+    other: 4
+    total: 57
+    start: "10 February 2001"
+    end: "26 February 2005"
+  -
+    government: WA
+    house: lower
+    coalition: 35
+    labor: 19
+    other: 3
+    total: 57
+    start: "14 December 1996"
+    end: "10 February 2001"
+  -
+    government: WA
+    house: lower
+    coalition: 32
+    labor: 24
+    other: 1
+    total: 57
+    start: "6 February 1993"
+    end: "14 December 1996"
+  -
+    government: WA
+    house: lower
+    coalition: 26
+    labor: 31
+    other: 0
+    total: 57
+    start: "4 February 1989"
+    end: "6 February 1993"
+  -
+    government: WA
+    house: lower
+    coalition: 25
+    labor: 32
+    other: 0
+    total: 57
+    start: "8 February 1986"
+    end: "4 February 1989"
+  -
+    government: WA
+    house: lower
+    coalition: 22
+    labor: 32
+    other: 3
+    total: 57
+    start: "19 February 1983"
+    end: "8 February 1986"
+  -
+    government: WA
+    house: lower
+    coalition: 29
+    labor: 23
+    other: 3
+    total: 55
+    start: "23 February 1980"
+    end: "19 February 1983"
+  -
+    government: WA
+    house: lower
+    coalition: 27
+    labor: 22
+    other: 6
+    total: 55
+    start: "19 February 1977"
+    end: "23 February 1980"
+  -
+    government: WA
+    house: lower
+    coalition: 23
+    labor: 22
+    other: 6
+    total: 51
+    start: "30 March 1974"
+    end: "19 February 1977"
+  -
+    government: WA
+    house: lower
+    coalition: 17
+    labor: 26
+    other: 8
+    total: 51
+    start: "20 February 1971"
+    end: "30 March 1974"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 23
+    other: 28
+    total: 51
+    start: "23 March 1968"
+    end: "20 February 1971"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 21
+    other: 29
+    total: 50
+    start: "20 February 1965"
+    end: "23 March 1968"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 24
+    other: 26
+    total: 50
+    start: "31 March 1962"
+    end: "20 February 1965"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 23
+    other: 27
+    total: 50
+    start: "21 March 1959"
+    end: "31 March 1962"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 29
+    other: 21
+    total: 50
+    start: "7 April 1956"
+    end: "21 March 1959"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 26
+    other: 24
+    total: 50
+    start: "14 February 1953"
+    end: "7 April 1956"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 23
+    other: 27
+    total: 50
+    start: "25 March 1950"
+    end: "14 February 1953"
+  -
+    government: WA
+    house: lower
+    coalition: 13
+    labor: 23
+    other: 14
+    total: 50
+    start: "15 March 1947"
+    end: "25 March 1950"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 30
+    other: 20
+    total: 50
+    start: "20 November 1943"
+    end: "15 March 1947"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 27
+    other: 23
+    total: 50
+    start: "18 March 1939"
+    end: "20 November 1943"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 26
+    other: 24
+    total: 50
+    start: "15 February 1936"
+    end: "18 March 1939"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 30
+    other: 20
+    total: 50
+    start: "8 April 1933"
+    end: "15 February 1936"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 23
+    other: 27
+    total: 50
+    start: "12 April 1930"
+    end: "8 April 1933"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 27
+    other: 23
+    total: 50
+    start: "26 March 1927"
+    end: "12 April 1930"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 27
+    other: 23
+    total: 50
+    start: "22 March 1924"
+    end: "26 March 1927"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 17
+    other: 33
+    total: 50
+    start: "12 March 1921"
+    end: "22 March 1924"
+  -
+    government: WA
+    house: lower
+    coalition: 8
+    labor: 15
+    other: 27
+    total: 50
+    start: "29 September 1917"
+    end: "12 March 1921"
+  -
+    government: WA
+    house: lower
+    coalition: 16
+    labor: 26
+    other: 8
+    total: 50
+    start: "21 October 1914"
+    end: "29 September 1917"
+  -
+    government: WA
+    house: lower
+    coalition: 16
+    labor: 34
+    other: 0
+    total: 50
+    start: "3 October 1911"
+    end: "21 October 1914"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 22
+    other: 28
+    total: 50
+    start: "11 September 1908"
+    end: "3 October 1911"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 14
+    other: 36
+    total: 50
+    start: "27 October 1905"
+    end: "11 September 1908"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 22
+    other: 28
+    total: 50
+    start: "28 June 1904"
+    end: "27 October 1905"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 6
+    other: 44
+    total: 50
+    start: "24 April 1901"
+    end: "28 June 1904"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 44
+    total: 44
+    start: "27 April 1897"
+    end: "24 April 1901"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 33
+    total: 33
+    start: "14 June 1894"
+    end: "27 April 1897"
+  -
+    government: WA
+    house: lower
+    coalition: 0
+    labor: 0
+    other: 30
+    total: 30
+    start: "5 December 1890"
+    end: "14 June 1894"
+  -
+    government: WA
+    house: upper
+    coalition: 13
+    labor: 14
+    other: 9
+    total: 36
+    start: "11 March 2017"
+    end: "Current"
+  -
+    government: WA
+    house: upper
+    coalition: 22
+    labor: 11
+    other: 3
+    total: 36
+    start: "9 March 2013"
+    end: "11 March 2017"
+  -
+    government: WA
+    house: upper
+    coalition: 21
+    labor: 11
+    other: 4
+    total: 36
+    start: "6 September 2008"
+    end: "9 March 2013"
+  -
+    government: WA
+    house: upper
+    coalition: 16
+    labor: 16
+    other: 2
+    total: 34
+    start: "26 February 2005"
+    end: "6 September 2008"
+  -
+    government: WA
+    house: upper
+    coalition: 13
+    labor: 13
+    other: 8
+    total: 34
+    start: "10 February 2001"
+    end: "26 February 2005"
+  -
+    government: WA
+    house: upper
+    coalition: 17
+    labor: 12
+    other: 5
+    total: 34
+    start: "14 December 1996"
+    end: "10 February 2001"
+  -
+    government: WA
+    house: upper
+    coalition: 18
+    labor: 14
+    other: 2
+    total: 34
+    start: "6 February 1993"
+    end: "14 December 1996"
+  -
+    government: WA
+    house: upper
+    coalition: 18
+    labor: 16
+    other: 0
+    total: 34
+    start: "4 February 1989"
+    end: "6 February 1993"
+  -
+    government: WA
+    house: upper
+    coalition: 18
+    labor: 15
+    other: 1
+    total: 34
+    start: "8 February 1986"
+    end: "4 February 1989"
+  -
+    government: WA
+    house: upper
+    coalition: 22
+    labor: 11
+    other: 1
+    total: 34
+    start: "19 February 1983"
+    end: "8 February 1986"
+  -
+    government: WA
+    house: upper
+    coalition: 19
+    labor: 9
+    other: 4
+    total: 32
+    start: "23 March 1980"
+    end: "19 February 1983"
+  -
+    government: WA
+    house: upper
+    coalition: 18
+    labor: 10
+    other: 4
+    total: 32
+    start: "19 February 1977"
+    end: "23 March 1980"
+  -
+    government: WA
+    house: upper
+    coalition: 18
+    labor: 9
+    other: 3
+    total: 30
+    start: "30 March 1974"
+    end: "19 February 1977"
+  -
+    government: WA
+    house: upper
+    coalition: 9
+    labor: 10
+    other: 11
+    total: 30
+    start: "20 February 1971"
+    end: "30 March 1974"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 10
+    other: 20
+    total: 30
+    start: "23 March 1968"
+    end: "20 February 1971"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 10
+    other: 20
+    total: 30
+    start: "20 February 1965"
+    end: "23 March 1968"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 13
+    other: 17
+    total: 30
+    start: "12 May 1962"
+    end: "20 February 1965"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 13
+    other: 17
+    total: 30
+    start: "30 April 1960"
+    end: "12 May 1962"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 13
+    other: 17
+    total: 30
+    start: "10 May 1958"
+    end: "30 April 1960"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 13
+    other: 17
+    total: 30
+    start: "7 April 1956"
+    end: "10 May 1958"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 13
+    other: 17
+    total: 30
+    start: "8 May 1954"
+    end: "7 April 1956"
+  -
+    government: WA
+    house: upper
+    coalition: 6
+    labor: 9
+    other: 15
+    total: 30
+    start: "3 May 1952"
+    end: "8 May 1954"
+  -
+    government: WA
+    house: upper
+    coalition: 11
+    labor: 8
+    other: 11
+    total: 30
+    start: "6 May 1950"
+    end: "3 May 1952"
+  -
+    government: WA
+    house: upper
+    coalition: 10
+    labor: 7
+    other: 13
+    total: 30
+    start: "8 May 1948"
+    end: "6 May 1950"
+  -
+    government: WA
+    house: upper
+    coalition: 5
+    labor: 8
+    other: 17
+    total: 30
+    start: "4 May 1946"
+    end: "8 May 1948"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 8
+    other: 22
+    total: 30
+    start: "29 April 1944"
+    end: "4 May 1946"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 8
+    other: 22
+    total: 30
+    start: "11 May 1940"
+    end: "29 April 1944"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 8
+    other: 22
+    total: 30
+    start: "7 May 1938"
+    end: "11 May 1940"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 8
+    other: 22
+    total: 30
+    start: "9 May 1936"
+    end: "7 May 1938"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 7
+    other: 23
+    total: 30
+    start: "12 April 1934"
+    end: "9 May 1936"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 7
+    other: 23
+    total: 30
+    start: "7 May 1932"
+    end: "12 April 1934"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 25
+    total: 30
+    start: "10 May 1930"
+    end: "7 May 1932"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 6
+    other: 24
+    total: 30
+    start: "12 May 1928"
+    end: "10 May 1930"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 5
+    other: 25
+    total: 30
+    start: "8 May 1926"
+    end: "12 May 1928"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 6
+    other: 24
+    total: 30
+    start: "10 May 1924"
+    end: "8 May 1926"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 3
+    other: 27
+    total: 30
+    start: "13 May 1922"
+    end: "10 May 1924"
+  -
+    government: WA
+    house: upper
+    coalition: 5
+    labor: 6
+    other: 19
+    total: 30
+    start: "8 May 1920"
+    end: "13 May 1922"
+  -
+    government: WA
+    house: upper
+    coalition: 10
+    labor: 4
+    other: 16
+    total: 30
+    start: "11 May 1918"
+    end: "8 May 1920"
+  -
+    government: WA
+    house: upper
+    coalition: 16
+    labor: 7
+    other: 7
+    total: 30
+    start: "13 May 1916"
+    end: "11 May 1918"
+  -
+    government: WA
+    house: upper
+    coalition: 11
+    labor: 5
+    other: 14
+    total: 30
+    start: "16 May 1914"
+    end: "13 May 1916"
+  -
+    government: WA
+    house: upper
+    coalition: 5
+    labor: 6
+    other: 19
+    total: 30
+    start: "14 May 1912"
+    end: "16 May 1914"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 3
+    other: 27
+    total: 30
+    start: "13 May 1910"
+    end: "14 May 1912"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 2
+    other: 28
+    total: 30
+    start: "13 May 1908"
+    end: "13 May 1910"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 1
+    other: 29
+    total: 30
+    start: "14 May 1906"
+    end: "13 May 1908"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 30
+    total: 30
+    start: "30 May 1904"
+    end: "14 May 1906"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 30
+    total: 30
+    start: "12 May 1902"
+    end: "30 May 1904"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 30
+    total: 30
+    start: "5 September 1900"
+    end: "12 May 1902"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 24
+    total: 24
+    start: "14 April 1900"
+    end: "5 September 1900"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 24
+    total: 24
+    start: "9 May 1898"
+    end: "14 April 1900"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 24
+    total: 24
+    start: "29 June 1897"
+    end: "9 May 1898"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 21
+    total: 21
+    start: "27 July 1896"
+    end: "29 June 1897"
+  -
+    government: WA
+    house: upper
+    coalition: 0
+    labor: 0
+    other: 21
+    total: 21
+    start: "16 July 1894"
+    end: "27 July 1896"

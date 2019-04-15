@@ -55,6 +55,9 @@ exports.config =
         marked:   marked
         data:     data
         version:  hash
+        r:  ->
+          delete require.cache[require.resolve arguments[0]]
+          require(arguments[0])
       filters:
         sass: (data) ->
           require("node-sass").renderSync({

@@ -1,0 +1,296 @@
+elections:
+  - location: FED
+    date: 2-Mar-1996
+    coalition: 467
+    labor: 317
+    others: 57
+  - location: VIC
+    date: 30-Mar-1996
+    coalition: 468
+    labor: 315
+    others: 58
+  - location: WA
+    date: 14-Dec-1996
+    coalition: 470
+    labor: 310
+    others: 62
+  - location: NT
+    date: 30-Aug-1997
+    coalition: 471
+    labor: 310
+    others: 61
+  - location: SA
+    date: 11-Oct-1997
+    coalition: 458
+    labor: 317
+    others: 67
+  - location: ACT
+    date: 21-Feb-1998
+    coalition: 458
+    labor: 317
+    others: 67
+  - location: QLD
+    date: 13-Jun-1998
+    coalition: 446
+    labor: 317
+    others: 79
+  - location: TAS
+    date: 29-Aug-1998
+    coalition: 440
+    labor: 318
+    others: 70
+  - location: FED
+    date: 3-Oct-1998
+    coalition: 424
+    labor: 336
+    others: 68
+  - location: NSW
+    date: 27-Mar-1999
+    coalition: 407
+    labor: 340
+    others: 76
+  - location: VIC
+    date: 18-Sep-1999
+    coalition: 388
+    labor: 357
+    others: 78
+  - location: WA
+    date: 10-Feb-2001
+    coalition: 370
+    labor: 371
+    others: 82
+  - location: QLD
+    date: 17-Feb-2001
+    coalition: 353
+    labor: 393
+    others: 77
+  - location: NT
+    date: 18-Aug-2001
+    coalition: 345
+    labor: 399
+    others: 79
+  - location: ACT
+    date: 20-Oct-2001
+    coalition: 345
+    labor: 401
+    others: 77
+  - location: FED
+    date: 10-Nov-2001
+    coalition: 347
+    labor: 398
+    others: 80
+  - location: SA
+    date: 9-Feb-2002
+    coalition: 343
+    labor: 401
+    others: 81
+  - location: TAS
+    date: 20-Jul-2002
+    coalition: 342
+    labor: 402
+    others: 81
+  - location: VIC
+    date: 30-Nov-2002
+    coalition: 312
+    labor: 433
+    others: 80
+  - location: NSW
+    date: 22-Mar-2003
+    coalition: 311
+    labor: 434
+    others: 79
+  - location: QLD
+    date: 7-Feb-2004
+    coalition: 316
+    labor: 431
+    others: 77
+  - location: ACT
+    date: 16-Oct-2004
+    coalition: 316
+    labor: 433
+    others: 76
+  - location: FED
+    date: 9-Oct-2004
+    coalition: 325
+    labor: 428
+    others: 72
+  - location: WA
+    date: 26-Feb-2005
+    coalition: 330
+    labor: 431
+    others: 64
+  - location: NT
+    date: 18-Jun-2005
+    coalition: 324
+    labor: 437
+    others: 64
+  - location: TAS
+    date: 18-Mar-2006
+    coalition: 321
+    labor: 436
+    others: 68
+  - location: SA
+    date: 18-Mar-2006
+    coalition: 315
+    labor: 442
+    others: 68
+  - location: QLD
+    date: 9-Sep-2006
+    coalition: 320
+    labor: 438
+    others: 67
+  - location: VIC
+    date: 25-Nov-2006
+    coalition: 326
+    labor: 425
+    others: 70
+  - location: NSW
+    date: 24-Mar-2007
+    coalition: 331
+    labor: 423
+    others: 67
+  - location: FED
+    date: 24-Nov-2007
+    coalition: 307
+    labor: 450
+    others: 64
+  - location: NT
+    date: 9-Aug-2008
+    coalition: 314
+    labor: 444
+    others: 63
+  - location: WA
+    date: 6-Sep-2008
+    coalition: 324
+    labor: 435
+    others: 66
+  - location: ACT
+    date: 18-Oct-2008
+    coalition: 323
+    labor: 432
+    others: 69
+  - location: QLD
+    date: 21-Mar-2009
+    coalition: 332
+    labor: 424
+    others: 68
+  - location: SA
+    date: 20-Mar-2010
+    coalition: 333
+    labor: 422
+    others: 69
+  - location: TAS
+    date: 20-Mar-2010
+    coalition: 337
+    labor: 415
+    others: 72
+  - location: FED
+    date: 21-Aug-2010
+    coalition: 344
+    labor: 398
+    others: 81
+  - location: VIC
+    date: 27-Nov-2010
+    coalition: 361
+    labor: 383
+    others: 79
+  - location: NSW
+    date: 26-Mar-2011
+    coalition: 397
+    labor: 348
+    others: 78
+  - location: QLD
+    date: 24-Mar-2012
+    coalition: 441
+    labor: 304
+    others: 78
+  - location: NT
+    date: 25-Aug-2012
+    coalition: 446
+    labor: 299
+    others: 78
+  - location: ACT
+    date: 20-Oct-2012
+    coalition: 448
+    labor: 300
+    others: 75
+  - location: WA
+    date: 9-Mar-2013
+    coalition: 454
+    labor: 294
+    others: 76
+  - location: FED
+    date: 7-Sep-2013
+    coalition: 473
+    labor: 272
+    others: 79
+  - location: SA
+    date: 15-Mar-2014
+    coalition: 478
+    labor: 268
+    others: 78
+  - location: TAS
+    date: 15-Mar-2014
+    coalition: 484
+    labor: 265
+    others: 75
+  - location: VIC
+    date: 29-Nov-2014
+    coalition: 460
+    labor: 273
+    others: 90
+  - location: QLD
+    date: 31-Jan-2015
+    coalition: 428
+    labor: 308
+    others: 87
+  - location: NSW
+    date: 28-Mar-2015
+    coalition: 422
+    labor: 317
+    others: 84
+  - location: NT
+    date: 27-Aug-2016
+    coalition: 408
+    labor: 327
+    others: 88
+  - location: ACT
+    date: 15-Oct-2016
+    coalition: 411
+    labor: 331
+    others: 89
+  - location: FED
+    date: 2-Jul-2016
+    coalition: 393
+    labor: 346
+    others: 92
+  - location: WA
+    date: 11-Mar-2017
+    coalition: 365
+    labor: 370
+    others: 96
+  - location: QLD
+    date: 25-Nov-2017
+    coalition: 363
+    labor: 374
+    others: 98
+  - location: TAS
+    date: 3-Mar-2018
+    coalition: 361
+    labor: 380
+    others: 94
+  - location: SA
+    date: 17-Mar-2018
+    coalition: 367
+    labor: 376
+    others: 93
+  - location: VIC
+    date: 24-Nov-2018
+    coalition: 349
+    labor: 388
+    others: 99
+  - location: NSW
+    date: 23-Mar-2019
+    coalition: 339
+    labor: 389
+    others: 108
