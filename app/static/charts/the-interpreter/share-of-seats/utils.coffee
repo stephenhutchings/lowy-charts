@@ -137,7 +137,7 @@ module.exports =
         dy = p1.y - p0.y
         dist = Math.sqrt((dx * dx) + (dy * dy)) * div
 
-        for i in [0..dist]
+        for i in [0..dist] when dist > 0
           t = i / dist
 
           x: p0.x + dx * t

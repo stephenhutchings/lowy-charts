@@ -5,12 +5,41 @@ block append config
   - page.data.elections.forEach(function(e){e.date = new Date(e.start); })
   - page.data.elections = _.sortBy(page.data.elections, "date").filter((e) => e.date - new Date("May 18 1965") > 0)
   - helpers = r("./" + __.directory + "/utils.coffee")
+  - console.log(page.data.elections.slice(-1))
 
 block page
   - var d1 = new Date("May 18 2019");
   - var d0 = new Date("May 18 1969");
   - var dd = moment(d1).diff(d0);
-  - var w = 1000
+  - var w = 1000, h = 240;
+
+  mixin grid(n)
+    - offset = (new Date("Jan 1 2019") - d1) / (d1 - d0)
+    g
+      for el, i in new Array(51)
+        - d = i / 50, x = d * w + offset * w
+        line.tick(
+          x1=x
+          x2=x
+          y1=0
+          y2="100%"
+          class=(i % 5 === 0 ? "y5" : "y1")
+        )
+        if i % 5 === 0
+          text(transform="translate(0 16)" text-anchor="middle" x=x y="100%")= 1969 + d * 50
+
+    g(transform=`translate(${-offset * w} 0)`)
+      for el, i in new Array(n + 1)
+        - d = i / n
+        line.tick(
+          y1=d*h
+          y2=d*h
+          x1=offset * w * 2
+          x2="100%"
+          class=(i === n ? "y5" : "y1")
+        )
+        if i % 2 == 0
+          text(transform="translate(8 0)" text-anchor="start" y=d*h + 5 x="100%") #{(n - i) * 10}%
 
   .pv-md
     h4.txt-bold Share of Power
@@ -21,7 +50,54 @@ block page
       br
       | Normalised across change in number of members.
 
-  for filter in [{government: "FED", house: "lower"},{government: "FED", house: "upper"},{government: "ACT", house: "lower"},{government: "NSW", house: "lower"},{government: "NSW", house: "upper"},{government: "NT", house: "lower"},{government: "QLD", house: "lower"},{government: "SA", house: "lower"},{government: "TAS", house: "upper", },{government: "VIC", house: "lower"},{government: "WA", house: "lower"},{government: "WA", house: "upper"}]
+    p Cumulative Share of Power Across All Government
+    svg(width=w height=h)
+      +grid(6)
+
+      - list = {c: [], l: [], o: [], e: [], t: []}
+      for prev, i in page.data.elections.filter((e) => e.date - new Date("May 18 1967") > 0)
+        - c = 0, l = 0, o = 0, n = 0;
+
+        for other in page.data.elections
+          - end = other.end === "Current" ? d1 : new Date(other.end)
+          if other.date <= prev.date && end > prev.date
+            - c += other.coalition
+            - l += other.labor
+            - o += other.other
+            - n++
+
+        - list.e.push(prev)
+        - list.c.push(c)
+        - list.l.push(l)
+        - list.o.push(o)
+        - list.t.push(c+l+o)
+
+      //- - console.log(list)
+      for key, k in ["c", "l", "o"]
+        - var path = []
+        g
+          for el, i in list[key]
+            - var d = new Date(list.e[i].start)
+            - var x = w * ((d - d0) / dd)
+            - var y = h * (1 - el / ((list.c[i] + list.l[i] + list.o[i]) * 0.6))
+            //- circle(cx=x cy=y r=1 d-el=el)
+            - path[i] = {x:x,y:y}
+
+        - c = function(p){return `M ${_.first(p).x},${h} ${helpers.catmullRomBezier(p, 0.5)} L ${w},${_.last(p).y} L ${w},${h} Z`}
+        - cx = function(p){return `M ${_.first(p).x},${h} ${helpers.catmullRomBezier(helpers.simplify(helpers.interpolate(p), 16.5, true).concat(p.slice(-3)), 0.5)} L ${w},${_.last(p).y} L ${w},${h} Z`}
+        path(d=c(path) class=`a${k}` style="pointer-events: none")
+        path.a6(d=cx(path) fill="none")
+
+  //- pre
+    = list.e.map((e)=>e.government).join(",") + "\n"
+    = list.e.map((e)=>e.start).join(",") + "\n"
+    = list.c.join(",") + "\n"
+    = list.l.join(",") + "\n"
+    = list.o.join(",") + "\n"
+    = list.t.join(",")
+
+
+  for filter in [{government: "FED", house: "lower"},{government: "FED", house: "upper"},{government: "ACT", house: "lower"},{government: "NSW", house: "lower"},{government: "NSW", house: "upper"},{government: "NT", house: "lower"},{government: "QLD", house: "lower"},{government: "SA", house: "lower"},{government: "SA", house: "upper"},{government: "TAS", house: "lower"},{government: "TAS", house: "upper"},{government: "VIC", house: "lower"},{government: "VIC", house: "upper"},{government: "WA", house: "lower"},{government: "WA", house: "upper"}]
     - var paths = [[],[],[]], h = 240;
     - var list = _.where(page.data.elections, filter)
 
@@ -32,21 +108,10 @@ block page
           | #{written.capitalize(filter.house)} House
 
       p Top dawg
-        svg(width=w+40 height=h viewBox="-20 0 1040 240")
+        svg(width=w height=h)
           rect(x=0 y=0 width=w height=h fill="#fff")
 
-          g
-            for n, i in new Array(51)
-              - d = i / 50
-              line.tick(
-                x1=d*w
-                x2=d*w
-                y1=28
-                y2="100%"
-                class=(i % 5 === 0 ? "y5" : "y1")
-              )
-              if i % 5 === 0
-                text(text-anchor="middle" x=d*w y=20)= 1969 + d * 50
+          +grid(10)
 
           for e, i in list
             - var d = new Date(e.date)
@@ -155,7 +220,6 @@ block page
         stop(offset="0%"   stop-color="rgba(230,50,50,0.6)")
         stop(offset="100%" stop-color="rgba(230,50,50,0.2)")
 
-
   style
     :sass
       body, h1, h2, h3, h4
@@ -199,5 +263,7 @@ block page
         stroke: #ccc
         fill: none
         mix-blend-mode: luminosity
+      .a6
+        stroke: rgba(#000, 0.3)
       .a3
         fill: #ccc

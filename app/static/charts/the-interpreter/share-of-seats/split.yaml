@@ -875,12 +875,21 @@ elections:
   -
     government: NSW
     house: lower
+    coalition: 48
+    labor: 36
+    other: 9
+    total: 93
+    start: "23 March 2019"
+    end: "Current"
+  -
+    government: NSW
+    house: lower
     coalition: 54
     labor: 34
     other: 5
     total: 93
     start: "28 March 2015"
-    end: "Current"
+    end: "23 March 2019"
   -
     government: NSW
     house: lower
@@ -1379,12 +1388,21 @@ elections:
   -
     government: NSW
     house: upper
+    coalition: 17
+    labor: 14
+    other: 11
+    total: 42
+    start: "23 March 2019"
+    end: "Current"
+  -
+    government: NSW
+    house: upper
     coalition: 20
     labor: 12
     other: 10
     total: 42
     start: "28 March 2015"
-    end: "Current"
+    end: "23 March 2019"
   -
     government: NSW
     house: upper
@@ -5831,3 +5849,291 @@ elections:
     total: 21
     start: "16 July 1894"
     end: "27 July 1896"
+  -
+    government: VIC
+    house: upper
+    coalition: 25
+    labor: 9
+    other: 0
+    total: 34
+    start: "15 July 1961"
+    end: "27 June 1964"
+  -
+    government: VIC
+    house: upper
+    coalition: 26
+    labor: 8
+    other: 0
+    total: 34
+    start: "27 June 1964"
+    end: "29 April 1967"
+  -
+    government: VIC
+    house: upper
+    coalition: 26
+    labor: 9
+    other: 0
+    total: 35
+    start: "29 April 1967"
+    end: "30 May 1970"
+  -
+    government: VIC
+    house: upper
+    coalition: 27
+    labor: 9
+    other: 0
+    total: 36
+    start: "30 May 1970"
+    end: "19 May 1973"
+  -
+    government: VIC
+    house: upper
+    coalition: 27
+    labor: 9
+    other: 0
+    total: 36
+    start: "19 May 1973"
+    end: "20 March 1976"
+  -
+    government: VIC
+    house: upper
+    coalition: 31
+    labor: 9
+    other: 0
+    total: 40
+    start: "20 March 1976"
+    end: "5 May 1979"
+  -
+    government: VIC
+    house: upper
+    coalition: 31
+    labor: 13
+    other: 0
+    total: 44
+    start: "5 May 1979"
+    end: "3 April 1982"
+  -
+    government: VIC
+    house: upper
+    coalition: 25
+    labor: 19
+    other: 0
+    total: 44
+    start: "3 April 1982"
+    end: "2 March 1985"
+  -
+    government: VIC
+    house: upper
+    coalition: 21
+    labor: 23
+    other: 0
+    total: 44
+    start: "2 March 1985"
+    end: "1 October 1988"
+  -
+    government: VIC
+    house: upper
+    coalition: 25
+    labor: 19
+    other: 0
+    total: 44
+    start: "1 October 1988"
+    end: "3 October 1992"
+  -
+    government: VIC
+    house: upper
+    coalition: 30
+    labor: 14
+    other: 0
+    total: 44
+    start: "3 October 1992"
+    end: "30 March 1996"
+  -
+    government: VIC
+    house: upper
+    coalition: 34
+    labor: 10
+    other: 0
+    total: 44
+    start: "30 March 1996"
+    end: "18 September 1999"
+  -
+    government: VIC
+    house: upper
+    coalition: 30
+    labor: 14
+    other: 0
+    total: 44
+    start: "18 September 1999"
+    end: "30 November 2002"
+  -
+    government: VIC
+    house: upper
+    coalition: 25
+    labor: 19
+    other: 0
+    total: 44
+    start: "30 November 2002"
+    end: "25 November 2006"
+  -
+    government: VIC
+    house: upper
+    coalition: 17
+    labor: 19
+    other: 4
+    total: 40
+    start: "25 November 2006"
+    end: "27 November 2010"
+  -
+    government: VIC
+    house: upper
+    coalition: 16
+    labor: 21
+    other: 3
+    total: 40
+    start: "27 November 2010"
+    end: "29 November 2014"
+  -
+    government: VIC
+    house: upper
+    coalition: 16
+    labor: 14
+    other: 10
+    total: 40
+    start: "29 November 2014"
+    end: "24 November 2018"
+  -
+    government: VIC
+    house: upper
+    coalition: 11
+    labor: 18
+    other: 11
+    total: 40
+    start: "24 November 2018"
+    end: "Current"
+  -
+    government: SA
+    house: upper
+    coalition: 16
+    labor: 4
+    other: 0
+    total: 20
+    start: "1968"
+    end: "10 March 1973"
+  -
+    government: SA
+    house: upper
+    coalition: 14
+    labor: 6
+    other:
+    total: 20
+    start: "10 March 1973"
+    end: "12 July 1975"
+  -
+    government: SA
+    house: upper
+    coalition: 9
+    labor: 10
+    other: 2
+    total: 21
+    start: "12 July 1975"
+    end: "15 September 1979"
+  -
+    government: SA
+    house: upper
+    coalition: 11
+    labor: 10
+    other: 1
+    total: 22
+    start: "15 September 1979"
+    end: "6 November 1982"
+  -
+    government: SA
+    house: upper
+    coalition: 11
+    labor: 9
+    other: 2
+    total: 22
+    start: "6 November 1982"
+    end: "7 December 1985"
+  -
+    government: SA
+    house: upper
+    coalition: 10
+    labor: 10
+    other: 2
+    total: 22
+    start: "7 December 1985"
+    end: "25 November 1989"
+  -
+    government: SA
+    house: upper
+    coalition: 10
+    labor: 10
+    other: 2
+    total: 22
+    start: "25 November 1989"
+    end: "11 December 1993"
+  -
+    government: SA
+    house: upper
+    coalition: 11
+    labor: 9
+    other: 2
+    total: 22
+    start: "11 December 1993"
+    end: "11 October 1997"
+  -
+    government: SA
+    house: upper
+    coalition: 10
+    labor: 8
+    other: 4
+    total: 22
+    start: "11 October 1997"
+    end: "9 February 2002"
+  -
+    government: SA
+    house: upper
+    coalition: 9
+    labor: 7
+    other: 6
+    total: 22
+    start: "9 February 2002"
+    end: "18 March 2006"
+  -
+    government: SA
+    house: upper
+    coalition: 8
+    labor: 8
+    other: 6
+    total: 22
+    start: "18 March 2006"
+    end: "20 March 2010"
+  -
+    government: SA
+    house: upper
+    coalition: 7
+    labor: 8
+    other: 7
+    total: 22
+    start: "20 March 2010"
+    end: "15 March 2014"
+  -
+    government: SA
+    house: upper
+    coalition: 8
+    labor: 8
+    other: 6
+    total: 22
+    start: "15 March 2014"
+    end: "17 March 2018"
+  -
+    government: SA
+    house: upper
+    coalition: 9
+    labor: 8
+    other: 5
+    total: 22
+    start: "17 March 2018"
+    end: "Current"
