@@ -118,13 +118,15 @@ body
   right: 0
 
 .event
-  &.active
-    .event-text
-      opacity: 1
-
+  &.active,
+  &:focus
     .event-marker,
     .event-change
       background: currentColor
+
+  &.active
+    .event-text
+      opacity: 1
 
 .event-marker
   position: absolute
@@ -175,6 +177,14 @@ body
   transform-origin: left bottom
   transform: rotate(90deg)
   background: #fff
+
+  .active &
+    color: inherit
+
+  .event-19 &
+    left: auto
+    right: -28px
+    padding-right: 3px
 
 .event-content
   position: absolute
@@ -461,25 +471,7 @@ body
     &:last-child
       float: right
       border-left: 1px solid #cdced6
-//
-  #pager
-    position: absolute
-    right: 8px
-    top: 50%
-    margin-top: -9px
-    font-size: 14px
-    color: #aaa
-    display: block
-    top: auto
-    bottom: 0
-    right: 0
-    white-space: nowrap
-    padding: 4px 10px 4px 8px
-    background:  #e9eaec
-    border-radius: 12px
-    color: #58595b
 
-    #page
-      display: inline-block
-      width: 14px
-      text-align: center
+  .event-19 .event-change-label
+    left: auto
+    right: -18px

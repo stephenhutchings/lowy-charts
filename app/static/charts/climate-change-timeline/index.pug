@@ -26,12 +26,6 @@ block page
     h4 Australian Attitudes to Climate Change
 
     #timeline
-      #controls
-        .btn.js-prev(tabindex="0")
-          .icon.icon-left-arrow
-        .btn.js-next(tabindex="0")
-          .icon.icon-right-arrow
-
       #frame
         #events
           - d1997 = new Date("Jan 1997")
@@ -39,8 +33,10 @@ block page
           for e, i in _.sortBy(events, "_date")
             - var x = (e._date - d1997) / (d2018 - d1997)
             .event.js-year(
+              class=`event-${i}`
               data-i=i
               class=(i == 0 ? "active" : "")
+              tabindex="0"
             )
 
               .event-content
@@ -50,12 +46,16 @@ block page
                     != typogr.typogrify(e.text.trim())
 
               if e.change
-                .event-change(style={left: (100 * x) + "%", "z-index": e.change ? 0 : 1})
+                .event-change(
+                  style={left: (100 * x) + "%", "z-index": e.change ? 0 : 1}
+                )
                   if typeof e.change == "string"
                     .event-change-label.txt-muted.txt-tu= e.change
 
               else
-                .event-marker(style={left: (100 * x) + "%", "z-index": e.change ? 0 : 1})
+                .event-marker(
+                  style={left: (100 * x) + "%", "z-index": e.change ? 0 : 1}
+                )
 
         #years
           #years-inner
@@ -95,7 +95,7 @@ block page
                 g
                   for p, i in line
                     circle.circle-bg(
-                      r=6 cx=`${p[0]}%` cy=`${p[1]}%`)
+                      r=5 cx=`${p[0]}%` cy=`${p[1]}%`)
 
                 svg.path-svg(width="100%" height="100%" viewBox="0 0 100 100" x=0 y=0 preserveAspectRatio="none")
                   path.bg(
@@ -143,6 +143,12 @@ block page
         span#page 1
         | &ensp;/&ensp;#{events.length}
 
+      #controls
+        .btn.js-prev(tabindex="0" aria-role="button")
+          .icon.icon-left-arrow
+        .btn.js-next(tabindex="0" aria-role="button")
+          .icon.icon-right-arrow
+
 block append scripts
   script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.2.1/balancetext.js")
 
@@ -156,8 +162,15 @@ block append scripts
           $page = $("#page");
 
       $(window).on("keydown", function(e){
-        if (e.keyCode == 37) count--; update()
-        if (e.keyCode == 39) count++; update()
+        if (e.keyCode == 37) count--; update();
+        if (e.keyCode == 39) count++; update();
+
+        if (e.keyCode == 32 || e.keyCode == 13) {
+          if (e.target.matches(".js-next, .js-prev, .js-year")) {
+            $(e.target).trigger("click").focus();
+          }
+        }
+        return;
       })
 
       $(".js-next").click(function(){count++; update()})
