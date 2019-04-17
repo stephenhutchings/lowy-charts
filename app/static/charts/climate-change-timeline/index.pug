@@ -33,7 +33,7 @@ block page
       #frame
         #events
           - d1997 = new Date("Jan 1997")
-          - d2018 = new Date("Jan 2019")
+          - d2018 = new Date("Dec 2019")
           for e, i in _.sortBy(events, "_date")
             - var x = (e._date - d1997) / (d2018 - d1997)
             .event.js-year(
@@ -144,12 +144,17 @@ block append scripts
 
   script.
     $(document).ready(function(){
-      window.balanceText(".balance-text")
+      window.balanceText(".balance-text", {watch: true})
 
       var count = 0,
           $events = $(".event"),
           $frame = $("#frame"),
           $page = $("#page");
+
+      $(window).on("keydown", function(e){
+        if (e.keyCode == 37) count--; update()
+        if (e.keyCode == 39) count++; update()
+      })
 
       $(".js-next").click(function(){count++; update()})
       $(".js-prev").click(function(){count--; update()})
@@ -171,20 +176,6 @@ block append scripts
 
         $page.html(count + 1)
 
-        outer = $frame.width()
-        inner = $("body").outerWidth()
-        offset = $active.position().left + 40
-        offset += $active.find(".event-marker, .event-change").position().left
-
-        if (inner < outer) {
-          $frame.css({
-            transform: "translate3d(" + (-Math.max(offset-inner/2, 0) ) + "px,0,0)"
-          })
-        } else {
-          $frame.css({
-            transform: ""
-          })
-        }
       }
 
       function onHover(e) {

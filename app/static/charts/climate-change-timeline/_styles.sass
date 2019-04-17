@@ -31,7 +31,7 @@ body
   border-radius: 50%
   float: left
   margin-right: 8px
-  transition: all 300ms
+  transition: color 300ms, background-color 300ms
   cursor: pointer
 
   @media (max-width: 600px)
@@ -61,15 +61,11 @@ body
   position: relative
   height: 420px
 
-  @media (max-width: 800px)
-    height: 400px
-
 #frame
   top: 0
   bottom: 0
   left: 0
   right: 0
-  min-width: 600px
   position: absolute
   transition: transform 800ms
   border-top: 1px solid
@@ -182,11 +178,14 @@ body
 
 .event-content
   position: absolute
-  width: 320px
+  width: (8 * 4.3478260869565215%)
   max-width: 100%
-  pointer-events: none
   top: -320px
-  margin-top: 8px
+  padding: 8px 0
+  pointer-events: none
+
+  .active &
+    pointer-events: all
 
 .event-text
   z-index: 10
@@ -201,8 +200,8 @@ body
 
 #chart-wrapper
   position: absolute
-  left: 40.909090909090914%
-  right: 4.545454545454546%
+  left:  (9.5 * 4.3478260869565215%)
+  right: (1.5 * 4.3478260869565215%)
   margin-right: -4px
   top: 4px
   height: 312px
@@ -352,7 +351,100 @@ body
   bottom: 120px
   font-size: 13px
 
+@media (max-width: 960px)
+  #years,
+  #events
+    top: 300px
+
+  .event-content
+    top: -300px
+    max-height: 300px
+    overflow: auto
+
+  #chart-wrapper
+    height: 292px
+
+  .event-change
+    height: 284px
+
+  #pager
+    bottom: 72px
+
 @media (max-width: 800px)
+  #years,
+  #events
+    top: 260px
+
+  .event-content
+    top: -260px
+    max-height: 260px
+    font-size: 14px
+
+  #chart-wrapper
+    height: 252px
+
+  .event-change
+    height: 244px
+
+@media (max-width: 700px)
+  #years,
+  #events
+    top: 240px
+
+  .event-content
+    top: -240px
+    max-height: 240px
+    font-size: 14px
+
+  #chart-wrapper
+    height: 232px
+
+  .event-change
+    height: 224px
+
+@media (max-width: 600px)
+  #pager
+    display: none
+
+  #legend
+    left: 40px
+    right: 40px
+
+  .legend-key
+    width: 100%
+    padding-right: 8px
+    padding-bottom: 4px
+
+  #controls
+    top: 280px
+    width: 100%
+    left: 0
+    bottom: 0
+    margin: 0
+
+  .event-content
+    width: 30%
+    hyphens: auto
+
+  .btn
+    width: 32px
+    height: 140px
+    line-height: 140px
+    border-radius: 0
+    border: none
+    margin: 0
+
+    &:hover,
+    &:focus
+      background: #cdced6
+
+    &:first-child
+      border-right: 1px solid #cdced6
+
+    &:last-child
+      float: right
+      border-left: 1px solid #cdced6
+//
   #pager
     position: absolute
     right: 8px
