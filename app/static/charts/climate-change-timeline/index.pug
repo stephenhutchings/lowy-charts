@@ -23,6 +23,8 @@ block page
         Public opinion towards action on climate policy has waxed and waned. Political infighting and leadership churn could have contributed to the sharp dip in concern about climate change in 2012, but so too could the lifting of drought conditions. With the axeing of a price on carbon and the hottest summer on record in 2018-19, the Australian public is almost at the 2006 levels of concern about climate change. 
 
 
+    h4 Australian Attitudes to Climate Change
+
     #timeline
       #controls
         .btn.js-prev(tabindex="0")
@@ -76,7 +78,9 @@ block page
                 .line-label.txt-muted
                   = (100 - y) / 100 * 80 - 10 + "%"
 
-          #chart-label
+          .chart-label#chart-label-0
+          .chart-label#chart-label-1
+          .chart-label#chart-label-2
 
           svg#chart
             for list, j in chart.values
@@ -179,26 +183,26 @@ block append scripts
       }
 
       function onHover(e) {
-        var $el = $(e.currentTarget),
-            i = $el.data("index"),
-            j = $el.data("group"),
-            value = $el.data("value"),
-            $label = $("#chart-label"),
-            $circl = $("#chart-group-" + j + " .circle-fg").eq(i);
+        var i = $(e.currentTarget).data("index");
 
-        if (e.type === "mouseleave") {
-          $label.removeClass("active")
-          $circl.removeClass("active")
-        } else {
-          var pos = $el.position(), r = +$el.attr("r");
-          $circl.addClass("active")
-          $label
-            .html("<span class='chart-group-" + j + "'>"+value+"%</span>")
-            .css({left: pos.left + r, top: pos.top + r})
-            .addClass("active")
-        }
+        $(".js-circ[data-index='" + i + "']").each(function(j, el){
+          var $el = $(this),
+              value = $el.data("value"),
+              $circl = $("#chart-group-" + j + " .circle-fg").eq(i),
+              $label = $("#chart-label-" + j)
+
+          if (e.type === "mouseleave") {
+            $(".circle-fg, .chart-label").removeClass("active")
+          } else {
+            var pos = $el.position(), r = +$el.attr("r");
+            $circl.addClass("active")
+            $label
+              .html("<span class='chart-index-" + i + "'>"+value+"%</span>")
+              .css({left: pos.left + r, top: pos.top + r})
+              .addClass("active")
+          }
+        })
       }
-
     })
 
 

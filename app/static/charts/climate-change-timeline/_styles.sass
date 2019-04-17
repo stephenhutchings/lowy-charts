@@ -254,7 +254,7 @@ body
   .circle-fg.active
     fill: rgb(0, 80, 107)
 
-#chart-label
+.chart-label
   position: fixed
   width: 0
   opacity: 0
@@ -279,19 +279,36 @@ body
       top: 100%
       margin-left: -4px
       border: 4px solid transparent
+      border-top-color: currentColor
 
-    &.chart-group-0
-      background: rgb(243, 115, 32)
-      &:before
-        border-top-color: rgb(243, 115, 32)
-    &.chart-group-1
-      background: rgb(112, 211, 211)
-      &:before
-        border-top-color: rgb(112, 211, 211)
-    &.chart-group-2
-      background: rgb(0, 80, 107)
-      &:before
-        border-top-color: rgb(0, 80, 107)
+#chart-label-0
+  span
+    background: rgb(243, 115, 32)
+    &:before
+      border-top-color: rgb(243, 115, 32)
+
+#chart-label-1
+  span
+    background: rgb(112, 211, 211)
+    &:before
+      color: rgb(112, 211, 211)
+
+#chart-label-2
+  span
+    background: rgb(0, 80, 107)
+    &:before
+      color: rgb(0, 80, 107)
+
+#chart-label-1 .chart-index-3,
+#chart-label-1 .chart-index-4,
+#chart-label-1 .chart-index-7,
+#chart-label-2 .chart-index-6
+  margin-top: 12px
+  &:before
+    top: auto
+    bottom: 100%
+    border-top-color: transparent
+    border-bottom-color: currentColor
 
 #chart-grid
   width: 100%
