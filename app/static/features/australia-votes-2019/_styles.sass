@@ -40,6 +40,9 @@ $color-mt: #7c94a2
 .txt-mt
   color: $color-mt
 
+.p-lg
+  padding: 2.4rem
+
 // Grid
 .row
   display: flex
@@ -152,12 +155,12 @@ $color-mt: #7c94a2
 
 // Font size
 .txt-xxl
-  font-size: 64px
+  font-size: 60px
   line-height: 1
   font-weight: 200
   letter-spacing: -0.01em
 .txt-xl
-  font-size: 44px
+  font-size: 40px
   line-height: 1
   margin: -4px 0 4px
   letter-spacing: -0.01em
@@ -191,15 +194,13 @@ sup
     padding: 0 2px
     margin: 0 -2px
 
-    &:hover
+    &:hover,
+    &:focus
       background-color: $color-ff
       color: $color-dk
 
     .bg-hl &
       color: $color-dk
-
-  + sup
-    margin-left: 4px
 
 .txt-border
   border-left: 4px solid #30b3ff
@@ -240,8 +241,9 @@ sup
     background: $color-ff
     transition-property: all
 
-  a:hover
-    opacity: 0.8
+    &:hover,
+    &:focus
+      opacity: 0.8
 
 .stripe-lt,
 .stripe-ff,
