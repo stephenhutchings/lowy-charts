@@ -39,7 +39,7 @@ require.register "views/scroller", (exports, require, module) ->
       , 1
 
     onResize: ->
-      @inactive = $(window).width() < 600 or $(window).height() < 720
+      @inactive = $(window).width() < 800 or $(window).height() < 720
 
       if @inactive
         @$elements.items.addClass("active")

@@ -167,13 +167,18 @@ $color-mt: #7c94a2
 .txt-md
   font-size: 24px
   line-height: inherit
+.txt-mmd
+  font-size: 20px
+  line-height: inherit
 .txt-sm
   font-size: 14px
   line-height: inherit
   font-family: Sans, sans-serif
 
 .txt-links
-  font-size: 32px
+  font-size: 40px
+  line-height: 64px
+  margin-top: -4px
 
 .lead-tight
   line-height: 1
@@ -181,17 +186,20 @@ $color-mt: #7c94a2
 sup
   a
     text-decoration: none
-    color: $color-dk
-    background: $color-hl
-    width: 1em
-    height: 1em
-    line-height: 1em
-    display: inline-block
-    border-radius: 50%
+    color: $color-hl
+    font-weight: 500
+    padding: 0 2px
+    margin: 0 -2px
 
     &:hover
       background-color: $color-ff
       color: $color-dk
+
+    .bg-hl &
+      color: $color-dk
+
+  + sup
+    margin-left: 4px
 
 .txt-border
   border-left: 4px solid #30b3ff
@@ -269,6 +277,7 @@ a
 
 li
   margin-bottom: 0
+  line-height: inherit
 
 body
   font-family: Cond
@@ -356,7 +365,8 @@ strong, .txt-tu, .caption
   .social-share
     float: right
 
-#scroll-item-intro .caption
+#scroll-item-intro .caption,
+.caption-dk
   background: rgba(#000, 0.7)
   left: 50%
   right: auto
@@ -618,8 +628,7 @@ p > a
   height: 100%
 
   li
-    width: 50%
-    height: 20%
+    height: 25%
     float: left
     position: relative
 
@@ -665,8 +674,8 @@ p > a
       a:before
         transform: translate3d(-100%, 0, 0)
 
-    @for $i from 1 through 10
-      $ratio: 1 - ($i - 1) / 9
+    @for $i from 1 through 7
+      $ratio: 1 - ($i - 1) / 6
 
       &:nth-child(#{$i})
         background: mix($color-dk, $color-hl, $ratio * 100%)
@@ -686,6 +695,8 @@ p > a
     font-size: 26px
   .txt-md
     font-size: 21px
+  .txt-mmd
+    font-size: 19px
   .txt-expert-content
     padding: 20px 40px
   .txt-border
@@ -698,7 +709,6 @@ p > a
 
     .header-logo
       padding: 16px 0
-
 
   #footer, .pager .pager-link
     height: 48px
@@ -714,10 +724,12 @@ p > a
     font-size: 24px
   .txt-md
     font-size: 18px
+  .txt-mmd
+    font-size: 16px
   .txt-expert-content
     padding: 20px
 
-@media (max-width: 600px), (max-height: 720px)
+@media (max-width: 800px), (max-height: 720px)
   .hidden-sm,
   .page-issue .header-logo,
   .header-page,
@@ -897,7 +909,11 @@ p > a
     height: auto
 
     li
-      height: 96px
+      height: 80px
+      width: 100%
+
+      span
+        margin: 0
 
   .txt-source
     border: 1px solid $color-hl
