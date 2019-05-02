@@ -120,9 +120,10 @@ body
 .event
   &.active,
   &:focus
-    .event-marker,
-    .event-change
+    .event-marker
       background: currentColor
+    .event-change
+      border-color: currentColor
 
   &.active
     .event-text
@@ -150,11 +151,9 @@ body
     bottom: -12px
 
 .event-change
-  background: #cdced6
-  width: 5px
-  margin-left: -2px
-  border-left: 2px solid #fff
-  border-right: 2px solid #fff
+  background:
+  margin-left: -1px
+  border-right: 1px solid #cdced6
   position: absolute
   bottom: 8px
   height: 304px
@@ -164,14 +163,14 @@ body
     content: ""
     position: absolute
     top: 0
-    left: -4px
-    right: -4px
+    left: -5px
+    right: -6px
     bottom: 0
 
 .event-change-label
   position: absolute
   top: -20px
-  left: 2px
+  left: 3px
   padding: 2px 0
   font-size: 13px
   transform-origin: left bottom
