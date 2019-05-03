@@ -1,15 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.title = "History of Australian Attitudes to Climate Change"
-  - var events = data.getOne("static/charts/climate-change-timeline/data").events
-  - var chart = data.getOne("static/charts/climate-change-timeline/data").chart
-  - events.forEach(function(e){e.year = +e.date.match(/\d{4}/)[0]; e._date = new Date(e.date)})
-  - var years = _.pluck(events, "year")
-
-  - var max = _.last(years)
-  - var min = _.first(years)
-  - var len = max - min
+  - page.title = "Australian Attitudes to Climate Change – Lowy Insitute"
 
 block page
   header#header
