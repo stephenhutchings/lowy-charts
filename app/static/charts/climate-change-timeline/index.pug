@@ -142,7 +142,9 @@ block append scripts
 
   script.
     $(document).ready(function(){
-      window.balanceText(".balance-text", {watch: true})
+      if ($(window).width() > 600) {
+        window.balanceText(".balance-text", {watch: true})
+      }
 
       var count = 0,
           $events = $(".event"),
