@@ -1,0 +1,118 @@
+extend /partials/layout
+
+block append config
+  - page.title = "History of Australian Attitudes to Climate Change"
+  - var events = data.getOne("static/charts/climate-change-timeline/data").events
+  - var chart = data.getOne("static/charts/climate-change-timeline/data").chart
+  - events.forEach(function(e){e.year = +e.date.match(/\d{4}/)[0]; e._date = new Date(e.date)})
+  - var years = _.pluck(events, "year")
+
+  - var max = _.last(years)
+  - var min = _.first(years)
+  - var len = max - min
+
+block page
+  header#header
+    .container.txt-center
+      a.txt-bare(href="https://www.lowyinstitute.org/")
+        img(src="/img/lowyinstitute-logo-300.png" width=200)
+  .container
+    #content
+      :marked
+        # Australian Attitudes to Climate Change
+
+        The [Lowy Institute][1] has surveyed Australians about their views on
+        climate change for the past fourteen years. Public support for action
+        on climate policy was high in the 2006 Lowy Institute Poll, but then
+        fell consistently until 2012. One explanation for this could be
+        political infighting and leadership churn in Australia, as well as a
+        fierce campaign against a ‘carbon tax’. But the impact of severe
+        droughts should also not be overlooked.
+        
+        In a dramatic reversal of attitudes since 2012, however, concern about
+        global warming has been rising steadily over the past six years. In
+        2018, almost six in ten Australians (58%) say global warming is ‘a
+        serious and pressing problem’ about which ‘we should begin taking steps
+        now even if this involves significant costs’. The issue of climate
+        change and global warming continues to split Australians along
+        generational lines. A clear majority (70%) of young Australians aged
+        18-44 agree with this statement, compared to just half (49%) of their
+        elders.
+        
+        Below we chart the results of Lowy Institute polling since 2006 on the
+        issue of global warming, accompanied by a timeline of important
+        developments in Australia’s climate policy history.
+        
+        More information on Australian attitudes towards climate change and
+        other foreign policy issues is available at the [Lowy Institute Poll
+        interactive][2].
+
+        [1]: https://www.lowyinstitute.org/publications/polling
+        [2]: https://lowyinstitutepoll.lowyinstitute.org/
+
+        -----
+
+        There is a controversy over what the countries of the world, including
+        Australia, should do about the problem of global warming. I’m going to
+        read you three statements. Please tell me which statement comes closest
+        to your own point of view:
+        - Global warming is a serious and pressing problem. We should begin
+          taking steps now, even if this involves significant costs.
+        - The problem of global warming should be addressed, but its effects
+          will be gradual, so we can deal with the problem gradually by taking
+          steps that are low in cost.
+        - Until we are sure that global warming is really a problem, we should
+          not take any steps that would have economic costs.
+
+    #chart-wrapper
+      iframe#chart(
+        src="/charts/climate-change-timeline"
+        width="100%"
+        height=450
+        frameborder="none"
+      )
+
+  #footer
+
+block append css
+  style
+    :sass
+      body
+        overflow: visible
+
+      h1
+        margin: 1.2em 0
+
+      .container
+        max-width: 960px
+        margin: auto
+        padding: 0 12px
+
+      #header
+        background: #002a45
+        padding: 12px 0
+        margin-bottom: 20px
+
+        img
+          display: inline-block
+          vertical-align: middle
+
+      #content
+        max-width: 800px
+        margin: auto
+
+      #chart-wrapper
+        padding: 2em 0 
+
+      #footer
+        background: whitesmoke
+        height: 40px
+
+block append scripts
+  script.
+    focus = function(){
+      document.getElementById("chart").contentWindow.focus()
+    }
+
+    document.addEventListener("click", focus)
+    focus()

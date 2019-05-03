@@ -85,9 +85,7 @@ events:
   -
     date: "June 2010"
     text: >
-      Support for Labor drops in opinion polls and Kevin Rudd resigns. Julia
-      Gillard becomes Australia’s 27th Prime Minister. She pledges to
-      re-prosecute the case for a carbon price at home and abroad.
+      Prime Minister Rudd resigns and Julia Gillard becomes Prime Minister.
     change: Gillard
   -
     date: "August 2010"
@@ -124,13 +122,10 @@ events:
   -
     date: "April/May 2013"
     text: >
-      Slowing economic output sees the carbon price in Europe collapse, in some
-      cases as low as $3.34. Australian businesses are still paying a fixed
-      price of $23 a tonne. A budget update from February 2013 says the carbon
-      price raised $3.8 billion in its first six months. Treasury revises its
-      forecasts, expecting carbon price revenue to drop by $6 billion over the
-      next four years. The Government then defers $2.8 billion in tax cuts for
-      2015.
+      Prime Minister Julia Gillard continues to be attacked by the Opposition
+      for having allegedly lied about introducing a ‘carbon tax’. Labor’s
+      polling numbers continue to fall.  Foreign Minister Kevin Rudd mounts an
+      internal challenge and again becomes Prime Minister.
   -
     date: "June 2013"
     text: >
@@ -246,15 +241,11 @@ events:
   -
     date: "August 2018"
     text: >
-      The Coalition party room approve the National Energy Guarantee. Tony
-      Abbott publishes an op-ed saying Australia should not reduce emissions
-      when the big emitters were not. Turnbull backs down on his commitment to
-      legislate for an emissions reduction target under pressure from the
-      conservative wing of the Liberal Party. Cabinet ministers openly admitted
-      the Liberal Party was facing an outbreak of disunity amid reports Home
-      Affairs Minister Peter Dutton is being urged to run for the leadership. A
-      number of leadership votes take place and Scott Morrison becomes the 30th
-      Prime Minister on 24 August.
+      Prime Minister Turnbull announces the emissions reduction component of the
+      National Energy Guarantee will be abandoned due to disagreement within the
+      Coalition, leaving the scheme to focus solely on price and reliability.
+      This announcement is made three days before the Coalition leadership
+      spill. Scott Morrison is sworn in as Prime Minister on 24 August 2018.
     change: Morrison
   -
     date: "20 August 2018"
