@@ -3,85 +3,78 @@ events:
     date: "November 1997"
     text: >
       Environment Minister Robert Hill attends the Kyoto Climate Summit as
-      representative of the Howard government. Australia emerges with
-      large concessions for its agricultural activities and is one of only
-      three countries permitted to increase its emissions under the deal.
+      representative of the Howard government. Australia emerges with large
+      concessions for its agricultural activities and is one of only three
+      countries permitted to increase its emissions under the deal.
   -
     date: "April 2001"
     text: >
-      Initial enthusiasm for the Kyoto Protocol wanes and the Howard Cabinet
-      resolves not to ratify it after all. Australia and the United States are
-      the only major industrialised nations not to ratify the Kyoto Protocol.
+      The Howard Cabinet resolves not to ratify the Kyoto Protocol. Australia
+      and the United States are the only major industrialised nations not to
+      ratify the Protocol.
   -
     date: "2006"
     text: >
-      For many parts of Australia, this is the driest year on record and the
-      peak of a drought that stretched from 1996 to 2009.
+      This is the driest year on record for many parts of Australia, and the
+      peak of a drought lasting from 1996 to 2009.
   -
     date: "March 2007"
     text: >
       Kevin Rudd, having become the Leader of the Opposition in December 2006,
-      famously says “Climate change is the great moral challenge of our
+      declares that “climate change is the great moral challenge of our
       generation”.
   -
     date: "June 2007"
     text: >
-      Prime Minister John Howard announces the Federal Government
-      will introduce an emissions trading scheme by 2012.
+      Prime Minister John Howard announces the Federal Government will
+      introduce emissions trading by 2012.
   -
     date: "November 2007"
     text: >
-      The Labor Party is elected to Federal Government, with Kevin Rudd as Prime
-      Minister
+      The Labor Party is elected to Federal Government, with Kevin Rudd as
+      Prime Minister.
     change: Rudd
   -
     date: "December 2007"
     text: >
-      The first official act of the new Government is to ratify the Kyoto
+      The first official act of the new Labor Government is to ratify the Kyoto
       Protocol. Two weeks later, Prime Minister Kevin Rudd addresses the Bali
       Conference saying “climate change is a top priority of the new Australian
       Government.”
   -
     date: "December 2008"
     text: >
-      Labor commits to a Carbon Pollution Reduction Scheme, which is a
-      cap-and-trade scheme that is planned to start in July 2010. Prime Minister
-      Kevin Rudd says Australia will cut its greenhouse gas emissions by at
-      least 5 per cent of 2000 levels by 2020.
+      Labor commits to a Carbon Pollution Reduction Scheme (CPRS), a
+      cap-and-trade scheme to start July 2010. Prime Minister Kevin Rudd says
+      Australia will cut its greenhouse gas emissions by at least 5 per cent of
+      2000 levels by 2020.
   -
     date: "August 2009"
     text: >
-      The Carbon Pollution Reduction Scheme legislation is voted down in
-      Parliament for the first time.
+      The Senate votes against CPRS for the first time.
   -
     date: "November 2009"
     text: >
-      It is reported that Prime Minister Kevin Rudd and Climate Change Minister
-      Penny Wong have secured a deal with Opposition Leader Malcolm Turnbull and
-      Shadow Environment Minister Ian MacFarlane to pass the Carbon Pollution
-      Reduction Scheme.
+      Reports of a deal between Rudd Government and Opposition Leader Malcolm
+      Turnbull to pass the CPRS.
   -
     date: "December 2009"
     text: >
-      The Liberal party room is divided over the deal, and Tony Abbott,
-      following a widely reported “climate change is crap” comment, wins a
-      leadership contest by one vote to become the new Opposition Leader.
-      Industry groups, including the Minerals Council, mount a campaign claiming
-      the Carbon Pollution Reduction Scheme will cause massive job losses.
+      Tony Abbott becomes Opposition Leader following leadership challenge to
+      Malcolm Turnbull.  The CPRS bill is voted down in Parliament for
+      the second time. Malcolm Turnbull crosses the floor to support the
+      bill.
   -
     date: "December 2009"
     text: >
-      Without Opposition or Green support, the Carbon Pollution Reduction Scheme
-      fails in Parliament again. As a backbencher, Malcolm Turnbull crosses the
-      floor to support the bill. A week later, Prime Minister Rudd and Climate
-      Change Minister Wong attend the Copenhagen climate summit but the
-      international community is unable to achieve consensus on a deal to limit
-      global warming.
+      Prime Minister Rudd and Climate Change Minister Penny Wong attend
+      Copenhagen climate summit. No consensus is achieved with the
+      international community on a deal to limit global warming.
   -
     date: "April 2010"
     text: >
-      Prime Minister Rudd announces that the emissions trading legislation will
-      be put on hold until the end of 2012.
+      Prime Minister Rudd announces that the CPRS legislation will be put on
+      hold until end 2012.
   -
     date: "June 2010"
     text: >
@@ -91,57 +84,49 @@ events:
     date: "August 2010"
     text: >
       Prime Minister Gillard promises there will be no ‘carbon tax’ under her
-      government, during an interview with Channel Ten on the election campaign.
+      government.
   -
     date: "September 2010"
     text: >
-       The Federal Election produces a hung parliament. Prime Minister Julia
-       Gillard forms a minority government by signing an agreement with the
-       Australian Greens that says ‘Australia must tackle climate change and
-       reducing carbon pollution by 2020 will require a price on carbon’.
+      The Federal Election produces a hung parliament. Prime Minister Gillard
+      forms a minority government by signing an agreement, including on climate
+      issues, with the Australian Greens.
   -
     date: "November 2011"
     text: >
-       The Parliament passes the Clean Energy Act 2011, a package of 18 Bills
-       that provides the framework for an emissions trading scheme starting with
-       a three-year fixed-price phase. Prime Minister Julia Gillard hails the
-       passage of her controversial carbon pricing regime as "a win for
-       Australia's children". Leader of the Opposition Tony Abbott commits to
-       repealing what he calls a ‘carbon tax’ and conservative media commences a
-       campaign against a price on carbon.
+      The Parliament passes the Clean Energy Act 2011, which provides the
+      framework for a carbon price mechanism starting with a three year fixed
+      price phase. Leader of the Opposition Tony Abbott commits to repealing
+      what he calls a ‘carbon tax’ and conservative media commences a campaign
+      against a price on carbon.
   -
     date: "June/July 2012"
     text: >
-       The Clean Energy Act comes into force and Australian businesses are able
-       to purchase an unlimited number of carbon units at a fixed price of $23.
-       Some commentary focuses on the price of carbon in Europe, which is
-       between $8 and $13. Part of the profit from the carbon price is to be
-       used to compensate householders as a ‘low income tax offset’. Legislation
-       is passed for the Clean Energy Finance Corporation, a $10 billion fund
-       dedicated to investing in clean energy.
+      The Clean Energy Act comes into force and Australian businesses are able
+      to purchase an unlimited number of carbon units at a fixed price of $23.
+      Some commentary focuses on the price of carbon in Europe, which is
+      between $8 and $13.
   -
     date: "April/May 2013"
+    text: >
+      The carbon price in Europe collapses, in some cases as low as $3.34.
+      Australian businesses are still paying a fixed price of $23 a tonne. A
+      budget update from February 2013 says the carbon price raised $3.8
+      billion in its first six months.
+  -
+    date: "June 2013"
     text: >
       Prime Minister Julia Gillard continues to be attacked by the Opposition
       for having allegedly lied about introducing a ‘carbon tax’. Labor’s
       polling numbers continue to fall.  Foreign Minister Kevin Rudd mounts an
       internal challenge and again becomes Prime Minister.
-  -
-    date: "June 2013"
-    text: >
-      Julia Gillard continues to be attacked by the Opposition for having
-      allegedly lied about a introducing a ‘carbon tax’. Labor’s polling numbers
-      continue to fall. Foreign Minister Kevin Rudd mounts an internal challenge
-      and again becomes Prime Minister.
     change: Rudd
   -
     date: "September 2013"
     text: >
-      Tony Abbott is elected Prime Minister, after campaigning on a ‘axe the
-      tax’ platform and claiming the election is a referendum on the carbon tax.
-      Abbott immediately disbands the Climate Commission and drafts legislation
-      to repeal the Clean Energy Act. Abbott says ditching the ‘carbon tax’ will
-      save households $550 per year.
+      Tony Abbott becomes Prime Minister at the federal election. He
+      immediately disbands the Climate Commission and drafts legislation to
+      repeal the Clean Energy Act.
     change: Abbott
   -
     date: "October 2013"
@@ -151,48 +136,41 @@ events:
   -
     date: "February 2014"
     text: >
-      After La Nina breaking the drought in 2010 and 2011, dry conditions return
-      to Queensland in mid-2013, and spread quickly to northeast New South
-      Wales. Monsoon rains in Queensland were delayed in 2015.
+      After La Nina breaking the drought in 2010 and 2011, dry conditions
+      return to Queensland in mid-2013, and spread quickly to northeast New
+      South Wales. Monsoon rains in Queensland were delayed in 2015.
   -
     date: "July 2014"
     text: >
       The carbon price mechanism is repealed, with the support of the
-      crossbench. Australia is described as the first nation to reverse policy
-      action on climate change.
+      crossbench. Australia is described as the first nation to reverse
+      policy action on climate change .
   -
     date: "August 2015"
     text: >
-      The Federal Government announces 2030 emissions reduction
-      target of 26-28% below 2005 levels by 2030. The Government’s plan for
-      reducing emissions is the Direct Action Plan. The centrepiece of the plan
-      is the Emissions Reduction Fund, which pays businesses, community
-      organisations and local councils to reduce emissions. The plan is
-      criticised by the Greens because it does not force polluting companies to
-      participate.
+      The Federal Government announces an emissions reduction target of 26-28%
+      below 2005 levels by 2030.
   -
     date: "September 2015"
     text: >
-      Communications Minister Malcolm Turnbull says that the people have made up
-      their minds about the leadership of Tony Abbott based on the Government
-      losing 30 Newspolls in a row. Malcolm Turnbull becomes the 29th Prime
-      Minister of Australia after an internal party challenge.
+      Communications Minister Malcolm Turnbull says that the people have made
+      up their minds about the leadership of Tony Abbott based on the
+      Government losing 30 Newspolls in a row.  Malcolm Turnbull becomes the
+      29th Prime Minister of Australia after an internal party challenge.
     change: Turnbull
   -
     date: "December 2015"
     text: >
-      Australia agrees to adopt the Paris Agreement in which all nations submit,
-      revise and review national emissions reduction pledges with a view to
-      keeping the global temperature increase well below 2°C and aiming for
-      1.5°C. Australia also commits $1 billion over five years from the existing
-      aid budget towards building climate resilience and reducing emissions in
-      vulnerable nations.
+      Australia agrees to adopt the Paris Agreement in which all nations
+      submit, revise and review national emissions reduction pledges with a
+      view to keeping the global temperature increase well below 2°C and aiming
+      for 1.5°C.
   -
     date: "April 2016"
     text: >
       Australia is among 175 countries to sign Paris Agreement in New York.
-      Environment Minister Greg Hunt announces that Australia will aim to ratify
-      the Agreement by the end of the year.
+      Environment Minister Greg Hunt announces that Australia will aim to
+      ratify the Agreement by the end of the year.
   -
     date: "September 2016"
     text: >
@@ -200,38 +178,32 @@ events:
       blame the state’s reliance on renewable energy, but the Australian Energy
       Market Operator later reports two tornadoes likely caused the electrical
       faults. But this report also says that nine of the state’s 13 wind farms
-      did switch off because they were unable to withstand voltage disturbances,
-      which caused the blackout.
+      did switch off because they were unable to withstand voltage
+      disturbances, which caused the blackout.
   -
     date: "March 2017"
     text: >
       Hazelwood coal-fired power station, which provided approximately one
       quarter of Victoria’s energy needs, closes, prompting public concerns
-      about electricity prices and blackouts in the future.
-
-      Treasurer Scott Morrison directs the Australian Competition and Consumer
-      Commission to hold an inquiry into the supply of retail electricity and
-      the competitiveness of retail electricity prices.
+      about electricity prices and blackouts in the future. Treasurer Scott
+      Morrison directs the Australian Competition and Consumer Commission to
+      hold an inquiry into the supply of retail electricity and the
+      competitiveness of retail electricity prices.
   -
     date: "July 2017"
     text: >
       Electricity prices continue to rise. Chief Scientist Alan Finkel says
-      Australia’s energy market was not equipped to deal with the closure of
-      coal-fired powers stations and transition to renewable energy. He says
-      this could impact reliability and security, but the country’s coal fleet
-      was old and coming to the end of its design life. Alan Finkel says about
-      68 per cent of existing coal generating plants would reach 50 years of age
-      by 2035.
+      Australia’s energy market is not equipped to deal with the closure of
+      coal-fired powers stations and transition to renewable energy.
   -
     date: "October 2017"
     text: >
-      Prime Minister Malcolm Turnbull and Energy Minister Josh Frydenberg
-      announce the plan for the National Energy Guarantee. The scheme obliges
-      energy suppliers and retailers to guarantee a minimum amount of power at
-      an average emissions level, consistent with Australia's commitments under
+      Prime Minister Turnbull and Energy Minister Josh Frydenberg announce the
+      plan for the National Energy Guarantee. The scheme obliges energy
+      suppliers and retailers to guarantee a minimum amount of power at an
+      average emissions level, consistent with Australia's commitments under
       the Paris agreement. A national energy mix between renewables and legacy
-      generators is incorporated. Turnbull and Frydenberg say the scheme will
-      provide certainty for providers and lower prices for consumers.
+      generators is incorporated.
   -
     date: "December 2017"
     text: >
@@ -241,11 +213,12 @@ events:
   -
     date: "August 2018"
     text: >
-      Prime Minister Turnbull announces the emissions reduction component of the
-      National Energy Guarantee will be abandoned due to disagreement within the
-      Coalition, leaving the scheme to focus solely on price and reliability.
-      This announcement is made three days before the Coalition leadership
-      spill. Scott Morrison is sworn in as Prime Minister on 24 August 2018.
+      Prime Minister Turnbull announces the emissions reduction component of
+      the National Energy Guarantee will be abandoned due to disagreement
+      within the Coalition, leaving the scheme to focus solely on price and
+      reliability. This announcement is made three days before the Coalition
+      leadership spill. Scott Morrison is sworn in as Prime Minister on 24
+      August 2018.
     change: Morrison
   -
     date: "November 2018"
@@ -260,7 +233,7 @@ events:
   -
     date: "April 2019"
     text: >
-      Prime Minister Scott Morrison calls a federal election for 18 May.
+      Prime Minister Morrison calls a federal election for 18 May.
 
 chart:
   years: [
