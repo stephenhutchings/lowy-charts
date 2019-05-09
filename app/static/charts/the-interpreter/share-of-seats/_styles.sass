@@ -1,0 +1,99 @@
+body
+  font-family: Sans, sans-serif
+  font-size: 14px
+  text-align: center
+
+svg
+  margin: auto
+
+path
+  vector-effect: non-scaling-stroke
+
+.wrapper
+  position: relative
+  padding: 20px 40px 20px 16px
+
+#labels,
+.label
+  position: absolute
+
+#labels
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  margin: 20px 40px 20px 16px
+  color: #9ba9b2
+
+.label-x
+  top: 100%
+  margin-left: -20px
+  width: 40px
+  text-align: center
+
+  @media (max-width: 600px)
+    &:nth-child(2n)
+      display: none
+
+.label-y
+  left: 100%
+  margin-left: 4px
+  margin-top: -0.5em
+  width: 40px
+  text-align: left
+
+.label-c,
+.label-l,
+.label-o
+  left: 0
+  text-align: center
+  line-height: 1
+  padding: 2px 4px
+  color: #fff
+  max-width: 94px
+
+.label-c
+  background: rgb(31, 116, 220)
+.label-l
+  background: #ec2e2e
+.label-o
+  background: #9ba9b2
+
+.label-title
+  color: #4b4f56
+  font-size: 16px
+  left: 0
+  right: 0
+  top: -24px
+  font-weight: 600
+
+.f-c,
+.f-l
+  fill-opacity: 0.9
+
+.tick
+  stroke: #f2f4f6
+  stroke-opacity: 1
+.tick-b
+  stroke: #ccc
+.tick-c
+  stroke: #9ba9b2
+
+.f-c
+  fill: blue
+  fill: url(#g-coalition)
+.f-l
+  fill: red
+  fill: url(#g-labor)
+.f-o
+  fill: rgba(#fff, 0.6)
+
+.l-c
+  stroke: rgb(31, 116, 220)
+.l-l
+  stroke: #ec2e2e
+.l-o
+  stroke: #9ba9b2
+.l
+  fill: none
+  stroke-width: 2

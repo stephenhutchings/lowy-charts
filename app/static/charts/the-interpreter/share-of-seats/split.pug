@@ -1,9 +1,9 @@
 extend /partials/layout
 
 block append config
-  - page.data = data.getOne("static/charts/the-interpreter/share-of-seats/split")
+  - page.data = data.getOne("static/charts/the-interpreter/share-of-seats/split2")
   - page.data.elections.forEach(function(e){e.date = new Date(e.start); })
-  - page.data.elections = _.sortBy(page.data.elections, "date").filter((e) => e.date - new Date("May 18 1965") > 0)
+  - page.data.elections = _.sortBy(page.data.elections, "date").filter((e) => e.date - new Date("May 18 1960") > 0)
   - helpers = r("./" + __.directory + "/utils.coffee")
   - console.log(page.data.elections.slice(-1))
 
@@ -55,7 +55,7 @@ block page
       +grid(6)
 
       - list = {c: [], l: [], o: [], e: [], t: []}
-      for prev, i in page.data.elections.filter((e) => e.date - new Date("May 18 1967") > 0)
+      for prev, i in page.data.elections.filter((e) => e.date - new Date("May 18 1919") > 0)
         - c = 0, l = 0, o = 0, n = 0;
 
         for other in page.data.elections
@@ -84,17 +84,18 @@ block page
             - path[i] = {x:x,y:y}
 
         - c = function(p){return `M ${_.first(p).x},${h} ${helpers.catmullRomBezier(p, 0.5)} L ${w},${_.last(p).y} L ${w},${h} Z`}
-        - cx = function(p){return `M ${_.first(p).x},${h} ${helpers.catmullRomBezier(helpers.simplify(helpers.interpolate(p), 16.5, true).concat(p.slice(-3)), 0.5)} L ${w},${_.last(p).y} L ${w},${h} Z`}
+        - cx = function(p){return `M ${_.first(p).x},${h} ${helpers.catmullRomBezier(helpers.simplify(helpers.interpolate(p), 21, true).concat(p.slice(-3)), 0.5)} L ${w},${_.last(p).y} L ${w},${h} Z`}
         path(d=c(path) class=`a${k}` style="pointer-events: none")
         path.a6(d=cx(path) fill="none")
 
   //- pre
-    = list.e.map((e)=>e.government).join(",") + "\n"
-    = list.e.map((e)=>e.start).join(",") + "\n"
-    = list.c.join(",") + "\n"
-    = list.l.join(",") + "\n"
-    = list.o.join(",") + "\n"
-    = list.t.join(",")
+    for n, i in list.c
+      = list.e[i].government + ","
+      = list.e[i].start + ","
+      = list.c[i] + ","
+      = list.l[i] + ","
+      = list.o[i] + ","
+      = list.t[i] + "\n"
 
 
   for filter in [{government: "FED", house: "lower"},{government: "FED", house: "upper"},{government: "ACT", house: "lower"},{government: "NSW", house: "lower"},{government: "NSW", house: "upper"},{government: "NT", house: "lower"},{government: "QLD", house: "lower"},{government: "SA", house: "lower"},{government: "SA", house: "upper"},{government: "TAS", house: "lower"},{government: "TAS", house: "upper"},{government: "VIC", house: "lower"},{government: "VIC", house: "upper"},{government: "WA", house: "lower"},{government: "WA", house: "upper"}]

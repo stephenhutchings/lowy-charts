@@ -1,0 +1,102 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Total Seats Across State & Federal Parliaments"
+  - page.data = data.getOne("static/charts/the-interpreter/share-of-seats/split")
+  - page.data.elections.forEach((e) => e.date = new Date(e.start))
+  - page.data.elections = _.sortBy(page.data.elections, "date")//.filter((e) => e.date - new Date("May 18 1960") > 0)
+  - helpers = r("./" + __.directory + "/utils.coffee")
+
+block page
+  - var d1 = new Date("May 18 2019");
+  - var d0 = new Date("Jan 1 1969");
+  - var dd = moment(d1).diff(d0);
+  - var w = 1000, h = 320;
+  - var offsets = { x: [], y: [] }
+  - var list = {c: [], l: [], o: [], e: []}
+
+  - var fill = function(p){return `M ${_.first(p).x},${h} ${p.map(e => "L" + [e.x, e.y].join(","))} L ${w},${_.last(p).y} L ${w},${h} Z`}
+  - var line = function(p){return `M ${_.first(p).x},${h} ${p.map(e => "L" + [e.x, e.y].join(","))} L ${w},${_.last(p).y}`}
+
+  for prev, i in page.data.elections.filter((e) => e.date - new Date("May 18 1919") > 0)
+    - c = 0, l = 0, o = 0, n = 0;
+
+    for other in page.data.elections
+      - end = other.end === "Current" ? d1 : new Date(other.end)
+      if other.date <= prev.date && end > prev.date
+        - c += other.coalition
+        - l += other.labor
+        - o += other.other
+        - n++
+
+    - list.e.push(prev)
+    - list.c.push(c)
+    - list.l.push(l)
+    - list.o.push(o)
+
+  mixin grid(n)
+    - var offset = (new Date("Jan 1 2019") - d1) / (d1 - d0)
+    svg(
+      width="100%"
+      preserveAspectRatio="none"
+      viewBox=`0 0 ${w} ${h}`
+    )
+      g
+        for el, i in new Array(52)
+          - var d = i / 51, x = d * w + offset * w
+          - offsets.x.push(x)
+          line.tick(
+            x1=x x2=x
+            y1=0 y2="100%"
+            class=(i % 5 === 1 ? "tick-b" : "")
+          )
+
+      g
+        for el, i in new Array(n + 1)
+          - var d = i / n
+          - var y = d * (h - 1) + 0.5
+          - offsets.y.push(y)
+          line.tick(
+            y1=y y2=y
+            x1=offset * w * 2
+            x2="100%"
+            class=(i === n ? "tick-c" : "")
+          )
+
+  .wrapper
+    svg(width="100%" height=h)
+      include _defs.pug
+      +grid(5)
+      
+      svg(
+        height="100%"
+        width="100%"
+        preserveAspectRatio="none"
+        viewBox=`0 0 ${w} ${h}`
+      )
+        for key, k in ["c", "l", "o"]
+          - var path = []
+          for el, i in list[key]
+            - var d = new Date(list.e[i].start)
+            - var x = w * ((d - d0) / dd)
+            - var y = h * (1 - el / 500)
+            - path[i] = {x: x, y: y}
+
+          path(d=fill(path) class=`f f-${key}`)
+          path(d=line(path) class=`l l-${key}`)
+
+    #labels
+      for x, i in offsets.x
+        if i % 5 == 1
+          span.label.label-x(style={left: (x / w * 100) + "%"})= 1968 + i
+      for y, i in offsets.y.slice(0, -1)
+        span.label.label-y(style={top: (y / h * 100) + "%"})= 500 - i * 100
+
+      span.label.label-c(style={top: "17%"}) Coalition
+      span.label.label-l(style={top: "55%"}) Labor
+      span.label.label-o(style={top: "79%"}) Minor Parties &amp; Independents
+      span.label.label-title.num-lf= page.title
+
+
+  style
+    include:sass _styles.sass
