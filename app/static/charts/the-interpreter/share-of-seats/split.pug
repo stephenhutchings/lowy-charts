@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.data = data.getOne("static/charts/the-interpreter/share-of-seats/split2")
+  - page.data = data.getOne("static/charts/the-interpreter/share-of-seats/split")
   - page.data.elections.forEach(function(e){e.date = new Date(e.start); })
   - page.data.elections = _.sortBy(page.data.elections, "date").filter((e) => e.date - new Date("May 18 1960") > 0)
   - helpers = r("./" + __.directory + "/utils.coffee")
