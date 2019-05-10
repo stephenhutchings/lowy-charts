@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Total Seats Across State & Federal Parliaments"
+  - page.title = "Elected Members of Parliament across National, State and Territory Legislatures"
   - page.data = data.getOne("static/charts/the-interpreter/share-of-seats/split")
   - page.data.elections.forEach((e) => e.date = new Date(e.start))
   - page.data.elections = _.sortBy(page.data.elections, "date")//.filter((e) => e.date - new Date("May 18 1960") > 0)
