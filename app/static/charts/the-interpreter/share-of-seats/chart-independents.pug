@@ -15,9 +15,9 @@ block page
   - var offsets = { x: [], y: [] }
   - var list = {c: [], l: [], o: [], e: []}
 
-  - var fill = function(p){return `M ${_.first(p).x},${h} ${p.map(e => "L" + [e.x, e.y].join(","))} L ${w},${_.last(p).y} L ${w},${h} Z`}
-  - var line = function(p){return `M ${_.first(p).x},${h} ${p.map(e => "L" + [e.x, e.y].join(","))} L ${w},${_.last(p).y}`}
-
+  - var fill = function(p){return `M${_.first(p).x} ${h}${p.map(e => "L" + [e.x, e.y].join(" ")).join("")}L${w} ${_.last(p).y}L${w} ${h}Z`}
+  - var line = function(p){return `M${_.first(p).x} ${h}${p.map(e => "L" + [e.x, e.y].join(" ")).join("")}L${w} ${_.last(p).y}`}
+  
   for prev, i in page.data.elections.filter((e) => e.date - new Date("May 18 1919") > 0)
     - c = 0, l = 0, o = 0, n = 0;
 
