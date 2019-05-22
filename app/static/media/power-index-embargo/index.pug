@@ -1,0 +1,34 @@
+html
+  head
+    meta(name="robots" content="noindex")
+    link(href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet")
+
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-3115931-11")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "UA-3115931-11");
+    title Asia Power Index | Embargo
+
+  body
+    .info
+      .banner
+        p
+          img(src="./LOWY_API_LOGO_WHITE.png")
+      .content
+        p
+          strong
+            | This material is strictly under embargo until 
+            br
+            span(style="color:red") Wednesday 29 May at 12.01am AEST
+        p
+          a.btn(href="http://power.gliderglobal.com/") AGREE AND CONTINUE TO POWER INDEX
+        p
+          a.btn(href="./Lowy-Institute-Asia-Power-Index-2019-Key-Findings-Embargoed.pdf") Download Key Findings
+        p
+          iframe(width="100%" height="400" src="https://www.youtube.com/embed/gvnCGD_PPiw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+
+
+    style
+      include:sass _style.sass
