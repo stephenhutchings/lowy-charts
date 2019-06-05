@@ -38,13 +38,13 @@ block page
     include slides/video
 
 
-block append scripts
+block customScripts
   style
     include:sass _style.sass
 
   link(href="https://use.typekit.net/hdu4qmq.css" rel="stylesheet")
 
-  script
+  script(type="text/javascript").
     include:coffee views/type.coffee
     include:coffee views/slide.coffee
     include:coffee views/line.coffee
