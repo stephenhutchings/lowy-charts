@@ -1,0 +1,77 @@
+.slide.bg-hl
+  .slide-inner.flex-ch.flex-col.flex-evenly(data-view="in-viewport")
+    .type.txt-lg.txt-center(
+      data-view="slide, in-viewport"
+      data-duration=1200
+    )
+      span.line.txt-mono.bg-ff.txt-dk Xi Features
+
+    .features.flex-ch.txt-ff
+      .feature.posr.fade-in.delay-4
+        img.feature-icon.posa(src="./img/xi-features/economic-reform.png")
+        .feature-name.bg-dk.pv-xs.ph-sm
+          span.txt-tu.txt-sans.txt-bold Economic Reform
+      .feature.posr.fade-in.delay-6
+        img.feature-icon.posa(src="./img/xi-features/belt-and-road.png")
+        .feature-name.bg-dk.pv-xs.ph-sm
+          span.txt-tu.txt-sans.txt-bold Belt and Road
+      .feature.posr.fade-in.delay-8
+        img.feature-icon.posa(src="./img/xi-features/military-reform.png")
+        .feature-name.bg-dk.pv-xs.ph-sm
+          span.txt-tu.txt-sans.txt-bold Military Reform
+      .feature.posr.fade-in.delay-10
+        img.feature-icon.posa(src="./img/xi-features/poverty-alleviation.png")
+        .feature-name.bg-dk.pv-xs.ph-sm
+          span.txt-tu.txt-sans.txt-bold Poverty Alleviation
+      .feature.posr.fade-in.delay-12
+        img.feature-icon.posa(src="./img/xi-features/anti-corruption.png")
+        .feature-name.bg-dk.pv-xs.ph-sm
+          span.txt-tu.txt-sans.txt-bold Anti-corruption
+
+style
+  :sass
+    .features
+      padding: 88px 0
+    .feature-icon
+      width: 100px
+      height: 100px
+      box-sizing: border-box
+      border-radius: 50%
+      left: 50%
+      margin-left: -52px
+      .feature:nth-child(2n) &
+        top: 0
+      .feature:nth-child(2n + 1) &
+        bottom: 0
+
+    .feature-name
+      height: 40px
+      width: max-content
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+      box-sizing: border-box
+      .feature:nth-child(2n) &
+        margin-top: 148px
+      .feature:nth-child(2n + 1) &
+        margin-bottom: 148px
+
+    .feature
+      width: 200px
+      margin: 0 -32px
+      &:before
+        content: ""
+        position: absolute
+        width: 4px
+        left: 50%
+        margin: 40px -2px
+        background: #22273d
+        height: 48px
+      &:nth-child(2n)
+        margin-bottom: -88px
+        &:before
+          bottom: 0
+      &:nth-child(2n + 1)
+        margin-top: -88px
+        &:before
+          top: 0

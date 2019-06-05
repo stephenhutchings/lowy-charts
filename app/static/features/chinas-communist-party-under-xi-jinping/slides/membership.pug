@@ -1,0 +1,51 @@
+.slide.bg-dk
+  .slide-inner(data-view="in-viewport")
+    .type.txt-md.txt-dk.txt-left(
+      data-view="slide, in-viewport"
+      data-duration=1800
+    )
+      span.line.bg-ff.txt-mono Millions apply to join each year,
+      span.line.bg-ff.txt-mono but few are accepted
+
+    .txt-mid.txt-sm
+      .bars(style={"margin-top": "36px"})
+        - labels = [2005,2007,2009,2011,2012,2013,2014,2015,2016]
+        - values = [[2.5, 17.7], [2.8, 19.5], [3.0, 20.2], [3.1, 21.6], [3.2, 21.9], [2.4, 21.7], [2.1, 21.9], [2.0, 22.3], [1.9, 20.3]]
+        for value, i in values
+          .bar.bar-border
+            .bar-bg.bg-lta(
+              style=`width: ${(value[1] * 4)}%`
+              data-view="bars, in-viewport"
+              data-duration=1200
+              data-delay=(i * 100)
+              data-value=value[1]
+              data-width=value[1] * 4
+            )
+              .bar-value.bar-value-right.txt-ff= value[1]
+            .bar-bg.bg-hl(
+              style=`width: ${(value[0] * 4)}%`
+              data-view="bars, in-viewport"
+              data-duration=1000
+              data-delay=(2000 + i * 40)
+              data-value=value[0]
+              data-width=value[0] * 4
+            )
+              .bar-value.txt-ff= value[0]
+            .bar-label.txt-right= labels[i]
+
+      .scale.fade-in.delay-10
+        for n, i in new Array(25 / 2.5)
+          .scale-tick
+            if i == 0
+              .scale-tick-label Millions
+            else if i % 2 == 0
+              .scale-tick-label= i * 2.5
+        .scale-source Source: Merics
+
+      .legend.txt-right
+        .key.fade-in.delay-8
+          .key-label Applications
+          .key-box.bg-lta
+        .key.fade-in.delay-18
+          .key-label New members
+          .key-box.bg-hl

@@ -1,0 +1,91 @@
+extend /partials/layout
+
+block append config
+  - page.title = "China’s Communist Party Under Xi Jinping"
+
+block page
+  #controls
+    #btn-prev.btn &uarr;
+    #pager-items
+      for n, i in new Array(19)
+        .pager-item(class=i==0?"active":"")
+    #btn-next.btn &darr;
+
+  #scroller.bg-dk(
+    data-view="scroller"
+    data-pager=".pager-page" 
+    data-index=".pager-index"
+  )
+
+    include slides/intro
+    include slides/quote-jeff-bader
+    include slides/gdp
+    include slides/ivy-league
+    include slides/membership
+    include slides/gender
+    include slides/age
+    include slides/profession
+    include slides/quote-poor-rich
+    include slides/east-south-west-north
+    include slides/party-structure
+    include slides/politburo-members
+
+    //- Path to the top
+    include slides/path-to-the-top
+    include slides/profiles
+
+    include slides/xi-features
+    include slides/video
+
+
+block append scripts
+  style
+    include:sass _style.sass
+
+  link(href="https://use.typekit.net/hdu4qmq.css" rel="stylesheet")
+
+  script
+    include:coffee views/type.coffee
+    include:coffee views/slide.coffee
+    include:coffee views/line.coffee
+    include:coffee views/bars.coffee
+    include:coffee views/page.coffee
+    include:coffee views/video.coffee
+    include:coffee views/scroller.coffee
+
+  //- script.
+    window.setInterval(function(){$(window).trigger("keydown", {keyCode: "40"})}, 1000)
+
+  style
+    :sass
+      #controls
+        position: fixed
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+        right: calc(50vw + 640px)
+        z-index: 10
+        pointer-events: none
+
+      .btn,
+      .pager-item
+        pointer-events: all
+        border-radius: 50%
+
+      .btn
+        width: 24px
+        height: 24px
+        line-height: 24px
+        color: #21273d
+        text-align: center
+        margin: 0 auto 12px
+
+      .pager-item
+        width: 4px
+        height: 4px
+        background: white
+        margin: 0 auto 12px
+
+        &.active
+          background: #22273d
+          box-shadow: 0 0 0 4px rgba(#fff, 0.2)

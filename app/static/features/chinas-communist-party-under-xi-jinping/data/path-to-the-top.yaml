@@ -1,0 +1,269 @@
+provinces:
+  - id: heilongjiang
+    name: Heilongjiang
+    x: 784
+    y: 164
+  - id: jilin
+    name: Jilin
+    x: 772
+    y: 227
+  - id: liaoning
+    name: Liaoning
+    x: 732
+    y: 264
+  - id: hebei
+    name: Hebei
+    x: 644
+    y: 328
+  - id: shandong
+    name: Shandong
+    x: 677
+    y: 355
+  - id: jiangsu
+    name: Jiangsu
+    x: 720
+    y: 400
+  - id: zhejiang
+    name: Zhejiang
+    x: 720
+    y: 476
+  - id: anhui
+    name: Anhui
+    x: 652
+    y: 508
+  - id: hubei
+    name: Hubei
+    x: 605
+    y: 448
+  - id: shanxi
+    name: Shanxi
+    x: 600
+    y: 344
+  - id: henan
+    name: Henan
+    x: 612
+    y: 400
+  - id: shaanxi
+    name: Shaanxi
+    x: 548
+    y: 400
+  - id: gansu
+    name: Gansu
+    x: 384
+    y: 284
+  - id: jiangxi
+    name: Jiangxi
+    x: 680
+    y: 448
+  - id: hunan
+    name: Hunan
+    x: 592
+    y: 508
+  - id: guizhou
+    name: Guizhou
+    x: 520
+    y: 524
+  - id: sichuan
+    name: Sichuan
+    x: 465
+    y: 448
+  - id: yunnan
+    name: Yunnan
+    x: 438
+    y: 556
+  - id: qinghai
+    name: Qinghai
+    x: 377
+    y: 363
+  - id: hainan
+    name: Hainan
+    x: 564
+    y: 657
+  - id: chongqing
+    name: Chongqing
+    x: 528
+    y: 476
+  - id: tianjin
+    name: Tianjin
+    x: 676
+    y: 312
+  - id: beijing
+    name: Beijing
+    x: 652
+    y: 292
+  - id: ningxia
+    name: Ningxia
+    x: 514
+    y: 346
+  - id: nei-mongol
+    name: Nei Mongol
+    x: 536
+    y: 288
+  - id: guangxi
+    name: Guangxi
+    x: 544
+    y: 580
+  - id: shanghai
+    name: Shanghai
+    x: 780
+    y: 448
+  - id: tibet
+    name: Tibet
+    x: 244
+    y: 404
+  - id: xinjiang
+    name: Xinjiang
+    x: 244
+    y: 244
+  - id: fujian
+    name: Fujian
+    x: 692
+    y: 536
+  - id: guangdong
+    name: Guangdong
+    x: 640
+    y: 580
+  - id: hong-kong
+    name: Hong Kong
+    x: 672
+    y: 608
+  - id: macau
+    name: Macau
+    x: 636
+    y: 624
+  - id: taiwan
+    name: Taiwan
+    x: 743
+    y: 567
+
+people:
+  - name: Xi Jinping
+    nameCN: 习近平
+    roles:
+      - years: 1979
+        height: 2
+        title: Graduated from&nbsp;Tsinghua university
+        where: Beijing
+      - years: 1983-1985
+        height: 2
+        title: Secretary of Zhengding County, Hebei
+        where: Hebei
+      - years: 1990-2002
+        height: 2
+        title: Secretary of Fuzhou to Governor of Fujian
+        where: Fujian
+      - years: 2003-2007
+        height: 2
+        title: Governor to Secretary Governor of Zhejiang
+        where: Zhejiang
+      - years: 2007
+        height: 1
+        title: Secretary of Shanghai
+        where: Shanghai
+      - years: 1997-
+        height: 4
+        title: Alternative Member of 15th Central Committee; Member of 16-19th Central Committee
+        where: Beijing
+      - years: 2012-
+        height: 1
+        title: General Secretary
+        where: Beijing
+
+  - name: Wang Yang
+    nameCN: 汪洋
+    roles:
+      - years: 1972-1976
+        height: 2
+        title: Factory worker in Anhui Province
+        where: Anhui
+      - years: 1981-1984
+        height: 2
+        title: Cadre and then secretary of CYLC in Anhui
+        where: Anhui
+      - years: 1993-1999
+        height: 2
+        title: Deputy Governor and later Deputy Secretary of Anhui
+        where: Anhui
+      - years: 2007-
+        height: 1
+        title: Politburo Member
+        where: Beijing
+      - years: 2005-2007
+        height: 1
+        title: Secretary of Chongqing
+        where: Chongqing
+      - years: 2007-2012
+        height: 1
+        title: Secretary of Guangdong
+        where: Guangdong
+      - years: 2018-
+        height: 2
+        title: Chairman of the CPPCC
+        where: Beijing
+
+  - name: Sun Zhengcai
+    nameCN: 孙政才
+    roles:
+      - years: 1984
+        height: 2
+        title: Graduated from Qingdao Agriculture University
+        where: Shandong
+      - years: 1997-2002
+        height: 2
+        title: Deputy to Head of Shunyi District, Beijing
+        where: Beijing
+      - years: 2006-2009
+        height: 1
+        title: Minister of Agriculture
+        where: Beijing
+      - years: 2007-2012
+        height: 2
+        title: Member of the Central Committee
+        where: Beijing
+      - years: 2009-2012
+        height: 3
+        title: CPC Secretary and People’s Congress Chairman of Jilin Province
+        where: Jilin
+      - years: 1997-
+        height: 2
+        title: CPC Secretary of Chongqing Municipality
+        where: Chongqing
+      - years: 2012-2017
+        height: 20
+        title: Politburo Member
+        where: Beijing
+      - years: —
+        height: 1
+        title: Corrupt
+
+  - name: Zhang Qingwei
+    nameCN: 张庆伟
+    roles:
+      - years: 1982
+        height: 3
+        title: Graduated from Northwestern Polytechnical University
+        where: Shaanxi
+      - years: 1992-1996
+        height: 3
+        title: Deputy Chief Designer of China Aviation Industry Corporation
+        where: Beijing
+      - years: 2001-2007
+        height: 3
+        title: Secretary of China Aerospace Science and Technology Corporation
+        where: Beijing
+      - years: 2008-2011
+        height: 2
+        title: Chairman of China Commercial Aircraft Co.
+        where: Shanghai
+      - years: 2011-2017
+        height: 2
+        title: Vice Party Secretary and Governor of Hebei Province
+        where: Hebei
+      - years: 2017-
+        height: 2
+        title: Party Secretary of Heilongjiang Province
+        where: Heilongjiang
+      - years: 2002-
+        height: 3
+        title: Member of 16th, 17th, 18th and 19th  Central Committee
+        where: Beijing

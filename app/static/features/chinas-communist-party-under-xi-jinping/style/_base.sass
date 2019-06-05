@@ -1,0 +1,92 @@
+html, body
+  height: 100%
+  overflow: hidden !important
+
+body
+  font-family: Semi, sans-serif
+
+  &:before
+    content: ""
+    height: 720px
+    width: 1280px
+    box-shadow: 0 0 120px rgba(18, 21, 31, 0.25), 0 0 0 200px rgba(18, 21, 31, 0.1)
+    margin: calc(50vh - 360px) calc(50vw - 640px)
+    pointer-events: none
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 10
+
+::-webkit-scrollbar
+  display: none
+
+svg svg
+  overflow: visible
+
+#scroller
+  overflow: auto
+  height: 100%
+  scroll-behavior: smooth
+  scroll-snap-type: y mandatory
+  position: relative
+  &.scrolling
+    scroll-behavior: initial
+    scroll-snap-type: initial
+
+.txt-mono
+  font-family: calling-code, monospace
+  font-weight: 400
+  font-style: normal
+
+.txt-sans
+  font-family: Sans, sans-serif
+  font-size: 16px
+
+  &.txt-tu
+    letter-spacing: 0.1em
+
+.txt-sc
+  font-family: "PingFang SC", monospace
+  font-weight: 500
+  font-size: 87.5%
+  letter-spacing: 0.09em
+
+strong.txt-sans
+  font-weight: 600
+
+.txt-center .line
+  margin: 4px auto
+
+.txt-xl
+  font-size: 80px
+.txt-lg
+  font-size: 48px
+.txt-md
+  font-size: 32px
+
+h4, .txt-sm, small
+  font-size: 18px
+  letter-spacing: 0.03em
+.txt-xs
+  font-size: 13px
+
+.txt-bold
+  font-weight: 600
+
+.l0
+  left: 0
+.r0
+  right: 0
+
+.posa
+  position: absolute
+
+.posr
+  position: relative
+
+.fh
+  height: 100%
+
+.fw
+  width: 100%
+

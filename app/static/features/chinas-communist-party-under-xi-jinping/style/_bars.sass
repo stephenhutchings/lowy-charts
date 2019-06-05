@@ -1,0 +1,83 @@
+.bar
+  height: 40px
+  line-height: 40px
+  margin: 0
+  position: relative
+
+.bar-border + .bar-border .bar-label
+  margin-top: -1px
+  border-top: 1px solid rgba(#fff, 0.2)
+
+.bar-border + .bar-border-mid .bar-label
+  border-top-color: rgba($color-dk, 0.1)
+
+.bar-border + .bar-border
+  .bar-bg.bg-dk
+    border-top: 1px solid lighten($color-dk, 12)
+
+
+.bars
+  overflow: hidden
+
+.bar-bg,
+.bar-label,
+.bar-value
+  position: absolute
+  top: 0
+  bottom: 0
+
+.bar-value
+  left: 16px
+
+  &.bar-value-outside
+    left: auto
+    right: 100%
+    margin-right: 16px
+
+.bar-value-right
+  right: 16px
+  left: auto
+
+  &.bar-value-outside
+    left: 100%
+    margin-left: 16px
+    right: auto
+    margin-right: 0
+
+.bar-bg
+  opacity: 0
+  &.playing,
+  &.complete
+    transition: opacity 600ms 600ms
+    opacity: 1
+
+    ~ .bar-label
+      transition: opacity 600ms 1200ms
+      opacity: 1
+
+.bar-bg-fade
+  background-image: linear-gradient(to top, rgba($color-lt, 0.4),rgba($color-lt, 0.4))
+
+.bar-label
+  right: 0
+  opacity: 0
+  width: 100%
+  top: 0
+
+
+.bar-group
+  width: 50%
+  float: left
+  box-sizing: border-box
+  height: 100%
+  position: relative
+
+  + .bar-group
+    border-left: 2px solid $color-dk
+    margin-left: -1px
+
+.bar-group-label
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0

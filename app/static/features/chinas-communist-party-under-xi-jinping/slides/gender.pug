@@ -1,0 +1,52 @@
+.slide.bg-lt
+  .slide-inner(data-view="in-viewport")
+    .type.txt-lg.txt-dk.txt-left.posa.fade-in(
+      data-view="slide, in-viewport"
+      data-duration=1000
+    )
+      span.line.bg-ff.txt-mono Gender
+
+    .bars.txt-mid.fh.txt-sm
+      .bar-group.flex-cv(style={"padding-top": "40px"})
+        .bar-group-label.txt-center.txt-mid.fade-in.delay-8
+          | Male
+
+        - values = [73.3,85.3]
+        for value, i in values
+          .bar(style={margin: "20px 0"})
+            .bar-bg.txt-ff.r0(
+              style=`width: ${(value)}%`
+              class=["bg-hl","bg-dk"][i]
+              data-view="bars, in-viewport"
+              data-duration=(2400 - i * 800)
+              data-delay=(i * 500)
+              data-value=value
+              data-width=value * 1 / 0.853
+              data-suffix="%"
+            )
+              .bar-value(class=value < 5 ? "bar-value-outside txt-mid" : "")= value
+
+      .bar-group.flex-cv(style={"padding-top": "40px"})
+        .bar-group-label.txt-center.txt-mid.fade-in.delay-10
+          | Female
+        - values = [26.7,14.7]
+        - labels = ["CCP Membership","Central committee"]
+        for value, i in values
+          .bar(style={margin: "20px 0"})
+            .bar-bg.bar-bg-fade.txt-ff(
+              style=`width: ${(value)}%`
+              class=["bg-hl","bg-dk"][i]
+              data-view="bars, in-viewport"
+              data-duration=(2400 - i * 800)
+              data-delay=(i * 500)
+              data-value=value
+              data-width=value * 1 / 0.853
+              data-suffix="%"
+            )
+              .bar-value.bar-value-right.bar-value-outside.txt-mid= value
+            strong.bar-label.txt-right.txt-tu.txt-sans(
+              class=["txt-hl","txt-dk"][i]
+            )=labels[i]
+
+    .posa.txt-muted.fade-in.delay-8(style="top: 0; right: 0")
+      | Source: CCP Organization Department (2017)

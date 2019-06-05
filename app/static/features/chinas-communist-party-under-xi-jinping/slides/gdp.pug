@@ -1,0 +1,241 @@
+- chart = data.getOne("static/features/chinas-communist-party-under-xi-jinping/data/gdp")
+
+
+.slide.bg-dk
+  .slide-inner(data-view="in-viewport")
+    .type.txt-md.txt-ff.txt-left.posa(
+      data-view="slide, in-viewport"
+      data-duration=1800
+    )
+      span.line.bg-hl.txt-mono GDP, current prices
+
+    svg(
+      width="100%" 
+      height="100%" 
+      viewBox="0 0 1080 520" 
+      data-view="line, in-viewport"
+      data-duration=8000
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    )
+      defs
+        linearGradient#fade-h(x1="0%" x2="100%" y1="0%" y2="0%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="50%" stop-opacity=1 stop-color="#4c5162")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#fade-v(x1="0%" x2="0%" y1="0%" y2="100%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="50%" stop-opacity=1 stop-color="#4c5162")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#mask-l(x1="0%" x2="100%" y1="0%" y2="0%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=0 stop-color="#22273d")
+        linearGradient#mask-r(x1="0%" x2="100%" y1="0%" y2="0%")
+          stop(offset="0%" stop-opacity=0 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#mask-t(x1="0%" x2="0%" y1="0%" y2="100%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=0 stop-color="#22273d")
+        linearGradient#mask-b(x1="0%" x2="0%" y1="0%" y2="100%")
+          stop(offset="0%" stop-opacity=0 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#gradient
+          stop(offset="0" stop-color="#ebebed")
+          stop(offset="100%" stop-color="#ebebed" stop-opacity=0)
+
+      svg(width="100%" height="100%")
+        - nb = 4
+        for n, i in new Array(nb)
+          - y = (i + 1) / (nb + 1) * 100 + "%"
+          g.fade-in(class=("delay-" + i * 2))
+            rect.fill-h(
+              x=0
+              y=y
+              width="100%"
+              height=2
+              _class=(i == nb - 1 ? "fill-ff fill-a" : "")
+            )
+            if i < nb - 1
+              g
+                rect.fill-dk(
+                  x="5%"
+                  y=y
+                  transform="translate(-24 -12)"
+                  width=48 height=24
+                )
+                text.fade.fill-ff(
+                  x="5%"
+                  y=y
+                  text-anchor="middle"
+                  transform="translate(0 7)"
+                )
+                  | $#{30 - i * 10}&thinsp;T
+
+        - nb = (_.last(chart.scale) - chart.scale[0]) / 5
+        for n, i in new Array(nb)
+          if i > 0
+            - x = i / nb * 100 + "%"
+            g.fade-in(class=("delay-" + (i * 3)))
+              rect.fill-v(x=x width=2 y=0 height="100%")
+              g
+                rect.fill-dk(
+                  x=x
+                  y="13.5%"
+                  transform="translate(-24 -12)"
+                  width=48 height=26
+                )
+                text.fade.fill-ff(
+                  x=x
+                  y="13.5%"
+                  text-anchor="middle"
+                  transform="translate(0 7)"
+                )
+                  = chart.scale[0] + i * 5
+
+      image.fade-in.delay-10(
+        xlink:href="./img/deng-xiaoping.png"
+        x=0
+        width=500
+        y=146
+        height=270
+      )
+
+      svg.fade-in(
+        x="0%"
+        width="100%"
+        height="100%"
+        preserveAspectRatio="none"
+      )
+        for leader, i in chart.leaders
+          - j = (leader.year - chart.scale[0]) / (_.last(chart.scale) - chart.scale[0])
+          - end = (n = chart.leaders[i+1]) ? n.year : 2030
+          - j2 = (leader.year + (end - leader.year)/2 - chart.scale[0]) / (_.last(chart.scale) - chart.scale[0])
+          - i1 = chart.scale.indexOf(leader.year)
+          - i2 = chart.scale.indexOf(end)
+          - all = chart.countries[1].gdp
+          - gdp = all.slice(i1, i2 + 1)
+          - rev = 1 / (all.length - 1)
+          - div = 1 / 400
+
+          - x = (1080 * i1 * rev)
+          - w = Math.ceil(1080 * (i2 - i1) * rev)
+          - y = ((100 - _.last(gdp) * div) * 4.16)
+          - h = Math.ceil(520 - y)
+
+          - if (gdp.length < i2 - i1) gdp = Array.from(Array(i2-i1)).map(()=>0)
+
+          g.fade-in(class="delay-" + Math.floor(7 + j2 * 28) transform="translate(1 0)")
+            clipPath(id="clip-" + i)
+              path(
+                id=("path-" + i)
+                d=(
+                  gdp.map(
+                    (e,i) => (i == 0 ? "M" : "L") + (x + i/(all.length - 1) * 1080) + "," + (100-e/400)*4.16
+                  ).concat([
+                    "L" + (x + w) + ",416",
+                    "L" + x + ",416",
+                    "Z"
+                  ])
+                  .join("")
+                )
+              )
+              rect(
+                id=("rect-" + i)
+                x=x
+                y=416
+                height=520-416
+                width=w
+              )
+
+            use(
+              xlink:href="#path-"+i+""
+              fill="#f7434c"
+            )
+
+            use(
+              xlink:href="#rect-"+i+""
+              fill="#fff"
+            )
+
+            //- 
+              use.mask-t(
+                xlink:href="#rect-"+i+""
+                opacity=0.7
+              )
+
+            use.mask-b(
+              xlink:href="#rect-"+i+""
+            )
+
+            image(
+              id="img-" + i
+              xlink:href="./img/" + written.hyphenCase(leader.name) + ".png"
+              x=x y=y
+              width=w height=h
+              clip-path="url(#clip-"+i+")"
+            )
+
+      svg.fade-in(
+        x="9.0909090909%"
+        width="90.909090909%"
+        height="80%"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      )
+        for country, i in chart.countries
+          polyline.line(
+            class=country.code
+            stroke-width=4
+            points=(
+              country.gdp.slice(5).map((e,i,a)=>[i/(a.length - 1)*100, 100-(e/400)].map((e)=>e.toFixed(2)).join(",")).join(" ")
+            )
+          )
+
+      svg(
+        x="0"
+        y="80%"
+        width="100%"
+        height="20%"
+      )
+        //- rect.mask-l(width="10%" height="150%" y="-50%" x="0")
+        g.fade-in.delay-3
+          polyline.line(points="0,0 1080,0.001" stroke="#fff" stroke-width=1)
+        for leader, i in chart.leaders
+          - n = (n = chart.leaders[i+1]) ? n.year : _.last(chart.scale)
+          - j = (leader.year - chart.scale[0]) / (_.last(chart.scale) - chart.scale[0])
+          - j2 = (leader.year + (n - leader.year) / 2 - chart.scale[0]) / (_.last(chart.scale) - chart.scale[0])
+          - x = (j * 100 + "%")
+          - y = (i % 2 == 0 ? 86 : 58)
+          g.fade-in(class="delay-" + Math.floor(6 + j2 * 28))
+            line(
+              x1=x x2=x
+              y1=0 y2=y
+              transform="translate(1 0)"
+              stroke="#fff"
+              stroke-width=1
+            )
+            text.fill-ff.txt-tu.txt-bold.txt-sans(
+              x=x
+              y=y + 18
+              transform="translate(-1 0)"
+            )=leader.name
+
+
+      svg
+        for country, i in chart.countries
+          - w = country.name.length * 12 + 13
+          g.fade-in(
+            transform="translate(" + (102-w) + " " + (
+              (100 - country.gdp[5] * 1/400) * 4.16
+            ) + ")"
+            class="delay-1"
+          )
+            path(
+              d="M-8,-12l" + w + ",0l8,12l-8,12l-" + w + ",0Z"
+              class=country.code == "us" ? "fill-ff" : "fill-hl"
+            )
+            text.txt-bold.txt-sans.txt-tu.fill-dk(
+              x=0
+              y=6
+              text-anchor="start"
+            )= country.name

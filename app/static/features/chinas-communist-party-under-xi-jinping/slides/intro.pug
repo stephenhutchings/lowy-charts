@@ -1,0 +1,38 @@
+.slide.bg-dk
+  .slide-inner.flex-cv(data-view="in-viewport")
+    .type.txt-lg.txt-ff.txt-center(
+      data-view="type, in-viewport"
+      data-duration=3000
+    )
+      span.line.txt-xl.txt-mono China’s Communist Party
+      span.line.txt-xl.txt-mono Under Xi Jinping
+
+    .flag.bg-hl.fade-in.delay-8
+      .cite
+        strong.txt-tu.txt-sans.txt-hl.fade-in.delay-10 Richard McGregor
+        br
+        strong.txt-tu.txt-sans.txt-ff.fade-in.delay-12 Lowy Institute
+
+style
+  :sass
+    .name,
+    .role
+      float: left
+      opacity: 0
+      line-height: 1.4
+      height: 2.3em
+      box-sizing: border-box
+
+      .complete &
+        opacity: 1
+        transition: opacity 1200ms 250ms
+
+    .role
+      margin-top: 2.3em
+      .complete &
+        transition-delay: 1200ms
+
+    cite
+      font-style: normal
+      margin-top: 3em
+      display: block

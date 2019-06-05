@@ -1,0 +1,24 @@
+.fade-in
+  opacity: 0
+  transition: none
+
+  .visible &
+    transition-duration: 1200ms
+    transition-property: all
+    opacity: 1
+
+@for $i from 0 through 30
+  .delay-#{$i})
+    transition-delay: ($i * 200ms)
+
+@keyframes wave
+  to
+    background-position: 100% 0
+
+@keyframes rise
+  to
+    transform: translateY(-3px) skewY(-3deg)
+
+@keyframes pulse
+  to
+    opacity: 1

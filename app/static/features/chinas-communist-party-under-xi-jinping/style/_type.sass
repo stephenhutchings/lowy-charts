@@ -1,0 +1,152 @@
+.type
+  .slide > &
+    margin: auto
+
+.line
+  display: block
+  width: max-content
+  padding: 0 0.25em
+  line-height: 1.25em
+  height: 1.3333em
+  box-sizing: border-box
+  background: transparent
+  white-space: nowrap
+  text-align: left
+  position: relative
+  transform: translateZ(0)
+
+  &.txt-sc
+    line-height: 1.48
+    height: 1.5238094857em
+
+  .line-bg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: -1
+    transition: all 1200ms ease-in-out
+    transform-origin: left center
+    transform: translateZ(0) scale3d(1, 1, 1)
+
+  &.bg-hl .mask,
+  &.bg-hl .line-bg
+    background: $color-hl
+  &.bg-dk .mask,
+  &.bg-dk .line-bg
+    background: $color-dk
+  &.bg-ff .mask,
+  &.bg-ff .line-bg
+    background: #fff
+  &.bg-lt .mask,
+  &.bg-lt .line-bg
+    background: $color-lt
+  &.bg-dka .mask,
+  &.bg-dka .line-bg
+    background: rgba($color-dk, 0.2)
+  &.bg-lta .mask,
+  &.bg-lta .line-bg
+    background: rgba(#fff, 0.2)
+
+  + .line
+    margin-top: 4px
+
+    &.fl-l
+      margin-top: 0
+
+  &.hide,
+  &.hide .mask
+    opacity: 0
+    transition: none
+
+  &.hide .line-bg
+    transform: translateZ(0) scale3d(0, 1, 1)
+    opacity: 0
+
+.mask
+  float: left
+  overflow: hidden
+  white-space: nowrap
+  padding: 0 0.25em
+  margin: 0 -0.25em
+  height: 100%
+  transition: opacity 600ms 300ms
+
+.char
+  display: inline-block
+  height: 100%
+  transition: opacity 600ms//, background 3s 600ms
+  text-shadow: 0 0 0 rgba(#fff, 0)
+  // transform-origin: left center
+  // &:before
+    content: attr(data-title)
+    position: absolute
+    transition: all 300ms
+    opacity: 0
+    // visibility: hidden
+
+  &:nth-child(4n):before
+    transform: skew(-20deg) scale(1.2,1)
+  &:nth-child(4n + 1):before
+    transform: skew(-10deg) scale(1.2,1)
+  &:nth-child(4n + 2):before
+    transform: skew(10deg) scale(1.2,1)
+  &:nth-child(4n + 3):before
+    transform: skew(20deg) scale(1.2,1)
+
+  &.glitch
+    z-index: 1
+    position: relative
+    // color: rgba(#fff, 0.5)
+    &:before
+      // content: attr(data-title)
+      left: 0
+      top: 0
+      opacity: 0.6
+      // visibility: visible
+      // filter: blur(8px)
+      // mix-blend-mode: overlay
+      text-shadow: 0 0 3px
+
+    &:nth-child(4n):before
+      transform: translateY(-4px) skew(-20deg) scale(1.2,1)
+    &:nth-child(4n + 1):before
+      transform: translateY(-4px) skew(-10deg) scale(1.2,1)
+    &:nth-child(4n + 2):before
+      transform: translateY(4px) skew(10deg) scale(1.2,1)
+    &:nth-child(4n + 3):before
+      transform: translateY(4px) skew(20deg) scale(1.2,1)
+
+  &:first-child
+    padding-left: 0.25em
+    margin-left: -0.25em
+  &:last-child
+    opacity: 0
+    transform: translateZ(0) scale(1.1)
+    text-shadow: 0 0 8px
+    background: transparent !important
+    // transform: translateY(12px) skewY(20deg)
+
+  &.underline
+    background: linear-gradient(to bottom, $color-hl, $color-hl)
+    background-size: 0.07em 0.07em
+    background-repeat: repeat-x
+    background-position: 0 87%
+    text-shadow: -0.1em 0.02em 0 $color-dk, -0.05em 0.02em 0 $color-dk, 0.05em 0.02em 0 $color-dk, 0.1em 0.02em 0 $color-dk
+    padding: 0 !important
+
+  &.ul-first
+    background: linear-gradient(to right, $color-dk 100%, transparent 100%), linear-gradient(to bottom, $color-hl, $color-hl)
+    background-size: 0.07em 0.07em
+    background-repeat: repeat-y, repeat-x
+    background-position: 0 87%
+  &.ul-last
+    background: linear-gradient(to left, $color-dk 100%, transparent 100%), linear-gradient(to bottom, $color-hl, $color-hl)
+    background-size: 0.08em 0.07em, 0.07em 0.07em
+    background-repeat: repeat-y, repeat-x
+    background-position: 100% 0, 0 87%
+
+  &.last
+    padding-right: 0.25em
+    margin-right: -0.25em

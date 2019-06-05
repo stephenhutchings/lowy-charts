@@ -1,0 +1,48 @@
+.slide.bg-lt
+  .slide-inner(data-view="in-viewport")
+    .type.txt-lg.txt-dk.txt-left.posa.fade-in(
+      data-view="slide, in-viewport"
+      data-duration=1000
+    )
+      span.line.bg-ff.txt-mono Age
+
+    .bars.txt-mid.fh.txt-sm
+      .bar-group.flex-cv
+        strong.txt-sans.bar-group-label.txt-center.txt-tu.txt-hl.fade-in.delay-8
+          | CCP Membership
+        - values = [15.2,8.0,9.4,10.2,10.2,10.8,7.5,28.8]
+        - labels = ["Under 30","31-35","36-40","41-45","46-50","51-55","56-60","Over 60"]
+        for value, i in values
+          .bar.bar-border.bar-border-mid
+            .bar-bg.bg-hl.txt-ff.r0(
+              style=`width: ${(value)}%`
+              data-view="bars, in-viewport"
+              data-duration=1000
+              data-delay=(i * 80)
+              data-value=value
+              data-width=value * 1/0.75
+              data-suffix="%"
+            )
+              .bar-value(class=value < 12 ? "bar-value-outside txt-mid" : "")= value || ""
+            .bar-label.txt-left=labels[i]
+        - values = [0,0,0,0,0,0,35.3,64.7]
+        - labels = ["","","","","","","50-59","Over 60"]
+      .bar-group.flex-cv
+        strong.txt-sans.bar-group-label.txt-center.txt-tu.txt-dk.fade-in.delay-12
+          | Central committee
+        for value, i in values
+          .bar.bar-border-mid(class=value ? "bar-border" : "")
+            .bar-bg.bg-dk.txt-ff(
+              style=`width: ${(value)}%`
+              data-view="bars, in-viewport"
+              data-duration=1000
+              data-delay=(400 + i * 80)
+              data-value=value
+              data-width=value * 1/0.75
+              data-suffix="%"
+            )
+              .bar-value.bar-value-right(class=value < 12 ? "bar-value-outside txt-mid" : "")= value || ""
+            .bar-label.txt-right=labels[i]
+
+    .posa.txt-muted.fade-in.delay-8(style="top: 0; right: 0")
+      | Source: CCP Organization Department (2017)

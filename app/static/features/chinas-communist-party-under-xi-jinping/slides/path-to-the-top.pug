@@ -1,0 +1,30 @@
+- pttt = data.getOne("static/features/chinas-communist-party-under-xi-jinping/data/path-to-the-top")
+.slide.bg-dk.flex-stretch
+  .flex-cv(data-view="in-viewport")
+    .posa
+      include ../img/china.svg
+      svg.posa(width="954" height="720" style="top:0")
+        use.fill-no.fade-in.delay-8(href="#arrow" stroke-width="5" stroke="#fff")
+        rect.fill-dk(y=324 width="100%" height=88)
+
+        g(opacity=0.2)
+          for province, i in pttt.provinces
+            use.stroke.fill-no.fade-in(
+              href="#" + province.id
+              class="delay-" + ~~(i / 3)
+            )
+
+    .slide-inner.flex-cv
+      .type.txt-xl.txt-ff.txt-center(
+        data-view="type, in-viewport"
+        data-duration=1200
+        data-underline=[{row:0,start:0,end:15}]
+      )
+        span.line.txt-mono Path to the top
+
+    .slide-sub.slide-sub-border.flex-cv.ph-xl.fade-in.delay-8
+      .txt-tu.txt-ff.txt-sans.txt-bold
+        | Career path<br>
+        | to the central<br>
+        | committee /<br>
+        | politburo

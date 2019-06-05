@@ -1,0 +1,52 @@
+.scale
+  border-top: 1px solid rgba(#fff, 0.2)
+  margin-top: 8px
+  display: flex
+  flex-direction: row
+  line-height: 24px
+  position: relative
+
+.scale-source
+  position: absolute
+  top: 8px
+  right: 0
+
+.scale-tick
+  flex: 1 1 100%
+  height: 8px
+  position: relative
+
+  + .scale-tick
+    border-left: 1px solid rgba(#fff, 0.2)
+
+    .scale-tick-label
+      width: 40px
+      margin-left: -20px
+      text-align: center
+
+.scale-tick-label
+  position: absolute
+  top: 100%
+
+.legend
+  position: absolute
+  top: 0
+  right: 0
+
+.key
+  line-height: 24px
+  margin: 0 -8px
+
+  + .key
+    margin-top: 8px
+
+.key-box
+  width: 24px
+  height: 24px
+  margin: 0 8px
+
+.key-box,
+.key-label
+  display: inline-block
+  vertical-align: middle
+
