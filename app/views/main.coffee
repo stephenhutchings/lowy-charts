@@ -38,13 +38,14 @@ class MainView extends Backbone.View
 
     @views =
       @$("[data-view]").map((i, el) =>
-        view = $(el).data("view")
-        try
-          View = (require "views/#{view}")
-          opts = _.extend { el }, $(el).data()
-          new View(opts)
-        catch err
-          console.error "error making view views/#{view}", err
+        views = $(el).data("view").split(/, */)
+        for view in views
+          try
+            View = (require "views/#{view}")
+            opts = _.extend { el }, $(el).data()
+            new View(opts)
+          catch err
+            console.error "error making view views/#{view}", err
 
       ).toArray()
 
