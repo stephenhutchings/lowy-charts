@@ -16,7 +16,7 @@ mixin interpreter-bar-chart(data)
           .label-y #{label}%
           .stroke-y
 
-    .bars.flex-center.flex-row
+    .bars.flex-cv.flex-row
       for group, j in data.values
         - var y = (data.yaxis.length - 1) * yh
         - var w = 100 / (data.xaxis.length + 1) + "%"
@@ -25,7 +25,7 @@ mixin interpreter-bar-chart(data)
           class=(data.highlights[j] ? "highlight" : "")
         )
 
-          .bar-frame.flex-row.flex-center
+          .bar-frame.flex-row.flex-cv
             for bar, i in group
               - var ho = (_.last(data.yaxis) - _.first(data.yaxis))
               - var hi = (bar - _.first(data.yaxis))
