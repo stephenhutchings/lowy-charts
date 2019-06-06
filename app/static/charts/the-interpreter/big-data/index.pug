@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.title = "China’s Communist Party Under Xi Jinping"
+  - page.title = "The relative speed of personal data creation"
 
 mixin dash(width)
   - hash = [3, 8, 2, 3, 4, 3, 4, 4, 6, 2, 2, 4, 1, 2, 4, 3, 2, 2, 3, 2, 1, 2]
@@ -83,39 +83,11 @@ block append css
 
       .bar
         margin: 8px 0
-        // padding: 0 
         position: relative
 
       .bar-wrap
         border-radius: 4px
         overflow: hidden
-
-      .bar-pulse
-        width: 60px
-        height: 60px
-        left: 0
-        top: -26px
-        position: absolute
-        z-index: 1
-        border-radius: 50%
-        background: currentColor
-        box-sizing: border-box
-        opacity: 0.1
-        // border: 1px solid orange
-
-        .bar-wrap + &
-          left: auto
-          right: 0
-
-        .bar-0 &
-          animation: pulse-0 infinite alternate
-          color: #fe8300
-        .bar-1 &
-          animation: pulse-1 infinite alternate
-          color: #ff9602
-        .bar-2 &
-          animation: pulse-2 infinite alternate
-          color: #ffa800
 
       .bar-inner
         width: 736px * 2
@@ -126,33 +98,6 @@ block append css
 
       svg
         float: left
-
-      @keyframes pulse-0
-        0%
-          // background: transparent
-          transform: translateZ(0) scale(0.133)
-          // opacity: 1
-        // 100%
-          transform: translateZ(0) scale(7.5)
-          opacity: 0.2
-
-      @keyframes pulse-1
-        0%, 40%
-          // background: transparent
-          transform: translateZ(0) scale(0.133)
-          // opacity: 1
-        // 100%
-          transform: translateZ(0) scale(7.5)
-          opacity: 0.2
-
-      @keyframes pulse-2
-        0%, 98.4%
-          // background: transparent
-          transform: translateZ(0) scale(0.133)
-          // opacity: 1
-        // 100%
-          transform: translateZ(0) scale(7.5)
-          opacity: 0.2
 
       @keyframes translate
         from
