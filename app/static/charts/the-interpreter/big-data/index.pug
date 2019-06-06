@@ -1,0 +1,159 @@
+extend /partials/layout
+
+block append config
+  - page.title = "China’s Communist Party Under Xi Jinping"
+
+mixin dash(width)
+  - hash = [3, 8, 2, 3, 4, 3, 4, 4, 6, 2, 2, 4, 1, 2, 4, 3, 2, 2, 3, 2, 1, 2]
+  svg(height=8 width=width)
+    - count = 4
+    while count < width - 4
+      - x1 = count
+      - x2 = Math.min(count + hash[0] * 3, width - 6)
+      - count = x2 + 10
+      line.dash(x1=x1 x2=x2 y1="50%" y2="50%")
+      - hash.push(hash.shift())
+
+block page
+  .wrapper.txt-center
+
+    .pv-md
+      p.title
+        | By 2020, an estimated 1.7 megabytes of data
+        | will be created every second for every person
+      strong.txt-sm.clearfix
+        span.txt-muted 1.7 MB/s
+      .bar.bar-0
+        .bar-wrap
+          .bar-inner(style="animation-duration:" + 5 / 1.7 + "s")
+            +dash(736)
+            +dash(736)
+      hr
+      strong.txt-sm.clearfix
+        span.txt-tu Watching a Video
+        | &emsp;
+        span.txt-muted 8 Mbps
+
+      .bar.bar-1
+        .bar-wrap
+          .bar-inner(style="animation-duration:" + 5 / 1 + "s")
+            +dash(736)
+            +dash(736)
+      hr
+      strong.txt-sm.clearfix
+        span.txt-tu Listening to Audio
+        | &emsp;
+        span.txt-muted 320 Kbps
+
+      .bar.bar-2
+        .bar-wrap
+          .bar-inner(style="animation-duration:" + 5 / 0.04 + "s")
+            +dash(736)
+            +dash(736)
+
+    p.txt-muted.txt-sm.txt-center
+      | Data will be created at almost double the rate needed
+      | for a video file today.
+
+block append css
+  style
+    :sass
+      .wrapper
+        max-width: 736px
+        font-family: Sans, sans-serif
+        line-height: 1.2
+
+      .title
+        font-size: 20px
+        max-width: 480px
+        margin: 0 auto 8px
+
+      .dash
+        stroke-width: 8px
+        stroke-linecap: round
+
+        .bar-0 &
+          stroke: #fe8300
+
+        .bar-1 &
+          stroke: #ff9602
+
+        .bar-2 &
+          stroke: #ffa800
+
+      .bar
+        margin: 8px 0
+        // padding: 0 
+        position: relative
+
+      .bar-wrap
+        border-radius: 4px
+        overflow: hidden
+
+      .bar-pulse
+        width: 60px
+        height: 60px
+        left: 0
+        top: -26px
+        position: absolute
+        z-index: 1
+        border-radius: 50%
+        background: currentColor
+        box-sizing: border-box
+        opacity: 0.1
+        // border: 1px solid orange
+
+        .bar-wrap + &
+          left: auto
+          right: 0
+
+        .bar-0 &
+          animation: pulse-0 infinite alternate
+          color: #fe8300
+        .bar-1 &
+          animation: pulse-1 infinite alternate
+          color: #ff9602
+        .bar-2 &
+          animation: pulse-2 infinite alternate
+          color: #ffa800
+
+      .bar-inner
+        width: 736px * 2
+        animation: translate infinite linear
+
+      .txt-sm
+        font-size: 14px
+
+      svg
+        float: left
+
+      @keyframes pulse-0
+        0%
+          // background: transparent
+          transform: translateZ(0) scale(0.133)
+          // opacity: 1
+        // 100%
+          transform: translateZ(0) scale(7.5)
+          opacity: 0.2
+
+      @keyframes pulse-1
+        0%, 40%
+          // background: transparent
+          transform: translateZ(0) scale(0.133)
+          // opacity: 1
+        // 100%
+          transform: translateZ(0) scale(7.5)
+          opacity: 0.2
+
+      @keyframes pulse-2
+        0%, 98.4%
+          // background: transparent
+          transform: translateZ(0) scale(0.133)
+          // opacity: 1
+        // 100%
+          transform: translateZ(0) scale(7.5)
+          opacity: 0.2
+
+      @keyframes translate
+        from
+          transform: translate3d(-736px,0,0)
