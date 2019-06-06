@@ -1,0 +1,31 @@
+#controls
+  position: fixed
+  top: 50%
+  transform: translateY(-50%)
+  left: 0
+  right: calc(50vw + 640px)
+  z-index: 10
+  pointer-events: none
+
+.btn,
+.pager-item
+  pointer-events: all
+  border-radius: 50%
+
+.btn
+  width: 24px
+  height: 24px
+  line-height: 24px
+  color: #21273d
+  text-align: center
+  margin: 0 auto 12px
+
+.pager-item
+  width: 4px
+  height: 4px
+  background: white
+  margin: 0 auto 12px
+
+  &.active
+    background: #22273d
+    box-shadow: 0 0 0 4px rgba(#fff, 0.2)

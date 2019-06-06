@@ -5,7 +5,6 @@ block append config
   - page.data.elections.forEach(function(e){e.date = new Date(e.start); })
   - page.data.elections = _.sortBy(page.data.elections, "date").filter((e) => e.date - new Date("May 18 1960") > 0)
   - helpers = r("./" + __.directory + "/utils.coffee")
-  - console.log(page.data.elections.slice(-1))
 
 block page
   - var d1 = new Date("May 18 2019");

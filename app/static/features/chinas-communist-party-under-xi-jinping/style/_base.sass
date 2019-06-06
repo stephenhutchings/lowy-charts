@@ -4,17 +4,19 @@ html, body
 
 body
   font-family: Semi, sans-serif
+  background: $color-dk
 
   &:before
     content: ""
-    height: 720px
-    width: 1280px
-    box-shadow: 0 0 120px rgba(18, 21, 31, 0.25), 0 0 0 200px rgba(18, 21, 31, 0.1)
-    margin: calc(50vh - 360px) calc(50vw - 640px)
+    background: url("./img/mask.png")
+    background-size: 2000px 1200px
+    background-position: center
     pointer-events: none
     position: fixed
     left: 0
     top: 0
+    right: 0
+    bottom: 0
     z-index: 10
 
 ::-webkit-scrollbar

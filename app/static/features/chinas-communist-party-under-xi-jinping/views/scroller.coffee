@@ -9,6 +9,7 @@ require.register "views/scroller", (exports, require, module) ->
       "hide": "onHide"
 
     initialize: ->
+      @$el.show()
       @data = _.extend {min: 0, max: 1000}, @$el.data()
 
       @data.support = window.CSS?.supports("scroll-snap-type: y mandatory")
@@ -32,7 +33,6 @@ require.register "views/scroller", (exports, require, module) ->
           @onScrollEnd()
         , if @data.support then 10 else 300
       )
-
 
       timeout = window.setTimeout =>
         $(window).on "keydown", _.bind(@onKey, this)
@@ -110,10 +110,6 @@ require.register "views/scroller", (exports, require, module) ->
        if isEnd
         for child, i in @el.children
           child.classList.toggle("active", i is @data.i)
-
-          $("[data-view]", child).trigger(
-            if i is @data.i then "show" else "hide"
-          )
 
         window.ga?("send", "event", "Scroller", "show", document.title, index)
 

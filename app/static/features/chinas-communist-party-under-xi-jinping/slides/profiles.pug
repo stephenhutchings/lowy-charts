@@ -65,7 +65,11 @@ for person in pttt.people
             )
               span.line.txt-mono.bg-hl.txt-sc= person.nameCN
 
-          img.item-0(src="./img/path-" + written.hyphenCase(person.name) + ".png" width=300)
+          img.item-0(
+            width=300
+            data-src=(
+              "./img/path-" + written.hyphenCase(person.name) + ".png"
+            ))
 
       .slide-sub.bg-dk.ph-.txt-center(style="transform:translateZ(0)")
         .txt-md.ph-md
