@@ -14,6 +14,9 @@ KEY_DOWN    = 40
 KEY_CMD_L   = 91
 KEY_CMD_R   = 93
 
+KEY_PAGE_UP   = 33
+KEY_PAGE_DOWN = 34
+
 CHAR_MIN    = "A".charCodeAt(0)
 CHAR_MAX    = "Z".charCodeAt(0)
 NUM_MIN     = "0".charCodeAt(0)
@@ -31,16 +34,18 @@ module.exports = (e) ->
 
   type =
     switch e.keyCode
-      when KEY_DELETE then "DELETE"
-      when KEY_TAB    then "TAB"
-      when KEY_ENTER  then "ENTER"
-      when KEY_SHIFT  then "SHIFT"
-      when KEY_ESCAPE then "ESCAPE"
-      when KEY_SPACE  then "SPACE"
-      when KEY_LEFT   then "LEFT"
-      when KEY_UP     then "UP"
-      when KEY_RIGHT  then "RIGHT"
-      when KEY_DOWN   then "DOWN"
+      when KEY_DELETE    then "DELETE"
+      when KEY_TAB       then "TAB"
+      when KEY_ENTER     then "ENTER"
+      when KEY_SHIFT     then "SHIFT"
+      when KEY_ESCAPE    then "ESCAPE"
+      when KEY_SPACE     then "SPACE"
+      when KEY_LEFT      then "LEFT"
+      when KEY_UP        then "UP"
+      when KEY_RIGHT     then "RIGHT"
+      when KEY_DOWN      then "DOWN"
+      when KEY_PAGE_UP   then "UP"
+      when KEY_PAGE_DOWN then "DOWN"
       else
         if CHAR_MIN <= e.keyCode <= CHAR_MAX
           "CHAR_#{String.fromCharCode(e.keyCode)}"

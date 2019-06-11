@@ -1,5 +1,5 @@
 - pttt = data.getOne("static/features/chinas-communist-party-under-xi-jinping/data/path-to-the-top")
-- _toH = (r, i) => (_.pluck(r.slice(0,i),"height").reduce(((m,e)=>m+e),0)*20+16*i)
+- _toH = (r, i) => (_.pluck(r.slice(0,i),"height").reduce(((m,e)=>m+e),0)*18+16*i)
 
 for person in pttt.people
   .slide.bg-lt.flex-stretch
@@ -99,7 +99,6 @@ style
     .path-roles
       left: 0
       right: 0
-      // height: 0
       padding: inherit
       top: calc(calc(50vh + 360px))
       padding-top: 0
@@ -110,6 +109,16 @@ style
       line-height: 20px
       opacity: 0
       transform: translateY(0)
+      &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        height: 600px
+        border-bottom: 400px solid #f7434c
+        background: linear-gradient(to bottom, rgba(#f7434c, 0), #f7434c)
+        z-index: 10
 
     .path-roles-mask
       transition: all 600ms
@@ -120,6 +129,16 @@ style
       .page-0 &
         opacity: 0
         transform: translateY(0)
+
+    .path-role.txt-sm
+      font-size: 24px
+
+    .path-role.txt-sm
+      font-size: 24px
+
+    .path-roles .txt-sans
+      font-size: 14px
+      line-height: 18px
 
     .build
       opacity: 0
