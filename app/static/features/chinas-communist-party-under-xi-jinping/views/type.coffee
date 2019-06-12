@@ -25,9 +25,12 @@ require.register "views/type", (exports, require, module) ->
           .replace(new RegExp("#{empty} (\\w+),","g"), " $1,")
 
         width = Math.max(width, line.$el.outerWidth())
-        line.$el.width(line.$el.width())
-        line.$el.html("&nbsp;")
-        line.$el.addClass("hide")
+
+        line.$el
+          .width(line.$el.width())
+          .html("<div class='line-bg' />")
+          .addClass("hide")
+          .attr("data-text", line.text)
 
       @$el.width(~~width)
       @exit()

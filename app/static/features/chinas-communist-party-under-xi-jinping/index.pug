@@ -6,17 +6,18 @@ block append config
   - page.robots = "noindex, nofollow"
 
 block page
-  #controls
-    #btn-prev.btn &uarr;
-    #pager-items
-      for n, i in new Array(19)
-        .pager-item(class=(i == 0 ? "active" : ""))
-    #btn-next.btn &darr;
+  #controls.p-xs.txt-ff
+    #pager-progress
+      span#pager-index 1
+      span#pager-total &ensp;/&ensp;18
+    #btn-prev.btn.icon.icon-up
+    #btn-next.btn.icon.icon-down
+    #btn-fs.btn.icon.icon-expand
 
   #scroller.bg-dk(
     data-view="scroller"
     data-pager=".pager-page" 
-    data-index=".pager-index"
+    data-index="#pager-index"
     style="display: none"
   )
 

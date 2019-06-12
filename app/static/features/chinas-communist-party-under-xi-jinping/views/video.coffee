@@ -10,16 +10,29 @@ require.register "views/video", (exports, require, module) ->
       "pause": "toggle"
 
     initialize: (@data) ->
+      $(window).on "keydown", _.bind(@onKeyPress, this)
 
     enter: ->
-      if @el.paused
-        @el.currentTime = 0 if @el.currentTime is @el.duration
-        @el.play()#.catch(console.error)
-      else
-        @exit()
+      @active = true
 
     exit: ->
-      @el.pause()
+      @active = false
+
+    onKeyPress: (e) ->
+      if @active
+        code = keycode(e)
+        if code is "DOWN" or code is "RIGHT"
+          if @el.paused
+            e.preventDefault()
+            e.stopImmediatePropagation()
+            @el.play()
+        else if code is "UP" or code is "LEFT"
+          if not @el.paused
+            e.preventDefault()
+            e.stopImmediatePropagation()
+            @el.pause()
+
+      return true
 
     toggle: ->
       @$el.toggleClass("paused", @el.paused)

@@ -18,6 +18,10 @@ body
     right: 0
     bottom: 0
     z-index: 10
+    transition: opacity 300ms
+
+  &:fullscreen:before
+    opacity: 0
 
 ::-webkit-scrollbar
   display: none
@@ -48,7 +52,7 @@ svg svg
     letter-spacing: 0.1em
 
 .txt-sc
-  font-family: "PingFang SC", monospace
+  font-family: "PingFang SC", sans-serif
   font-weight: 500
   font-size: 87.5%
   letter-spacing: 0.09em

@@ -142,7 +142,7 @@ people:
     roles:
       - years: 1979
         height: 2
-        title: Graduated from&nbsp;Tsinghua university
+        title: Graduated from Tsinghua university
         where: Beijing
       - years: 1983-1985
         height: 2
@@ -169,37 +169,37 @@ people:
         title: General Secretary
         where: Beijing
 
-  - name: Wang Yang
-    nameCN: 汪洋
-    roles:
-      - years: 1972-1976
-        height: 2
-        title: Factory worker in Anhui Province
-        where: Anhui
-      - years: 1981-1984
-        height: 2
-        title: Cadre and then secretary of CYLC in Anhui
-        where: Anhui
-      - years: 1993-1999
-        height: 2
-        title: Deputy Governor and later Deputy Secretary of Anhui
-        where: Anhui
-      - years: 2007-
-        height: 1
-        title: Politburo Member
-        where: Beijing
-      - years: 2005-2007
-        height: 1
-        title: Secretary of Chongqing
-        where: Chongqing
-      - years: 2007-2012
-        height: 1
-        title: Secretary of Guangdong
-        where: Guangdong
-      - years: 2018-
-        height: 2
-        title: Chairman of the CPPCC
-        where: Beijing
+  # - name: Wang Yang
+  #   nameCN: 汪洋
+  #   roles:
+  #     - years: 1972-1976
+  #       height: 2
+  #       title: Factory worker in Anhui Province
+  #       where: Anhui
+  #     - years: 1981-1984
+  #       height: 2
+  #       title: Cadre and then secretary of CYLC in Anhui
+  #       where: Anhui
+  #     - years: 1993-1999
+  #       height: 2
+  #       title: Deputy Governor and later Deputy Secretary of Anhui
+  #       where: Anhui
+  #     - years: 2007-
+  #       height: 1
+  #       title: Politburo Member
+  #       where: Beijing
+  #     - years: 2005-2007
+  #       height: 1
+  #       title: Secretary of Chongqing
+  #       where: Chongqing
+  #     - years: 2007-2012
+  #       height: 1
+  #       title: Secretary of Guangdong
+  #       where: Guangdong
+  #     - years: 2018-
+  #       height: 2
+  #       title: Chairman of the CPPCC
+  #       where: Beijing
 
   - name: Sun Zhengcai
     nameCN: 孙政才

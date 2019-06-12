@@ -13,7 +13,6 @@ require.register "views/page", (exports, require, module) ->
       @$el.addClass("page-#{@data.index}")
 
       $(window).on "keydown", _.bind(@onKeyPress, this)
-      $("body").focus()
 
     enter: ->
       @data.active = true

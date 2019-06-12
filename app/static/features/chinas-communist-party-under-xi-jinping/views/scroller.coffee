@@ -10,7 +10,7 @@ require.register "views/scroller", (exports, require, module) ->
 
     initialize: ->
       @$el.show()
-      @data = _.extend {min: 0, max: 1000}, @$el.data()
+      @data = _.extend {min: 0, max: 1000, offset: 1}, @$el.data()
 
       @data.support = window.CSS?.supports("scroll-snap-type: y mandatory")
 
@@ -23,6 +23,7 @@ require.register "views/scroller", (exports, require, module) ->
 
       $("#btn-prev").click (e) => @onPrev(e)
       $("#btn-next").click (e) => @onNext(e)
+      $("#btn-fs").click (e) => @onFS(e)
 
       timeout = null
 
@@ -86,7 +87,6 @@ require.register "views/scroller", (exports, require, module) ->
       @scrollTo(index + 1)
 
     scrollTo: (i) ->
-      console.log i
       @$el.addClass("scrolling")
       @$el.scrollTo i * @el.offsetHeight, =>
         @$el.removeClass("scrolling")
@@ -112,5 +112,11 @@ require.register "views/scroller", (exports, require, module) ->
           child.classList.toggle("active", i is @data.i)
 
         window.ga?("send", "event", "Scroller", "show", document.title, index)
+
+    onFS: ->
+      document.body.requestFullscreen?().then =>
+        index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
+        @scrollTo(index)
+
 
   module.exports = ScrollerView
