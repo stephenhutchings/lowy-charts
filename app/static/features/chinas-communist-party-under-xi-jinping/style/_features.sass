@@ -1,0 +1,45 @@
+.features
+  padding: 88px 0
+.feature-icon
+  width: 100px
+  height: 100px
+  box-sizing: border-box
+  border-radius: 50%
+  left: 50%
+  margin-left: -52px
+  .feature:nth-child(2n) &
+    top: 0
+  .feature:nth-child(2n + 1) &
+    bottom: 0
+
+.feature-name
+  height: 40px
+  width: max-content
+  position: relative
+  left: 50%
+  transform: translateX(-50%)
+  box-sizing: border-box
+  .feature:nth-child(2n) &
+    margin-top: 148px
+  .feature:nth-child(2n + 1) &
+    margin-bottom: 148px
+
+.feature
+  width: 200px
+  margin: 0 -32px
+  &:before
+    content: ""
+    position: absolute
+    width: 4px
+    left: 50%
+    margin: 40px -2px
+    background: #22273d
+    height: 48px
+  &:nth-child(2n)
+    margin-bottom: -88px
+    &:before
+      bottom: 0
+  &:nth-child(2n + 1)
+    margin-top: -88px
+    &:before
+      top: 0

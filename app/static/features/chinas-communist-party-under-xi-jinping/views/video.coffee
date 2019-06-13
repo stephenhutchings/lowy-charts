@@ -17,6 +17,7 @@ require.register "views/video", (exports, require, module) ->
 
     exit: ->
       @active = false
+      @el.pause()
 
     onKeyPress: (e) ->
       if @active
