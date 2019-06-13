@@ -145,20 +145,20 @@ people:
         title: Graduated from Tsinghua university
         where: Beijing
       - years: 1983-1985
-        height: 2
-        title: Secretary of Zhengding County, Hebei
+        height: 1
+        title: Hebei
         where: Hebei
       - years: 1990-2002
-        height: 2
-        title: Secretary of Fuzhou to Governor of Fujian
+        height: 1
+        title: Fujian
         where: Fujian
       - years: 2003-2007
-        height: 2
-        title: Governor to Secretary Governor of Zhejiang
+        height: 1
+        title: Governor, Zhejiang Province
         where: Zhejiang
       - years: 2007
         height: 1
-        title: Secretary of Shanghai
+        title: Shanghai
         where: Shanghai
       - years: 1997-
         height: 3
@@ -209,8 +209,8 @@ people:
         title: Graduated from Qingdao Agriculture University
         where: Shandong
       - years: 1997-2002
-        height: 2
-        title: Deputy to Head of Shunyi District, Beijing
+        height: 1
+        title: Shunyi District, Beijing
         where: Beijing
       - years: 2006-2009
         height: 1
@@ -221,12 +221,12 @@ people:
         title: Member of the Central Committee
         where: Beijing
       - years: 2009-2012
-        height: 3
-        title: CPC Secretary and People’s Congress Chairman of Jilin Province
+        height: 1
+        title: Jilin Province
         where: Jilin
-      - years: 1997-
-        height: 2
-        title: CPC Secretary of Chongqing Municipality
+      - years: 2012-
+        height: 1
+        title: Chongqing Municipality
         where: Chongqing
       - years: 2012-2017
         height: 24
@@ -245,25 +245,25 @@ people:
         where: Shaanxi
       - years: 1992-1996
         height: 2
-        title: Deputy Chief Designer of China Aviation Industry Corporation
+        title: China Aviation Industry Corporation
         where: Beijing
       - years: 2001-2007
-        height: 3
-        title: Secretary of China Aerospace Science and Technology Corporation
+        height: 2
+        title: China Aerospace Science and Technology Corporation
         where: Beijing
       - years: 2008-2011
         height: 2
         title: Chairman of China Commercial Aircraft Co.
         where: Shanghai
       - years: 2011-2017
-        height: 2
-        title: Vice Party Secretary and Governor of Hebei Province
+        height: 1
+        title: Governor of Hebei Province
         where: Hebei
       - years: 2017-
-        height: 2
-        title: Party Secretary of Heilongjiang Province
+        height: 1
+        title: Heilongjiang Province
         where: Heilongjiang
-      - years: 2002-
-        height: 3
-        title: Member of 16th, 17th, 18th and 19th  Central Committee
-        where: Beijing
+      # - years: 2002-
+      #   height: 3
+      #   title: Member of 16th, 17th, 18th and 19th  Central Committee
+      #   where: Beijing
