@@ -14,7 +14,7 @@
       height="100%" 
       viewBox="0 0 1080 520" 
       data-view="line, in-viewport"
-      data-duration=8000
+      data-duration=6000
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
     )
@@ -23,7 +23,7 @@
         for n, i in new Array(nb)
           if i > 0 && (chart.scale[0] + i) % 10 == 5
             - x = i / nb * 100 + "%"
-            g.fade-in(class=("delay-" + ~~(i * 3 / 8)))
+            g.fade-in(class=("delay-" + ~~(i * 3 / 10)))
               rect.fill-v(x=x width=2 y=0 height="100%")
               g
                 rect.fill-dk(
@@ -104,5 +104,5 @@
               text-anchor="start"
             )= country.name
 
-    .posa.txt-muted.fade-in.delay-30(style="top: 0; right: 0")
+    .posa.txt-muted.fade-in.delay-24(style="top: 0; right: 0")
       | Source: Maddison
