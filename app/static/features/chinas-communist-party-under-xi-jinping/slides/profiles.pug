@@ -98,6 +98,9 @@ for person in pttt.people
               }))
             )
           )
+            if person.roles.length <= 7
+              for n in new Array(7 - person.roles.length)
+                .build
             for role, i in _.clone(person.roles).reverse().slice(1)
               .txt-sans.txt-ff.txt-tu.txt-bold.ph-sm.pv-xs.build
                 != typogr.typogrify(role.title)
