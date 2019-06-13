@@ -1,4 +1,4 @@
-- chart = data.getOne("static/features/chinas-communist-party-under-xi-jinping/data/gdp")
+- chart = data.getOne("static/features/chinas-communist-party-under-xi-jinping/data/gdp").series[0]
 
 
 .slide.bg-dk
@@ -95,9 +95,9 @@
       image.fade-in.delay-10(
         xlink:href="./img/deng-xiaoping.png"
         x=0
-        width=500
-        y=146
-        height=270
+        y=176
+        width=440
+        height=240
       )
 
       svg.fade-in(
@@ -157,12 +157,6 @@
               fill="#fff"
             )
 
-            //- 
-              use.mask-t(
-                xlink:href="#rect-"+i+""
-                opacity=0.7
-              )
-
             use.mask-b(
               xlink:href="#rect-"+i+""
             )
@@ -183,7 +177,7 @@
         preserveAspectRatio="none"
       )
         for country, i in chart.countries
-          polyline.line(
+          polyline.line.dashed(
             class=country.code
             stroke-width=4
             points=(
@@ -197,9 +191,10 @@
         width="100%"
         height="20%"
       )
-        //- rect.mask-l(width="10%" height="150%" y="-50%" x="0")
+
         g.fade-in.delay-3
-          polyline.line(points="0,0 1080,0.001" stroke="#fff" stroke-width=1)
+          polyline(points="98,0 0,0.001" stroke="#fff" stroke-width=1)
+          polyline.line(points="98,0 1080,0.001" stroke="#fff" stroke-width=1)
         for leader, i in chart.leaders
           - n = (n = chart.leaders[i+1]) ? n.year : _.last(chart.scale)
           - j = (leader.year - chart.scale[0]) / (_.last(chart.scale) - chart.scale[0])

@@ -45,8 +45,9 @@
 
 .bar-bg
   opacity: 0
-  &.playing,
-  &.complete
+
+  .playing &,
+  .complete &
     transition: opacity 600ms 600ms
     opacity: 1
 
@@ -70,10 +71,13 @@
   box-sizing: border-box
   height: 100%
   position: relative
+  overflow: hidden
 
   + .bar-group
     border-left: 2px solid $color-dk
     margin-left: -1px
+    z-index: 1
+    position: relative
 
 .bar-group-label
   position: absolute

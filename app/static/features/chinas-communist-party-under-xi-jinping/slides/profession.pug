@@ -13,15 +13,16 @@
         - values = [2.8,0,17.1,0,27.7,0,0,7.6,39.5]
         - labels = ["Military","","Worker","","Party Cadre","","","Retired","Farmer"]
         for value, i in values
-          .bar.bar-border.bar-border-mid
+          .bar.bar-border.bar-border-mid(
+            data-view="bars, in-viewport"
+            data-duration=1400
+            data-delay=(i * 40)
+            data-value=value
+            data-direction=-1
+            data-suffix="%"
+          )
             .bar-bg.bg-hl.txt-ff.r0(
-              style=`width: ${(value)}%`
-              data-view="bars, in-viewport"
-              data-duration=1400
-              data-delay=(i * 40)
-              data-value=value
-              data-width=value * 1/0.45
-              data-suffix="%"
+              style=`width: ${value * 1/0.45}%`
             )
               .bar-value(class=value < 5 ? "bar-value-outside txt-mid" : "")= value || ""
             .bar-label.txt-left=labels[i]
@@ -31,15 +32,16 @@
         strong.txt-sans.bar-group-label.txt-center.txt-tu.txt-dk.fade-in.delay-12
           | 2017
         for value, i in values
-          .bar.bar-border-mid(class=value ? "bar-border" : "")
+          .bar.bar-border-mid(
+            class=value ? "bar-border" : ""
+            data-view="bars, in-viewport"
+            data-duration=1000
+            data-delay=(600 + i * 60)
+            data-value=value
+            data-suffix="%"
+          )
             .bar-bg.bg-dk.txt-ff(
-              style=`width: ${(value)}%`
-              data-view="bars, in-viewport"
-              data-duration=1000
-              data-delay=(600 + i * 60)
-              data-value=value
-              data-width=value * 1/0.45
-              data-suffix="%"
+              style=`width: ${value * 1/0.45}%`
             )
               .bar-value.bar-value-right(class=value < 5 ? "bar-value-outside txt-mid" : "")= value || ""
             .bar-label.txt-right=labels[i]

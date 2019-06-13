@@ -68,7 +68,15 @@
   fill: none
   vector-effect: non-scaling-stroke
 
-  &.cn
+  &.dashed
+    stroke-dasharray: 864 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+
+  &.cn,
+  &.ussr
     stroke: $color-hl
+    stroke-dashoffset: 40
   &.us
     stroke: #fff
+    stroke-dashoffset: 44
+  &.ussr
+    stroke-dashoffset: 0

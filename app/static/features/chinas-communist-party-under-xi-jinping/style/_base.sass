@@ -29,6 +29,9 @@ body
 svg svg
   overflow: visible
 
+cite
+  display: block
+
 #scroller
   overflow: auto
   height: 100%
@@ -96,3 +99,15 @@ h4, .txt-sm, small
 .fw
   width: 100%
 
+.video-title
+  opacity: 0
+  transition: all 600ms
+
+  video.paused + &
+    opacity: 1
+
+video
+  transition: all 600ms
+
+  &.paused
+    opacity: 0.5

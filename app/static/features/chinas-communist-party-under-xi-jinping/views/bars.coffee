@@ -7,8 +7,13 @@ require.register "views/bars", (exports, require, module) ->
       "exit": "exit"
 
     initialize: (@data) ->
-      @$value = @$(".bar-value")
+      @$elements =
+        val: @$(".bar-value")
+        bar: @$(".bar-bg")
+
       @data.suffix ?= ""
+      @data.direction ?= 1
+
       @exit()
 
     enter: ->
@@ -22,8 +27,8 @@ require.register "views/bars", (exports, require, module) ->
         tx = easie.quintInOut Math.max(Math.min(t, 1), 0)
 
         if @data.value
-          @$value.html((tx * @data.value).toFixed(1) + @data.suffix)
-          @$el.width(tx * @data.width + "%")
+          @$elements.val.html((tx * @data.value).toFixed(1) + @data.suffix)
+          @$elements.bar.css(transform: "translate3d(#{(-1 + tx) * 100 * @data.direction}%,0,0)")
 
         if t > 0
           @$el.addClass("playing")
@@ -36,8 +41,8 @@ require.register "views/bars", (exports, require, module) ->
     exit: ->
       window.cancelAnimationFrame(@loop)
       @$el.removeClass("complete playing")
-      @$value.html("")
-      @$el.width(0)
+      @$elements.val.html("")
+      @$elements.bar.css(transform: "translate3d(#{100 * -@data.direction}%,0,0)")
 
 
   module.exports = BarsView
