@@ -26,6 +26,9 @@ for person in pttt.people
                 = province.name
 
           g(opacity=0.2)
+            if person.roles.length <= 7
+              for n in new Array(7 - person.roles.length)
+                g.build
             for where, i in _.pluck(person.roles, "where").reverse()
               - p = _.find(pttt.provinces, {name: where})
               if p
