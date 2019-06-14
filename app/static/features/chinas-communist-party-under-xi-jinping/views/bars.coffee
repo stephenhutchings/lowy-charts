@@ -39,7 +39,7 @@ require.register "views/bars", (exports, require, module) ->
     exit: ->
       window.cancelAnimationFrame(@loop)
       @$el.removeClass("complete playing")
-      @$elements.val.html(@data.value)
+      @$elements.val.html(@data.value or "")
       @$elements.bar.css(transform: "translate3d(#{100 * -@data.direction}%,0,0)")
 
 
