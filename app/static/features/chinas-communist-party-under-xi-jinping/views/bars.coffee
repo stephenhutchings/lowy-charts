@@ -14,8 +14,6 @@ require.register "views/bars", (exports, require, module) ->
       @data.suffix ?= ""
       @data.direction ?= 1
 
-      @exit()
-
     enter: ->
       now = Date.now() + @data.delay
 
@@ -41,7 +39,7 @@ require.register "views/bars", (exports, require, module) ->
     exit: ->
       window.cancelAnimationFrame(@loop)
       @$el.removeClass("complete playing")
-      @$elements.val.html("")
+      @$elements.val.html(@data.value)
       @$elements.bar.css(transform: "translate3d(#{100 * -@data.direction}%,0,0)")
 
 

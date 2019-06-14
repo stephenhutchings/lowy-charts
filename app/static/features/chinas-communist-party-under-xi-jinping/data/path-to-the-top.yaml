@@ -154,15 +154,15 @@ people:
         where: Fujian
       - years: 2003-2007
         height: 1
-        title: Governor, Zhejiang Province
+        title: Zhejiang
         where: Zhejiang
       - years: 2007
         height: 1
         title: Shanghai
         where: Shanghai
       - years: 1997-
-        height: 3
-        title: Alternative Member of 15th Central Committee; Member of 16-19th Central Committee
+        height: 2
+        title: Member of the Central Committee
         where: Beijing
       - years: 2012-
         height: 1
@@ -222,19 +222,16 @@ people:
         where: Beijing
       - years: 2009-2012
         height: 1
-        title: Jilin Province
+        title: Jilin
         where: Jilin
-      - years: 2012-
-        height: 1
-        title: Chongqing Municipality
-        where: Chongqing
       - years: 2012-2017
-        height: 24
-        title: Politburo Member
-        where: Beijing
+        height: 1
+        title: Chongqing, Politburo
+        where: Chongqing
       - years: —
         height: 1
-        title: Corrupt
+        title: Arrested
+        highlight: true
 
   - name: Zhang Qingwei
     nameCN: 张庆伟
@@ -257,11 +254,11 @@ people:
         where: Shanghai
       - years: 2011-2017
         height: 1
-        title: Governor of Hebei Province
+        title: Hebei
         where: Hebei
       - years: 2017-
         height: 1
-        title: Heilongjiang Province
+        title: Heilongjiang
         where: Heilongjiang
       # - years: 2002-
       #   height: 3

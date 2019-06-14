@@ -102,8 +102,16 @@ $list2: ".item"
       transform: translateZ(0) scale(1, 0)
       transform-origin: top center
 
-  &.page-7
-    .profile-img:before
-      transition: all 900ms
-      opacity: 1
-      transform: translateZ(0) scale(1, 1)
+  &.page-6
+    .path-roles
+      opacity: 0
+    .slide-sub
+      background: $color-hl
+    .profile-img
+      img
+        opacity: 1
+
+      &:before
+        transition: all 900ms
+        opacity: 1
+        transform: translateZ(0) scale(1, 1)

@@ -26,17 +26,18 @@ for person in pttt.people
                 = province.name
 
           g(opacity=0.2)
-            if person.roles.length <= 7
-              for n in new Array(7 - person.roles.length)
+            - list = _.pluck(person.roles, "where").filter(_.identity).reverse()
+            if list.length <= 7
+              for n in new Array(7 - list.length)
                 g.build
-            for where, i in _.pluck(person.roles, "where").reverse()
+            for where, i in list
               - p = _.find(pttt.provinces, {name: where})
               if p
                 g.build
-                  if pv = _.find(pttt.provinces, {name: _.pluck(person.roles, "where").reverse()[i + 1]})
+                  if pv = _.find(pttt.provinces, {name: list[i + 1]})
                     line(x1=pv.x x2=p.x y1=pv.y y2=p.y stroke="#22273d" stroke-width=4 stroke-linecap="round")
                   circle.fill-dk(
-                    cx=p.x cy=p.y r=12 + (person.roles.length - 1 - i) * 4
+                    cx=p.x cy=p.y r=12 + (list.length - 1 - i) * 4
                   )
 
           g
@@ -70,13 +71,15 @@ for person in pttt.people
               span.line.txt-mono.bg-hl.txt-sc= person.nameCN
 
           .profile-img
-            img.item-0.item-7(
+            img.item-0(
               width=300
               data-src=(
                 "./img/path-" + written.hyphenCase(person.name) + ".png"
               ))
 
-      .slide-sub.bg-dk.ph-.txt-center(style="transform:translateZ(0)")
+      .slide-sub.bg-dk.ph-.txt-center(
+        style="transform:translateZ(0)"
+      )
         .txt-md.ph-md
           .posr.fade-in.delay-3.fw(style="z-index: 1")
             for role, i in person.roles
@@ -88,12 +91,12 @@ for person in pttt.people
                   != role.title
 
         .posa.bg-hl.path-roles(
-            data-attributes=JSON.stringify(
-              person.roles.map((r,i) => ({
-                style: "transform:translateY(-" + _toH(person.roles, i) + "px)"
-              }))
-            )
+          data-attributes=JSON.stringify(
+            person.roles.map((r,i) => ({
+              style: "transform:translateY(-" + _toH(person.roles, i) + "px)"
+            }))
           )
+        )
           .path-roles-mask(
             data-attributes=JSON.stringify(
               person.roles.map((r,i) => ({
