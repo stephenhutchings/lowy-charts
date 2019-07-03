@@ -1,0 +1,69 @@
+title: Gender Balance in Senior Executive Service, 2006-2018
+years: [2006, 2011, 2016, 2018]
+scale: 60
+data:
+  - group: TOTAL APS*
+    female: [730, 0, 1004, 1208]
+    male: [1419, 0, 1463, 1490]
+    total: [2149, 0, 2467, 2698]
+    ratio: [34, 38, 41, 45]
+  - group: PM&C
+    female: [19, 0, 82, 60]
+    male: [25, 0, 85, 52]
+    total: [44, 0, 167, 112]
+    ratio: [43, 47, 49, 54]
+  - group: AGS
+    female: [22, 0, 47, 73]
+    male: [37, 0, 57, 83]
+    total: [59, 0, 104, 156]
+    ratio: [37, 40, 45, 47]
+  - group: IMMIGRATION/HA
+    female: [29, 0, 60, 25]
+    male: [53, 0, 88, 35]
+    total: [82, 0, 148, 60]
+    ratio: [35, 38, 41, 42]
+  - group: AUSTRADE*
+    female: [19, 0, 23, 61]
+    male: [43, 0, 36, 94]
+    total: [62, 0, 59, 155]
+    ratio: [31, 29, 39, 39]
+  - group: DFAT
+    female: [59, 0, 32, 20]
+    male: [159, 0, 60, 35]
+    total: [218, 0, 92, 55]
+    ratio: [27, 28, 35, 36]
+  - group: DIAs
+    female: [5, 0, 18, 102]
+    male: [15, 0, 35, 182]
+    total: [20, 0, 53, 284]
+    ratio: [25, 24, 34, 36]
+  - group: TREASURY
+    female: [19, 0, 86, 29]
+    male: [64, 0, 185, 53]
+    total: [83, 0, 271, 82]
+    ratio: [23, 23, 32, 35]
+  - group: ASIO
+    female: [6, 0, 34, 35]
+    male: [23, 0, 83, 64]
+    total: [29, 0, 117, 99]
+    ratio: [21, 19, 29, 35]
+  - group: DEFENCE CIV
+    female: [24, 0, 22, 49]
+    male: [93, 0, 59, 100]
+    total: [117, 0, 81, 149]
+    ratio: [21, 19, 27, 33]
+  - group: AFP#
+    female: [5, 0, 6, 5]
+    male: [54, 0, 19, 12]
+    total: [59, 0, 25, 17]
+    ratio: [8, 17, 24, 29]
+  - group: ONA
+    female: [1, 0, 19, 6]
+    male: [11, 0, 160, 19]
+    total: [12, 0, 179, 25]
+    ratio: [8, 10, 11, 24]
+  - group: ADF ENLISTED
+    female: [3, 0, 0, 21]
+    male: [133, 0, 10, 168]
+    total: [136, 0, 10, 189]
+    ratio: [2, 4, 0, 11]

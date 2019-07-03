@@ -1,9 +1,7 @@
 require.register "views/chart", (exports, require, module) ->
   { colors, font } = require("data/theme")
 
-  utils =
-    toPercent: (n, d = 0) -> "#{(n * 100).toFixed(d)}%"
-    toThousands: (n, d = 0) -> n.toFixed(d).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  utils = require("lib/utils")
 
   module.exports =
     class Chart extends Backbone.View

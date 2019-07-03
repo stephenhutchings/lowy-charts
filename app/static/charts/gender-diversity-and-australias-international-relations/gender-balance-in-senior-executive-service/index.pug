@@ -1,0 +1,58 @@
+extend /partials/layout
+
+block append config
+  - var chart  = data.getOne("static/charts/gender-diversity-and-australias-international-relations/gender-balance-in-senior-executive-service/data")
+  - page.title = chart.title
+
+block page
+  .wrapper(data-view="chart")
+    .chart.clearfix
+      for item, i in chart.data
+        - var pc = item.ratio[0]*(100/chart.scale) + "%"
+        .chart-row.clearfix(class="row-"+i)
+          .chart-label= item.group
+          .chart-value
+            .chart-value-bg(
+              height=20
+              style="width:" + pc
+              data-values=item.ratio.map((e)=>({width: e * (100/chart.scale) + "%"}))
+              data-method="css"
+            )
+
+              .chart-value-label(
+                data-method="text"
+                data-values=item.ratio.map((e)=> (e + "%"))
+              )
+                = item.ratio[0] + "%"
+
+              if i === 0
+                .chart-value-mean
+
+      .chart-legend.clearfix.txt-muted
+        for n, i in new Array(chart.scale / 10 + 1)
+          .chart-legend-tick(style="left:" + i/chart.scale*1000 + "%")
+            span.chart-legend-tick-label #{i * 10}%
+
+
+    .chart-nav.clearfix
+      .chart-controls.fl-r
+        label.fl-l.select-wrap
+          select
+            for k, i in chart.years
+              option(value=i)= k
+          
+          span.select-caret
+
+        button.btn.btn-l.fl-l &larr;
+        button.btn.btn-r.fl-l &rarr;
+
+      .chart-notes.txt-sm.txt-muted
+        | Source: APSED; responses from Defence to questionnaire (ADF and DIAs; 2006-2016); responses from ASIO to questionnaire, ASIO annual report to parliament, 2017 Intelligence review (ASIO); AFP Annual Reports (AFP); 
+
+block append css
+  style
+    include:sass _style.sass
+
+block append customScripts
+  script(type="text/javascript")
+    include:coffee chart.coffee

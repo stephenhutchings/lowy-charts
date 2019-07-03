@@ -3,7 +3,7 @@ require.register "views/chart", (exports, require, module) ->
   utils = require("lib/utils")
 
   # When this data was collected
-  now = 1542517640615
+  now = 1562132310085
   format = (d) ->
     if _.isString(d) and d.match(/(\d{1,2} |)[a-z]+ \d{4}/i)
       d.toString().replace(/([a-z]+)/i, (w, a) -> a.slice(0, 3))
@@ -96,22 +96,23 @@ require.register "views/chart", (exports, require, module) ->
         @paper.clear()
         @createLegend(data)
 
-
         dmin = _.chain(data).pluck("list").flatten().min("startDate").value().startDate
         dmax = now
         len  = dmax - dmin
+        y0   = (new Date(dmin)).getFullYear()
+        y1   = (new Date(dmax)).getFullYear()
+        nb   = y1 - y0
 
         x = @config.barsX
         w = @config.w - (@config.labelW + @config.buffer)
-        year = 1000 * 60 * 60 * 24 * 365
 
-        for i in [0..Math.ceil(len / year)]
+        for i in [0...nb]
           my = (data.length + 1) * (@config.barsH + @config.buffer) - @config.buffer
           fy = new Date(dmin).getFullYear()
           yn = fy + i
           dc = (yn % 10 is 0) or yn is 2019 or i is 0
 
-          yx = x + (-dmin % year) / year + (year / len) * i * (w - 2)
+          yx = x + (i / nb) * w
           y1 = @config.barsY + if dc then 0 else 4
           y2 = @config.barsY + my - 16
           y2 += 4 if dc
