@@ -10,3 +10,4 @@ _*.png
 *.ai
 
 backup/
+app/static/experiments/*

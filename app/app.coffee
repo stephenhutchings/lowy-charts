@@ -1,3 +1,6 @@
+require("data/theme")
+require("lib/utils")
+
 Application =
   initialize: ->
     MainView = require("views/main")

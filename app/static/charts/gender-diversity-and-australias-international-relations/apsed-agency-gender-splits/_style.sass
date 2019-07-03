@@ -1,0 +1,53 @@
+.wrapper
+  position: relative
+
+.chart-nav
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+
+.select-wrap
+  max-width: 100%
+
+.select-wrap select
+  width: auto
+  padding-right: 36px
+  max-width: 100%
+
+.chart
+  max-width: 100%
+
+.btn
+  height: 32px
+  line-height: 32px
+  width: 32px
+  font-size: 18px
+  padding: 0
+  margin-left: 4px
+  transition: background-color 300ms
+  border-radius: 4px
+  background-color: #eceff1
+  border: none
+  color: inherit
+  cursor: pointer
+  -webkit-appearance: none
+
+.btn:focus,
+.btn:hover
+  background-color: #e1e5e8
+  color: #002a45
+  outline: none
+
+.no-touch
+  pointer-events: none
+
+@media (max-width: 480px)
+  .select-wrap
+    max-width: calc(100% - 72px)
+
+  .select-wrap select
+    padding-right: 28px
+
+  .chart-nav
+    background-color: #f6f7f8

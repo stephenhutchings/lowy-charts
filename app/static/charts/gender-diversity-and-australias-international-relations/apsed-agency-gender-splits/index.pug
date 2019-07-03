@@ -7,7 +7,7 @@ block append config
 block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
-  .wrapper(data-view="apsed-3")
+  .wrapper(data-view="chart")
     .chart-nav
       label.fl-l.select-wrap
         select
@@ -21,4 +21,8 @@ block page
 
 block append css
   style
-    include style.css
+    include:sass _style.sass
+
+block append customScripts
+  script(type="text/javascript")
+    include:coffee chart.coffee
