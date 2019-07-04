@@ -4,9 +4,6 @@ block append config
   - var chart  = data.getOne("static/charts/gender-diversity-and-australias-international-relations/what-are-the-odds/data")
 
 block page
-  style
-    include style.css
-
   .wrapper(ontouchstart="")
     #chart
       #chart-title
@@ -40,4 +37,8 @@ block page
           for n, i in new Array(3)
             .chart-label(style=`left: ${i * 50}%`)
               span.txt-muted= i * 25 + "%"
-              .txt-nowrap= ["No Chance", "", "Fair Chance"][i]
+              .txt-nowrap= ["No Chance", "Small Chance", "Equal Chance"][i]
+
+block append customScripts
+  style
+    include:sass style.sass

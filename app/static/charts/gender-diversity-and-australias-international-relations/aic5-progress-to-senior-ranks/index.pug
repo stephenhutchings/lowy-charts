@@ -1,0 +1,38 @@
+extend /partials/layout
+
+block append config
+  - page.title = "AIC-5: Progress to senior ranks"
+  - var chart  = data.getOne("static/charts/gender-diversity-and-australias-international-relations/aic5-progress-to-senior-ranks/data")
+
+block page
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+
+  .wrapper(ontouchstart="")
+    .rows.txt-center
+      for group in chart.list
+        .row-group
+          .charts.clearfix
+            for rank, i in group.ranks
+              - var mf = rank.split[0] / 100;
+              - var ff = rank.split[1] / 100;
+              .chart
+                .bars
+                  .bar.f(
+                    style=`height:${ff * 100}%`
+                  )
+                    span.ratio
+                      | #{rank.split[1]}%
+                  .bar.m(
+                    style=`height:${mf * 100}%`
+                  )
+                    span.ratio
+                      | #{rank.split[0]}%
+
+                span.label
+                  span.rank=rank.name
+
+          .chart-label= group.year
+
+  style
+    include:sass _style.sass

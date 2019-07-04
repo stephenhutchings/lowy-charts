@@ -1,0 +1,11 @@
+list:
+  - country: UK
+    ratio: 8.20
+  - country: Australia
+    ratio: 7.00
+  - country: US
+    ratio: 6.90
+  - country: NZ
+    ratio: 4.00
+  - country: Canada
+    ratio: 3.30

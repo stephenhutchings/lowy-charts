@@ -1,0 +1,208 @@
+.wrapper
+  height: 256px
+  overflow: visible
+  pointer-events: none
+
+#chart
+  position: relative
+  width: 100%
+  height: 200px
+  border-bottom: 1px solid #e6e6e6
+  line-height: 1.1764705882em
+  z-index: 0
+
+#chart-circles
+  margin: 0
+  position: absolute
+  left: 0
+  right: 0
+  height: 100%
+  z-index: 10
+
+#chart-title
+  position: absolute
+  left: 80%
+  width: 23%
+
+#chart-title h1
+  margin-top: 12px
+  font-size: 28px
+  letter-spacing: -0.02em
+  margin-bottom: 8px
+
+.circle
+  text-align: center
+  line-height: inherit
+  cursor: pointer
+
+.circle-percent
+  background: #ff2a24
+  border-radius: 50%
+  top: 0
+  position: absolute
+  color: rgba(255,255,255,0)
+  height: 64px
+  width: 64px
+  margin: 0 -32px
+  line-height: 62px
+  transform: translateY(10px) scale3d(0.5, 0.5, 0.5)
+  transition: all 300ms
+  font-size: 21px
+  pointer-events: all
+  margin-top: -8px
+
+.circle-percent input
+  opacity: 0
+  outline: none
+  position: absolute
+  top: -1px
+
+.circle-fact
+  position: absolute
+  max-width: 274px
+  min-height: 100px
+  top: -18px
+  opacity: 0
+  padding: 0 48px
+  transition: all 300ms
+  pointer-events: none
+  margin-top: -8px
+
+.circle-fact,
+.circle-addon
+  background: radial-gradient(#f6f7f8 20%, rgba(246, 247, 248, 0) 60%)
+  background-size: 100% 100%
+
+.circle-fact.l
+  text-align: left
+  padding-right: 0
+
+.circle-fact.r
+  text-align: right
+  padding-left: 0
+
+.circle-addon
+  opacity: 0
+  position: absolute
+  left: 0
+  bottom: 20px
+  max-width: 450px
+  transition: all 300ms
+  text-align: left
+
+.circle:nth-child(4n + 0) .circle-percent,
+.circle:nth-child(4n + 0) .circle-fact
+  margin-top: 40px
+
+.circle:nth-child(4n + 1) .circle-percent,
+.circle:nth-child(4n + 1) .circle-fact
+  margin-top: 84px
+
+.circle:nth-child(4n + 2) .circle-percent,
+.circle:nth-child(4n + 2) .circle-fact
+  margin-top: 128px
+
+#chart:hover .circle-percent
+  background: #edeff1
+  z-index: -1
+  opacity:  0.5
+
+.circle:hover .circle-fact
+  opacity: 1
+  transition-delay: 200ms
+
+#chart .circle:hover .circle-percent,
+#chart .circle:hover .circle-addon
+  opacity: 1
+  z-index: 10
+
+#chart .circle:hover .circle-addon
+  transition-delay: 600ms
+
+#chart .circle:hover .circle-percent
+  transform: scale3d(1, 1, 1)
+  color: #fff
+  background: #ff2a24
+
+#chart-bar
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  transform: translateZ(0)
+
+.chart-notch
+  position: absolute
+  border-left: 1px solid #e6e6e6
+  height: 16px
+  margin: -8px 0
+
+.chart-label
+  position: absolute
+  text-align: center
+  width: 80px
+  top: 0
+  margin: 12px -40px
+  line-height: 24px
+
+@media (max-width: 767px)
+  .wrapper
+    height: 312px
+
+  #chart
+    top: 52px
+    margin: 0 20px
+    width: auto
+
+  #chart-title
+    top: -52px
+    left: 0
+    right: 0
+    width: auto
+
+  #chart-title h1
+    margin-top: 0
+    margin-bottom: 4px
+
+  .circle-fact
+    width: auto
+    max-width: none
+
+  .circle-fact.l
+    right: -8px
+    padding-left: 36px
+
+  .circle-fact.r
+    left: -8px
+    padding-right: 36px
+
+  .circle-fact br
+    display: inline
+
+  .circle-percent
+    height: 56px
+    line-height: 54px
+    width: 56px
+    margin: -28px
+    font-size: 19px
+
+  .circle:nth-child(3n + 0) .circle-percent,
+  .circle:nth-child(3n + 0) .circle-fact
+    margin-top: 24px
+
+  .circle:nth-child(3n + 1) .circle-percent,
+  .circle:nth-child(3n + 1) .circle-fact
+    margin-top: 72px
+
+  .circle:nth-child(3n + 2) .circle-percent,
+  .circle:nth-child(3n + 2) .circle-fact
+    margin-top: 120px
+
+  .chart-label:first-child
+    text-align: left
+    margin-left: 0
+
+  .chart-label:last-child
+    text-align: right
+    margin-left: -80px
+

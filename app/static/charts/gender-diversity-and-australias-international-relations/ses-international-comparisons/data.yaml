@@ -1,0 +1,11 @@
+list:
+  - country: NZ
+    ratio:  46
+  - country: Canada
+    ratio:  42.80
+  - country: US
+    ratio: 39.6
+  - country: Australia
+    ratio: 35.9
+  - country: UK
+    ratio:  33.20

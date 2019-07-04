@@ -1,0 +1,25 @@
+list:
+  - year: 2006
+    ranks:
+      - name: Exec Level 1+2
+        split: [73, 27]
+      - name: SES 1
+        split: [79, 21]
+      - name: SES 2
+        split: [82, 18]
+  - year: 2011
+    ranks:
+      - name: Exec Level 1+2
+        split: [70, 30]
+      - name: SES 1
+        split: [82, 18]
+      - name: SES 2
+        split: [76, 24]
+  - year: 2016
+    ranks:
+      - name: Exec Level 1+2
+        split: [68, 32]
+      - name: SES 1
+        split: [68, 32]
+      - name: SES 2
+        split: [87, 13]

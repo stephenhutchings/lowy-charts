@@ -2,7 +2,7 @@ title: Gender Balance in Senior Executive Service, 2006-2018
 years: [2006, 2011, 2016, 2018]
 scale: 60
 data:
-  - group: TOTAL APS*
+  - group: TOTAL APS
     female: [730, 0, 1004, 1208]
     male: [1419, 0, 1463, 1490]
     total: [2149, 0, 2467, 2698]
@@ -22,7 +22,7 @@ data:
     male: [53, 0, 88, 35]
     total: [82, 0, 148, 60]
     ratio: [35, 38, 41, 42]
-  - group: AUSTRADE*
+  - group: AUSTRADE
     female: [19, 0, 23, 61]
     male: [43, 0, 36, 94]
     total: [62, 0, 59, 155]
@@ -52,7 +52,7 @@ data:
     male: [93, 0, 59, 100]
     total: [117, 0, 81, 149]
     ratio: [21, 19, 27, 33]
-  - group: AFP#
+  - group: AFP
     female: [5, 0, 6, 5]
     male: [54, 0, 19, 12]
     total: [59, 0, 25, 17]

@@ -1,0 +1,30 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Current Heads of Mission"
+  - var chart  = data.getOne("static/charts/gender-diversity-and-australias-international-relations/ses-international-comparisons/data")
+
+block page
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+
+  .wrapper(ontouchstart="")
+    .rows
+      for el, i in _.sortBy(chart.list, "ratio").reverse()
+        - var mf = 1 - (el.ratio / 100), ff = 1 - mf;
+        .clearfix.chart
+          span.txt-right.fl-l.label
+            span.country= el.country
+            span.ratio #{el.ratio.toFixed(0)}% Women
+
+          svg.fl-r.bars(width="200" height="20")
+
+            rect(
+              y=0
+              width=`${ff * 100 * (100/46)}%`
+              height="20"
+              class=(el.country == "Australia" ? "f" : "m")
+            )
+
+  style
+    include:sass _style.sass

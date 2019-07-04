@@ -1,76 +1,81 @@
 facts:
-  - percent: 34.5
+  - percent: 36.8
     text: >
       Australia’s overseas<br>posts led by women
     addon: >
-      Only 3 of Australia’s 10 biggest overseas posts including Washington DC,
-      Jakarta, Port Moresby, London, New Delhi, Bangkok, Beijing, Manila, Dili
-      & Tokyo
+      36.8% of Australia’s overseas posts are led by women, but only two of
+      Australia’s largest overseas posts (Washington DC, Jakarta, Port Moresby,
+      London, New Delhi, Bangkok, Beijing, Manila, Dili & Tokyo.
 
   - percent: 0
     text: >
       No major foreign policy, defence, intelligence, or trade white paper,
-      inquiry or review has been led by a woman
+      inquiry or review has been led by a woman.
 
   - percent: 0
     text: >
-      Every single political appointee<br>to Australia’s
-      10 biggest overseas posts has been a man
+      Every single political appointee<br>
+      to Australia’s 10 largest overseas<br>
+      posts has been a man.
 
   - percent: 25
     text: >
       3 out of 12 members of the National Secur&shy;ity Secretaries’
-      Com&shy;mittee are women, up from zero in 2015-16
+      Com&shy;mittee are women, up from zero in 2015-16.
 
   - percent: 18
     text: >
-      Women make up 2 of the 11 members on the Parliament’s Joint Committee on
-      Intelligence and Security
+      Women made up 2 of the 11 members on the 45th Parliament’s Joint Committee
+      on Intelligence and Security. From 1999-2006, and again in 2015, it was zero.
     addon: >
       From 1999 to 2006, and again<br>as recently as in 2015, it was zero.
 
   - percent: 2
     text: >
       Women have led Australia’s internationally focused
-      departments* 4 times in history, out of around 200 appointments
-
+      departments* 4 times out of around 200 appointments in history.
     addon: >
-      *including DFAT, AGs, Defence, Immigration (Home Affairs),
-      PM&C, Treasury, AFP, Austrade and intelligence agencies
+      *DFAT, AGs, Defence, Home Affairs (formerly Immigration), PM&C, Treasury,
+      AFP, Austrade and intelligence agencies.
 
   - percent: 14
     text: >
-      2 of 14 heads of the government departments and agencies
-      with an international focus are women
+      2 of 14 heads of the government departments and agencies with an
+      international focus are women.
 
   - percent: 6.5
     text: >
-      Women involved as author and advisors on major foreign policy,
-      defence, intelligence, or trade white paper, inquiry or review
-
-  - percent: 33
-    text: >
-      33% of senior management in the internationally focused government
-      departments & agencies are women
-
-  - percent: 28.7
-    text: >
-      Women in the Australian<br>
-      House of Representatives
+      Women involved as author and advisers on major foreign policy, defence,
+      intelligence, trade white papers, inquiries or reviews.
 
   - percent: 36
     text: >
-      36% of DFAT’s senior executive service&nbsp;are women, even though<br>
-      58% of their staff is female
+      36% of senior management in the internationally focused government
+      departments and agencies are women.
+
+  - percent: 28.7
+    text: >
+      MPs in the Australian House<br>
+      of Representatives are women.
+
+  - percent: 36
+    text: >
+      36% of DFAT’s senior executive<br>
+      service are women, while 58% of<br>
+      their total staff is female.
 
   - percent: 33
     text: >
       1 in 3 Defence senior executive positions are held by women,
-      despite a workforce that is 42% female
+      despite a workforce that is 42% female.
 
-  - percent: 12.5
+  - percent: 11
     text: >
-      Women in senior leadership<br>positions in the ADF
+      Female star ranked officers in the ADF.
+
+  - percent: 45
+    text: >
+      45% of senior management in the Australian Public Service are women.
 
   # - percent: 35
   #   text: >

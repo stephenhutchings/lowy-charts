@@ -1,6 +1,9 @@
 .wrapper
   overflow: visible
 
+  &:hover .chart-value-label
+    opacity: 1
+
 .chart
   margin-bottom: 20px
   line-height: 20px
@@ -17,14 +20,11 @@
   height: 20px
   position: relative
 
-  &:hover .chart-value-label
-    opacity: 1
-
 .chart-value-label
-  position: absolute
-  margin-left: 8px
+  color: #fff
+  margin-left: 4px
   font-size: 15px
-  left: 100%
+  // left: 100%
   opacity: 0
   transition: opacity 300ms
 
