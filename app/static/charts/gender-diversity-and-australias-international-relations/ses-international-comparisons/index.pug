@@ -1,8 +1,8 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Current Heads of Mission"
   - var chart  = data.getOne("static/charts/gender-diversity-and-australias-international-relations/ses-international-comparisons/data")
+  - page.title = chart.title
 
 block page
   script

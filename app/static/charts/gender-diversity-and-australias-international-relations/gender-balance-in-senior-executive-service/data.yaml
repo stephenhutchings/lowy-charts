@@ -63,7 +63,7 @@ data:
     total: [12, 0, 179, 25]
     ratio: [8, 10, 11, 24]
   - group: ADF ENLISTED
-    female: [3, 0, 0, 21]
-    male: [133, 0, 10, 168]
-    total: [136, 0, 10, 189]
-    ratio: [2, 4, 0, 11]
+    female: [3, 0, 9, 21]
+    male: [133, 0, 160, 168]
+    total: [136, 0, 179, 189]
+    ratio: [2, 4, 11, 11]

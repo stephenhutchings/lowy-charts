@@ -57,8 +57,13 @@ posts:
   -
     country: Turkey
     city: Istanbul
-    type: C-G Austrade
-    gender: 0
+    type: Consulate-General
+    gender: F
+  -
+    country: Tuvalu
+    city: Vaiaku
+    type: High Commission
+    gender: F
   -
     country: United Arab Emirates
     city: Dubai
@@ -123,7 +128,7 @@ posts:
     country: Pakistan
     city: Islamabad
     type: High Commission
-    gender: F
+    gender: M
   -
     country: Samoa
     city: Apia
@@ -172,11 +177,6 @@ posts:
   -
     country: Denmark
     city: Copenhagen
-    type: Embassy
-    gender: F
-  -
-    country: Greece
-    city: Athens
     type: Embassy
     gender: F
   -
@@ -258,7 +258,7 @@ posts:
     country: USA
     city: New York - UN
     type: Ambassador
-    gender: M
+    gender: F
   -
     country: Vietnam
     city: Ho Chi Minh City
@@ -408,10 +408,10 @@ posts:
     type: Embassy
     gender: M
   -
-    country: Myanmar/Burma
-    city: Yangon/Rangoon
+    country: Myanmar
+    city: Yangon
     type: Embassy
-    gender: M
+    gender: F
   -
     country: Nepal
     city: Kathmandu
@@ -431,7 +431,7 @@ posts:
     country: New Zealand
     city: Wellington
     type: High Commission
-    gender: M
+    gender: F
   -
     country: Nigeria
     city: Abuja
@@ -446,7 +446,7 @@ posts:
     country: Peru
     city: Lima
     type: Embassy
-    gender: M
+    gender: F
   -
     country: Poland
     city: Warsaw
@@ -464,10 +464,10 @@ posts:
     gender: M
   -
     country: Russian Federation
-    common: Russia
+    common: Russia, Chargé
     city: Moscow
     type: Embassy
-    gender: M
+    gender: C
   -
     country: Saudi Arabia
     city: Riyadh
@@ -578,7 +578,7 @@ posts:
     country: Philippines
     city: Manila
     type: Embassy
-    gender: F
+    gender: M
   -
     country: Timor-Leste
     city: Dili
@@ -591,27 +591,33 @@ posts:
     gender: M
 
 # Organisations
+  # -
+  #   body: Ambassador for APEC
+  #   gender: M
+  # -
+  #   body: Ambassador to ASEAN
+  #   gender: F
+  # -
+  #   body: Ambassador for Counter Terrorism
+  #   gender: M
+  # -
+  #   body: Ambassador for Cyber Affairs
+  #   gender: M
+  # -
+  #   body: Ambassador for People Smuggling & Human Trafficking
+  #   gender: M
+  # -
+  #   body: Ambassador for Regional Health Security
+  #   gender: M
+  # -
+  #   body: Ambassador for The Environment
+  #   gender: M
+  # -
+  #   body: Ambassador for Women & Girls
+  #   gender: F
+
   -
-    body: Ambassador for APEC
-    gender: M
-  -
-    body: Ambassador to ASEAN
-    gender: F
-  -
-    body: Ambassador for Counter Terrorism
-    gender: M
-  -
-    body: Ambassador for Cyber Affairs
-    gender: M
-  -
-    body: Ambassador for People Smuggling & Human Trafficking
-    gender: M
-  -
-    body: Ambassador for Regional Health Security
-    gender: M
-  -
-    body: Ambassador for The Environment
-    gender: M
-  -
-    body: Ambassador for Women & Girls
-    gender: F
+    country: Greece, Chargé
+    city: Athens
+    type: Embassy
+    gender: C

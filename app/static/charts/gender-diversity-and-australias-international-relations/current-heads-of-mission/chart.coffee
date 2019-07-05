@@ -17,11 +17,14 @@ require.register "views/chart", (exports, require, module) ->
 
         m = _.where(posts, {gender: "M"})
         f = _.where(posts, {gender: "F"})
+        c = _.where(posts, {gender: "C"})
 
         m = _.sortBy(m, "country")
         f = _.sortBy(f, "country")
-        @data.posts = f.concat(m)
-        @data.split = { m, f }
+        c = _.sortBy(c, "country")
+        @data.posts = f.concat(m, c)
+
+        @data.split = { m, f, c }
 
       onResize: ->
         barSize = 20
@@ -81,7 +84,11 @@ require.register "views/chart", (exports, require, module) ->
               .rect(x, y, @config.barsH, @config.barsH)
               .data(post)
               .attr(
-                fill: if post.gender is "M" then colors.dark else colors.contrast
+                fill:
+                  switch post.gender
+                    when "M" then colors.dark
+                    when "F" then colors.contrast
+                    when "C" then colors.muted
                 stroke: "#f6f7f8"
               )
 
@@ -94,13 +101,17 @@ require.register "views/chart", (exports, require, module) ->
       bindMouseEvents: (el) ->
         data = el.data()
         el.mouseover =>
-          @current.attr(text:
-            data.body or
-            """
-              #{data.type} in #{data.city}, #{data.common or data.country}
-            """
+          @current.attr(
+            "font-size": "17"
+            text:
+              data.body or
+              """
+                #{data.type} in #{data.city}, #{data.common or data.country}
+              """
           )
           # .animate({opacity: 1}, @config.duration, mina.easeinout)
+          if @current.getBBox().width > 340
+            @current.attr("font-size", 14)
 
           for rect in @posts when rect isnt el
             rect.animate({opacity: 0.5}, @config.duration, mina.easeinout)
