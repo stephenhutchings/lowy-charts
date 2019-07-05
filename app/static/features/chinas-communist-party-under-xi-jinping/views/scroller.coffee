@@ -126,7 +126,7 @@ require.register "views/scroller", (exports, require, module) ->
         hs = window.innerHeight / 720
         scale = Math.min ws, hs
 
-      @el.style.transform = if scale then "scale(#{scale})" else ""
+      @el.style.transform = if scale then "scale(#{scale}) translateZ(0)" else ""
 
 
   module.exports = ScrollerView
