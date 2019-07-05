@@ -41,7 +41,7 @@ block page
       for response, j in chart.responses
         .pv-sm.chart-col(class=chart.responses.length > 1 ? "col-md" : "col-full")
           if response.text
-            .response-text.flex-end.pv-sm
+            .response-text.flex-end.flex-grow.pv-sm
               span!= typogr.typogrify(response.text)
 
           case chart.type 

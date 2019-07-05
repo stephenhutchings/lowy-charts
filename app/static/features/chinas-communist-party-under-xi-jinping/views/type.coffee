@@ -95,7 +95,9 @@ require.register "views/type", (exports, require, module) ->
 
         count++
 
-      @interval = window.setInterval(repeat, @data.duration / total)
+      window.setTimeout =>
+        @interval = window.setInterval(repeat, @data.duration / total)
+      , @data.delay
 
     exit: ->
       return unless @lines

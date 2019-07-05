@@ -20,6 +20,7 @@ require.register "views/scroller", (exports, require, module) ->
         items: $(".pager-item")
 
       @listenTo this, "resize", @onResize
+      $(document.body).on "fullscreenchange", _.bind(@setScale, this)
 
       $("#btn-prev").click (e) => @onPrev(e)
       $("#btn-next").click (e) => @onNext(e)
@@ -116,7 +117,16 @@ require.register "views/scroller", (exports, require, module) ->
     onFS: ->
       document.body.requestFullscreen?().then =>
         index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
+
         @scrollTo(index)
+
+    setScale: ->
+      if document.fullscreenElement
+        ws = window.innerWidth / 1280
+        hs = window.innerHeight / 720
+        scale = Math.min ws, hs
+
+      @el.style.transform = if scale then "scale(#{scale})" else ""
 
 
   module.exports = ScrollerView
