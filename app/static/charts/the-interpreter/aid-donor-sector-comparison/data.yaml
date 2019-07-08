@@ -11,18 +11,18 @@ donors:
   Taiwan: [3.42454509655555, 0.0871092474641, 0.31166350733261, 1.73401918821161, 0.2972272903608, 0.33257847316569, 1.36630051102063, 4.09027141384592, 5.05602481199099, 2.93819883347746, 0.92442011282946, 0.09422032547327]
 
 sectors:
-  - Agriculture, Forestry & Fishing
+  - Agriculture, Forestry &amp; Fishing
   - Communication
   - Education
   - Energy
-  - Government & Civil Society
+  - Government &amp; Civil&nbsp;Society
   - Health
   - Humanitarian aid
-  - Industry, Mining & Construction
+  - Industry, Mining &amp;&nbsp;Construction
   - Multisector/Cross-cutting
   - Other/Unspecified
   - Transport
-  - Water & Sanitation
+  - Water &amp; Sanitation
 
 colors:
   - "#E76823"

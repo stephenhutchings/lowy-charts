@@ -195,8 +195,17 @@ block append css
       @media (max-width: 720px)
         svg,
         #labels
-          width: 33.333%
+          width: 70%
           margin: auto
+
+        #labels-list-donors,
+        #labels-list-sectors
+          width: calc(50vw - #{(0.35 * 480px)})
+
+      @media (max-width: 520px)
+        svg,
+        #labels
+          width: 33.333%
 
         #labels-list-donors,
         #labels-list-sectors
