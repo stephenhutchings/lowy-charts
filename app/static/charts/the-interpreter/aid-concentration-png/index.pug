@@ -1,0 +1,98 @@
+extend /partials/layout
+
+block append config
+  - page.title = "The curious case of aid concentration in Papua New Guinea"
+  - var chart  = data.getOne("static/charts/the-interpreter/aid-concentration-png/data")
+  - var w = 640;
+  - var h = 300;
+  - var r = 50
+  - var b = 48
+  - var scale = function(val, min, max) { return (val - min) / (max - min); }
+
+block page
+  .wrapper.flex-cv(data-view="match" ontouchstart="")
+    svg(width=w height=h viewBox=`0 0 ${w} ${h}`)
+      rect.bg(width=w height=h)
+      g
+        g
+          line.axis(x1=b x2=w y1=(h - b * 1 - 0.5) y2=(h - b * 1 - 0.5))
+          text(text-anchor="end" transform=`translate(36 16)`)
+            | HDI
+
+          for n, i in new Array(6)
+            - var y = b + (h - b * 2 - 1) * (i / 5)
+            g(transform=`translate(0 ${y + 0.5})`)
+              line.axis(x1=b-8 x2=b)
+              text.tick(text-anchor="end" y=6 x=b-12)
+                = (0.3 + (1 - i / 5) * 0.5).toFixed(1 )
+
+        g
+          line.axis(x1=b + 0.5 x2=b + 0.5 y1=0.5 y2=(h - b * 1 - 0.5))
+          text(x=(b + (w - b) / 2) y=h-4 text-anchor="middle")
+            | Top Donor (%)
+
+          for n, i in new Array(16)
+            - var x = b + (w - b * 2 - 1) * (i / 15)
+            g(transform=`translate(${x + 0.5} ${h - b})`)
+              line.axis(y2=8)
+              text.tick(text-anchor="middle" y=22)
+                = 10 + i * 5
+
+      g
+        for country, i in _.sortBy(chart.countries, "topDonorPc").reverse()
+          - var y = (1 - scale(country.HDI, 0.3, 0.8)) * (h - b * 2)
+          - var x = (0 + scale(country.topDonorPc, 10, 85)) * (w - b * 2)
+          - var cr = 2 + country.aidPerCapita / 1365 * 40
+
+          g(transform=`translate(${x + b} ${y + b})` data-country=country.recipient)
+            if i < 10
+              circle.country-circle(r=cr)
+            else
+              circle.country-circle-outline(r=cr)
+
+        g
+          for country, i in _.sortBy(chart.countries, "topDonorPc").reverse()
+            - var y = (1 - scale(country.HDI, 0.3, 0.8)) * (h - b * 2)
+            - var x = (0 + scale(country.topDonorPc, 10, 85)) * (w - b * 2)
+            - var cr = 2 + country.aidPerCapita / 1365 * 40
+
+            if i < 10
+              g(transform=`translate(${x + b} ${y + b})`)
+                text.country-label(
+                  text-anchor=country.labelPos || "middle"
+                  x=0
+                  y=4 + (country.labelY || 0)
+                )
+                  = country.recipient
+
+      circle(r=2 + 10 / 1365 * 40)
+      circle(r=2 + 100 / 1365 * 40)
+      circle(r=2 + 1000 / 1365 * 40)
+
+
+      style
+        :sass
+          * 
+            font-size: 16px
+            font-family: Source Sans Pro
+          .bg
+            fill: none
+          .country-circle
+            fill: none
+            stroke: #f90
+            stroke-opacity: 0.5
+
+          .country-circle-outline
+            fill: #f90
+            fill-opacity: 0.5
+
+          .country-label
+            font-size: 13px
+            text-transform: uppercase
+
+          .axis
+            stroke: #eee
+
+          .tick
+            fill: #999
+            font-size: 14px

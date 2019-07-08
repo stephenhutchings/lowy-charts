@@ -1,0 +1,714 @@
+keys:
+  - Recipient
+  - Top Donor
+  - Top Donor %
+  - Top 10 Donor %
+  - HDI
+  - HDI Rank
+  - Aid per capita (2017 USD)
+
+countries:
+  -
+    recipient: Palau
+    topDonor: Japan
+    topDonorPc: 43.30
+    topDonor10Pc: 99
+    HDI: 0.798
+    HDIRank: 60
+    aidPerCapita: 1019
+
+  -
+    recipient: Fiji
+    topDonor: Australia
+    topDonorPc: 45.20
+    topDonor10Pc: 96
+    HDI: 0.741
+    HDIRank: 92
+    aidPerCapita: 161
+
+  -
+    recipient: Marshall Islands
+    topDonor: United States
+    topDonorPc: 78.82
+    topDonor10Pc: 100
+    HDI: 0.708
+    HDIRank: 106
+    aidPerCapita: 1365
+
+  -
+    recipient: South Africa
+    topDonor: United States
+    topDonorPc: 36.55
+    topDonor10Pc: 90
+    HDI: 0.699
+    HDIRank: 113
+    aidPerCapita: 18
+
+  -
+    recipient: Philippines
+    topDonor: United States
+    topDonorPc: 23.43
+    topDonor10Pc: 81
+    HDI: 0.699
+    HDIRank: 113
+    aidPerCapita: 2
+
+  -
+    recipient: Egypt
+    topDonor: EU Institutions
+    topDonorPc: 26.25
+    topDonor10Pc: 88
+    HDI: 0.696
+    HDIRank: 115
+    aidPerCapita: 22
+
+  -
+    recipient: Vietnam
+    topDonor: Japan
+    topDonorPc: 31.58
+    topDonor10Pc: 87
+    HDI: 0.694
+    HDIRank: 116
+    aidPerCapita: 25
+
+  -
+    recipient: Indonesia
+    topDonor: Australia
+    topDonorPc: 29.40
+    topDonor10Pc: 83
+    HDI: 0.694
+    HDIRank: 116
+    aidPerCapita: 1
+
+  -
+    recipient: Bolivia
+    topDonor: Inter-American Development Bank, Total
+    topDonorPc: 27.14
+    topDonor10Pc: 80
+    HDI: 0.693
+    HDIRank: 118
+    aidPerCapita: 86
+
+  -
+    recipient: Iraq
+    topDonor: United States
+    topDonorPc: 41.68
+    topDonor10Pc: 93
+    HDI: 0.685
+    HDIRank: 120
+    aidPerCapita: 76
+
+  -
+    recipient: El Salvador
+    topDonor: United States
+    topDonorPc: 35.82
+    topDonor10Pc: 92
+    HDI: 0.674
+    HDIRank: 121
+    aidPerCapita: 24
+
+  -
+    recipient: Kyrgyzstan
+    topDonor: United States
+    topDonorPc: 16.05
+    topDonor10Pc: 85
+    HDI: 0.672
+    HDIRank: 122
+    aidPerCapita: 74
+
+  -
+    recipient: Morocco
+    topDonor: EU Institutions
+    topDonorPc: 27.69
+    topDonor10Pc: 94
+    HDI: 0.667
+    HDIRank: 123
+    aidPerCapita: 53
+
+  -
+    recipient: Nicaragua
+    topDonor: Inter-American Development Bank, Total
+    topDonorPc: 22.43
+    topDonor10Pc: 74
+    HDI: 0.658
+    HDIRank: 124
+    aidPerCapita: 90
+
+  -
+    recipient: Cabo Verde
+    topDonor: Portugal
+    topDonorPc: 44.39
+    topDonor10Pc: 92
+    HDI: 0.654
+    HDIRank: 125
+    aidPerCapita: 225
+
+  -
+    recipient: Guyana
+    topDonor: Inter-American Development Bank, Total
+    topDonorPc: 29.45
+    topDonor10Pc: 93
+    HDI: 0.654
+    HDIRank: 125
+    aidPerCapita: 66
+
+  -
+    recipient: Guatemala
+    topDonor: United States
+    topDonorPc: 23.51
+    topDonor10Pc: 83
+    HDI: 0.65
+    HDIRank: 127
+    aidPerCapita: 22
+
+  -
+    recipient: Tajikistan
+    topDonor: Asian Development Bank, Total
+    topDonorPc: 21.46
+    topDonor10Pc: 81
+    HDI: 0.65
+    HDIRank: 127
+    aidPerCapita: 34
+
+  -
+    recipient: Namibia
+    topDonor: United States
+    topDonorPc: 38.10
+    topDonor10Pc: 92
+    HDI: 0.647
+    HDIRank: 129
+    aidPerCapita: 74
+
+  -
+    recipient: India
+    topDonor: Japan
+    topDonorPc: 24.71
+    topDonor10Pc: 91
+    HDI: 0.64
+    HDIRank: 130
+    aidPerCapita: 2
+
+  -
+    recipient: Micronesia
+    topDonor: United States
+    topDonorPc: 81.48
+    topDonor10Pc: 100
+    HDI: 0.627
+    HDIRank: 131
+    aidPerCapita: 929
+
+  -
+    recipient: Timor Leste
+    topDonor: Australia
+    topDonorPc: 33.06
+    topDonor10Pc: 85
+    HDI: 0.625
+    HDIRank: 132
+    aidPerCapita: 179
+  -
+    recipient: Honduras
+    topDonor: Inter-American Development Bank, Total
+    topDonorPc: 28.95
+    topDonor10Pc: 89
+    HDI: 0.617
+    HDIRank: 133
+    aidPerCapita: 48
+
+  -
+    recipient: Kiribati
+    topDonor: Australia
+    topDonorPc: 40.74
+    topDonor10Pc: 99
+    HDI: 0.612
+    HDIRank: 134
+    aidPerCapita: 663
+
+  -
+    recipient: Bhutan
+    topDonor: Asian Development Bank, Total
+    topDonorPc: 22.09
+    topDonor10Pc: 90
+    HDI: 0.612
+    HDIRank: 134
+    aidPerCapita: 147
+
+  -
+    recipient: Bangladesh
+    topDonor: World Bank Group, Total
+    topDonorPc: 20.04
+    topDonor10Pc: 77
+    HDI: 0.608
+    HDIRank: 136
+    aidPerCapita: 23
+
+  -
+    recipient: Congo
+    topDonor: France
+    topDonorPc: 49.95
+    topDonor10Pc: 77
+    HDI: 0.606
+    HDIRank: 137
+    aidPerCapita: 21
+    labelPos: start
+
+  -
+    recipient: Vanuatu
+    topDonor: Australia
+    topDonorPc: 47.58
+    topDonor10Pc: 97
+    HDI: 0.603
+    HDIRank: 138
+    aidPerCapita: 479
+    labelPos: end
+
+  -
+    recipient: Lao People's Democratic Republic
+    topDonor: Japan
+    topDonorPc: 20.04
+    topDonor10Pc: 76
+    HDI: 0.601
+    HDIRank: 139
+    aidPerCapita: 69
+
+  -
+    recipient: Ghana
+    topDonor: World Bank Group, Total
+    topDonorPc: 20.71
+    topDonor10Pc: 77
+    HDI: 0.592
+    HDIRank: 140
+    aidPerCapita: 44
+
+  -
+    recipient: Equatorial Guinea
+    topDonor: Spain
+    topDonorPc: 36.53
+    topDonor10Pc: 98
+    HDI: 0.591
+    HDIRank: 141
+    aidPerCapita: 5
+
+  -
+    recipient: Kenya
+    topDonor: United States
+    topDonorPc: 28.46
+    topDonor10Pc: 79
+    HDI: 0.59
+    HDIRank: 142
+    aidPerCapita: 50
+
+  -
+    recipient: Sao Tome and Principe
+    topDonor: Portugal
+    topDonorPc: 33.60
+    topDonor10Pc: 91
+    HDI: 0.589
+    HDIRank: 143
+    aidPerCapita: 197
+
+  -
+    recipient: Zambia
+    topDonor: United States
+    topDonorPc: 23.69
+    topDonor10Pc: 76
+    HDI: 0.588
+    HDIRank: 144
+    aidPerCapita: 60
+
+  -
+    recipient: Cambodia
+    topDonor: Japan
+    topDonorPc: 16.44
+    topDonor10Pc: 76
+    HDI: 0.582
+    HDIRank: 146
+    aidPerCapita: 53
+
+  -
+    recipient: Angola
+    topDonor: United States
+    topDonorPc: 17.58
+    topDonor10Pc: 81
+    HDI: 0.581
+    HDIRank: 147
+    aidPerCapita: 7
+
+  -
+    recipient: Myanmar
+    topDonor: Japan
+    topDonorPc: 35.71
+    topDonor10Pc: 83
+    HDI: 0.578
+    HDIRank: 148
+    aidPerCapita: 29
+
+  -
+    recipient: Nepal
+    topDonor: World Bank Group, Total
+    topDonorPc: 16.24
+    topDonor10Pc: 78
+    HDI: 0.574
+    HDIRank: 149
+    aidPerCapita: 43
+
+  -
+    recipient: Pakistan
+    topDonor: United States
+    topDonorPc: 24.01
+    topDonor10Pc: 89
+    HDI: 0.562
+    HDIRank: 150
+    aidPerCapita: 12
+
+  -
+    recipient: Cameroon
+    topDonor: France
+    topDonorPc: 21.59
+    topDonor10Pc: 86
+    HDI: 0.556
+    HDIRank: 151
+    aidPerCapita: 50
+
+  -
+    recipient: Solomon Islands
+    topDonor: Australia
+    topDonorPc: 72.30
+    topDonor10Pc: 98
+    HDI: 0.546
+    HDIRank: 152
+    aidPerCapita: 306
+    labelPos: start
+
+  -
+    recipient: Papua New Guinea
+    topDonor: Australia
+    topDonorPc: 70.66
+    topDonor10Pc: 97
+    HDI: 0.544
+    HDIRank: 153
+    aidPerCapita: 64
+    labelPos: end
+
+  -
+    recipient: Tanzania
+    topDonor: World Bank Group, Total
+    topDonorPc: 18.57
+    topDonor10Pc: 77
+    HDI: 0.538
+    HDIRank: 154
+    aidPerCapita: 45
+
+  -
+    recipient: Syrian Arab Republic
+    topDonor: United States
+    topDonorPc: 28.05
+    topDonor10Pc: 88
+    HDI: 0.536
+    HDIRank: 155
+    aidPerCapita: 567
+
+  -
+    recipient: Zimbabwe
+    topDonor: United States
+    topDonorPc: 21.77
+    topDonor10Pc: 87
+    HDI: 0.535
+    HDIRank: 156
+    aidPerCapita: 44
+
+  -
+    recipient: Nigeria
+    topDonor: World Bank Group, Total
+    topDonorPc: 26.47
+    topDonor10Pc: 90
+    HDI: 0.532
+    HDIRank: 157
+    aidPerCapita: 18
+
+  -
+    recipient: Rwanda
+    topDonor: World Bank Group, Total
+    topDonorPc: 15.70
+    topDonor10Pc: 83
+    HDI: 0.524
+    HDIRank: 158
+    aidPerCapita: 100
+
+  -
+    recipient: Lesotho
+    topDonor: United States
+    topDonorPc: 29.55
+    topDonor10Pc: 89
+    HDI: 0.52
+    HDIRank: 159
+    aidPerCapita: 66
+
+  -
+    recipient: Mauritania
+    topDonor: Other Multilateral, Total
+    topDonorPc: 16.78
+    topDonor10Pc: 86
+    HDI: 0.52
+    HDIRank: 159
+    aidPerCapita: 64
+
+  -
+    recipient: Madagascar
+    topDonor: World Bank Group, Total
+    topDonorPc: 16.48
+    topDonor10Pc: 86
+    HDI: 0.519
+    HDIRank: 161
+    aidPerCapita: 30
+
+  -
+    recipient: Uganda
+    topDonor: United States
+    topDonorPc: 22.32
+    topDonor10Pc: 79
+    HDI: 0.516
+    HDIRank: 162
+    aidPerCapita: 47
+
+  -
+    recipient: Benin
+    topDonor: World Bank Group, Total
+    topDonorPc: 15.54
+    topDonor10Pc: 80
+    HDI: 0.515
+    HDIRank: 163
+    aidPerCapita: 60
+
+  -
+    recipient: Senegal
+    topDonor: France
+    topDonorPc: 17.86
+    topDonor10Pc: 80
+    HDI: 0.505
+    HDIRank: 164
+    aidPerCapita: 57
+
+  -
+    recipient: Comoros
+    topDonor: France
+    topDonorPc: 34.41
+    topDonor10Pc: 95
+    HDI: 0.503
+    HDIRank: 165
+    aidPerCapita: 82
+
+  -
+    recipient: Togo
+    topDonor: France
+    topDonorPc: 16.49
+    topDonor10Pc: 77
+    HDI: 0.503
+    HDIRank: 165
+    aidPerCapita: 44
+
+  -
+    recipient: Sudan
+    topDonor: United States
+    topDonorPc: 33.60
+    topDonor10Pc: 83
+    HDI: 0.502
+    HDIRank: 167
+    aidPerCapita: 20
+
+  -
+    recipient: Afghanistan
+    topDonor: United States
+    topDonorPc: 41.77
+    topDonor10Pc: 86
+    HDI: 0.498
+    HDIRank: 168
+    aidPerCapita: 107
+
+  -
+    recipient: Haiti
+    topDonor: United States
+    topDonorPc: 32.70
+    topDonor10Pc: 86
+    HDI: 0.498
+    HDIRank: 168
+    aidPerCapita: 89
+
+  -
+    recipient: Côte d'Ivoire
+    topDonor: France
+    topDonorPc: 27.40
+    topDonor10Pc: 85
+    HDI: 0.492
+    HDIRank: 170
+    aidPerCapita: 34
+
+  -
+    recipient: Malawi
+    topDonor: United States
+    topDonorPc: 15.74
+    topDonor10Pc: 85
+    HDI: 0.477
+    HDIRank: 171
+    aidPerCapita: 81
+
+  -
+    recipient: Djibouti
+    topDonor: France
+    topDonorPc: 30.36
+    topDonor10Pc: 87
+    HDI: 0.476
+    HDIRank: 172
+    aidPerCapita: 140
+
+  -
+    recipient: Ethiopia
+    topDonor: World Bank Group, Total
+    topDonorPc: 20.75
+    topDonor10Pc: 83
+    HDI: 0.463
+    HDIRank: 173
+    aidPerCapita: 39
+
+  -
+    recipient: Gambia
+    topDonor: Other Multilateral, Total
+    topDonorPc: 15.00
+    topDonor10Pc: 83
+    HDI: 0.46
+    HDIRank: 174
+    aidPerCapita: 128
+
+  -
+    recipient: Guinea
+    topDonor: France
+    topDonorPc: 14.17
+    topDonor10Pc: 87
+    HDI: 0.459
+    HDIRank: 175
+    aidPerCapita: 36
+
+  -
+    recipient: Congo (Democratic Republic of the)
+    topDonor: United States
+    topDonorPc: 14.43
+    topDonor10Pc: 76
+    HDI: 0.457
+    HDIRank: 176
+    aidPerCapita: 28
+
+  -
+    recipient: Guinea Bissau
+    topDonor: EU Institutions
+    topDonorPc: 22.33
+    topDonor10Pc: 85
+    HDI: 0.455
+    HDIRank: 177
+    aidPerCapita: 61
+
+  -
+    recipient: Yemen
+    topDonor: United States
+    topDonorPc: 16.85
+    topDonor10Pc: 84
+    HDI: 0.452
+    HDIRank: 178
+    aidPerCapita: 114
+
+  -
+    recipient: Eritrea
+    topDonor: Other Multilateral, Total
+    topDonorPc: 18.48
+    topDonor10Pc: 89
+    HDI: 0.44
+    HDIRank: 179
+    aidPerCapita: U/A
+
+  -
+    recipient: Mozambique
+    topDonor: United States
+    topDonorPc: 16.02
+    topDonor10Pc: 65
+    HDI: 0.437
+    HDIRank: 180
+    aidPerCapita: 60
+
+  -
+    recipient: Liberia
+    topDonor: United States
+    topDonorPc: 24.38
+    topDonor10Pc: 85
+    HDI: 0.435
+    HDIRank: 181
+    aidPerCapita: 131
+
+  -
+    recipient: Mali
+    topDonor: EU Institutions
+    topDonorPc: 14.87
+    topDonor10Pc: 77
+    HDI: 0.427
+    HDIRank: 182
+    aidPerCapita: 73
+
+  -
+    recipient: Burkina Faso
+    topDonor: World Bank Group, Total
+    topDonorPc: 20.07
+    topDonor10Pc: 76
+    HDI: 0.423
+    HDIRank: 183
+    aidPerCapita: 46
+
+  -
+    recipient: Sierra Leone
+    topDonor: United Kingdom
+    topDonorPc: 25.78
+    topDonor10Pc: 82
+    HDI: 0.419
+    HDIRank: 184
+    aidPerCapita: 71
+
+  -
+    recipient: Burundi
+    topDonor: EU Institutions
+    topDonorPc: 14.76
+    topDonor10Pc: 79
+    HDI: 0.417
+    HDIRank: 185
+    aidPerCapita: 39
+
+  -
+    recipient: Chad
+    topDonor: EU Institutions
+    topDonorPc: 24.18
+    topDonor10Pc: 81
+    HDI: 0.404
+    HDIRank: 186
+    aidPerCapita: 43
+
+  -
+    recipient: South Sudan
+    topDonor: United States
+    topDonorPc: 32.86
+    topDonor10Pc: 86
+    HDI: 0.388
+    HDIRank: 187
+    aidPerCapita: 174
+
+  -
+    recipient: Central African Republic
+    topDonor: EU Institutions
+    topDonorPc: 23.16
+    topDonor10Pc: 78
+    HDI: 0.367
+    HDIRank: 188
+    aidPerCapita: 109
+
+  -
+    recipient: Niger
+    topDonor: EU Institutions
+    topDonorPc: 22.14
+    topDonor10Pc: 78
+    HDI: 0.354
+    HDIRank: 189
+    aidPerCapita: 56
