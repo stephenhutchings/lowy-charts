@@ -383,13 +383,13 @@ agencies:
   - name: Defence Intelligence Agencies
     years: [2006, 2011, 2016]
     totals:
-      Junior Staff:
+      "APS/Executive Level":
         f: [592, 789, 789]
         m: [1362, 1663, 1571]
-      Senior Staff:
+      "Senior Executive Service":
         f: [5, 4, 6]
         m: [15, 19, 19]
-      All Staff:
+      "All Staff":
         f: [597, 793, 795]
         m: [1377, 1682, 1590]
   - name: ASIO
@@ -434,13 +434,13 @@ agencies:
   - name: Australian Federal Police
     years: [1996, 2006, 2011, 2016, 2018]
     totals:
-      Junior Staff:
+      "APS/Executive Level":
         f: [741, 1642, 2298, 2267, 2417]
         m: [1994, 3732, 4513, 4088, 3998]
-      Senior Staff:
+      "Senior Executive Service":
         f: [2, 5, 16, 22, 29]
         m: [35, 54, 67, 59, 53]
-      All Staff:
+      "All Staff":
         f: [743, 1647, 2314, 2345, 2514]
         m: [2029, 3788, 4580, 4312, 4213]
 
