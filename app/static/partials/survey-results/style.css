@@ -26,6 +26,11 @@
   color: #539ed4;
 }
 
+.nav-bar .wrapper {
+  padding-left: 1.5em;
+  box-sizing: border-box;
+}
+
 .social {
   position: absolute;
   right: 0;
