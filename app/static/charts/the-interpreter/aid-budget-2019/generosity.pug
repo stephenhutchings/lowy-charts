@@ -4,7 +4,7 @@ block append config
   - page.title = "Australian aid generosity over time"
   - var chart = { height: 320, width: 600, inset: { x: 20, y: 20 }, data: {} }
   - chart.data.a = [0.27, 0.25, 0.25, 0.27, 0.24, 0.24, 0.24, 0.24, 0.25, 0.28, 0.29, 0.28, 0.31, 0.31, 0.32, 0.33, 0.34, 0.33, 0.32, 0.25, 0.22, 0.22, 0.22, 0.21, 0.2, 0.19, 0.19]
-  - map = function(e){return chart.inset.y + (1 - (e) / 4 * 10) * (chart.height - 64 - 20)}
+  - map = function(e){return +(chart.inset.y + (1 - (e) / 4 * 10) * (chart.height - 64 - 20)).toFixed(1)}
   - chart.data.ap = chart.data.a.map(map)
   - ynb = chart.data.a.length - 1
 
@@ -47,13 +47,13 @@ block page
               class=`set-${i}`
               points=(_.reduce(chart.data.ap.slice(set[0],set[1]), function(m, e, i){
                 var x = 48 + (i + set[0]) * (chart.width - 81) / ynb + 0.5; 
-                return `${m} ${x},${e}`
+                return `${m} ${x.toFixed(1)},${e.toFixed(1)}`
               }, ""))
             )
 
         g
           for n, i in (new Array(ynb+1))
-            - var x = 48 + i * (chart.width - 81) / ynb + 0.5; 
+            - var x = +(48 + i * (chart.width - 81) / ynb + 0.5).toFixed(0); 
             if i % 4 === 1
               text.tt2.tt3(x=x y=280 text-anchor="middle")
                 | #{(1996 + i)}-#{(1997 + i).toString().slice(2)}
