@@ -1,62 +1,62 @@
 mixin interpreter-bar-chart(data)
-  strong.chart-title!= typogr.typogrify(data.title)
-  if data.subtitle
-    .chart-subtitle!= typogr.typogrify(data.subtitle)
-  - var yo = 20
-  - var yh = data.yh || 52
-  - var height = data.height || yo + (data.yaxis.length - 1) * yh + 24
+  - var height = data.height || (data.yaxis.length - 1) * (data.yh || 48) + 120
   - data.highlights = data.highlights || {}
   - data.tooltips   = data.tooltips   || []
 
-  .chart(style={height: height + "px", width: "100%"})
-    .bg
-      for label, i in data.yaxis
-        - var y = (data.yaxis.length - i - 1) * yh
-        .bg-y(style={top: yo + y + "px"})
-          .label-y #{label}#{data.unit || ""}
-          .stroke-y
+  .chart-wrap(style={height: height + "px"})
+    strong.chart-title!= typogr.typogrify(data.title)
+    if data.subtitle
+      .chart-subtitle!= typogr.typogrify(data.subtitle)
 
-    .bars.flex-cv.flex-row
-      for group, j in data.values
-        - var y = (data.yaxis.length - 1) * yh
-        - var w = 100 / (data.xaxis.length + 1) + "%"
-        .bar-group(
-          style={width: w, height: yo + y + "px"}
-          class=(data.highlights[j] ? "highlight" : "")
-        )
+    .chart
+      .bg
+        for label, i in data.yaxis
+          - var y = (1 - i / (data.yaxis.length - 1)) * 100
+          .bg-y(style={top: y + "%"})
+            .label-y #{label}#{data.unit || ""}
+            .stroke-y
 
-          .bar-frame.flex-row.flex-cv
-            for bar, i in group
-              - var ho = (_.last(data.yaxis) - _.first(data.yaxis))
-              - var hi = (bar - _.first(data.yaxis))
+      .bars.flex-cv.flex-row
+        for group, j in data.values
+          - var w = 100 / (data.xaxis.length + 1) + "%"
+          .bar-group(
+            style={width: w}
+            class=(data.highlights[j] ? "highlight" : "")
+          )
 
-              .bar(
-                class="bar-" + i
-                style={height: (hi / ho) * y + "px"}
-              )
-                .bar-rect
-                .bar-label
-                  = data.precision ? bar.toFixed(data.precision) : bar
-                  = data.unit || ""
+            .bar-frame.flex-row.flex-cv
+              for bar, i in group
+                - var ho = (_.last(data.yaxis) - _.first(data.yaxis))
+                - var hi = (bar - _.first(data.yaxis))
 
-            .bar-group-label= data.xaxis[j]
+                .bar(
+                  class="bar-" + i
+                  style={height: (hi / ho) * 100 + "%"}
+                )
+                  .bar-rect
+                  .bar-label
+                    = data.precision ? bar.toFixed(data.precision) : bar
+                    = data.unit || ""
 
-            if data.highlights[j]
-              .bar-group-highlight-label!= data.highlights[j]
+              .bar-group-label= data.xaxis[j]
+
+              if data.highlights[j]
+                .bar-group-highlight-label!= data.highlights[j]
 
 
-  if data.legend || data.source
-    .chart-footer
-      if data.legend
-        ul.legend.list-bare
-          for label, i in data.legend
-            li
-              .bar(class="bar-" + i)
-              != label
+    if data.legend || data.source
+      .chart-footer
+        if data.legend
+          ul.legend.list-bare
+            for label, i in data.legend
+              li
+                .bar(class="bar-" + i)
+                != label
 
-      if data.source
-        .source.txt-muted.txt-xs
-          = data.source
+        if data.source
+          .source.txt-muted.txt-xs
+            | Source: 
+            = data.source
 
 block append css
   style
