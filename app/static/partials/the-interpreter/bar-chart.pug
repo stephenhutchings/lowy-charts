@@ -13,7 +13,7 @@ mixin interpreter-bar-chart(data)
       for label, i in data.yaxis
         - var y = (data.yaxis.length - i - 1) * yh
         .bg-y(style={top: yo + y + "px"})
-          .label-y #{label}%
+          .label-y #{label}#{data.unit || ""}
           .stroke-y
 
     .bars.flex-cv.flex-row
@@ -36,7 +36,8 @@ mixin interpreter-bar-chart(data)
               )
                 .bar-rect
                 .bar-label
-                  | #{data.precision ? bar.toFixed(data.precision) : bar}%
+                  = data.precision ? bar.toFixed(data.precision) : bar
+                  = data.unit || ""
 
             .bar-group-label= data.xaxis[j]
 

@@ -1,0 +1,45 @@
+extend /partials/layout
+
+include /partials/the-interpreter/bar-chart
+
+block append config
+  - page.title = "Visa cancellations and refusals"
+
+block page
+  .wrapper.flex-cv(
+    ontouchstart=""
+    class=written.hyphenCase(page.title)
+  )
+    +interpreter-bar-chart({
+      title: page.title,
+      yaxis: [0, 300, 600, 900, 1200, 1500],
+      xaxis: [
+        "2011/12",
+        "2012/13",
+        "2013/14",
+        "2014/15",
+        "2015/16",
+        "2016/17",
+        "2017/18"
+      ],
+      values: [[157,88],[139,65],[76,83],[579,137],[987,423],[1277,631],[905,537]],
+      yh: 40,
+      legend: [ "s501 Visa Cancellations", "s501 Visa Refusals" ]
+    })
+
+block scripts
+  style
+    :sass
+      @media (max-width: 720px)
+        .bar
+          width: 20px
+        .bar-group
+          width: 11% !important
+      @media (max-width: 480px)
+        .bar
+          width: 12px
+        .bar-group-label
+          font-size: 12px
+          transform: translateY(12px) rotate(45deg) 
+        .legend
+          margin-top: 40px

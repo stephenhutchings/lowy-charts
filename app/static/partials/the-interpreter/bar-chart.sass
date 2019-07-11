@@ -65,52 +65,30 @@ body
 
 .bar-label
   opacity: 0
-  color: #fff
   transition: all 300ms
-  background-color: inherit
   padding: 4px
   line-height: 20px
-  top: -14px
+  bottom: 100%
   pointer-events: none
   z-index: 10
-
-  &:after
-    content: ""
-    border: solid transparent
-    border-width: 14px 4px
-    top: 0
-
-
-.bar-0
-  .bar-label
-    right: 100%
-    left: auto
-    margin: 0 4px 0 0
-    padding: 4px 4px 4px 6px
-    transform: translate3d(-12px, 0, 0)
-
-    &:after
-      right: -8px
-      left: auto
-
-.bar-1
-  .bar-label
-    left: 100%
-    right: auto
-    margin: 0 0 0 4px
-    padding: 4px 6px 4px 4px
-    transform: translate3d(12px, 0, 0)
-
-    &:after
-      left: -8px
-      right: auto
+  left: 50%
+  transform: translate(-50%, -4px)
 
 .bar-group:hover
   z-index: 1
 
+.bar-group:hover .bar .bar-label,
+.bars:hover .bar-label
+  transform: translate(-50%, 0)
+
+.bars:hover .bar-label
+  opacity: 0.3
+  transition-duration: 500ms
+  transition-delay: 100ms
+
 .bar-group:hover .bar .bar-label
   opacity: 1
-  transform: translate3d(0, 0, 0)
+  transition-delay: 0ms
 
 .bar-group.highlight .bar-frame:before
   content: ""
@@ -128,20 +106,12 @@ body
   text-align: center
 
 .bar-0 .bar-rect,
-.bar-0 .bar-label,
 .legend .bar-0
   background: #ff9400
 
 .bar-1 .bar-rect,
-.bar-1 .bar-label,
 .legend .bar-1
   background: #31363c
-
-.bar-0 .bar-label:after
-  border-left-color: #ff9400
-
-.bar-1 .bar-label:after
-  border-right-color: #31363c
 
 .chart:hover .bar-group .bar-rect
   opacity: 0.4
