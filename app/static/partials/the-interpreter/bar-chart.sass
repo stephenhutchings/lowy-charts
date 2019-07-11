@@ -147,8 +147,9 @@ body
 
 .legend
   text-align: center
-  margin-top: 16px
   line-height: 16px
+  margin: 0
+  text-align: left
 
   li
     display: inline-block
@@ -159,7 +160,20 @@ body
     height: 16px
     position: static
     float: left
-    margin: 3px 8px 0 0
+    margin: 1px 8px 0 0
+
+.legend,
+.source
+  margin-top: 20px
+
+  &:only-child
+    margin: 20px auto 0
+
+.chart-footer
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
 
 @media (max-width: 660px)
   .bar-group.highlight:before
@@ -171,6 +185,9 @@ body
 
   .bars
     margin: 0 -8%
+
+  .chart-footer
+    flex-direction: column
 
 @media (max-width: 480px)
   .wrapper
