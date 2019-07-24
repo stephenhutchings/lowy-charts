@@ -5,7 +5,7 @@ subtitle: (in per cent)
 
 chart:
   fields:
-    - SOEs
+    - SOE<span class='txt-tn'>s</span>
     - Private
 
   scale:

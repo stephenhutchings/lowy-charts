@@ -99,12 +99,12 @@ mixin svg-line(data, lines)
 
   .chart-footer.flex-between.flex-row
     if data.fields
-      .chart-legend(class=`chart-legend-${data.fields.join("").length > 30 ? "long" : "short"}`)
+      .chart-legend(class=`chart-legend-${data.fields.join("").replace(/<[^>]+>/g,"").length > 30 ? "long" : "short"}`)
         for field, j in data.fields
           label.chart-key
             svg.chart-key-line(width=32 height=10 class=`g${j}`)
               line(x1=0 x2="100%" y1=5 y2=5)
-            span.chart-key-label.txt-tu= field
+            span.chart-key-label.txt-tu!= field
 
     if data.details
       ul.chart-details.flex-cv
