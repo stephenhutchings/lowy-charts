@@ -1,0 +1,149 @@
+extend /partials/layout
+
+include _line
+
+block append config
+  - _.extend(page, data.getOne(__.directory.replace("app/","") + "/data"))
+
+block page
+  .wrapper
+    .txt-center
+      h1= page.title
+      if page.subtitle
+        h2.txt-muted= page.subtitle
+
+    +svg-line(page.chart)
+
+block append scripts
+  style
+    :sass
+      h1
+        font-size: 18px
+        margin: 0
+        line-height: 1.2
+      h2
+        font-size: 14px
+
+      .wrapper
+        max-width: 800px
+        overflow: visible
+
+      .chart-wrap
+        padding-left: 32px
+        padding-bottom: 40px
+        margin: 24px 0 12px
+
+      .chart-legend
+        text-transform: uppercase
+        margin-left: -0.5em
+        padding-left: 32px
+        padding-bottom: 16px
+        max-width: 500px
+
+      .chart-details
+        text-align: right
+        flex-grow: 1
+        list-style: none
+
+      .chart-key
+        padding: 0 0.5em
+        white-space: nowrap
+        display: inline-block
+
+      .chart-legend-long
+        .chart-key
+          display: block
+
+      .chart-legend,
+      .chart-detail
+        padding: 4px 0
+        padding-left: 32px
+        font-size: 14px
+
+      svg.chart-key-line
+        display: inline-block
+        margin-right: 0.5em
+        pointer-events: none
+
+        line
+          stroke-width: 3
+
+      svg.line
+        overflow: visible
+        font-size: 14px
+        height: 240px
+        line-height: 12px
+
+        svg
+          overflow: visible
+
+        path,
+        line
+          fill: none
+          vector-effect: non-scaling-stroke
+
+        line
+          stroke-width: 1
+          stroke: #B3B7BE
+
+        text
+          text-align: center
+
+        path
+          stroke-width: 2
+
+        .dot
+          stroke-dasharray: 1
+
+      .x,
+      .y
+        text
+          fill: currentColor
+
+      .point
+        opacity: 0
+        transition: opacity 300ms
+        .area
+          pointer-events: all
+          stroke: none !important
+        &:hover
+          opacity: 1
+
+      .g0
+        circle,
+        text
+          fill: #F37429
+        path,
+        line
+          stroke: #F37429
+
+      .g1
+        circle,
+        text
+          fill: #00263E
+        path,
+        line
+          stroke: #00263E
+      
+      .g2
+        circle,
+        text
+          fill: #539FD5
+        path,
+        line
+          stroke: #539FD5
+
+
+      @media (max-width: 640px)
+        .chart-footer
+          display: block
+
+        .chart-legend,
+        .chart-key
+          display: block
+
+        .chart-details
+          text-align: left
+
+        .x-tick:nth-child(even)
+          display: none

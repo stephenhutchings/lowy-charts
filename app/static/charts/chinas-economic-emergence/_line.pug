@@ -1,0 +1,112 @@
+mixin path(vals, scale, xs)
+  - var toY = (e, min, dif) => ((100 * dif - parseFloat(e - min)) / dif)
+  - var map = (m, e, i, a) => m + (_.isNumber(e) ? ((m.length > 0 ? "L" : "M") + xs[i] + " " + toY(e, min, dif)) : "")
+
+  - min = scale.min
+  - max = scale.max
+  - dif = (max - min) / 100
+
+  path(d=vals.reduce(map, "") fill="none" data-l=vals.length)
+
+mixin svg-line(data, lines)
+  - line = locals.r("./app/static/charts/chinas-economic-emergence/line.coffee")
+  - keys = data.keys
+  - scale = (data.scale.max - data.scale.min) / 100
+  - df = _.last(keys) - keys[0]
+  - xs = keys.map((e)=> (e - keys[0] + 0.5) / (df + 1) * 100)
+  - nb = (data.scale.max - data.scale.min) / data.scale.div
+  - v = line.voronoi(data,[0,0,300,100])
+  .chart-wrap
+    svg.line(width="100%" height="100%")
+      rect(width="100%" height="100%" x=0 y=0 fill="none")
+
+      g
+        for n, i in new Array(nb + 1)
+          - y = (i / nb) * 100 + "%"
+          line(
+            x1=0 x2="100%" y1=y y2=y
+            data-val=data.scale.max - i * data.scale.div
+            class=(data.scale.max - i * data.scale.div != 0) ? "dot" : ""
+          )
+      
+      svg.y(width=4 height="100%" x=-4)
+        line(x1="100%" x2="100%" y1=0 y2="100%")
+        for n, i in new Array(nb + 1)
+          - y = (i / nb) * 100 + "%"
+          g.y-tick
+            line(x1=0 x2=4 y1=y y2=y)
+            text(x=-4 y=y text-anchor="end" transform="translate(0 4)")
+              = (data.scale.max - i * data.scale.div)
+
+      svg.x(width="100%" height=4 y="100%")
+        g
+          for n, i in new Array(df + 1)
+            - x = (i + 0.5) / (df + 1) * 100 + "%"
+            svg.x-tick(x=x)
+              //- line(x1=-2 x2=2)
+              line(x1=-0.5 x2=-0.5 y2=4)
+
+        for n, i in new Array(df + 1)
+          - x = (i + 0.5) / (df + 1) * 100 + "%"
+          if !data.skipX || i % data.skipX == 0
+            svg.x-tick(x=x)
+              text(x=-8 y=4 transform="rotate(-90)" text-anchor="end")
+                = keys[0] + i
+
+      g
+        for key, j in data.fields || [{}]
+          - arr = _.pluck(data.values, j)
+          g(class=`g${j}`)
+            svg(
+              width="100%"
+              height="100%"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            )
+              +path(arr, data.scale, xs)
+
+      for point, i in v.points
+        if point && _.isNumber(point.value)
+          - var f = point.field
+          - var k = point.key
+          - var x1 = (((xs[k-1]||-xs[k+1]) / data.values.length) * 100)
+          - var x2 = (((xs[k+1]||xs[k]+(xs[k]-xs[k-1])) / data.values.length) * 100)
+          - var y1 = 100 * (1 - ((data.values[k-1]?+data.values[k-1][f]||point.value:point.value) - data.scale.min) / df)
+          - var y2 = 100 * (1 - ((data.values[k+1]?+data.values[k+1][f]||point.value:point.value) - data.scale.min) / df)
+          - var t = Math.atan2(y2 - y1, x2 - x1)
+          - var tx = Math.cos(t - Math.PI / 2) * 20 * .75
+          - var ty = Math.sin(0 - Math.PI / 2) * 20
+          - var a = point.y > point.cy - 1 ? 1 : -1
+
+          g.point(class=`g${point.field}`)
+            svg(
+              width="100%"
+              height="100%"
+              viewBox="0 0 300 100"
+              preserveAspectRatio="none"
+            )
+              path.area(
+                d=v.voronoi.renderCell(i)
+                fill="none"
+              )
+            circle(cx=(point.x/3 + "%") cy=(point.y + "%") r=4)
+            text(
+              x=(point.x/3 + "%")
+              y=(point.y + "%")
+              text-anchor="middle"
+              transform=`translate(${tx * a} ${ty * a + 4})`
+            )= point.value.toFixed(1)
+
+  .chart-footer.flex-between.flex-row
+    if data.fields
+      .chart-legend(class=`chart-legend-${data.fields.join("").length > 30 ? "long" : "short"}`)
+        for field, j in data.fields
+          label.chart-key
+            svg.chart-key-line(width=32 height=10 class=`g${j}`)
+              line(x1=0 x2="100%" y1=5 y2=5)
+            span.chart-key-label.txt-tu= field
+
+    if data.details
+      ul.chart-details.flex-cv
+        for detail in data.details
+          li.chart-detail.txt-muted.txt-sm= detail
