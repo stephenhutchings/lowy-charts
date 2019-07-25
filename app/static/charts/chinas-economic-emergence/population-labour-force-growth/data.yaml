@@ -1,6 +1,8 @@
 title: >
   Figure 3: Population and labour force growth
 
+subtitle: (in per cent)
+
 chart:
   fields:
     - Population

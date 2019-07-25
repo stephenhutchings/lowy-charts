@@ -1,6 +1,8 @@
 title: >
   Figure 4: Investment/GDP ratios
 
+subtitle: (in per cent)
+
 chart:
   fields:
     - China

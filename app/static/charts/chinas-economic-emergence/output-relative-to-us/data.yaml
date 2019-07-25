@@ -1,7 +1,7 @@
 title: >
-  Figure 1: China GDP relative to United States
+  Figure 1: China GDP relative to United States*
 
-subtitle: (in percent)*
+subtitle: (in per cent)
 
 chart:
   scale:
@@ -52,6 +52,6 @@ chart:
 
   details:
     - >
-      Note: Purchasing power exchange rates; constant 2011 international prices
+      * Purchasing power exchange rates; constant 2011 international prices
     - >
-      Sources: IMF WEO Database; Penn World Table 9.1
+      Sources: IMF WEO Database; Penn World Tables 9.1
