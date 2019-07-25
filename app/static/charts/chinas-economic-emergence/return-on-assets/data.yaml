@@ -1,12 +1,12 @@
 title: >
-  China: Return on assets
+  Figure 6: Return on assets
 
 subtitle: (in per cent)
 
 chart:
   fields:
-    - SOE<span class='txt-tn'>s</span>
-    - Private
+    - State-owned enterprises
+    - Private companies
 
   scale:
     max: 16

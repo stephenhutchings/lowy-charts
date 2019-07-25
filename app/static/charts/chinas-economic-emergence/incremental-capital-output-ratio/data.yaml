@@ -1,5 +1,5 @@
 title: >
-  China: Incremental capital-output ratio
+  Figure 5: Incremental capital-output ratio
 
 chart:
   scale:
@@ -41,3 +41,6 @@ chart:
     - [8.124211303]
     - [7.779867329]
     - [7.776069028]
+
+  details:
+    - "Sources: National Statistics Yearbook of China; author calculations"
