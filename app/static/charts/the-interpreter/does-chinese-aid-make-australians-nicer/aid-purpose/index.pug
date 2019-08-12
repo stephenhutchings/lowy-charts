@@ -1,0 +1,35 @@
+extend /partials/layout
+
+include /partials/the-interpreter/bar-chart
+
+block append config
+  - page.title = "Percentage wanting Australian aid focused foremost on helping people in developing countries"
+
+block page
+  .wrapper(
+    ontouchstart=""
+    class=written.hyphenCase(page.title)
+  )
+    +interpreter-bar-chart({
+      title: page.title,
+      yaxis: [30, 40, 50, 60],
+      xaxis: [
+        "Control group",
+        "Sober analysis",
+        "Alarmism"
+      ],
+      unit: "%",
+      values: [
+        [40.23],
+        [46.57],
+        [49.92]
+      ],
+      confidence: [
+        [[36.40, 44.18]],
+        [[42.64, 50.54]],
+        [[46.00, 53.84]]
+      ],
+      yh: 36,
+    })
+
+block scripts

@@ -17,7 +17,7 @@ body
   position: relative
   pointer-events: none
   font-family: Sans, sans-serif
-  margin: 20px 0
+  margin: 20px 0 24px
   flex-grow: 1
   width: 100%
   font-size: 13px
@@ -33,6 +33,7 @@ body
 .bars,
 .bar-group-label,
 .bar-label,
+.bar-confidence,
 .bar-group-highlight-label,
 .bar-label:after,
 .bar-group.highlight .bar-frame:before
@@ -89,6 +90,10 @@ body
 .bar-group:hover
   z-index: 1
 
+.bars:hover
+  .bar-confidence
+    opacity: 0
+
 .bar-group:hover .bar .bar-label,
 .bars:hover .bar-label
   transform: translate(-50%, 0)
@@ -117,6 +122,24 @@ body
   top: 12px
   font-size: 15px
   text-align: center
+
+.bar-confidence
+  border-left: 1px solid
+  transition: opacity 300ms
+
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    left: -4px
+    right: -3px
+    border-top: 1px solid
+
+  &:before
+    top: 0
+
+  &:after
+    bottom: 0
 
 .bar-0 .bar-rect,
 .legend .bar-0

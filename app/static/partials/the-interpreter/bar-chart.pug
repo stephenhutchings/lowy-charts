@@ -38,6 +38,18 @@ mixin interpreter-bar-chart(data)
                     = data.precision ? bar.toFixed(data.precision) : bar
                     = data.unit || ""
 
+                if data.confidence
+                  - var c0 = data.confidence[j][i][0] - _.first(data.yaxis)
+                  - var c1 = data.confidence[j][i][1] - _.first(data.yaxis)
+                  .bar-confidence(
+                    style={
+                      height: ((c1 - c0) / ho) * 100 + "%",
+                      bottom: (c0 / ho) * 100 + "%"
+                    }
+                  )
+
+
+
               .bar-group-label= data.xaxis[j]
 
               if data.highlights[j]
@@ -55,7 +67,7 @@ mixin interpreter-bar-chart(data)
 
         if data.source
           .source.txt-muted.txt-xs
-            | Source: 
+            | Source:
             = data.source
 
 block append css

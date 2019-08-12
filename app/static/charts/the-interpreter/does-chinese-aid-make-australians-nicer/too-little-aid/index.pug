@@ -1,0 +1,35 @@
+extend /partials/layout
+
+include /partials/the-interpreter/bar-chart
+
+block append config
+  - page.title = "Percentage who thought Australia gives too little aid"
+
+block page
+  .wrapper(
+    ontouchstart=""
+    class=written.hyphenCase(page.title)
+  )
+    +interpreter-bar-chart({
+      title: page.title,
+      yaxis: [0, 10, 20, 30],
+      xaxis: [
+        "Control group",
+        "Sober analysis",
+        "Alarmism"
+      ],
+      unit: "%",
+      values: [
+        [16.75],
+        [15.66],
+        [19.61]
+      ],
+      confidence: [
+        [[13.95, 19.99]],
+        [[12.99, 18.76]],
+        [[16.65, 22.95]]
+      ],
+      yh: 36,
+    })
+
+block scripts
