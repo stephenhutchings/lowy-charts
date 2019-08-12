@@ -10,8 +10,8 @@
       .bar-group.flex-cv(style={"padding-top": "40px"})
         strong.txt-sans.bar-group-label.txt-center.txt-tu.txt-hl.fade-in.delay-8
           | 1987
-        - values = [2.8,0,17.1,0,27.7,0,0,7.6,39.5]
-        - labels = ["Military","","Worker","","Party Cadre","","","Retired","Farmer"]
+        - values = [2.8,0,0,17.1,27.7,0,0,7.6,39.5]
+        - labels = ["Military","","","Worker","Party Cadre","","","Retired","Farmer"]
         for value, i in values
           .bar.bar-border.bar-border-mid(
             data-view="bars, in-viewport"
@@ -26,8 +26,8 @@
             )
               .bar-value(class=value < 5 ? "bar-value-outside txt-mid" : "")= value || ""
             .bar-label.txt-left=labels[i]
-        - values = [0,2.0,7.4,8.4,8.4,10.6,15.1,19.6,28.5]
-        - labels = ["","Student","Worker","Other","Party Cadre","Management Personnel","Technical Personnel","Retired","Farmer"]
+        - values = [1.5,2.0,6.9,7.4,8.4,10.6,15.1,19.6,28.5]
+        - labels = ["Military","Student","Other","Worker","Party Cadre","Management Personnel","Technical Personnel","Retired","Farmer"]
       .bar-group.flex-cv(style={"padding-top": "40px"})
         strong.txt-sans.bar-group-label.txt-center.txt-tu.txt-dk.fade-in.delay-12
           | 2017

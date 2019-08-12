@@ -1,7 +1,3 @@
-.slide.bg-ff
-  .posr.fw.fh(data-view="in-viewport")
-    img.fade-in(data-src="./img/org-buro.jpg")
-
 .slide.bg-lt
   .posr.fw.fh.flex-cv(data-view="in-viewport")
     img.fade-in.posa.fw.fh(data-src="./img/org-buro-front.jpg")
@@ -15,76 +11,88 @@
         span.line.bg-dk.txt-ff The Organisation
         span.line.bg-dk.txt-ff Department covers…
 
+      - list = ["Ministers", "Governors", "Mayors", "Regulators", "Senior Executives in State-Owned Businesses", "Judges", "Heads of Think Tanks", "University Chiefs", "Newspaper and Television bosses"]
       .txt-md.pv-sm.txt-dk
-        .fl-l(
-          data-view="in-viewport, type"
-          data-duration=800
-          data-delay=(800 + 400)
-          style="margin: 2px"
-        )
-          span.line.pv-xs.ph-sm.bg-ff
-            | Ministers
-        .fl-l(
-          data-view="in-viewport, type"
-          data-duration=800
-          data-delay=(900 + 400)
-          style="margin: 2px"
-        )
-          span.line.pv-xs.ph-sm.bg-ff
-            | Governors
-        .fl-l(
-          data-view="in-viewport, type"
-          data-duration=800
-          data-delay=(1000 + 400)
-          style="margin: 2px"
-        )
-          span.line.pv-xs.ph-sm.bg-ff
-            | Mayors
-        .fl-l(
-          data-view="in-viewport, type"
-          data-duration=800
-          data-delay=(1100 + 400)
-          style="margin: 2px"
-        )
-          span.line.pv-xs.ph-sm.bg-ff
-            | Regulators
-        .fl-l(
-          data-view="in-viewport, type"
-          data-duration=800
-          data-delay=(1200 + 400)
-          style="margin: 2px"
-        )
-          span.line.pv-xs.ph-sm.bg-ff
-            | Senior Executives in State-Owned Businesses
-        .fl-l(
-          data-view="in-viewport, type"
-          data-duration=800
-          data-delay=(1300 + 400)
-          style="margin: 2px"
-        )
-          span.line.pv-xs.ph-sm.bg-ff
-            | Judges
-        .fl-l(
-          data-view="in-viewport, type"
-          data-duration=800
-          data-delay=(1400 + 400)
-          style="margin: 2px"
-        )
-          span.line.pv-xs.ph-sm.bg-ff
-            | Heads of Think Tanks
-        .fl-l(
-          data-view="in-viewport, type"
-          data-duration=800
-          data-delay=(1500 + 400)
-          style="margin: 2px"
-        )
-          span.line.pv-xs.ph-sm.bg-ff
-            | University Chiefs
-        .fl-l(
-          data-view="in-viewport, type"
-          data-duration=800
-          data-delay=(1600 + 400)
-          style="margin: 2px"
-        )
-          span.line.pv-xs.ph-sm.bg-ff
-            | Newspaper and Television bosses 
+        for item, i in list
+          .fl-l(
+            data-view="in-viewport, type"
+            data-duration=800
+            data-delay=(1200 + i * 100)
+            style="margin: 2px"
+          )
+            span.line.pv-xs.ph-sm.bg-ff= item
+
+.slide.bg-lt
+  .posr.fw.fh.flex-cv(data-view="in-viewport")
+    img.fade-in.posa.fw.fh(data-src="./img/united-front.jpg")
+
+    .slide-inner.type.txt-mono.flex-end.posr.z1(style="width: 830px")
+      .txt-lg.pv-sm(
+        data-view="in-viewport, type"
+        data-duration=1500
+        data-delay=300
+      )
+        span.line.bg-dk.txt-ff The United Front
+        span.line.bg-dk.txt-ff Department covers…
+
+      - list = ["any non-party entities and individuals, like","other political parties,","ethnic minorities,","religious groups,","private entrepreneurs,","with","a special emphasis on overseas Chinese in","Hong Kong, Macau and Taiwan."]
+      .txt-md.pv-sm.txt-dk
+        for item, i in list
+          .fl-l(
+            data-view="in-viewport, type"
+            data-duration=800
+            data-delay=(1200 + i * 100)
+            style="margin: 2px"
+          )
+            span.line.pv-xs.ph-sm.bg-ff= item
+
+
+.slide.bg-lt
+  .posr.fw.fh.flex-cv(data-view="in-viewport")
+    img.fade-in.posa.fw.fh(data-src="./img/propaganda-department.jpg")
+
+    .slide-inner.type.txt-mono.flex-end.posr.z1(style="width: 830px")
+      .txt-lg.pv-sm(
+        data-view="in-viewport, type"
+        data-duration=1500
+        data-delay=300
+      )
+        span.line.bg-dk.txt-ff The Propaganda
+        span.line.bg-dk.txt-ff Department covers…
+
+      - list = ["public opinion, by controlling","the print and broadcast media,","and the entertainment industry,","including film and TV drama"]
+      .txt-md.pv-sm.txt-dk
+        for item, i in list
+          .fl-l(
+            data-view="in-viewport, type"
+            data-duration=800
+            data-delay=(1200 + i * 100)
+            style="margin: 2px"
+          )
+            span.line.pv-xs.ph-sm.bg-ff= item
+
+
+.slide.bg-lt
+  .posr.fw.fh.flex-cv(data-view="in-viewport")
+    img.fade-in.posa.fw.fh(data-src="./img/commission-for-discipline-inspection.jpg")
+
+    .slide-inner.type.txt-mono.flex-end.posr.z1(style="width: 830px")
+      .txt-lg.pv-sm(
+        data-view="in-viewport, type"
+        data-duration=1500
+        data-delay=300
+    )
+        span.line.bg-dk.txt-ff The Commission for Discipline
+        span.line.bg-dk.txt-ff Inspection and Supervision covers…
+
+      - list =["anti-corruption, deploying groups of","inspectors at all levels of government","to oversee party officials and government","officials, SOE executives and anyone public","authority, including universities,","the media and think tanks."]
+      - list =["anti-corruption,​​​​​​​​​​ deploying groups of ","inspectors at all levels of government ","to oversee party officials and government ","officials,​​​​ ​​SOE executives and anyone with","public authority,​ including universities,​​​​​​​​​​","the media and think tanks."]
+      .txt-md.pv-sm.txt-dk
+        for item, i in list
+          .fl-l(
+            data-view="in-viewport, type"
+            data-duration=800
+            data-delay=(1200 + i * 100)
+            style="margin: 2px"
+          )
+            span.line.pv-xs.ph-sm.bg-ff= item

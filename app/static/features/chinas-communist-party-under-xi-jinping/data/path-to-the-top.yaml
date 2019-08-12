@@ -160,10 +160,10 @@ people:
         height: 1
         title: Shanghai
         where: Shanghai
-      - years: 1997-
-        height: 2
-        title: Member of the Central Committee
-        where: Beijing
+      # - years: 1997-
+      #   height: 2
+      #   title: Member of the Central Committee
+      #   where: Beijing
       - years: 2012-
         height: 1
         title: General Secretary
