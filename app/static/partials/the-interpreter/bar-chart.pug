@@ -4,7 +4,8 @@ mixin interpreter-bar-chart(data)
   - data.tooltips   = data.tooltips   || []
 
   .chart-wrap(style={height: height + "px"})
-    strong.chart-title!= typogr.typogrify(data.title)
+    if data.title
+      strong.chart-title!= typogr.typogrify(data.title)
     if data.subtitle
       .chart-subtitle!= typogr.typogrify(data.subtitle)
 
