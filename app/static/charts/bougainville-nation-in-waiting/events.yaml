@@ -1,0 +1,124 @@
+events:
+  - start: 1884
+    text: >
+      Eastern part of New Guinea divided between Germany in the north and Britain in the south
+
+  - start: 1899
+    text: >
+      Germany and Britain divide the Solomon Islands – Bougainville and Buka included as part of German New Guinea
+
+  - start: 1906
+    text: >
+      British New Guinea transferred to Australian control and renamed Territory of Papua
+
+  - start: 1914
+    text: >
+      Australian forces take German New Guinea, including Bougainville
+
+  - start: 1919
+    text: >
+      League of Nations grants Australia the mandated territory of New Guinea
+
+  - start: 1942
+    end: 1945
+    text: >
+      Australian, US and Japanese forces battle for control of Bougainville and the Pacific, ending in victory for Australian and allied forces
+
+  - start: 1945
+    text: >
+      United Nations reaffirms Australian role in administering New Guinea as a “Trust Territory” and four years later the joint administration of Papua and New Guinea
+
+  - start: 1966
+    text: >
+      Establishment of the Panguna copper and gold mine
+
+  - start: 1975
+    month: September
+    offset: 0.75
+    text: >
+      September: Bougainville’s first Unilateral Declaration of Independence declared two weeks before PNG independence
+
+  - start: 1988
+    text: >
+      Bougainville Revolutionary Army (BRA) headed by Francis Ona is formed
+
+  - start: 1988
+    month: November
+    offset: 0.9166666667
+    text: >
+      November: start of the Bougainville war
+
+  - start: 1989
+    text: >
+      Panguna copper mine closed in May; PNG declares a state of emergency in June
+
+  - start: 1990
+    month: May
+    offset: 0.41667
+    text: >
+      May: PNG Government cuts off goods and services to Bougainville
+
+  - start: 1990
+    month: August
+    offset: 0.66667
+    text: >
+      August: the Endeavour Accords to restore services but defer Bougainville’s political status signed by PNG and BRA aboard the New Zealand warship
+
+  - start: 1994
+    text: >
+      South Pacific Regional Peace Keeping Force (SPRPKF) provides security to enable peace talks in Arawa
+
+  - start: 1997
+    text: >
+      Sandline mercenary crisis erupts in PNG
+
+  - start: 1997
+    text: >
+      Burnham peace talks held in New Zealand; Truce Monitoring Group (TMG) deployed to Bougainville
+
+  - start: 1998
+    month: January
+    offset: 0
+    text: >
+      January: Lincoln Agreement between PNG Government and Bougainville leaders signed in New Zealand
+
+  - start: 1998
+    month: May
+    offset: 0.416667
+    text: >
+      May: Australian-led Peace Monitoring Group (PMG) established to monitor the ceasefire
+
+  - start: 2001
+    text: >
+      Bougainville Peace Agreement (BPA) signed in Arawa – the BPA provided for a referendum on Bougainville’s independence 10–15 years after the establishment of the Autonomous Bougainville Government (ABG)
+
+  - start: 2003
+    text: >
+      Withdrawal of regional PMG forces
+
+  - start: 2005
+    month: June
+    offset: 0.5
+    text: >
+      June: Joseph Kabui elected first ABG President – a referendum for independence can be held between 2015 and 2020
+
+  - start: 2005
+    month: July
+    offset: 0.5833
+    text: >
+      July: BRA leader Francis Ona dies
+
+  - start: 2008
+    text: >
+      James Tanis elected second ABG President (sworn in January 2009)
+
+  - start: 2010
+    text: >
+      John Momis elected third ABG President
+
+  - start: 2019
+    month: November
+    offset: 0.916667
+    text: >
+      November: Scheduled date for referendum
+

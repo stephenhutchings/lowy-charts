@@ -1,0 +1,142 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Bougainville: nation in waiting?"
+  - var events = data.getOne("static/charts/bougainville-nation-in-waiting/events").events
+  - var years = _.pluck(events, "start")
+
+
+  - order = [0,1,2,3,4,5,6,4,0,1,2,3,4,5,6,7,8,9,9,8,7,6,5,4,3,3]
+
+block page
+  .wrapper
+    - m = -1
+    - max = _.last(years)
+    - min = _.first(years)
+    - len = max - min + 4
+
+    - vals = Array.from(Array(len), ((e,i,a) => (1 + Math.pow(i, 0.8)) / len))
+    - vals = vals.map((e) => e / _.sum(vals))
+    - var p = function(i){return vals[i]}
+
+    #controls
+      .btn.js-prev(tabindex="0")
+        .icon.icon-left-arrow
+      .btn.js-next(tabindex="0")
+        .icon.icon-right-arrow
+
+    #frame
+      #events
+          for e, i in events
+            - var k = (e.start - min), left = _.sum(vals.slice(0, k));
+            - var dir = Math.floor(i / 10) % 2 == 0 ? -1 : 1
+
+            if e.offset
+              - l1 = _.sum(vals.slice(0, k + 1))
+              - console.log((l1 - left))
+              - left += (l1 - left) * e.offset * .9
+
+            .event.js-year(
+              tabindex="0"
+              style={left: (100 * left) + "%"}
+              class=[
+                i == 0 ? "active" : "",
+                order[i] > m ? "right" : "left",
+                !e.highlight ? "top" : "bottom",
+                `item-${order[i]}`,
+                _.includes([1,2,15,16,17,18,19,20], i) ? "spaced" : "middle",
+                e.highlight ? "highlight" : ""
+              ].join(" ")
+              data-i=_.sortBy(events, "start").indexOf(e)
+            )
+              .event-marker
+              .event-year
+                if e.end
+                  | #{e.start}–#{e.end.toString().slice(2)}
+                else
+                  | #{e.start}
+
+              .event-content
+                p.event-text
+                  //- if e.month
+                    strong.txt-tu.txt-xs= e.month
+                    br
+
+                  != e.text
+
+            - m = order[i]
+
+      #years
+        for n, i in new Array(len)
+          - var j = min + i;
+          - var c = j % 100 == 0 ? "cen" : j % 10 == 0 ? "dec" : "";
+          if (min + i) % 10 == 0
+            .year(
+              style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
+              class=c
+            )
+
+          if (min + i) % 100 == 0
+            .year-label(
+              style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
+              class=c
+            )
+              = j
+
+    #pager
+      span#page 1
+      | &ensp;/&ensp;#{events.length}
+
+
+block append scripts
+  script.
+    $(document).ready(function(){
+      var count = 0,
+          $events = $(".event"),
+          $frame = $("#frame"),
+          $page = $("#page");
+
+      $(".js-next").click(function(){count++; update()})
+      $(".js-prev").click(function(){count--; update()})
+      $(".js-year").click(function(){count = $(this).data("i"); update()})
+      $(".js-year").hover(function(){count = $(this).data("i"); update()})
+
+      function update() {
+        if (document.activeElement) document.activeElement.blur()
+
+        count = ($events.length + count) % $events.length
+
+        $active = $events
+          .removeClass("active")
+          .filter("[data-i='" + count + "']")
+          .addClass("active")
+
+        $page.html(count + 1)
+
+        outer = $frame.width()
+        inner = $("body").outerWidth()
+        offset = $active.position().left
+        offset += $active.find(".event-text").position().left
+
+        if (inner < outer) {
+          if ($active.hasClass("right")) {
+            offset -= $active.find(".event-year").outerWidth() - 36
+          } else {
+            offset -= inner
+            offset += $active.find(".event-year").width() + 72
+          }
+          $frame.css({
+            transform: "translate3d(" + (-offset) + "px,0,0)"
+          })
+        } else {
+          $frame.css({
+            transform: ""
+          })
+        }
+      }
+    })
+
+block append css
+  style
+    include:sass _styles.sass
+
