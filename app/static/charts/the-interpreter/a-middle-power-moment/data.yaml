@@ -1,0 +1,76 @@
+list:
+  - country: Japan
+    trend: 1
+    change: 11.8
+  - country: South Korea
+    trend: 1
+    change:  5.9
+  - country: Australia
+    trend: -1
+    change:  5.9
+  - country: Malaysia
+    trend: 1
+    change:  5.7
+  - country: Singapore
+    trend: -1
+    change:  5.2
+  - country: Thailand
+    trend: 1
+    change:  3.8
+  - country: New Zealand
+    trend: 0
+    change:  2.1
+  - country: Philippines
+    trend: 0
+    change:  1.6
+  - country: Vietnam
+    trend: 1
+    change:  1.0
+  - country: Indonesia
+    trend: 1
+    change:  0.9
+  - country: Cambodia
+    trend: 0
+    change: -0.8
+  - country: China
+    trend: 1
+    change: -0.8
+  - country: India
+    trend: 1
+    change: -1.2
+  - country: Brunei
+    trend: -1
+    change: -1.8
+  - country: United States
+    trend: -1
+    change: -1.8
+  - country: Laos
+    trend: -1
+    change: -1.9
+  - country: Bangladesh
+    trend: 0
+    change: -2.3
+  - country: Myanmar
+    trend: -1
+    change: -2.5
+  - country: Mongolia
+    trend: -1
+    change: -3.0
+  - country: Nepal
+    trend: -1
+    change: -3.1
+  - country: Sri Lanka
+    trend: 0
+    change: -3.3
+  - country: Pakistan
+    trend: 0
+    change: -3.4
+  - country: Taiwan*
+    trend: 0
+    change: -4.3
+  - country: North Korea
+    trend: 0
+    change: -6.7
+  - country: Russia
+    trend: 1
+    change: -6.9

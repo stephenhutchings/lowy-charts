@@ -1,0 +1,168 @@
+extend /partials/layout
+
+block append config
+  - page.title = "A middle power moment"
+  - var chart  = data.getOne("static/charts/the-interpreter/a-middle-power-moment/data")
+
+block page
+  #wrapper(ontouchstart="")
+    .bars.pv-xs
+      strong.txt-tu.bar-group-label.bar-group-label-pos Overachievers
+      strong.txt-tu.bar-group-label.bar-group-label-neg Underachievers
+      for item in chart.list
+        .bar-row.clearfix(class=item.change < 0 ? "neg" : "pos")
+          strong.label.fl-l= item.country
+          strong.trend.fl-l
+            if item.trend > 0
+              | &uarr;
+            else if item.trend < 0
+              | &darr;
+            else
+              | –
+          .bar
+            .bar-inner(
+              style={
+                width: `${(Math.abs(item.change) / 25) * 100}%`,
+                left:  `${(item.change < 0 ? ((12.5 + parseFloat(item.change)) / 25) : 0.5) * 100}%`
+              })
+              .bar-label=item.change.toFixed(1)
+
+      .bar-scale.flex-row.txt-muted
+        .bar-scale-tick -10
+        .bar-scale-tick -5
+        .bar-scale-tick 0
+        .bar-scale-tick 5
+        .bar-scale-tick 10
+
+    .pv-xs.txt-muted
+      :marked
+        A country’s Power Gap score is the difference between its overall
+        power and what its power would be expected to be given its
+        available resources.
+
+block append css
+  style
+    :sass
+      body
+        font-family: Sans
+        display: flex
+
+      #wrapper
+        line-height: 1.4
+        overflow: visible
+        font-feature-settings: "pnum" 1
+        margin: auto
+        max-width: 736px
+
+      .bars
+        position: relative
+
+      .label
+        width: 160px
+        font-weight: 600
+        height: 100%
+
+      .trend
+        width: 20px
+        font-weight: 400
+        line-height: 1.2
+        height: 100%
+        text-align: center
+
+      .bar-scale
+        display: flex
+        margin-left: 180px
+        margin-right: 20px
+
+      .bar-scale-tick
+        width: 20%
+        text-align: center
+        // font-size: 12px
+        position: relative
+        padding-top: 4px
+
+        &:before
+          content: ""
+          position: absolute
+          left: 50%
+          bottom: 100%
+          margin-bottom: 1px
+          height: 25 * 1.2em
+          padding-top: 23px
+          border-left: 1px solid rgba(#0F1F2B, 0.2)
+          margin-left: -0.5px
+
+      .bar-row
+        height: 1.2em
+        margin-bottom: 1px
+        overflow: hidden
+
+        &:hover
+          background: #f2f4f6
+
+          .bar-label
+            background: #f2f4f6
+
+      .bar
+        height: 100%
+        margin-left: 180px
+        margin-right: 20px
+        position: relative
+        z-index: 1
+
+      .bar-inner
+        position: relative
+        height: 100%
+
+        .neg &
+          background: #0F1F2B
+
+        .pos &
+          background: #91D3CD
+
+      .bar-label
+        position: absolute
+        padding: 0 0.3em
+        background: white
+        height: 100%
+
+        .neg &
+          right: 100%
+
+        .pos &
+          left: 100%
+
+      .bar-group-label
+        position: absolute
+
+      .bar-group-label-neg
+        color: #0F1F2B
+        margin-left: 96px
+        left: 50%
+        transform: translateX(-50%) rotate(90deg)
+        top: 50%
+        margin-top: 84px
+
+      .bar-group-label-pos
+        color: #91D3CD
+        margin-left: 64px
+        left: 50%
+        transform: translateX(-50%) rotate(-90deg)
+        margin-top: 96px
+
+
+      @media (max-width: 600px)
+        .label
+          width: 108px
+
+        .trend
+          width: 12px
+
+        .bar-scale,
+        .bar
+          margin-left: 120px
+
+        .bar-group-label-neg
+          margin-left: 64px
+        .bar-group-label-pos
+          margin-left: 36px
