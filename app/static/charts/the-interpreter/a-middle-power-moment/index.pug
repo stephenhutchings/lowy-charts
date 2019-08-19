@@ -34,7 +34,7 @@ block page
         .bar-scale-tick 5
         .bar-scale-tick 10
 
-    .pv-xs.txt-muted
+    .pv-xs.txt-muted.txt-center.hint
       :marked
         A country’s Power Gap score is the difference between its overall
         power and what its power would be expected to be given its
@@ -52,13 +52,19 @@ block append css
         overflow: visible
         font-feature-settings: "pnum" 1
         margin: auto
-        max-width: 736px
+        width: 736px
+        max-width: 100%
+
+      .hint
+        font-size: 80%
+        max-width: 512px
+        margin: auto
 
       .bars
         position: relative
 
       .label
-        width: 160px
+        width: 140px
         font-weight: 600
         height: 100%
 
@@ -71,7 +77,7 @@ block append css
 
       .bar-scale
         display: flex
-        margin-left: 180px
+        margin-left: 160px
         margin-right: 20px
 
       .bar-scale-tick
@@ -105,7 +111,7 @@ block append css
 
       .bar
         height: 100%
-        margin-left: 180px
+        margin-left: 160px
         margin-right: 20px
         position: relative
         z-index: 1
@@ -137,7 +143,7 @@ block append css
 
       .bar-group-label-neg
         color: #0F1F2B
-        margin-left: 96px
+        margin-left: 88px
         left: 50%
         transform: translateX(-50%) rotate(90deg)
         top: 50%
@@ -145,13 +151,13 @@ block append css
 
       .bar-group-label-pos
         color: #91D3CD
-        margin-left: 64px
+        margin-left: 52px
         left: 50%
         transform: translateX(-50%) rotate(-90deg)
         margin-top: 96px
 
 
-      @media (max-width: 600px)
+      @media (max-width: 512px)
         .label
           width: 108px
 
