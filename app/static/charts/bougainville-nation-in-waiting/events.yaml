@@ -7,9 +7,9 @@ events:
     text: >
       Germany and Britain divide the Solomon Islands – Bougainville and Buka included as part of German New Guinea
 
-  - start: 1906
+  - start: 1902
     text: >
-      British New Guinea transferred to Australian control and renamed Territory of Papua
+      British New Guinea transferred to newly federated Australian control and renamed the Territory of Papua
 
   - start: 1914
     text: >
@@ -17,7 +17,7 @@ events:
 
   - start: 1919
     text: >
-      League of Nations grants Australia the mandated territory of New Guinea
+      League of Nations grants Australia the “mandated” territory of New Guinea; Papua remains a territory of Australia
 
   - start: 1942
     end: 1945
@@ -26,11 +26,15 @@ events:
 
   - start: 1945
     text: >
-      United Nations reaffirms Australian role in administering New Guinea as a “Trust Territory” and four years later the joint administration of Papua and New Guinea
+      United Nations reaffirms Australian role in administering New Guinea as a “trust" territory and four years later the joint administration of Papua and New Guinea
 
   - start: 1966
     text: >
       Establishment of the Panguna copper and gold mine
+
+  - start: 1972
+    text: >
+      Production at Panguna mine starts
 
   - start: 1975
     month: September
@@ -62,7 +66,7 @@ events:
     month: August
     offset: 0.66667
     text: >
-      August: the Endeavour Accords to restore services but defer Bougainville’s political status signed by PNG and BRA aboard the New Zealand warship
+      August: the Endeavour Accords, which restore services but defer Bougainville’s political status, are signed by PNG and BRA aboard the New Zealand warship
 
   - start: 1994
     text: >
@@ -70,11 +74,11 @@ events:
 
   - start: 1997
     text: >
-      Sandline mercenary crisis erupts in PNG
+      March: Sandline mercenary crisis erupts in PNG
 
   - start: 1997
     text: >
-      Burnham peace talks held in New Zealand; Truce Monitoring Group (TMG) deployed to Bougainville
+      Burnham peace talks held in New Zealand in July and October; Truce Monitoring Group (TMG) deployed to Bougainville
 
   - start: 1998
     month: January
@@ -115,6 +119,10 @@ events:
   - start: 2010
     text: >
       John Momis elected third ABG President
+
+  - start: 2015
+    text: >
+      Bougainville Mining Act 2015 enacted, giving traditional landowners a say in mining licences and mineral extraction
 
   - start: 2019
     month: November
