@@ -44,11 +44,6 @@
     table{
       border-collapse:collapse;
     }
-    h1,h2,h3,h4,h5,h6{
-      display:block;
-      margin:0;
-      padding:0;
-    }
     img,a img{
       border:0;
       height:auto;
@@ -66,6 +61,9 @@
     }
     #outlook a{
       padding:0;
+    }
+    .article {
+      box-shadow: 0 2px 6px #e3e6e9;
     }
     img{
       -ms-interpolation-mode:bicubic;
@@ -133,46 +131,6 @@
     .templateContainer{
       border:0;
     }
-    h1{
-      color:#202020;
-      font-family:sans;
-      font-size:26px;
-      font-style:normal;
-      font-weight:bold;
-      line-height:125%;
-      letter-spacing:normal;
-      text-align:left;
-    }
-    h2{
-      color:#202020;
-      font-family:sans;
-      font-size:22px;
-      font-style:normal;
-      font-weight:bold;
-      line-height:125%;
-      letter-spacing:normal;
-      text-align:left;
-    }
-    h3{
-      color:#202020;
-      font-family:sans;
-      font-size:20px;
-      font-style:normal;
-      font-weight:bold;
-      line-height:125%;
-      letter-spacing:normal;
-      text-align:left;
-    }
-    h4{
-      color:#202020;
-      font-family:sans;
-      font-size:18px;
-      font-style:normal;
-      font-weight:bold;
-      line-height:125%;
-      letter-spacing:normal;
-      text-align:left;
-    }
     #templatePreheader{
       background-color:#f4f5f6;
       background-image:none;
@@ -226,9 +184,9 @@
       background-position:center;
       background-size:cover;
       border-top:0;
-      border-bottom:2px solid #EAEAEA;
+      border-bottom:0;
       padding-top:0;
-      padding-bottom:9px;
+      padding-bottom:0;
     }
     #templateBody .mcnTextContent,#templateBody .mcnTextContent p{
       color:#202020;
@@ -250,8 +208,8 @@
       background-size:cover;
       border-top:0;
       border-bottom:0;
-      padding-top:9px;
-      padding-bottom:9px;
+      padding-top:0;
+      padding-bottom:0;
     }
     #templateFooter .mcnTextContent,#templateFooter .mcnTextContent p{
       color:#656565;
@@ -287,99 +245,9 @@
       }
     }
     @media only screen and (max-width: 480px){
-      .mcnRetinaImage{
-        max-width:100% !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcnImage{
-        width:100% !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcnCartContainer,.mcnCaptionTopContent,.mcnRecContentContainer,.mcnCaptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaptionRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageCardRightTextContentContainer,.mcnImageCardLeftImageContentContainer,.mcnImageCardRightImageContentContainer{
-        max-width:100% !important;
-        width:100% !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcnBoxedTextContentContainer{
-        min-width:100% !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcnImageGroupContent{
-        padding:9px !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{
-        padding-top:9px !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcnImageCardTopImageContent,.mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent{
-        padding-top:18px !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcnImageCardBottomImageContent{
-        padding-bottom:9px !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcnImageGroupBlockInner{
-        padding-top:0 !important;
-        padding-bottom:0 !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcnImageGroupBlockOuter{
-        padding-top:9px !important;
-        padding-bottom:9px !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
       .mcnTextContent,.mcnBoxedTextContentColumn{
         padding-right:0 !important;
         padding-left:0 !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{
-        padding-right:0 !important;
-        padding-bottom:0 !important;
-        padding-left:0 !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      .mcpreview-image-uploader{
-        display:none !important;
-        width:100% !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      h1{
-        font-size:22px !important;
-        line-height:125% !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      h2{
-        font-size:20px !important;
-        line-height:125% !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      h3{
-        font-size:18px !important;
-        line-height:125% !important;
-      }
-    }
-    @media only screen and (max-width: 480px){
-      h4{
-        font-size:16px !important;
-        line-height:150% !important;
       }
     }
     @media only screen and (max-width: 480px){
@@ -548,12 +416,12 @@
                         <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
                           <tbody>
                             <tr>
-                              <td valign="top" class="mcnTextContent" style="padding: 0px 0 9px; font-family:sans, sans-serif; font-size: 14px; line-height: 200%;">
+                              <td valign="top" class="mcnTextContent" style="font-family:sans, sans-serif; font-size: 14px; line-height: 200%;">
                                 *|RSSITEMS:|*
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:10px">
                                   <tr>
                                     <td>
-                                      <div style="padding: 12px; box-shadow: 0 2px 6px #e3e6e9;border-radius:4px;background:#fff">
+                                      <div class="article" style="padding: 12px;border-radius:4px;background:#fff">
                                         <table border="0" cellpadding="4" cellspacing="0" width="100%">
                                           <tr>
                                             <td style="font-family:wide,sans-serif;font-weight:700;font-size:28px;line-height:1">
@@ -614,7 +482,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnFollowContent">
                                   <tbody>
                                     <tr>
-                                      <td align="center" valign="top" style="padding-top:9px; padding-right:9px; padding-left:9px;">
+                                      <td align="center" valign="top" style="padding: 0 9px;">
                                         <table align="center" border="0" cellpadding="0" cellspacing="0">
                                           <tbody>
                                             <tr>
@@ -822,10 +690,10 @@
                       <tbody>
                         <tr>
                           <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:0; padding-bottom:9px; padding-left:0;">
-                            Our mailing address is<br>
+                            Lowy Institute<br>
                             31 Bligh Street, Sydney NSW 2000<br>
                             <br>
-                            Click here to&nbsp;<a href="*|UNSUB|*">unsubscribe from this list</a>
+                            Click here to&nbsp;<a href="*|UNSUB|*">unsubscribe</a>
                           </td>
                         </tr>
                       </tbody>
