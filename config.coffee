@@ -133,12 +133,3 @@ exports.config =
         "js/app.#{hash}.js": /^app\/templates(\/|\\)(.+)\.pug$/
 
   framework: "backbone"
-
-  hooks:
-    onCompile: (generatedFiles, changedAssets) ->
-      if _.find(changedAssets, path: "app/assets/redirects")
-        fs.rename(
-          "#{__dirname}/build/redirects",
-          "#{__dirname}/build/_redirects", (err) ->
-            console.log err if err?
-        )
