@@ -1,46 +1,54 @@
+
+# Redirect archival content from old servers
+# interactives.lowyinstitute.org
 [[redirects]]
-  # Redirect archival content from old servers
-  # interactives.lowyinstitute.org
   from = "/fonops_maps/Overview.html"
   to = "/archive/fonops"
   status = 301
-
+[[redirects]]
   from = "/fonops_maps/*"
   to = "/archive/fonops/:splat"
   status = 301
-
+[[redirects]]
   from = "/publications/the-prime-ministers-in-washington"
   to = "/archive/the-prime-ministers-in-america"
   staus = 301
+[[redirects]]
   from = "/publications/the-prime-ministers-in-washington-notes"
   to = "/archive/the-prime-ministers-in-america/notes"
   staus = 301
+[[redirects]]
   from = "/publications/the-prime-ministers-in-america"
   to = "/archive/the-prime-ministers-in-america"
   staus = 301
+[[redirects]]
   from = "/publications/pacific-aid-map-country-profiles"
   to = "/archive/pacific-aid-map-country-profiles"
   staus = 301
+[[redirects]]
   from = "/publications/PNGin2017/png-in-2017-home.html"
   to = "/archive/png-in-2017"
   staus = 301
+[[redirects]]
   from = "/publications/PNGin2017/*"
   to = "/archive/png-in-2017/:splat"
   staus = 301
 
-  # publications.lowyinstitute.org
+# publications.lowyinstitute.org
+[[redirects]]
   from = "/shanahan/charities-and-terrorism-lessons-from-the-syrian-crisis.html"
   to = "/archive/charities-and-terrorism-lessons-from-the-syrian-crisis"
   staus = 301
 
-  # Moved content
+# Moved content
+[[redirects]]
   from = "/features/indonesia-votes/"
   to = "/features/indonesia-votes-2019"
   staus = 301
+[[redirects]]
   from = "/features/australian-attitudes-to-climate-change/"
   to = "https://www.lowyinstitute.org/issues/australia-climate-change"
   staus = 301
-
 
 [[headers]]
   # Allow CORS on fonts for emails, etc.
