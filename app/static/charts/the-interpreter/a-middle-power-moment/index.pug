@@ -46,6 +46,9 @@ block append css
       body
         font-family: Sans
         display: flex
+        width: 1px
+        min-width: 100%
+        *width: 100%
 
       #wrapper
         line-height: 1.4
@@ -83,7 +86,6 @@ block append css
       .bar-scale-tick
         width: 20%
         text-align: center
-        // font-size: 12px
         position: relative
         padding-top: 4px
 
@@ -154,8 +156,7 @@ block append css
         margin-left: 52px
         left: 50%
         transform: translateX(-50%) rotate(-90deg)
-        margin-top: 96px
-
+        margin-top: 80px
 
       @media (max-width: 512px)
         .label
