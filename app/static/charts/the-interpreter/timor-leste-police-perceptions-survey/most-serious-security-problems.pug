@@ -1,0 +1,148 @@
+extend /partials/layout
+
+block append config
+  - page.title = "How would you describe the security situation in your locality compared to the previous year?"
+  - var chart = { data: {} }
+
+  - chart.data.a = [16,13,10,8,7,9,2,1,7] // 2015 GP
+  - chart.data.b = [30,7,15,7,10,6,1,2,6] // 2015 CL
+  - chart.data.c = [16,15,8,7,7,6,2,2,14] // 2018 GP
+  - chart.data.d = [37,12,10,9,6,4,2,1,10] // 2018 CL
+
+  - chart.data.axis = []
+  - chart.data.axis.push( "Land problems" )
+  - chart.data.axis.push( "Youth problems" )
+  - chart.data.axis.push( "Domestic violence" )
+  - chart.data.axis.push( "Fighting" )
+  - chart.data.axis.push( "Problems with animals" )
+  - chart.data.axis.push( "Drunkenness" )
+  - chart.data.axis.push( "Martial arts gangs" )
+  - chart.data.axis.push( "Theft" )
+  - chart.data.axis.push( "No serious problems" )
+
+  - max = Math.max(...chart.data.a, ...chart.data.b, ...chart.data.c, ...chart.data.d)
+
+mixin bar(v, c)
+  .bar(class=c)
+    .bar-inner(style=`width: ${v / max * 100}%`)
+      span.bar-label.txt-muted= v + "%"
+
+block page
+  #chart(data-view="match")
+    h1.txt-normal.txt-sans.txt-lg.txt-center= page.title
+    .row.clearfix.txt-bold.txt-semi.txt-sm
+      .column.txt-right 2015
+      .column.column-label &nbsp;
+      .column 2018
+
+    .chart-area
+      for item, i in chart.data.axis
+        .row.clearfix
+          .column
+            +bar(chart.data.a[i], "gp year-2015")
+            +bar(chart.data.b[i], "cl year-2015")
+          .column.txt-center.column-label= item
+          .column
+            +bar(chart.data.c[i], "gp year-2018")
+            +bar(chart.data.d[i], "cl year-2018")
+
+    .legend.txt-sm
+      .legend-key
+        .legend-key-box.gp
+        span.legend-key-label General public
+
+      .legend-key
+        .legend-key-box.cl
+        span.legend-key-label Community leaders
+
+  style
+    :sass
+      body
+        font-family: Sans, sans-serif
+        display: flex
+        font-size: 15px
+      h1
+        margin: 0 auto 0.5em
+        width: 600px
+      #chart
+        margin: auto
+        width: 736px
+        max-width: 100%
+        padding: 20px 0
+      .row
+        margin: 0 -0.5em
+        padding: 0 32px
+
+      .chart-area .row + .row .column-label
+        border-top: 1px solid #ccc
+      .column
+        float: left
+        padding: 0 0.5em
+        width: 36%
+        box-sizing: border-box
+        min-height: 1px
+
+      .column-label
+        width: 28%
+        height: 2.5em
+        margin: -0.25em 0 .25em
+        line-height: 1.1
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+      .bar
+        height: 1em
+        width: 100%
+
+        .bar-inner
+          height: 100%
+          position: relative
+
+        .bar-label
+          position: absolute
+          line-height: 17px
+          margin: 0 4px
+          font-size: 14px
+
+      .gp .bar-inner,
+      .gp.legend-key-box
+        background: #ff7b00
+      .cl .bar-inner,
+      .cl.legend-key-box
+        background: #ffba33
+
+      .year-2015 .bar-inner
+        margin-left: auto
+
+      .year-2015 .bar-label
+        right: 100%
+
+      .year-2018 .bar-label
+        left: 100%
+
+      .legend
+        display: flex
+        flex-direction: row
+        justify-content: center
+        margin: 1em auto
+        border-top: 1px solid #ccc
+        padding-top: 1em
+        flex-wrap: wrap
+        max-width: 480px
+
+      .legend-key
+        padding: 0 0.5em
+      .legend-key-box
+        width: 1em
+        height: 1em
+        display: inline-block
+        margin-right: 0.5em
+        position: relative
+        top: 0.1em
+
+      @media (max-width: 600px)
+        .column
+          width: 30%
+        .column-label
+          width: 40%
