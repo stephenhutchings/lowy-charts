@@ -1,5 +1,5 @@
 =font-face($name, $path, $weight, $style)
-  $path: "../fonts/william/#{$path}"
+  $path: "../fonts/#{$path}"
   @font-face
     font-family: "#{$name}"
     src: url("#{$path}.eot")
@@ -11,9 +11,10 @@ $weights: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold"
 
 @each $weight in $weights
   $i: index($weights, $weight)
-  +font-face("Sans", "William-#{$weight}", $i * 100, normal)
-  +font-face("Cond", "William-#{$weight}Condensed", $i * 100, normal)
-  +font-face("Semi", "William-#{$weight}SemiCondensed", $i * 100, normal)
-  +font-face("Wide", "William-#{$weight}Expanded", $i * 100, normal)
+  +font-face("Sans", "antipode/Antipode-#{$weight}", $i * 100, normal)
+  +font-face("Cond", "antipode/Antipode-#{$weight}Condensed", $i * 100, normal)
+  +font-face("Semi", "antipode/Antipode-#{$weight}SemiCondensed", $i * 100, normal)
+  +font-face("Wide", "antipode/Antipode-#{$weight}Expanded", $i * 100, normal)
 
-+font-face("Cond", "William-LightCondensedItalic", 200, italic)
++font-face("Cond", "william/William-LightCondensedItalic", 200, italic)
++font-face("Semi", "william/William-RegularSemiCondensedItalic", 400, italic)
