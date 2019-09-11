@@ -1,0 +1,49 @@
+extend /partials/layout
+
+include /partials/the-interpreter/bar-chart
+
+block append config
+  - page.title = "World's most stable economic growth rate"
+
+block page
+  .wrapper(
+    ontouchstart=""
+    class=written.hyphenCase(page.title)
+  )
+    +interpreter-bar-chart({
+      title: page.title,
+      subtitle: "Standard deviation of annual GDP growth rate (2002‑18)",
+      source: "World Bank/Paul Burke & Martin Siyaranamual",
+      yaxis: [0, 1, 2, 3],
+      precision: 3,
+      xaxis: [
+        "Indonesia",
+        "Australia",
+        "Vietnam",
+        "India",
+        "China",
+        "Median for all countries"
+      ],
+      unit: "",
+      values: [
+        [0.59733996],
+        [0.69312749],
+        [0.72753803],
+        [1.59679418],
+        [2.2079168],
+        [2.96274323]
+      ],
+      height: 300
+    })
+
+block scripts
+  style
+    :sass
+      @media (max-width: 370px)
+        .bar-group-label
+          margin-left: 0
+          transform-origin: left center
+          transform: rotate(30deg)
+
+        .chart-footer
+          padding-top: 30px
