@@ -39,6 +39,13 @@ block page
 block scripts
   style
     :sass
+      .bg:after
+        content: "percentage points"
+        position: absolute
+        left: 40px
+        top: -0.7em
+        width: 3em
+
       @media (max-width: 370px)
         .bar-group-label
           margin-left: 0
