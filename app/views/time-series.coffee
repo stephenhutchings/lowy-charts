@@ -15,11 +15,14 @@ module.exports =
       "click .year-link": "goToYear"
       "click .chart-title-label": "selectKey"
 
-    initialize: ->
+    initialize: (opts) ->
+      if opts.items
+        @data.items = @data[opts.items]
+
       @$elements =
         blocks:  {}
         labels:  {}
-        country: @$(".country")
+        item:    @$(".item")
         year:    @$(".year")
         years:   @$("#axis-years-list")
         scale:   @$("#scale-strokes")
@@ -27,8 +30,8 @@ module.exports =
         keys:    @$(".chart-title-label")
 
       for key in @data.keys
-        @$elements.blocks[key] = @$(".country-bar-block.#{key}")
-        @$elements.labels[key] = @$(".country-bar-label.#{key}")
+        @$elements.blocks[key] = @$(".item-bar-block.#{key}")
+        @$elements.labels[key] = @$(".item-bar-label.#{key}")
 
       @selectKey()
 
@@ -47,19 +50,38 @@ module.exports =
 
       lists =
         for key in @data.keys
-          _.chain(@data.countries)
-          .map((country, index) =>
+          _.chain(@data.items)
+          .map((item, index) =>
             {
-              name: country.name
+              name: item.name
               index
-              isEstimate: @data.scale[x] >= country.after
-              value: interpolate(country[key][x], country[key][y], p)
+              isEstimate: @data.scale[x] >= item.after
+              value: interpolate(item[key][x], item[key][y], p)
+              stack: @data.keys.reduce( (m, k) =>
+                m + interpolate(item[k][x], item[k][y], p)
+              , 0)
             })
-          .sortBy((c) -> if c.value? then -c.value else Infinity)
+          .sortBy((c) =>
+            if @data.stack
+              -c.stack
+            else
+              if c.value? then -c.value else Infinity
+          )
           .value()
 
       list = lists[@activeIndex]
       max = _.chain(lists).flatten().pluck("value").max().value()
+
+      if @data.stack
+        max = _.max(
+          lists[0]
+            .map((e, i) ->
+              val = e.value
+              for list in lists.slice(1)
+                val += list[i].value
+              return val
+            )
+          )
 
       length = @$elements.strokes.length
 
@@ -82,20 +104,29 @@ module.exports =
       @$elements.scale.css   transform: "scale3d(#{scale}, 1, 1)"
       @$elements.strokes.css transform: "scale3d(#{1 / scale}, 1, 1)"
 
+
+      transforms = []
+
       for l, i in lists
         key = @data.keys[i]
         for { value, index }, rank in l
           value ?= 0
-          pct    = value / max
+          pvalue = value
+
+          if @data.stack
+            transforms[rank] ?= 0
+            pvalue += transforms[rank]
+            transforms[rank] += pvalue
+
+          pct    = pvalue / max
           strlen = Math.round(value).toString().length
           @$elements.blocks[key].eq(index).css(
             transform: "translate3d(#{-100 + pct * 100}%, 0, 0)"
           )
-          #.toggleClass("show-label", pct * 100 > strlen + 2)
 
           if rank < @data.limit
             @$elements.labels[key].eq(index).html(
-              if value
+              if value >= 0
                 [@data.prefix, toThousands(value), @data.suffix].join("")
               else
                 "No Data"
@@ -108,14 +139,14 @@ module.exports =
             )
 
       for { value, index, isEstimate }, rank in list
-        @$elements.country.eq(index)
+        @$elements.item.eq(index)
           .toggleClass("estimate", isEstimate)
           .css
             transform: "translate3d(0, #{Math.min(rank, @data.limit) * 100}%, 0)"
             opacity: 1
 
         if rank >= @data.limit
-          @$elements.country.eq(index).css opacity: 0
+          @$elements.item.eq(index).css opacity: 0
 
     play: ->
       window.cancelAnimationFrame(@loop)

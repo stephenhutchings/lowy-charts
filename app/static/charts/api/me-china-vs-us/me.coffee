@@ -28,7 +28,7 @@ require.register "views/gdp-vs-me", (exports, require, module) ->
             name: country.name
             index
             values: for year, i in @data.scale
-              100 - country.me[i] / 1200  * 100
+              100 - country.me[i] / 1400  * 100
           }
         )
         .value()
@@ -133,6 +133,7 @@ require.register "views/gdp-vs-me", (exports, require, module) ->
       n = (@data.scale.length - 1)
       t = @$(e.currentTarget).data("index") / n
       @currentTime = r(t)
+      console.log @currentTime
       @playing = false
       @$el.removeClass("playing")
       window.setTimeout (=>

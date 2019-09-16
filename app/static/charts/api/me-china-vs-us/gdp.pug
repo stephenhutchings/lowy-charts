@@ -1,12 +1,13 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Military Expenditure – China vs US"
+  - page.title = "Gross Domestic Product – China vs US"
   - var chart  = data.getOne("static/charts/api/me-china-vs-us/data")
 
   //- Trimmed to match ME/GDP relative values
   - chart.scale = chart.scale.slice(10)
   - chart.countries.forEach(function(e){e.gdp = e.gdp.slice(10), e.me = e.me.slice(10)})
+  - chart.classes[0.4617105412258535] = "projected"
 
 block page
   script
@@ -15,6 +16,12 @@ block page
     #chart-title
       h1.chart-title-main 
         | Gross Domestic Product
+
+      small.chart-title-small.constant
+        | At current prices
+
+      small.chart-title-small.projected
+        | Forecast at current prices
 
     #countries
       .line-label.txt-cn(style={left: "3%", top: "82%"}) China
@@ -34,9 +41,9 @@ block page
           ])
 
     #axis-y
-      for n, i in new Array(11)
+      for n, i in new Array(12)
         .axis-label
-          .axis-label-text $#{(10 - i) * 3}T
+          .axis-label-text $#{(11 - i) * 3}T
     
     #axis-x
       for year, i in chart.scale
@@ -97,6 +104,31 @@ block css
     include:sass ../gdp-vs-ppp/style.sass
 
     :sass
+      #chart-legend
+        opacity: 0
+        transition: opacity 300ms
+        
+        .playing &
+          transition: opacity 800ms 1200ms
+
+        .projected &
+          opacity: 1
+
+      polyline.country.scenario-2,
+      .country-label.scenario-2
+        opacity: 0
+        transition: opacity 300ms
+
+        .playing &
+          transition: opacity 3000ms 2000ms
+
+        .projected &
+          opacity: 1
+
+      .chart-title-small
+        text-align: left
+        left: 0
+
       .line-label
         position: absolute
 
@@ -125,7 +157,7 @@ block css
         overflow: hidden
         top: 12px
         left: 80px
-        right: 140px
+        right: 80px
         bottom: 32px
         z-index: 1
 
@@ -134,7 +166,7 @@ block css
         left: 0
         right: 0
         bottom: 0
-        height: (3.5% * 30000 / 1200)
+        height: (3.5% * 33000 / 1200)
         z-index: 0
 
       #angle-label
@@ -214,7 +246,7 @@ block css
         position: absolute
         top: 12px
         left: 0
-        bottom: 32px
+        bottom: 33px
         width: 80px
         border-right: 1px solid #71798a
         text-align: right
@@ -239,7 +271,7 @@ block css
         position: absolute
         left: 80px
         right: 0
-        padding-right: 140px
+        padding-right: 80px
         bottom: 0
         height: 32px
         border-top: 1px solid #71798a
@@ -248,7 +280,7 @@ block css
         flex-direction: row
         flex-wrap: nowrap
 
-        &:before
+        // &:before
           content: ""
           position: absolute
           right: 61px
@@ -334,7 +366,7 @@ block customScripts
                   name: country.name
                   index
                   values: for year, i in @data.scale
-                    100 - country.gdp[i] / 30000  * 100
+                    100 - country.gdp[i] / 33000  * 100
                 }
               )
               .value()

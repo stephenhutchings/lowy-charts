@@ -11,7 +11,7 @@ block append config
 block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
-  #wrapper(data-view="time-series")
+  #wrapper(data-view="time-series" data-items="countries")
     #chart-title
       h1.chart-title-main GDP at current prices
 
@@ -19,17 +19,17 @@ block page
       for country in chart.countries
         - var p = country.gdp[0] / inOrder[0].gdp[0];
         - var r = inOrder.indexOf(country);
-        li.country(
+        li.item.country(
           style=`transform: translate3d(0, ${r * 100}%, 0)`
         )
           label.country-name= country.aka || country.name
           .country-bar
             for key, i in chart.keys
-              .country-bar-block(
+              .item-bar-block.country-bar-block(
                 style=`transform: translate3d(${-100 + p * 100}%, 0, 0)`
                 class=key
               )
-                .country-bar-label(class=key)
+                .item-bar-label.country-bar-label(class=key)
 
     #ranks
       #rank-list
@@ -59,7 +59,7 @@ block page
         svg.btn-icon(viewBox="0 0 24 24")
           rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
           rect.btn-icon-shape(x="16" y="0" width="8" height="24")
-      
+
       a#btn-end.btn(tabindex="0")
         svg.btn-icon(viewBox="0 0 24 24")
           rect.btn-icon-shape(x="16" y="0" width="8" height="24")

@@ -3,7 +3,7 @@ keys: ["gdp", "ppp"]
 scaleFactor: 1000
 prefix: "$"
 suffix: "&thinsp;B"
-duration: 80000
+duration: 45000
 limit: 20
 classes:
   0: "constant"

@@ -7,6 +7,7 @@ block append config
   //- Trimmed to match ME/GDP relative values
   - chart.scale = chart.scale.slice(10)
   - chart.countries.forEach(function(e){e.gdp = e.gdp.slice(10), e.me = e.me.slice(10)})
+  - chart.classes[0.4617105412258535] = "projected"
 
 block page
   script
@@ -14,10 +15,16 @@ block page
   #wrapper(data-view="gdp-vs-me")
     #chart-title
       h1.chart-title-main 
-        | Military Expenditure<br>
+        | Military Expenditure
+
+      small.chart-title-small.constant
+        | At current prices
+
+      small.chart-title-small.projected
+        | Forecast at current prices
 
     #countries
-      .line-label.txt-cn(style={left: "3%", top: "87%"}) China
+      .line-label.txt-cn(style={left: "3%", top: "82%"}) China
       .line-label.txt-us(style={left: "3%", top: "47%"}) US
 
       svg(
@@ -41,9 +48,9 @@ block page
           .country-label-text
 
     #axis-me
-      for n, i in new Array(13)
+      for n, i in new Array(15)
         .axis-label
-          .axis-label-text $#{(12 - i) * 100}B
+          .axis-label-text $#{(14 - i) * 100}B
     
     #axis-year
       for year, i in chart.scale
@@ -104,6 +111,10 @@ block css
     include:sass ../gdp-vs-ppp/style.sass
 
     :sass
+      .chart-title-small
+        text-align: left
+        left: 0
+
       .line-label
         position: absolute
 
@@ -122,7 +133,7 @@ block css
         position: absolute
         top: 12px
         left: 80px
-        right: 100px
+        right: 80px
         bottom: 32px
         z-index: 1
 
@@ -175,6 +186,27 @@ block css
 
         &.country-us
           stroke: #00fade
+
+      #chart-legend
+        opacity: 0
+        transition: opacity 300ms
+        
+        .playing &
+          transition: opacity 800ms 1200ms
+
+        .projected &
+          opacity: 1
+
+      polyline.country.scenario-2,
+      .country-label.scenario-2
+        opacity: 0
+        transition: opacity 300ms
+
+        .playing &
+          transition: opacity 3000ms 2000ms
+
+        .projected &
+          opacity: 1
 
       .country-label
         width: 100%
@@ -257,13 +289,13 @@ block css
         position: absolute
         top: 12px
         left: 0
-        bottom: 32px
+        bottom: 33px
         width: 80px
         border-right: 1px solid #71798a
         text-align: right
 
         .axis-label
-          height: (100% / 12)
+          height: (100% / 14)
           padding: 1px 0 0
           margin-bottom: -1px
 
@@ -282,7 +314,7 @@ block css
         position: absolute
         left: 80px
         right: 0
-        padding-right: 100px
+        padding-right: 80px
         bottom: 0
         height: 32px
         border-top: 1px solid #71798a
@@ -291,7 +323,7 @@ block css
         flex-direction: row
         flex-wrap: nowrap
 
-        &:before
+        // &:before
           content: ""
           position: absolute
           right: 61px

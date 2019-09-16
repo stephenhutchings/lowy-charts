@@ -2,14 +2,14 @@ extend /partials/layout
 
 block append config
   - page.title = "Military Expenditure"
-  - var chart  = data.getOne("static/charts/api/military-expenditure/1995-2023")
+  - var chart  = data.getOne("static/charts/api/military-expenditure/2005-2023")
   - var byValue = function(e){return -e.me[0]};
   - var inOrder = _.sortBy(chart.countries, byValue);
 
 block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
-  #wrapper(data-view="time-series")
+  #wrapper(data-view="time-series" data-items="countries")
     #chart-title
       h1.chart-title-main Military Expenditure
 
@@ -23,19 +23,19 @@ block page
       for country in chart.countries
         - var p = country.me[0] / inOrder[0].me[0];
         - var r = inOrder.indexOf(country);
-        li.country(
+        li.country.item(
           style=`transform: translate3d(0, ${r * 100}%, 0)`
           class=`country-${written.hyphenCase(country.aka || country.name)}`
         )
           label.country-name= country.aka || country.name
           .country-bar
             for key, i in chart.keys
-              .country-bar-block(
+              .country-bar-block.item-bar-block(
                 style=`transform: translate3d(${-100 + p * 100}%, 0, 0)`
                 class=key
               )
                 if i === 0
-                  .country-bar-label(class=key)
+                  .item-bar-label.country-bar-label(class=key)
 
     #ranks
       #rank-list
@@ -64,7 +64,7 @@ block page
         svg.btn-icon(viewBox="0 0 24 24")
           rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
           rect.btn-icon-shape(x="16" y="0" width="8" height="24")
-      
+
       a#btn-end.btn(tabindex="0")
         svg.btn-icon(viewBox="0 0 24 24")
           rect.btn-icon-shape(x="16" y="0" width="8" height="24")

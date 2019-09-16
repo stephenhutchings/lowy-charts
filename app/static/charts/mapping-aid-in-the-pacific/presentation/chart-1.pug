@@ -1,41 +1,54 @@
 extend /partials/layout
 
 block append config
-  - var chart  = data.getOne("static/charts/api/gdp-vs-ppp/data")
-  - var byValue = function(e){return -e.gdp[0]};
-  - var inOrder = _.sortBy(chart.countries, byValue);
-  - page.title = `GDP at current prices, top #{chart.limit} countries`
+  - var chart  = data.getOne("static/charts/mapping-aid-in-the-pacific/presentation/assets/data")
+  - var byValue = function(e){return e.grant ? -e.grant[0] : 0};
+  - var inOrder = _.sortBy(chart.items, byValue);
+  - page.title = "Foreign Assistance Spending to the Pacific (US current)"
 
 block page
+  - chart.keys = ["all"]
+  - chart.scaleFactor = 1000
+
+  for item in chart.items
+    - item.grant = item.grant || [0, 0, 0, 0, 0, 0, 0, 0]
+    - item.loan  = item.loan  || [0, 0, 0, 0, 0, 0, 0, 0]
+    - item.all = []
+
+    for key in ["grant", "loan"]
+      - prev = 0
+      for val, i in item[key]
+        - item[key][i] = val + prev
+        - prev += val
+
+    for val, i in item.grant
+      - item.grant[i] = item.grant[i] / 1000000
+      - item.loan[i] = item.loan[i] / 1000000
+      - item.all[i] = item.grant[i] + item.loan[i]
+
   script
     != `window.chart = ${JSON.stringify(chart)};`
-  #wrapper(data-view="time-series" data-items="countries")
+  #wrapper(data-view="time-series" data-values="items")
     #chart-title
-      h1.chart-title-main
-        | Gross Domestic Product
+      h1.chart-title-main= page.title
+      .chart-title-small Cumulative, 2011-2017
 
-      small.chart-title-small.constant
-        | At current prices
-
-      small.chart-title-small.projected
-        | Forecast at current prices
-
-    ul#axis-countries.list-bare
-      for country in chart.countries
-        - var p = country.gdp[0] / inOrder[0].gdp[0];
-        - var r = inOrder.indexOf(country);
-        li.item.country(
+    ul#axis-items.list-bare
+      for item in chart.items
+        - var p = item.grant[0] / inOrder[0].grant[0];
+        - var r = inOrder.indexOf(item);
+        li.item(
           style=`transform: translate3d(0, ${r * 100}%, 0)`
-          class=`country-${written.hyphenCase(country.aka || country.name)}`
+          class=`item-${written.hyphenCase(item.aka || item.name)}`
         )
-          label.country-name= country.aka || country.name
-          .country-bar
+          label.item-name= item.aka || item.name
+          .item-bar
             for key, i in chart.keys
-              .item-bar-block.country-bar-block(
+              .item-bar-block(
                 style=`transform: translate3d(${-100 + p * 100}%, 0, 0)`
                 class=key
               )
-                .item-bar-label.country-bar-label(class=key)
+                .item-bar-label(class=key)
 
     #ranks
       #rank-list
@@ -78,16 +91,10 @@ block page
               a.year-link(data-index=i)= year
 
     small#chart-source
-      | Source: IMF World Economic Outlook, October 2018
+      | Source: Lowy Institute Pacific Aid Map, September 2019
 
     a#chart-logo(href="https://www.lowyinstitute.org/")
       img(src="/img/lowyinstitute-logo.png")
-
-    legend#chart-legend
-      label.chart-title-label.gdp
-        | Market Exchange Rates
-      label.chart-title-label.ppp
-        | Purchasing Power Parity
 
 block css
   link(
@@ -98,25 +105,4 @@ block css
   )
 
   style
-    include:sass style.sass
-
-    :sass
-      .country-bar-block
-        .country-china &,
-        .country-united-states &,
-        .country-india &,
-        .country-japan &,
-        .country-germany &
-          background-color: #dbde00
-
-          &.ppp
-            color: #dbde00
-            background-color: rgba(#2c3441, 0.5)
-
-      .country-bar
-        .country-china &,
-        .country-united-states &,
-        .country-india &,
-        .country-japan &,
-        .country-germany &
-          color: #dbde00
+    include:sass assets/_style.sass
