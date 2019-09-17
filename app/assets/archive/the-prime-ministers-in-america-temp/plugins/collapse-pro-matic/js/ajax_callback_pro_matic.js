@@ -1,1 +1,0 @@
-collapse_init();
