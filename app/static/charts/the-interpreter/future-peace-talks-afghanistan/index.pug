@@ -1,0 +1,29 @@
+extend /partials/layout
+
+include /partials/the-interpreter/bar-chart
+
+block append config
+  - page.title = "Percentage wanting Australian aid focused foremost on helping people in developing countries"
+
+block page
+  .wrapper(
+    ontouchstart=""
+    class=written.hyphenCase(page.title)
+  )
+    +interpreter-bar-chart({
+      yaxis: [0,500,1000,1500],
+      xaxis: [
+        "Deaths",
+        "Injuries"
+      ],
+      unit: "",
+      values: [
+        [[717], [531], [118]],
+        [[680], [1437], [329]]
+      ],
+      legend: [
+        "Afghan Government, International Military, Pro‑Government",
+        "Anti‑Government (Taliban, Daesh et al.)",
+        "Cross‑Fire Other"
+      ]
+    })

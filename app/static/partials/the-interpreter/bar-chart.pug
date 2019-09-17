@@ -49,13 +49,10 @@ mixin interpreter-bar-chart(data)
                     }
                   )
 
-
-
               .bar-group-label= data.xaxis[j]
 
               if data.highlights[j]
                 .bar-group-highlight-label!= data.highlights[j]
-
 
     if data.legend || data.source
       .chart-footer
@@ -68,7 +65,7 @@ mixin interpreter-bar-chart(data)
 
         if data.source
           .source.txt-muted.txt-xs
-            | Source:
+            | Source:&nbsp;
             = data.source
 
 block append css

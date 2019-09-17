@@ -4,6 +4,9 @@ body
   justify-content: center
   align-items: center
   font-family: Sans, sans-serif
+  width: 1px
+  min-width: 100%
+  *width: 100%
 
 .wrapper
   position: relative
@@ -143,11 +146,19 @@ body
 
 .bar-0 .bar-rect,
 .legend .bar-0
-  background: #ff9400
+  background: #ff9f19
 
 .bar-1 .bar-rect,
 .legend .bar-1
   background: #31363c
+
+.bar-2 .bar-rect,
+.legend .bar-2
+  background: #b5ada8
+
+.bar-3 .bar-rect,
+.legend .bar-3
+  background: #ff5e00
 
 .chart:hover .bar-group .bar-rect
   opacity: 0.4
@@ -192,14 +203,15 @@ body
 
   li
     display: inline-block
-    margin: 2px 16px 2px 0
+    position: relative
+    margin: 2px 16px 2px 24px
 
   .bar
     width: 16px
     height: 16px
-    position: static
-    float: left
-    margin: 1px 8px 0 0
+    position: absolute
+    top: 0
+    left: -24px
 
 .legend,
 .source
@@ -248,9 +260,6 @@ body
     left: -32px
     right: -32px
     bottom: -36px
-
-  .legend .bar
-    margin-top: 2px
 
   .bar-group-highlight-label
     left: -24px
