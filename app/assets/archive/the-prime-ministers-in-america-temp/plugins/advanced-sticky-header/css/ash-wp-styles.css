@@ -1,0 +1,37 @@
+.ash-wp-options-form {
+	background: #ffffff;
+	box-shadow: -9px 9px 15px rgba(2, 2, 2, 0.1);
+}
+
+.ash-wp-options-form th {
+	border: 1px solid #F1F1F1;
+    padding-left: 18px !important;
+    color: #D4065C !important;
+	width: 150px !important;
+}
+
+.ash-wp-options-form td {
+	border: 1px solid #F1F1F1;
+	border-right: none;
+}
+
+.ash-wp-options-form .button-primary {
+	background: #D4065C;
+    border: none !important;
+    margin-left: 15px;
+    font-size: 14px;
+    padding: 9px 15px;
+    height: auto;
+    text-transform: uppercase;
+    box-shadow: none;
+    display: block;
+    text-shadow: none;
+}
+
+.ash-wp-options-form .button-primary:active,
+.ash-wp-options-form .button-primary:hover,
+.ash-wp-options-form .button-primary:focus {
+	background: #F10366;
+	border: none !important;
+	box-shadow: none !important;
+}
