@@ -828,8 +828,7 @@ blockquote {
   }
 
   #pm_links .collapseomatic {
-    width: 33.333%;
-    white-space: nowrap
+    width: 25%;
   }
 
   .pm_slider_wide {
@@ -864,3 +863,8 @@ blockquote {
 
 }
 
+@media screen and (max-width:600px) {
+  #pm_links .collapseomatic {
+    width: 33.333%;
+  }
+}
