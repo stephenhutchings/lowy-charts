@@ -158,7 +158,7 @@ p a:hover {
 
 @media all and (max-width:897px) {
   body {
-    padding-top: 0
+    padding-top: 64px;
   }
 
   .container {
@@ -267,6 +267,11 @@ a {
 }
 
 .lowy_header {
+  z-index: 9999;
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 0px;
   height: 80px;
   background-color: #002a45
 }
@@ -811,8 +816,7 @@ blockquote {
   }
 
   .lowy_header {
-    height: auto !important;
-    background-color: #002a45
+    height: 64px !important
   }
 
   .lesson_info {
