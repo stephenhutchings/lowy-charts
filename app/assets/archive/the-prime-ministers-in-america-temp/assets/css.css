@@ -751,6 +751,9 @@ blockquote {
     padding-bottom: 10px
   }
 
+  #wpfront-scroll-top-container {
+    right: 32px;
+  }
 }
 
 @media screen and (max-width:900px) {
@@ -866,6 +869,13 @@ blockquote {
 @media screen and (max-width:600px) {
   #pm_links .collapseomatic {
     width: 33.333%;
+  }
+
+  .pm_width {
+    width: auto;
+    padding: 1.5em;
+    margin: 0;
+    background: #fff;
   }
 
   .pm_width iframe {
