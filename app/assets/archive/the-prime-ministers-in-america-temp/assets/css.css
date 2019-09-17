@@ -464,7 +464,7 @@ a {
 }
 
 #pm_links .collapseomatic {
-  width: 14.2857142857%;  /* width: 16.667%; */
+  width: 14.2857142857%;
   display: block;
   float: left;
   white-space: nowrap;
@@ -756,6 +756,10 @@ blockquote {
 }
 
 @media screen and (max-width:900px) {
+  #wpfront-scroll-top-container {
+    display: none !important;
+  }
+
   .article_header {
     height: 60vh
   }
@@ -826,8 +830,7 @@ blockquote {
   }
 
   #pm_links .collapseomatic {
-    width: 25%;
-    display: inline;
+    width: 33.333%;
     white-space: nowrap
   }
 
