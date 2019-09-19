@@ -2,7 +2,7 @@ scale: [2011, 2012, 2013, 2014, 2015, 2016, 2017]
 keys: ["grant", "loan"]
 scaleFactor: 1000000000
 stack: true
-suffix: "&thinsp;B"
+suffix: "&thinsp;M"
 prefix: "$"
 duration: 20000
 limit: 20

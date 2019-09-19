@@ -1,3 +1,12 @@
+$bg-color: #2d3440
+$g: transparent
+$steps: 10
+@for $i from 1 to $steps
+  $g: append($g, rgba($bg-color, $i/$steps) percentage($i / $steps), comma)
+  $g: append($g, rgba($bg-color, $i/$steps) percentage(($i + 1) / $steps), comma)
+
+$g: append($g, $bg-color)
+
 html, body
   height: 100%
   box-sizing: border-box
@@ -33,10 +42,11 @@ body
     content: ""
     position: absolute
     top: 0
-    left: 0
+    left: 70%
     right: 0
     bottom: 0
-    background: linear-gradient(to right, rgba(#2d3440, 0) 40%, #2d3440)
+    background: linear-gradient(to right, rgba(#2d3440, 0), #2d3440)
+    // background: linear-gradient(to right, $g)
     pointer-events: none
 
 #axis-items,

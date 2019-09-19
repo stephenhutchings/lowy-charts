@@ -63,7 +63,7 @@ block page
         for n, i in new Array(25)
           .scale-stroke(style={opacity: (25 - i) / 25})
             span.scale-stroke-label
-              | $#{written.prettyNumber(i * 1000)}&thinsp;B
+              | $#{written.prettyNumber(i)}&thinsp;B
 
     #controls
       a#btn-reset.btn(tabindex="0")
