@@ -85,7 +85,11 @@ block page
           for vals, donor in chart.donors
             - var i = donors.indexOf(donor)
             - var y = ys1[i], h = ys1[i+1] - y - gap
-            g(data-id=donor data-link=donor data-list=chart.recipients.join("!"))
+            g(
+              data-id=donor
+              data-link=donor
+              data-list=_.compact(chart.recipients.map((r, i)=> chart.donors[donor][i] > 0 ? r : null )).join("!")
+            )
               rect.bg(
                 x=0 y=y-12
                 height=h+12 width="50%"
@@ -100,7 +104,11 @@ block page
         g(transform="translate(-12 0)")
           for recipient, i in chart.recipients
             - var y = ys2[i], h = ys2[i+1] - y - gap, y0 = 0;
-            g(data-id=recipient data-link=recipient data-list=donors.join("!"))
+            g(
+              data-id=recipient
+              data-link=recipient
+              data-list=_.compact(donors.map((d)=>chart.donors[d][i] > 0 ? d : null)).join("!")
+            )
               rect.bg(
                 x="50%" y=y-12
                 height=h+12 width="50%"
@@ -121,7 +129,7 @@ block page
               style={top: `${ys1[i]*(100/480)}%`, height: `${(ys1[i+1]-ys1[i])*(100/480)}%`}
               data-id=donor
               data-link=donor
-              data-list=chart.recipients.join("!")
+              data-list=_.compact(chart.recipients.map((r, i)=> chart.donors[donor][i] > 0 ? r : null )).join("!")
             )
               span!= donor.replace(/-/g, "&#8209;").replace("/", " / ")
 
@@ -131,7 +139,7 @@ block page
               style={top: `${ys2[i]*(100/480)}%`, height: `${(ys2[i+1]-ys2[i])*(100/480)}%`}
               data-id=recipient
               data-link=recipient
-              data-list=donors.join("!")
+              data-list=_.compact(donors.map((d)=>chart.donors[d][i] > 0 ? d : null)).join("!")
             )
               span!= recipient.replace(/-/g, "&#8209;").replace("/", " / ")
 
@@ -214,6 +222,9 @@ block append css
       .inactive
         rect
           fill: #ccc
+
+      .label.inactive
+        color: #969ba4
 
       @media (max-width: 720px)
         svg,
