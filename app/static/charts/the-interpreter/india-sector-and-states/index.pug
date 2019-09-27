@@ -10,9 +10,9 @@ block page
       include india.svg
 
     .cols.clearfix
-      .col.col-left.flex-stretch
+      .col.col-left.flex.flex-col
         strong.label.txt-uppercase States
-        ul.list-bare
+        ul.list-bare.flex-grow
           for k, i in chart.states
             if k.active
               li.list-item
@@ -21,9 +21,9 @@ block page
                   data-list=k.sectors.join(" ")
                 )= k.name
 
-      .col.col-right.flex-stretch
+      .col.col-right.flex.flex-col
         strong.label.txt-uppercase Sectors
-        ul.list-bare
+        ul.list-bare.flex-grow
           for k, i in chart.sectors
             li.list-item
               a.button(
