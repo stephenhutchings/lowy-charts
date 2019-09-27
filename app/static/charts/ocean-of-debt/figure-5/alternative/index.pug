@@ -117,7 +117,7 @@ block page
       #labels
         #labels-list-donors
           for donor, i in donors
-            .label.txt-muted(
+            .label(
               style={top: `${ys1[i]*(100/480)}%`, height: `${(ys1[i+1]-ys1[i])*(100/480)}%`}
               data-id=donor
               data-link=donor
@@ -127,7 +127,7 @@ block page
 
         #labels-list-recipients
           for recipient, i in chart.recipients
-            .label.txt-muted(
+            .label(
               style={top: `${ys2[i]*(100/480)}%`, height: `${(ys2[i+1]-ys2[i])*(100/480)}%`}
               data-id=recipient
               data-link=recipient
@@ -165,7 +165,7 @@ block append css
         left: 50%
         transform: translateX(-50%)
         line-height: 14px
-        font-size: 13px
+        font-size: 15px
         pointer-events: none
 
       #labels-list-donors
@@ -184,7 +184,7 @@ block append css
       .label
         position: absolute
         width: 100%
-        padding: 0 4px 12px
+        padding: 0 6px 12px
         box-sizing: border-box
         display: flex
         flex-direction: column
