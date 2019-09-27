@@ -6,8 +6,9 @@ block append config
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
 block page
-  .wrapper.flex.flex-col
-    .col-wrap.txt-center.flex-grow.flex
+  .wrapper.flex.flex-col.txt-center
+    .page-title.pv-sm= page.title
+    .col-wrap.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
         - scale = chart.scale
@@ -65,7 +66,7 @@ block page
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
 
         .chart-title= chart.title
-        .chart-subtitle.txt-muted!= chart.subtitle
+          .txt-muted!= chart.subtitle
 
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
@@ -119,7 +120,7 @@ block page
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item
 
-    .notes.txt-muted
+    .notes.txt-muted.txt-left
       !=page.notes
 
 
@@ -152,17 +153,9 @@ block append css
       .chart-content > svg
         border-bottom: 1px solid #ccc
 
-      .chart-title,
-      .chart-subtitle
-        padding: 0 24px
-
-
       .chart-title
         max-width: 320px
         margin: auto
-
-      .chart-subtitle
-        height: 0
 
       .legend
         font-size: 15px
@@ -184,7 +177,7 @@ block append css
 
       text
         font-size: 14px
-        fill: #4b4f56
+        fill: currentColor
 
       svg
         overflow: visible
@@ -198,7 +191,7 @@ block append css
 
       .notes
         padding: 16px 20px 0
-        font-size: 15px
+        font-size: 14px
         line-height: 1.2
         position: absolute
         top: 100%

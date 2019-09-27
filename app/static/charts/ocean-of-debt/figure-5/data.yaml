@@ -1,13 +1,12 @@
 title: >
   Figure 5: Cumulative loan flows by creditor-borrower
 
-
 source: >
   Source: authors, Lowy Institute Pacific Aid Map
 
 charts:
   -
-    title: Total disbursements, 2011-2017
+    subtitle: Disbursements, 2011-2016
 
     colors:
       - "#002a45"

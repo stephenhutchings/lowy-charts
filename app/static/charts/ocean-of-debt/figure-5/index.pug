@@ -6,7 +6,7 @@ block append config
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
 block page
-  .wrapper.flex.flex-col
+  .wrapper.flex.flex-col.txt-center
     - chart = page.charts[0]
     - chart.series.forEach((s) => s.total = _.sum(_.pluck(s.values, "value")))
     - total = _.sum(_.pluck(chart.series, "total"))
@@ -18,8 +18,9 @@ block page
     - laf = 0
     - fx = (t, r) => Math.cos(rad(t)) * r
     - fy = (t, r) => Math.sin(rad(t)) * r
-    .chart-title
-      = chart.title
+
+    .chart-title= page.title
+    .chart-subtitle.txt-muted.txt-sm= chart.subtitle
 
     svg(
       x="50%" y="50%"
@@ -168,10 +169,6 @@ block append css
           border-bottom: 1px solid #ccc
           height: 20px
           min-height: 100%
-
-      .chart-title
-        max-width: 320px
-        margin: auto
 
       text
         font-size: 14px

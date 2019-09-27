@@ -9,8 +9,8 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       - chart = page.charts[0]
-      .chart-title= chart.title
-      .chart-subtitle.txt-muted= chart.subtitle
+      .chart-title= page.title
+      .chart-subtitle.txt-muted.txt-sm= chart.subtitle
 
       .chart.flex-grow: .chart-content
         - scale = chart.scale
@@ -110,7 +110,7 @@ block append css
 
       text
         font-size: 14px
-        fill: #4b4f56
+        fill: currentColor
 
       svg
         overflow: visible

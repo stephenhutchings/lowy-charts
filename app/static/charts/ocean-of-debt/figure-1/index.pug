@@ -6,8 +6,9 @@ block append config
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
 block page
-  .wrapper.flex
-    .col-wrap.txt-center.flex-grow.flex
+  .wrapper.flex.flex-col
+    .page-title.txt-center.pv-sm= page.title
+    .col-wrap.txt-center.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
         .chart-title= chart.title
@@ -139,7 +140,7 @@ block append css
 
       text
         font-size: 14px
-        fill: #4b4f56
+        fill: currentColor
 
       svg
         overflow: visible

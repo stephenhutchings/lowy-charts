@@ -14,8 +14,8 @@ block page
         - fx = (i) => (i + 0.25) / (chart.axes[1].values.length)
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
 
-        .chart-title= chart.title
-        .chart-subtitle.txt-muted= chart.subtitle
+        .chart-title= page.title
+        .chart-subtitle.txt-muted.txt-sm= chart.subtitle
 
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
@@ -97,10 +97,6 @@ block append css
       .chart-subtitle
         padding: 0 24px
 
-      .chart-title
-        max-width: 320px
-        margin: auto
-
       .legend
         font-size: 15px
         margin: auto
@@ -121,7 +117,7 @@ block append css
 
       text
         font-size: 14px
-        fill: #4b4f56
+        fill: currentColor
 
       svg
         overflow: visible

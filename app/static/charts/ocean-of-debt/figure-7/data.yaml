@@ -7,7 +7,6 @@ source: >
 
 charts:
   -
-    title: China dominates loans to high risk countries
     subtitle: Total lending by IMF debt risk rating at commitment, 2011-2017
 
     scale:

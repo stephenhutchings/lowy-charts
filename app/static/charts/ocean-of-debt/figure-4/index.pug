@@ -7,7 +7,10 @@ block append config
 
 block page
   .wrapper.flex.flex-col
-    .col-wrap.txt-center.flex-grow.flex
+
+    .txt-center.pv-sm= page.title
+
+    .col-wrap.txt-center.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
         - scale = chart.scale
@@ -15,7 +18,6 @@ block page
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
 
         .chart-title= chart.title
-        .chart-subtitle.txt-muted!= chart.subtitle
 
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
@@ -73,7 +75,6 @@ block page
         - fy = (y, s) => (y - scale.minY[s]) / (scale.maxY[s] - scale.minY[s])
 
         .chart-title= chart.title
-        .chart-subtitle.txt-muted!= chart.subtitle
 
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
@@ -201,7 +202,7 @@ block append css
 
       text
         font-size: 14px
-        fill: #4b4f56
+        fill: currentColor
 
       svg
         overflow: visible

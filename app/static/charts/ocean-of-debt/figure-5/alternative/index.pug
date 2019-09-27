@@ -1,8 +1,8 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Total disbursements, 2011-2017"
   - var chart = data.getOne("static/charts/ocean-of-debt/figure-5/alternative/data")
+  - page.title = chart.title
   - var f1 = 0.566, f2 = 0.7, gap = 12, donors = Object.keys(chart.donors)
   - var total = _.max(_.map(chart.donors, _.sum))
 
@@ -12,7 +12,9 @@ block page
       for value, v in donor
         - donor[v] = value/total * 100
 
-    .chart-title.txt-center=page.title
+    .txt-center
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted= chart.subtitle
 
     .chart
       svg(width=480 height=480)
@@ -159,7 +161,7 @@ block append css
       #wrapper, .chart
         position: relative
 
-      .chart-title
+      .chart-subtitle
         margin-bottom: 20px
 
       .bg

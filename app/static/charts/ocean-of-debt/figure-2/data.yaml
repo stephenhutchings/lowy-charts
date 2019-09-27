@@ -5,7 +5,6 @@ source: >
   Source: authors, International Monetary Fund, Asian Development Bank
 charts:
   -
-    title: Pacific economic growth is more volatile than fast
     subtitle: "% change in real GDP, 2000-2017"
     scale:
       minY:  0

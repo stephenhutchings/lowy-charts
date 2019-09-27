@@ -1,11 +1,14 @@
 title: >
-  Figure 3: Debt sustainability risks are worsening in the Pacific
+  Figure 6: China is not yet overly dominant as a creditor
+
 source: >
-  Source: authors, International Monetary Fund, World Bank
+  Source: authors, government budget documents, International Monetary Fund
+
+notes: >
+  * Most recent available figures
 charts:
   -
-    title: Worsening debt risks in the Pacific
-    subtitle: IMF debt risk ratings
+    subtitle: Share of total debt by creditor*, Pacific borrowers
     scale:
       minY: 0
       maxY: 100
@@ -14,8 +17,8 @@ charts:
     legend:
       - China
       - MDBs
-      - Private creditors
       - Other external
+      - Private creditors
 
     colors:
       - "#ff4f1d"
@@ -36,9 +39,9 @@ charts:
       -
         title: Number
         values:
-          - [0.564999358, 0.284254335, 0.122885892, 0.027860415]
-          - [0.395, 0.477, 0.018, 0.11]
-          - [0.323, 0.269, 0.138, 0.27]
-          - [0.229027963, 0.742343542, 0, 0.005326232]
-          - [0.1, 0.1, 0.72,  0.08]
-          - [0.074181947, 0.194846335, 0.686742226, 0.044229492]
+          - [0.564999358, 0.284254335, 0.027860415, 0.122885892]
+          - [0.395, 0.477, 0.11, 0.018]
+          - [0.323, 0.269, 0.27, 0.138]
+          - [0.229027963, 0.742343542, 0.005326232, 0]
+          - [0.1, 0.1, 0.08, 0.72,]
+          - [0.074181947, 0.194846335, 0.044229492, 0.686742226]
