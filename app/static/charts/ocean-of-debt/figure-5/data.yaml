@@ -1,0 +1,106 @@
+title: >
+  Figure 5: Cumulative loan flows by creditor-borrower
+
+
+source: >
+  Source: authors, Lowy Institute Pacific Aid Map
+
+charts:
+  -
+    title: Total disbursements, 2011-2017
+
+    colors:
+      - "#002a45"
+      - "#ff4f1d"
+      - "#539ed4"
+      - "#2D6993"
+      - "#b7c1ce"
+
+    series:
+      -
+        name: ADB
+        values:
+          - name: Cook Islands
+            value: 38861636.31
+          - name: Fiji
+            value: 113012288.71
+          - name: Kiribati
+            value: 15592633.10
+          - name: Marshall Islands
+            value: 14872846.47
+          - name: Micronesia
+            value: 7752981.47
+          - name: Regional
+            value: 4101350.41
+          - name: Palau
+            value: 38105719.43
+          - name: PNG
+            value: 723706144.64
+          - name: Samoa
+            value: 52998253.79
+          - name: Solomon Islands
+            value: 15411125.70
+          - name: Tonga
+            value: 6271121.31
+          - name: Vanuatu
+            value: 11227726.15
+      -
+        name: PRC
+        values:
+          - name: Cook Islands
+            value: 3894553.55
+          - name: Fiji
+            value: 249749626.41
+          - name: PNG
+            value: 407643218.88
+          - name: Samoa
+            value: 121855199.22
+          - name: Tonga
+            value: 36069000.00
+          - name: Vanuatu
+            value: 124126605.27
+      -
+        name: World Bank
+        values:
+          - name: Fiji
+            value: 53562963.00
+          - name: PNG
+            value: 182647580.00
+          - name: Samoa
+            value: 27817719.80
+          - name: Tonga
+            value: 10334328.00
+          - name: Vanuatu
+            value: 23415567.00
+      -
+        name: Japan
+        values:
+          - name: Micronesia
+            value: 18444323.76
+          - name: PNG
+            value: 53628545.79
+          - name: Samoa
+            value: 37463210.70
+          - name: Vanuatu
+            value: 64480052.85
+      -
+        name: Others
+        values:
+          - name: Kiribati
+            value: 18886868.00
+          - name: Marshall Islands
+            value: 4000000.00
+          - name: Palau
+            value: 10000000.00
+          - name: Samoa
+            value: 8815996.00
+          - name: Solomon Islands
+            value: 11377452.65
+          - name: Vanuatu
+            value: 11892470.00
+          - name: PNG
+            value: 12232442.00
+          - name: Samoa
+            value: 7710612.18
+          - name: Regional
+            value: 5719898.31

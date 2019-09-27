@@ -1,0 +1,61 @@
+title: >
+  Figure 2: Pacific economic growth is more volatile than fast
+
+source: >
+  Source: authors, International Monetary Fund, Asian Development Bank
+charts:
+  -
+    title: Pacific economic growth is more volatile than fast
+    subtitle: "% change in real GDP, 2000-2017"
+    scale:
+      minY:  0
+      maxY: 10
+    axes:
+      -
+        title: Countries
+        values:
+          - Micronesia
+          - Palau
+          - Tonga
+          - Fiji
+          - Marshall Islands
+          - Tuvalu
+          - Kiribati
+          - Cook Islands
+          - Samoa
+          - Vanuatu
+          - Solomon Islands
+          - PNG
+          - Nauru
+      -
+        title: Average annual growth
+        values:
+          - 0.543506071
+          - 1.332079564
+          - 1.536928827
+          - 1.857788647
+          - 1.903865747
+          - 1.977506027
+          - 2.132828447
+          - 2.592458965
+          - 2.60623777
+          - 2.794491598
+          - 2.804674754
+          - 3.956188403
+          - 5.15629366
+      -
+        title: Annual standard deviation
+        values:
+          - 2.653401128
+          - 4.556879622
+          - 1.832577869
+          - 2.279236092
+          - 2.532967806
+          - 4.750716693
+          - 3.310746789
+          - 4.056077502
+          - 3.604723494
+          - 3.336150674
+          - 6.855328892
+          - 4.470968631
+          - 8.284247317

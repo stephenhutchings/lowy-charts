@@ -1,0 +1,91 @@
+title: >
+  Figure 3: Debt sustainability risks are worsening in the Pacific
+notes: >
+  Notes: 1. For Fiji, Palau, and Nauru, the IMF uses a slightly different
+  ratings system for higher income countries where it simply rates their debt
+  outlook as “sustainable” rather than “unsustainable”. Even so, the IMF
+  assessments make clear that there is little-to-no room for further borrowing
+  in these countries. 2. Debt-GDP ratios are calculated as the simple average
+  of debt-ratios for individual Pacific countries in each grouping.
+source: >
+  Source: authors, International Monetary Fund, World Bank
+charts:
+  -
+    title: Worsening debt risks in the Pacific
+    subtitle: IMF debt risk ratings
+    scale:
+      minY:  0
+      maxY: 12
+
+    legend:
+      - Low
+      - Sustainable<sup>1</sup>
+      - Moderate
+      - High
+      - No rating
+
+    colors:
+      - "#002a45"
+      - "#539ed4"
+      - "#ffae00"
+      - "#ff4f1d"
+      - "#b7c1ce"
+
+    axes:
+      -
+        title: Year
+        values:
+          - 2011
+          - 2012
+          - 2013
+          - 2014
+          - 2015
+          - 2016
+          - 2017
+          - 2018
+      -
+        title: Number
+        values:
+          - [1, 2, 2, 2, 5]
+          - [1, 2, 2, 3, 4]
+          - [1, 2, 2, 5, 2]
+          - [1, 3, 2, 5, 1]
+          - [1, 2, 4, 4, 1]
+          - [2, 1, 4, 4, 1]
+          - [3, 0, 3, 6, 0]
+          - [3, 0, 3, 6, 0]
+  -
+    title: Rising debt for China borrowers
+    subtitle: General government debt<sup>2</sup> (% of GDP)
+    scale:
+      minY:  0
+      maxY: 50
+    legend:
+      - China borrowers with deteriorating debt risk
+      - Other Pacific economies
+    colors:
+      - "#002a45"
+      - "#539ed4"
+    axes:
+      -
+        title: Years
+        values:
+          - 2011
+          - 2012
+          - 2013
+          - 2014
+          - 2015
+          - 2016
+          - 2017
+          - 2018
+      -
+        title: China debt % of GDP
+        values:
+          - [30.1285, 47.485625]
+          - [34.01975, 40.96]
+          - [37.02, 38.58375]
+          - [38.66375, 38.6745]
+          - [45.38525, 37.27525]
+          - [47.01875, 34.650375]
+          - [47.5215, 32.837375]
+          - [47.775, 31.58775]

@@ -1,0 +1,232 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/ocean-of-debt/figure-4/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex.flex-col
+    .col-wrap.txt-center.flex-grow.flex
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - fx = (i, len) => (i) / (len - 1)
+        - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted!= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in new Array(scale.ticks)
+                - y = 1 - (i / (scale.ticks - 1))
+                svg(y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    if i > 0
+                      | $
+                      = written.prettyNumber(scale.minY + (i/(scale.ticks - 1)) * (scale.maxY - scale.minY))
+                    else
+                      | –
+
+            svg(width="100%" y="100%")
+              for year, i in chart.axes[0].values
+                svg(x=toPercent(fx(i, chart.axes[1].values.length)))
+                  text(
+                    text-anchor="middle"
+                    transform="translate(0 20)"
+                  )
+                    = year
+
+            svg(
+              width="100%"
+              height="100%"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            )
+              for item, ii in chart.legend
+                - var i = chart.legend.length - ii
+                path(
+                  fill=chart.colors[i - 1]
+                  d="M" + (chart.axes[1].values.map((y, ix, a) => (
+                    [
+                      100 * fx(ix, a.length),
+                      100 * fy(scale.maxY - _.sum(y.slice(0,i)) * 0.000001)
+                    ].join(" ")
+                  )
+                  ).concat(["100 100", "0 100"])
+                  ).join("L") + "Z"
+                )
+
+        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+          for item, i in chart.legend
+            li.legend-item
+              span.legend-item-box(style=`background:${chart.colors[i]}`)
+              span.legend-item-label!= item
+
+
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[1]
+        - scale = chart.scale
+        - fx = (i, len) => (i + 0.5) / (len)
+        - fy = (y, s) => (y - scale.minY[s]) / (scale.maxY[s] - scale.minY[s])
+
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted!= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          svg(height="100%" width="100%")
+            svg(height="100%" width="100%")
+              for j in [0,1]
+                for n, i in new Array(6)
+                  - y = 1 - (i / 5)
+                  if j == 0
+                    svg(y=toPercent(y))
+                      text(text-anchor="end" transform="translate(-8 4)")
+                        = scale.minY[j] + (i/5) * (scale.maxY[j] - scale.minY[j])
+                        | %
+                  else
+                    svg(y=toPercent(y) x="100%")
+                      text(transform="translate(8 4)")
+                        = scale.minY[j] + (i/5) * (scale.maxY[j] - scale.minY[j])
+                        | %
+
+            svg(width="100%" y="100%")
+              for year, i in chart.axes[0].values
+                svg(x=toPercent(fx(i, chart.axes[1].values.length)))
+                  text(
+                    text-anchor="middle"
+                    transform="translate(0 20)"
+                  )
+                    = year
+
+            svg(
+              width="100%"
+              height="100%"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            )
+              for item, i in chart.legend
+                polyline(
+                  fill="none"
+                  stroke=chart.colors[i]
+                  points=(chart.axes[1].values.map((y, ix, a) => (
+                    [
+                      100 * fx(ix, a.length),
+                      100 * fy(scale.maxY[item.scale] - y[i], item.scale)
+                    ].join(" ")
+                  ))).join(",")
+                )
+
+            for item, i in chart.legend
+              g
+                for val, ix in chart.axes[1].values
+                  circle(
+                    r=6
+                    cx=toPercent(fx(ix, chart.axes[1].values.length))
+                    cy=toPercent(fy(scale.maxY[item.scale] - val[i],item.scale))
+                    fill=chart.colors[i]
+                  )
+
+        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+          for item, i in chart.legend
+            li.legend-item
+              span.legend-item-box(style=`background:${chart.colors[i]}`)
+              span.legend-item-label!= item.name
+
+    .notes.txt-muted
+      !=page.notes
+
+
+block append css
+  style
+    :sass
+      .wrapper
+        height: 400px
+        overflow: visible
+        position: relative
+
+      .col-wrap
+        margin: 0 -1em
+
+      .col-md
+        padding: 0 1em
+        width: 50%
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 32px
+        right: 32px
+        bottom: 32px
+
+      .chart-content > svg
+        border-bottom: 1px solid #ccc
+
+      .chart-title,
+      .chart-subtitle
+        padding: 0 24px
+
+      .chart-title
+        max-width: 320px
+        margin: auto
+
+      .chart-subtitle
+        height: 0
+
+      .legend
+        font-size: 15px
+        max-width: 240px
+        margin: auto
+        min-height: 3.2em
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-left: 24px
+        position: relative
+        flex: 1 0 0%
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: 4px
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 14px
+        fill: #4b4f56
+
+      svg
+        overflow: visible
+
+      sup
+        line-height: 0
+
+      polyline
+        vector-effect: non-scaling-stroke
+        stroke-width: 4
+
+      .notes
+        padding: 16px 20px 0
+        font-size: 15px
+        line-height: 1.2
+        position: absolute
+        top: 100%
+
+      @media screen and (max-width: 600px)
+        .notes
+          padding-top: 0
+        .col-wrap
+          display: block
+          height: 100%
+        .col-md
+          width: 100%
+          height: 50%
+          padding-bottom: 8px

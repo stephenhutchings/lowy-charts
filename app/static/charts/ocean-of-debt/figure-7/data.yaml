@@ -1,0 +1,47 @@
+title: >
+  Figure 7: China dominates loans to high risk countries
+
+source: >
+  Source: authors, Lowy Institute Pacific Aid Map, International Monetary Fund,
+  World Bank
+
+charts:
+  -
+    title: China dominates loans to high risk countries
+    subtitle: Total lending by IMF debt risk rating at commitment, 2011-2017
+
+    scale:
+      minY: 0
+      maxY: 100
+      ticks: 6
+
+    legend:
+      - ADB
+      - World Bank Group
+      - Japan
+      - China
+      - Taiwan
+      - Other
+
+    colors:
+      - "#002a45"
+      - "#2D6993"
+      - "#539ed4"
+      - "#ff4f1d"
+      - "#ffae00"
+      - "#b7c1ce"
+
+    axes:
+      -
+        title: Risk
+        values:
+          - Countries at low risk
+          - Countries at moderate risk
+          - Countries at high risk
+      -
+        title: Number
+        values:
+          - [0.357773343, 0.131119738, 0.082173787, 0.418604845, 0, 0.010328286]
+          - [0.572659784, 0.13475327,  0.087588467, 0.204998479, 0, 0]
+          - [0.093839406, 0, 0, 0.725610792, 0.17514512,  0.005404682]
+

@@ -1,0 +1,86 @@
+title: >
+  Figure 4: Official financing to the Pacific in decline and becoming less
+  concessional
+
+source: >
+  Source: authors, Lowy Institute Pacific Aid Map
+
+charts:
+  -
+    title: In current US dollars (millions)
+    scale:
+      minY: 0
+      maxY: 3000
+      ticks: 7
+
+    legend:
+      - Grants
+      - Loans
+      - Other
+
+    colors:
+      - "#002a45"
+      - "#539ed4"
+      - "#b7c1ce"
+
+    axes:
+      -
+        title: Year
+        values:
+          - 2011
+          - 2012
+          - 2013
+          - 2014
+          - 2015
+          - 2016
+          - 2017
+      -
+        title: Number
+        values:
+          - [ 2121206354, 175626706, 69274789  ]
+          - [ 2049054577, 233328837, 64283684  ]
+          - [ 2019578389, 487956538, 72189681  ]
+          - [ 1963658824, 392495726, 98091260  ]
+          - [ 1935494555, 439902788, 94812463  ]
+          - [ 1709656633, 424423680, 99166270  ]
+          - [ 1909023502, 393947786, 121245685 ]
+  -
+    title: As a share of regional GDP
+    scale:
+      minY: [0,0]
+      maxY: [10,5]
+    legend:
+      - name: Total
+        scale: 0
+      - name: Grants
+        scale: 0
+      - name: Loans (RHS)
+        scale: 1
+      - name: Other (RHS)
+        scale: 1
+    colors:
+      - "#002a45"
+      - "#539ed4"
+      - "#ff4f1d"
+      - "#b7c1ce"
+    axes:
+      -
+        title: Years
+        values:
+          - 2011
+          - 2012
+          - 2013
+          - 2014
+          - 2015
+          - 2016
+          - 2017
+      -
+        title: China debt % of GDP
+        values:
+          - [9.1, 8.19, 0.68, 0.27]
+          - [7.9, 6.89, 0.78, 0.22]
+          - [8.6, 6.73, 1.63, 0.24]
+          - [7.6, 6.10, 1.22, 0.30]
+          - [8.4, 6.56, 1.49, 0.32]
+          - [7.6, 5.85, 1.45, 0.34]
+          - [7.5, 5.9,  1.2,  0.4,]

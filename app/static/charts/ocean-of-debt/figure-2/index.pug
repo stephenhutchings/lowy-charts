@@ -1,0 +1,126 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/ocean-of-debt/figure-2/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      - chart = page.charts[0]
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted= chart.subtitle
+
+      .chart.flex-grow: .chart-content
+        - scale = chart.scale
+        - ln = chart.axes[1].values.length
+        - fx = (i) => (i + 0.5) / (ln + 0.5)
+        - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+        svg(height="100%" width="100%")
+          svg(height="100%")
+            for n, i in new Array(6)
+              - y = 1 - (i / 5)
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = scale.minY + (i/5) * (scale.maxY - scale.minY)
+
+          g
+            for y1, i in chart.axes[1].values
+              - y2 = chart.axes[2].values[i]
+              - label = chart.axes[0].values[i]
+              svg(
+                x=toPercent(fx(i))
+                y=toPercent(0)
+                width=toPercent(fx(0))
+                height="100%"
+              )
+                g.bars
+                  rect(
+                    width="50%"
+                    y=toPercent(fy(chart.scale.maxY - y1))
+                    height=toPercent(fy(y1))
+                    fill="#002a45"
+                  )
+                  rect(
+                    width="50%"
+                    x="50%"
+                    y=toPercent(fy(chart.scale.maxY - y2))
+                    height=toPercent(fy(y2))
+                    fill="#539ed4"
+                  )
+
+                svg(x="50%" y="100%")
+                  text(
+                    text-anchor="end"
+                    transform="rotate(-40) translate(-4 12)"
+                  )
+                    =label
+
+      ul.legend.list-bare.txt-left.flex.flex-ch
+        li.legend-item
+          span.legend-item-box(style="background:#002a45")
+          span.legend-item-label= chart.axes[1].title
+        li.legend-item
+          span.legend-item-box(style="background:#539ed4")
+          span.legend-item-label= chart.axes[2].title
+
+block append css
+  style
+    :sass
+      .wrapper
+        height: 400px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 32px
+        right: 32px
+        bottom: 80px
+
+      .chart-content > svg
+        border-bottom: 1px solid #ccc
+
+      .chart-title,
+      .chart-subtitle
+        padding: 0 24px
+
+      .chart-subtitle
+        height: 0
+
+      .legend
+        font-size: 15px
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-left: 24px
+        position: relative
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: 4px
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 14px
+        fill: #4b4f56
+
+      svg
+        overflow: visible
+
+      @media (max-width: 600px)
+        .legend
+          flex-direction: column
+        .legend-item
+          width: 180px
+        .chart-content
+          right: 0
+        .bars
+          transform: scaleX(1.3)

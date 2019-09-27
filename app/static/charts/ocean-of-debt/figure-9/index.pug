@@ -1,0 +1,163 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/ocean-of-debt/figure-9/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      - chart = page.charts[0]
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted= chart.subtitle
+
+      .chart.flex-grow: .chart-content
+        - scale = chart.scale
+        - ln = chart.axes[1].values.length
+        - fy = (i) => (i + 0.25) / (ln)
+        - fx = (x) => (x - scale.minX) / (scale.maxX - scale.minX)
+        - fw = (x) => Math.abs(x) / (scale.maxX - scale.minX)
+        svg(height="100%" width="100%")
+          for group, i in chart.groups
+            - last = i == chart.groups.length - 1
+            - end = last ? ln : chart.groups[i + 1].start
+
+            svg(
+              y=toPercent((group.start) / ln)
+              height=toPercent((end - group.start) / ln)
+              data-end=end
+            )
+              svg.label(y="50%" width="40%")
+                text
+                  for str, i in group.name.split("\n")
+                    tspan(y=(i - 1) * 16 x=0)= str
+
+              if !last
+                line(y1="100%" y2="100%" x2="100%" stroke="#ccc")
+
+
+          g
+            for xs, i in chart.axes[1].values
+              - label = chart.axes[0].values[i]
+              - x0 = 0
+              - minx = 0
+              svg(
+                x=toPercent(0)
+                y=toPercent(fy(i))
+                width="100%"
+                height=toPercent(fy(0.25))
+              )
+                g.bars
+                  for x, j in xs
+                    - tx = x > 0 ? x0 : x
+                    rect(
+                      width=toPercent(fw(x))
+                      x=toPercent(fx(tx))
+                      height="100%"
+                      fill=chart.colors[j]
+                    )
+                    - if (x > 0) x0 += x
+                    - minx = Math.min(minx, tx)
+
+                svg(x=toPercent(fx(minx)) y="100%")
+                  text(
+                    y=-2 x=-8
+                    text-anchor="end"
+                  )
+                    = label
+
+          //- Scale
+          svg.scale(y="100%")
+            for n, i in new Array(scale.ticks)
+              - x = (i / (scale.ticks - 1))
+              - n = (scale.minX + (i/(scale.ticks - 1)) * (scale.maxX - scale.minX))
+              svg(x=toPercent(x))
+                text(text-anchor="middle" y=16)
+                  = n
+
+              if n == 0
+                line.scale-line(
+                  x1=toPercent(x) x2=toPercent(x)
+                  y1="-100%" y2=0
+                )
+
+              if n == 50
+                line.scale-line.scale-line-dashed(
+                  x1=toPercent(x) x2=toPercent(x)
+                  y1="-100%" y2=0
+                  stroke-dasharray="4 2"
+                )
+
+      ul.legend.list-bare.txt-left.flex.flex-ch
+        for item, i in chart.legend
+          li.legend-item
+            span.legend-item-box(style=`background:${chart.colors[i]}`)
+            span.legend-item-label!= item
+
+block append css
+  style
+    :sass
+      .wrapper
+        height: 480px
+
+      .chart
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 32px
+        right: 32px
+        bottom: 32px
+
+      .chart-title,
+      .chart-subtitle
+        padding: 0 24px
+
+      .legend
+        font-size: 15px
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-left: 24px
+        position: relative
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: 4px
+        height: 1em
+        width: 1em
+        background: black
+
+      .scale-line
+        stroke: rgba(#000, 0.2)
+
+      .scale-line-dashed
+        stroke: rgba(#000, 0.5)
+
+      text
+        font-size: 14px
+        fill: #4b4f56
+
+      svg
+        overflow: visible
+
+      @media (max-width: 600px)
+        .legend
+          flex-wrap: wrap
+          justify-content: flex-start
+          max-width: 380px
+          margin: auto
+        .label text
+          transform: translateY(-50px)
+        .legend-item
+          flex: 1 0 50%
+          box-sizing: border-box
+          margin: 0
+        .chart-content
+          left: 12px
+          right: 12px
+        .bars
+          transform: scaleY(1.3) translateY(-2px)

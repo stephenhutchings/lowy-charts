@@ -1,0 +1,44 @@
+title: >
+  Figure 3: Debt sustainability risks are worsening in the Pacific
+source: >
+  Source: authors, International Monetary Fund, World Bank
+charts:
+  -
+    title: Worsening debt risks in the Pacific
+    subtitle: IMF debt risk ratings
+    scale:
+      minY: 0
+      maxY: 100
+      ticks: 6
+
+    legend:
+      - China
+      - MDBs
+      - Private creditors
+      - Other external
+
+    colors:
+      - "#ff4f1d"
+      - "#002a45"
+      - "#2D6993"
+      - "#539ed4"
+
+    axes:
+      -
+        title: Year
+        values:
+          - Tonga
+          - Samoa
+          - Vanuatu
+          - Cook Islands
+          - Fiji
+          - PNG
+      -
+        title: Number
+        values:
+          - [0.564999358, 0.284254335, 0.122885892, 0.027860415]
+          - [0.395, 0.477, 0.018, 0.11]
+          - [0.323, 0.269, 0.138, 0.27]
+          - [0.229027963, 0.742343542, 0, 0.005326232]
+          - [0.1, 0.1, 0.72,  0.08]
+          - [0.074181947, 0.194846335, 0.686742226, 0.044229492]

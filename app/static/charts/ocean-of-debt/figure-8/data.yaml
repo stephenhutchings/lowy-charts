@@ -1,0 +1,45 @@
+title: >
+  Figure 8: China's lending pattern follows others but not by enough
+
+
+
+source: >
+  Source: authors, International Monetary Fund, Asian Development Bank
+charts:
+  -
+    title: China's lending pattern follows others but not by enough
+    subtitle: Share of total loans by creditor and recipient IMF debt risk rating
+    scale:
+      minY:  0
+      maxY: 0.6
+      ticks: 7
+
+    colors:
+      - "#b7c1ce"
+      - "#002a45"
+      - "#539ed4"
+      - "#ffae00"
+      - "#ff4f1d"
+
+    legend:
+      - No rating
+      - Sustainable
+      - Low risk
+      - Moderate risk
+      - High risk
+
+    axes:
+      -
+        title: Lenders
+        values:
+          - ADB
+          - World Bank
+          - Japan
+          - China
+      -
+        title: Risk
+        values:
+          - [0.098648686, 0.068748972, 0.366328116, 0.454167015, 0.012107212]
+          - [0, 0.179875392, 0.456632638, 0.363491969, 0]
+          - [0, 0, 0.547764794, 0.452235206, 0]
+          - [0.004598357, 0.26015253, 0.460180851, 0.174554706, 0.100513555]

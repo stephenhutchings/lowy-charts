@@ -1,0 +1,41 @@
+title: >
+  Figure 10: China is providing more grants to the Pacific
+source: >
+  Source: Lowy Institute Pacific Aid Map
+charts:
+  -
+    title: "China is providing more grants to the Pacific"
+    subtitle: Annual grant flows, current USD millions
+    scale:
+      minY:  0
+      maxY: 140
+      ticks: 8
+    legend:
+      - Committed
+      - Spent
+    colors:
+      - "#002a45"
+      - "#539ed4"
+    axes:
+      -
+        title: Years
+        values:
+          - 2011
+          - 2012
+          - 2013
+          - 2014
+          - 2015
+          - 2016
+          - 2017
+          - 2018
+      -
+        title: China debt % of GDP
+        values:
+          - [ 41.83069663, 20.94663129 ]
+          - [ 29.558,  23.26550667 ]
+          - [ 49.88567753, 46.58751087 ]
+          - [ 86.44575471, 52.70250267 ]
+          - [ 91.15118539, 55.68702841 ]
+          - [ 110.5404559, 77.46494822 ]
+          - [ 108.9553643, 63.86672156 ]
+          - [ 119.4624294, 93.30484639 ]
