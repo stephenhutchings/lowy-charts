@@ -42,7 +42,7 @@ block page
                 order[i] <= order[i-1] ? "left" : "right",
                 !e.highlight ? "top" : "bottom",
                 `item-${order[i]}`,
-                _.includes([1,2,15,16,17,18,19,20], i) ? "spaced" : "middle",
+                _.includes([0,1,2,15,16,17,18,19,20], i) ? "spaced" : "middle",
                 e.highlight ? "highlight" : ""
               ].join(" ")
               data-i=_.sortBy(events, "start").indexOf(e)

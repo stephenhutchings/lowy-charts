@@ -1,4 +1,5 @@
 $blue: #539fd5
+$orange: #f90
 
 *
   box-sizing: border-box
@@ -6,7 +7,6 @@ $blue: #539fd5
 body
   font-size: 15px
   line-height: 1.2
-  font-family: Sans, sans-serif
 
 #controls
   position: absolute
@@ -210,6 +210,9 @@ body
     border-color: $blue
     z-index: 3
 
+    .context-interpreter &
+      border-color: $orange
+
     .event-year
       color: inherit
       font-weight: bold
@@ -218,16 +221,12 @@ body
       background: $blue
       transform: scale(1)
 
+      .context-interpreter &
+        background: $orange
+
     .event-text
       opacity: 1
       transform: translate3d(0, -50%, 0)
-
-  &.active.highlight
-    border-color: orange
-
-    .event-marker,
-    .event-text
-      background: orange
 
   &.middle
     .event-marker
@@ -299,8 +298,8 @@ body
   z-index: 1
   text-align: center
 
-  .highlight &
-    background: orange
+  .context-interpreter &
+    background: $orange
 
 #pager
   display: none
