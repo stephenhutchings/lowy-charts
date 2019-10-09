@@ -27,7 +27,7 @@ block page
                     = scale.minY + (i/(scale.ticks-1)) * (scale.maxY - scale.minY)
                     | %
 
-            g.y-axis
+            g
               for vals, i in chart.axes[1].values
                 svg(
                   x=toPercent(fx(i))
@@ -45,9 +45,19 @@ block page
                       fill=chart.colors[vals.length - i - 1]
                     )
 
+                    if val > 6
+                      text.chart-value(
+                        y=toPercent(y + fy(val) / 2)
+                        x="50%"
+                        text-anchor="middle"
+                        transform="translate(0 4)"
+                        fill=i > 1 ? "#fff" : ""
+                      )
+                        = val.toFixed(1)
+
                     - y += fy(val)
 
-                  svg(x="50%" y="100%")
+                  svg.y-axis(x="50%" y="100%")
                     text(
                       transform="translate(0 20)"
                       text-anchor="middle"
@@ -60,8 +70,11 @@ block page
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item
 
-    .notes.txt-muted
+    .chart-notes.txt-muted.txt-center
       !=page.notes
+
+    .chart-source.txt-muted.txt-center
+      !=page.source
 
 block append css
   style
@@ -116,7 +129,9 @@ block append css
 
       text
         font-size: 14px
-        fill: currentColor
+
+        &:not([fill])
+          fill: currentColor
 
       svg
         overflow: visible
@@ -124,8 +139,20 @@ block append css
       sup
         line-height: 0
 
-      .notes
+      .chart-notes,
+      .chart-source
         font-size: 14px
+
+      .chart-notes
+        margin-top: 16px
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 1
+
 
       @media screen and (max-width: 480px)
         .chart-content

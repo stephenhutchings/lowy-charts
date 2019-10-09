@@ -27,10 +27,7 @@ block page
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
                     if i > 0
-                      | $
-                      = written.prettyNumber(scale.minY + (i/(scale.ticks - 1)) * (scale.maxY - scale.minY))
-                    else
-                      | –
+                      = (scale.minY + (i/(scale.ticks - 1)) * (scale.maxY - scale.minY))
 
             svg(width="100%" y="100%")
               for year, i in chart.axes[0].values
@@ -95,7 +92,7 @@ block page
 
             svg(width="100%" y="100%")
               for year, i in chart.axes[0].values
-                svg(x=toPercent(fx(i, chart.axes[1].values.length)))
+                svg.hover-hide(x=toPercent(fx(i, chart.axes[1].values.length)))
                   text(
                     text-anchor="middle"
                     transform="translate(0 20)"
@@ -124,11 +121,31 @@ block page
               g
                 for val, ix in chart.axes[1].values
                   circle(
-                    r=6
+                    r=5
                     cx=toPercent(fx(ix, chart.axes[1].values.length))
-                    cy=toPercent(fy(scale.maxY[item.scale] - val[i],item.scale))
+                    cy=toPercent(fy(scale.maxY[item.scale] - val[i], item.scale))
                     fill=chart.colors[i]
                   )
+                  svg.chart-value(
+                    x=toPercent(fx(ix, chart.axes[1].values.length))
+                    y=toPercent(fy(scale.maxY[item.scale] - val[i], item.scale))
+                  )
+                    //- circle(fill=chart.colors[i] r=12)
+                    rect(
+                      y=(i % 2 == 0 ? -12 : 24) - 12
+                      height=14
+                      width=24
+                      x=-12
+                      fill="#fff"
+                    )
+                    text(
+                      y=(i % 2 == 0 ? -12 : 24)
+                      xy=4
+                      text-anchor="middle"
+                      fill=chart.colors[i]
+                    )
+                      = val[i].toFixed(1)
+
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
           for item, i in chart.legend
@@ -136,8 +153,11 @@ block page
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item.name
 
-    .notes.txt-muted
+    .chart-notes.txt-muted
       !=page.notes
+
+    .chart-source.txt-muted
+      !=page.source
 
 
 block append css
@@ -202,7 +222,9 @@ block append css
 
       text
         font-size: 14px
-        fill: currentColor
+
+        &:not([fill])
+          fill: currentColor
 
       svg
         overflow: visible
@@ -214,15 +236,36 @@ block append css
         vector-effect: non-scaling-stroke
         stroke-width: 4
 
-      .notes
+      .chart-notes
         padding: 16px 20px 0
         font-size: 15px
         line-height: 1.2
         position: absolute
         top: 100%
 
+      .chart-source
+        font-size: 14px
+        max-width: max-content
+        margin: 12px auto 0
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        &.txt-fff
+          fill: #fff
+
+        .chart:hover &
+          opacity: 1
+
+      .hover-hide
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 0
+
       @media screen and (max-width: 600px)
-        .notes
+        .chart-notes
           padding-top: 0
         .col-wrap
           display: block

@@ -1,34 +1,38 @@
 title: >
   Figure 3: Debt sustainability risks are worsening in the Pacific
+
 notes: >
-  Notes: 1. For Fiji, Palau, and Nauru, the IMF uses a slightly different
-  ratings system for higher income countries where it simply rates their debt
-  outlook as “sustainable” rather than “unsustainable”. Even so, the IMF
-  assessments make clear that there is little-to-no room for further borrowing
-  in these countries. 2. Debt-GDP ratios are calculated as the simple average
-  of debt-ratios for individual Pacific countries in each grouping.
+  Notes: 1. For Fiji, Palau, and Nauru, the IMF uses a ratings system for
+  higher-income countries where it simply rates their debt outlook as
+  “sustainable” rather than “unsustainable”. 2. Debt-to-GDP ratios are calculated
+  as the simple average of debt ratios for individual Pacific countries in each
+  grouping.
+
 source: >
-  Source: authors, International Monetary Fund, World Bank
+  Source: Authors’ calculations; IMF; World Bank
+
 charts:
   -
-    title: Worsening debt risks in the Pacific
+    title: >
+      Panel A: Worsening debt risks in the Pacific
+
     subtitle: IMF debt risk ratings
     scale:
       minY:  0
       maxY: 12
 
     legend:
-      - Low
       - Sustainable<sup>1</sup>
-      - Moderate
-      - High
+      - Low risk
+      - Moderate risk
+      - High risk
       - No rating
 
     colors:
       - "#002a45"
-      - "#539ed4"
+      - "#16b56f"
       - "#ffae00"
-      - "#ff4f1d"
+      - "#ff1f2f"
       - "#b7c1ce"
 
     axes:
@@ -46,16 +50,18 @@ charts:
       -
         title: Number
         values:
-          - [1, 2, 2, 2, 5]
-          - [1, 2, 2, 3, 4]
-          - [1, 2, 2, 5, 2]
-          - [1, 3, 2, 5, 1]
-          - [1, 2, 4, 4, 1]
+          - [2, 1, 2, 2, 5]
+          - [2, 1, 2, 3, 4]
+          - [2, 1, 2, 5, 2]
+          - [3, 1, 2, 5, 1]
           - [2, 1, 4, 4, 1]
-          - [3, 0, 3, 6, 0]
-          - [3, 0, 3, 6, 0]
+          - [1, 2, 4, 4, 1]
+          - [0, 3, 3, 6, 0]
+          - [0, 3, 3, 6, 0]
   -
-    title: Rising debt for China borrowers
+    title: >
+      Panel B: Rising debt for China borrowers
+
     subtitle: General government debt<sup>2</sup> (% of GDP)
     scale:
       minY:  0

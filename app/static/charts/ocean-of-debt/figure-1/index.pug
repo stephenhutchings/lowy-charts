@@ -91,6 +91,13 @@ block page
                     height="100%"
                   )
 
+                  text.chart-value(
+                    x="50%"
+                    y=-8
+                    text-anchor="middle"
+                  )
+                    = y.toFixed(1)
+
                   svg(x="50%" y="100%")
                     text(
                       text-anchor="end"
@@ -98,6 +105,17 @@ block page
                       class=label.highlight ? "txt-bold" : ""
                     )
                       =label.text
+
+            svg(y="50%")
+              text(
+                text-anchor="middle"
+                y=-36
+                transform="rotate(-90)"
+              )
+                = chart.axes[1].title
+
+    .chart-source.txt-muted
+      != page.source
 
 block append css
   style
@@ -137,6 +155,18 @@ block append css
 
       .chart-subtitle
         height: 0
+
+      .chart-source
+        font-size: 14px
+        max-width: 800px
+        margin: 12px 8px 0
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 1
 
       text
         font-size: 14px

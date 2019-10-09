@@ -2,14 +2,13 @@ title: >
   Figure 9: Illustrative scenarios for Pacific debt sustainability to 2024
 
 source: >
-  Source: authors, International Monetary Fund, Asian Development Bank
+  Source: Authors’ calculations; Lowy Institute Pacific Aid Map; IMF; ADB
 
 notes: >
-  Notes: 1. Based on IMF World Economic Outlook; 2. Based on BAU bilateral
+  Notes: 1. Based on *IMF World Economic Outlook*; 2. Based on BAU bilateral
   Chinese lending/borrowing for existing debtors and assumed similar average
   rates for potential new borrowers; 3. Based on A$1.5 billion lending target
-  over 10 years to countries with sufficient debt space. Source: authors,
-  Pacific Aid Map, International Monetary Fund, Asian Development Bank
+  over ten years to countries with sufficient debt space.
 
 charts:
   -
@@ -23,7 +22,7 @@ charts:
     colors:
       - "#002a45"
       - "#539ed4"
-      - "#ff4f1d"
+      - "#ff1f2f"
       - "#ffae00"
 
     legend:

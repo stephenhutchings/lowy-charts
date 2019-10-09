@@ -1,10 +1,16 @@
 title: >
-  Figure 8: China's lending pattern follows others but not by enough
+  Figure 8: China’s lending pattern follows others but not by enough
 
-
+notes: >
+  Notes: 1. For Fiji, Palau, and Nauru, the IMF uses a ratings system for
+  higher-income countries where it simply rates their debt outlook as
+  “sustainable” rather than “unsustainable”. 2. Debt-to-GDP ratios are calculated
+  as the simple average of debt ratios for individual Pacific countries in each
+  grouping.
 
 source: >
-  Source: authors, International Monetary Fund, Asian Development Bank
+  Source: Authors’ calculations; Lowy Institute Pacific Aid Map; IMF; World Bank
+
 charts:
   -
     title: China's lending pattern follows others but not by enough
@@ -17,9 +23,9 @@ charts:
     colors:
       - "#b7c1ce"
       - "#002a45"
-      - "#539ed4"
+      - "#16b56f"
       - "#ffae00"
-      - "#ff4f1d"
+      - "#ff1f2f"
 
     legend:
       - No rating

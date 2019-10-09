@@ -1,11 +1,18 @@
 title: >
-  Figure 1: The Pacific is among those most vulnerable to BRI-related debt problems
+  Figure 1: Pacific countries are among those most vulnerable to BRI-related debt problems
 
 source: >
-  Source: government documents and International Monetary Fund for Pacific countries, Cerutti and Zhou (2018) for others
+  Source: Government documents and IMF for Pacific countries; Eugenio Cerutti and
+  Haonan Zhou, “The Chinese Banking System: Much More than a Domestic Giant”,
+  VoxEU.org, 9 February 2018, https://voxeu.org/article/chinese-banking-system
+  for all other countries
+
 charts:
   -
-    title: Chinese lending is more intense as a share of GDP in smaller economies
+    title: >
+      Panel A: Chinese lending is more intense as a share of GDP in smaller
+      economies
+
     scale:
       minX: -5
       maxX:  5
@@ -16,7 +23,7 @@ charts:
     intercept: 5.68937325
     axes:
       -
-        title: "China debt (% of GDP)"
+        title: "Debt owed to China (% of GDP)"
         values:
           - 3.809352469
           - 3.683058195
@@ -90,7 +97,7 @@ charts:
           - -3.900806456
 
       -
-        title: Borrower GDP
+        title: GDP of borrowing country
         values:
           - 9.529628053
           - 6.775196285
@@ -164,8 +171,10 @@ charts:
           - 12.0259048
 
   -
-    title: Three Pacific countries are among those most heavily indebted to China
-    subtitle: China debt (% of GDP)
+    title: >
+      Panel B: Three Pacific countries are among those most heavily indebted
+      to China
+
     scale:
       minY:  0
       maxY: 50
@@ -187,7 +196,7 @@ charts:
           - text: Togo
           - text: Mozambique
       -
-        title: China debt % of GDP
+        title: "Debt owed to China (% of GDP)"
         values:
           - 45.12121201
           - 34.23020172

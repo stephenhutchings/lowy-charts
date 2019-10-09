@@ -2,13 +2,13 @@ title: >
   Figure 6: China is not yet overly dominant as a creditor
 
 source: >
-  Source: authors, government budget documents, International Monetary Fund
+  Source: Authors’ calculations; government budget documents; IMF
 
 notes: >
-  * Most recent available figures
+  Note: Most recent available figures
 charts:
   -
-    subtitle: Share of total debt by creditor*, Pacific borrowers
+    subtitle: Share of total debt by creditor, Pacific borrowers
     scale:
       minY: 0
       maxY: 100
@@ -16,15 +16,19 @@ charts:
 
     legend:
       - China
-      - MDBs
+      - ADB
+      - World Bank Group
+      - Japan
       - Other external
-      - Private creditors
+      - Domestic
 
     colors:
-      - "#ff4f1d"
+      - "#ff1f2f"
       - "#002a45"
       - "#2D6993"
       - "#539ed4"
+      - "#ffae00"
+      - "#b7c1ce"
 
     axes:
       -
@@ -39,9 +43,9 @@ charts:
       -
         title: Number
         values:
-          - [0.564999358, 0.284254335, 0.027860415, 0.122885892]
-          - [0.395, 0.477, 0.11, 0.018]
-          - [0.323, 0.269, 0.27, 0.138]
-          - [0.229027963, 0.742343542, 0.005326232, 0]
-          - [0.1, 0.1, 0.08, 0.72,]
-          - [0.074181947, 0.194846335, 0.044229492, 0.686742226]
+          - [0.564999358, 0.147391137, 0.136863198, 0, 0.027860415, 0.122885892]
+          - [0.395, 0.225, 0.252, 0.082, 0.028, 0.018]
+          - [0.323, 0.146, 0.123, 0.193, 0.077, 0.138]
+          - [0.229027963, 0.742343542, 0, 0, 0.028628495, 0]
+          - [0.1, 0.07, 0.03, 0, 0.08, 0.72]
+          - [0.074181947, 0.154513144, 0.040333191, 0.011671985, 0.032557507, 0.686742226]

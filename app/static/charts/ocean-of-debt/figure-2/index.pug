@@ -42,6 +42,14 @@ block page
                     height=toPercent(fy(y1))
                     fill="#002a45"
                   )
+                  text.chart-value(
+                    x="50%"
+                    y=toPercent(fy(chart.scale.maxY - y1))
+                    text-anchor="end"
+                    transform="translate(-8 -8)"
+                  )
+                    = y1.toFixed(1)
+
                   rect(
                     width="50%"
                     x="50%"
@@ -49,6 +57,12 @@ block page
                     height=toPercent(fy(y2))
                     fill="#539ed4"
                   )
+                  text.chart-value(
+                    x="50%"
+                    y=toPercent(fy(chart.scale.maxY - y2))
+                    transform="translate(8 -8)"
+                  )
+                    = y2.toFixed(1)
 
                 svg(x="50%" y="100%")
                   text(
@@ -57,13 +71,17 @@ block page
                   )
                     =label
 
-      ul.legend.list-bare.txt-left.flex.flex-ch
-        li.legend-item
-          span.legend-item-box(style="background:#002a45")
-          span.legend-item-label= chart.axes[1].title
-        li.legend-item
-          span.legend-item-box(style="background:#539ed4")
-          span.legend-item-label= chart.axes[2].title
+      .row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          li.legend-item
+            span.legend-item-box(style="background:#002a45")
+            span.legend-item-label= chart.axes[1].title
+          li.legend-item
+            span.legend-item-box(style="background:#539ed4")
+            span.legend-item-label= chart.axes[2].title
+
+        .chart-source.txt-muted.txt-sm
+          != page.source
 
 block append css
   style
@@ -94,6 +112,7 @@ block append css
 
       .legend
         font-size: 15px
+        margin-bottom: 8px
 
       .legend-item
         margin: 4px 8px 0
@@ -108,12 +127,22 @@ block append css
         width: 1em
         background: black
 
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 1
+
       text
         font-size: 14px
         fill: currentColor
 
       svg
         overflow: visible
+
+      .chart-source
+        font-size: 14px
 
       @media (max-width: 600px)
         .legend

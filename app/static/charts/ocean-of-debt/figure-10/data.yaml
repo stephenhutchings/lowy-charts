@@ -1,11 +1,13 @@
 title: >
   Figure 10: China is providing more grants to the Pacific
+
 source: >
   Source: Lowy Institute Pacific Aid Map
+
 charts:
   -
     title: "China is providing more grants to the Pacific"
-    subtitle: Annual grant flows, current USD millions
+    subtitle: Annual grant flows, current US$ millions
     scale:
       minY:  0
       maxY: 140

@@ -45,6 +45,17 @@ block page
                       fill=chart.colors[vals.length - i - 1]
                     )
 
+                    if val > 6
+                      text.chart-value(
+                        y=toPercent(y + fy(val) / 2)
+                        x="50%"
+                        text-anchor="middle"
+                        transform="translate(0 4)"
+                        fill=i > 1 ? "#fff" : ""
+                      )
+                        = val.toFixed(1)
+
+
                     - y += fy(val)
 
                   svg(x="50%" y="100%")
@@ -63,6 +74,9 @@ block page
             li.legend-item
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item
+
+    .chart-source.txt-muted.txt-center
+      !=page.source
 
 block append css
   style
@@ -86,7 +100,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 32px
+        left: 40px
         right: 32px
         bottom: 32px
 
@@ -117,7 +131,9 @@ block append css
 
       text
         font-size: 14px
-        fill: currentColor
+
+        &:not([fill])
+          fill: currentColor
 
       svg
         overflow: visible
@@ -127,6 +143,17 @@ block append css
 
       .show-sm
         display: none
+
+      .chart-source
+        font-size: 14px
+        margin-top: 16px
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 1
 
       @media screen and (max-width: 480px)
         .chart-content

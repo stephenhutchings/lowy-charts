@@ -23,9 +23,7 @@ block page
                 - y = 1 - (i / (scale.ticks-1))
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    | $
                     = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY)
-                    | M
 
             svg(width="100%" y="100%")
               for year, i in chart.axes[0].values
@@ -58,11 +56,22 @@ block page
               g
                 for val, ix in chart.axes[1].values
                   circle(
-                    r=6
+                    r=5
                     cx=toPercent(fx(ix, chart.axes[1].values.length))
                     cy=toPercent(fy(scale.maxY - val[i]))
                     fill=chart.colors[i]
                   )
+                  svg(
+                    x=toPercent(fx(ix, chart.axes[1].values.length))
+                    y=toPercent(fy(scale.maxY - val[i]))
+                  )
+                    text.chart-value(
+                      y=(val[i] == _.max(val) ? -12 : 24)
+                      text-anchor="middle"
+                      fill=chart.colors[i]
+                    )
+                      = val[i].toFixed(1)
+
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
           for item, i in chart.legend
@@ -70,8 +79,8 @@ block page
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item
 
-    .notes.txt-muted
-      !=page.notes
+    .chart-source.txt-muted.txt-center
+      !=page.source
 
 
 block append css
@@ -122,7 +131,9 @@ block append css
 
       text
         font-size: 14px
-        fill: currentColor
+
+        &:not([fill])
+          fill: currentColor
 
       svg
         overflow: visible
@@ -133,6 +144,17 @@ block append css
       polyline
         vector-effect: non-scaling-stroke
         stroke-width: 4
+
+      .chart-source
+        font-size: 14px
+        margin-top: 12px
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 1
 
       @media screen and (max-width: 600px)
         .chart

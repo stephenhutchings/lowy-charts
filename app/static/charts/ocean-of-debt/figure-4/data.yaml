@@ -3,11 +3,12 @@ title: >
   concessional
 
 source: >
-  Source: authors, Lowy Institute Pacific Aid Map
+  Source: Authors’ calculations; Lowy Institute Pacific Aid Map
 
 charts:
   -
-    title: In current US dollars (millions)
+    title: >
+      Panel A: In current US$ (millions)
     scale:
       minY: 0
       maxY: 3000
@@ -45,14 +46,15 @@ charts:
           - [ 1709656633, 424423680, 99166270  ]
           - [ 1909023502, 393947786, 121245685 ]
   -
-    title: As a share of regional GDP
+    title: >
+      Panel B: As a share of regional GDP
     scale:
       minY: [0,0]
       maxY: [10,5]
     legend:
-      - name: Total
+      - name: Total (LHS)
         scale: 0
-      - name: Grants
+      - name: Grants (LHS)
         scale: 0
       - name: Loans (RHS)
         scale: 1
@@ -61,7 +63,7 @@ charts:
     colors:
       - "#002a45"
       - "#539ed4"
-      - "#ff4f1d"
+      - "#ff1f2f"
       - "#b7c1ce"
     axes:
       -

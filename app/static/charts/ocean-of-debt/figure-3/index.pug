@@ -16,6 +16,7 @@ block page
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
 
         .chart-title= chart.title
+        .chart-subtitle.txt-muted= chart.subtitle
 
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
@@ -35,12 +36,21 @@ block page
                 )
                   - y = 0
                   for val, i in vals.reverse()
-                    rect(
-                      width="100%"
-                      height=toPercent(fy(val))
-                      y=toPercent(y)
-                      fill=chart.colors[vals.length - i - 1]
-                    )
+                    if val
+                      rect(
+                        width="100%"
+                        height=toPercent(fy(val))
+                        y=toPercent(y)
+                        fill=chart.colors[vals.length - i - 1]
+                      )
+                      text.chart-value(
+                        x="50%"
+                        y=toPercent(y + fy(val / 2))
+                        text-anchor="middle"
+                        transform="translate(0 4.5)"
+                        class=(i >= 3 || i == 1 ? "txt-fff" : "")
+                      )
+                        = val.toFixed(0)
 
                     - y += fy(val)
 
@@ -57,7 +67,6 @@ block page
             li.legend-item
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item
-
 
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[1]
@@ -108,11 +117,21 @@ block page
               g
                 for val, ix in chart.axes[1].values
                   circle(
-                    r=6
+                    r=5
                     cx=toPercent(fx(ix, chart.axes[1].values.length))
                     cy=toPercent(fy(scale.maxY - val[i]))
                     fill=chart.colors[i]
                   )
+                  svg(
+                    x=toPercent(fx(ix, chart.axes[1].values.length))
+                    y=toPercent(fy(scale.maxY - val[i]))
+                  )
+                    text.chart-value(
+                      y=(val[i] == _.max(val) ? -12 : 24)
+                      text-anchor="middle"
+                      fill=chart.colors[i]
+                    )
+                      = val[i].toFixed(1)
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
           for item, i in chart.legend
@@ -120,8 +139,11 @@ block page
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item
 
-    .notes.txt-muted.txt-left
+    .chart-notes.txt-muted.txt-left
       !=page.notes
+
+      .chart-source.txt-muted.txt-left
+        !=page.source
 
 
 block append css
@@ -177,7 +199,8 @@ block append css
 
       text
         font-size: 14px
-        fill: currentColor
+        &:not([fill])
+          fill: currentColor
 
       svg
         overflow: visible
@@ -189,15 +212,31 @@ block append css
         vector-effect: non-scaling-stroke
         stroke-width: 4
 
-      .notes
+      .chart-notes
         padding: 16px 20px 0
         font-size: 14px
         line-height: 1.2
         position: absolute
         top: 100%
+        max-width: 800px
+
+      .chart-source
+        font-size: 14px
+        max-width: 800px
+        margin: 12px 0 0
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        &.txt-fff
+          fill: #fff
+
+        .chart:hover &
+          opacity: 1
 
       @media screen and (max-width: 600px)
-        .notes
+        .chart-notes
           padding-top: 0
         .col-wrap
           display: block

@@ -2,15 +2,15 @@ title: >
   Figure 5: Cumulative loan flows by creditor-borrower
 
 source: >
-  Source: authors, Lowy Institute Pacific Aid Map
+  Source: Authors’ calculations; Lowy Institute Pacific Aid Map
 
 charts:
   -
-    subtitle: Disbursements, 2011-2016
+    subtitle: Disbursements, 2011–2017
 
     colors:
       - "#002a45"
-      - "#ff4f1d"
+      - "#ff1f2f"
       - "#539ed4"
       - "#2D6993"
       - "#b7c1ce"
@@ -44,7 +44,7 @@ charts:
           - name: Vanuatu
             value: 11227726.15
       -
-        name: PRC
+        name: China
         values:
           - name: Cook Islands
             value: 3894553.55
@@ -59,7 +59,7 @@ charts:
           - name: Vanuatu
             value: 124126605.27
       -
-        name: World Bank
+        name: World Bank Group
         values:
           - name: Fiji
             value: 53562963.00

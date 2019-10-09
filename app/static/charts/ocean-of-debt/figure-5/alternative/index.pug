@@ -145,7 +145,8 @@ block page
             )
               span!= recipient.replace(/-/g, "&#8209;").replace("/", " / ")
 
-
+    .chart-source.txt-muted.txt-center
+      != chart.source
 
 block append css
   style
@@ -227,6 +228,10 @@ block append css
 
       .label.inactive
         color: #969ba4
+
+      .chart-source
+        margin-top: 12px
+        font-size: 14px
 
       @media (max-width: 720px)
         svg,
