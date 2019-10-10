@@ -160,6 +160,14 @@ body
 .legend .bar-3
   background: #ff5e00
 
+.bar-4 .bar-rect,
+.legend .bar-4
+  background: #d4ccc7
+
+.bar-5 .bar-rect,
+.legend .bar-5
+  background: #bb9e88
+
 .chart:hover .bar-group .bar-rect
   opacity: 0.4
 
@@ -172,6 +180,11 @@ body
   width: 100%
   z-index: 0
   align-items: flex-end
+
+  > .bar-frame
+    align-self: center
+    justify-content: flex-end
+    width: auto
 
 .bg
   height: 100%

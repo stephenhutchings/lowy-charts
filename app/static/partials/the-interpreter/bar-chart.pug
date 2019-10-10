@@ -30,24 +30,41 @@ mixin interpreter-bar-chart(data)
                 - var ho = (_.last(data.yaxis) - _.first(data.yaxis))
                 - var hi = (bar - _.first(data.yaxis))
 
-                .bar(
-                  class="bar-" + i
-                  style={height: (hi / ho) * 100 + "%"}
-                )
-                  .bar-rect
-                  .bar-label
-                    = data.precision ? bar.toFixed(data.precision) : bar
-                    = data.unit || ""
+                if _.isArray(bar)
+                  .bar-frame.flex.flex-col
+                    for val, j in _.clone(bar).reverse()
+                      - var hi = (val - _.first(data.yaxis))
+                      .bar(
+                        class="bar-" + (bar.length - 1 - j)
+                        style={height: (hi / ho) * 100 + "%"}
+                      )
+                        .bar-rect
 
-                if data.confidence
-                  - var c0 = data.confidence[j][i][0] - _.first(data.yaxis)
-                  - var c1 = data.confidence[j][i][1] - _.first(data.yaxis)
-                  .bar-confidence(
-                    style={
-                      height: ((c1 - c0) / ho) * 100 + "%",
-                      bottom: (c0 / ho) * 100 + "%"
-                    }
+                        if j == 0
+                          .bar-label
+                            - sum = _.sum(bar)
+                            = sum.toFixed(data.precision || 1)
+                            = data.unit || ""
+
+                else
+                  .bar(
+                    class="bar-" + i
+                    style={height: (hi / ho) * 100 + "%"}
                   )
+                    .bar-rect
+                    .bar-label
+                      = data.precision ? bar.toFixed(data.precision) : bar
+                      = data.unit || ""
+
+                  if data.confidence
+                    - var c0 = data.confidence[j][i][0] - _.first(data.yaxis)
+                    - var c1 = data.confidence[j][i][1] - _.first(data.yaxis)
+                    .bar-confidence(
+                      style={
+                        height: ((c1 - c0) / ho) * 100 + "%",
+                        bottom: (c0 / ho) * 100 + "%"
+                      }
+                    )
 
               .bar-group-label= data.xaxis[j]
 
