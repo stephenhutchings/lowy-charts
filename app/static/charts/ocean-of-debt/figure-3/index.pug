@@ -7,7 +7,7 @@ block append config
 
 block page
   .wrapper.flex.flex-col.txt-center
-    .page-title.pv-sm= page.title
+    .page-title= page.title
     .col-wrap.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
@@ -154,6 +154,9 @@ block append css
         overflow: visible
         position: relative
 
+      .page-title
+        margin-bottom: 12px
+
       .col-wrap
         margin: 0 -1em
 
@@ -169,7 +172,7 @@ block append css
         position: absolute
         top: 20px
         left: 32px
-        right: 32px
+        right: 12px
         bottom: 32px
 
       .chart-content > svg

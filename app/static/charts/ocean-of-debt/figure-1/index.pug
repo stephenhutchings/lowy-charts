@@ -7,7 +7,7 @@ block append config
 
 block page
   .wrapper.flex.flex-col
-    .page-title.txt-center.pv-sm= page.title
+    .page-title.txt-center= page.title
     .col-wrap.txt-center.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
@@ -120,6 +120,9 @@ block page
 block append css
   style
     :sass
+      .page-title
+        margin-bottom: 12px
+
       .wrapper
         height: 400px
 
@@ -136,8 +139,8 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 32px
-        right: 32px
+        left: 36px
+        right: 12px
         bottom: 72px
 
       .chart-content > svg

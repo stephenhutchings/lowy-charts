@@ -8,7 +8,7 @@ block append config
 block page
   .wrapper.flex.flex-col
 
-    .txt-center.pv-sm= page.title
+    .page-title.txt-center= page.title
 
     .col-wrap.txt-center.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
@@ -188,6 +188,9 @@ block append css
 
       .chart-content > svg
         border-bottom: 1px solid #ccc
+
+      .page-title
+        margin-bottom: 12px
 
       .chart-title,
       .chart-subtitle

@@ -6,7 +6,7 @@ block append config
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
 block page
-  .wrapper.flex
+  .wrapper.flex.flex-col
     .txt-center.flex.flex-grow.flex-col
       - chart = page.charts[0]
       .chart-title= page.title
@@ -15,96 +15,124 @@ block page
       .chart.flex-grow: .chart-content
         - scale = chart.scale
         - ln = chart.axes[1].values.length
-        - fx = (i) => (i + 0.5) / (ln + 0.5)
-        - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+        - fy = (i) => (i + 0.25) / (ln)
+        - fx = (x) => (x - scale.minX) / (scale.maxX - scale.minX)
+        - fw = (x) => Math.abs(x) / (scale.maxX - scale.minX)
         svg(height="100%" width="100%")
-          svg(height="100%")
-            for n, i in new Array(scale.ticks)
-              - y = 1 - (i / (scale.ticks - 1))
-              svg(y=toPercent(y))
-                text(text-anchor="end" transform="translate(-8 4)")
-                  = (scale.minY + (i/(scale.ticks - 1)) * (scale.maxY - scale.minY) * 100).toFixed(0)
-                  | %
+          for group, i in chart.groups
+            - last = i == chart.groups.length - 1
+            - end = last ? ln : chart.groups[i + 1].start
+
+            svg(
+              y=toPercent((group.start) / ln)
+              height=toPercent((end - group.start) / ln)
+              data-end=end
+            )
+              svg.label(y="50%" width="40%")
+                text
+                  for str, i in group.name.split("\n")
+                    tspan(y=(i - 1) * 16 x=0)= str
+
+              if !last
+                line(y1="100%" y2="100%" x2="100%" stroke="#ccc")
+
 
           g
-            for ys, i in chart.axes[1].values
+            for xs, i in chart.axes[1].values
               - label = chart.axes[0].values[i]
+              - x0 = 0
+              - minx = 0
               svg(
-                x=toPercent(fx(i))
-                y=toPercent(0)
-                width=toPercent(fx(0))
-                height="100%"
+                x=toPercent(0)
+                y=toPercent(fy(i - 0.125))
+                width="100%"
+                height=toPercent(fy(0.5))
               )
                 g.bars
-                  for y, j in ys
+                  for x, j in xs
+                    - tx = x > 0 ? x0 : x
                     rect(
-                      width="25%"
-                      x=`${j * 25}%`
-                      y=toPercent(fy(chart.scale.maxY - y))
-                      height=toPercent(fy(y))
+                      width=toPercent(fw(x))
+                      x=toPercent(fx(tx))
+                      height="100%"
                       fill=chart.colors[j]
                     )
+                    - if (x > 0) x0 += x
+                    - minx = Math.min(minx, tx)
 
-                  for y, j in ys
-                    if y
+                    if Math.abs(x) > 3.5
                       text.chart-value(
-                        y=toPercent(fy(chart.scale.maxY - y))
-                        x=`${j * 25 + 12.5}%`
+                        x=toPercent(fx(tx) + fw(x) / 2)
+                        y="50%"
+                        transform="translate(0 4)"
                         text-anchor="middle"
-                        transform="translate(0 -8)"
+                        fill="#fff"
                       )
-                        = (y * 100).toFixed(1)
+                        =x.toFixed(1)
 
-                svg(x="50%" y="100%")
+                svg(x=toPercent(fx(minx)) y="100%")
                   text(
-                    y=24
-                    text-anchor="middle"
+                    y=-4 x=-8
+                    text-anchor="end"
                   )
-                    =label
+                    = label
+
+          //- Scale
+          svg.scale(y="100%")
+            for n, i in new Array(scale.ticks)
+              - x = (i / (scale.ticks - 1))
+              - n = (scale.minX + (i/(scale.ticks - 1)) * (scale.maxX - scale.minX))
+              svg(x=toPercent(Math.max(Math.min(x, 0.99), 0.01)))
+                text(text-anchor="middle" y=16)
+                  = n
+
+              if n == 0
+                line.scale-line(
+                  x1=toPercent(x) x2=toPercent(x)
+                  y1="-100%" y2=0
+                )
+
+              if n == 50
+                line.scale-line.scale-line-dashed(
+                  x1=toPercent(x) x2=toPercent(x)
+                  y1="-100%" y2=0
+                  stroke-dasharray="4 2"
+                )
 
       ul.legend.list-bare.txt-left.flex.flex-ch
         for item, i in chart.legend
           li.legend-item
             span.legend-item-box(style=`background:${chart.colors[i]}`)
-            span.legend-item-label= item
+            span.legend-item-label!= item
 
-      .chart-notes.txt-muted.txt-left
-        !=page.notes
 
-        .chart-source.txt-muted
-          !=page.source
+    .chart-notes.txt-muted
+      div!= marked(page.notes)
+
+      .chart-source.txt-muted
+        != marked(page.source)
 
 block append css
   style
     :sass
       .wrapper
-        height: 400px
-        overflow: visible
-        position: relative
+        height: 512px
 
       .chart
-        box-sizing: border-box
         position: relative
 
       .chart-content
         position: absolute
         top: 20px
-        left: 40px
-        right: 32px
+        left: 0
+        right: 0
         bottom: 32px
-
-      .chart-content > svg
-        border-bottom: 1px solid #ccc
 
       .chart-title,
       .chart-subtitle
         padding: 0 24px
 
-      .chart-subtitle
-        height: 0
-
       .legend
-        margin-bottom: 0
         font-size: 15px
 
       .legend-item
@@ -120,6 +148,12 @@ block append css
         width: 1em
         background: black
 
+      .scale-line
+        stroke: rgba(#000, 0.2)
+
+      .scale-line-dashed
+        stroke: rgba(#000, 0.5)
+
       text
         font-size: 14px
 
@@ -129,9 +163,13 @@ block append css
       svg
         overflow: visible
 
-      .chart-source
+      .chart-notes
         font-size: 14px
-        margin-top: 16px
+        padding-top: 20px
+        max-width: 840px
+
+      .chart-source
+        margin-top: 8px
 
       .chart-value
         opacity: 0
@@ -140,31 +178,22 @@ block append css
         .chart:hover &
           opacity: 1
 
-      .chart-notes
-        padding: 16px 40px 0
-        max-width: 800px
-        margin: auto
-        font-size: 14px
-        line-height: 1.2
-        position: absolute
-        top: 100%
-
-      .chart-source
-        margin-top: 8px
-
-      @media screen and (max-width: 600px)
-        .chart-notes
-          padding-top: 0
-
+      @media (max-width: 600px)
         .legend
           flex-wrap: wrap
           justify-content: flex-start
-          max-width: 320px
+          max-width: 380px
           margin: auto
+        .label text
+          transform: translateY(-50px)
         .legend-item
-          width: 120px
+          flex: 1 0 50%
+          box-sizing: border-box
+          margin: 0
         .chart-content
-          right: 0
-        .bars rect
-          transform: scaleX(1.3)
-          transform-origin: center
+          left: 4px
+          right: 4px
+        .bars
+          transform: scaleY(1.3) translateY(-2px)
+        .chart-notes
+          display: none

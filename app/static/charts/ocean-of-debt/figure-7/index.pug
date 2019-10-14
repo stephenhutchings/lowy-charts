@@ -6,77 +6,73 @@ block append config
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
 block page
-  .wrapper.flex.flex-col
-    .col-wrap.txt-center.flex-grow.flex
-      .col-md.flex-grow.flex.flex-col
-        - chart = page.charts[0]
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      - chart = page.charts[0]
+      .chart-title= page.title
+      .chart-subtitle.txt-muted.txt-sm= chart.subtitle
+
+      .chart.flex-grow: .chart-content
         - scale = chart.scale
-        - fx = (i) => (i + 0.25) / (chart.axes[1].values.length)
+        - ln = chart.axes[1].values.length
+        - fx = (i) => (i + 0.5) / (ln + 0.5)
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+        svg(height="100%" width="100%")
+          svg(height="100%")
+            for n, i in new Array(scale.ticks)
+              - y = 1 - (i / (scale.ticks - 1))
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = (scale.minY + (i/(scale.ticks - 1)) * (scale.maxY - scale.minY) * 100).toFixed(0)
+                  | %
 
-        .chart-title= page.title
-        .chart-subtitle.txt-muted.txt-sm= chart.subtitle
-
-        .chart.flex-grow: .chart-content
-          svg(height="100%" width="100%")
-            svg(height="100%")
-              for n, i in new Array(scale.ticks)
-                - y = 1 - (i / (scale.ticks-1))
-                svg(y=toPercent(y))
-                  text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i/(scale.ticks-1)) * (scale.maxY - scale.minY)
-                    | %
-
-            g.y-axis
-              for vals, i in chart.axes[1].values
-                svg(
-                  x=toPercent(fx(i))
-                  width=toPercent(fx(0.25))
-                  height="100%"
-                  value=_.sum(vals)
-                )
-                  - y = 0
-                  for val, i in vals.reverse()
-                    - val = val / _.sum(vals) * 100
+          g
+            for ys, i in chart.axes[1].values
+              - label = chart.axes[0].values[i]
+              svg(
+                x=toPercent(fx(i))
+                y=toPercent(0)
+                width=toPercent(fx(0))
+                height="100%"
+              )
+                g.bars
+                  for y, j in ys
                     rect(
-                      width="100%"
-                      height=toPercent(fy(val))
-                      y=toPercent(y)
-                      fill=chart.colors[vals.length - i - 1]
+                      width="25%"
+                      x=`${j * 25}%`
+                      y=toPercent(fy(chart.scale.maxY - y))
+                      height=toPercent(fy(y))
+                      fill=chart.colors[j]
                     )
 
-                    if val > 6
+                  for y, j in ys
+                    if y
                       text.chart-value(
-                        y=toPercent(y + fy(val) / 2)
-                        x="50%"
+                        y=toPercent(fy(chart.scale.maxY - y))
+                        x=`${j * 25 + 12.5}%`
                         text-anchor="middle"
-                        transform="translate(0 4)"
-                        fill=i > 1 ? "#fff" : ""
+                        transform="translate(0 -8)"
                       )
-                        = val.toFixed(1)
+                        = (y * 100).toFixed(1)
 
+                svg(x="50%" y="100%")
+                  text(
+                    y=24
+                    text-anchor="middle"
+                  )
+                    =label
 
-                    - y += fy(val)
+      ul.legend.list-bare.txt-left.flex.flex-ch
+        for item, i in chart.legend
+          li.legend-item
+            span.legend-item-box(style=`background:${chart.colors[i]}`)
+            span.legend-item-label!= item
 
-                  svg(x="50%" y="100%")
-                    text(
-                      transform="translate(0 20)"
-                      text-anchor="middle"
-                    )
-                      tspan.hide-sm= chart.axes[0].values[i]
+      .chart-notes.txt-muted.txt-left
+        !=page.notes
 
-                      for slice, i in [[0, 12],[13]]
-                        tspan.show-sm(y=i * 16 x=0)
-                          = chart.axes[0].values[i].slice(slice[0], slice[1])
-
-        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
-          for item, i in chart.legend
-            li.legend-item
-              span.legend-item-box(style=`background:${chart.colors[i]}`)
-              span.legend-item-label!= item
-
-    .chart-source.txt-muted.txt-center
-      !=page.source
+        .chart-source.txt-muted
+          !=page.source
 
 block append css
   style
@@ -85,13 +81,6 @@ block append css
         height: 400px
         overflow: visible
         position: relative
-
-      .col-wrap
-        margin: 0 -1em
-
-      .col-md
-        padding: 0 1em
-        width: 50%
 
       .chart
         box-sizing: border-box
@@ -111,15 +100,17 @@ block append css
       .chart-subtitle
         padding: 0 24px
 
+      .chart-subtitle
+        height: 0
+
       .legend
+        margin-bottom: 0
         font-size: 15px
-        margin: auto
 
       .legend-item
         margin: 4px 8px 0
         padding-left: 24px
         position: relative
-        flex: 1 0 0%
 
       .legend-item-box
         position: absolute
@@ -138,12 +129,6 @@ block append css
       svg
         overflow: visible
 
-      sup
-        line-height: 0
-
-      .show-sm
-        display: none
-
       .chart-source
         font-size: 14px
         margin-top: 16px
@@ -155,16 +140,31 @@ block append css
         .chart:hover &
           opacity: 1
 
-      @media screen and (max-width: 480px)
-        .chart-content
-          bottom: 48px
+      .chart-notes
+        padding: 16px 40px 0
+        max-width: 800px
+        margin: auto
+        font-size: 14px
+        line-height: 1.2
+        position: absolute
+        top: 100%
+
+      .chart-source
+        margin-top: 8px
+
+      @media screen and (max-width: 600px)
+        .chart-notes
+          padding-top: 0
+
         .legend
-          width: 280px
+          flex-wrap: wrap
+          justify-content: flex-start
+          max-width: 320px
+          margin: auto
         .legend-item
-          box-sizing: border-box
-          flex: 1 0 50%
-          margin: 0
-        .hide-sm
-          display: none
-        .show-sm
-          display: initial
+          width: 120px
+        .chart-content
+          right: 0
+        .bars rect
+          transform: scaleX(1.3)
+          transform-origin: center
