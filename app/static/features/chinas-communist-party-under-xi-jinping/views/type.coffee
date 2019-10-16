@@ -46,6 +46,7 @@ require.register "views/type", (exports, require, module) ->
       total = @lines.reduce ((m, e)-> m + e.text.length), 0
 
       window.clearInterval(@interval)
+      window.clearTimeout(@timeout)
       @$el.removeClass("complete")
 
       for line in @lines
@@ -100,7 +101,7 @@ require.register "views/type", (exports, require, module) ->
 
         count++
 
-      window.setTimeout =>
+      @timeout = window.setTimeout =>
         @interval = window.setInterval(repeat, @data.duration / total)
       , @data.delay
 
