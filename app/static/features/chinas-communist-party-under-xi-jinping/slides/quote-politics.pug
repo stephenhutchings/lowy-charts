@@ -1,57 +1,76 @@
 .slide.bg-dk
-  .type.txt-lg.txt-ff(
-    data-view="type, in-viewport"
-    data-duration=3000
-  )
-    span.line.bg-hl.hide.txt-mono Stay close to the 
-    span.line.bg-hl.hide.txt-mono government, but far 
-    span.line.bg-hl.hide.txt-mono away from politics
-
-    cite.txt-roman.txt-sm.txt-sans(
-      style="margin-top: 3em"
+  .slide-inner.flex
+    .type.txt-lg.txt-ff.mx-auto(
+      data-view="type, in-viewport"
+      data-duration=3000
     )
-      strong.txt-sans.pv-xs.ph-sm.bg-ff.txt-tu.txt-dk.fade-in.delay-18
-        | Wang Jianlin
-      span.ph-sm.pv-xs.bg-lta.txt-ff.fade-in.delay-21(
-        style="top: 37px;position: relative"
+      span.line.bg-hl.hide.txt-mono Stay close to the
+      span.line.bg-hl.hide.txt-mono government, but far
+      span.line.bg-hl.hide.txt-mono away from politics
+
+      cite.txt-roman.txt-sm.txt-sans(
+        style="margin-top: 3em"
       )
-        | Chairman of Wanda Group
+        strong.txt-sans.pv-xs.ph-sm.bg-ff.txt-tu.txt-dk.fade-in.delay-18
+          | Wang Jianlin
+        span.ph-sm.pv-xs.bg-lta.txt-ff.fade-in.delay-21(
+          style="top: 37px;position: relative"
+        )
+          | Chairman of Wanda Group
 
 .slide.bg-lt
-  .flex-ch.fw(data-view="in-viewport, page" data-pages=2)
-    .item-0.posa.flex-ch.fw.fh
-      .p-md.fade-in.delay-1
-        .bg-ff
-          .posa.txt-mono.p-xs.bg-dk.txt-ff.z1 Jack Ma
-          img(data-src="./img/business/jack-ma.jpg" width=284)
-          .p-sm.flex-ch
-            img(data-src="./img/business/alibaba.png" width=200)
-        //- .txt-muted.txt-xs.pv-xs UNClimateChange / Flickr
-      .p-md.fade-in.delay-3
-        .bg-ff
-          .posa.txt-mono.p-xs.bg-dk.txt-ff.z1.delay-6 Ma Huateng
-          img(data-src="./img/business/ma-huateng.jpg" width=284)
-          .p-sm.flex-ch
-            img(data-src="./img/business/tencent.png" width=200)
-        //- .txt-muted.txt-xs.pv-xs TechCrunch / Flickr
-      .p-md.fade-in.delay-5
-        .bg-ff
-          .posa.txt-mono.p-xs.bg-dk.txt-ff.z1.delay-9 Ren Zhengfei
-          img(data-src="./img/business/ren-zhengfei.jpg" width=284)
-          .p-sm.flex-ch
-            img(data-src="./img/business/huawei.png" width=200)
-        //- .txt-muted.txt-xs.pv-xs HM Treasury / Flickr
+  .slide-inner(data-view="in-viewport, page" data-pages=2)
+    .item-0.posa.fw.fh.flex.flex-col.pv-sm
+      .type.txt-lg.txt-ff.mx-auto(
+        data-view="type, in-viewport"
+        data-duration=800
+      )
+        span.line.hide.txt-mono.bg-dka Chinese CCP Members
+      .flex-ch.flex-grow
+        .ph-md.fade-in.delay-1
+          .bg-ff
+            .posa.txt-mono.p-xs.bg-dk.txt-ff.z1 Jack Ma
+            img(data-src="./img/business/jack-ma.jpg" width=284)
+            .p-sm.flex-ch
+              img(data-src="./img/business/alibaba.png" width=200)
+        .ph-md.fade-in.delay-3
+          .bg-ff
+            .posa.txt-mono.p-xs.bg-dk.txt-ff.z1.delay-6 Ma Huateng
+            img(data-src="./img/business/ma-huateng.jpg" width=284)
+            .p-sm.flex-ch
+              img(data-src="./img/business/tencent.png" width=200)
+        .ph-md.fade-in.delay-5
+          .bg-ff
+            .posa.txt-mono.p-xs.bg-dk.txt-ff.z1.delay-9 Ren Zhengfei
+            img(data-src="./img/business/ren-zhengfei.jpg" width=284)
+            .p-sm.flex-ch
+              img(data-src="./img/business/huawei.png" width=200)
 
-    .item-1.flex-ch.fw.fh
-      .p-md.fade-in.delay-1
-        .bg-ff
-          .posa.txt-mono.p-xs.bg-dk.txt-ff.z1 Donald Duck
-          img(data-src="./img/business/donald-duck.png" width=284)
-          .p-sm.flex-ch
-            img(data-src="./img/business/disney.png" width=200)
-      .p-md.fade-in.delay-2
-        .bg-ff
-          .posa.txt-mono.p-xs.bg-dk.txt-ff.z1 Mickey Mouse
-          img(data-src="./img/business/mickey-mouse.png" width=284)
-          .p-sm.flex-ch
-            img(data-src="./img/business/disney.png" width=200)
+    .item-1.fw.fh.flex.flex-col.pv-sm
+      .type.txt-lg.txt-ff.bg-dka.mx-auto
+        span.line.txt-mono Foreign CCP Members
+      .flex-ch.flex-grow
+        .ph-md.fade-in.delay-1
+          .bg-ff
+            .posa.txt-mono.p-xs.bg-dk.txt-ff.z1 Donald Duck
+            img(data-src="./img/business/donald-duck.png" width=284)
+            .p-sm.flex-ch
+              img(data-src="./img/business/disney.png" width=200)
+        .ph-md.fade-in.delay-2
+          .bg-ff
+            .posa.txt-mono.p-xs.bg-dk.txt-ff.z1 Mickey Mouse
+            img(data-src="./img/business/mickey-mouse.png" width=284)
+            .p-sm.flex-ch
+              img(data-src="./img/business/disney.png" width=200)
+        .ph-md.fade-in.delay-3
+          .bg-ff
+            .posa.txt-mono.p-xs.bg-dk.txt-ff.z1 Sam Walton
+            img(data-src="./img/business/sam-walton.jpg" width=284)
+            .p-sm.flex-ch
+              img(data-src="./img/business/walmart.png" width=200)
+        .ph-md.fade-in.delay-3
+          .bg-ff
+            .posa.txt-mono.p-xs.bg-dk.txt-ff.z1 Dieter Zetsche
+            img(data-src="./img/business/dieter-zetsche.jpg" width=284)
+            .p-sm.flex-ch
+              img(data-src="./img/business/daimler-benz.png" width=200)

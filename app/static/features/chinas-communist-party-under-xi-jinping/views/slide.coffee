@@ -5,13 +5,16 @@ require.register "views/slide", (exports, require, module) ->
     events:
       "enter": "enter"
       "exit": "exit"
+      "setup": "setup"
 
     initialize: (@data) ->
       @data.duration ?= 2000
       @data.delay ?= 0
-      window.setTimeout _.bind(@setup, this), 20
 
     setup: ->
+      return if @hasRun
+      @hasRun = true
+
       @lines = ({$el: $(el)} for el in @$(".line").toArray())
       offset = 0
 
@@ -22,6 +25,8 @@ require.register "views/slide", (exports, require, module) ->
         line.$el.width(line.width)
         line.$el.html """<span class="mask">#{line.text}</span>"""
         offset += line.text.length
+
+      @exit()
 
     enter: ->
       return unless @lines

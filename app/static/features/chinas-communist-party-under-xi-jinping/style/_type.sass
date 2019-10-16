@@ -77,36 +77,39 @@
   display: inline-block
   height: 100%
   transition: opacity 600ms
+  transform: translateZ(0) scale(1)
 
-  &:nth-child(4n):before
-    transform: skew(-20deg) scale(1.2,1)
-  &:nth-child(4n + 1):before
-    transform: skew(-10deg) scale(1.2,1)
-  &:nth-child(4n + 2):before
-    transform: skew(10deg) scale(1.2,1)
-  &:nth-child(4n + 3):before
-    transform: skew(20deg) scale(1.2,1)
-
-  &.glitch
-    z-index: 1
-    position: relative
-    &:before
-      left: 0
-      top: 0
-      opacity: 0.6
-
+  //
     &:nth-child(4n):before
-      transform: translateY(-4px) skew(-20deg) scale(1.2,1)
+      transform: skew(-20deg) scale(1.2,1)
     &:nth-child(4n + 1):before
-      transform: translateY(-4px) skew(-10deg) scale(1.2,1)
+      transform: skew(-10deg) scale(1.2,1)
     &:nth-child(4n + 2):before
-      transform: translateY(4px) skew(10deg) scale(1.2,1)
+      transform: skew(10deg) scale(1.2,1)
     &:nth-child(4n + 3):before
-      transform: translateY(4px) skew(20deg) scale(1.2,1)
+      transform: skew(20deg) scale(1.2,1)
+
+    &.glitch
+      z-index: 1
+      position: relative
+      &:before
+        left: 0
+        top: 0
+        opacity: 0.6
+
+      &:nth-child(4n):before
+        transform: translateY(-4px) skew(-20deg) scale(1.2,1)
+      &:nth-child(4n + 1):before
+        transform: translateY(-4px) skew(-10deg) scale(1.2,1)
+      &:nth-child(4n + 2):before
+        transform: translateY(4px) skew(10deg) scale(1.2,1)
+      &:nth-child(4n + 3):before
+        transform: translateY(4px) skew(20deg) scale(1.2,1)
 
   &:first-child
     padding-left: 0.25em
     margin-left: -0.25em
+
   &:last-child
     opacity: 0
     transform: translateZ(0) scale(1.1)

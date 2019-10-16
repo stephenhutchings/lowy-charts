@@ -1,20 +1,24 @@
 require.register "views/type", (exports, require, module) ->
   easie = require("lib/easie")
 
+  empty = ([0..4]).reduce ((m)-> m + "\u200b"), ""
+  strip = (str) -> str.replace(/(\u200b)+$/,"")
+
   class TypeView extends Backbone.View
     events:
       "enter": "enter"
       "exit": "exit"
+      "setup": "setup"
 
     initialize: (@data) ->
       @data.duration ?= 2000
       @data.delay ?= 0
-      window.setTimeout _.bind(@setup, this), 20
 
     setup: ->
-      width = 0
+      return if @hasRun
+      @hasRun = true
 
-      empty = ([0..4]).reduce ((m)-> m + "\u200b"), ""
+      width = 0
 
       @lines = ({$el: $(el)} for el in @$(".line").toArray())
 
@@ -30,7 +34,6 @@ require.register "views/type", (exports, require, module) ->
           .width(line.$el.width())
           .html("<div class='line-bg' />")
           .addClass("hide")
-          .attr("data-text", line.text)
 
       @$el.width(~~width)
       @exit()
@@ -61,17 +64,19 @@ require.register "views/type", (exports, require, module) ->
               line.$el.removeClass("hide")
             if run < count <= run + line.text.length
               e = line.text.slice(count - run - 1)[0]
-              e = if e is " " then "&nbsp;" else e
-              c = if e.match(/(\u200b)/) then [] else ["char"]
-              c.push("last") if count is run + line.text.replace(/(\u200b)+$/,"").length
 
-              if u = _.find(@data.underline, {row: j})
-                c.push("underline") if u.start < (count-run) <= u.end
-                c.push("ul-first")  if u.start is (count-run) - 1
-                c.push("ul-last")   if u.end is (count-run)
+              unless e.match(/(\u200b)/)
+                e = if e is " " then "&nbsp;" else e
+                c = ["char"]
+                c.push("last") if count is run + strip(line.text).length
 
-              line.$el.append """<span class="#{c.join(" ")}"
-                data-title="#{e}">#{e}</span>"""
+                if u = _.find(@data.underline, {row: j})
+                  c.push("underline") if u.start < (count-run) <= u.end
+                  c.push("ul-first")  if u.start is (count-run) - 1
+                  c.push("ul-last")   if u.end is (count-run)
+
+                line.$el.append "<span class=\"#{c.join(" ")}\">#{e}</span>"
+
             if count is run + line.text.length + 1
               line.$el.append "<span class=\"end\"></span>"
 

@@ -5,24 +5,37 @@ block append config
   - page.title = "China’s Communist Party Under Xi Jinping"
   - page.robots = "noindex, nofollow"
 
+  style
+    :sass
+      .box
+        flex-basis: 25%
+        box-sizing: border-box
+      .box-inner
+        line-height: 120px
+
+
 block page
   #controls.p-xs.txt-ff
     #pager-progress
       span#pager-index 1
-      span#pager-total &ensp;/&ensp;26
+      span#pager-total &ensp;/&ensp;34
     #btn-prev.btn.icon.icon-up
     #btn-next.btn.icon.icon-down
     #btn-fs.btn.icon.icon-expand
 
   #scroller.bg-dk(
     data-view="scroller"
-    data-pager=".pager-page" 
+    data-pager=".pager-page"
     data-index="#pager-index"
     style="display: none"
   )
+
+
     include slides/intro
     include slides/gdp-us-ussr
     include slides/gdp
+    include slides/australian-exports-by-destination
+    include slides/quote-jeff-bader
     include slides/ivy-league
     include slides/membership
     include slides/gender
@@ -37,11 +50,13 @@ block page
     include slides/video
     include slides/politburo-members
 
+    include slides/ideology
+    include slides/history
+
     //- Path to the top
     include slides/path-to-the-top
     include slides/profiles
     include slides/xi-features
-    include slides/quote-jeff-bader
 
     include slides/outro
 

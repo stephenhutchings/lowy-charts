@@ -2,10 +2,10 @@
 - _toH = (r, i) => (_.pluck(r.slice(0,i),"height").reduce(((m,e)=>m+e),0)*18+16*i)
 
 for person in pttt.people
-  .slide.bg-lt.flex-stretch
-    .flex-cv.page-0(
+  .slide.bg-lt.flex
+    .flex-cv.flex-grow.page-0(
       id="profile-" + written.hyphenCase(person.name)
-      data-view="in-viewport, page" 
+      data-view="in-viewport, page"
       data-pages=person.roles.length
     )
       .posa.txt-tu.txt-bold.txt-sans.txt-xs.fade-in.delay-4

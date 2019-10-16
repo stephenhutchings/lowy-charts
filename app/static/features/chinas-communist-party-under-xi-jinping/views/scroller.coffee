@@ -60,7 +60,7 @@ require.register "views/scroller", (exports, require, module) ->
         window.clearTimeout(@timeout)
         @timeout = window.setTimeout =>
           index = Math.round @el.scrollTop / @el.offsetHeight
-          @el.scrollTo top: index * @el.offsetHeight, behavior: 'smooth'
+          @el.scrollTo top: index * @el.offsetHeight, behavior: 'auto'
         , 40
 
       @$elements.items.removeClass("active").eq(i).addClass("active")
@@ -73,11 +73,11 @@ require.register "views/scroller", (exports, require, module) ->
 
       if type is "UP" or type is "LEFT"
         e.preventDefault()
-        @el.scrollTo top: (index - 1) * height, behavior: 'smooth'
+        @el.scrollTo top: (index - 1) * height, behavior: 'auto'
 
       if type is "DOWN" or type is "RIGHT"
         e.preventDefault()
-        @el.scrollTo top: (index + 1) * height, behavior: 'smooth'
+        @el.scrollTo top: (index + 1) * height, behavior: 'auto'
 
     onPrev: ->
       index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
@@ -98,19 +98,25 @@ require.register "views/scroller", (exports, require, module) ->
       index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
       isEnd = @el.scrollTop % @el.offsetHeight is 0
 
-      if index isnt @data.i
+      if index isnt @data.index
         $("body")
-          .removeClass("slide-#{@data.i}")
+          .removeClass("slide-#{@data.index}")
           .addClass("slide-#{index}")
 
         _.extend @data,
           y: @el.scrollTop
           h: @el.offsetHeight
-          i: index
+          index: index
 
        if isEnd
         for child, i in @el.children
-          child.classList.toggle("active", i is @data.i)
+          visible = i - 1 <= @data.index <= i + 1
+          child.classList.toggle("active", i is @data.index)
+          child.classList.toggle("hidden", not visible)
+
+          if visible
+            $("[data-view]", child).trigger("setup")
+
 
         window.ga?("send", "event", "Scroller", "show", document.title, index)
 
