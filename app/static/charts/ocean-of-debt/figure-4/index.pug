@@ -82,12 +82,12 @@ block page
                   if j == 0
                     svg(y=toPercent(y))
                       text(text-anchor="end" transform="translate(-8 4)")
-                        = scale.minY[j] + (i/5) * (scale.maxY[j] - scale.minY[j])
+                        = (100 * (scale.minY[j] + (i/5) * (scale.maxY[j] - scale.minY[j]))).toFixed(0)
                         | %
                   else
                     svg(y=toPercent(y) x="100%")
                       text(transform="translate(8 4)")
-                        = scale.minY[j] + (i/5) * (scale.maxY[j] - scale.minY[j])
+                        = (100 * (scale.minY[j] + (i/5) * (scale.maxY[j] - scale.minY[j]))).toFixed(0)
                         | %
 
             svg(width="100%" y="100%")
@@ -144,7 +144,7 @@ block page
                       text-anchor="middle"
                       fill=chart.colors[i]
                     )
-                      = val[i].toFixed(1)
+                      = (val[i] * 100).toFixed(1)
 
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
