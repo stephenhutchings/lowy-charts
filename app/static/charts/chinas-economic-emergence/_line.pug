@@ -28,7 +28,7 @@ mixin svg-line(data, lines)
             data-val=data.scale.max - i * data.scale.div
             class=(data.scale.max - i * data.scale.div != 0) ? "dot" : ""
           )
-      
+
       svg.y(width=4 height="100%" x=-4)
         line(x1="100%" x2="100%" y1=0 y2="100%")
         for n, i in new Array(nb + 1)
@@ -97,7 +97,7 @@ mixin svg-line(data, lines)
               transform=`translate(${tx * a} ${ty * a + 4})`
             )= point.value.toFixed(1)
 
-  .chart-footer.flex-between.flex-row
+  .chart-footer.flex.flex-between.flex-row
     if data.fields
       .chart-legend(class=`chart-legend-${data.fields.join("").replace(/<[^>]+>/g,"").length > 30 ? "long" : "short"}`)
         for field, j in data.fields
