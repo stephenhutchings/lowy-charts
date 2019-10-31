@@ -1,0 +1,134 @@
+extend /partials/layout
+
+include /partials/the-interpreter/bar-chart
+
+block append config
+  - page.title = "Australian versus Chinese aid to the Pacific"
+
+block page
+  - var map = (n) => n / 1000000000
+
+  .wrapper(
+    ontouchstart=""
+    class=written.hyphenCase(page.title)
+  )
+    +interpreter-bar-chart({
+      title: page.title,
+      subtitle: "Committed and Spent Aid, 2011–2017",
+      source: "Lowy Institute Pacific Aid Map",
+      legend: [[ "Australia", "China" ], [ "Committed", "Spent" ]],
+      yaxis: [0, 1, 2, 3, 4, 5],
+      xaxis: [2011, 2012, 2013, 2014, 2015, 2016, 2017],
+      precision: 1,
+      prefix: "$",
+      unit: "B",
+      values: [
+        [[1795597694.2772, 1279142168.641].map(map), [318734763.2244, 91360357.5626].map(map)],
+        [[927326426.4353, 1207360878.8443].map(map), [222644631.6244, 80121174.4667].map(map)],
+        [[813421393.4579, 1064277108.2408].map(map), [234920807.3527, 214866621.6956].map(map)],
+        [[1342247014.4666, 1054015650.8183].map(map), [294720382.4173, 246706657.7271].map(map)],
+        [[758510891.345, 998816520.9594].map(map), [237494685.3901, 290037630.2761].map(map)],
+        [[1068821247.1611, 878010795.253].map(map), [273180455.8826, 188450430.4834].map(map)],
+        [[1007284537.4153, 948641663.5761].map(map), [4778880364.272, 171686537.1713].map(map)]
+      ],
+      height: 480,
+      showIndividualValues: true
+    })
+
+block append css
+  style
+    :sass
+      .chart
+        width: auto
+        margin-right: 8px
+
+      .bar-frame-0 .bar-0 .bar-rect,
+      .bar-frame-0 .bar-1 .bar-rect,
+      .legend .bar-0
+        background: #31363c
+
+      .bar-frame-1 .bar-0 .bar-rect,
+      .bar-frame-1 .bar-1 .bar-rect,
+      .legend .bar-1
+        background: #ff9f19
+
+      .bar-frame-0 .bar-1 .bar-rect,
+      .bar-frame-1 .bar-1 .bar-rect,
+      .legend .bar-group-1 .bar-1
+        background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(#fff,.5) 2px, rgba(#fff,.5) 4px)
+
+      .legend .bar-group-1 .bar-0,
+      .legend .bar-group-1 .bar-1
+        background-color: #b5ada8
+
+      .bar-label
+        width: auto
+        white-space: nowrap
+        text-align: center
+        padding: 0.7em
+        background: white
+        box-shadow: 0 3px 12px rgba(#000, 0.2)
+
+        &:before
+          content: ""
+          position: absolute
+          left: 50%
+          top: 100%
+          border: 6px solid transparent
+          border-top-color: white
+          margin: 0 -6px
+
+      .bar-frame .bar-0 .bar-label:after
+        content: " Commited"
+        position: static
+
+      .bar-frame .bar-1 .bar-label:after
+        content: " Spent"
+        position: static
+
+      .legend .legend
+        float: left
+        margin: 0 1em 0 0
+
+      .bars:hover .bar-label,
+      .bar-group:hover .bar .bar-label
+        opacity: 0
+
+      .bar-frame:hover
+        z-index: 20
+        position: relative
+
+      .bar-group .bar:hover
+        .bar-label
+          opacity: 1
+
+      @media (max-width: 480px)
+        .bar
+          width: 16px
+        .bars
+          padding-left: 40px
+        .bar-group-label
+          margin-left: 0
+          transform-origin: left center
+          transform: rotate(30deg)
+
+        .chart-footer
+          padding-top: 10px
+
+        .legend .legend
+          float: none
+
+        .legend li:first-child
+          min-width: 80px
+
+        .bar-label
+          white-space: normal
+
+        .bar-group:last-child .bar-label
+          left: -32px
+          width: 68px
+
+          &:before
+            left: 100%
+            margin: 0 0 0 -12px
+

@@ -14,7 +14,10 @@ mixin interpreter-bar-chart(data)
         for label, i in data.yaxis
           - var y = (1 - i / (data.yaxis.length - 1)) * 100
           .bg-y(style={top: y + "%"})
-            .label-y #{label}#{data.unit || ""}
+            .label-y
+              = data.prefix || ""
+              = label
+              = data.unit || ""
             .stroke-y
 
       .bars.flex-cv.flex-row
@@ -31,7 +34,7 @@ mixin interpreter-bar-chart(data)
                 - var hi = (bar - _.first(data.yaxis))
 
                 if _.isArray(bar)
-                  .bar-frame.flex.flex-col
+                  .bar-frame.flex.flex-col(class=`bar-frame-${i}`)
                     for val, j in _.clone(bar).reverse()
                       - var hi = (val - _.first(data.yaxis))
                       .bar(
@@ -40,8 +43,15 @@ mixin interpreter-bar-chart(data)
                       )
                         .bar-rect
 
-                        if j == 0
+                        if data.showIndividualValues
                           .bar-label
+                            = data.prefix || ""
+                            = val.toFixed(data.precision || 1)
+                            = data.unit || ""
+
+                        else if j == 0
+                          .bar-label
+                            = data.prefix || ""
                             - sum = _.sum(bar)
                             = sum.toFixed(data.precision || 1)
                             = data.unit || ""
@@ -53,6 +63,7 @@ mixin interpreter-bar-chart(data)
                   )
                     .bar-rect
                     .bar-label
+                      = data.prefix || ""
                       = data.precision ? bar.toFixed(data.precision) : bar
                       = data.unit || ""
 
@@ -76,9 +87,16 @@ mixin interpreter-bar-chart(data)
         if data.legend
           ul.legend.list-bare
             for label, i in data.legend
-              li
-                .bar(class="bar-" + i)
-                != label
+              if _.isArray(label)
+                ul.legend.list-bare(class=`bar-group-${i}`)
+                  for sub, j in label
+                    li
+                      .bar(class=`bar-${j}`)
+                      != sub
+              else
+                li
+                  .bar(class="bar-" + i)
+                  != label
 
         if data.source
           .source.txt-muted.txt-xs
