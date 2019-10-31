@@ -45,6 +45,15 @@ block append css
       .bar
         width: 24px
 
+        + .bar
+          margin-left: -16px
+          z-index: -1
+
+      .bar-frame > .bar-frame
+        flex-direction: row
+
+      .bar-group
+
       .bar-frame-0 .bar-0 .bar-rect,
       .bar-frame-0 .bar-1 .bar-rect,
       .legend .bar-0
@@ -58,7 +67,7 @@ block append css
       .bar-frame-0 .bar-1 .bar-rect,
       .bar-frame-1 .bar-1 .bar-rect,
       .legend .bar-group-1 .bar-1
-        background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(#fff,.5) 2px, rgba(#fff,.5) 4px)
+        background-image: repeating-linear-gradient(45deg, rgba(#fff, 0.1), rgba(#fff, 0.1) 2px, rgba(#fff,.5) 2px, rgba(#fff,.5) 4px)
 
       .legend .bar-group-1 .bar-0,
       .legend .bar-group-1 .bar-1
@@ -71,6 +80,7 @@ block append css
         padding: 0.7em
         background: white
         box-shadow: 0 3px 12px rgba(#000, 0.2)
+        margin-bottom: 4px
 
         &:before
           content: ""
@@ -102,12 +112,22 @@ block append css
         position: relative
 
       .bar-group .bar:hover
+        z-index: 1
         .bar-label
           opacity: 1
 
-      @media (max-width: 480px)
+      @media (max-width: 660px)
         .bar
           width: 16px
+          + .bar
+            margin-left: -12px
+
+      @media (max-width: 480px)
+        .bar
+          width: 12px
+          + .bar
+            margin-left: -8px
+
         .bars
           padding-left: 40px
         .bar-group-label
