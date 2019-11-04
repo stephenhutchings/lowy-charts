@@ -53,7 +53,7 @@
 # Typology of Terror is not part of this repo, but can be access from this domain
 [[redirects]]
   from = "/features/typology-of-terror/*"
-  to = "https://lowy-digital-terrorism.netlify.com/:splat"
+  to = "https://lowy-digital-terrorism.netlify.com/features/typology-of-terror/:splat"
   status = 200
 
 [[headers]]
