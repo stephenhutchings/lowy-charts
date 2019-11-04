@@ -50,10 +50,10 @@
   to = "https://www.lowyinstitute.org/issues/australia-climate-change"
   status = 301
 
-# Typology of Terror is not part of this repo, but can be access from this domain
+# Typology of Terror is not part of this repo, but can be accessed from this domain
 [[redirects]]
-  from = "/features/typology-of-terror/*"
-  to = "https://lowy-digital-terrorism.netlify.com/features/typology-of-terror/:splat"
+  from = "/features/typology-of-terror/"
+  to = "https://lowy-digital-terrorism.netlify.com/features/typology-of-terror/"
   status = 200
 
 [[headers]]
