@@ -71,7 +71,6 @@ block page
         - list.o.push(o)
         - list.t.push(c+l+o)
 
-      //- - console.log(list)
       for key, k in ["c", "l", "o"]
         - var path = []
         g
@@ -86,16 +85,6 @@ block page
         - cx = function(p){return `M ${_.first(p).x},${h} ${helpers.catmullRomBezier(helpers.simplify(helpers.interpolate(p), 21, true).concat(p.slice(-3)), 0.5)} L ${w},${_.last(p).y} L ${w},${h} Z`}
         path(d=c(path) class=`a${k}` style="pointer-events: none")
         path.a6(d=cx(path) fill="none")
-
-  //- pre
-    for n, i in list.c
-      = list.e[i].government + ","
-      = list.e[i].start + ","
-      = list.c[i] + ","
-      = list.l[i] + ","
-      = list.o[i] + ","
-      = list.t[i] + "\n"
-
 
   for filter in [{government: "FED", house: "lower"},{government: "FED", house: "upper"},{government: "ACT", house: "lower"},{government: "NSW", house: "lower"},{government: "NSW", house: "upper"},{government: "NT", house: "lower"},{government: "QLD", house: "lower"},{government: "SA", house: "lower"},{government: "SA", house: "upper"},{government: "TAS", house: "lower"},{government: "TAS", house: "upper"},{government: "VIC", house: "lower"},{government: "VIC", house: "upper"},{government: "WA", house: "lower"},{government: "WA", house: "upper"}]
     - var paths = [[],[],[]], h = 240;

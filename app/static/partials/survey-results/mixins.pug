@@ -1,10 +1,10 @@
 mixin animate-transform(prop, vals, dur)
   animateTransform(
-   attributeName="transform" 
+   attributeName="transform"
    dur=dur
    type=prop
    values=vals
-   repeatCount="1" 
+   repeatCount="1"
    calcMode="spline"
    keySplines="0.455 0.03 0.515 0.955"
  )
@@ -121,17 +121,6 @@ mixin chart-splits(data, index, chart)
       - var maxF  = _.max(data.results.f.slice(0, len));
       - var scale = 1;
 
-    
-      //- if chart.responses.length == 1
-        if maxF > maxM
-          - var tF = _.last(data.results.f);
-          - scale = tF / maxF * 0.8
-        else
-          - var tM = _.last(data.results.m);
-          - scale = tM / maxM * 0.8
-
-      //- - if (len == 1) scale = total / _.max([maxF, maxM]) * 0.8;
-
       if chart.axis
         - var y = 24;
         for label, i in chart.axis
@@ -146,45 +135,42 @@ mixin chart-splits(data, index, chart)
 
           g
             text.label(x="50%" y=y - 4 text-anchor="middle")= label
-              //- for row, k in _.reduce(label, function(m, el){var l = _.last(m); console.log(m); m.length === 0 || (el === " " && l.length > 30) ? m.push(el) : m[m.length - 1] = l + el; return m;}, [])
-                tspan(x="50%" y=y + 4)= row
-                - y += 16;
 
             text(x=`${50 - 50 * scale * (m / mt)}%` y=(y + 27) text-anchor="end") #{(m / mt * 100).toFixed(0)}%&ensp;
               animate(
-                attributeName="opacity" 
-                dur="1000ms" 
+                attributeName="opacity"
+                dur="1000ms"
                 values="0 ; 0 ; 1"
-                repeatCount="1" 
+                repeatCount="1"
               )
             rect(fill=colors[0] y=(y + 12) x=`${50 - 50 * scale * (m / mt)}%` width=`${50 * scale * (m / mt)}%` height="20" )
               animateTransform(
-               attributeName="transform" 
-               dur="600ms" 
-               type="scale" 
-               values="0 1 ; 1 1" 
-               repeatCount="1" 
+               attributeName="transform"
+               dur="600ms"
+               type="scale"
+               values="0 1 ; 1 1"
+               repeatCount="1"
                calcMode="spline"
                keySplines="0.455 0.03 0.515 0.955"
              )
 
             rect(fill=colors[1] y=(y + 12) x="50%" width=`${50 * scale * (f / ft)}%` height="20" )
               animateTransform(
-               attributeName="transform" 
-               dur="600ms" 
-               type="scale" 
-               values="0 1 ; 1 1" 
-               repeatCount="1" 
+               attributeName="transform"
+               dur="600ms"
+               type="scale"
+               values="0 1 ; 1 1"
+               repeatCount="1"
                calcMode="spline"
                keySplines="0.455 0.03 0.515 0.955"
              )
 
             text(x=`${50 + 50 * scale * (f / ft)}%` y=(y + 27) text-anchor="start") &ensp;#{(f / ft * 100).toFixed(0)}%
               animate(
-                attributeName="opacity" 
-                dur="1000ms" 
+                attributeName="opacity"
+                dur="1000ms"
                 values="0 ; 0 ; 1"
-                repeatCount="1" 
+                repeatCount="1"
               )
             line(x1="50%" x2="50%" y1=(y + 4) y2=(y + 40))
       else
@@ -195,41 +181,40 @@ mixin chart-splits(data, index, chart)
         g
           text(x=`${50 - 50 * scale * (m / t)}%` y=y + 15 text-anchor="end") #{(m / t * 100).toFixed(0)}%&ensp;
             animate(
-              attributeName="opacity" 
-              dur="1000ms" 
+              attributeName="opacity"
+              dur="1000ms"
               values="0 ; 0 ; 1"
-              repeatCount="1" 
+              repeatCount="1"
             )
           rect(fill=colors[0] y=y x=`${50 - 50 * scale * (m / t)}%` width=`${50 * scale * (m / t)}%` height="20" )
               animateTransform(
-               attributeName="transform" 
-               dur="600ms" 
-               type="scale" 
-               values="0 1 ; 1 1" 
-               repeatCount="1" 
+               attributeName="transform"
+               dur="600ms"
+               type="scale"
+               values="0 1 ; 1 1"
+               repeatCount="1"
                calcMode="spline"
                keySplines="0.455 0.03 0.515 0.955"
              )
 
           rect(fill=colors[1] y=y x="50%" width=`${50 * scale * (f / t)}%` height="20" )
               animateTransform(
-               attributeName="transform" 
-               dur="600ms" 
-               type="scale" 
-               values="0 1 ; 1 1" 
-               repeatCount="1" 
+               attributeName="transform"
+               dur="600ms"
+               type="scale"
+               values="0 1 ; 1 1"
+               repeatCount="1"
                calcMode="spline"
                keySplines="0.455 0.03 0.515 0.955"
              )
           text(x=`${50 + 50 * scale * (f / t)}%` y=y + 15 text-anchor="start") &ensp;#{(f / t * 100).toFixed(0)}%
             animate(
-              attributeName="opacity" 
-              dur="1000ms" 
+              attributeName="opacity"
+              dur="1000ms"
               values="0 ; 0 ; 1"
-              repeatCount="1" 
+              repeatCount="1"
             )
 
 
     .txt-sm.txt-muted.pv-sm
-       | #{total} 
-       | of 645 responses
+       | #{total} of 645 responses
