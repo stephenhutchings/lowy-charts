@@ -12,49 +12,49 @@
 [[redirects]]
   from = "/publications/the-prime-ministers-in-washington"
   to = "/archive/the-prime-ministers-in-america"
-  staus = 301
+  status = 301
 [[redirects]]
   from = "/publications/the-prime-ministers-in-washington-notes"
   to = "/archive/the-prime-ministers-in-america/notes"
-  staus = 301
+  status = 301
 [[redirects]]
   from = "/publications/the-prime-ministers-in-america"
   to = "/archive/the-prime-ministers-in-america"
-  staus = 301
+  status = 301
 [[redirects]]
   from = "/publications/pacific-aid-map-country-profiles"
   to = "/archive/pacific-aid-map-country-profiles"
-  staus = 301
+  status = 301
 [[redirects]]
   from = "/publications/PNGin2017/png-in-2017-home.html"
   to = "/archive/png-in-2017"
-  staus = 301
+  status = 301
 [[redirects]]
   from = "/publications/PNGin2017/*"
   to = "/archive/png-in-2017/:splat"
-  staus = 301
+  status = 301
 
 # publications.lowyinstitute.org
 [[redirects]]
   from = "/shanahan/charities-and-terrorism-lessons-from-the-syrian-crisis.html"
   to = "/archive/charities-and-terrorism-lessons-from-the-syrian-crisis"
-  staus = 301
+  status = 301
 
 # Moved content
 [[redirects]]
   from = "/features/indonesia-votes/"
   to = "/features/indonesia-votes-2019"
-  staus = 301
+  status = 301
 [[redirects]]
   from = "/features/australian-attitudes-to-climate-change/"
   to = "https://www.lowyinstitute.org/issues/australia-climate-change"
-  staus = 301
+  status = 301
 
 # Typology of Terror is not part of this repo, but can be access from this domain
 [[redirects]]
   from = "/features/typology-of-terror/*"
   to = "https://lowy-digital-terrorism.netlify.com/:splat"
-  staus = 200
+  status = 200
 
 [[headers]]
   # Allow CORS on fonts for emails, etc.
