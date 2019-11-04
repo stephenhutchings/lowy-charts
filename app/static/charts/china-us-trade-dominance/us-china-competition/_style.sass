@@ -1,0 +1,276 @@
+$bg-color: #fff
+$txt-color: #2d3440
+$stroke-color: #ced3de
+
+$bg-light: #f1f4f9
+
+$highlight-blue: #0056fa
+$highlight-red: #fa0051
+$highlight-grey: #002a45
+
+$g: transparent
+$steps: 10
+@for $i from 1 to $steps
+  $g: append($g, rgba($bg-color, $i/$steps) percentage($i / $steps), comma)
+  $g: append($g, rgba($bg-color, $i/$steps) percentage(($i + 1) / $steps), comma)
+
+$g: append($g, $bg-color)
+
+html, body
+  height: 100%
+  box-sizing: border-box
+
+body
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $bg-color
+  color: $txt-color
+
+  &.embed-false
+    padding: 20px
+
+  // record
+    height: 840px
+    border: solid red
+    border-width: 10px 0
+
+body, h1, h2, h3
+  font-family: Wide, sans-serif
+
+#wrapper
+  max-width: 1280px
+  max-height: 720px
+  width: 100%
+  height: 100%
+  margin: auto
+  position: relative
+  line-height: 20px
+  text-transform: uppercase
+  z-index: 0
+  overflow: hidden
+
+#controls,
+#chart-title,
+#chart-year,
+#chart-source,
+#chart-logo,
+#map-wrapper,
+#map-scale,
+#map-timeline,
+#map-scale-min,
+#map-scale-max
+  position: absolute
+
+#map-wrapper
+  left: 0
+  top: 0
+  bottom: 128px
+  right: 0
+
+#map
+  margin: 0
+
+.country,
+.background
+  fill: $bg-light
+
+.country
+  transition: opacity 600ms
+
+
+  &#country-USA,
+  &#country-CHN
+    opacity: 1 !important
+
+  &#country-USA
+    fill: $highlight-blue !important
+
+  &#country-CHN
+    fill: $highlight-red !important
+
+#map-scale
+  bottom: 12px
+  left: 0
+  z-index: 10
+  width: 240px
+  line-height: 16px
+
+#map-scale-canvas
+  margin-top: 4px
+  display: block
+  width: 100%
+  height: 12px
+  image-rendering: pixelated
+
+#map-scale-min,
+#map-scale-max
+  color: #fff
+  background: $highlight-grey
+  padding: 4px 8px
+  bottom: 0
+
+#map-scale-min
+  left: 0
+
+#map-scale-max
+  right: 0
+
+#map-timeline
+  left: 0
+  right: 0
+  bottom: 0
+  height: 128px
+
+#map-timeline-minimap
+  cursor: ew-resize
+  width: 100%
+  height: 100%
+  display: block
+  user-select: none
+  box-sizing: border-box
+  background: white
+  image-rendering: pixelated
+
+#controls
+  bottom: 8px
+  left: 50%
+  margin-left: -48px
+  overflow: hidden
+  color: $highlight-grey
+
+.btn
+  padding: 8px
+  width: 16px
+  cursor: pointer
+  float: left
+  position: relative
+  z-index: 100
+
+  &:focus,
+  &:hover
+    outline: none
+
+    .btn-icon
+      fill: $txt-color
+
+#btn-pause
+  display: none
+
+  .playing &
+    display: block
+
+#btn-play
+  .playing &
+    display: none
+
+.btn-icon
+  width: 16px
+  height: 16px
+  display: block
+  transition: fill 300ms
+  fill: currentColor
+
+#chart-year
+  left: 50%
+  bottom: 88px
+  width: 2.8em
+  line-height: 1em
+  margin: 0 -1.4em
+  font-weight: 600
+  font-size: 32px
+  pointer-events: none
+
+#chart-title
+  left: 50%
+  bottom: 48px
+  text-align: center
+  letter-spacing: 0.05em
+  font-weight: bold
+  z-index: 10
+  width: 320px
+  margin-left: -160px
+
+.chart-title-main
+  font-size: 24px
+  line-height: 1.2
+  margin: 0
+  letter-spacing: 0.03em
+
+#chart-source
+  right: 0
+  bottom: 140px
+  color: #a2acb1
+  text-transform: none
+  line-height: 16px
+
+#chart-logo
+  bottom: 2px
+  right: 12px
+  opacity: 0.5
+  width: 120px
+  display: none
+
+  img
+    width: 100%
+
+  &:hover
+    opacity: 1
+
+#map-scale,,
+#map-timeline,
+#chart-source
+  font-size: 14px
+
+@media (max-width: 720px)
+  #chart-source
+    font-size: 14px
+
+  #chart-title
+    top: 20px
+    bottom: auto
+
+  #chart-year
+    top: 88px
+    bottom: auto
+    font-size: 28px
+
+  #map-scale
+    left: 12px
+    right: 12px
+    width: auto
+
+  #map-timeline
+    bottom: 24px
+    height: 104px
+
+  #controls
+    bottom: 64px
+
+  #chart-source
+    bottom: 0
+
+@media (max-width: 600px)
+  body.embed-false
+    padding: 12px
+
+  #map-legend
+    left: 12px
+    right: 12px
+    width: auto
+    bottom: 0
+
+  #chart-source
+    font-size: 13px
+
+  #wrapper
+    padding: 0
+    position: relative
+    overflow: visible
+
+  #chart-legend
+    bottom: 2px
+
+  .chart-title-label
+    font-size: 10px

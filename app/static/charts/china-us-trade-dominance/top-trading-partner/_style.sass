@@ -1,0 +1,554 @@
+$bg-color: #fff
+$txt-color: #2d3440
+$stroke-color: #ced3de
+
+$highlight-blue: #0056fa
+$highlight-red: #fa0051
+$highlight-grey: #002a45
+
+$g: transparent
+$steps: 10
+@for $i from 1 to $steps
+  $g: append($g, rgba($bg-color, $i/$steps) percentage($i / $steps), comma)
+  $g: append($g, rgba($bg-color, $i/$steps) percentage(($i + 1) / $steps), comma)
+
+$g: append($g, $bg-color)
+
+html, body
+  height: 100%
+  box-sizing: border-box
+
+body
+  padding: 20px 80px
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $bg-color
+  color: $txt-color
+
+  // record
+    height: 840px
+    border: solid red
+    border-width: 10px 0
+
+body, h1, h2, h3
+  font-family: Wide, sans-serif
+
+#wrapper
+  width: 100%
+  max-width: 1600px
+  margin: auto
+  position: relative
+  line-height: 20px
+  height: 28px * 20
+  text-transform: uppercase
+  z-index: 0
+  padding: 4px 0 24px
+  overflow: hidden
+
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 70%
+    right: 0
+    bottom: 0
+    background: linear-gradient(to right, rgba($bg-color, 0), $bg-color)
+    // background: linear-gradient(to right, $g)
+    pointer-events: none
+
+#axis-items,
+.item
+  width: 100%
+
+#axis-items,
+#axis-years-list
+  list-style: none
+  padding: 0
+  margin: 0
+  white-space: nowrap
+
+#axis-items,
+#axis-years,
+#controls,
+#axis-years-list,
+#chart-title,
+#chart-source,
+#scale,
+#ranks,
+#chart-logo,
+.item,
+.item-name,
+.item-bar,
+.item-bar-block,
+.item-bar-label,
+.scale-stroke-label
+  position: absolute
+
+.item
+  top: 0
+  height: 20px
+  padding: 4px 0
+  margin: 0
+  transition: all 800ms 400ms cubic-bezier(0.666, 0, 0.333, 1)
+  color: #7e8d94
+  line-height: inherit
+
+  .loading &
+    transition: none
+
+  .playing &
+    transition-delay: 0ms
+    transition-duration: 600ms
+
+  &.item-chn,
+  &.item-usa
+    z-index: 1
+    color: $txt-color
+
+.item-name
+  width: 188px
+  z-index: 10
+  padding-right: 8px
+  text-align: right
+  font-weight: bold
+  letter-spacing: 0.05em
+
+.item-bar
+  left: 220px
+  right: 48px
+  height: 20px
+  overflow: hidden
+  border-left: 1px solid $stroke-color
+  background: linear-gradient(to right, rgba(#fff, 0.03), rgba(#fff, 0))
+
+.item-bar-block
+  top: 0
+  left: 0
+  right: 80px
+  height: 100%
+  background: $highlight-grey
+  transform-origin: left center
+  box-sizing: border-box
+  transition: transform 800ms
+
+  .playing &
+    transition: none
+
+  .item-chn &
+    background: $highlight-red
+
+  .item-usa &
+    background: $highlight-blue
+
+.item-bar-label
+  bottom: 0
+  opacity: 0
+  color: $bg-color
+  right: 0
+  margin-right: 8px
+
+#ranks
+  left: 192px
+  right: 0
+  text-align: center
+  pointer-events: none
+  color: #7e8d94
+
+.rank
+  position: relative
+  padding: 4px 0
+  &:after
+    content: ""
+    position: absolute
+    top: 4px
+    left: 32px
+    right: 0
+    bottom: 4px
+    background-color: #f1f4f9
+    z-index: -1
+
+.rank-label
+  width: 24px
+  text-align: center
+
+#scale
+  top: 0
+  left: 220px
+  right: 114px
+  bottom: 24px
+  text-align: center
+  color: #7e8d94
+  z-index: -1
+
+#scale-strokes
+  width: 100%
+  height: 100%
+  transform-origin: left center
+  transition: transform 800ms
+  display: flex
+  flex-direction: row
+  white-space: nowrap
+
+  .playing &,
+  .loading &
+    transition: none
+
+.scale-stroke
+  flex: 1
+  border-left: 1px solid $stroke-color
+  margin-right: -1px
+  float: left
+  height: 100%
+  position: relative
+  transform-origin: left center
+  transition: transform 800ms
+
+  .playing &,
+  .loading &
+    transition: none
+
+.scale-stroke-label
+  bottom: -21px
+  left: -20px
+  width: 40px
+
+#controls
+  top: 0
+  bottom: 0
+  right: 0
+  width: 80px
+  overflow: hidden
+  color: #7e8d94
+
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    left: 0
+    z-index: 10
+
+  &:before
+    top: 6px
+    bottom: 6px
+    border-left: 1px solid $stroke-color
+
+  &:after
+    top: 50%
+    margin: -4px
+    height: 8px
+    width: 8px
+    background: $bg-color
+    border-top: 1px solid $stroke-color
+    border-right: 1px solid $stroke-color
+    transform: rotate(45deg) translateY(-0.5px)
+
+#axis-years
+  top: 0
+  width: 80px
+  right: 2px
+  bottom: 0
+  text-align: center
+
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    left: 0
+    right: 0
+    height: 80px
+    z-index: 10
+    pointer-events: none
+
+  &:before
+    top: 0
+    padding-top: 220px
+    background: linear-gradient(to bottom, $bg-color 100px, rgba($bg-color, 0))
+
+  &:after
+    bottom: 0
+    background: linear-gradient(to bottom, rgba($bg-color, 0), $bg-color)
+
+#axis-years-list
+  width: 100%
+  height: 24px
+  top: 50%
+  margin-top: -12px
+  transition: transform 600ms
+
+  .playing &
+    transition: none
+
+.year
+  line-height: inherit
+  box-sizing: border-box
+  transition: all 800ms, transform 2s
+  transform-origin: 28px 50%
+  margin: 0
+
+  &.active
+    color: $txt-color
+    transform: scale(1.5)
+
+  &:hover
+    color: $txt-color
+
+.year-link
+  display: block
+  cursor: pointer
+  padding: 2px 0
+
+.btn
+  padding: 8px
+  width: 16px
+  cursor: pointer
+  display: block
+  position: relative
+  z-index: 100
+  margin: 0 20px
+
+  &:focus
+    outline: none
+
+    .btn-icon
+      fill: $txt-color
+
+#btn-pause
+  display: none
+
+  .playing &
+    display: block
+
+#btn-play
+  .playing &
+    display: none
+
+.btn-icon
+  width: 16px
+  height: 16px
+  display: block
+  transition: fill 300ms
+  fill: #c3cacd
+
+  &:hover
+    fill: $txt-color
+
+#chart-title
+  right: 128px
+  top: 50%
+  transform: translateY(-50%)
+  text-align: right
+  letter-spacing: 0.05em
+  line-height: 1.2
+  font-weight: bold
+  z-index: 10
+  width: 480px
+
+.chart-title-main
+  font-size: 32px
+  margin: 0
+  letter-spacing: 0.03em
+
+.chart-title-small
+  display: block
+  font-weight: bold
+  margin-top: 8px
+  font-weight: normal
+  font-size: 16px
+
+.chart-title-small
+  color: #7e8d94
+
+#chart-source
+  right: 116px
+  bottom: 0
+  color: #7e8d94
+  text-transform: none
+  background: white
+  padding: 4px 12px
+
+#chart-logo
+  bottom: 2px
+  right: 80px
+  opacity: 0.5
+  width: 120px
+  display: none
+
+  img
+    width: 100%
+
+  &:hover
+    opacity: 1
+
+#chart-legend
+  position: absolute
+  right: 128px
+  bottom: 108px
+  text-align: right
+
+.year,
+.item,
+.rank-label,
+.scale-stroke-label
+  font-size: 14px
+
+@media (max-height: 800px), (max-width: 1000px)
+  body
+    padding: 20px
+
+  #wrapper
+    line-height: 24px
+    height: 28px * 20
+
+  .item,
+  .item-bar,
+  #axis-years-list
+    height: 24px
+
+  #axis-years-list
+    margin-top: -12px
+
+  .item,
+  .rank
+    padding: 2px
+
+  .rank:after
+    top: 2px
+    bottom: 2px
+
+  .year,
+  .chart-title-label
+    font-size: 16px
+
+  .year-link
+    padding: 0
+
+  .chart-title-main
+    font-size: 28px
+
+  #chart-title
+    width: 420px
+    right: 92px
+
+  .chart-title-small,
+  #chart-source,
+  .item,
+  .rank
+    font-size: 14px
+
+  #chart-source
+    line-height: 16px
+    right: 80px
+
+@media (max-width: 800px)
+  body
+    padding: 12px
+
+  #wrapper
+    line-height: 16px
+
+  #chart-title
+    height: 80px
+    text-align: left
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    flex-direction: column
+    padding-bottom: 12px
+
+  #axis-items
+    position: relative
+    height: 20px * 20
+    top: auto
+    overflow: hidden
+    margin-bottom: 32px
+
+  .item,
+  .item-bar
+    height: 16px
+
+  #axis-years-list
+    height: 20px
+    margin-top: -10px
+    line-height: 20px
+
+  .chart-title-small,
+  #chart-source,
+  .item,
+  .rank-label
+    font-size: 11px
+
+  .year,
+  .chart-title-label
+    font-size: 13px
+
+  .chart-title-label
+    margin-top: 4px
+
+  #wrapper
+    padding: 0
+    position: relative
+    overflow: visible
+    height: 492px
+
+  .item-name
+    width: 100px
+
+  .chart-title-small.projected
+    left: 0
+
+  .scale-stroke:nth-child(4n + 0),
+  .scale-stroke:nth-child(4n + 2),
+  .scale-stroke:nth-child(4n + 3)
+    color: transparent
+
+  #ranks
+    left: 104px
+
+  #scale,
+  .item-bar
+    left: 128px
+
+  #scale
+    overflow: hidden
+
+  #wrapper:before,
+  #scale,
+  #ranks
+    top: 92px
+    bottom: 0
+
+  #chart-title,
+  #chart-logo,
+  #chart-source
+    position: static
+    transform: none
+
+  #chart-logo,
+  #chart-source
+    display: block
+    margin: 20px auto
+    text-align: center
+    max-width: none
+
+  #chart-legend
+    bottom: 2px
+
+  .chart-title-label
+    font-size: 10px
+
+@media (max-width: 600px)
+  #chart-title
+    width: auto
+    text-align: center
+    align-items: center
+
+  #controls
+    top: 80px
+    background: $bg-color
+
+  #wrapper:before
+    right: 80px
+    width: 120px
+    left: auto

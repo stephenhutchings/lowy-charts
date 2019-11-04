@@ -1,0 +1,97 @@
+extend /partials/layout
+
+block append config
+  - var chart  = data.getOne("static/charts/china-us-trade-dominance/top-trading-partner/data")
+  - var byValue = function(e){return e.values ? -e.values[0] : 0};
+  - var inOrder = _.sortBy(chart.items, byValue);
+  - page.title = "Top Trading Partner"
+
+block page
+  - chart.scaleFactor = 1
+  - chart.timingFunction = "step"
+
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+
+  #wrapper(data-view="time-series" data-values="items")
+    #chart-title
+      h1.chart-title-main= page.title
+      .chart-title-small
+        | Number of countries for which this country
+        | is the top trading partner, 1960-2018
+
+    ul#axis-items.list-bare
+      for item in chart.items
+        - var p = item.values[0] / inOrder[0].values[0];
+        - var r = inOrder.indexOf(item);
+        li.item(
+          style=`transform: translate3d(0, ${r * 100}%, 0)`
+          class=`item-${written.hyphenCase(item.code.toLowerCase())}`
+        )
+          label.item-name.txt-ellipsis= item.aka || item.name
+          .item-bar
+            for key, i in chart.keys
+              .item-bar-block(
+                style=`transform: translate3d(${-100 + p * 100}%, 0, 0)`
+                class=key
+              )
+                .item-bar-label(class=key)
+
+    #ranks
+      #rank-list
+        for n, i in new Array(chart.limit)
+          .rank
+            .rank-label(style={
+              opacity: ((chart.limit * 2) - i) / (chart.limit * 2)
+            })= i + 1
+
+    #scale
+      #scale-strokes
+        for n, i in new Array(61)
+          .scale-stroke(style={opacity: (60 - i) / 60})
+            if i % 5 == 0
+              span.scale-stroke-label
+                = written.prettyNumber(i)
+
+    #controls
+      a#btn-reset.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+          polygon.btn-icon-shape(points="24,24 24,0 8,12 ")
+
+      a#btn-play.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          polygon.btn-icon-shape(points="0,24 0,0 24,12 ")
+
+      a#btn-pause.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+          rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+
+      a#btn-end.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+          polygon.btn-icon-shape(points="0,0 0,24 16,12 ")
+
+      #axis-years.list-bare
+        ul#axis-years-list
+          for year, i in chart.scale
+            li.year
+              a.year-link.txt-bare(data-index=i)= year
+
+    small#chart-source.txt-sans
+      | Source: Lowy Institute calculations
+
+    a#chart-logo(href="https://www.lowyinstitute.org/")
+      img(src="/img/lowyinstitute-logo.png")
+
+block append css
+  link(
+    type="text/css"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
+    media="all"
+  )
+
+  style
+    include:sass _style.sass

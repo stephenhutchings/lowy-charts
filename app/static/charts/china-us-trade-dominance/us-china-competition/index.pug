@@ -1,0 +1,79 @@
+extend /partials/layout
+
+block append config
+  - var chart  = data.getOne("static/charts/china-us-trade-dominance/us-china-competition/data")
+  - var byValue = function(e){return e.values ? -e.values[0] : 0};
+  - var inOrder = _.sortBy(chart.items, byValue);
+  - page.title = "Ratio of total trade"
+
+block page
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+
+  #wrapper(data-view="map")
+    #map-wrapper
+      svg#map(width="100%" height="100%")
+        text(x="50%" y="50%" text-anchor="middle")
+          | Loading map...
+
+      #chart-title
+        h1.chart-title-main= page.title
+
+      #map-scale
+        .clearfix
+          .map-legend-label.fl-l US only
+          .map-legend-label.fl-r China only
+        canvas#map-scale-canvas
+
+      #chart-year= _.first(chart.scale)
+
+      #controls
+        a#btn-reset.btn(tabindex="0")
+          svg.btn-icon(viewBox="0 0 24 24")
+            rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+            polygon.btn-icon-shape(points="24,24 24,0 8,12 ")
+
+        a#btn-play.btn(tabindex="0")
+          svg.btn-icon(viewBox="0 0 24 24")
+            polygon.btn-icon-shape(points="2,24 2,0 22,12 ")
+
+        a#btn-pause.btn(tabindex="0")
+          svg.btn-icon(viewBox="0 0 24 24")
+            rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+            rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+
+        a#btn-end.btn(tabindex="0")
+          svg.btn-icon(viewBox="0 0 24 24")
+            rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+            polygon.btn-icon-shape(points="0,0 0,24 16,12 ")
+
+    #map-timeline
+      canvas#map-timeline-minimap
+      .clearfix
+        #map-scale-min.map-legend-label= _.first(chart.scale)
+        #map-scale-max.map-legend-label= _.last(chart.scale)
+
+    small#chart-source.txt-sans
+      | Source: Lowy Institute calculations
+
+    a#chart-logo(href="https://www.lowyinstitute.org/")
+      img(src="/img/lowyinstitute-logo.png")
+
+block append css
+  //- link(
+  //-   type="text/css"
+  //-   rel="stylesheet"
+  //-   href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
+  //-   media="all"
+  //- )
+
+  style
+    include:sass _style.sass
+
+block append customScripts
+  script(src="https://d3js.org/d3.v5.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/d3-geo-projection/2.4.0/d3-geo-projection.js")
+  script(src='/extra/topojson.v1.min.js')
+
+  script
+    include:coffee view.coffee
