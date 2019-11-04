@@ -50,6 +50,12 @@
   to = "https://www.lowyinstitute.org/issues/australia-climate-change"
   staus = 301
 
+# Typology of Terror is not part of this repo, but can be access from this domain
+[[redirects]]
+  from = "/features/typology-of-terror/*"
+  to = "https://lowy-digital-terrorism.netlify.com/:splat"
+  staus = 200
+
 [[headers]]
   # Allow CORS on fonts for emails, etc.
   for = "/fonts/*"
