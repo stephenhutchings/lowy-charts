@@ -1,0 +1,139 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Milestones in Malaysian foreign and security policy"
+  - page.chart = data.getOne("static/charts/malaysias-foreign-policy/events")
+
+block page
+  .wrapper
+    - var order = [2,1,2,3,4,5,6,6,4,3,1,4,5,6,9,7,6,5,4,3,2,1,0]
+    - var events = page.chart.events
+    - var years = _.pluck(events, "start")
+    - var max = _.last(years)
+    - var min = _.first(years)
+    - var len = max - min + 4
+    - var vals = [];
+    - vals = Array.from(Array(len), ((e, i, a) => (1 + Math.pow(i, 2.1)) / len))
+    - vals = vals.map((e) => e / _.sum(vals))
+
+    #controls
+      .btn.js-prev(tabindex="0")
+        .icon.icon-left-arrow
+      .btn.js-next(tabindex="0")
+        .icon.icon-right-arrow
+
+    #frame
+      #events
+          for e, i in events
+            - var k = (e.start - min), left = _.sum(vals.slice(0, k));
+            - var dir = Math.floor(i / 10) % 2 == 0 ? -1 : 1
+
+            //- For events that share the same year, and contain offset data,
+                this code separates them rather than snapping to year
+
+            //- if e.offset
+              - d1 = moment("January 1 " + e.start)
+              - d2 = moment(e.offset + " " + e.start)
+              - y2ms = 1000 * 60 * 60 * 24 * 365
+              - l1 = _.sum(vals.slice(0, k + 1))
+              - left += (l1 - left) * (d2.diff(d1) / y2ms)
+
+            .event.js-year.middle(
+              tabindex="0"
+              style={left: (100 * left) + "%"}
+              class=[
+                i == 0 ? "active" : "",
+                i !== 1 && order[i] <= order[i-1] ? "left" : "right",
+                !e.highlight ? "top" : "bottom",
+                `item-${order[i]}`,
+                `index-${i}`,
+                e.highlight ? "highlight" : ""
+              ].join(" ")
+              data-i=_.sortBy(events, "start").indexOf(e)
+            )
+              .event-marker
+              .event-year
+                if e.end
+                  | #{e.start}–#{e.end.toString().slice(2)}
+                else
+                  | #{e.start}
+
+              .event-content
+                p.event-text
+                  span.event-offset
+                    = _.compact([e.offset, e.start]).join(" ")
+                  br
+                  != e.text
+
+      #years
+        for n, i in new Array(len)
+          - var j = min + i;
+          - var c = j % 100 == 0 ? "cen" : j % 10 == 0 ? "dec" : "";
+          if (min + i) % 10 == 0
+            .year(
+              style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
+              class=c
+            )
+
+          if (min + i) % 100 == 0
+            .year-label(
+              style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
+              class=c
+            )
+              = j
+
+    #pager
+      span#page 1
+      | &ensp;/&ensp;#{events.length}
+
+block append scripts
+  script.
+    $(document).ready(function(){
+      var count = 0,
+          $events = $(".event"),
+          $frame = $("#frame"),
+          $page = $("#page");
+
+      $(".js-next").click(function(){count++; update()})
+      $(".js-prev").click(function(){count--; update()})
+      $(".js-year").click(function(){count = $(this).data("i"); update()})
+      $(".js-year").hover(function(){count = $(this).data("i"); update()})
+
+      function update() {
+        if (document.activeElement) document.activeElement.blur()
+
+        count = ($events.length + count) % $events.length
+
+        $active = $events
+          .removeClass("active")
+          .filter("[data-i='" + count + "']")
+          .addClass("active")
+
+        $page.html(count + 1)
+
+        outer = $frame.width()
+        inner = $("body").outerWidth()
+        offset = $active.position().left
+        offset += $active.find(".event-text").position().left
+
+        if (inner < outer) {
+          if ($active.hasClass("right")) {
+            offset -= $active.find(".event-year").outerWidth() - 36
+          } else {
+            offset -= inner
+            offset += $active.find(".event-year").width() + 72
+          }
+          $frame.css({
+            transform: "translate3d(" + (-offset) + "px,0,0)"
+          })
+        } else {
+          $frame.css({
+            transform: ""
+          })
+        }
+      }
+    })
+
+block append css
+  style
+    include:sass _styles.sass
