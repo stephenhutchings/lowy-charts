@@ -1,92 +1,101 @@
 events:
   - start: 1824
     text: >
-          Anglo Dutch Treaty and establishment of Malaya as a Crown colony
+      Anglo Dutch Treaty and establishment of Malaya as a Crown colony
   - start: 1957
     offset: August
     text: >
-          *Federation of Malaya* independence
+      *Federation of Malaya* independence
   - start: 1957
     offset: September
     text: >
-          Federation of Malaya joins the United Nations
+      Federation of Malaya joins the United Nations
   - start: 1959
     text: >
-          Tunku Abdul Rahman is elected first Prime Minister of the Federation of
-          Malaya
+      Tunku Abdul Rahman is elected first Prime Minister of the Federation of
+      Malaya
   - start: 1963
     text: >
-          Malaysia Agreement: *Federation of Malaysia* is formed, with British
-            colonies of North Borneo (now Sabah), Sarawak and Singapore joining
-            Malaya
+      Malaysia Agreement: *Federation of Malaysia* is formed, with British
+      colonies of North Borneo (now Sabah), Sarawak and Singapore joining
+      Malaya
   - start: 1964
     text: >
-          Tunku Abdul Rahman is elected Prime Minister of the new Federation of
-          Malaysia
+      Tunku Abdul Rahman is elected Prime Minister of the new Federation of
+      Malaysia
   - start: 1965
     text: >
-          Singapore withdraws from Malaysia
+      Singapore withdraws from Malaysia
   - start: 1967
     text: >
-          Malaysia, together with Indonesia, Philippines, Singapore and Thailand
-          establish the *Association for Regional Cooperation among the Countries
-          of Southeast Asia* (to be known as ASEAN)
+      Malaysia, together with Indonesia, Philippines, Singapore and Thailand
+      establish the *Association for Regional Cooperation among the Countries
+      of Southeast Asia* (to be known as ASEAN)
   - start: 1970
     text: >
-          Tunku Abdul Rahman resigns as PM, replaced by Abdul Razak
+      Tunku Abdul Rahman resigns as PM, replaced by Abdul Razak
+  - start: 1974
+    text: >
+      Malaysia becomes first ASEAN member nation to recognise China
   - start: 1976
     text: >
-          Hussein Onn becomes Prime Minister after Razak's death
+      Hussein Onn becomes Prime Minister after Razak's death
   - start: 1981
     text: >
-          Mahathir Mohamad becomes prime minister after the resignation of
-          Hussein Onn, and wins the next five consecutive general elections
-          (1982, 1986, 1990, 1995, 1999), ruling for 22 years
+      Mahathir Mohamad becomes prime minister after the resignation of
+      Hussein Onn, and wins the next five consecutive general elections
+      (1982, 1986, 1990, 1995, 1999), ruling for 22 years
   - start: 2003
     text: >
-          Mahathir Mohamad resigns, succeeded by Abdullah Ahmad Badawi
+      Mahathir Mohamad resigns, succeeded by Abdullah Ahmad Badawi
   - start: 2009
     text: >
-          Abdullah steps down as prime minister, replaced by deputy, Najib Abdul
-          Razak
+      Abdullah steps down as prime minister, replaced by deputy, Najib Abdul
+      Razak
   - start: 2013
     text: >
-          Malaysia-China Comprehensive Strategic Partnership established
+      Malaysia-China Comprehensive Strategic Partnership established
   - start: 2014
     text: >
-          Malaysia-US Comprehensive Partnership announced
+      Malaysia-US Comprehensive Partnership announced
   - start: 2015
     text: >
-          Exposure of 1 MDB fraud claims
+      Exposure of 1 MDB fraud claims
   - start: 2016
+    offset: November
     text: >
-          US Department of Justice announces seizure of 1MDB assets
+      Najib Razak signs agreement with China’s Eximbank to fund
+      East Coast Rail Link
+  - start: 2017
+    offset: May
+    text: >
+      Najib Razak attends 2017 Belt and Road Forum
   - start: 2018
     offset: May
     text: >
-          Pakatan Harapan coalition led by Mahathir Mohamad wins general
-          election for 14th Parliament of Malaysia
+      Pakatan Harapan coalition led by Mahathir Mohamad wins general
+      election for 14th Parliament of Malaysia
   - start: 2018
     offset: June
     text: >
-          Government announces plan to withdraw Malaysian troops from
-          Saudi Arabia
+      Government announces plan to withdraw Malaysian troops from
+      Saudi Arabia
   - start: 2018
     offset: November
     text: >
-          Government reverses earlier pledge to ratify UN human
-          rights treaties
+      Government reverses earlier pledge to ratify UN human
+      rights treaties
   - start: 2019
     offset: 5 April
     text: >
-          Mahathir announces Malaysia’s withdrawal from Rome Statute
-          of the International Criminal Court
+      Mahathir announces Malaysia’s withdrawal from Rome Statute
+      of the International Criminal Court
   - start: 2019
     offset: 26 April
     text: >
-          Mahathir pledges support for China’s Belt and Road
-          initiative
+      Mahathir pledges support for China’s Belt and Road
+      initiative
   - start: 2019
     offset: September
     text: >
-          Mahathir launches new *Foreign Policy Framework* document
+      Mahathir launches new *Foreign Policy Framework* document
