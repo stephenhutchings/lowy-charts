@@ -59,11 +59,11 @@ block page
                   | #{e.start}
 
               .event-content
-                p.event-text
+                .event-text
                   span.event-offset
                     = _.compact([e.offset, e.start]).join(" ")
                   br
-                  != e.text
+                  != marked(e.text)
 
       #years
         for n, i in new Array(len)

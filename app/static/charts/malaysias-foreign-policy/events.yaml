@@ -5,7 +5,7 @@ events:
   - start: 1957
     offset: August
     text: >
-          Federation of Malaya independence
+          *Federation of Malaya* independence
   - start: 1957
     offset: September
     text: >
@@ -16,7 +16,7 @@ events:
           Malaya
   - start: 1963
     text: >
-          Malaysia Agreement: Federation of Malaysia is formed, with British
+          Malaysia Agreement: *Federation of Malaysia* is formed, with British
             colonies of North Borneo (now Sabah), Sarawak and Singapore joining
             Malaya
   - start: 1964
@@ -29,8 +29,8 @@ events:
   - start: 1967
     text: >
           Malaysia, together with Indonesia, Philippines, Singapore and Thailand
-          establish the Association for Regional Cooperation among the Countries
-          of Southeast Asia (to be known as ASEAN)
+          establish the *Association for Regional Cooperation among the Countries
+          of Southeast Asia* (to be known as ASEAN)
   - start: 1970
     text: >
           Tunku Abdul Rahman resigns as PM, replaced by Abdul Razak
@@ -89,4 +89,4 @@ events:
   - start: 2019
     offset: September
     text: >
-          Mahathir launches new Foreign Policy Framework document
+          Mahathir launches new *Foreign Policy Framework* document
