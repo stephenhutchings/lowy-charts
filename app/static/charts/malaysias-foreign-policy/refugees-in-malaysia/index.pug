@@ -1,75 +1,125 @@
 extend /partials/layout
 
 block append config
-  - page.title = "UNHCR-registered refugees in Malaysia"
+  - page.title = "Refugees in Malaysia: countries of origin"
 
 block page
   .wrapper
     svg.chart(width="100%" height="100%")
-      svg.g(x="0" y="0%" width="100%" height="86.6%")
+      svg.g(x="0" y="0" width="100%" height="86.6%")
+
         rect(width="100%" height="100%" fill="#539ed4" stroke="white")
-        text.lb(x=6 y=18) Myanmar
+
+        svg.rohingya(width="63.6%" height="100%")
+          rect(width="100%" height="100%" fill="#539ed4" stroke="white")
+          text.lb(x=6 y=36) Rohingya
+          svg(x="100%")
+            text.nb(x=-6 y=36) 97,750
+            text.pc(x=-6 y=36) 55.0%
+
+        svg.chin(x="63.6%" width="36.4%" height="42.3%")
+          rect(width="100%" height="100%" fill="#539ed4" stroke="white")
+          text.lb(x=6 y=18) Chin
+          svg(x="100%")
+            text.nb(x=-6 y=18) 23,730
+            text.pc(x=-6 y=18) 13.4%
+
+        svg(x="63.6%" y="42.3%" width="36.4%" height="17.0%")
+          rect(width="100%" height="100%" fill="#539ed4" stroke="white")
+          text.lb(x=6 y=18) Myanmar Muslim
+          svg(x="100%")
+            text.nb(x=-6 y=18) 9550
+            text.pc(x=-6 y=18) 5.4%
+
+        svg(x="63.6%" y="59.3%" width="36.4%" height="6.9%")
+          rect(width="100%" height="100%" fill="#539ed4" stroke="white")
+          text.lb(x=6 y=18) Rakhine/Arakanese/other
+          svg(x="100%")
+            text.nb(x=-6 y=18) 3850
+            text.pc(x=-6 y=18) 2.2%
+
+        svg(x="63.6%" y="66.2%" width="36.4%" height="33.8%")
+          rect(width="100%" height="100%" fill="#539ed4" stroke="white")
+          text.lb(x=6 y=18) Other Myanmar refugees
+          svg(x="100%")
+            text.nb(x=-6 y=18) 18,890
+            text.pc(x=-6 y=18) 10.6%
+
+        rect.lb-bg(x="63%" width="2%" height="26" y="1" fill="#539ed4")
+        line.lb-bg(x1=12 x2="100%" y1="28" y2="28" stroke="white")
+
+        text.lb.txt-bold(x=6 y=18) Myanmar
         svg(x="100%")
           text.pc(x=-6 y=18) 86.5%
           text.nb(x=-6 y=18) 153,770
+
       svg.g(x="0" y="86.6%" width="26.7%" height="13.4%")
         rect(width="100%" height="100%" fill="#002a45" stroke="white")
-        text.lb.lb-tr(x=6 y=18) Pakistan
-        text.lb-tr-alt(x=6 y=18) Pakis...
+        text.lb.txt-bold.lb-tr(x=6 y=18) Pakistan
+        text.lb.txt-bold.lb-tr-alt(x=6 y=18) Pakis...
         svg(x="100%")
           text.pc(x=-6 y=18) 3.6%
           text.nb(x=-6 y=18) 6410
+
       svg.g.dk(x="26.7%" y="86.6%" width="28%" height="7.1%")
         rect(width="100%" height="100%" fill="#ffc52b" stroke="white")
-        text.lb(x=6 y=18) Yemen
+        text.lb.txt-bold(x=6 y=18) Yemen
         svg(x="100%")
           text.pc(x=-6 y=18) 1.9%
           text.nb(x=-6 y=18) 3460
+
       svg.g(x="26.7%" y="93.7%" width="28%" height="6.3%")
         rect(width="100%" height="100%" fill="#3778a5" stroke="white")
-        text.lb(x=6 y=18) Syria
+        text.lb.txt-bold(x=6 y=18) Syria
         svg(x="100%")
           text.pc(x=-6 y=18) 1.8%
           text.nb(x=-6 y=18) 3160
+
       svg.g(x="54.7%" y="86.6%" width="22.7%" height="7.9%")
         rect(width="100%" height="100%" fill="#434e5a" stroke="white")
-        text.lb.lb-tr(x=6 y=18) Somalia
-        text.lb-tr-alt(x=6 y=18) So...
+        text.lb.txt-bold.lb-tr(x=6 y=18) Somalia
+        text.lb.txt-bold.lb-tr-alt(x=6 y=18) So...
         svg(x="100%")
           text.pc(x=-6 y=18) 1.8%
           text.nb(x=-6 y=18) 3200
+
       svg.g(x="54.7%" y="94.5%" width="22.7%" height="5.5%")
         rect(width="100%" height="100%" fill="#ef8216" stroke="white")
-        text.lb.lb-tr(x=6 y=18) Afghanistan
-        text.lb-tr-alt(x=6 y=18) Afg...
+        text.lb.txt-bold.lb-tr(x=6 y=17) Afghanistan
+        text.lb.txt-bold.lb-tr-alt(x=6 y=17) Afg...
         svg(x="100%")
-          text.pc(x=-6 y=18) 1.3%
-          text.nb(x=-6 y=18) 2270
+          text.pc(x=-6 y=17) 1.3%
+          text.nb(x=-6 y=17) 2270
+
       svg.g.g-sm(x="77.3%" y="86.6%" width="12.8%" height="7.6%")
         rect(width="100%" height="100%" fill="#1c5275" stroke="white")
-        text.lb(x=6 y=18) Sri Lanka
+        text.lb.txt-bold(x=6 y=18) Sri Lanka
         svg(x="100%")
           text.pc(x=-6 y=18) 1.1%
           text.nb(x=-6 y=18) 1870
+
       svg.g.g-sm(x="77.3%" y="94.2%" width="12.8%" height="5.8%")
         rect(width="100%" height="100%" fill="#f7a421" stroke="white")
-        text.lb(x=6 y=18) Iraq
+        text.lb.txt-bold(x=6 y=17) Iraq
         svg(x="100%")
-          text.pc(x=-6 y=18) 0.8%
-          text.nb(x=-6 y=18) 1360
+          text.pc(x=-6 y=17) 0.8%
+          text.nb(x=-6 y=17) 1360
+
       svg.g.g-sm(x="90.1%" y="86.6%" width="9.9%" height="8.9%")
         rect(width="100%" height="100%" fill="#bbbbbb" stroke="white")
-        text.lb(x=6 y=18) Other
+        text.lb.txt-bold(x=6 y=18) Other
         svg(x="100%")
           text.pc(x=-6 y=18) 0.8%
           text.nb(x=-6 y=18) 1420
+
       svg.g.g-sm(x="90.1%" y="95.5%" width="9.9%" height="4.5%")
         rect(width="100%" height="100%" fill="#808080" stroke="white")
-        text.lb.tr(x=6 y=17) Palestine
-        text.lb.tr-alt(x=6 y=17) Pales...
+        text.lb.txt-bold.tr(x=6 y=15) Palestine
+        text.lb.txt-bold.tr-alt(x=6 y=15) Pales...
         svg(x="100%")
-          text.pc(x=-6 y=17) 0.4%
-          text.nb(x=-6 y=17) 770
+          text.pc(x=-6 y=15) 0.4%
+          text.nb(x=-6 y=15) 770
+
 
     .chart-source.txt-center.txt-sm.txt-muted
       | Source: UNHCR, "Figures at a Glance in Malaysia," August 2019.
@@ -79,7 +129,7 @@ block append css
   style
     :sass
       .wrapper
-        height: 600px
+        height: 520px
         display: flex
         flex-direction: column
 
@@ -96,20 +146,21 @@ block append css
         .dk &
           fill: currentColor
 
-      rect
+      rect, line
         stroke-width: 2
 
-      text, rect
+      text, rect, line
         transition: all 300ms
 
       .pc, .nb
         text-anchor: end
 
-      .pc, .nb, .tr-alt, .lb-tr-alt
+      .pc, .nb, .tr-alt, .lb-tr-alt, .lb-bg
         opacity: 0
 
       .chart:hover .pc,
-      .chart:hover .tr-alt
+      .chart:hover .tr-alt,
+      .chart:hover .lb-bg
         opacity: 1
 
       .g:hover .pc,
@@ -130,6 +181,18 @@ block append css
       .chart:hover .g:not(:hover) text
         fill: currentColor
 
+      .chart:hover .chin text
+        transform: translate(0, 30px)
+
+      .chart:hover .rohingya text
+        transform: translate(0, 12px)
+
+      line.lb-bg
+        transform: translate(-6px, 0)
+
+      rect.lb-bg
+        transform: translate(-1px, 0)
+
       @media (max-width: 480px)
         .chart:hover .lb-tr,
         .chart:hover .g-sm .lb
@@ -141,3 +204,10 @@ block append css
         .g-sm text
           font-size: 10px
           transform: translate(-2px, -2px)
+
+//-
+  #539ed4
+  #63a7d7
+  #72b0da
+  #82b9dd
+  #92c2e0
