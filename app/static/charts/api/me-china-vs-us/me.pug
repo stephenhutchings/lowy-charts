@@ -14,7 +14,7 @@ block page
     != `window.chart = ${JSON.stringify(chart)};`
   #wrapper(data-view="gdp-vs-me")
     #chart-title
-      h1.chart-title-main 
+      h1.chart-title-main
         | Military Expenditure
 
       small.chart-title-small.constant
@@ -51,7 +51,7 @@ block page
       for n, i in new Array(15)
         .axis-label
           .axis-label-text $#{(14 - i) * 100}B
-    
+
     #axis-year
       for year, i in chart.scale
         .axis-label
@@ -71,7 +71,7 @@ block page
         svg.btn-icon(viewBox="0 0 24 24")
           rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
           rect.btn-icon-shape(x="16" y="0" width="8" height="24")
-      
+
       a#btn-end.btn(tabindex="0")
         svg.btn-icon(viewBox="0 0 24 24")
           rect.btn-icon-shape(x="16" y="0" width="8" height="24")
@@ -190,7 +190,7 @@ block css
       #chart-legend
         opacity: 0
         transition: opacity 300ms
-        
+
         .playing &
           transition: opacity 800ms 1200ms
 
@@ -347,7 +347,7 @@ block css
           padding-top: 8px
           flex-shrink: 0
           color: transparent
-          
+
           &:nth-child(5n + 1)
             color: #7a8d95
 
@@ -368,4 +368,4 @@ block css
 block customScripts
   script
     include:coffee me.coffee
-      
+

@@ -11,6 +11,9 @@ require.register "views/gdp-vs-me", (exports, require, module) ->
       "click #btn-reset": "reset"
       "click #btn-end": "end"
       "click .year-link": "goToYear"
+      "chartplay": "pause"
+      "chartpause": "pause"
+      "chartreset": "reset"
 
     initialize: ->
       @$elements =

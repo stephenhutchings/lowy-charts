@@ -14,6 +14,9 @@ module.exports =
       "click #btn-end": "end"
       "click .year-link": "goToYear"
       "click .chart-title-label": "selectKey"
+      "chartplay": "pause"
+      "chartpause": "pause"
+      "chartreset": "reset"
 
     initialize: (opts) ->
       if opts.items
@@ -83,7 +86,7 @@ module.exports =
             )
           )
 
-      length = @$elements.strokes.length
+      length = @$elements.strokes.length - 1
 
       factor = @data.scaleFactor / (1 / length)
       scale  = factor / max
@@ -139,14 +142,13 @@ module.exports =
             )
 
       for { value, index, isEstimate }, rank in list
+        rank = Math.min(rank, @data.limit)
+
         @$elements.item.eq(index)
           .toggleClass("estimate", isEstimate)
           .css
             transform: "translate3d(0, #{Math.min(rank, @data.limit) * 100}%, 0)"
-            opacity: 1
-
-        if rank >= @data.limit
-          @$elements.item.eq(index).css opacity: 0
+            opacity: if rank >= @data.limit then 0 else 1
 
     play: ->
       window.cancelAnimationFrame(@loop)
@@ -166,7 +168,10 @@ module.exports =
         t = d / @data.duration
         t = Math.min(t, 1)
 
-        @render(easie.sineInOut(t) * max)
+        if @data.timingFunction is "step"
+          @render(Math.abs(t * max))
+        else
+          @render(easie.sineInOut(t) * max)
 
         if t < 1 and @playing
           @currentTime = t
