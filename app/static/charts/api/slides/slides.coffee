@@ -1,19 +1,24 @@
 $(document).ready ->
-  $("iframe")
+  timeout = null
+  $("[data-view='in-viewport']")
     .on("load", (e) ->
-      window.setTimeout ->
-        e.target.contentWindow.$("#btn-reset").trigger("click")
+      timeout = window.setTimeout ->
+        e.target.contentWindow?.$("#btn-reset").trigger("click")
+        e.target.currentTime = 0
+        e.target.pause?()
       , 1000
     )
 
     .on("enter", (e) ->
-      window.setTimeout ->
-        e.currentTarget.contentWindow.$("#btn-play").trigger("click")
-      , 0
+      window.clearTimeout timeout
+      e.target.contentWindow?.$("#btn-play").trigger("click")
+      e.target.currentTime = 0
+      timeout = window.setTimeout (-> e.target.play?()), 1000
     )
 
     .on("exit", (e) ->
-      window.setTimeout ->
-        e.currentTarget.contentWindow.$("#btn-reset").trigger("click")
-      , 0
+      window.clearTimeout timeout
+      e.target.contentWindow?.$("#btn-reset").trigger("click")
+      e.target.currentTime = 0
+      e.target.pause?()
     )

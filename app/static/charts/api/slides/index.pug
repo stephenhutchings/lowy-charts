@@ -43,6 +43,44 @@ block page
         src="../me-china-vs-us/me.html"
       )
 
+    .slide
+      img(
+        width="100%"
+        height=720
+        src="./scenario-baseline.png"
+      )
+
+    .slide
+      .video-wrap
+        video(
+          data-view="in-viewport"
+          muted
+          playsinline
+          preload="all"
+          width="100%"
+          height=720
+          src="./scenario-cold-war.mp4"
+        )
+
+    .slide
+      img(
+        width="100%"
+        height=720
+        src="./scenario-baseline.png"
+      )
+
+    .slide
+      .video-wrap
+        video(
+          data-view="in-viewport"
+          muted
+          playsinline
+          preload="all"
+          width="100%"
+          height=720
+          src="./scenario-hot-war.mp4"
+        )
+
 block append scripts
   script
     include:coffee slides.coffee
@@ -65,10 +103,15 @@ block css
       iframe
         border: none
 
-      iframe, img
+      iframe, img, .video-wrap
         max-width: 1280px
         margin: auto
         display: block
+
+      video
+        max-width: none
+        width: calc(100% + 256px)
+        margin: auto -128px
 
       .slide
         height: 100vh
