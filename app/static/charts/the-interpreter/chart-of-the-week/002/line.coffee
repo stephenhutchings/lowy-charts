@@ -55,6 +55,8 @@ require.register "views/line", (exports, require, module) ->
         else if @playing
           @$el.removeClass("playing").addClass("complete")
           @playing = false
+          @stopListening()
+          @undelegateEvents()
 
     exit: ->
       @playing = false
