@@ -1,0 +1,210 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Australian exports by destination"
+
+block page
+  - chart = data.getOne("static/features/chinas-communist-party-under-xi-jinping/data/gdp").series[2]
+  - inorder = _.sortBy(chart.countries, (f) => f.values[0] ).reverse()
+
+  #wrapper.txt-sans(data-view="match")
+    h1#chart-title.txt-sans.txt-bold= page.title
+    #chart-wrapper
+      svg(
+        width="100%"
+        height="100%"
+        data-view="line, in-viewport"
+        data-duration=4000
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      )
+        svg(
+          width="100%"
+          height="100%"
+        )
+          - nb = (_.last(chart.scale) - chart.scale[0])
+          for n, i in new Array(nb + 1)
+            - x = i / nb * 99.8 + "%"
+            g
+              rect.fill-v(x=x width=1 y="100%" height="6")
+
+              if (chart.scale[0] + i) % 2 == 0
+                text(
+                  x=x
+                  y="100%"
+                  text-anchor="middle"
+                  transform="translate(0 20)"
+                )
+                  = chart.scale[0] + i
+
+
+        - nb = 6
+        svg(
+          width="100%"
+          height="100%"
+        )
+          for n, i in new Array(nb)
+            - y = (0.02 / 0.32 + 0.3 / 0.32 * (i / nb)) * 100 + "%"
+            g
+              rect.fill-h(
+                y=y
+                width="100%"
+                height=1
+                opacity=0.4
+                transform="translate(0 -0.5)"
+              )
+              text(
+                x="100%"
+                y=y
+                transform="translate(8 7)"
+              )
+                | #{30 - i * (30/nb)}%
+
+        svg(
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        )
+          polyline.line(
+            points="0,99.8076 100,99.8077" stroke="#c6c9d0" stroke-width=1
+          )
+
+        for country, i in inorder
+          svg
+            g(
+              opacity=(0.5 + i / 6 * .5).toFixed(2)
+              data-id=i
+              data-link=i
+            )
+              svg(
+                x="0"
+                width="100%"
+                height="100%"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              )
+                polyline.line(
+                  stroke-width=12
+                  fill="none"
+                  stroke="#fff"
+                  opacity=0
+                  points=(
+                    country.values.map(
+                      (e,i,a) => [
+                        i / (a.length - 1) * 100,
+                        100 - (e / .32)
+                        ].map((e) => e.toFixed(2)).join(",")
+                    ).join(" ")
+                  )
+                )
+
+                polyline.line(
+                  stroke-width=3
+                  fill="none"
+                  stroke=country.code == "other" ? "#c6c9d0" : "#f90"
+                  points=(
+                    country.values.map(
+                      (e,i,a) => [
+                        i / (a.length - 1) * 100,
+                        100 - (e / .32)
+                        ].map((e) => e.toFixed(2)).join(",")
+                    ).join(" ")
+                  )
+                )
+
+    #chart-labels
+      for country, i in inorder
+        label.chart-label(
+          style=`top: ${[46,64,72,77.5,83,88.5,96][i]}%`
+          class=(country.code == "other" ? "txt-muted" : "")
+          data-id=i
+          data-link=i
+        )
+          = country.name
+
+    #chart-source.txt-muted.txt-sm
+      | Source: ABS, RBA
+
+block append css
+  style
+    :sass
+      .fill-h, .fill-v
+        fill: #ccc
+
+      path, polyline
+        vector-effect: non-scaling-stroke
+
+        .active &,
+        .inactive &
+          stroke: #31363c
+
+      g.active
+        opacity: 1
+
+      g.inactive
+        opacity: 0.1
+
+      g, label, polyline
+        transition: all 300ms
+
+      svg
+        overflow: visible
+
+      text
+        font-size: 14px
+        fill: #969ba4
+
+      body
+        display: flex
+        flex-direction: column
+
+      #wrapper
+        height: 100%
+        width: 100%
+        max-width: 900px
+        max-height: 400px
+        position: relative
+        margin: auto
+
+      #chart-title,
+      #chart-source
+        position: absolute
+        left: 0
+        top: 0
+        background: #fff
+        z-index: 1
+        padding-right: 0.3em
+
+      #chart-source
+        top: 2.4em
+
+      #chart-wrapper
+        position: absolute
+        left: 124px
+        right: 40px
+        top: 0
+        bottom: 20px
+
+      #chart-labels
+        position: absolute
+        width: 124px
+        left: 0
+        top: 0
+        bottom: 20px
+
+      .chart-label
+        position: absolute
+        margin-top: -12px
+        white-space: nowrap
+        right: 8px
+        font-size: 16px
+
+        &.active
+          color: #31363c
+        &.inactive
+          color: #c6c9d0
+
+block append scripts
+  script
+    include:coffee line.coffee
