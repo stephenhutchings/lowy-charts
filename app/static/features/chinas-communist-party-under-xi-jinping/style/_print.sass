@@ -4,6 +4,13 @@
     overflow: visible
     height: auto
 
+  #scroller
+    display: block
+    height: auto !important
+
+  .slide.hidden
+    display: flex !important
+
   .fade-in,
   .line,
   .line .mask,
@@ -11,7 +18,8 @@
   .bar-bg, .bar-label, .bar-value,
   .block:before,
   .block-row:before,
-  .item-0
+  .item-0,
+  .undo
     opacity: 1 !important
     transition: none !important
 
@@ -23,7 +31,8 @@
   .block-row:before,
   .line .mask,
   .line .line-bg,
-  .bar-bg, .bar-value
+  .bar-bg, .bar-value,
+  .undo
     transform: translateZ(0) !important
 
   .line:after

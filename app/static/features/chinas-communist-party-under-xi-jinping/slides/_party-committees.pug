@@ -1,0 +1,31 @@
+- var values = [1,0,0,0,1,0,0,0,0,0,0,0,   0,0,0,12,8,7,2,1]
+
+.slide.bg-lt
+  .slide-inner.flex(data-view="in-viewport")
+    .type.txt-lg.txt-dk.txt-left.posa.fade-in(
+      data-view="slide, in-viewport"
+      data-duration=1000
+    )
+      span.line.bg-ff.txt-mono Party Committees
+
+    .flex.flex-grow
+      - var k = 0
+      for v, i in values
+        .month.flex.flex-grow.flex-col.txt-center
+          .flex-grow.flex-end
+            for b, j in new Array(v)
+              .bg-dk.fade-in(
+                class="delay-" + (k + v - j)
+                style="height: 40px;margin: 0 0 2px 2px"
+              )
+
+            if i % 12 == 0
+              .month-label.year-label
+                label.l0.r0.posa= 2016 + i / 12
+            else
+              .month-label &nbsp;
+
+          - k += ~~(v / 2);
+
+    .posa.txt-muted.fade-in.delay-8(style="top: 0; right: 0")
+      | Source: Wall Street Journal

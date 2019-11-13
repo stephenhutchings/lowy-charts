@@ -1,0 +1,23 @@
+.slide.bg-lt
+  .posr.fw.fh.flex-cv(data-view="in-viewport")
+    img.fade-in.posa.fw.fh(data-src="./img/org-buro-front.jpg")
+
+    .slide-inner.type.txt-mono.flex-end.posr.z1
+      .txt-lg.pv-sm(
+        data-view="in-viewport, type"
+        data-duration=1500
+        data-delay=300
+      )
+        span.line.bg-dk.txt-ff The Organisation
+        span.line.bg-dk.txt-ff Department covers…
+
+      - list = ["Ministers", "Governors", "Mayors", "Regulators", "Senior Executives in State-Owned Businesses", "Judges", "Heads of Think Tanks", "University Chiefs", "Newspaper and Television bosses"]
+      .txt-md.pv-sm.txt-dk
+        for item, i in list
+          .fl-l(
+            data-view="in-viewport, type"
+            data-duration=800
+            data-delay=(1200 + i * 100)
+            style="margin: 2px"
+          )
+            span.line.pv-xs.ph-sm.bg-ff= item

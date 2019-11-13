@@ -18,7 +18,7 @@ block page
   #controls.p-xs.txt-ff
     #pager-progress
       span#pager-index 1
-      span#pager-total &ensp;/&ensp;35
+      span#pager-total &ensp;/&ensp;40
     #btn-prev.btn.icon.icon-up
     #btn-next.btn.icon.icon-down
     #btn-fs.btn.icon.icon-expand
@@ -30,35 +30,8 @@ block page
     style="display: none"
   )
 
-
-    include slides/intro
-    include slides/gdp-us-ussr
-    include slides/gdp
-    include slides/australian-exports-by-destination
-    include slides/quote-jeff-bader
-    include slides/ivy-league
-    include slides/membership
-    include slides/gender
-    include slides/age
-    include slides/quote-poor-rich
-    include slides/profession
-    include slides/quote-politics
-    include slides/east-south-west-north
-    include slides/party-structure
-
-    include slides/organisation-bureau
-    include slides/video
-    include slides/politburo-members
-
-    include slides/ideology
-    include slides/history
-
-    //- Path to the top
-    include slides/path-to-the-top
-    include slides/profiles
-    include slides/xi-features
-
-    include slides/outro
+    div(style="height: 4000%")
+      include _slides
 
 block customScripts
   style
