@@ -6,12 +6,20 @@ block append config
 block page
   #wrapper
     .slide
+      img(
+        width="100%"
+        height=720
+        src="./2019-results.png"
+      )
+
+    .slide
       iframe(
         data-view="in-viewport"
         width="100%"
         height=720
         src="../gdp-vs-ppp/"
       )
+
     .slide
       iframe(
         data-view="in-viewport"
