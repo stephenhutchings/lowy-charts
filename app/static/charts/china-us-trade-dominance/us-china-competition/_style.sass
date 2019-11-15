@@ -100,6 +100,21 @@ body, h1, h2, h3
   .map-legend-label
     min-width: 44px
 
+.map-legend-label-no-data
+  margin-bottom: 16px
+  text-align: left
+
+  &:before
+    content: ""
+    display: block
+    float: left
+    width: 1em
+    height: 1em
+    border: 1px solid
+    margin-top: -1px
+    margin-right: 0.5em
+    background: $bg-light
+
 #map-scale-canvas-wrap
   margin: 3px 0 6px
   height: 12px
@@ -213,6 +228,10 @@ body, h1, h2, h3
   line-height: 1.2
   margin: 0
   letter-spacing: 0.03em
+
+.chart-title-sub
+  font-size: 75%
+  letter-spacing: 0.05em
 
 #chart-source
   right: 0

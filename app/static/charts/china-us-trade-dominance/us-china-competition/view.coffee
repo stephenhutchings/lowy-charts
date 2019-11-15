@@ -18,7 +18,7 @@ require.register "views/map", (exports, require, module) ->
           "pointerdown #map-timeline-minimap": "startYear"
           "pointercancel": "endYear"
 
-        interpolate: d3.interpolateRgbBasis(["#0056fa","#caced6","#caced6","#fa0051"])
+        interpolate: d3.interpolateRgbBasis(["#0056fa","#fff","#fa0051"])
 
         createScale: ->
           values = _.chain(@data.items).map("values").flatten().filter().value()
