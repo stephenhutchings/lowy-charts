@@ -3,6 +3,8 @@ extend /partials/layout
 block append config
   - var chart  = data.getOne("static/charts/china-us-trade-dominance/top-trading-partner/data")
   - var byValue = function(e){return e.values ? -e.values[0] : 0};
+  - chart.items.forEach((v) => v.values = v.values.slice(21))
+  - chart.scale = chart.scale.slice(21)
   - var inOrder = _.sortBy(chart.items, byValue);
   - page.title = "Top Trading Partner"
 
@@ -18,7 +20,7 @@ block page
       h1.chart-title-main= page.title
       .chart-title-small
         | Number of countries for which this country
-        | is the top trading partner, 1960-2018
+        | is the top trading partner, 1981-2018
 
     ul#axis-items.list-bare
       for item in chart.items

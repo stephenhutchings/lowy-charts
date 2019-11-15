@@ -13,7 +13,7 @@ stack: true
 suffix: ""
 prefix: ""
 duration: 30000
-limit: 20
+limit: 10
 classes:
   0: "constant"
   0.7: "projected"

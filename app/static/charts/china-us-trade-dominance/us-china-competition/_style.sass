@@ -66,7 +66,7 @@ body, h1, h2, h3
 #map-wrapper
   left: 0
   top: 0
-  bottom: 128px
+  bottom: 96px
   right: 0
 
 #map
@@ -94,14 +94,30 @@ body, h1, h2, h3
   bottom: 12px
   left: 0
   z-index: 10
-  width: 240px
+  max-width: 304px
   line-height: 16px
 
-#map-scale-canvas
-  margin-top: 4px
-  display: block
-  width: 100%
+  .map-legend-label
+    min-width: 44px
+
+#map-scale-canvas-wrap
+  margin: 3px 0 6px
   height: 12px
+  position: relative
+
+  &:after
+    content: ""
+    position: absolute
+    left: 50%
+    margin-left: -0.5px
+    border: 1px solid rgba(#000, 0.2)
+    top: 0
+    bottom: -4px
+
+#map-scale-canvas
+  width: 100%
+  height: 100%
+  display: block
   image-rendering: pixelated
 
 #map-scale-min,
@@ -121,7 +137,7 @@ body, h1, h2, h3
   left: 0
   right: 0
   bottom: 0
-  height: 128px
+  height: 96px
 
 #map-timeline-minimap
   cursor: ew-resize
@@ -174,7 +190,7 @@ body, h1, h2, h3
 
 #chart-year
   left: 50%
-  bottom: 88px
+  bottom: 112px
   width: 2.8em
   line-height: 1em
   margin: 0 -1.4em
@@ -189,8 +205,8 @@ body, h1, h2, h3
   letter-spacing: 0.05em
   font-weight: bold
   z-index: 10
-  width: 320px
-  margin-left: -160px
+  width: 480px
+  margin-left: -240px
 
 .chart-title-main
   font-size: 24px
@@ -200,7 +216,7 @@ body, h1, h2, h3
 
 #chart-source
   right: 0
-  bottom: 140px
+  bottom: 112px
   color: #a2acb1
   text-transform: none
   line-height: 16px
@@ -223,30 +239,35 @@ body, h1, h2, h3
 #chart-source
   font-size: 14px
 
-@media (max-width: 720px)
+@media (max-width: 1080px)
   #chart-source
     font-size: 14px
 
   #chart-title
-    top: 20px
+    top: -40px
     bottom: auto
 
   #chart-year
-    top: 88px
-    bottom: auto
+    bottom: 12px
+    left: auto
+    right: 104px
+    margin: 0
     font-size: 28px
 
+  #map-wrapper
+    top: 40px
+
   #map-scale
-    left: 12px
-    right: 12px
-    width: auto
+    left: 0
 
   #map-timeline
     bottom: 24px
-    height: 104px
+    height: 72px
 
   #controls
-    bottom: 64px
+    bottom: 12px
+    right: -4px
+    left: auto
 
   #chart-source
     bottom: 0
@@ -254,6 +275,46 @@ body, h1, h2, h3
 @media (max-width: 600px)
   body.embed-false
     padding: 12px
+
+  #map-scale
+    right: 0
+    max-width: none
+    text-align: center
+
+  #map-wrapper
+    top: 0
+
+  .btn
+    color: #fff
+    background: #002a45
+    border-radius: 50%
+    padding: 12px
+
+    &:hover
+      background: #fff
+
+  #btn-play .btn-icon
+    margin-left: 1px
+
+  #controls
+    right: 50%
+    bottom: -56px
+    margin-right: -20px
+
+  #btn-reset,
+  #btn-end
+    display: none
+
+  #chart-year
+    right: 50%
+    margin-right: -40px
+    bottom: 80px
+
+  #chart-title
+    width: 100%
+    margin: 0
+    top: 0
+    left: 0
 
   #map-legend
     left: 12px

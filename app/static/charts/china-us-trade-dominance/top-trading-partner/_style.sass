@@ -40,8 +40,8 @@ body, h1, h2, h3
   max-width: 1600px
   margin: auto
   position: relative
-  line-height: 20px
-  height: 28px * 20
+  line-height: 32px
+  height: 40px * 10
   text-transform: uppercase
   z-index: 0
   padding: 4px 0 24px
@@ -77,7 +77,6 @@ body, h1, h2, h3
 #chart-source,
 #scale,
 #ranks,
-#chart-logo,
 .item,
 .item-name,
 .item-bar,
@@ -88,7 +87,7 @@ body, h1, h2, h3
 
 .item
   top: 0
-  height: 20px
+  height: 32px
   padding: 4px 0
   margin: 0
   transition: all 800ms 400ms cubic-bezier(0.666, 0, 0.333, 1)
@@ -118,7 +117,7 @@ body, h1, h2, h3
 .item-bar
   left: 220px
   right: 48px
-  height: 20px
+  height: 32px
   overflow: hidden
   border-left: 1px solid $stroke-color
   background: linear-gradient(to right, rgba(#fff, 0.03), rgba(#fff, 0))
@@ -177,7 +176,7 @@ body, h1, h2, h3
   top: 0
   left: 220px
   right: 114px
-  bottom: 24px
+  bottom: 20px
   text-align: center
   color: #7e8d94
   z-index: -1
@@ -190,6 +189,7 @@ body, h1, h2, h3
   display: flex
   flex-direction: row
   white-space: nowrap
+  line-height: 24px
 
   .playing &,
   .loading &
@@ -272,7 +272,8 @@ body, h1, h2, h3
 
 #axis-years-list
   width: 100%
-  height: 24px
+  height: 28px
+  line-height: 28px
   top: 50%
   margin-top: -12px
   transition: transform 600ms
@@ -297,7 +298,6 @@ body, h1, h2, h3
 .year-link
   display: block
   cursor: pointer
-  padding: 2px 0
 
 .btn
   padding: 8px
@@ -366,20 +366,8 @@ body, h1, h2, h3
   color: #7e8d94
   text-transform: none
   background: white
-  padding: 4px 12px
-
-#chart-logo
-  bottom: 2px
-  right: 80px
-  opacity: 0.5
-  width: 120px
-  display: none
-
-  img
-    width: 100%
-
-  &:hover
-    opacity: 1
+  padding: 4px 12px 0
+  line-height: 24px
 
 #chart-legend
   position: absolute
@@ -398,13 +386,8 @@ body, h1, h2, h3
     padding: 20px
 
   #wrapper
-    line-height: 24px
-    height: 28px * 20
-
-  .item,
-  .item-bar,
-  #axis-years-list
-    height: 24px
+    line-height: 32px
+    height: 36px * 10
 
   #axis-years-list
     margin-top: -12px
@@ -445,9 +428,6 @@ body, h1, h2, h3
   body
     padding: 12px
 
-  #wrapper
-    line-height: 16px
-
   #chart-title
     height: 80px
     text-align: left
@@ -459,14 +439,8 @@ body, h1, h2, h3
 
   #axis-items
     position: relative
-    height: 20px * 20
     top: auto
-    overflow: hidden
     margin-bottom: 32px
-
-  .item,
-  .item-bar
-    height: 16px
 
   #axis-years-list
     height: 20px
@@ -474,12 +448,13 @@ body, h1, h2, h3
     line-height: 20px
 
   .chart-title-small,
-  #chart-source,
   .item,
   .rank-label
     font-size: 11px
 
   .year,
+  #scale,
+  #chart-source,
   .chart-title-label
     font-size: 13px
 
@@ -490,7 +465,7 @@ body, h1, h2, h3
     padding: 0
     position: relative
     overflow: visible
-    height: 492px
+    height: 472px
 
   .item-name
     width: 100px
@@ -510,27 +485,15 @@ body, h1, h2, h3
   .item-bar
     left: 128px
 
-  #scale
-    overflow: hidden
-
   #wrapper:before,
   #scale,
   #ranks
     top: 92px
-    bottom: 0
+    bottom: 16px
 
-  #chart-title,
-  #chart-logo,
-  #chart-source
+  #chart-title
     position: static
     transform: none
-
-  #chart-logo,
-  #chart-source
-    display: block
-    margin: 20px auto
-    text-align: center
-    max-width: none
 
   #chart-legend
     bottom: 2px
