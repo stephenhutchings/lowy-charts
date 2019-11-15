@@ -272,6 +272,13 @@ body, h1, h2, h3
   #chart-source
     bottom: 0
 
+@media (max-width: 800px)
+  #map-wrapper
+    top: 0
+
+  #chart-title
+    top: 0
+
 @media (max-width: 600px)
   body.embed-false
     padding: 12px
@@ -280,9 +287,6 @@ body, h1, h2, h3
     right: 0
     max-width: none
     text-align: center
-
-  #map-wrapper
-    top: 0
 
   .btn
     color: #fff
@@ -313,8 +317,10 @@ body, h1, h2, h3
   #chart-title
     width: 100%
     margin: 0
-    top: 0
     left: 0
+
+    br
+      display: none
 
   #map-legend
     left: 12px
