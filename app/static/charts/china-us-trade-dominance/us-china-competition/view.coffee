@@ -32,6 +32,21 @@ require.register "views/map", (exports, require, module) ->
 
           @scale = (n) -> if n > 1 then 0.5 + cn(n) / 2 else us(n) / 2
 
+          @scale = (n) ->
+            .2 *
+            if n < 0.5
+              0
+            else if n  < 0.75
+              1
+            else if n  < 1
+              2
+            else if n  < 1.5
+              3
+            else if n  < 2
+              4
+            else
+              5
+
         initialize: (opts) ->
           @createScale()
 
@@ -133,7 +148,8 @@ require.register "views/map", (exports, require, module) ->
           context = canvas.getContext("2d")
 
           for i in [0...canvas.width]
-            context.fillStyle = @interpolate(i / (canvas.width - 2))
+            s = Math.floor(6 * (i / (canvas.width - 2))) / 5
+            context.fillStyle = @interpolate(s)
             context.fillRect(i, 0, 2, 2)
 
           return
