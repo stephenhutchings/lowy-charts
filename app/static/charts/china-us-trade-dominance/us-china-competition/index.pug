@@ -7,6 +7,8 @@ block append config
   - page.title = "The US-China Trade War: Who Dominates Global Trade?"
 
 block page
+  - chart.scale = chart.scale.slice(20)
+  - chart.items.forEach((e) => e.values = e.values.slice(20))
   script
     != `window.chart = ${JSON.stringify(chart)};`
 
