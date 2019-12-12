@@ -2,7 +2,7 @@ $bg-color: #fff
 $txt-color: #2d3440
 $stroke-color: #ced3de
 
-$bg-light: #f1f4f9
+$bg-light: #f2f4f6
 
 $highlight-blue: #0056fa
 $highlight-red: #fa0051
@@ -74,7 +74,10 @@ body, h1, h2, h3
 
 .country,
 .background
-  fill: $bg-light
+  fill: darken($bg-light, 4)
+
+  @media (color-gamut: p3)
+    fill: $bg-light
 
 .country
   transition: opacity 600ms
@@ -113,7 +116,10 @@ body, h1, h2, h3
     border: 1px solid
     margin-top: -1px
     margin-right: 0.5em
-    background: $bg-light
+    background: darken($bg-light, 4)
+
+    @media (color-gamut: p3)
+      background: $bg-light
 
 #map-scale-canvas-wrap
   margin: 3px 0 6px
