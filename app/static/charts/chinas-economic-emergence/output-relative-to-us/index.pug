@@ -1,1 +1,14 @@
 extend ../_template
+
+block append scripts
+  style
+    :sass
+      .chart-key
+        display: block
+
+        + .chart-key
+          margin-top: 12px
+
+      .chart-detail
+        flex: 1 1 0
+        margin-bottom: 0
