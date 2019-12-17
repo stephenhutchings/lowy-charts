@@ -1,0 +1,188 @@
+extend /partials/layout
+
+include ../chinas-economic-emergence/_line
+
+block append config
+  - _.extend(page, data.getOne(__.directory.replace("app/","") + "/data"))
+  - page.results = page.results.reverse()
+
+  - page.results.forEach((f) => f.date = new Date(f.date))
+  - min = _.min(_.pluck(page.results, "date"))
+  - max = _.max(_.pluck(page.results, "date"))
+  - dif = moment(max).diff(min, "days")
+  - page.chart.values = []
+  - page.chart.keys = []
+  - page.chart.keyText = []
+
+  for j, i in new Array(dif + 1)
+    - cur = moment(min).add(i, "day")
+    - res = []
+
+    - page.chart.keys.push(i)
+    - page.chart.keyText.push(cur.format("MMM D"))
+
+    for result, k in page.results
+      - w = 1 - (cur.diff(result.date, "days") / 21)
+      if w > 0 && w <= 1
+        - res.push({weight: w, values: result.values})
+
+    - page.chart.values.push(res.reverse())
+
+  for vals, i in page.chart.values
+    - page.chart.values[i] = []
+    - fvals = vals.filter((v) => v.values.length == vals[0].values.length)
+    - t = _.sum(_.pluck(fvals, "weight"))
+
+    for key, k in page.chart.fields
+      - x = (fvals.reduce((m,v) => m + (v.values[k] || 0) * (v.weight / t), 0))
+      - if (x) page.chart.values[i][k] = x
+
+block page
+  .wrapper
+    .txt-center
+      h1= page.title
+      if page.subtitle
+        h2.txt-muted= page.subtitle
+
+    +svg-line(page.chart)
+    block chart-bg
+      rect(height=10 width=10 fill="red")
+
+block append scripts
+  style
+    :sass
+      h1
+        font-size: 18px
+        margin: 0
+        line-height: 1.2
+      h2
+        font-size: 14px
+
+      .wrapper
+        max-width: 800px
+        overflow: visible
+        line-height: 16px
+        padding: 16px 8px 8px 4px
+
+      .chart-wrap
+        padding-left: 32px
+        padding-bottom: 40px
+        margin: 24px 0 12px
+
+      .chart-legend
+        text-transform: uppercase
+        margin-left: -0.5em
+        padding-left: 32px
+        padding-bottom: 16px
+        max-width: 500px
+
+      .chart-details
+        text-align: right
+        flex-grow: 1
+        list-style: none
+
+      .chart-key
+        padding: 0.5em
+        white-space: nowrap
+        display: inline-block
+
+      .chart-legend,
+      .chart-detail
+        padding: 4px 0
+        padding-left: 32px
+        font-size: 14px
+
+      svg.chart-key-line
+        display: inline-block
+        margin-right: 0.5em
+
+        line
+          stroke-width: 3
+
+      svg.line
+        overflow: visible
+        font-size: 14px
+        height: 320px
+        line-height: 12px
+        pointer-events: none
+
+        svg
+          overflow: visible
+
+        path,
+        line
+          fill: none
+          vector-effect: non-scaling-stroke
+
+        line
+          stroke-width: 1
+          stroke: #B3B7BE
+
+        text
+          text-align: center
+
+        path
+          stroke-width: 2
+
+        .dot
+          stroke-dasharray: 1
+
+      .x,
+      .y
+        text
+          fill: currentColor
+
+      .point
+        opacity: 0
+        transition: opacity 300ms
+        .area
+          pointer-events: all
+          stroke: none !important
+        &:hover
+          opacity: 1
+
+      .g0,
+      .g3
+        circle,
+        text
+          fill: #0bca43
+        path,
+        line
+          stroke: #0bca43
+
+      .g1,
+      .g4
+        circle,
+        text
+          fill: #539FD5
+        path,
+        line
+          stroke: #539FD5
+
+      .g2
+        circle,
+        text
+          fill: #F37429
+        path,
+        line
+          stroke: #F37429
+
+      .chart-key
+        &:nth-child(4),
+        &:nth-child(5)
+          display: none
+
+
+      @media (max-width: 640px)
+        .chart-footer
+          display: block
+
+        .chart-legend,
+        .chart-key
+          display: block
+
+        .chart-details
+          text-align: left
+
+        .x-tick:nth-child(even)
+          display: none
