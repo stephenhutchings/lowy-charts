@@ -51,7 +51,7 @@ mixin svg-line(data, lines)
           if !data.skipX || i % data.skipX == 0
             svg.x-tick(x=x)
               text(x=-8 y=4 transform="rotate(-90)" text-anchor="end")
-                = keys[0] + i
+                = data.keyText ? data.keyText[i] : keys[0] + i
 
       g
         for key, j in data.fields || [{}]
