@@ -245,6 +245,8 @@ body, h1, h2, h3
   color: #a2acb1
   text-transform: none
   line-height: 16px
+  max-width: 300px
+  text-align: right
 
 #chart-logo
   bottom: 2px
@@ -265,9 +267,6 @@ body, h1, h2, h3
   font-size: 14px
 
 @media (max-width: 1080px)
-  #chart-source
-    font-size: 14px
-
   #chart-title
     top: -40px
     bottom: auto
@@ -296,6 +295,8 @@ body, h1, h2, h3
 
   #chart-source
     bottom: 0
+    font-size: 14px
+    max-width: none
 
 @media (max-width: 800px)
   #map-wrapper
@@ -366,3 +367,13 @@ body, h1, h2, h3
 
   .chart-title-label
     font-size: 10px
+
+@media (max-width: 480px)
+  #chart-source
+    text-align: left
+  #map-wrapper
+    bottom: 108px
+  #map-timeline
+    bottom: 40px
+  #controls
+    bottom: -52px
