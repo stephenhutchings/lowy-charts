@@ -5,6 +5,8 @@ block append config
   - var byValue = function(e){return e.values ? -e.values[0] : 0};
   - var inOrder = _.sortBy(chart.items, byValue);
   - page.title = "The US-China Trade War: Who Dominates Global Trade?"
+  - page.description = "China has displaced the United States from its traditional dominance as a major trading partner for most countries of the world."
+  - page.includeFonts = false
 
 block page
   - chart.scale = chart.scale.slice(20)
@@ -67,14 +69,68 @@ block page
     a#chart-logo(href="https://www.lowyinstitute.org/")
       img(src="/img/lowyinstitute-logo.png")
 
-block append css
-  //- link(
-  //-   type="text/css"
-  //-   rel="stylesheet"
-  //-   href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
-  //-   media="all"
-  //- )
+  section#explainer
+    :marked
+      Who dominates global trade? It is well recognised that China has become
+      the world’s largest trading nation. Less appreciated is the effect this
+      has had in displacing the United States from its traditional dominance as
+      a trading partner for other countries around the world.
 
+      We examined this using data from the IMF’s Direction of Trade Statistics
+      [database](https://data.imf.org/?sk=9D6028D4-F14A-464C-A2F2-59B2CD424B85),
+      which provides a repository of bilateral trade flows for most countries.
+      We focus on gross trade flows (i.e. exports plus imports) which serves as
+      a measure of the degree of trade integration between two economies and
+      ask for each country whether the US or China is the larger trading
+      partner.
+
+      China’s rise since the turn of the century has been swift.
+
+      In 2001, the year China acceded to the World Trade Organisation, over 80%
+      of countries with data available had a larger volume of trade with
+      America than China. By 2018, that figure was down to a little over 30% –
+      with two-thirds of countries (128 out of 190) trading more with China
+      than the United States.
+
+      Equally important, 90 countries (almost half) traded more than twice as
+      much with China as with America (these are shown in dark red in the
+      chart).
+
+      Driving this picture is that China’s economy is far more export driven
+      than the US, it is deeply enmeshed in global supply chains, and has been
+      growing much faster.
+
+      In terms of policy drivers, many factors have been at play. But China’s
+      2001 accession to the World Trade Organisation has clearly been central,
+      with the number of countries trading more with China than with the United
+      States increasing rapidly thereafter. This was aided by an under-valued
+      exchange rate during this period that helped make Chinese exports
+      especially competitive.
+
+      The turning point for global trade was the 2008-09 financial crisis, with
+      China overtaking the United States as the larger trading partner for more
+      than half of all countries. In recent years the trend in China’s favour
+      has petered out as its economy has slowed while America’s has picked up.
+      China’s exchange is also no longer under-valued by most accounts.
+
+      Regardless, the global trade landscape has already been substantially
+      reshaped.
+
+      -----
+
+    p#explainer-addendum.txt-muted
+      small
+        | By&nbsp;
+        a(href="https://www.lowyinstitute.org/roland-rajah") Roland Rajah
+        |  and&nbsp;
+        a(href="https://www.lowyinstitute.org/the-interpreter/contributors/articles/alyssa-leng") Alyssa Leng
+        |  for the&nbsp;
+        a(href="https://www.lowyinstitute.org/about/programs-and-projects/global-economic-futures") Global Economic Futures project
+        |  at the&nbsp;
+        a(href="https://www.lowyinstitute.org") Lowy Institute
+
+
+block append css
   style
     include:sass _style.sass
 

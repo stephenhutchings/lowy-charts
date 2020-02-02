@@ -30,11 +30,7 @@ body
 
   &.embed-false
     padding: 20px
-
-  // record
-    height: 840px
-    border: solid red
-    border-width: 10px 0
+    display: block
 
 body, h1, h2, h3
   font-family: Wide, sans-serif
@@ -50,6 +46,9 @@ body, h1, h2, h3
   text-transform: uppercase
   z-index: 0
   overflow: hidden
+
+  .embed-false &
+    min-height: 75%
 
 #controls,
 #chart-title,
@@ -265,6 +264,26 @@ body, h1, h2, h3
 #map-timeline,
 #chart-source
   font-size: 14px
+
+#explainer
+  display: none
+  font-size: 20px
+  font-family: Sans, sans-serif
+  padding: 32px 0
+  max-width: 800px
+  margin: auto
+
+  .embed-false &
+    display: block
+
+#explainer-addendum
+  font-family: inherit
+  text-align: center
+
+  a
+    &:hover,
+    &:focus
+      color: $txt-color
 
 @media (max-width: 1080px)
   #chart-title
