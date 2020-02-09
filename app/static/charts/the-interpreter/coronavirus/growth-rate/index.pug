@@ -1,0 +1,198 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Daily Growth Rate in Confirmed Cases"
+  - var chart = { height: 320, width: 600, inset: { x: 20, y: 20 }, data: {} }
+  - chart.data.a = [62, 10, 70, 38, 44, 17, 18, 25, 21, 9,  5,  3,  20, 12, 24,  6]
+  - chart.data.b = [45, 56, 53, 39, 64, 32, 29, 26, 22, 22, 20, 19, 19, 15, 11, 11]
+  - map = function(e){return +((chart.inset.y + (1 - e / 100) * (chart.height - 64 - 20))).toFixed(1)}
+  - chart.data.ap = chart.data.a.map(map)
+  - chart.data.bp = chart.data.b.map(map)
+  - ynb = chart.data.a.length - 1
+  - labelWidth = 20
+
+block page
+  #wrapper
+    .txt-center
+      strong= page.title
+    svg(
+      width=`${chart.width}px`
+      height=`${chart.height}px`
+      viewBox=`0 0 ${chart.width} ${chart.height}`
+    )
+      rect(width="100%" height="100%" fill="none")
+      g
+        g
+          for n, i in (new Array(11))
+            - var y = (chart.inset.y + i * (chart.height - 64 - 20) / 10)
+            line.st1(
+              x1=48
+              x2=568
+              y1=(y - 0.5)
+              y2=(y - 0.5)
+            )
+            if i % 2 == 0
+              text.tt2.tt3.st4(text-anchor="end" x=chart.inset.x * 2 y=y + 4)
+                | #{10 * (10 - i)}%
+
+        //- g
+          for j, i in new Array(chart.data.a.length)
+            - var x = 48 + i * (chart.width - 81) / ynb + 0.5;
+            line.st1(x1=x x2=x y1=20 y2=256)
+
+        g
+          polyline.st2(
+            points=(_.reduce(chart.data.ap, function(m, e, i){
+              var x = 48 + i * (chart.width - 81) / ynb + 0.5;
+              return `${m} ${x.toFixed(1)},${e.toFixed(1)}`
+            }, ""))
+          )
+          polyline.st3(
+            points=(_.reduce(chart.data.bp, function(m, e, i){
+              var x = 48 + i * (chart.width - 81) / ynb + 0.5;
+              return `${m} ${x.toFixed(1)},${e.toFixed(1)}`
+            }, ""))
+          )
+
+        g
+          for n, i in (new Array(ynb+1))
+            - var d = new Date(+d + 1000 * 60 * 60 * 24)
+            - var x = +(48 + i * (chart.width - 81) / ynb + 0.5).toFixed(0);
+            if i % 2 === 1
+              text.tt2.tt3(x=x y=280 text-anchor="middle")
+                = ((23 + i) % 31) + 1
+                |
+                = i > 7 ? "Feb" : "Jan"
+              line.st1(x1=x x2=x y1=256 y2=266)
+            else
+              line.st1(x1=x x2=x y1=256 y2=262)
+
+            g.label
+              rect.label-bg(x=(x - 16) width=labelWidth y=28 height=236)
+              line.st1.st6(x1=x x2=x y1=20 y2=256)
+              if _.include([0, 2, 12, 14], i)
+                polygon.bg.st4(
+                  points=[
+                    `${x - labelWidth},${chart.data.ap[i] - 28}`,
+                    `${x + labelWidth},${chart.data.ap[i] - 28}`,
+                    `${x + labelWidth},${chart.data.ap[i] - 4}`,
+                    `${x + 4},${chart.data.ap[i] - 4}`,
+                    `${x},${chart.data.ap[i]}`,
+                    `${x - 4},${chart.data.ap[i] - 4}`,
+                    `${x - labelWidth},${chart.data.ap[i] - 4}`
+                  ].join(" ")
+                )
+                polygon.bg.st5(
+                  points=[
+                    `${x - labelWidth},${chart.data.bp[i] + 28}`,
+                    `${x + labelWidth},${chart.data.bp[i] + 28}`,
+                    `${x + labelWidth},${chart.data.bp[i] + 4}`,
+                    `${x + 4},${chart.data.bp[i] + 4}`,
+                    `${x},${chart.data.bp[i]}`,
+                    `${x - 4},${chart.data.bp[i] + 4}`,
+                    `${x - labelWidth},${chart.data.bp[i] + 4}`
+                  ].join(" ")
+                )
+                text.bg.tt3(x=x y=chart.data.ap[i] - 12 text-anchor="middle")
+                  | #{written.prettyNumber(chart.data.b[i])}%
+                text.bg.tt3(x=x y=chart.data.bp[i] + 20 text-anchor="middle")
+                  | #{written.prettyNumber(chart.data.a[i])}%
+              else
+                polygon.bg.st5(
+                  points=[
+                    `${x - labelWidth},${chart.data.bp[i] - 28}`,
+                    `${x + labelWidth},${chart.data.bp[i] - 28}`,
+                    `${x + labelWidth},${chart.data.bp[i] - 4}`,
+                    `${x + 4},${chart.data.bp[i] - 4}`,
+                    `${x},${chart.data.bp[i]}`,
+                    `${x - 4},${chart.data.bp[i] - 4}`,
+                    `${x - labelWidth},${chart.data.bp[i] - 4}`
+                  ].join(" ")
+                )
+                polygon.bg.st4(
+                  points=[
+                    `${x - labelWidth},${chart.data.ap[i] + 28}`,
+                    `${x + labelWidth},${chart.data.ap[i] + 28}`,
+                    `${x + labelWidth},${chart.data.ap[i] + 4}`,
+                    `${x + 4},${chart.data.ap[i] + 4}`,
+                    `${x},${chart.data.ap[i]}`,
+                    `${x - 4},${chart.data.ap[i] + 4}`,
+                    `${x - labelWidth},${chart.data.ap[i] + 4}`
+                  ].join(" ")
+                )
+                text.bg.tt3(x=x y=chart.data.bp[i] - 12 text-anchor="middle")
+                  | #{written.prettyNumber(chart.data.b[i])}%
+                text.bg.tt3(x=x y=chart.data.ap[i] + 20 text-anchor="middle")
+                  | #{written.prettyNumber(chart.data.a[i])}%
+
+        g
+          g(transform="translate(12 312)")
+            line.st3(x1=0 y1=0 x2=24 y2=0)
+            text.tt2.tt3.txt-tu.txt-bold(x=32 y=4) China
+
+          g(transform="translate(112 312)")
+            line.st2(x1=0 y1=0 x2=24 y2=0)
+            text.tt2.tt3.txt-tu.txt-bold(x=32 y=4) Rest of World
+
+          g(transform="translate(-16 0)")
+            text.tt2.tt3(x="100%" y=316 text-anchor="end")
+              | Source: WHO Coronavirus situation reports
+
+  style
+    :sass
+      body
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        font-family: Sans, sans-serif
+      #wrapper
+        padding: 12px 0
+      strong, .txt-bold
+        font-weight: 600
+      .bg
+        fill: #fff
+      polygon.bg
+        stroke: #fff
+        stroke-opacity: 0.2
+      .label-bg
+        fill: #fff
+        opacity: 0
+      .st1
+        fill: none
+        stroke: #e4e8ea
+      .st2
+        fill: none
+        stroke: #343e46
+        stroke-width: 3
+        stroke-linecap: round
+      .st3
+        fill: none
+        stroke: #f7931e
+        stroke-width: 3
+        stroke-linecap: round
+      .st4
+        fill: #343e46
+      .st5
+        fill: #f7931e
+      .st6
+        stroke: rgba(2, 16, 20, 0.08)
+      .set-1
+        stroke-dasharray: 0px 5px
+      .tt2
+        fill: #666
+      .tt3
+        font-size: 13px
+      .label
+        opacity: 0
+        transition: opacity 150ms
+        &:hover
+          opacity: 1
+
+      @media (max-width: 600px)
+        .tt3
+          font-size: 15px
+        svg
+          height: auto
+        .txt-tu
+          letter-spacing: 0.03em
