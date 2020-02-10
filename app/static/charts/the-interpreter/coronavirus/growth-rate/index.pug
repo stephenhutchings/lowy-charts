@@ -3,8 +3,8 @@ extend /partials/layout
 block append config
   - page.title = "Daily Growth Rate in Confirmed Cases"
   - var chart = { height: 320, width: 600, inset: { x: 20, y: 20 }, data: {} }
-  - chart.data.a = [62, 10, 70, 38, 44, 17, 18, 25, 21, 9,  5,  3,  20, 12, 24,  6]
-  - chart.data.b = [45, 56, 53, 39, 64, 32, 29, 26, 22, 22, 20, 19, 19, 15, 11, 11]
+  - chart.data.a = [62, 10, 70, 38, 44, 17, 18, 25, 21, 9,  5,  3,  15, 8,  9,  7,  7]
+  - chart.data.b = [45, 56, 53, 39, 64, 32, 29, 26, 22, 22, 20, 19, 19, 15, 11, 11, 8]
   - map = function(e){return +((chart.inset.y + (1 - e / 100) * (chart.height - 64 - 20))).toFixed(1)}
   - chart.data.ap = chart.data.a.map(map)
   - chart.data.bp = chart.data.b.map(map)
@@ -70,7 +70,7 @@ block page
             g.label
               rect.label-bg(x=(x - 16) width=labelWidth y=28 height=236)
               line.st1.st6(x1=x x2=x y1=20 y2=256)
-              if _.include([0, 2, 12, 14], i)
+              if _.include([0, 2], i)
                 polygon.bg.st4(
                   points=[
                     `${x - labelWidth},${chart.data.ap[i] - 28}`,
