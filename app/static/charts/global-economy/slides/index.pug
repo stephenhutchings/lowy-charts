@@ -1,0 +1,71 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Global Economy Slides"
+
+block page
+  #wrapper
+    .slide
+      iframe(
+        data-view="in-viewport"
+        width="100%"
+        height=720
+        src="/charts/china-us-trade-dominance/us-china-competition/"
+      )
+
+    .slide
+      iframe(
+        data-view="in-viewport"
+        width="100%"
+        height=720
+        src="/charts/api/me-china-vs-us/gdp.html"
+      )
+
+    .slide
+      iframe(
+        data-view="in-viewport"
+        width="100%"
+        height=720
+        src="/charts/api/me-china-vs-us/me.html"
+      )
+
+block append scripts
+  script
+    include:coffee slides.coffee
+
+
+block css
+  style
+    :sass
+      html, body
+        background-color: #fff
+        margin: 0
+        padding: 0
+
+      #wrapper
+        height: 100vh
+        width: 100vw
+        overflow: scroll
+        scroll-snap-type: y mandatory
+
+      iframe
+        border: none
+
+      iframe, img, .video-wrap
+        max-width: 1280px
+        margin: auto
+        display: block
+
+      img, video
+        object-fit: contain
+
+      video
+        max-width: none
+        width: calc(100% + 256px)
+        margin: auto -128px
+
+      .slide
+        height: 100vh
+        width: 100vw
+        display: flex
+        scroll-snap-align: start

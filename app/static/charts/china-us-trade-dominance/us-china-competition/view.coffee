@@ -47,7 +47,20 @@ require.register "views/map", (exports, require, module) ->
             else
               5
 
+        parseSearchParameters: ->
+          try
+            params = window.location.search?.slice(1)
+
+            if params
+              params = params.split("&").map((s) -> s.split("="))
+              for [key, val] in params
+                if key is "colors"
+                  colors = val.split(",").map((s) -> "##{s}")
+                  @interpolate = d3.interpolateRgbBasis(colors)
+
         initialize: (opts) ->
+          @parseSearchParameters()
+
           @createScale()
 
           $(window).on("pointerup", _.bind(@endYear, this))
@@ -210,9 +223,12 @@ require.register "views/map", (exports, require, module) ->
           canvasBase.height = canvas.height
           contextBase = canvasBase.getContext("2d")
 
+          background = getComputedStyle(canvas).backgroundColor
+          fillColor  = d3.interpolateRgb("#a2acb1", background)(0.75)
+          console.log fillColor
           contextBase.drawImage(@data.colorImage, 0, 0, canvas.width, canvas.height)
           contextBase.globalCompositeOperation = "source-in"
-          contextBase.fillStyle = "#cfd9e2"
+          contextBase.fillStyle = fillColor
           contextBase.fillRect(0, 0, canvas.width, canvas.height)
 
           @data.baseImage = canvasBase

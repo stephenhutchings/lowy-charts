@@ -86,7 +86,7 @@ module.exports =
             )
           )
 
-      length = @$elements.strokes.length - 1
+      length = @$elements.strokes.length
 
       factor = @data.scaleFactor / (1 / length)
       scale  = factor / max
