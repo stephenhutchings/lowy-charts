@@ -3,6 +3,21 @@ easie = require("lib/easie")
 interpolate = (x, y, p) -> if x >= 0 and y >= 0 then x + (y - x) * p
 toThousands = (n) -> Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 
+arc = (start, finish, r, cx, cy) ->
+    t0 = -Math.PI / 2
+
+    t1 = Math.PI * 2 * start
+    t2 = Math.PI * 2 * finish
+
+    x1 = (cx + Math.cos(t0 + t1) * r).toFixed(2)
+    y1 = (cy + Math.sin(t0 + t1) * r).toFixed(2)
+    x2 = (cx + Math.cos(t0 + t2) * r).toFixed(2)
+    y2 = (cy + Math.sin(t0 + t2) * r).toFixed(2)
+
+    laf = if finish - start > 0.5 then 1 else 0
+
+    "M #{x1} #{y1} A #{r} #{r} 0 #{laf} 1 #{x2} #{y2}"
+
 module.exports =
   class Chart extends Backbone.View
     data: window.chart
@@ -23,14 +38,16 @@ module.exports =
         @data.items = @data[opts.items]
 
       @$elements =
-        blocks:  {}
-        labels:  {}
-        item:    @$(".item")
-        year:    @$(".year")
-        years:   @$("#axis-years-list")
-        scale:   @$("#scale-strokes")
-        strokes: @$(".scale-stroke")
-        keys:    @$(".chart-title-label")
+        blocks:    {}
+        labels:    {}
+        item:      @$(".item")
+        year:      @$(".year")
+        years:     @$("#axis-years-list")
+        scale:     @$("#scale-strokes")
+        strokes:   @$(".scale-stroke")
+        keys:      @$(".chart-title-label")
+        breakdown: @$(@data.breakdown)
+        total:     @$("#breakdown-total")
 
       for key in @data.keys
         @$elements.blocks[key] = @$(".item-bar-block.#{key}")
@@ -57,15 +74,18 @@ module.exports =
           .map((item, index) =>
             {
               name: item.name
+              parent: item.parent
               index
               isEstimate: @data.scale[x] >= item.after
-              value: interpolate(item[key][x], item[key][y], p)
+              value: interpolate(item[key][x], item[key][y], p) or item[key][0]
               stack: @data.keys.reduce( (m, k) =>
                 m + interpolate(item[k][x], item[k][y], p)
               , 0)
             })
-          .sortBy((c) =>
-            if @data.stack
+          .sortBy((c, i, arr) =>
+            if c.parent
+              -arr[c.parent].stack + 1 + 1 / c.stack
+            else if @data.stack
               -c.stack
             else
               if c.value? then -c.value else Infinity
@@ -73,9 +93,12 @@ module.exports =
           .value()
 
       list = lists[@activeIndex]
-      max = _.chain(lists).flatten().pluck("value").max().value()
 
-      if @data.stack
+      if @data.scaleType is "absolute"
+        vals = _.flatten @data.keys.map((k) => _.pluck(@data.countries, k))
+        max = _.max vals
+
+      else if @data.stack
         max = _.max(
           lists[0]
             .map((e, i) ->
@@ -86,27 +109,31 @@ module.exports =
             )
           )
 
+      else
+        max = _.chain(lists).flatten().pluck("value").max().value()
+
       length = @$elements.strokes.length
 
       factor = @data.scaleFactor / (1 / length)
       scale  = factor / max
+      yearScale = (@$elements.years.children().length - 1) / (@data.scale.length - 1)
 
       @$elements.year
         .removeClass("active")
-        .eq(Math.round(t))
+        .eq(Math.round(t * yearScale))
         .addClass("active")
 
       match = false
+
       for key in _.keys(@data.classes).reverse()
         t1  = easie.sineInOut(parseFloat(key)) * (@data.scale.length - 1)
         val = @data.classes[key]
         @$el.toggleClass(val, not(match) and t >= t1)
         match = match or t >= t1
 
-      @$elements.years.css   transform: "translate3d(0, #{-t * 100}%, 0)"
+      @$elements.years.css   transform: "translate3d(0, #{-t * 100 * yearScale}%, 0)"
       @$elements.scale.css   transform: "scale3d(#{scale}, 1, 1)"
       @$elements.strokes.css transform: "scale3d(#{1 / scale}, 1, 1)"
-
 
       transforms = []
 
@@ -149,6 +176,22 @@ module.exports =
           .css
             transform: "translate3d(0, #{Math.min(rank, @data.limit) * 100}%, 0)"
             opacity: if rank >= @data.limit then 0 else 1
+
+      if @data.breakdown
+        total = _.chain(list).pluck("value").reduce(((m,n)-> m + n), 0).value()
+        turn  = 0
+        radius = @$elements.breakdown.width() / 2
+
+        @$elements.total.html [
+          (total / 1000000).toFixed(1), "&thinsp;Bn"
+        ].join("")
+
+        @$elements.breakdown.children().each (i, el) ->
+          p0 = turn + 0.002
+          p1 = turn + _.find(list, {name: el.dataset.name}).value / total
+          turn = p1
+
+          el.setAttribute("d", arc(p0, p1, radius, radius, radius))
 
     play: ->
       window.cancelAnimationFrame(@loop)

@@ -1,0 +1,100 @@
+extend /partials/layout
+
+block append config
+  - var chart  = data.getOne("static/charts/api/total-population-world-1950-2100/data")
+  - var byValue = function(e){return -e.pop[0]};
+  - var inOrder = _.sortBy(chart.countries, byValue);
+  - page.title = "Total Population, 1950–2100"
+
+block page
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+  #wrapper(data-view="time-series" data-items="countries")
+    #chart-title
+      h1.chart-title-main
+        | Total Population
+
+      small.chart-title-small
+        | 1950–2100 (Thousands)
+
+    ul#axis-countries.list-bare
+      for country, j in chart.countries
+        - var p = country.pop[0] / inOrder[0].pop[0];
+        - var r = inOrder.indexOf(country);
+        li.item.country(
+          data-parent=country.parent
+          style=`transform: translate3d(0, ${r * 100}%, 0)`
+          class=[
+            `country-${written.hyphenCase(country.aka || country.name)}`,
+            country.parent ? "has-parent" : ""
+          ]
+        )
+          label.country-name= country.aka || country.name
+          .country-bar
+            for key, i in chart.keys
+              .item-bar-block.country-bar-block(
+                style={
+                  "transform": `translate3d(${-100 + p * 100}%, 0, 0)`,
+                  "background-color": country.color
+                }
+                class=key
+              )
+                .item-bar-label.country-bar-label(class=key)
+
+    #scale
+      #scale-strokes
+        for n, i in new Array(chart.ticks)
+          .scale-stroke(style={opacity: (chart.ticks - i) / chart.ticks})
+            span.scale-stroke-label #{(i * 0.5).toFixed(1)}&thinsp;Bn
+
+    #breakdown
+      svg.pie-chart
+        for c, i in _.sortBy(chart.countries, (e) => -_.last(e.pop))
+          path.pie-ring(data-name=c.name stroke=c.color)
+
+      #breakdown-total
+
+    #controls
+      a#btn-reset.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+          polygon.btn-icon-shape(points="24,24 24,0 8,12 ")
+
+      a#btn-play.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          polygon.btn-icon-shape(points="0,24 0,0 24,12 ")
+
+      a#btn-pause.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+          rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+
+      a#btn-end.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+          polygon.btn-icon-shape(points="0,0 0,24 16,12 ")
+
+      #axis-years.list-bare
+        ul#axis-years-list
+          for year, i in chart.scale
+            if i % 5 == 0
+              li.year
+                a.year-link(data-index=i)= year
+
+    small#chart-source
+      | Source: UN Population Division,
+      | Dept. of Economic and Social Affairs
+
+    a#chart-logo(href="https://www.lowyinstitute.org/")
+      img(src="/img/lowyinstitute-logo.png")
+
+block css
+  link(
+    type="text/css"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
+    media="all"
+  )
+
+  style
+    include:sass style.sass
