@@ -21,6 +21,7 @@ arc = (start, finish, r, cx, cy) ->
 module.exports =
   class Chart extends Backbone.View
     data: window.chart
+    currentTime: 0
 
     events:
       "click #btn-play": "play"
@@ -77,7 +78,7 @@ module.exports =
               parent: item.parent
               index
               isEstimate: @data.scale[x] >= item.after
-              value: interpolate(item[key][x], item[key][y], p) or item[key][0]
+              value: interpolate(item[key][x], item[key][y], p)
               stack: @data.keys.reduce( (m, k) =>
                 m + interpolate(item[k][x], item[k][y], p)
               , 0)
