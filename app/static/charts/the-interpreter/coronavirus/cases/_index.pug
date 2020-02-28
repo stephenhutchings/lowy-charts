@@ -1,0 +1,116 @@
+extend /partials/layout
+
+block append config
+  - page.title = "COVID-19 outbreak looks far more dangerous than SARS"
+  - var chart  = data.getOne("static/charts/the-interpreter/coronavirus/cases/data")
+
+  - chart.classes[0.4617105412258535] = "projected"
+
+block page
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+
+  #wrapper(data-view="chart")
+    #chart-title
+      h1.chart-title-main
+        = page.title
+
+      small.chart-title-small
+        | Total number of virus cases since outbreak began
+
+    #countries
+      .line-label.txt-cn(style={left: "3%", top: "82%"}) China
+      .line-label.txt-us(style={left: "3%", top: "47%"}) Rest of the World
+
+      svg(
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      )
+
+        for country in chart.countries
+          polyline.country(class=[
+            `country-${country.code}`,
+            `scenario-${country.scenario}`
+          ])
+
+      for country in chart.countries
+        .country-label(class=[
+          `country-${country.code}`,
+          `scenario-${country.scenario}`
+        ])
+          .country-label-text
+
+    #axis-lhs
+      for n, i in new Array(11)
+        .axis-label
+          .axis-label-text #{written.prettyNumber((10 - i) * 10000)}
+
+    #axis-rhs
+      for n, i in new Array(6)
+        .axis-label
+          .axis-label-text #{written.prettyNumber((5 - i) * 1000)}
+
+    #axis-year
+      for txt, i in chart.scale
+        .axis-label
+          .axis-label-text= txt
+
+    #controls
+      a#btn-reset.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+          polygon.btn-icon-shape(points="24,24 24,0 8,12 ")
+
+      a#btn-play.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          polygon.btn-icon-shape(points="0,24 0,0 24,12 ")
+
+      a#btn-pause.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+          rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+
+      a#btn-end.btn(tabindex="0")
+        svg.btn-icon(viewBox="0 0 24 24")
+          rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+          polygon.btn-icon-shape(points="0,0 0,24 16,12 ")
+
+      #axis-years.list-bare
+        ul#axis-years-list
+          for year, i in chart.scale
+            li.year
+              a.year-link(data-index=i)= year
+
+    legend#chart-legend
+      label.chart-title-label.scenario-1
+        | COVID-19
+        svg: line.country.scenario-1(x1=2 x2=43 y1=6 y2=6)
+      label.chart-title-label.scenario-2
+        | SARS&nbsp;
+        svg: line.country.scenario-2(x1=2 x2=45 y1=6 y2=6)
+
+    small#chart-source
+      | Source: US Department of State; Lowy Institute
+
+    a#chart-logo(href="https://www.lowyinstitute.org/")
+      img(src="/img/lowyinstitute-logo.png")
+
+block css
+  link(
+    type="text/css"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
+    media="all"
+  )
+
+  style
+    include:sass _style.sass
+
+block customScripts
+  script(type="text/javascript")
+    | require.register("views/chart", function(exports, require, module){
+    include:coffee view.coffee
+    | })
+

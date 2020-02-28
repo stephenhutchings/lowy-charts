@@ -1,0 +1,400 @@
+$color-cn: #dece00
+$color-wo: #00effa
+$axis-bottom-size: 60px
+$axis-left-size: 76px
+$axis-right-size: 60px
+
+html, body
+  height: 100%
+  box-sizing: border-box
+
+body
+  padding: 20px 80px
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #2d3440 !important
+  color: #fff
+
+#wrapper
+  width: 100%
+  max-width: 1600px
+  margin: auto
+  position: relative
+  line-height: 1.2
+  height: 560px
+  z-index: 0
+  overflow: hidden
+  color: #9ba8ae
+
+#chart-title,
+#chart-source,
+#chart-logo,
+.country-name,
+.axis-title
+  position: absolute
+
+#chart-title
+  text-align: right
+  letter-spacing: 0.05em
+  z-index: 10
+  top: 300px
+  margin: 0
+  right: 15%
+  max-width: 360px
+
+.chart-title-main
+  font-size: 20px
+  margin: 0
+  line-height: 1.2
+  text-transform: uppercase
+  font-weight: bold
+  letter-spacing: 0.02em
+  color: #fff
+
+.chart-title-small
+  display: block
+  font-weight: bold
+  margin-top: 8px
+  font-size: 16px
+  font-weight: normal
+  text-transform: none
+  letter-spacing: 0
+
+#chart-source
+  right: 0
+  bottom: 0
+  text-transform: none
+  font-size: 13px
+
+#chart-logo
+  bottom: 37px
+  right: 4px
+  width: 120px
+  z-index: 10
+  background: #2d3440
+
+  img
+    width: 100%
+    opacity: 0.5
+
+  &:hover
+    opacity: 1
+
+.line-label
+  text-transform: none
+  position: absolute
+
+#countries
+  position: absolute
+  top: 12px
+  left: $axis-left-size
+  right: 148px
+  bottom: $axis-bottom-size
+  z-index: 1
+
+.txt-muted
+  color: #7a8d95
+
+.country,
+.progress
+  fill: none
+  vector-effect: non-scaling-stroke
+  stroke-linecap: round
+
+.progress
+  stroke: #7a8d95
+  stroke-width: 1px
+  stroke-dasharray: 0 2px
+
+.country
+  stroke-width: 3px
+
+  .playing &
+    transition: none
+
+  &.scenario-2
+    stroke-dasharray: 0 5px
+
+  &.country-cn
+    stroke: $color-cn
+
+  &.country-wo
+    stroke: $color-wo
+
+.country-label
+  width: 100%
+  height: 100%
+  position: absolute
+  left: 0
+  top: 0
+
+.country-label-text
+  float: left
+  padding: 0 8px 0 4px
+  height: 28px
+  line-height: 28px
+  margin: -14px 0
+  margin-left: 10px
+  text-align: center
+  color: #2d3440
+  position: relative
+
+  $size: (1.4142135624 * 14px)
+
+  &:after
+    content: ""
+    position: absolute
+    display: block
+    height: $size
+    width: $size
+    transform:  scale(0.85, 1) rotate(45deg)
+    background-color: inherit
+    left: -10px
+    top: 4px
+    z-index: -1
+
+  .country-wo &
+    background-color: $color-wo
+
+  .country-cn &
+    background-color: $color-cn
+
+.txt-wo
+  color: $color-wo
+
+.txt-cn
+  color: $color-cn
+
+.country-name
+  width: auto
+  padding: 0 20px
+  position: static
+  text-align: center
+
+.axis-title
+  left: 0
+  bottom: 0
+
+.axis-label
+  position: relative
+  color: #7a8d95
+  font-size: 14px
+
+  &:before
+    content: ""
+    position: absolute
+    border: 0px solid #71798a
+
+.axis-label-text
+  width: 100%
+
+#axis-lhs,
+#axis-rhs
+  position: absolute
+  top: 12px
+  bottom: $axis-bottom-size
+  display: flex
+  flex-flow: column
+  justify-content: space-between
+
+  .axis-label
+    height: 1px
+
+    &:before
+      top: 0
+      right: 0
+      width: 8px
+      border-top-width: 1px
+
+  .axis-label-text
+    margin-top: -0.5em
+    width: auto
+
+#axis-lhs
+  left: 0
+  width: $axis-left-size
+  border-right: 1px solid #71798a
+  text-align: right
+
+  .axis-title
+    top: -8px
+    left: 100%
+    margin-left: 12px
+    text-align: left
+
+  .axis-label-text
+    padding-right: 16px
+
+#axis-rhs
+  right: 0
+  width: $axis-right-size
+  border-left: 1px solid #71798a
+  text-align: left
+
+  .axis-title
+    top: -8px
+    right: 100%
+    margin-right: 12px
+    text-align: right
+    left: auto
+    width: 120px
+
+  .axis-label:before
+    left: 0
+
+  .axis-label-text
+    padding-left: 16px
+
+#axis-bottom
+  position: absolute
+  left: $axis-left-size
+  right: 148px
+  bottom: 0
+  height: $axis-bottom-size + 1px
+  border-top: 1px solid #71798a
+  text-align: center
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: space-between
+
+  &:before
+    content: ""
+    top: -1px
+    left: 100%
+    width: 88px
+    border-top: inherit
+    position: absolute
+
+  .axis-label
+    width: 1px
+    padding-top: 12px
+    flex-shrink: 0
+    color: #7a8d95
+
+    &:before
+      top: -1px
+      left: 0
+      height: 8px
+      border-left-width: 1px
+
+    &:nth-child(5n + 1)
+      .axis-label-text
+        margin-left: -20px
+        width: 40px
+        display: block
+
+  .axis-label-text
+    display: none
+
+
+@media (max-height: 800px), (max-width: 960px)
+  body
+    padding: 20px
+
+  #chart-title
+    right: 80px
+
+  .chart-title-main
+    font-size: 18px
+
+  .chart-title-small,
+  #chart-source
+    font-size: 13px
+
+  #chart-source
+    max-width: 19em
+    text-align: right
+
+  #axis-bottom
+    .axis-label:nth-child(5n + 2),
+    .axis-label:nth-child(5n + 3),
+    .axis-label:nth-child(5n + 4),
+    .axis-label:nth-child(5n + 5)
+      display: none
+
+@media (max-width: 720px)
+  #chart-title
+    max-width: 240px
+    right: 88px
+
+@media (max-width: 640px)
+  body
+    padding: 12px
+
+  #chart-title,
+  #chart-logo
+    display: none
+
+  #chart-source
+    font-size: 12px
+    max-width: none
+    text-align: center
+    left: 0
+
+  #countries,
+  #axis-lhs,
+  #axis-rhs
+    bottom: 80px
+
+  #axis-bottom
+    height: 81px
+
+    .axis-title
+      text-align: center
+      bottom: 28px
+      right: -88px
+
+    .axis-label:nth-child(10n + 6) .axis-label-text
+      display: none
+
+  #wrapper
+    padding: 0
+    position: relative
+    overflow: visible
+
+  #wrapper:before
+    top: 92px
+    bottom: 0
+
+@media (max-width: 480px)
+  .axis-label
+    font-size: 12px
+
+  #axis-lhs
+    width: 64px
+
+  #axis-rhs
+    width: 52px
+
+  #countries,
+  #axis-bottom
+    left: 64px
+    right: 112px
+
+  .line-label
+    width: 124px
+
+    &.scenario-2
+      width: 100px
+      text-align: right
+      right: 20px !important
+
+  #axis-rhs .axis-title
+    width: 100px
+
+  .country-label-text
+    line-height: 20px
+    height: 20px
+    font-size: 12px
+    margin: -10px 0
+    margin-left: 6px
+    padding-right: 4px
+
+    &:after
+      left: -6px
+      top:  5px
+      transform: scale(0.5, 0.7) rotate(45deg)
+      transform-origin: top center
