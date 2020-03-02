@@ -7,9 +7,6 @@ block append config
   - var map = (s) => (c, i) => [100 * i / (chart.scale.length - 1), 100 * (1 - c / s)].join(",")
 
 block page
-  script
-    != `window.chart = ${JSON.stringify(chart)};`
-
   #wrapper.flex.flex-col
     #chart-title
       h1.chart-title-main
@@ -64,7 +61,6 @@ block page
                   if i % 10 == 0
                     text.axis-label-text(text-anchor="middle" y=16 x=`${x}%`)
                       = n
-
 
         span.country-label.country-cn.scenario-1(
             style=`transform: translate3d(${part}%, ${100 * (1 - (chart.countries[0].cases.slice(-1)[0]) / 100000)}%, 0px);`
@@ -131,8 +127,6 @@ block page
                     text.axis-label-text(text-anchor="middle" y=16 x=`${x}%`)
                       = n
 
-
-
         span.country-label.country-wo.scenario-1(
           style=`transform: translate3d(${part}%, ${100 * (1 - (chart.countries[2].cases.slice(-1)[0]) / 8000)}%, 0px);`
         )
@@ -153,7 +147,6 @@ block page
 
         a#chart-logo(href="https://www.lowyinstitute.org/")
           img(src="/img/lowyinstitute-logo.png")
-
 
     #chart-footer
       .axis-y-label Days since outbreak reported
