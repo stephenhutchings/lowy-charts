@@ -2,6 +2,7 @@ extend /partials/layout
 
 block append config
   - page.title = "COVID-19 outbreak looks far more dangerous than SARS"
+  - page.includeFonts = false;
   - var chart  = data.getOne("static/charts/the-interpreter/coronavirus/cases/data")
   - var part   = 100 * (chart.countries[0].cases.length - 1) / (chart.scale.length - 1)
   - var map = (s) => (c, i) => [100 * i / (chart.scale.length - 1), 100 * (1 - c / s)].join(",")
