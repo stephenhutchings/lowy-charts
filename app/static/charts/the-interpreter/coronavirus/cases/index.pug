@@ -3,110 +3,163 @@ extend /partials/layout
 block append config
   - page.title = "COVID-19 outbreak looks far more dangerous than SARS"
   - var chart  = data.getOne("static/charts/the-interpreter/coronavirus/cases/data")
+  - var part   = 100 * (chart.countries[0].cases.length - 1) / (chart.scale.length - 1)
+  - var map = (s) => (c, i) => [100 * i / (chart.scale.length - 1), 100 * (1 - c / s)].join(",")
 
 block page
   script
     != `window.chart = ${JSON.stringify(chart)};`
 
-  #wrapper
+  #wrapper.flex.flex-col
     #chart-title
       h1.chart-title-main
-        = page.title
+        != typogr.typogrify(page.title)
 
       small.chart-title-small
-        | Total number of virus cases since outbreak began
+        | Total number of virus cases since outbreak&nbsp;reported
 
     #countries
-      .line-label.scenario-1.txt-cn(style={
-        left: "42%", top: "12%"
-      })
-        | China (COVID&#8209;19)
-      .line-label.scenario-2.txt-cn(style={
-        "margin-right": "-72px", right: "0", top: "86%"
-      })
-        | China (SARS)
-      .line-label.scenario-1.txt-wo(style={
-        left: "42%", bottom: "64%"
-      })
-        | Rest of the World (COVID&#8209;19)
-      .line-label.scenario-2.txt-wo(style={
-        "margin-right": "-72px", right: "0", top: "44%"
-      })
-        | Rest of the World (SARS)
-
-      svg(
-        width="100%"
-        height="100%"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      )
-        line.progress(x1="41.1111" x2="41.1111" y2="100")
-        polyline.country.country-cn.scenario-1(
-          points="0,100 1.1111,99.722 2.2222,99.691 3.3333,99.429 4.4444,99.17 5.5555,98.703 6.6666,98.015 7.7777,97.239 8.8888,95.463 10,94.003 11.1111,92.264 12.2222,90.28 13.3333,88.179 14.4444,85.589 15.5555,82.762 16.6666,79.529 17.7777,75.637 18.8888,71.94 20,68.789 21.1111,65.402 22.2222,62.749 23.3333,59.765 24.4444,57.292 25.5555,55.27 26.6666,53.4499 27.7777,36.068 28.8888,33.4239 30,31.4159 31.1111,29.3649 32.2222,27.4719 33.3333,25.72 34.4444,25.3250 35.5555,24.4309 36.6666,23.6079 37.7777,22.958 38.8888,22.738 40,22.22 41.1111,21.8089"
+      .half: .fill
+        svg(
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          style="overflow: hidden"
         )
-        polyline.country.country-wo.scenario-1(
-          points="0,100 1.1111,99.92 2.2222,99.9 3.3333,99.8 4.4444,99.68 5.5555,99.54 6.6666,99.42 7.7777,99.26 8.8888,98.88 10,98.64 11.1111,98.36 12.2222,97.88 13.3333,97.36 14.4444,97.08 15.5555,96.94 16.6666,96.82 17.7777,96.18 18.8888,95.68 20,94.6 21.1111,94.24 22.2222,93.86 23.3333,93.62 24.4444,92.1 25.5555,91.18 26.6666,91.06 27.7777,89.9 28.8888,89.48 30,86.34 31.1111,84.12 32.2222,83.92 33.3333,81.52 34.4444,78.5399 35.5555,76 36.6666,71.9600 37.7777,64.62 38.8888,58.6200 40,50.82 41.1111,41.64"
+          line.progress(x1=part x2=part y2="100")
+          for country, i in chart.countries.slice(0, 2)
+            polyline.country.country-cn(
+              class=`scenario-${i + 1}`
+              points=country.cases.map(map(100000)).join(" ")
+            )
+
+        svg(
+          width="100%"
+          height="100%"
         )
-        polyline.country.country-cn.scenario-2(
-          points="0,100 1.1111,99.208 2.2222,99.194 3.3333,99.194 4.4444,99.194 5.5555,99.194 6.6666,99.194 7.7777,98.81 8.8888,98.81 10,98.78 11.1111,98.78 12.2222,98.732 13.3333,98.721 14.4444,98.72 15.5555,98.71 16.6666,98.691 17.7777,98.691 18.8888,98.582 20,98.582 21.1111,98.568 22.2222,98.543 23.3333,98.518 24.4444,98.488 25.5555,98.041 26.6666,97.999 27.7777,97.695 28.8888,97.578 30,97.399 31.1111,97.247 32.2222,97.086 33.3333,96.697 34.4444,96.54 35.5555,96.362 36.6666,96.201 37.7777,96.029 38.8888,95.72 40,95.591 41.1111,95.44 42.2222,95.3019 43.3333,95.195 44.4444,95.116 45.5555,94.987 46.6666,94.914 47.7777,94.876 48.8888,94.837 50,94.809 51.1111,94.791 52.2222,94.764 53.3333,94.752 54.4444,94.751 55.5555,94.729 56.6666,94.715 57.7777,94.691 58.8888,94.684 60,94.678 61.1111,94.6769 62.2222,94.675 63.3333,94.672 64.4444,94.672 65.5555,94.672 66.6666,94.671 67.7777,94.671 68.8888,94.671 70,94.671 71.1111,94.672 72.2222,94.672 73.3333,94.671 74.4444,94.672 75.5555,94.673 76.6666,94.674 77.7777,94.674 78.8888,94.674 80,94.674 81.1111,94.674 82.2222,94.674 83.3333,94.674 84.4444,94.673 85.5555,94.673 86.6666,94.673 87.7777,94.673 88.8888,94.673 90,94.673 91.1111,94.673 92.2222,94.673 93.3333,94.673 94.4444,94.673 95.5555,94.673 96.6666,94.673 97.7777,94.673 98.8888,94.673 100,94.673"
+          g.axis-y
+            line.stroke(y1="100%")
+
+            g.ticks
+              - k = 10
+              for n, i in new Array(k + 1)
+                - y = (100 * i / k)
+                g.axis-label
+                  line.stroke(x1="-6" y1=`${y}%` y2=`${y}%`)
+                  text.axis-label-text(text-anchor="end" x="-10" y=`${y}%`)
+                    = written.prettyNumber((k - i) * 10000)
+
+          svg.axis-x(y="100%")
+            line.stroke(x1="100%")
+
+            g
+              for n, i in chart.scale
+                - x = (100 * i / (chart.scale.length - 1))
+                g.axis-label
+                  line.stroke(
+                    y2=(i % 10 == 0 ? 6 : 4)
+                    x1=`${x}%` x2=`${x}%`
+                  )
+                  if i % 10 == 0
+                    text.axis-label-text(text-anchor="middle" y=16 x=`${x}%`)
+                      = n
+
+
+        span.country-label.country-cn.scenario-1(
+            style=`transform: translate3d(${part}%, ${100 * (1 - (chart.countries[0].cases.slice(-1)[0]) / 100000)}%, 0px);`
+          )
+          span.country-label-text
+            = written.prettyNumber(chart.countries[0].cases.slice(-1)[0])
+
+            span.line-label.scenario-1.txt-cn
+              | China (COVID&#8209;19)
+
+        span.country-label.country-cn.scenario-2(
+          style=`transform: translate3d(100%, ${100 * (1 - (chart.countries[1].cases.slice(-1)[0]) / 100000)}%, 0px);`
         )
-        polyline.country.country-wo.scenario-2(
-          points="0,100 1.1111,89.38 2.2222,87.9600 3.3333,86.42 4.4444,85.12 5.5555,83.68 6.6666,80.04 7.7777,79.34 8.8888,78.4 10,77.34 11.1111,76.08 12.2222,73.34 13.3333,72.16 14.4444,71.16 15.5555,70.18 16.6666,68.38 17.7777,66.9799 18.8888,64.9799 20,63.6600 21.1111,62.7799 22.2222,61.36 23.3333,60.42 24.4444,59.3 25.5555,61.96 26.6666,61.2 27.7777,60.3399 28.8888,59.6600 30,59.04 31.1111,58.3399 32.2222,57.28 33.3333,56.8199 34.4444,55.94 35.5555,55.4599 36.6666,54.9000 37.7777,54.74 38.8888,53.94 40,53.64 41.1111,53.14 42.2222,52.9 43.3333,52.44 44.4444,51.7600 45.5555,51.3199 46.6666,50.7600 47.7777,49.92 48.8888,49.28 50,49.04 51.1111,48.96 52.2222,47.44 53.3333,46.58 54.4444,45.86 55.5555,44.5 56.6666,43.3599 57.7777,43.3599 58.8888,42.28 60,42.0199 61.1111,41.66 62.2222,40.5999 63.3333,40.22 64.4444,39.36 65.5555,38.8799 66.6666,38.6200 67.7777,38.54 68.8888,38.52 70,38.5 71.1111,38.14 72.2222,37.96 73.3333,37.88 74.4444,37.66 75.5555,37.4600 76.6666,37.32 77.7777,37.24 78.8888,37.22 80,37.28 81.1111,37.3 82.2222,37.3400 83.3333,37.36 84.4444,37.3400 85.5555,37.42 86.6666,37.5399 87.7777,37.6000 88.8888,37.64 90,37.6999 91.1111,37.7600 92.2222,37.7600 93.3333,37.7600 94.4444,37.82 95.5555,37.82 96.6666,37.8000 97.7777,37.8000 98.8888,37.95 100,38.1000"
+          span.country-label-text
+            = written.prettyNumber(chart.countries[1].cases.slice(-1)[0])
+
+            span.line-label.scenario-2.txt-cn
+              | China (SARS)
+
+      .half: .fill
+        svg(
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          style="overflow: hidden"
         )
+          line.progress(x1=part x2=part y2="100")
+          for country, i in chart.countries.slice(2)
+            polyline.country.country-wo(
+              class=`scenario-${i + 1}`
+              points=country.cases.map(map(8000)).join(" ")
+            )
 
-      span.country-label.country-cn.scenario-1(
-          style="opacity: 1; transform: translate3d(41.1111%, 21.8089%, 0px);"
+        svg(
+          width="100%"
+          height="100%"
         )
-        span.country-label-text 78,191
-      span.country-label.country-wo.scenario-1(
-        style="opacity: 1; transform: translate3d(41.1111%, 41.64%, 0px);"
-      )
-        span.country-label-text 2,918
-      span.country-label.country-cn.scenario-2(
-        style="opacity: 1; transform: translate3d(100%, 94.673%, 0px);"
-      )
-        span.country-label-text 5,327
-      span.country-label.country-wo.scenario-2(
-        style="opacity: 1; transform: translate3d(100%, 38.1%, 0px);"
-      )
-        span.country-label-text 3,095
+          g.axis-y
+            line.stroke(y1="100%")
 
-    #axis-lhs
-      for n, i in new Array(11)
-        .axis-label
-          .axis-label-text #{written.prettyNumber((10 - i) * 10000)}
+            g.ticks
+              - k = 8
+              for n, i in new Array(k + 1)
+                - y = (100 * i / k)
+                g.axis-label
+                  line.stroke(x1="-6" y1=`${y}%` y2=`${y}%`)
+                  text.axis-label-text(text-anchor="end" x="-10" y=`${y}%`)
+                    = written.prettyNumber((k - i) * 1000)
 
-      .axis-title Confirmed cases in
-        span.txt-cn  China
+          svg.axis-x(y="100%")
+            line.stroke(x1="100%")
 
-    #axis-rhs
-      for n, i in new Array(6)
-        .axis-label
-          .axis-label-text #{written.prettyNumber((5 - i) * 1000)}
+            g
+              for n, i in chart.scale
+                - x = (100 * i / (chart.scale.length - 1))
+                g.axis-label
+                  line.stroke(
+                    y2=(i % 10 == 0 ? 6 : 4)
+                    x1=`${x}%` x2=`${x}%`
+                  )
 
-      .axis-title Confirmed cases,
-        span.txt-wo  rest of the world
+                  if i % 10 == 0
+                    text.axis-label-text(text-anchor="middle" y=16 x=`${x}%`)
+                      = n
 
-    #axis-bottom
-      for txt, i in chart.scale
-        .axis-label
-          .axis-label-text= txt
 
-      .axis-title Days since outbreak began
 
-    small#chart-source.txt-muted
-      | Source: WHO Coronavirus situation reports; Taiwan Center for Disease Control
+        span.country-label.country-wo.scenario-1(
+          style=`transform: translate3d(${part}%, ${100 * (1 - (chart.countries[2].cases.slice(-1)[0]) / 8000)}%, 0px);`
+        )
+          span.country-label-text
+            = written.prettyNumber(chart.countries[2].cases.slice(-1)[0])
 
-    a#chart-logo(href="https://www.lowyinstitute.org/")
-      img(src="/img/lowyinstitute-logo.png")
+            span.line-label.scenario-1.txt-wo
+              | Rest of the World (COVID&#8209;19)
+
+        span.country-label.country-wo.scenario-2(
+          style=`transform: translate3d(100%, ${100 * (1 - (chart.countries[3].cases.slice(-1)[0]) / 8000)}%, 0px);`
+        )
+          span.country-label-text
+            = written.prettyNumber(chart.countries[3].cases.slice(-1)[0])
+
+            span.line-label.scenario-2.txt-wo
+              | Rest of the World (SARS)
+
+        a#chart-logo(href="https://www.lowyinstitute.org/")
+          img(src="/img/lowyinstitute-logo.png")
+
+
+    #chart-footer
+      .axis-y-label Days since outbreak reported
+      small#chart-source.txt-muted
+        | Source: WHO Coronavirus situation reports; Taiwan Center for Disease Control
 
 block append css
   style
     include:sass _style.sass
-
-block customScripts
-  script(type="text/javascript")
-    | require.register("views/chart", function(exports, require, module){
-    include:coffee view.coffee
-    | })
-
