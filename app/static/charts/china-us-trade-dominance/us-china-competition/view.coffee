@@ -14,6 +14,8 @@ require.register "views/map", (exports, require, module) ->
           "click #btn-pause": "pause"
           "click #btn-reset": "reset"
           "click #btn-end": "end"
+          "enter": "play"
+          "exit": "stop"
 
           "pointerdown #map-timeline-minimap": "startYear"
           "pointercancel": "endYear"
@@ -61,6 +63,9 @@ require.register "views/map", (exports, require, module) ->
         initialize: (opts) ->
           @parseSearchParameters()
 
+          if opts.colors
+            @interpolate = d3.interpolateRgbBasis(opts.colors)
+
           @createScale()
 
           $(window).on("pointerup", _.bind(@endYear, this))
@@ -69,7 +74,7 @@ require.register "views/map", (exports, require, module) ->
           if opts.items
             @data.items = @data[opts.items]
 
-          d3.json("./output.json").then (topo) =>
+          d3.json("/charts/china-us-trade-dominance/us-china-competition/output.json").then (topo) =>
 
             @$elements =
               blocks:  {}
@@ -109,7 +114,7 @@ require.register "views/map", (exports, require, module) ->
               (c) -> c.properties.ADM0_A3
             )
 
-          svg = d3.select("svg")
+          svg = d3.select(@el).select("svg")
 
           svg
             .selectAll("*")
@@ -121,7 +126,7 @@ require.register "views/map", (exports, require, module) ->
           projection = d3.geoPatterson()
             .rotate([-10, 0, 0])
             .precision(.1)
-            .fitExtent([[0, -80],[width, height + 160]], background)
+            .fitExtent([[0, -80],[width, height * 1.2]], background)
 
           path = d3.geoPath().projection(projection)
 
@@ -225,7 +230,6 @@ require.register "views/map", (exports, require, module) ->
 
           background = getComputedStyle(canvas).backgroundColor
           fillColor  = d3.interpolateRgb("#a2acb1", background)(0.75)
-          console.log fillColor
           contextBase.drawImage(@data.colorImage, 0, 0, canvas.width, canvas.height)
           contextBase.globalCompositeOperation = "source-in"
           contextBase.fillStyle = fillColor
@@ -254,6 +258,8 @@ require.register "views/map", (exports, require, module) ->
           @$elements.minimapContext.strokeRect(x + 1, 0, 1, @data.baseImage.height)
 
         render: (t) ->
+          return unless @$elements
+
           x = Math.floor(t)
           y = Math.min(x + 1, @data.scale.length - 1)
           p = t - x
