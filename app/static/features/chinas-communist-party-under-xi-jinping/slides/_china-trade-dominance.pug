@@ -1,0 +1,41 @@
+- var chart = data.getOne("static/charts/china-us-trade-dominance/us-china-competition/data")
+
+script
+  != `window.chart = ${JSON.stringify(chart)};`
+
+.slide.bg-dk
+  .fw.fh.posr(
+    data-view="in-viewport, map"
+    data-colors=JSON.stringify(["#1893fd", "white", "#f7434c"])
+  )
+    #map-wrapper
+      svg#map(width="100%" height="100%")
+        text.txt-sans(x="50%" y="50%" text-anchor="middle" fill="currentColor")
+          | Loading map...
+
+      #chart-title
+        h1.chart-title-main.txt-mono.txt-bold
+          | The US-China Trade War
+          .chart-title-sub Who Dominates Global Trade?
+
+      #map-scale.txt-sans
+        .map-legend-label.map-legend-label-no-data No data
+        .map-legend-label.txt-bold Who is the larger trading partner?
+        #map-scale-canvas-wrap
+          canvas#map-scale-canvas
+        .flex.flex-between
+          .map-legend-label US
+          .map-legend-label Equal
+          .map-legend-label China
+
+      #chart-year.txt-mono= _.first(chart.scale)
+
+    #map-timeline
+      canvas#map-timeline-minimap
+      .clearfix
+        #map-scale-min.map-legend-label.txt-mono= _.first(chart.scale)
+        #map-scale-max.map-legend-label.txt-mono= _.last(chart.scale)
+
+    small#chart-source.txt-sans.txt-muted
+      | Source: Lowy Institute calculations,
+      | IMF Direction of Trade Statistics database

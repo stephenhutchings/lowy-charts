@@ -1,0 +1,169 @@
+$bg-color: #22273d
+$txt-color: #fff
+$stroke-color: #ced3de
+
+$bg-light: #40455d
+
+$highlight-blue: #1893fd
+$highlight-red: #f7434c
+$highlight-grey: #22273d
+
+#map-controls,
+#chart-title,
+#chart-year,
+#chart-source,
+#chart-logo,
+#map-wrapper,
+#map-scale,
+#map-timeline,
+#map-scale-min,
+#map-scale-max
+  position: absolute
+
+#map-wrapper
+  left: 0
+  top: -40px
+  bottom: 0
+  right: 0
+  color: $txt-color
+  text-transform: uppercase
+
+.country,
+.background
+  fill: darken($bg-light, 4)
+
+.country
+  transition: opacity 600ms
+  stroke: #22263d
+  stroke-width: 0.3
+
+  &#country-USA,
+  &#country-CHN
+    opacity: 1 !important
+
+  &#country-USA
+    fill: $highlight-blue !important
+
+  &#country-CHN
+    fill: $highlight-red !important
+
+#map-scale
+  bottom: 100px
+  left: 12px
+  z-index: 10
+  max-width: 284px
+  line-height: 16px
+
+  .map-legend-label
+    min-width: 44px
+
+.map-legend-label-no-data
+  margin-bottom: 16px
+  text-align: left
+
+  &:before
+    content: ""
+    display: block
+    float: left
+    width: 1em
+    height: 1em
+    margin-top: -1px
+    margin-right: 0.5em
+    background: darken($bg-light, 4)
+
+    @media (color-gamut: p3)
+      background: $bg-light
+
+#map-scale-canvas-wrap
+  margin: 3px 0 6px
+  height: 12px
+  position: relative
+
+  &:after
+    content: ""
+    position: absolute
+    left: 50%
+    margin-left: -0.5px
+    border: 1px solid $bg-color
+    top: 0
+    bottom: -4px
+
+#map-scale-canvas
+  width: 100%
+  height: 100%
+  display: block
+  image-rendering: pixelated
+
+#map-scale-min,
+#map-scale-max
+  color: #fff
+  background: $highlight-grey
+  padding: 4px 8px
+  bottom: 0
+
+#map-scale-min
+  left: 0
+
+#map-scale-max
+  right: 0
+
+#map-timeline
+  left: 12px
+  right: 12px
+  bottom: 12px
+  height: 72px
+
+#map-timeline-minimap
+  cursor: ew-resize
+  width: 100%
+  height: 100%
+  display: block
+  user-select: none
+  box-sizing: border-box
+  background: $bg-light
+  image-rendering: pixelated
+
+#chart-year
+  left: 50%
+  bottom: 32px
+  width: 2.8em
+  margin: 0 -1.4em
+  line-height: 1em
+  font-weight: 600
+  font-size: 32px
+  pointer-events: none
+  z-index: 10
+
+#chart-title
+  left: 50%
+  bottom: 100px
+  text-align: center
+  letter-spacing: 0.05em
+  font-weight: bold
+  z-index: 10
+  width: 480px
+  margin-left: -240px
+
+.chart-title-main
+  font-size: 24px
+  line-height: 1.2
+  margin: 0
+  letter-spacing: 0.03em
+
+.chart-title-sub
+  font-size: 80%
+  text-transform: none
+
+#chart-source
+  right: 20px
+  bottom: 100px
+  text-transform: none
+  line-height: 16px
+  letter-spacing: 0
+  max-width: 200px
+  text-align: right
+
+#map-scale,
+#map-timeline,
+#chart-source
+  font-size: 14px

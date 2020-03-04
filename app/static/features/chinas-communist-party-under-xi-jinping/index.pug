@@ -18,7 +18,7 @@ block page
   #controls.p-xs.txt-ff
     #pager-progress
       span#pager-index 1
-      span#pager-total &ensp;/&ensp;40
+      span#pager-total &ensp;/&ensp;41
     #btn-prev.btn.icon.icon-up
     #btn-next.btn.icon.icon-down
     #btn-fs.btn.icon.icon-expand
@@ -30,14 +30,19 @@ block page
     style="display: none"
   )
 
-    div(style="height: 4000%")
+    div(style="height: 4100%")
       include _slides
 
 block customScripts
   style
     include:sass _style.sass
 
+  script(src="https://d3js.org/d3.v5.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/d3-geo-projection/2.4.0/d3-geo-projection.js")
+  script(src='/extra/topojson.v1.min.js')
+
   script(type="text/javascript")
+    include:coffee /charts/china-us-trade-dominance/us-china-competition/view.coffee
     include:coffee views/type.coffee
     include:coffee views/slide.coffee
     include:coffee views/line.coffee
