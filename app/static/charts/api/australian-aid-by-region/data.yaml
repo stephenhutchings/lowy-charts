@@ -1,0 +1,30 @@
+scale: [ "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20" ]
+keys: ["value"]
+scaleType: "absolute"
+breakdown: "#breakdown .pie-chart"
+breakdownFactor: 1000
+breakdownSuffix: "&thinsp;Bn"
+scaleFactor: 200
+prefix: "$"
+suffix: ""
+format: "$ 0.0"
+duration: 10000
+ticks: 20
+limit: 5
+classes: []
+items:
+  - name: Multilateral organisations
+    value: [ 1576.5, 1319.5, 1164.4, 1163.4, 1301.2, 1187.4 ]
+    color: "#08ffe8"
+  - name: Southeast & East Asia
+    value: [ 1289.8, 1054.9, 1001.4, 973.9, 935.5, 905.1 ]
+    color: "#e9ec08"
+  - name: Rest of world
+    value: [ 425.4, 313.6, 350.6, 375.3, 272.2, 211.6 ]
+    color: "#03bd5e"
+  - name: South Asia
+    value: [ 461.7, 302.6, 293.1, 361.6, 284.9, 266.4 ]
+    color: "#54f104"
+  - name: South Pacific & Timor Leste
+    value: [ 1253.1, 1214.3, 1207.5, 1190.5, 1367.4, 1473.5 ]
+    color: "#0ad1f1"

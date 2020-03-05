@@ -3,6 +3,8 @@ keys: ["pop"]
 scaleFactor: 500000
 scaleType: "absolute"
 breakdown: "#breakdown .pie-chart"
+breakdownFactor: 1000000
+breakdownSuffix: "&thinsp;Bn"
 prefix: ""
 suffix: ""
 duration: 30000

@@ -1,0 +1,401 @@
+$xaxis-width: 180px
+$rank-width: 32px
+$item-count: 7
+$item-height: (588px - 28px - $item-count * 16) / $item-count
+$item-gap: 16px
+$row-height: $item-height + $item-gap
+
+html, body
+  height: 100%
+  box-sizing: border-box
+
+body
+  padding: 20px 80px
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #2d3440
+  color: #fff
+
+  @media (max-height: 800px), (max-width: 800px)
+    padding: 20px
+
+#wrapper
+  width: 100%
+  max-width: 1600px
+  margin: auto
+  position: relative
+  line-height: $item-height
+  height: $row-height * $item-count
+  font-family: Montserrat, sans-serif
+  text-transform: uppercase
+  z-index: 0
+  padding: 4px 0 24px
+  overflow: hidden
+
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(to right, rgba(#2d3440, 0), #2d3440)
+    pointer-events: none
+
+#axis-countries,
+.country
+  width: 100%
+
+#axis-countries,
+#axis-years-list
+  list-style: none
+  padding: 0
+  margin: 0
+
+#axis-countries,
+#axis-years,
+#controls,
+#axis-years-list,
+#chart-title,
+#chart-source,
+#scale,
+#ranks,
+#chart-logo,
+#breakdown,
+#breakdown-total,
+.country,
+.country-name,
+.country-bar,
+.country-bar-block,
+.country-bar-label,
+.scale-stroke-label
+  position: absolute
+
+.country
+  top: 0
+  height: $item-height
+  padding: ($item-gap / 2) 0
+  margin: 0
+  transition: all 800ms 400ms cubic-bezier(0.666, 0, 0.333, 1)
+
+  .loading &
+    transition: none
+
+  .playing &
+    transition-delay: 0ms
+
+.country-name
+  width: $xaxis-width - $rank-width
+  z-index: 10
+  padding-right: 8px
+  text-align: right
+  font-weight: bold
+  letter-spacing: 0.05em
+  line-height: 14px
+  height: 100%
+  display: flex
+  flex-flow: column
+  justify-content: center
+  margin-top: -($item-gap / 2)
+
+.country-bar
+  left: $xaxis-width
+  right: 0
+  height: $item-height
+  overflow: hidden
+  border-left: 1px solid
+  background: linear-gradient(to right, rgba(#fff, 0.03), rgba(#fff, 0))
+
+.country-bar-block
+  top: 0
+  left: 0
+  right: 360px
+  height: 100%
+  transform-origin: left center
+  box-sizing: border-box
+  transition: transform 800ms
+
+  .playing &
+    transition: none
+
+.country-bar-label
+  right: 0
+  bottom: 0
+  margin-right: 8px
+  color: #2d3440
+  opacity: 0
+
+#ranks
+  left: $xaxis-width - 32px
+  right: 0
+  text-align: center
+  pointer-events: none
+
+.rank
+  position: relative
+  padding: ($item-gap / 2) 0
+
+  &:after
+    content: ""
+    position: absolute
+    top: ($item-gap / 2)
+    left: $rank-width
+    right: 0
+    bottom: ($item-gap / 2)
+    background-color: #353e4a
+    z-index: -1
+
+  &:hover:after
+    background-color: #4d5567
+
+.rank-label
+  width: $rank-width
+  text-align: center
+
+#scale
+  top: 0
+  left: $xaxis-width
+  right: 360px
+  bottom: 24px
+  text-align: center
+  color: #7e8d94
+  z-index: -1
+  text-transform: none
+  white-space: nowrap
+
+#scale-strokes
+  width: 100%
+  height: 100%
+  transform-origin: left center
+  transition: transform 800ms
+  display: flex
+  flex-direction: row
+
+  .playing &,
+  .loading &
+    transition: none
+
+.scale-stroke
+  flex: 1
+  border-left: 1px solid #71798a
+  margin-right: -1px
+  float: left
+  height: 100%
+  position: relative
+  transform-origin: left center
+  transition: transform 800ms
+
+  .playing &,
+  .loading &
+    transition: none
+
+.scale-stroke-label
+  bottom: -21px
+  left: -20px
+  width: 40px
+  line-height: 1
+
+#controls
+  top: 0
+  bottom: 0
+  right: 0
+  width: 72px
+  overflow: hidden
+  color: #7e8d94
+
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    left: 0
+    z-index: 10
+
+  &:before
+    top: 6px
+    bottom: 6px
+    border-left: 1px solid #71798a
+
+  &:after
+    top: 458px
+    margin: -4px
+    height: 8px
+    width: 8px
+    background: #2d3440
+    border-top: 1px solid #71798a
+    border-right: 1px solid #71798a
+    transform: rotate(45deg) translateY(-0.5px)
+
+#axis-years
+  top: 0
+  width: 60px
+  right: 0
+  bottom: 0
+  text-align: center
+
+#axis-years-list
+  width: 100%
+  height: 24px
+  line-height: 24px
+  top: 458px
+  margin-top: -12px
+  transition: transform 600ms
+
+  .playing &
+    transition: none
+
+.year
+  box-sizing: border-box
+  transition: color 800ms
+  line-height: inherit
+
+  &.active
+    color: #fff
+
+  &:hover
+    color: #00fade
+
+.year-link
+  display: block
+  cursor: pointer
+
+.btn
+  padding: 8px
+  width: 36px
+  cursor: pointer
+  display: block
+  position: relative
+  z-index: 100
+  margin: 0 20px
+
+  &:focus
+    outline: none
+
+    .btn-icon
+      fill: #fff
+
+#btn-pause
+  display: none
+
+  .playing &
+    display: block
+
+#btn-play
+  .playing &
+    display: none
+
+.btn-icon
+  width: 16px
+  height: 16px
+  display: block
+  margin: auto
+  transition: fill 300ms
+  fill: #7e8d94
+
+  &:hover
+    fill: rgba(#fff, 1)
+
+#chart-title
+  right: 100px
+  bottom: 64px
+  max-width: 400px
+  text-align: right
+  letter-spacing: 0.05em
+  line-height: 1.2
+  font-weight: bold
+  z-index: 10
+
+.chart-title-main
+  font-size: 20px
+  margin: 0
+
+.chart-title-small,
+.chart-title-label
+  display: block
+  font-weight: bold
+  margin-top: 8px
+  font-weight: normal
+
+.chart-title-small
+  color: #7e8d94
+  transition: opacity 300ms
+
+.chart-title-label
+  text-transform: none
+  letter-spacing: 0
+
+  &:after
+    content: ""
+    width: 1em
+    height: 1em
+    box-sizing: border-box
+    display: inline-block
+    vertical-align: middle
+    margin-left: 0.5em
+    position: relative
+    top: -1px
+
+#breakdown
+  height: 240px
+  width: 240px
+  top: 140px
+  right: 100px
+
+  .pie-chart
+    width: 200px
+    height: 200px
+    overflow: visible
+    margin: 20px
+
+  .pie-ring
+    fill: none
+    stroke-width: 48px
+
+#breakdown-total
+  top: 0
+  right: 72px
+  line-height: 240px
+  font-size: 24px
+  text-transform: none
+
+#chart-source
+  right: 100px
+  bottom: 2px
+  color: #7e8d94
+  text-transform: none
+  line-height: 1.4
+  padding-left: 8px
+  background-color: #2d3440
+
+#chart-logo
+  bottom: 2px
+  right: 80px
+  opacity: 0.5
+  width: 120px
+  display: none
+
+  img
+    width: 100%
+
+  &:hover
+    opacity: 1
+
+#chart-legend
+  position: absolute
+  right: 80px
+  bottom: 80px
+  text-align: right
+
+.chart-title-small,
+.chart-title-label
+  font-size: 16px
+  letter-spacing: 0.08em
+
+.year
+  font-size: 14px
+
+.country,
+.rank-label,
+.scale-stroke-label
+  font-size: 14px

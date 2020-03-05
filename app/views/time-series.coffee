@@ -84,7 +84,7 @@ module.exports =
               , 0)
             })
           .sortBy((c, i, arr) =>
-            if c.parent
+            if c.parent and @data.stack
               -arr[c.parent].stack + 1 + 1 / c.stack
             else if @data.stack
               -c.stack
@@ -96,7 +96,7 @@ module.exports =
       list = lists[@activeIndex]
 
       if @data.scaleType is "absolute"
-        vals = _.flatten @data.keys.map((k) => _.pluck(@data.countries, k))
+        vals = _.flatten @data.keys.map((k) => _.pluck(@data.items, k))
         max = _.max vals
 
       else if @data.stack
@@ -184,7 +184,9 @@ module.exports =
         radius = @$elements.breakdown.width() / 2
 
         @$elements.total.html [
-          (total / 1000000).toFixed(1), "&thinsp;Bn"
+          @data.prefix
+          (total / @data.breakdownFactor).toFixed(1)
+          @data.breakdownSuffix
         ].join("")
 
         @$elements.breakdown.children().each (i, el) ->

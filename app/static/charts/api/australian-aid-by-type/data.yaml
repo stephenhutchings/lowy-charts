@@ -1,0 +1,35 @@
+scale: [ "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20" ]
+keys: ["value"]
+scaleType: "absolute"
+breakdown: "#breakdown .pie-chart"
+breakdownFactor: 1000
+breakdownSuffix: "&thinsp;Bn"
+scaleFactor: 200
+prefix: "$"
+suffix: ""
+duration: 10000
+ticks: 20
+limit: 7
+classes: []
+items:
+  - name: Education
+    value: [ 1049.3, 707, 675.2, 656.9, 637.2, 619.3]
+    color: "#08ffe8"
+  - name: Health
+    value: [ 806.9, 578.5, 462.3, 536.3, 435.8, 546.1]
+    color: "#0ad1f1"
+  - name: General Development Support
+    value: [ 562.1, 446.4, 407.9, 377.8, 437.8, 352.3]
+    color: "#0089ff"
+  - name: Building Resilience
+    value: [ 759.7, 711.9, 665, 737.8, 690.9, 664.7]
+    color: "#e9ec08"
+  - name: Agriculture, Fisheries & Water
+    value: [ 382.2, 324.6, 353.1, 360.7, 378.9, 338]
+    color: "#8b50ff"
+  - name: Effective Governance
+    value: [ 799.9, 774.6, 778, 721.7, 812.1, 792.9]
+    color: "#03bd5e"
+  - name: Infrastructure & Trade
+    value: [ 647.3, 662.3, 675, 674, 769.1, 730.7]
+    color: "#54f104"
