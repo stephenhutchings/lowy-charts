@@ -77,6 +77,10 @@ locations:
       -
         name: Joe Hockey
         start: 29 January 2016
+        end: 7 February 2020
+      -
+        name: Arthur Sinodinos
+        start: 7 February 2020
         end: present
   -
     name: Indonesia
@@ -461,8 +465,13 @@ locations:
       -
         name: Harinder Sidhu
         start: 11 February 2016
-        end: present
+        end: 17 February 2020
         gender: f
+      -
+        name: Barry O’Farrell
+        start: 18 February 2020
+        end: present
+
   -
     name: Thailand
     list:
@@ -605,8 +614,12 @@ locations:
       -
         name: Jan Adams
         start: 2016
-        end: present
+        end: August 2019
         gender: f
+      -
+        name: Graham Fletcher
+        start: August 2019
+        end: present
   -
     name: Philippines
     list:

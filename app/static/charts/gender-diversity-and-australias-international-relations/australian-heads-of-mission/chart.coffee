@@ -3,7 +3,7 @@ require.register "views/chart", (exports, require, module) ->
   utils = require("lib/utils")
 
   # When this data was collected
-  now = 1562132310085
+  now = 1583968770162
   format = (d) ->
     if _.isString(d) and d.match(/(\d{1,2} |)[a-z]+ \d{4}/i)
       d.toString().replace(/([a-z]+)/i, (w, a) -> a.slice(0, 3))
@@ -106,13 +106,16 @@ require.register "views/chart", (exports, require, module) ->
         x = @config.barsX
         w = @config.w - (@config.labelW + @config.buffer)
 
-        for i in [0...nb]
+        for i in [0..nb]
           my = (data.length + 1) * (@config.barsH + @config.buffer) - @config.buffer
-          fy = new Date(dmin).getFullYear()
-          yn = fy + i
-          dc = (yn % 10 is 0) or yn is 2019 or i is 0
 
-          yx = x + (i / nb) * w
+          yn = y0 + i
+          dc = (yn % 10 is 0) or yn is 2020 or i is 0
+
+          d = new Date(0)
+          d.setFullYear(yn)
+
+          yx = x + ((d - dmin) / len) * w
           y1 = @config.barsY + if dc then 0 else 4
           y2 = @config.barsY + my - 16
           y2 += 4 if dc
@@ -139,14 +142,21 @@ require.register "views/chart", (exports, require, module) ->
             stroke: "none"
             opacity: 0.5
 
+          minWidth = 3
+
           for el, i in list
             do (el, i) =>
               x1 = (w * (el.startDate - dmin) / len)
-              x1 = ~~Math.max(x1, prevX + 1)
+              x1 = Math.max(x1, prevX + 1)
               x2 = w * (el.endDate - dmin) / len
-              x2 = ~~Math.max(x2, x1 + 3)
-              prevX = x2
-              rect = @paper.rect(x + x1, y, x2 - x1, @config.barsH).attr
+              x2 = Math.max(x2, x1)
+              w0 = Math.max(x2 - x1, minWidth)
+              prevX = x1 + w0
+
+              if el.endDate is now
+                w0 = w + minWidth - (x + x1)
+
+              rect = @paper.rect(x + x1, y, w0, @config.barsH).attr
                 fill: if el.gender is "f" then colors.contrast else colors.dark
                 stroke: "none"
 
