@@ -70,6 +70,7 @@ body
 .country-bar,
 .country-bar-block,
 .country-bar-label,
+.country-bar-label-diff,
 .scale-stroke-label
   position: absolute
 
@@ -120,12 +121,33 @@ body
   .playing &
     transition: none
 
+.country-bar-label,
+.country-bar-label-diff
+  font-size: 16px
+
 .country-bar-label
   right: 0
   bottom: 0
   margin-right: 8px
   color: #2d3440
   opacity: 0
+
+.country-bar-label-diff
+  left: 100%
+  bottom: 0
+  margin-left: 8px
+  color: #2d3440
+  opacity: 0
+  white-space: nowrap
+  transition: all 300ms
+
+  &.pos
+    color: #00fade
+    opacity: 1
+
+  &.neg
+    color: #ff7859
+    opacity: 1
 
 #ranks
   left: $xaxis-width - 32px
@@ -298,8 +320,8 @@ body
 
 #chart-title
   right: 100px
-  bottom: 64px
-  max-width: 400px
+  bottom: 100px
+  max-width: 320px
   text-align: right
   letter-spacing: 0.05em
   line-height: 1.2

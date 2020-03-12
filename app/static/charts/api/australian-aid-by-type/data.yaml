@@ -1,12 +1,13 @@
-scale: [ "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20" ]
+scale: [ "2014–15", "2015–16", "2016–17", "2017–18", "2018–19", "2019–20" ]
 keys: ["value"]
 scaleType: "absolute"
 breakdown: "#breakdown .pie-chart"
 breakdownFactor: 1000
 breakdownSuffix: "&thinsp;Bn"
 scaleFactor: 200
+showDiff: true
 prefix: "$"
-suffix: ""
+suffix: "&thinsp;M"
 duration: 10000
 ticks: 20
 limit: 7

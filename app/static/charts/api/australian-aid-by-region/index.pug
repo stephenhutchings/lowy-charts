@@ -4,7 +4,7 @@ block append config
   - var chart  = data.getOne("static/charts/api/australian-aid-by-region/data")
   - var byValue = function(e){return -e.value[0]};
   - var inOrder = _.sortBy(chart.items, byValue);
-  - page.title = "Australia's Offical Development Assistance: Expenditure & Estimates"
+  - page.title = "Australia's ODA: Expenditure & Estimates"
 
 block page
   script
@@ -36,6 +36,7 @@ block page
                 class=key
               )
                 .item-bar-label.country-bar-label(class=key)
+                .item-bar-label-diff.country-bar-label-diff(class=key)
 
     #ranks
       #rank-list
