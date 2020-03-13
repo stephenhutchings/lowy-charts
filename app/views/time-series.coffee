@@ -169,6 +169,18 @@ module.exports =
                   2 * (value - _.find(lists[0], {index}).value) / value
             )
 
+            if @data.showDiff
+              diff = value - @data.items[index][key][0]
+              @$elements.labels[key].eq(index).next()
+              .html([
+                if diff < 0 then "&minus;&thinsp;" else "&plus;&thinsp;"
+                @data.prefix
+                toThousands(Math.abs(diff))
+                @data.suffix
+              ].join(""))
+              .toggleClass("neg", diff < 0)
+              .toggleClass("pos", diff > 0)
+
       for { value, index, isEstimate }, rank in list
         rank = Math.min(rank, @data.limit)
 
