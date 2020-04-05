@@ -7,14 +7,17 @@ hash = git.short()
 
 if process.env.NODE_ENV is "development"
   glob "app/static/**/*.pug", (err, list) ->
-    console.log list.map((e) ->
-      e
-        .replace("app/static/", "http://localhost:4000/")
-        .replace("index.pug", "")
-        .replace(".pug", ".html")
-
-    ).filter((e) -> not e.match(/partials|survey-results\/q/)
-    ).join("\n")
+    console.log(list
+      .filter((e) -> not e.match("/_"))
+      .filter((e) -> not e.match(/partials|survey-results\/q/))
+      .map((e) ->
+        e
+          .replace("app/static/", "http://localhost:4000/")
+          .replace("index.pug", "")
+          .replace(".pug", ".html")
+      )
+      .join("\n")
+    )
 
 marked = (data) ->
   require("marked")(data, { smartypants: true, headerIds: false })
