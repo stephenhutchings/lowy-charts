@@ -1,0 +1,17 @@
+//-
+  This footer appears on the bottom of each issue page, where it's included
+  through the `include` keyword.
+
+.container
+  footer#footer
+    nav.pager
+      .pager-page
+        span.pager-page-start
+        span.pager-page-middle
+        span.pager-page-end
+
+      ul.pager-list
+        for item, i in ["The Issue", "Government", "Opposition", "The Expert"]
+          li.pager-item(class=(i == 0 ? "active" : ""))
+            a.pager-link(href=`#scroll-item-${i || "intro"}` tabindex="0")
+              = item

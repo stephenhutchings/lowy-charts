@@ -1,0 +1,78 @@
+//-
+  This layout is used to construct the issue page. It in turn extends the
+  default `layout` defined below.
+
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.class = "page-issue page-0"
+  - page.image = "./img/thumbnail.png"
+  - page.issue = __.filepath.match(/([^\/]+)\/index.pug$/)[1]
+  - page.feature = data.getOne("static/features/covid19/data")
+
+block prepend head
+  - page.url = "https://interactives.lowyinstitute.org/features/covid19/"
+  - page.url += "issues/" + page.issue
+  - page.metaTitle = `${page.title} - COVID-19 – Lowy Insitute`
+
+block page
+  include header
+
+  mixin item(index)
+    .scroll-item(
+      id=`scroll-item-${index}`
+      class=(index == "index" ? "active" : null)
+    )
+      block
+
+  #scroller(
+    data-view="scroller"
+    data-pager=".pager-page"
+    data-index=".pager-index"
+    data-offset="1"
+  )
+    +item("intro")
+      .row
+        .col-1-2
+          .fill
+            .row
+              .col-fw.p-md
+                .pv-xs
+                  .p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
+                .txt-xxl.pv-xs= page.title
+            .row.bg-lt
+              .col-fw.frame
+                .img-pan
+                  block intro-image
+                .caption.txt-ff
+                  block intro-caption
+
+        .col-1-2.bg-dk.txt-ff.p-lg
+          .txt-lg
+            block intro-description
+
+    block scroller
+
+    +item("links")
+      .container
+        ul.link-grid.list-bare.txt-ff
+          li.col-fw.txt-sm.txt-tu.txt-hl Explore more issues
+          for issue in page.feature.issues
+            if issue.href != page.issue
+              li.col-1-2
+                a.txt-bare.p-sm(
+                  href=`/features/covid19/issues/${issue.href}`
+                )
+                  span.txt-xl!= typogr.typogrify(issue.title)
+
+  include footer
+
+block append css
+  style
+    include:sass ../_styles.sass
+
+block append scripts
+  script
+    include:coffee ../coffee/scroller.coffee
+    include:coffee ../coffee/counter.coffee
