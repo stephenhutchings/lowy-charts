@@ -8,7 +8,7 @@
     "url": ""
   },
   "engines": {
-    "node": ">= 8.11.1"
+    "node": ">= 12.16.1"
   },
   "scripts": {
     "start": "brunch watch --server -P 4000",
@@ -33,10 +33,9 @@
     "marked": "^0.8.2",
     "minimist": "^1.2.5",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
     "postcss-brunch": "^2.1.0",
     "pugjs-brunch": "https://github.com/stephenhutchings/pugjs-brunch.git",
-    "sass-brunch": "2.10.8",
+    "sass-brunch": "https://github.com/brunch/sass-brunch.git#b21b27f6329c2ec30659daa0835db214dde708b0",
     "typogr": "^0.6.8",
     "uglify-js-brunch": "^2.10.0",
     "written": "^0.1.3",
