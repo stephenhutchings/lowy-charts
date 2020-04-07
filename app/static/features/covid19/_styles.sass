@@ -76,7 +76,7 @@ $color-mt: #7c94a2
 
 .caption
   position: absolute
-  bottom: 10%
+  bottom: 7%
   left: 20px
   right: 20px
   text-align: center
@@ -208,7 +208,9 @@ sup
   position: relative
 
   > p
-    margin: -0.2em 0 -0.3em
+    //margin: -0.2em 0 -0.3em
+    margin: 0 1.5em 1em 1.7em
+    line-height: 1.5em
 
 .txt-source
   position: absolute
@@ -367,15 +369,17 @@ strong, .txt-tu, .caption
   .social-share
     float: right
 
-#scroll-item-intro .caption,
-.caption-dk
-  background: rgba(#000, 0.7)
-  left: 50%
-  right: auto
-  transform: translateX(-50%)
+#scroll-item-intro
+  height: 100%
 
-  p
-    padding: 4px
+  .caption, .caption-dk
+    background: rgba(#000, 0.7)
+    left: 50%
+    right: auto
+    transform: translateX(-50%)
+
+    p
+      padding: 4px
 
 .social-share
   display: flex
@@ -418,49 +422,48 @@ strong, .txt-tu, .caption
   bottom: 100%
 
 .pager
-  margin: auto
-  width: -moz-fit-content
-  width: fit-content
-  position: relative
+  margin: 0
+  left: 0
+  //width: -moz-fit-content
+  //width: fit-content
+  //position: relative
 
   .pager-page
     position: absolute
     left: 0
-    top: 50%
-    width: 130px
-    height: 20px
-    margin: -10px 4px
+    top: 40%
+    margin: 0
     z-index: 0
-    transition: opacity 300ms
-
-    .page-4 &
-      opacity: 0
+    //transition: opacity 300ms
 
     .pager-page-start,
     .pager-page-middle,
     .pager-page-end
-      height: 20px
-      background: $color-dk
+      height: 5px
+      background: $color-hl
+      //background: #F2B000
+      //background: #FFC52B
       position: absolute
       left: 0
-      transform-origin: left center
+      right: 0
+      //transform-origin: left center
 
-    .pager-page-start
-      width: 10px
-      border-radius: 10px 0 0 10px
+    // .pager-page-start
+    //   width: 10px
+    //   border-radius: 10px 0 0 10px
 
-    .pager-page-middle
-      left: 10px
-      right: 20px
-      transform: scale(1, 1)
+    // .pager-page-middle
+    //   left: 0px
+    //   right: 0px
+      //transform: scale(1, 1)
 
-    .pager-page-end
-      width: 10px
-      left: auto
-      right: 10px
-      border-radius: 0 10px 10px 0
+    // .pager-page-end
+    //   width: 10px
+    //   left: auto
+    //   right: 10px
+    //   border-radius: 0 10px 10px 0
 
-  .pager-list
+  //.pager-list
     list-style: none
     font-size: 16px
     background: white
@@ -468,30 +471,30 @@ strong, .txt-tu, .caption
     padding: 0
     overflow: hidden
 
-  .pager-item
+  //.pager-item
     margin: 0
     float: left
     text-transform: uppercase
     @extend .txt-tu
     @extend .txt-sm
 
-    &.active
+    //&.active
       color: $color-ff
 
-      .pager-link:hover:before
+      //.pager-link:hover:before
         background-color: $color-dk
 
-  .pager-link
+  //.pager-link
     display: block
     text-decoration: none
     text-align: center
-    width: 120px
+    width: 200px
     height: 64px
     position: relative
     z-index: 1
-    margin: 0 5px
+    margin: 0 0px
 
-    &:before
+    //&:before
       content: ""
       position: absolute
       left: 0
@@ -503,11 +506,11 @@ strong, .txt-tu, .caption
       transition: background 300ms
       z-index: -1
 
-    &:hover,
-    &:focus
+    //&:hover,
+    //&:focus
       color: $color-ff
 
-      &:before
+      //&:before
         background: $color-hl
 
 p > a
@@ -572,12 +575,12 @@ p > a
   width: 100%
   overflow: auto
   scroll-behavior: smooth
-  scroll-snap-type: y mandatory
+  //scroll-snap-type: y mandatory
 
 .scroll-item
   width: 100%
-  height: 100%
-  scroll-snap-align: start
+  //height: 100%
+  // scroll-snap-align: start
   position: relative
 
 .txt-expert-content
@@ -589,7 +592,7 @@ p > a
   position: relative
   padding-top: 40px
   max-width: 280px
-  margin: auto
+  // margin: auto
 
   &:before
     content: ""
@@ -628,13 +631,16 @@ p > a
   width: 100%
   height: 100%
 
+  li#active
+    background: $color-dk
+
   li
     height: 25%
     float: left
     position: relative
 
     a > span
-      border-bottom: 1px solid transparent
+      //border-bottom: 1px solid transparent
       transition: all 450ms cubic-bezier(0.7, 0.7, 0.3, 1)
 
     a
@@ -675,11 +681,12 @@ p > a
       a:before
         transform: translate3d(-100%, 0, 0)
 
-    @for $i from 1 through 7
-      $ratio: 1 - ($i - 1) / 6
+    @for $i from 1 through 13
+      $ratio: 1 - ($i - 1) / 12
 
       &:nth-child(#{$i})
         background: mix($color-dk, $color-hl, $ratio * 100%)
+
 
 @media (max-width: 1320px)
   .container,
@@ -705,7 +712,7 @@ p > a
     padding-right: 0
 
   .txt-links
-    font-size: 36px
+    font-size: 32px
     line-height: 52px
 
   #header
@@ -716,8 +723,8 @@ p > a
       padding: 16px 0
 
   #footer, .pager .pager-link
-    height: 48px
-    line-height: 48px
+    height: 25px
+    //line-height: 48px
 
 @media (max-width: 1000px), (max-height: 720px)
   .txt-xxl
@@ -780,7 +787,7 @@ p > a
     flex-direction: column
 
   .bg-dk > .txt-border
-    margin: -16px 0 48px
+    //margin: -16px 0 48px
 
     &:last-child
       margin-bottom: 16px

@@ -39,33 +39,41 @@ block page
             .row
               .col-fw.p-md
                 .pv-xs
-                  .p-xs.txt-sm.txt-tu.bg-hl.txt-ff The Issue
+                  .p-xs.txt-sm.txt-tu.bg-hl.txt-ff Topic
                 .txt-xxl.pv-xs= page.title
-            .row.bg-lt
-              .col-fw.frame
-                .img-pan
-                  block intro-image
-                .caption.txt-ff
-                  block intro-caption
+                .txt-sm.txt-tu.pv-sm.txt-expert-author= page.expert
+                  <br>
+                  span.txt-mt= page.expertrole
+                  
+            .row.bg-dk
+              .col-fw.txt-xl.p-xl.txt-ff
+                  block intro-description
 
-        .col-1-2.bg-dk.txt-ff.p-lg
-          .txt-lg
-            block intro-description
+        .col-1-2.bg-lt.txt-ff
+          .col-fw.frame
+            .img-pan
+              block intro-image
+            .caption.txt-ff
+              block intro-caption
 
     block scroller
 
     +item("links")
       .container
         ul.link-grid.list-bare.txt-ff
-          li.col-fw.txt-sm.txt-tu.txt-hl Explore more issues
+          li.col-fw.txt-sm.txt-tu.txt-hl.pv-sm Explore more topics
           for issue in page.feature.issues
             if issue.href != page.issue
-              li.col-1-2
-                a.txt-bare.p-sm(
+              li.col-1-3
+                a.txt-bare.p-md(
                   href=`/features/covid19/issues/${issue.href}`
                 )
-                  span.txt-xl!= typogr.typogrify(issue.title)
-
+                  span.txt-lg!= typogr.typogrify(issue.title)
+            else 
+              li.col-1-3(id="active")
+                .p-md
+                  span.txt-lg!= typogr.typogrify(issue.title)
+            
   include footer
 
 block append css

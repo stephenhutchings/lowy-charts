@@ -2,9 +2,27 @@
 # of links on the issue template.
 
 issues:
-  - href: "item-1"
-    title: Item 1
-  - href: "item-1#fake-item-2"
-    title: Item 2
-  - href: "item-1#fake-item-3"
-    title: Item 3
+  - href: "usa"
+    title: USA
+  - href: "china"
+    title: China
+  - href: "pacific"
+    title: Pacific
+  - href: "se-asia"
+    title: South-East Asia
+  - href: "nationalism"
+    title: Nationalism
+  - href: "globalisation"
+    title: Globalisation
+  - href: "world-economy"
+    title: World Economy
+  - href: "us-china"
+    title: US-China Relations
+  - href: "truth"
+    title: The Threat to Truth
+  - href: "australian-diplomacy"
+    title: Australian Diplomacy
+  - href: "extremism"
+    title: Right-Wing Extremism
+  - href: "poorer-nations"
+    title: Impact on Poorer Nations

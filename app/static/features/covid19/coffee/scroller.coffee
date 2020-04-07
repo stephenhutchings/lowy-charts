@@ -11,7 +11,6 @@ require.register "views/scroller", (exports, require, module) ->
       "show": "onShow"
       "hide": "onHide"
 
-
     initialize: ->
       @data = _.extend {min: 0, max: 1000}, @$el.data()
 
@@ -52,10 +51,8 @@ require.register "views/scroller", (exports, require, module) ->
     onScroll: ->
       return if @inactive
 
-      i  = Math.floor @el.scrollTop / @el.offsetHeight
-      i2 = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      t1 = (@el.scrollTop / @el.offsetHeight) % 1
-      t2 = Math.sin(Math.PI * t1)
+      scrollProgress = 100 * @el.scrollTop / (@el.scrollHeight - @el.clientHeight)
+      @$elements.pager.css "width": "#{scrollProgress}%"
 
       unless @data.support
         window.clearTimeout(@timeout)
@@ -63,33 +60,6 @@ require.register "views/scroller", (exports, require, module) ->
           index = Math.round @el.scrollTop / @el.offsetHeight
           @el.scrollTo top: index * @el.offsetHeight, behavior: 'smooth'
         , 40
-
-      w  = 120
-      r  = 10
-
-      ow = w + r
-      iw = w - r * 2
-
-      i  -= @data.min
-
-      i2 = Math.max(Math.min(i2, @data.max), @data.min)
-
-      x = if t1 > 0.5 then (1-t2) else 0
-      w = if t1 < 0.5 then (t2) else 1
-
-      @$elements.items.removeClass("active").eq(i2).addClass("active")
-
-      @$elements.index.html(i2 + @data.offset)
-      @$elements.pager.css "transform": "translateX(#{i * 100}%)"
-
-      @$elements.pager.children().eq(0).css
-        "transform": "translate3d(#{x * (ow / r * 100)}%, 0, 0)"
-
-      @$elements.pager.children().eq(1).css
-        "transform": "translate3d(#{x * (ow / iw * 100)}%, 0, 0) scale(#{1 + (t2 * (ow / iw))}, 1)"
-
-      @$elements.pager.children().eq(2).css
-        "transform": "translate3d(#{w * ((ow) / r) * 100}%, 0, 0)"
 
     onKey: (e) ->
       type = keycode(e)

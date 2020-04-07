@@ -1,0 +1,43 @@
+//-
+  This is an example issue item page with the content removed. The blocks
+  relate to those defined in the layout that's extended – in this case that's
+  the issue template that we define here...
+
+extend ../../partials/issue
+
+block append config
+  - page.title = "Right-Wing Extremism"
+  - page.expert = "Lydia Khalil"
+  - page.expertrole = "Lowy Institute Research Fellow"
+
+block intro-image
+  img.bg-img(data-src="../../img/usa.jpg")
+
+block intro-caption
+  :marked
+    *Caption text*
+
+block intro-description
+    :marked
+      COVID 19 is accelerating the rise of right-wing extremism
+
+block scroller
+  +item(1)
+    .row
+      .col.p-lg.bg-ff.txt-expert-content
+        .block.txt-sans.txt-md.txt-dk.pv-lg.txt-left
+          .txt-border
+            :marked
+              Times of crisis tend to bring out conspiracies, crazies and extremists. During the COVID 19 pandemic, this has been even more pronounced &ndash; particularly in Western democracies where <a href="https://www.anu.edu.au/news/all-news/trust-in-government-hits-all-time-low">trust in government</a> has ebbed to an all-time low, <a href="https://www.theguardian.com/society/2018/oct/09/world-mental-health-crisis-monumental-suffering-say-experts">mental health services are already strained</a> and right wing extremism is <a href="https://www.asio.gov.au/director-generals-annual-threat-assessment.html">on the rise</a>. Back-to-back emergencies in Australia, from bushfires in January to the COVID-19 pandemic in March, have spurred an increase in extremist narratives here.
+
+              Even before COVID-19, right wing extremism was expanding at an alarming rate, with a <a href="https://www.newsweek.com/far-right-terrorism-increased-320-percent-4-years-extremism-watchdog-1472642">320% global increase</a> in just the past four years. A scroll through the internet shows how right-wing extremists are using the coronavirus to stoke extremist narratives and encourage mobilisation against outsider groups and government. The COVID 19 pandemic has struck an chord with right wing extremist groups because it fits with an increasingly popular fringe theory among the far right &ndash; that of <a href="https://www.adl.org/blog/white-supremacists-embrace-accelerationism">accelerationism</a>. This is a strategy of hastening the collapse of society to promote its restructuring on completely different ideological grounds.
+
+              A leaked memo from within the US Department of Homeland Security revealed that white supremacists and neo Nazis are encouraging infected members to spread the virus to law enforcement and minority communities. <a href="https://lasvegas.adl.org/white-supremacists-respond-to-coronavirus-with-violent-plots-and-online-hate/">Memes on right wing forums</a> such as &ldquo;What to Do if You Get Corona 19&rdquo; urge followers to &ldquo;visit your local mosque, visit your local synagogue, spend the day on public transport, spend time in your local diverse neighbourhood.&rdquo;
+
+              The risk extends beyond rhetoric to physical attacks. On March 24, FBI agents killed a known right wing extremist during a sting operation after learning of <a href="https://www.nytimes.com/2020/03/25/us/politics/coronavirus-fbi-shooting.html">his plans to bomb a hospital</a> treating a number of COVID patients. Dr Anthony Fauci, the leader of the US COVID task force, has been <a href="https://www.politico.com/news/2020/04/01/fauci-coronavirus-security-160901">forced</a> by credible threats to take extra personal security measures.&nbsp;&nbsp;&nbsp;
+
+              Terrorism <a href="https://www.justice.gov/file/1262771/download">laws</a> in the US are already being invoked in an effort to deal with COVID-related extremist acts, expanding the interpretation of the law to bring terrorism charges against at least two people claiming to be infected for coughing in grocery stores. But these individuals have no known links to terrorist groups nor are acting on political or ideological motivations, which is how terrorism and terrorism offences have previously been defined.
+
+              This is a troubling expansion in the definition of the terrorist threat. Emergency government powers invoked to deal with the urgent public health crisis risk provoking right wing extremism and accelerationism. Heavy-handed government responses also play into the narratives of right wing extremist groups who <a href="https://twitter.com/travis_view/status/1232384066961281025?s=21">welcome the prospect of marshal law</a> to promote their goals of accelerationism.
+  
+              The public health threat posed by COVID-19 is severe. The already rapid rise of extremism is real, and is being stoked by COVID conspiracy theorists to hasten the spread of accelerationist idealogy. But over-done government responses to both threats <a href="https://www.latimes.com/opinion/story/2020-04-02/coronavirus-department-of-justice-terrorism">may</a> only proliferate right-wing extremism further.

@@ -4,7 +4,7 @@ block append config
   - page.includeFonts = false
   - page.url = "https://interactives.lowyinstitute.org/features/covid19/"
   - page.class = "page-0 page-menu"
-  - page.title = "Covid19"
+  - page.title = "The World After COVID19"
   - page.metaTitle = `${page.title} - Lowy Institute`
   - page.description = ""
   - page.image = "./img/thumbnail.png"
@@ -32,9 +32,9 @@ block page
 
         .col-1-2.bg-dk.txt-ff.pv-md
           .block
-            .txt-sm.txt-tu.ph-sm.pv-xs.txt-hl The Issues
+            .txt-sm.txt-tu.ph-sm.pv-xs.txt-hl Topics
             .block
-              ul.list-bare.txt-links
+              ul.list-bare.txt-links  
                 for issue in page.feature.issues
                   li
                     a.txt-bare(href=`issues/${issue.href}`)
