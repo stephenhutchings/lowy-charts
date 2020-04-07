@@ -51,8 +51,9 @@ require.register "views/scroller", (exports, require, module) ->
     onScroll: ->
       return if @inactive
 
+      adjust = 1.5
       scrollProgress = 100 * @el.scrollTop / (@el.scrollHeight - @el.clientHeight)
-      @$elements.pager.css "width": "#{scrollProgress}%"
+      @$elements.pager.css "width": "#{scrollProgress - adjust}%"
 
       unless @data.support
         window.clearTimeout(@timeout)
