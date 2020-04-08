@@ -3,26 +3,26 @@
 
 issues:
   - href: "usa"
-    title: USA
+    title: United States
   - href: "china"
     title: China
   - href: "pacific"
-    title: Pacific
-  - href: "se-asia"
-    title: South-East Asia
-  - href: "nationalism"
-    title: Nationalism
-  - href: "globalisation"
-    title: Globalisation
-  - href: "world-economy"
-    title: World Economy
+    title: The Pacific
   - href: "us-china"
     title: US-China Competition
+  - href: "international-economy"
+    title: The International Economy
+  - href: "globalisation"
+    title: Globalisation
+  - href: "multilateralism"
+    title: Multilateralism & the Nation State
+  - href: "se-asia"
+    title: Southeast Asia
+  - href: "developing-nations"
+    title: Developing Nations
   - href: "truth"
-    title: The Threat to Truth
-  - href: "australian-diplomacy"
-    title: Australian Diplomacy
+    title: Misinformation, Truth, and Trust
   - href: "extremism"
-    title: Right-Wing Extremism
-  - href: "poorer-nations"
-    title: Impact on Poorer Nations
+    title: Extremism
+  - href: "diplomacy"
+    title: Diplomacy
