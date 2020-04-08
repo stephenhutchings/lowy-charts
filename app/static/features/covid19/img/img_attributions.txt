@@ -6,7 +6,7 @@ economy: Christopher Czermak / Unsplash https://unsplash.com/photos/paI6tlhIaTk
 economy-1: Markus Spiske / Unsplash https://unsplash.com/photos/69ppqHiG9Xo
 china2: Jeffrey Lee / Unsplash https://unsplash.com/photos/EElid51KYQ0
 china: Geraltyichen / Unsplash https://unsplash.com/photos/2KheN10Uqdo
-truth: visuals / Unsplash https://unsplash.com/photos/qMrdgxnTfx4
+
 truth-2: Jeremy Bishop / Unsplash https://unsplash.com/photos/A6XHGpwBWu0
 truth-3: Josue Ladoo Pelegrin / Unsplash https://unsplash.com/photos/Ay1GXusQSU8
 nationalism: Andrew Friedrich / Unsplash https://unsplash.com/photos/21IijoFsXek
@@ -15,3 +15,5 @@ nationalism-3: Annie Spratt / Unsplash https://unsplash.com/photos/LndSNO0J8F0
 
 globalisation: Jason Leung / Unsplash https://unsplash.com/photos/jCBzW_Q_UGI
 dev: Ankit Manoharan / Unsplash https://unsplash.com/photos/XWKX7mki3zs
+
+diplomacy: Wikimedia Commons https://upload.wikimedia.org/wikipedia/commons/d/da/20200326tv_kaigi01.jpg

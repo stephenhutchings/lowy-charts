@@ -3,11 +3,9 @@
 
 issues:
   - href: "usa"
-    title: United States
+    title: The United States
   - href: "china"
     title: China
-  - href: "pacific"
-    title: The Pacific
   - href: "us-china"
     title: US-China Competition
   - href: "international-economy"
@@ -18,6 +16,8 @@ issues:
     title: Multilateralism & the Nation State
   - href: "se-asia"
     title: Southeast Asia
+  - href: "pacific"
+    title: The Pacific
   - href: "developing-nations"
     title: Developing Nations
   - href: "truth"
