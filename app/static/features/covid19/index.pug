@@ -38,7 +38,7 @@ block page
               ul.list-bare.txt-links
                 for issue in page.feature.issues
                   li
-                    a.txt-bare.txt-lg(href=`issues/${issue.href}`)
+                    a.txt-bare(href=`issues/${issue.href}`)
                       != issue.title
 
   .container
