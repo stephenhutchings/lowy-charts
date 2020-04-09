@@ -6,12 +6,3 @@
   footer#footer
     nav.pager
       .pager-page
-        span.pager-page-middle
-        //span.pager-page-start
-        //span.pager-page-end
-
-      //ul.pager-list
-        for i in [1]
-          li.pager-item(class=(i == 0 ? "active" : ""))
-            a.pager-link(href=`#scroll-item-${i || "intro"}` tabindex="0")
-              = ""
