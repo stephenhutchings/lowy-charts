@@ -7,7 +7,7 @@ extend /partials/layout
 block append config
   - page.includeFonts = false
   - page.class = "page-issue page-0"
-  - page.image = "./img/thumbnail.jpg"
+  - page.image = "http://interactives.lowyinstitute.org/features/covid19/img/thumbnail.jpg"
   - page.issue = __.filepath.match(/([^\/]+)\/index.pug$/)[1]
   - page.feature = data.getOne("static/features/covid19/data")
 

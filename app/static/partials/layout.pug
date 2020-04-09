@@ -32,11 +32,15 @@ html.no-js(lang="en")
       meta(name="description"         content=page.metaDescription)
       meta(name="og:description"      content=page.metaDescription)
       meta(name="twitter:description" content=page.metaDescription)
-      meta(name="og:image"            content=page.image)
       meta(name="og:site_name"        content="Lowy Institute – Charts & More")
       meta(name="author"              content=page.author)
       meta(name="copyright"           content=page.copyright)
       meta(name="robots"              content=page.robots)
+
+      if page.image
+        meta(name="twitter:card"  content="summary_large_image")
+        meta(name="og:image"      content=page.image)
+        meta(name="twitter:image" content=page.image)
 
       meta(http-equiv="content-type" content="text/html;UTF-8")
       meta(http-equiv="cache-control" content="cache")
