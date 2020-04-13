@@ -1,0 +1,78 @@
+title: >
+  Illustrative scenario for Pacific Public Debt Sustainability
+
+source: >
+  Source: Authors’ calculations; Lowy Institute Pacific Aid Map; IMF; ADB
+
+notes: >
+  Notes: 1. Assuming budget packages
+
+charts:
+  -
+    title: Public Debt Sustainability
+    subtitle: Assuming budget packages
+    scale:
+      minX: -12
+      maxX: 60
+      ticks: 13
+
+    colors:
+      - "#002a45"
+      - "#539ed4"
+      # - "#ffae00"
+      # - "#ff1f2f"
+
+    legend:
+      - PV of PPG public debt % GDP
+      - Additional 8% PV of public debt
+
+    groups:
+      - name: |
+          Country
+        start: 0
+    #  - name: |
+    #      Potential
+    #      new borrowers
+    #      from China
+    #    start: 6
+
+    axes:
+      -
+        title: Lenders
+        values:
+          - Kiribati
+          - Marshall Islands
+          - Micronesia
+          - Papua New Guinea
+          - Samoa
+          - Solomon Islands
+          - Tonga
+          - Tuvalu
+          - Vanuatu
+
+      -
+        title: Debt
+        values:
+          # PV, +8%
+          - [15, 8]
+          - [29, 8]
+          - [16, 8]
+          - [49, 8]
+          - [42, 8]
+          - [7, 8]
+          - [40, 8]
+          - [36, 8]
+          - [35, 8]
+
+      -
+        title: Thresholds
+        values:
+          - 55
+          - 35
+          - 35
+          - 55
+          - 70
+          - 55
+          - 55
+          - 35
+          - 55

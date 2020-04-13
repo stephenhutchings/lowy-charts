@@ -65,13 +65,13 @@ block page
           for issue in page.feature.issues
             if issue.href != page.issue
               li.col-1-3
-                a.txt-bare.pv-md.ph-s(
+                a.txt-bare.pv-md.ph-xs(
                   href=`/features/covid19/issues/${issue.href}`
                 )
                   span.txt-md!= typogr.typogrify(issue.title)
             else
               li.col-1-3(id="active")
-                .pv-md.ph-s
+                .pv-md.ph-xs
                   span.txt-md!= typogr.typogrify(issue.title)
 
   include footer
