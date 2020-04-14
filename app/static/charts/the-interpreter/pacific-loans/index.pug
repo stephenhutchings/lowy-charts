@@ -218,23 +218,38 @@ block append css
 
         .chart:hover &
           opacity: 1
+          
+      @media (max-width: 800px)
+        .chart-content
+          margin: 0 25px
+          
+        .chart-notes
+          font-size: 13px
+          margin-right: 20px
+          
+        .label text
+          transform: translateX(-10px)
 
       @media (max-width: 600px)
+        .wrapper
+          width: 95%    
+          overflow: scroll    
         .legend
           flex-wrap: wrap
           justify-content: flex-start
-          max-width: 380px
           margin: auto
         .label text
-          transform: translateY(-50px)
+          transform: translateX(-17px)
         .legend-item
-          flex: 1 0 50%
-          box-sizing: border-box
-          margin: 0
+          flex: 1 0 80%
+          margin: 0 10px
+          font-size: 12px
         .chart-content
-          left: 4px
+          left: 65px
           right: 4px
-        .bars rect
-          transform: scaleY(1) translateY(-2px)
         .chart-notes
-          display: none
+          font-size: 13px
+          text-align: left
+          padding-top: 10px
+        text
+          font-size: 11px
