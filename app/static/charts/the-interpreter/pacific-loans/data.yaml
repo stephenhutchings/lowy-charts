@@ -1,5 +1,5 @@
 title: >
-  Illustrative scenario for Pacific Public Debt Sustainability
+  Impact of hypothetical COVID-19 loans on total public debt risk
 
 source: >
   Source: Authors’ calculations; Lowy Institute Pacific Aid Map; IMF; ADB
@@ -9,70 +9,58 @@ notes: >
 
 charts:
   -
-    title: Public Debt Sustainability
-    subtitle: Assuming budget packages
+    title: Impact of hypothetical COVID-19 loans on total public debt risk
+    subtitle: Present value of public and publicly guaranteed debt as % of GDP
     scale:
-      minX: -12
-      maxX: 60
-      ticks: 13
+      minX: -15
+      maxX: 70
+      ticks: 18
 
     colors:
       - "#002a45"
       - "#539ed4"
-      # - "#ffae00"
-      # - "#ff1f2f"
+      - "#ff1f2f"
+      - "#ffae00"
 
     legend:
-      - PV of PPG public debt % GDP
-      - Additional 8% PV of public debt
+      - Current debt burden
+      - Semi-concessional COVID-19 loans
 
     groups:
-      - name: |
-          Country
+      - name: "70%"
+        threshold: 70
         start: 0
-    #  - name: |
-    #      Potential
-    #      new borrowers
-    #      from China
-    #    start: 6
+      - name: "55%"
+        threshold: 55
+        start: 1
+      - name: "35%"
+        threshold: 35
+        start: 6
 
     axes:
       -
         title: Lenders
         values:
-          - Kiribati
-          - Marshall Islands
-          - Micronesia
-          - Papua New Guinea
           - Samoa
+          - Kiribati
+          - Papua New Guinea
           - Solomon Islands
           - Tonga
-          - Tuvalu
           - Vanuatu
+          - Marshall Islands
+          - Micronesia
+          - Tuvalu
 
       -
         title: Debt
         values:
           # PV, +8%
-          - [15, 8]
-          - [29, 8]
-          - [16, 8]
-          - [49, 8]
           - [42, 8]
+          - [15, 8]
+          - [49, 8]
           - [7, 8]
           - [40, 8]
-          - [36, 8]
           - [35, 8]
-
-      -
-        title: Thresholds
-        values:
-          - 55
-          - 35
-          - 35
-          - 55
-          - 70
-          - 55
-          - 55
-          - 35
-          - 55
+          - [29, 8]
+          - [16, 8]
+          - [36, 8]
