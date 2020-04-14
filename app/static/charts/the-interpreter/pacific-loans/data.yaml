@@ -5,7 +5,7 @@ source: >
   Source: Authors’ calculations; Lowy Institute Pacific Aid Map; IMF; ADB
 
 notes: >
-  Notes: 1. Assuming budget packages
+  Note: Warning thresholds based on different debt-carrying capacities
 
 charts:
   -
@@ -18,9 +18,9 @@ charts:
 
     colors:
       - "#002a45"
+      - "#ffae00"
       - "#539ed4"
       - "#ff1f2f"
-      - "#ffae00"
 
     legend:
       - Current debt burden

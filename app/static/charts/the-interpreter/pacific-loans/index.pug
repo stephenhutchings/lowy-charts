@@ -73,7 +73,7 @@ block page
                         text-anchor="middle"
                         fill="#fff"
                       )
-                        =x.toFixed(1)
+                        =x.toFixed(0)
 
                     else if j == xs.length - 1 && x > 0
                       text.chart-value(
@@ -82,7 +82,7 @@ block page
                         transform="translate(4 4)"
                         fill=chart.colors[j]
                       )
-                        =x.toFixed(1)
+                        =x.toFixed(0)
                 
                 svg(x=toPercent(fx(minx)) y="100%")
                   text(
@@ -96,10 +96,10 @@ block page
             for n, i in new Array(scale.ticks)
               - x = (i / (scale.ticks - 1))
               - n = Math.round(scale.minX + (i/(scale.ticks - 1)) * (scale.maxX - scale.minX), 0)
-              if (n >= 0)
+              if (n >= 0 && n%10==0 )
                 svg(x=toPercent(Math.max(Math.min(x, 0.99), 0.01)))
                   text(text-anchor="middle" y=20)
-                    = n
+                    = n+"%"
                     
               if n == 0
                 line.scale-line(
@@ -122,9 +122,9 @@ block page
                 )
                 
               if n == 70
-                - edge = 0.001
+                
                 line.scale-line.scale-line-dashed(
-                  x1=toPercent(x-edge) x2=toPercent(x-edge)
+                  x1=toPercent(x) x2=toPercent(x)
                   y1="-99%" y2="-90%"
                   stroke-dasharray="4 4" 
                 )
@@ -138,9 +138,9 @@ block page
           span.legend-item-dash!= "  - - -  "
           span.legend-item-label!= "Public debt threshold"
 
-    //.chart-notes.txt-muted
+    .chart-notes.txt-muted
       div!= marked(page.notes)
-      .chart-source.txt-muted
+      //.chart-source.txt-muted
         != marked(page.source)
 
 block append css
@@ -158,6 +158,7 @@ block append css
         left: 0
         right: 0
         bottom: 32px
+        margin: 0 10px
 
       .chart-title,
       .chart-subtitle
@@ -206,7 +207,7 @@ block append css
       .chart-notes
         font-size: 14px
         padding-top: 20px
-        max-width: 840px
+        text-align: right
 
       .chart-source
         margin-top: 8px
