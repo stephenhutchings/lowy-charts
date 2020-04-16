@@ -1,0 +1,27 @@
+# Does nothing at the moment
+# Will fill with content
+
+cards:
+  - type: excerpt
+    date: March 2008
+    title: Kevin Rudd address to The Brookings Institution, Washington
+    subtitle: "The Australia-US alliance and emerging challenges in the Asia-Pacific Region."
+    content:
+      txt: Rudd's first visit to Washington as prime minister included a speech at the Brookings Institution replete with references to world order, including the first known use of 'rules-based order' by an Australian Prime Minister
+      quote: The idea of a "harmonious world" depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order ... we look to China to make a strong contribution to strengthening the global and regional rules-based order
+  - type: excerpt
+    date: December 2008
+    title: Kevin Rudd’s National Security Statement, House of Representatives
+    content:
+      txt: In Rudd’s inaugural National Security Statement, the rules-based order is listed as one of the five principles of Australia’s national security
+      quote: The idea of a "harmonious world" depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order ... we look to China to make a strong contribution to strengthening the global and regional rules-based order
+  - type: opinion
+    expert:
+      name: Julie Bishop
+      credentials: Former Minister for Foreign Affairs
+      image: https://www.pngarts.com/files/3/Avatar-PNG-High-Quality-Image.png
+    content: References to the rules-based order in this White Paper are made largely in geographic terms.
+  - type: history
+    title: January and March 2009, International Criminal Court
+    content:
+      txt: In January, the ICC’s trial of Thomas Lubanga Dyilo, the founder and leader of the Union of Congolese Patriots, began in The Hague, marking an important stage in efforts to establish responsibility for the use of children in military operations. In March, the ICC Pre-Trial Chamber issued an arrest warrant for Omar al-Bashir, the former President of Sudan, for war crimes and crimes against humanity in Darfur. Omar al-Bashir became the first sitting head of state to be indicated by the ICC since its establishment in 2002.

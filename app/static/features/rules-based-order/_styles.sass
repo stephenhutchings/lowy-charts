@@ -1,0 +1,216 @@
+$color-ff: #fff
+$color-bk: #000
+$color-bl-dk: #002b45
+$color-bl-lt: #d4e2e8
+$color-gy-lt: #6d777c
+$color-gy-dk: #3e4346
+$color-qt: #29abe2
+$color-hl: #ffc52b
+
+$txt-xl: 28px
+$txt-l: 24px
+$txt-ml: 20px
+$txt-m: 18px
+$txt-sm: 16px
+$txt-s: 15px
+
+$ls-l: 0.72px
+$ls-m: 0.6px
+$ls-s: 0.15px
+
+$lh-l: 25px
+$lh-m: 23px
+$lh-s: 22px
+
+body
+  font-family : 'Source Sans Pro', sans-serif
+  font-size : $txt-sm
+  line-height : $lh-l
+  letter-spacing : 0.42px
+  background-color : #fbfbfb
+
+.nav-wrapper
+  display: none
+  // hide for very thin screens
+
+.card-wrapper
+  width : 90%
+  margin : 0 5% 0 5%
+
+.card
+  padding : 25px 30px
+  margin : 40px 0
+  max-width : 525px
+  background : $color-ff
+  border-radius : 10px
+  -moz-border-radius : 10px
+  -webkit-border-radius : 10px
+  box-shadow : 7px 7px 10px rgba(0,0,0,0.1)
+
+.card > *
+  margin-bottom : 20px
+
+.excerpt
+  color : #000
+
+.cardtype
+  font-weight : 700
+  text-transform : uppercase
+  text-align : center
+  display : hidden
+  // preset content defined in :after class for each type
+
+.date
+  font-weight : bold
+  font-size : $txt-ml
+  letter-spacing : $ls-m
+  color : $color-gy-lt
+
+.title
+  font-weight : 600
+  font-size : $txt-l
+  letter-spacing : $ls-l
+
+.content
+  color : $color-gy-lt
+  letter-spacing : $ls-s
+  line-height : $lh-m
+.content > *
+  margin-bottom : inherit
+.quote
+  font-size : $txt-s
+  line-height : $lh-s
+  font-style : italic
+  margin-left : 2%
+  padding-left : 10px
+  border-left : 3px solid $color-qt
+.content img,
+.content iframe
+  width : 100%
+  margin : 10px 0
+  border-radius : 10px
+  -moz-border-radius : 10px
+  -webkit-border-radius : 10px
+
+.opinion
+  color : $color-ff
+  background : $color-bl-dk
+  box-shadow : 10px 10px 10px #0002
+//.opinion:before
+  content : ""
+  position : absolute
+  width: 10px
+  height: 50px
+  margin: -70px 0
+  color: $color-bk
+  background-color: $color-bl-dk
+.opinion > *
+  margin-left : 2%
+.opinion > .cardtype:after
+  content : "Expert Opinion"
+.expert
+  font-weight : 600
+  display : flex
+  flex-direction : column
+  align-items : center
+  justify-content : center
+.expert .image
+  width: 80px
+.attributes
+  margin : 20px 0 0 0
+  text-align : center
+.name
+  font-size : $txt-l
+.credentials
+  font-size : $txt-m
+.opinion .content
+  padding-left : 2%
+  color : $color-ff
+
+.history
+  background : $color-bl-lt
+.history .cardtype:after
+  content : "Historical Context"
+.history .content
+  color : $color-bk
+
+.research
+  background : $color-hl
+.research .cardtype:after
+  content : "Research Finding"
+.research .content
+  color : $color-bk
+
+////////////// MEDIA QUERIES ////////////////////
+
+@media (min-width: 350px)
+  .nav-wrapper
+    position: fixed
+    max-height: 65vh
+    top: 30%
+    left: 0
+    width: 18%
+    display: flex
+    flex-flow: column nowrap
+    align-items: flex-end
+    overflow: hidden
+  .nav
+    font-size: $txt-m
+    color: $color-gy-dk
+  .nav li
+    position: relative
+    display: block
+    list-style: none
+    margin: 0 0 1.5vh 0
+  .nav > .active
+    margin: 2vh 0 5vh 0
+  .nav > .active,
+  .nav li:hover
+    font-size: $txt-ml
+    color: $color-bk
+    font-weight: 600
+    cursor: pointer
+
+  .card-wrapper
+    width : 75%
+    margin : 0 0 0 23%
+
+  .opinion .content
+    padding-left : 4%
+    border-left : 3px solid $color-qt
+
+
+@media (min-width: 525px)
+  .nav-wrapper
+    top: 30%
+    left: 0
+    width: 18%
+  .nav
+    font-size: $txt-ml
+    color: $color-gy-dk
+  .nav li
+    position: relative
+    display: block
+    list-style: none
+    margin: 0 0 1.5vh 0
+  .nav > .active
+    margin: 2vh 0 5vh 0
+  .nav > .active,
+  .nav li:hover
+    font-size: $txt-l
+    color: $color-bk
+    font-weight: 600
+    cursor: pointer
+
+  .expert
+    flex-direction : row
+    justify-content : left
+  .attributes
+    margin : 0 0 0 30px
+    text-align : left
+  .cardtype
+    text-align : left
+  .content > .quote
+    border-left : 5px solid $color-qt
+  .opinion .content
+    border-left : 5px solid $color-qt

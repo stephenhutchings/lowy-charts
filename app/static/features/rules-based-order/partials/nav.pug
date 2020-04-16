@@ -1,0 +1,11 @@
+
+// Timeline navigation bar
+
+div.nav-wrapper
+  - var date = 2008;
+  ul.nav
+    while date <= 2020
+      if (date == 2008)
+        li.active= date++
+      else
+        li= date++

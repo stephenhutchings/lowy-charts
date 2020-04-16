@@ -1,0 +1,46 @@
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.url = "https://interactives.lowyinstitute.org/features/rules-based-order/"
+  - page.class = ""
+  - page.title = "Rules Based Order"
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.description = ""
+  - page.image = ""
+  
+  - var cards = data.getOne("static/features/rules-based-order/data").cards
+  
+block page
+  
+  include partials/nav
+        
+  div.card-wrapper
+    for card in cards
+      div(class=`card ${card.type}`)
+        if card.type == "excerpt"
+          .date= card.date
+          .title= card.title
+          .subtitle= card.subtitle
+          .content
+            .txt= card.content.txt
+            .quote= card.content.quote
+        else if card.type == "opinion"
+          .cardtype
+          .expert
+            img.expert.image(src=card.expert.image) 
+            .attributes 
+              .name= card.expert.name
+              .credentials= card.expert.credentials
+          .content= card.content
+        else
+          .cardtype
+          .title= card.title
+          .subtitle= card.subtitle
+          .content
+            .txt= card.content.txt
+          
+  
+block append css
+  style
+    include:sass _styles.sass
