@@ -6,7 +6,7 @@ $color-gy-lt: #6d777c
 $color-gy-dk: #3e4346
 $color-qt: #29abe2
 $color-hl: #ffc52b
-
+ 
 $ls-l: 0.72px
 $ls-m: 0.6px
 $ls-s: 0.15px
@@ -133,20 +133,21 @@ html,body
   height: 350px
   margin-bottom: 50px
   &-title
-    color: $color-gy-dk
+    color: $color-bk
     top: 50%
     position: relative
     width: fit-content
-    background-color: rgba($color-bl-lt, 0.85)
+    background-color: rgba($color-ff, 0.95)
     margin: 0 10%
     padding: 10px 20px
     text-transform: uppercase
     font-weight: 700
+    box-shadow: -8px 8px #002b45
 
 .intro-txt
   text-align: left
   padding: 0 2em
-  margin-bottom: 150px
+  margin-bottom: 50px
 
 .card
   .wrap
@@ -260,7 +261,7 @@ html,body
     font-weight: 600
   .name
     font-weight: 700
-    color: $color-gy-lt
+    color: $color-gy-dk
   .supp
     margin-bottom: 0.8em
     color: $color-bk
@@ -327,15 +328,15 @@ html,body
   .header
     > *
       margin: auto 30px
-    .header-logo
-      display: block
-      padding: 14px 0
-      float: left
-      width: 80px
-    .header-title
-      padding: 24px 0
-      text-align: center
-      width: auto
+  .header-logo
+    display: block
+    padding: 14px 0
+    float: left
+    width: 80px
+  .header-title
+    padding: 24px 0
+    text-align: center
+    width: auto
 
   .nav
     &-btnimg
@@ -417,7 +418,7 @@ html,body
     .video > iframe,
     .image > img
       height: 300px
-    .excerpt
+    .excerpt, .row.quote
       border-left: 10px solid $color-bl-lt
     .opinion
       background: $color-bl-lt

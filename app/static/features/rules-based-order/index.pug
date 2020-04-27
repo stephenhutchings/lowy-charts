@@ -15,7 +15,7 @@ block page
   include partials/header
   include partials/subheader 
   include partials/intro
-        
+  div.txt-l(style="background:white;") Get started 
   .card.wrap
     for card in cards
       if card.type == "anchor"
@@ -27,16 +27,16 @@ block page
         .card.row(class=`${card.type}`)
           .card.item
             if card.type == "excerpt" 
-              .date.txt-sm= card.date
-              .heading.txt-l= card.title
-              .subheading.txt-ml= card.subtitle 
+              .date.txt-sm!= card.date
+              .heading.txt-l!= card.title
+              .subheading.txt-ml!= card.subtitle 
               .content
                 include partials/content
                     
             else if card.type == "history"
               .cardtype.txt-sm Historical Context
-              .heading.txt-l= card.title 
-              .subheading.txt-ml= card.subtitle
+              .heading.txt-l!= card.title 
+              .subheading.txt-ml!= card.subtitle
               .content
                 include partials/content
                     
@@ -44,23 +44,23 @@ block page
               .cardtype.txt-sm Expert Opinion
               .expert
                 img.expert.image(src=card.expert.image)
-                .txt-xl= card.expert.name
-                  .txt-ml= card.expert.credentials
+                .txt-xl!= card.expert.name
+                  .txt-ml!= card.expert.credentials
               include partials/content
             
             else if card.type == "quote"
               .top
                 img.image(src="img/quotations.svg")
                 .bar
-              .quotation.txt-l= card.quotation
-              .name.txt-l= card.name
-              .supp.txt-sm= card.supp
+              .quotation.txt-l!= card.quotation
+              .name.txt-l!= card.name
+              .supp.txt-m!= card.supp
               include partials/social 
               .footer
-      
+
             else if card.type == "highlight" 
               .heading.txt-l!= card.title
-              .subheading.txt-ml= card.subtitle
+              .subheading.txt-ml!= card.subtitle
               .content
                 include partials/content   
           if card.media != undefined

@@ -301,7 +301,7 @@ cards:
         val: ... assumptions that have long underpinned Australia's security and foreign policy, including those in relation to the strength of the rules-based component of the global order, will be more uncertain.
 
   - type: history
-    title: NA
+    title:
     content:
       - format: p
         val: <b>June 2017, US announces withdrawal from Paris Agreement</b><br/>While the US remains a signatory to the UNFCCC foundation treaty, its decision to withdraw from the Paris Agreement represents the growing trend towards isolationism and protectionism that has come to define the Trump presidency.
@@ -343,7 +343,102 @@ cards:
   - type: anchor
     year: 2018
 
+  - type: excerpt
+    date: June 2018
+    title: Marise Payne, Minister for Defence
+    subtitle: 17th IISS Asia Security Summit&#58; The Shangri-La Dialogue
+    content:
+      - format: p
+        val: Argues the rules-based order is essential for moderating the great-power contest between the US and China&#59;
+      - format: q
+        val:
+          <p>... strategic competition has to be bound by principles and rules.
+          </p><p>The most recent positive example from Australia’s perspective of how this approach can function positively and effectively is the maritime boundary treaty signed between Australia and Timor-Leste in March.
+          </p><p>This treaty was negotiated through the first ever conciliation held under the auspices of the UN Convention on the Law of the Sea. The Treaty is a testament to the way in which international law, in particular in this case the UN Convention on the Law of the Sea, reinforces stability and allows countries to engage and resolve disputes peacefully, without coercion and by the rules.
+          </p><p>It is a good example of the rules-based global order in action.</p>
+
   - type: quote
     quotation: The order we have known for the past seventy years has ended. It’s not being challenged. It’s not changing. It’s over.
     name: Alan Gyngell
     supp: Former Executive Director of the Office of National Assessments, June 2018
+
+  - type: excerpt
+    date: June 2018
+    title: Foreign Minister Julie Bishop
+    subtitle: Statement following the US resignation from the UN Human Rights Council
+    content:
+      - format: q
+        val: Australia's Foreign Policy White Paper reiterated Australia's commitment to a strong multilateral human rights system and to advancing human rights globally. It is in our national interest to shape the work of the Council and uphold the international rules-based order.
+
+  - type: history
+    title:
+    content:
+      - format: p
+        val: <b>John Bolton speech to the Federalist Society on the ICC</b>
+      - format: q
+        val: The United States will let the International Criminal Court die on its own. After all, for all intents and purposes, the ICC is already dead to us.
+      - format: p
+        val: <b>VP Mike Pence remarks at Hudson Institute</b>
+      - format: q
+        val:
+          <p>China wants nothing less than to push the United States of America from the Western Pacific and attempt to prevent us from coming to the aid of our allies.</p>
+          <p>America had hoped that economic liberalization would bring China into greater partnership with us and with the world. Instead, China has chosen economic aggression, which has in turn emboldened its growing military.</p>
+
+  - type: excerpt
+    date: December 2018
+    title: Prime Minister Scott Morrison's speech to the Sydney Institute
+    content:
+      - format: p
+        val: On the Joint Comprehensive Plan of Action (the Iran nuclear deal)&#58;
+      - format: q
+        val: ... maintaining support for the JCPOA serves our interests in nuclear non-proliferation and in reinforcing the rules-based international system. It is consistent with Australia's position on other non-proliferation issues ... And it serves our interest in encouraging rules-based approaches to resolving other issues of international concern, including the South China Sea.
+      - format: p
+        val: On the status of Jerusalem&#58;
+      - format: q
+        val: The starting point for their deliberation was Australia's absolute commitment to a two-state solution, these are the guard rails, with a secure Israel and future Palestinian state living side-by-side in peace and security within internationally recognised borders. I also required that their deliberations respect Australia's obligations under international law and UN Security Council resolutions – two things that are fundamental, I think, to Australia's interests in a rules-based order. You can't look at these things in isolation. Our foreign policy is guided by our fundamental interest in ensuring that internationally agreed rules continue to safeguard our security and prosperity. We don't get to pick and choose.
+
+  - type: anchor
+    year: 2019
+
+  - type: excerpt
+    date: August 2019
+    title: Foreign Minister Marise Payne and Defence Minister Linda Reynolds, Joint Statement, AUSMIN talks
+    content:
+      - format: p
+        val: Notably, this statement brings together the rules-based order with another popular and contested concept in contemporary Australian foreign policy, 'Indo-Pacific'&#58;
+      - format: q
+        val: Both countries recognised the growing strategic and economic importance of India, and the significance of South Asia and the Indian Ocean region to ensuring an open, rules-based Indo-Pacific.
+
+  - type: quote
+    quotation: The UN is the prime custodian of the rules-based order ... the UN and its norms are central to a cooperative rules-based approach to global challenges.
+    name: Scott Morrison
+    supp: National Statement to the UN General Assembly, September 2019
+
+  - type: excerpt
+    date: November 2019
+    title: Address by Linda Reynolds to the Hudson Institute, Washington DC
+    content:
+      - format: q
+        val: Australia does not take for granted a regional default inclination towards the advantages of existing rules-based systems – nor should the United States. As clear as those advantages are to us, we must constantly prove them to others. Through actions and demonstrable sovereign respect, not just words.
+      - format: p
+        val: On regional engagement with the US&#58;
+      - format: q
+        val:
+          <p>How we hold to this commitment in an increasingly competitive environment, will define success. So too will how we call out unfair and inconsistently applied rules and coercive behaviour. This is Australia's pathway in the region.</p>
+          <p>It is squarely in Australia's interests for our great friend and closest ally to remain the partner of choice. A partner who remains deeply invested in the region, and in an open global economy and a rules-based trading system.</p>
+
+  - type: history
+    title:
+    content:
+      - format: p
+        val:
+          <b>3 January 2020, Qasem Soleimani assassination</b>
+          <p>The US strike that killed the head of Iran’s Islamic Revolutionary Guard Corps Qods Force, IRGC Major General Qassem Soleimani, was a major escalation of the long-standing US confrontation with Iran. Iran responded with missile attacks against a US air base in Iraq.</p>
+          <p>In March 2020, Former National Security Advisor H.R. McMaster defended the killing of Soleimani in a debate at the Hoover Institution at Stanford University. "It was the righteous use of violence," McMaster said. "I don’t really care what international law said."</p>
+      - format: p
+        val: <b>February 2020, US Secretary of Defense Mark Esper at the Munich Security Conference</b>
+      - format: q
+        val:
+          <p>It is essential that we – as an international community – wake up to the challenges presented by China’s manipulation of the long-standing international, rules-based order that has benefited all of us for many decades.</p>
+          <p>The PRC’s growing economic, military, and diplomatic power often manifests itself in ways that are threatening, coercive, and counter to the rules-based international order.</p>
+          <p>... we simply ask of Beijing what we ask of every nation&#58; to play by the rules, abide by international norms, and respect the rights and sovereignty of others.</p>
