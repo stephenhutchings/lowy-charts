@@ -1,0 +1,25 @@
+
+- let type = card.media.class
+if type == "video"
+  .card.media.video
+    iframe(
+      src=card.media.src
+      frameborder="0"
+      allowfullscreen
+    )
+else if type == "image"
+  .card.media.image
+    img(
+      src=card.media.src
+    )
+    
+else if type == "quote"
+  .card.media.quote 
+    .top
+      img.image(src="img/quotations.svg")
+      .bar
+    .quotation.txt-l= card.media.quotation
+    .name.txt-l= card.media.name
+    .supp.txt-sm= card.media.supp
+      include social 
+    .footer

@@ -2,26 +2,348 @@
 # Will fill with content
 
 cards:
+  - type: anchor
+    year: 2008
+
   - type: excerpt
     date: March 2008
     title: Kevin Rudd address to The Brookings Institution, Washington
     subtitle: "The Australia-US alliance and emerging challenges in the Asia-Pacific Region."
     content:
-      txt: Rudd's first visit to Washington as prime minister included a speech at the Brookings Institution replete with references to world order, including the first known use of 'rules-based order' by an Australian Prime Minister
-      quote: The idea of a "harmonious world" depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order ... we look to China to make a strong contribution to strengthening the global and regional rules-based order
+      - format: p
+        val: Rudd's first visit to Washington as prime minister included a speech at the Brookings Institution replete with references to world order, including the first known use of 'rules-based order' by an Australian Prime Minister-based order&#58;
+      - format: q
+        val: The idea of a "harmonious world" depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order…we look to China to make a strong contribution to strengthening the global and regional rules-based order.
+    media:
+      class: video
+      src: https://www.youtube.com/embed/2LjE9I3Cp-U
+
+
   - type: excerpt
     date: December 2008
     title: Kevin Rudd’s National Security Statement, House of Representatives
     content:
-      txt: In Rudd’s inaugural National Security Statement, the rules-based order is listed as one of the five principles of Australia’s national security
-      quote: The idea of a "harmonious world" depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order ... we look to China to make a strong contribution to strengthening the global and regional rules-based order
+      - format: p
+        val: In Rudd's inaugural National Security Statement, the rules-based order is listed as one of the five principles of Australia's national security&#58;
+      - format: ol
+        val: 1.	Maintaining Australia's territorial and border integrity.<br>2.	Promoting Australia's political sovereignty<br>3.	Preserving Australia's cohesive and resilient society and the long-term strengths of our economy.<br>4.	Protecting Australians and Australian interests both at home and abroad<br>5.	Promoting an international environment, particularly in the Asia-Pacific region, that is stable, peaceful and prosperous, together with a global rules based order which enhances Australia's national interests.
+      - format: p
+        val: Rudd also said&#58;
+      - format: q
+        val: At the global level, we are committed to multilateral institutions, and in particular the United Nations, to promote a rules based international order that enhances our security and economy. We believe those that share the benefits of these systems must also share the responsibilities of supporting and enhancing them.
+    media:
+      class: quote
+      quotation: We have long championed a multilateral, rules-based order in our region in which disputes are resolved peacefully, without the use or threat of force or coercion.
+      name: Julia Gillard
+      supp: Former Prime Minister
+
+  - type: anchor
+    year: 2009
+
+  - type: history
+    title: January and March 2009, International Criminal Court
+    content:
+      - format: p
+        val: In January, the ICC’s trial of Thomas Lubanga Dyilo, the founder and leader of the Union of Congolese Patriots, began in The Hague, marking an important stage in efforts to establish responsibility for the use of children in military operations.
+      - format: p
+        val: In March, the ICC Pre-Trial Chamber issued an arrest warrant for Omar al-Bashir, the former President of Sudan, for war crimes and crimes against humanity in Darfur. Omar al-Bashir became the first sitting head of state to be indicated by the ICC since its establishment in 2002.
+    media:
+      class: image
+      src: img/dyilo.jpg
+
+  - type: excerpt
+    date: May 2009
+    title: Defence White Paper
+    content:
+      - format: p
+        val: Maintaining the rules-based order is referenced as one of the options Government can use when contemplating the use of military power&#58;
+      - format: q
+        val: ... the ADF has to be prepared to contribute to military contingencies in the rest of the world, in support of efforts by the international community to uphold global security and a rules-based international order, where our interests align and where we have the capacity to do so.
+      - format: p
+        val: In particular, defence of the rules-based order is cited as a justification for humanitarian intervention&#58;
+      - format: q
+        val: For a rules-based global security order to work, occasionally it is necessary to act to restore order. Within the UN context, the 'responsibility to protect' principle, which is currently at an important stage of development, holds that states are responsible for the protection of their own citizens from mass atrocities, and that the international community should encourage and assist states to exercise that authority. Australia supports the principle, and recognises that, on occasion, it may be necessary for other states to intervene, under the auspices of a UN Security Council resolution, if a state cannot or will not protect its population.
+      - format: p
+        val: The rules-based order concept is also used to link Australia’s local, regional and global interests&#58;
+      - format: q
+        val: These strategic interests are presented in geographical terms, as a hierarchy that reflects both relative priorities for action from a defence planning perspective, and our realistic capacity for influence through the employment of military power. They are interlocking - a stable rules-based global security order increases the likelihood of strategic stability in the Asia-Pacific region, which in turn makes more likely the maintenance of a secure immediate neighbourhood and ultimately a secure Australia.
+
+  - type: anchor
+    year: 2010
+
+  - type: history
+    title: June/July 2010, Stuxnet attack
+    content:
+      - format: p
+        val: Widely understood to be a cyber weapon jointly developed by the United States and Israel, Stuxnet is the world's first digital weapon. In 2010, it was responsible for causing substantial damage to the nuclear program of Iran by targeting the centrifuges used to enrich uranium gas at the Natanz enrichment plant. Ralph Langner, the German cybersecurity expert who discovered Stuxnet, said the attack "could be considered a textbook example of a 'just war' approach. It didn’t kill anyone. That’s a good thing. But I am afraid this is only a short-term view. In the long run it has opened Pandora’s box."
+
+  - type: excerpt
+    date: November 2010
+    title: The Melbourne Statement
+    content:
+      - format: p
+        val: This statement laid out the shared US-Australian interests on the occasion of the seventieth anniversary of US-Australia diplomatic relations. It also appears to be the first time the term 'rules-based order' was used by a senior US government official – Hillary Clinton as Secretary of State.
+      - format:
+        val: The Melbourne Statement reaffirms US and Australian dedication to "the enhancement of an international rules-based order, both within our region and for the world."
+
   - type: opinion
     expert:
       name: Julie Bishop
       credentials: Former Minister for Foreign Affairs
       image: https://www.pngarts.com/files/3/Avatar-PNG-High-Quality-Image.png
-    content: References to the rules-based order in this White Paper are made largely in geographic terms.
-  - type: history
-    title: January and March 2009, International Criminal Court
     content:
-      txt: In January, the ICC’s trial of Thomas Lubanga Dyilo, the founder and leader of the Union of Congolese Patriots, began in The Hague, marking an important stage in efforts to establish responsibility for the use of children in military operations. In March, the ICC Pre-Trial Chamber issued an arrest warrant for Omar al-Bashir, the former President of Sudan, for war crimes and crimes against humanity in Darfur. Omar al-Bashir became the first sitting head of state to be indicated by the ICC since its establishment in 2002.
+      - format: p
+        val: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+  - type: history
+    title: TBC
+    content:
+      - format: p
+        val: <b>17 December 2010, attempted suicide of Mohamed Bouazizi</b><br/>On 17 December 2010, Tunisian street vendor Mohamed Bouazizi self-immolated, sparking a series of protests against poor economic management and political autocracy that would topple many governments in the Middle East. The Arab Spring – as it came to be known – was a loosely related group of pro-democracy uprisings that enveloped several largely Muslim countries and resulted in regime change in Tunisia, Egypt and Libya, and brutal civil wars in Syria and Yemen.
+      - format: p
+        val: <b>March 2011, Libya UN Resolution 1973</b><br/>Early in the Arab Spring, Libya attracted international condemnation over its government’s indiscriminate and disproportionate use of military force against protesters. On 17 March 2011, the UN Security Council passed a resolution authorising "all necessary measures" to protect civilians in Libya from pro-Gaddafi forces. UNSCR 1973 included the declaration of a no-fly zone over Libya, but specifically excluded a UN-mandated occupying ground force.
+      - format: p
+        val: <b>2 May 2011, Osama bin Laden assassination</b><br/>On 2 May 2011, US president Barack Obama announced that Osama bin Laden, the leader of al-Qaeda, had been killed in a US operation in the city of Abbottabad, Pakistan.
+
+  - type: anchor
+    year: 2011
+
+  - type: excerpt
+    date: October 2011
+    title: Foreign Minister Kevin Rudd's address to the Oxford Business Alumni Forum
+    content:
+      - format: p
+        val: Rudd warns that "The worst outcome that you could ever imagine for a country like Australia, is that there be conflict or war between the United States and China", and argues that the development of a rules-based order is a race against time&#58;
+      - format: q
+        val: We began to debate two or three years ago on how we could build an Asia Pacific community in a region which doesn't have regional institutions capable of bringing around the table the Americans, the Chinese and the rest of us, on how we craft the rules of the game for this region, for the next half-century. Because if you fail to do that, and to cultivate and to develop a culture, and have it of economic and security policy and foreign policy cooperation, it is very easy to drift in the reverse direction.
+
+  - type: anchor
+    year: 2012
+
+  - type: excerpt
+    date: October 2012
+    title: Australia in the Asian Century White Paper
+    content:
+      - format: p
+        val: This document did not have a major focus on security. Notably, on two occasions it argues that Australia should play a part in increasing the role of Asian countries in the rules-based order&#58;
+      - format: q
+        val: Australia's future is irrevocably tied to the stability and sustainable security of our diverse region…We will continue to support a greater role for Asian countries in a rules-based regional and global order. Australia's alliance with the United States and a strong US presence in Asia will support regional stability, as will China's full participation in regional developments.
+
+  - type: excerpt
+    date: October 2012
+    title: Julia Gillard, Speech at the launch of the White Paper on Australia in the Asian Century
+    content:
+      - format: p
+        val: In Prime Minister Gillard's launch statement for the Australia in the Asian Century White Paper, the rules-based order becomes specifically 'regional'&#58;
+      - format: q
+        val: At the same time, all countries in the region, particularly the major powers, have a deep interest in strategic stability. So we need not be pessimistic - but just as we work to shape the economic future of our region, so too do we work to shape our security environment.<br/><br/>We are supporting the stabilising presence of the United States, a strong Defence Force, building habits of trust and co-operation in our region and a rules-based regional order. We have an ally in Washington - respect in Beijing - and more.
+
+  - type: anchor
+    year: 2013
+
+  - type: excerpt
+    date: January 2013
+    title: Julia Gillard launches the National Security Strategy
+    content:
+      - format: p
+        val: As in her launch statement for the Australian in the Asian Century White Paper, Prime Minister Gillard here defines the rules-based order in regional terms&#58;
+      - format: q
+        val: We have long championed a multilateral, rules-based order in our region in which disputes are resolved peacefully, without the use or threat of force or coercion.
+
+  - type: excerpt
+    date: January 2013
+    title: National Security Strategy
+    content:
+      - format: p
+        val: The National Security Strategy itself contains 7 references to 'rules-based', but all in the context of the global order, rather than regional. The role of the US is considered central to maintenance of the rules-based order&#58;
+      - format: q
+        val: The United States is integral to global economic growth and security, and provides the critical underpinning to the rules-based order that exists today.
+      - format: p
+        val: Adherence to the rules-based order is characterised as a reflection of Australian values and history&#58;
+      - format: q
+        val: The rule of law provides the framework in which government balances its responsibility to protect Australia, its people and its interests while preserving our civil liberties. These values influence our foreign and defence policy. Our values underpin our reputation as a responsible member of the international community, committed to a rules-based global order.
+
+  - type: excerpt
+    date: May 2013
+    title: Defence White Paper
+    content:
+      - format: p
+        val: References to the rules-based order in this White Paper are made largely in geographic terms. Australia's primary strategic interest is defence of the continent, followed by a secure region, and finally a rules-based order. As with the 2009 Defence White Paper, this document describes the UN as central to maintaining a global rules-based order&#58;
+      - format: q
+        val: Both in and beyond Southeast Asia, Australia supports a rules-based regional security order that fosters cooperation, eases tensions between states and provides incentives to major powers like China and India to rise peacefully. In particular, it is in our interests that no hostile power in the Indo-Pacific is able to coerce or intimidate others through force or the threat of force.
+
+  - type: anchor
+    year: 2015
+
+  - type: highlight
+    title: 2013-2016&#58; The long absence of the rules-based order
+    content:
+      - format: p
+        val: Our quantitative study reveals that between 2013 and 2016 - coinciding largely with Tony Abbott’s prime ministership - there was a significant decrease in the number of references to a rules-based order in speeches and policy statements by the Australian government.
+      - format: p
+        val: The partial exception was Julie Bishop who, in October 2013, less than four weeks into her role as Australia's new Foreign Minister, gave an address to the Japan National Press Club in which she spoke about Japan and Australia being part of a "community of nations" that "have an interest in a stable, predictable, rules-based order – both around the world, and specifically in Asia." In November 2013, Bishop gave a speech in Washington, DC linking the rules-based order to international trade.
+      - format: p
+        val: These two references by Bishop represent the few instances in which the concept of a rules-based order was used in Australia’s political lexicon between 2013 and 2016. Our study found that during his time as Prime Minister (September 2013 to September 2015), Tony Abbott did not use the term at all in key speeches.
+
+  - type: history
+    title: 2013-2015 in history
+    content:
+      - format: p
+        val: <b>There are six points here. An opportunity to incorporate a side-scroller? Instead of all text.</b><br/>
+      - format: p
+        val: 21 August 2013, Syria chemical attack in Ghouta and Obama’s "red lines"
+      - format: p
+        val: September 2013, Australian Government introduced Operation Sovereign Borders
+      - format: p
+        val: 23 November 2013, China declares Air Defence Identification Zone in East China Sea
+      - format: p
+        val: February/March 2014, unrest in Ukraine and Crimea annexation
+      - format: p
+        val: September 2015, Australia extended its air strikes from Iraq to include Syria
+      - format: p
+        val: 30 September 2015, Russian military intervention in the Syrian Civil War
+
+  - type: anchor
+    year: 2016
+
+  - type: excerpt
+    date: February 2016
+    title: Defence White Paper
+    content:
+      - format: p
+        val: There are 56 references to the 'rules based' order in this White Paper, which explicitly points to Russia and North Korea as challenges to the order, and also lists terrorism, piracy, and people smugglers as other risks.
+      - format: p
+        val: The definition of the rules-based order in this White Paper stresses the capacity for evolution in the order, and argues that the order has become more important due to 'growing interconnectivity'&#58;
+      - format: q
+        val: The stability of the rules-based global order is essential for Australia’s security and prosperity. A rules-based global order means a shared commitment by all countries to conduct their activities in accordance with agreed rules which evolve over time, such as international law and regional security arrangements. This shared commitment has become even more important with growing interconnectivity, which means that events across the world have the potential to affect Australia's security and prosperity. The Government is committed to making practical and effective military contributions to global security operations to maintain the rules-based order and address shared security challenges where it is in our interest to do so.
+      - format: p
+        val: The US is described as being central to the stability of the rules-based order&#58;
+      - format: q
+        val: The global strategic and economic weight of the United States will be essential to the continued stability of the rules-based global order on which Australia relies for our security and prosperity. The world will continue to look to the United States for leadership in global security affairs and to lead military coalitions that support international security and the rules-based global order.
+
+  - type: excerpt
+    date: March 2016
+    title: Lowy Lecture, Prime Minister Malcolm Turnbull
+    content:
+      - format: p
+        val: This speech again places the US at the centre of the rules-based order&#58;
+      - format: q
+        val: Now the greatest run of peace and prosperity this planet has ever known – centred right here in our Indo-Pacific region – was all made possible by the system of rules and institutions which the United States and its allies built from the ashes of World War II.
+    media:
+      class: sound
+      src: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254392635&color=ff5500
+  - type: history
+    title: June-July 2016
+    content:
+      - format: p
+        val: <b>23 June 2016, Brexit</b><br/>On 23 June 2016, the UK voted in a referendum on the country’s EU membership, with 51.9% of voters choosing to leave the EU.
+      - format: p
+        val: <b>July 2016, Hague Tribunal finds against Beijing in South China Sea case</b>
+
+  - type: excerpt
+    date: July 2016
+    title: Prime Minister Turnbull and Foreign Minister Marise Payne
+    subtitle: Joint press conference on South China Sea arbitration decision
+    content:
+      - format: p
+        val: The Hague Tribunal's decision on the South China Sea became pivotal to subsequent debate about China's ambitions, its commitment to the rules-based order, and the willingness of the US and regional states to defend that order&#58;
+      - format: q
+        val: This Tribunal, as you know, is established in accordance with the United Nations Convention on the Law of the Sea, which is a codification of international maritime law. It was established so that countries can resolve disputes peacefully in accordance with international law. The UN convention on the Law of the Sea, and the Arbitral Tribunal are absolutely crucial elements of the international rules based order which underpins peace, stability and prosperity around the world but especially in our part of the world for decades. All of us, all countries large and small have benefitted enormously from this system which facilitates trade and enables disputes to be resolved in accordance with rules rather than by coercive means.
+
+  - type: history
+    title: Something about US-China?
+    content:
+      - format: p
+        val: <b>In September 2016,</b> Obama met with Xi Jinping and released a statement saying he had ...
+      - format: q
+        val: ... emphasised the importance for China, as a signatory to UNCLOS, to abide by its obligations under that treaty, which the United States views as critical to maintaining the rules-based international order.
+      - format: p
+        val: <b>9 November 2016, Trump elected President</b><br/>On 9 November 2016, Donald Trump was elected the 45th president of the United States, ushering in the era of "America-First" foreign policy. Trump comes to office as a lifelong sceptic of America's post-war alliance network, and of free trade.
+      - format: p
+        val: <b>January 2017, Xi Jinping Davos address</b><br/>Widely considered a landmark speech articulating China’s global ambitions&#58; "We should adhere to multilateralism to uphold the authority and efficacy of multilateral institutions. We should honor promises and abide by rules. One should not select or bend rules as he sees fit."
+
+  - type: anchor
+    year: 2017
+
+  - type: excerpt
+    date: March 2017
+    title: Julie Bishop Fullerton lecture
+    subtitle: Joint press conference on South China Sea arbitration decision
+    content:
+      - format: p
+        val: The most assertive Australian statement thus far on the 'liberal' element of the rules-based order&#58;
+      - format: q
+        val: <p>The importance of liberal values and institutions should not be underestimated or ignored.</p><p>While non-democracies such as China can thrive when participating in the present system, an essential pillar of our preferred order is democratic community.</p><p>Domestic democratic habits of negotiating and compromise are essential to powerful countries resolving their disagreements according to international law and rules.</p><p>History also shows democracy and democratic institutions are essential for nations if they are to reach their economic potential.</p><p>The only countries in the world who have escaped the 'middle-income' trap to become wealthy, high-income and advanced economies are democracies –with the exception of a small number of oil-rich Middle Eastern states.</p><p>Liberal-democratic institutions such as rule-of-law rather than rule by executive privilege, civilian control of the military, independent and competent courts, protection of property and intellectual property rights from state appropriation or theft, and limitations on the role of the state in commercial and social affairs remain the prerequisites for stable and prosperous societies, as they are for the creation of a vibrant and innovative private sector.</p><p>While it is appropriate for different states to discover their own pathway leading toward political reform, history shows that embrace of liberal democratic institutions is the most successful foundation for nations seeking economic prosperity and social stability.</p><p>Australia is an active and vocal advocate of the liberal rules based order because the continuation of the long and prosperous peace depend on it.</p>
+
+  - type: history
+    title: 4 April 2017, Khan Shaykhun chemical attack in Syria
+    content:
+      - format: p
+        val: More than 80 people were killed in a chemical attack on the rebel-held town of Khan Sheikhoun in north-western Syria on 4 April 2017. The subsequent American missiles strikes against regime targets represented a significant reversal of US policy on Syria.
+
+  - type: excerpt
+    date: June 2017
+    title: Malcolm Turnbull, Keynote address
+    subtitle: 16th IISS Asia Security Summit, Shangri-La Dialogue
+    content:
+      - format: p
+        val: Turnbull refers to a "US anchored rules-based order", and other references to the rules-based order place it directly in the context of great-power competition between the US and China&#58;
+      - format: q
+        val: <p>And we should be under no illusions&#58; If we are to maintain the dynamism of the region then we must preserve the rules-based structure that has enabled it thus far. This means cooperation not unilateral actions to seize or create territory or militarise disputed areas. This means competing within the framework of international law not winning through corruption, interference or coercion ... </p><p>... some fear that China will seek to impose a latter day Monroe Doctrine on this hemisphere in order to dominate the region, marginalising the role and contribution of other nations, in particular the United States. Such a dark view of our future would see China isolating those who stand in opposition to or are not aligned with its interests, while using its economic largesse to reward those toeing the line.</p>
+
+  - type: excerpt
+    date: 18 July 2017
+    title: Independent Intelligence Review
+    content:
+      - format: p
+        val: The Review points to "fundamental changes to in the international system" and assesses that "The trend in the global balance of wealth and power is favouring China and India. The Western ascendancy in international institutions and values ... is eroding"&#58;
+      - format: q
+        val: ... assumptions that have long underpinned Australia's security and foreign policy, including those in relation to the strength of the rules-based component of the global order, will be more uncertain.
+
+  - type: history
+    title: NA
+    content:
+      - format: p
+        val: <b>June 2017, US announces withdrawal from Paris Agreement</b><br/>While the US remains a signatory to the UNFCCC foundation treaty, its decision to withdraw from the Paris Agreement represents the growing trend towards isolationism and protectionism that has come to define the Trump presidency.
+      - format: p
+        val: <b>20 July 2017, a "gentle lesson on American power"</b><br/>Alleged briefing that took place between Trump, Tillerson, Mattis, the Director of the Economic Council Gary Cohn, the Joint Chiefs and members of Trump's cabinet. The opening line of the first briefing slide read&#58; "The post-war international rules-based order is the greatest gift of the greatest generation."<br/>Trump adviser Steve Bannon allegedly commented&#58; "If you stood up and threatened to shoot [Trump], he couldn't say 'post-war rules-based international order'. It’s just not the way he thinks."
+    media:
+      class: video
+      src: https://www.youtube.com/embed/IYt3hsAWZNk?start=30&end=80
+
+  - type: excerpt
+    date: July 2017
+    title: Foreign Minister Julie Bishop
+    subtitle: Comments on two North Korean ballistic missile tests in one month
+    content:
+      - format: p
+        val: <b>5 July&#58;</b> "The world expects that we live in a rules-based system and this unacceptable missile launch is in breach of numerous United Nations Security Council Resolutions."
+      - format: p
+        val: <b>29 July&#58;</b> "The ballistic missile tests and North Korea's ongoing reckless and menacing behaviour, are in violation of multiple UN Security Council resolutions, is a threat to regional and global security and stability and is in violation of the rules-based order we seek to promote and advance"
+
+  - type: excerpt
+    date: November 2017
+    title: Malcolm Turnbull
+    subtitle: Launch of the Government's Foreign Policy White Paper
+    content:
+      - format: p
+        val: From Prime Minister’s speech at the launch of the White Paper&#58;
+      - format: q
+        val: <p>In the global ocean, there is always a risk, as Lee Kuan Yew observed&#58; "The big fish will eat the little fish, and the little fish will eat the shrimps". Or as the Athean ambassador said to the Melians&#58; "In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must."</p><p>So whether it's in Lee Kuan Yew’s words or Thucydides', we will never agree that might is right. The rules-based order protects us all and it protects us, in particular.</p>
+
+  - type: excerpt
+    date: November 2017
+    title: Foreign Policy White Paper
+    content:
+      - format: p
+        val: According to the Prime Minister's introduction, "This Foreign Policy White Paper shows Australia to be focused on our region, determined to realise a secure, open and prosperous Indo–Pacific, while also strengthening and diversifying partnerships across the globe." References to the rules-based order in this White Paper reflect this regional focus, but not exclusively&#58;
+      - format: q
+        val: Australia's interests are strongly served by acting with others to support a rules-based international order. Australia will encourage and tangibly support the leadership of the United States to this end.
+
+  - type: anchor
+    year: 2018
+
+  - type: quote
+    quotation: The order we have known for the past seventy years has ended. It’s not being challenged. It’s not changing. It’s over.
+    name: Alan Gyngell
+    supp: Former Executive Director of the Office of National Assessments, June 2018

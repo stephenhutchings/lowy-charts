@@ -12,35 +12,64 @@ block append config
   - var cards = data.getOne("static/features/rules-based-order/data").cards
   
 block page
-  
-  include partials/nav
+  include partials/header
+  include partials/subheader 
+  include partials/intro
         
-  div.card-wrapper
+  .card.wrap
     for card in cards
-      div(class=`card ${card.type}`)
-        if card.type == "excerpt"
-          .date= card.date
-          .title= card.title
-          .subtitle= card.subtitle
-          .content
-            .txt= card.content.txt
-            .quote= card.content.quote
-        else if card.type == "opinion"
-          .cardtype
-          .expert
-            img.expert.image(src=card.expert.image) 
-            .attributes 
-              .name= card.expert.name
-              .credentials= card.expert.credentials
-          .content= card.content
+      if card.type == "anchor"
+        if card.year == 2015
+          .anchor(id=`${card.year}`)= "2014 - 2015"
         else
-          .cardtype
-          .title= card.title
-          .subtitle= card.subtitle
-          .content
-            .txt= card.content.txt
-          
+          .anchor(id=`${card.year}`)= card.year
+      else
+        .card.row(class=`${card.type}`)
+          .card.item
+            if card.type == "excerpt" 
+              .date.txt-sm= card.date
+              .heading.txt-l= card.title
+              .subheading.txt-ml= card.subtitle 
+              .content
+                include partials/content
+                    
+            else if card.type == "history"
+              .cardtype.txt-sm Historical Context
+              .heading.txt-l= card.title 
+              .subheading.txt-ml= card.subtitle
+              .content
+                include partials/content
+                    
+            else if card.type == "opinion"
+              .cardtype.txt-sm Expert Opinion
+              .expert
+                img.expert.image(src=card.expert.image)
+                .txt-xl= card.expert.name
+                  .txt-ml= card.expert.credentials
+              include partials/content
+            
+            else if card.type == "quote"
+              .top
+                img.image(src="img/quotations.svg")
+                .bar
+              .quotation.txt-l= card.quotation
+              .name.txt-l= card.name
+              .supp.txt-sm= card.supp
+              include partials/social 
+              .footer
+      
+            else if card.type == "highlight" 
+              .heading.txt-l!= card.title
+              .subheading.txt-ml= card.subtitle
+              .content
+                include partials/content   
+          if card.media != undefined
+            include partials/media
+            
   
 block append css
   style
     include:sass _styles.sass
+    
+block append scripts
+  script(type="text/javascript" src="script/nav.js")
