@@ -6,7 +6,7 @@ $color-gy-lt: #6d777c
 $color-gy-dk: #3e4346
 $color-qt: #29abe2
 $color-hl: #ffc52b
- 
+
 $ls-l: 0.72px
 $ls-m: 0.6px
 $ls-s: 0.15px
@@ -20,6 +20,11 @@ $ls-s: 0.15px
   -webkit-background-size : ($property)
   -moz-background-size : ($property)
   -o-background-size : ($property)
+=keyframes($property)
+  keyframes: $property
+  -webkit-keyframes: $property
+  -moz-keyframes: $property
+  -o-keyframes: $property
 
 .txt-xxl
   font-size: 28px
@@ -53,8 +58,8 @@ html,body
   overflow-y: auto!important
   height: auto
 
-.header, .subheader
-  line-height: 16px
+.header, .stickyheader
+  line-height: 15px
   height: 64px
   border-bottom: 0.5px solid $color-gy-lt
   transition: all 300ms
@@ -75,30 +80,50 @@ html,body
     .icon
       margin-left: 10px
 
-.subheader
-  transition: all 0ms
-  position: absolute
+.stickyheader
+  transition: animate 0ms
+  text-transform: uppercase
+  display: flex
+  flex-direction: row-reverse
   width: 100%
+  align-items: center
+  position: absolute
   height: 65px
   z-index: 1
+  & > *
+    flex: 1
 
-#subheader-graph
-  width: 160px
-  padding: 16px
+#stickyheader-graph
+  min-width: 120px
+  max-width: 160px
+  padding: 20px
 .line
   fill: none
   stroke: #000
   stroke-miterlimit: 10
   stroke-width: 3
+#counter
+  display: none
+  margin-right: 5%
+  font-weight: 600
+  color: $color-bl-dk
+  text-align: right
+.counter-num
+  font-size: 30px
+.counter-label
+  font-size: 12px
+  line-height: initial
+  text-align: left
+  margin-left: .5em
 
 .nav
   &-wrapper
-    float: right
-    padding: 12px 0
-    text-align: center
+    min-width: 90px
     transition: all 500ms
     color: $color-bl-dk
   &-btn
+    width: max-content
+    margin: 0 2.5% 0 auto
     background: none
     padding: 5px 10px
     font-weight: 600
@@ -118,7 +143,6 @@ html,body
     position: absolute
     background-color: $color-ff
     box-shadow : 0px 0px 2px $color-bl-lt
-    padding: 5px auto
     display: none
   &-dropitem
     padding: 5px 25px
@@ -180,7 +204,7 @@ html,body
       width: 100%
       object-fit: cover
       border-radius: 10px 10px
-  .history, .highlight
+  .history, .highlight, .historyTimeline
     border-left: 10px solid $color-hl
     color: $color-bk
   .opinion
@@ -283,13 +307,14 @@ html,body
 .anchor
   color: black
   padding: 10px 0
-  //border-top: 0.5px solid $color-bl-dk
   border-bottom: 3px solid $color-bl-dk
   background: $color-bl-lt
   text-align: center
   font-weight: 700
   font-size: 18px
 
+.ib
+  display: inline-block
 
 ////////////// START MEDIA QUERIES ////////////////////
 
@@ -338,7 +363,17 @@ html,body
     text-align: center
     width: auto
 
+  .stickyheader
+    flex-direction: row
+  #counter
+    display: block
+
   .nav
+    &-wrapper
+      margin-right: 0
+      margin-left: 5%
+    &-btn
+      margin: 0
     &-btnimg
       height: 16px
     &-dropitem
@@ -395,7 +430,7 @@ html,body
 
   .anchor
     background: $color-bl-lt
-    padding-left: 10%
+    padding-left: calc(5% + 17px)
     text-align: left
 
   .card
@@ -412,6 +447,8 @@ html,body
     .item
       width: 60%
       padding: 20px
+    .item.wide
+      width: 100%
     .media
       align-self: center
       width: 40%

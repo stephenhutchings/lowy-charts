@@ -1,0 +1,23 @@
+.cardtype.txt-m History
+- let dates = card.dates
+- let events = card.content
+- let n = dates.length
+- let dotRadius = 6
+.skinny-scrollbar(style="overflow-x:scroll")
+  .history-timeline(style=`width: ${100 * n}%`)
+    each event, i in events
+      .node
+        .description
+          .image-overlay
+          .event-title.txt-sm= event.title
+          .bits.txt-s= event.description
+        .timeline  
+          .dot(style=`left: calc(50% - ${dotRadius}px)`)
+            .dot.over
+          if i == 0
+            .line.line-start
+          else if i==dates.length-1 
+            .line.line-end
+          else
+            .line
+          .date.txt-s= dates[i]

@@ -4,6 +4,7 @@
 cards:
   - type: anchor
     year: 2008
+    count: 0
 
   - type: excerpt
     date: March 2008
@@ -39,6 +40,7 @@ cards:
 
   - type: anchor
     year: 2009
+    count: 2
 
   - type: history
     title: January and March 2009, International Criminal Court
@@ -70,6 +72,7 @@ cards:
 
   - type: anchor
     year: 2010
+    count: 15
 
   - type: history
     title: June/July 2010, Stuxnet attack
@@ -95,18 +98,19 @@ cards:
       - format: p
         val: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-  - type: history
-    title: TBC
+  - type: historyTimeline
+    dates: [17 December 2010, 17 March 2011, 2 May 2011]
     content:
-      - format: p
-        val: <b>17 December 2010, attempted suicide of Mohamed Bouazizi</b><br/>On 17 December 2010, Tunisian street vendor Mohamed Bouazizi self-immolated, sparking a series of protests against poor economic management and political autocracy that would topple many governments in the Middle East. The Arab Spring – as it came to be known – was a loosely related group of pro-democracy uprisings that enveloped several largely Muslim countries and resulted in regime change in Tunisia, Egypt and Libya, and brutal civil wars in Syria and Yemen.
-      - format: p
-        val: <b>March 2011, Libya UN Resolution 1973</b><br/>Early in the Arab Spring, Libya attracted international condemnation over its government’s indiscriminate and disproportionate use of military force against protesters. On 17 March 2011, the UN Security Council passed a resolution authorising "all necessary measures" to protect civilians in Libya from pro-Gaddafi forces. UNSCR 1973 included the declaration of a no-fly zone over Libya, but specifically excluded a UN-mandated occupying ground force.
-      - format: p
-        val: <b>2 May 2011, Osama bin Laden assassination</b><br/>On 2 May 2011, US president Barack Obama announced that Osama bin Laden, the leader of al-Qaeda, had been killed in a US operation in the city of Abbottabad, Pakistan.
+      - title: Attempted suicide of Mohamed Bouazizi
+        description: On 17 December 2010, Tunisian street vendor Mohamed Bouazizi self-immolated, sparking a series of protests against poor economic management and political autocracy that would topple many governments in the Middle East. The Arab Spring – as it came to be known – was a loosely related group of pro-democracy uprisings that enveloped several largely Muslim countries and resulted in regime change in Tunisia, Egypt and Libya, and brutal civil wars in Syria and Yemen.
+      - title: Libya UN Resolution 1973
+        description: Early in the Arab Spring, Libya attracted international condemnation over its government’s indiscriminate and disproportionate use of military force against protesters. On 17 March 2011, the UN Security Council passed a resolution authorising "all necessary measures" to protect civilians in Libya from pro-Gaddafi forces. UNSCR 1973 included the declaration of a no-fly zone over Libya, but specifically excluded a UN-mandated occupying ground force.
+      - title: Osama bin Laden assassination
+        description: On 2 May 2011, US president Barack Obama announced that Osama bin Laden, the leader of al-Qaeda, had been killed in a US operation in the city of Abbottabad, Pakistan.
 
   - type: anchor
     year: 2011
+    count: 38
 
   - type: excerpt
     date: October 2011
@@ -119,6 +123,7 @@ cards:
 
   - type: anchor
     year: 2012
+    count: 9
 
   - type: excerpt
     date: October 2012
@@ -140,6 +145,7 @@ cards:
 
   - type: anchor
     year: 2013
+    count: 1
 
   - type: excerpt
     date: January 2013
@@ -174,6 +180,7 @@ cards:
 
   - type: anchor
     year: 2015
+    count: 13
 
   - type: highlight
     title: 2013-2016&#58; The long absence of the rules-based order
@@ -205,6 +212,7 @@ cards:
 
   - type: anchor
     year: 2016
+    count: 29
 
   - type: excerpt
     date: February 2016
@@ -264,6 +272,7 @@ cards:
 
   - type: anchor
     year: 2017
+    count: 155
 
   - type: excerpt
     date: March 2017
@@ -342,6 +351,7 @@ cards:
 
   - type: anchor
     year: 2018
+    count: 149
 
   - type: excerpt
     date: June 2018
@@ -399,6 +409,7 @@ cards:
 
   - type: anchor
     year: 2019
+    count: 17
 
   - type: excerpt
     date: August 2019
