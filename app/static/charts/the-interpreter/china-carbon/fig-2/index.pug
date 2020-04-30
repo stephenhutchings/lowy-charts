@@ -1,34 +1,28 @@
 extend /partials/layout
 
-block append config
-  - var datapath = "static/charts/the-interpreter/china-carbon/fig-2/data"
-  - _.extend(page, data.getOne(datapath))
-  - toPercent = (n) => (n * 100).toFixed(2) + "%"
-  - let dataObject = page.data
-
 block page
   .wrapper.flex.flex-col.txt-center
     .page-title Figure 2: Range of prices in the pilot systems to-date, and estimated prices for the national system by survey respondents
-    .col-wrap.flex-grow.flex.txt-sm
-      div(id="curve_chart" style="width: 100%; height: 100%;")
-
-    //ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
-      for item, i in chart.legend
+    img(src="chart.svg")
+    
+    ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+      for item, i in ["Pilots (actual price range)", "Survey 20th-80th percentile", "Survey average"]
         li.legend-item
-          span.legend-item-box(style=`background:${chart.colors[i]}`)
+          if i == 0
+            span.legend-item-box(style="background:#002a45")
+          else if i == 1
+            span.legend-item-box(style="background:#539ed4")
+          else if i == 2
+            span.legend-item-box(style="background:url('icon.svg') center center no-repeat; background-size: cover;")            
           span.legend-item-label!= item
 
-    //.chart-notes.txt-muted.txt-left
-      !=page.notes
-    //.chart-source.txt-muted.txt-center
-      !=page.source
-
+      .chart-source.txt-muted.txt-center Source: China Carbon Forum
 
 block append css
   style
     :sass
       .wrapper
-        height: 420px
+        height: auto
         max-width: 700px
         overflow: visible
         position: relative
@@ -62,7 +56,7 @@ block append css
 
       .legend
         font-size: 15px
-        max-width: 80% 
+        max-width: 90% 
         margin: auto
 
       .legend-item
@@ -127,8 +121,3 @@ block append css
           width: 100%
           height: 100%
           padding-bottom: 8px
-
-block append scripts
-  let d = page.data
-  script(type="text/javascript" src="https://www.gstatic.com/charts/loader.js")
-  script(type="text/javascript" src="test.js")
