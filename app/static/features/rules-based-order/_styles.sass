@@ -157,12 +157,12 @@ html,body
   height: 350px
   margin-bottom: 50px
   &-title
+    top: 35%
     color: $color-bk
-    top: 50%
     position: relative
     width: fit-content
     background-color: rgba($color-ff, 0.95)
-    margin: 0 10%
+    margin: 0 auto
     padding: 10px 20px
     text-transform: uppercase
     font-weight: 700
@@ -211,6 +211,7 @@ html,body
     background: $color-bl-dk
     border-left: 10px solid $color-bl-dk
     color : $color-ff
+    position: relative
     .cardtype
       color: $color-ff
     .image
@@ -462,3 +463,16 @@ html,body
       color: $color-bk
       .cardtype
         color : $color-bk
+
+.opinion:after
+	content: ''
+	position: absolute
+	top: 0
+	left: 50%
+	width: 0
+	height: 0
+	border: 20px solid transparent
+	border-bottom-color: $color-bl-lt
+	border-top: 0
+	margin-left: -20px
+	margin-top: -20px
