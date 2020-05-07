@@ -23,18 +23,21 @@ $history-dot-r: 6px
   -webkit-keyframes: $property
   -moz-keyframes: $property
   -o-keyframes: $property
+=transform($property)
+  transform: $property
+  -webkit-transform: $property
 
 .skinny-scrollbar
-  scrollbar-height: 4px /* Firefox */
-  //-ms-overflow-style: none  /* IE 10+ */
+  position: relative
+  scrollbar-height: 0px /* Firefox */
+  -ms-overflow-style: none  /* IE 10+ */
   &::-webkit-scrollbar
-    height: 4px
+    height: 0px
     border-radius: 10px
     background: #ccc /* Chrome/Safari/Webkit */
   &::-webkit-scrollbar-thumb
     background: #666 /* Chrome/Safari/Webkit */
-    border-radius: 10px
-
+    border-radius: 0px
 
 @keyframes grow
   to
@@ -44,6 +47,50 @@ $history-dot-r: 6px
   to
     color: $color-bk
     background: rgba($color-bl-lt,0.85)
+
+.history-wrap
+  position: relative
+
+.btnfw,.btnbw
+  position: absolute
+  bottom: 0
+  width: 20px
+  height: 20px
+  cursor: pointer
+  color: $color-ff
+  z-index: 100
+  background: url('./img/lt.svg') center center no-repeat
+  background-size: cover
+.btnfw
+  right: -10px
+  transform: rotate(180deg)
+.btnbw
+  left: -15px
+
+.history-timeline
+  position: relative
+  display: flex
+  align-items: flex-end
+  margin: 10px 0 20px
+  .date
+    text-align: center
+.node
+  transition: all 300ms
+  width: 100%
+.image-overlay
+  display: none
+.event
+  color: $color-bl-dk
+  max-width: 350px
+  margin: 0 auto
+  position: relative
+  border-radius: .25em
+.event-title
+  margin-top: 0.25em
+  font-weight: 600
+  text-align: center
+.event-text
+  padding: 0 10px
 
 .dot
   content: ''
@@ -68,55 +115,22 @@ $history-dot-r: 6px
     margin-right: 50%
     border-radius: 0 2.5px 2.5px 0
 
-.history-timeline
-  display: flex
-  align-items: flex-end
-  margin: 30px 0
-  .date
-    text-align: center
-.node
-  transition: all 300ms
-  width: 100%
-.image-overlay
-  display: none
-.event-title
-  margin-bottom: 0.25em
-  font-weight: 600
-.description
-  width: 60%
-  max-width: 300px
-  margin: 20px auto 0 auto
-  padding: 1.5em
-  position: relative
-  background: $color-bl-lt
-  border-radius: .5em
-  box-shadow: 0 2px $color-bl-dk
-.description:after
-  content: ''
-  position: absolute
-  bottom: 0
-  left: 50%
-  width: 0
-  height: 0
-  border: 11px solid transparent
-  border-top-color: $color-bl-lt
-  border-bottom: 0
-  margin-left: -11px
-  margin-bottom: -11px
+//--------// MEDIA QUERIES //--------//
 
-@media (min-width: 900px)
+@media (min-width: 700px)
   .history-timeline
-    width: 100%!important
+    //width: 150%!important
     justify-content: center
   .node
     width: auto
     flex: 1
-  .description
+  .event
     width: 95%
     margin: auto
     background: none
     box-shadow: none
     padding: 0
+    color: $color-bl-dk
   .image-overlay
     height: 400px
     margin-bottom: 20px
@@ -126,8 +140,7 @@ $history-dot-r: 6px
     background-size: cover
   .event-title
     text-align: center
-  .bits
-    color: $color-gy-dk
+  .event-txt
     padding: 1em
     bottom: 70px
     position: absolute
@@ -137,11 +150,11 @@ $history-dot-r: 6px
     cursor: pointer
     .over
       display: block
-    .bits
+    .event-text
       animation: fade 0.5s forwards
     .image-overlay
       //visibility: hidden
-  .description:after
+  .event:after
     display: none
 
   .skinny-scrollbar

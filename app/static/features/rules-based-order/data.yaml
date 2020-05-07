@@ -6,6 +6,16 @@ cards:
     year: 2008
     count: 0
 
+  - type: historyTimeline
+    dates: [Month 2008, Month 2008, Month 2008]
+    content:
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
   - type: excerpt
     date: March 2008
     title: Kevin Rudd address to The Brookings Institution, Washington
@@ -42,25 +52,13 @@ cards:
     year: 2009
     count: 2
 
-  - type: history
-    title: January and March 2009, International Criminal Court
+  - type: historyTimeline
+    dates: [January 2009, March 2009]
     content:
-      - format: p
-        val: In January, the ICC’s trial of Thomas Lubanga Dyilo, the founder and leader of the Union of Congolese Patriots, began in The Hague, marking an important stage in efforts to establish responsibility for the use of children in military operations.
-      - format: p
-        val: In March, the ICC Pre-Trial Chamber issued an arrest warrant for Omar al-Bashir, the former President of Sudan, for war crimes and crimes against humanity in Darfur. Omar al-Bashir became the first sitting head of state to be indicated by the ICC since its establishment in 2002.
-    media:
-      class: image
-      src: img/dyilo.jpg
-
-  - type: opinion
-    expert:
-      name: Julie Bishop
-      credentials: Former Minister for Foreign Affairs
-      image: https://www.pngarts.com/files/3/Avatar-PNG-High-Quality-Image.png
-    content:
-      - format: p
-        val: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          
+      - title: ICC trial of Thomas Lubanga Dyilo
+        description: In January, the ICC’s trial of Thomas Lubanga Dyilo, the founder and leader of the Union of Congolese Patriots, began in The Hague, marking an important stage in efforts to establish responsibility for the use of children in military operations.
+      - title: Arrest warrant issued for Omar al-Bashir
+        description: In March, the ICC Pre-Trial Chamber issued an arrest warrant for Omar al-Bashir, the former President of Sudan, for war crimes and crimes against humanity in Darfur. Omar al-Bashir became the first sitting head of state to be indicated by the ICC since its establishment in 2002.
 
   - type: excerpt
     date: May 2009
@@ -79,15 +77,28 @@ cards:
       - format: q
         val: These strategic interests are presented in geographical terms, as a hierarchy that reflects both relative priorities for action from a defence planning perspective, and our realistic capacity for influence through the employment of military power. They are interlocking - a stable rules-based global security order increases the likelihood of strategic stability in the Asia-Pacific region, which in turn makes more likely the maintenance of a secure immediate neighbourhood and ultimately a secure Australia.
 
+  - type: opinion
+    expert:
+      name: Julie Bishop
+      credentials: Former Minister for Foreign Affairs
+      image: https://www.pngarts.com/files/3/Avatar-PNG-High-Quality-Image.png
+    content:
+      - format: p
+        val: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
   - type: anchor
     year: 2010
     count: 15
 
-  - type: history
-    title: June/July 2010, Stuxnet attack
+  - type: historyTimeline
+    dates: [Month 2010, Month 2010, Month 2010]
     content:
-      - format: p
-        val: Widely understood to be a cyber weapon jointly developed by the United States and Israel, Stuxnet is the world's first digital weapon. In 2010, it was responsible for causing substantial damage to the nuclear program of Iran by targeting the centrifuges used to enrich uranium gas at the Natanz enrichment plant. Ralph Langner, the German cybersecurity expert who discovered Stuxnet, said the attack "could be considered a textbook example of a 'just war' approach. It didn’t kill anyone. That’s a good thing. But I am afraid this is only a short-term view. In the long run it has opened Pandora’s box."
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: excerpt
     date: November 2010
@@ -106,6 +117,9 @@ cards:
     content:
       - format: p
         val: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  - type: anchor
+    year: 2011
+    count: 38
 
   - type: historyTimeline
     dates: [17 December 2010, 17 March 2011, 2 May 2011]
@@ -116,10 +130,6 @@ cards:
         description: Early in the Arab Spring, Libya attracted international condemnation over its government’s indiscriminate and disproportionate use of military force against protesters. On 17 March 2011, the UN Security Council passed a resolution authorising "all necessary measures" to protect civilians in Libya from pro-Gaddafi forces. UNSCR 1973 included the declaration of a no-fly zone over Libya, but specifically excluded a UN-mandated occupying ground force.
       - title: Osama bin Laden assassination
         description: On 2 May 2011, US president Barack Obama announced that Osama bin Laden, the leader of al-Qaeda, had been killed in a US operation in the city of Abbottabad, Pakistan.
-
-  - type: anchor
-    year: 2011
-    count: 38
 
   - type: excerpt
     date: October 2011
@@ -133,6 +143,16 @@ cards:
   - type: anchor
     year: 2012
     count: 9
+
+  - type: historyTimeline
+    dates: [Month 2012, Month 2012, Month 2012]
+    content:
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: excerpt
     date: October 2012
@@ -155,6 +175,14 @@ cards:
   - type: anchor
     year: 2013
     count: 1
+
+  - type: historyTimeline
+    dates: [21 August 2013, 18 September 2013]
+    content:
+      - title: Syria chemical attack in Ghouta and Obama’s "red lines"
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Australian Government introduces Operation Sovereign Borders
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: excerpt
     date: January 2013
@@ -191,6 +219,20 @@ cards:
     year: 2015
     count: 13
 
+  - type: historyTimeline
+    dates: [18 September 2013, 23 November 2013, Feb/March 2014, September 2015, 30 September 2015]
+    content:
+      - title: Tony Abbott becomes Australia's 28th Prime Minister?
+        description: Maybe?
+      - title: China declares Air Defence Identification Zone in East China Sea
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Unrest in Ukraine and Crimea annexation
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Australia extended its air strikes from Iraq to include Syria
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Russian military intervention in the Syrian Civil War
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
   - type: highlight
     title: 2013-2016&#58; The long absence of the rules-based order
     content:
@@ -201,27 +243,23 @@ cards:
       - format: p
         val: These two references by Bishop represent the few instances in which the concept of a rules-based order was used in Australia’s political lexicon between 2013 and 2016. Our study found that during his time as Prime Minister (September 2013 to September 2015), Tony Abbott did not use the term at all in key speeches.
 
-  - type: history
-    title: 2013-2015 in history
-    content:
-      - format: p
-        val: <b>There are six points here. An opportunity to incorporate a side-scroller? Instead of all text.</b><br/>
-      - format: p
-        val: 21 August 2013, Syria chemical attack in Ghouta and Obama’s "red lines"
-      - format: p
-        val: September 2013, Australian Government introduced Operation Sovereign Borders
-      - format: p
-        val: 23 November 2013, China declares Air Defence Identification Zone in East China Sea
-      - format: p
-        val: February/March 2014, unrest in Ukraine and Crimea annexation
-      - format: p
-        val: September 2015, Australia extended its air strikes from Iraq to include Syria
-      - format: p
-        val: 30 September 2015, Russian military intervention in the Syrian Civil War
-
   - type: anchor
     year: 2016
     count: 29
+
+  - type: historyTimeline
+    dates: [23 June 2016, July 2016, 3 September 2016, 9 November 2016, 17 January 2017]
+    content:
+      - title: Brexit
+        description: The UK votes in a referendum on the country’s EU membership, with 51.9% of voters choosing to leave the EU.
+      - title: South China Sea Arbitration
+        description: Hague Tribunal finds against Beijing in South China Sea case
+      - title: Obama meets with Xi Jinping
+        description: Following the meeting, Obama released a statement saying he had "emphasised the importance for China, as a signatory to UNCLOS, to abide by its obligations under that treaty, which the United States views as critical to maintaining the rules-based international order."
+      - title: Trump elected President
+        description: Donald Trump was elected the 45th president of the United States, ushering in the era of "America-First" foreign policy. Trump comes to office as a lifelong sceptic of America's post-war alliance network, and of free trade.
+      - title: Xi Jinping Davos address
+        description: Widely considered a landmark speech articulating China’s global ambitions&#58; "We should adhere to multilateralism to uphold the authority and efficacy of multilateral institutions. We should honor promises and abide by rules. One should not select or bend rules as he sees fit."
 
   - type: excerpt
     date: February 2016
@@ -249,13 +287,6 @@ cards:
     media:
       class: sound
       src: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254392635&color=ff5500
-  - type: history
-    title: June-July 2016
-    content:
-      - format: p
-        val: <b>23 June 2016, Brexit</b><br/>On 23 June 2016, the UK voted in a referendum on the country’s EU membership, with 51.9% of voters choosing to leave the EU.
-      - format: p
-        val: <b>July 2016, Hague Tribunal finds against Beijing in South China Sea case</b>
 
   - type: excerpt
     date: July 2016
@@ -267,21 +298,19 @@ cards:
       - format: q
         val: This Tribunal, as you know, is established in accordance with the United Nations Convention on the Law of the Sea, which is a codification of international maritime law. It was established so that countries can resolve disputes peacefully in accordance with international law. The UN convention on the Law of the Sea, and the Arbitral Tribunal are absolutely crucial elements of the international rules based order which underpins peace, stability and prosperity around the world but especially in our part of the world for decades. All of us, all countries large and small have benefitted enormously from this system which facilitates trade and enables disputes to be resolved in accordance with rules rather than by coercive means.
 
-  - type: history
-    title: Something about US-China?
-    content:
-      - format: p
-        val: <b>In September 2016,</b> Obama met with Xi Jinping and released a statement saying he had ...
-      - format: q
-        val: ... emphasised the importance for China, as a signatory to UNCLOS, to abide by its obligations under that treaty, which the United States views as critical to maintaining the rules-based international order.
-      - format: p
-        val: <b>9 November 2016, Trump elected President</b><br/>On 9 November 2016, Donald Trump was elected the 45th president of the United States, ushering in the era of "America-First" foreign policy. Trump comes to office as a lifelong sceptic of America's post-war alliance network, and of free trade.
-      - format: p
-        val: <b>January 2017, Xi Jinping Davos address</b><br/>Widely considered a landmark speech articulating China’s global ambitions&#58; "We should adhere to multilateralism to uphold the authority and efficacy of multilateral institutions. We should honor promises and abide by rules. One should not select or bend rules as he sees fit."
-
   - type: anchor
     year: 2017
     count: 155
+
+  - type: historyTimeline
+    dates: [4 April 2017, 1 June 2017, 20 July 2017]
+    content:
+      - title: Khan Shaykhun chemical attack in Syria
+        description: More than 80 people were killed in a chemical attack on the rebel-held town of Khan Sheikhoun in north-western Syria on 4 April 2017. The subsequent American missiles strikes against regime targets represented a significant reversal of US policy on Syria.
+      - title: US announces withdrawal from Paris Agreement
+        description: While the US remains a signatory to the UNFCCC foundation treaty, its decision to withdraw from the Paris Agreement represents the growing trend towards isolationism and protectionism that has come to define the Trump presidency.
+      - title: A "gentle lesson on American power"
+        description: Alleged briefing that took place between Trump, Tillerson, Mattis, the Director of the Economic Council Gary Cohn, the Joint Chiefs and members of Trump's cabinet. The opening line of the first briefing slide read&#58; "The post-war international rules-based order is the greatest gift of the greatest generation."<br/>Trump adviser Steve Bannon allegedly commented&#58; "If you stood up and threatened to shoot [Trump], he couldn't say 'post-war rules-based international order'. It’s just not the way he thinks."
 
   - type: excerpt
     date: March 2017
@@ -293,11 +322,6 @@ cards:
       - format: q
         val: <p>The importance of liberal values and institutions should not be underestimated or ignored.</p><p>While non-democracies such as China can thrive when participating in the present system, an essential pillar of our preferred order is democratic community.</p><p>Domestic democratic habits of negotiating and compromise are essential to powerful countries resolving their disagreements according to international law and rules.</p><p>History also shows democracy and democratic institutions are essential for nations if they are to reach their economic potential.</p><p>The only countries in the world who have escaped the 'middle-income' trap to become wealthy, high-income and advanced economies are democracies –with the exception of a small number of oil-rich Middle Eastern states.</p><p>Liberal-democratic institutions such as rule-of-law rather than rule by executive privilege, civilian control of the military, independent and competent courts, protection of property and intellectual property rights from state appropriation or theft, and limitations on the role of the state in commercial and social affairs remain the prerequisites for stable and prosperous societies, as they are for the creation of a vibrant and innovative private sector.</p><p>While it is appropriate for different states to discover their own pathway leading toward political reform, history shows that embrace of liberal democratic institutions is the most successful foundation for nations seeking economic prosperity and social stability.</p><p>Australia is an active and vocal advocate of the liberal rules based order because the continuation of the long and prosperous peace depend on it.</p>
 
-  - type: history
-    title: 4 April 2017, Khan Shaykhun chemical attack in Syria
-    content:
-      - format: p
-        val: More than 80 people were killed in a chemical attack on the rebel-held town of Khan Sheikhoun in north-western Syria on 4 April 2017. The subsequent American missiles strikes against regime targets represented a significant reversal of US policy on Syria.
 
   - type: excerpt
     date: June 2017
@@ -317,17 +341,6 @@ cards:
         val: The Review points to "fundamental changes to in the international system" and assesses that "The trend in the global balance of wealth and power is favouring China and India. The Western ascendancy in international institutions and values ... is eroding"&#58;
       - format: q
         val: ... assumptions that have long underpinned Australia's security and foreign policy, including those in relation to the strength of the rules-based component of the global order, will be more uncertain.
-
-  - type: history
-    title:
-    content:
-      - format: p
-        val: <b>June 2017, US announces withdrawal from Paris Agreement</b><br/>While the US remains a signatory to the UNFCCC foundation treaty, its decision to withdraw from the Paris Agreement represents the growing trend towards isolationism and protectionism that has come to define the Trump presidency.
-      - format: p
-        val: <b>20 July 2017, a "gentle lesson on American power"</b><br/>Alleged briefing that took place between Trump, Tillerson, Mattis, the Director of the Economic Council Gary Cohn, the Joint Chiefs and members of Trump's cabinet. The opening line of the first briefing slide read&#58; "The post-war international rules-based order is the greatest gift of the greatest generation."<br/>Trump adviser Steve Bannon allegedly commented&#58; "If you stood up and threatened to shoot [Trump], he couldn't say 'post-war rules-based international order'. It’s just not the way he thinks."
-    media:
-      class: video
-      src: https://www.youtube.com/embed/IYt3hsAWZNk?start=30&end=80
 
   - type: excerpt
     date: July 2017
@@ -362,6 +375,21 @@ cards:
     year: 2018
     count: 149
 
+  - type: historyTimeline
+    dates: [18 December 2017, 4 March 2018, 8 May 2018, October 2018, September 2018]
+    content:
+      - title: US National Security Strategy released
+        description: |
+          "Rules" referenced 13 times throughout the document. Majority of references relate to the promotion of free and fair-trade relations and target states that they see as adhering selectively to the rules and agreements of free trade.
+      - title: Russian nerve gas attack in the UK
+        description: Sergei Skripal, a former Russian military officer and double agent for the UK's intelligence services, and his daughter Yulia Skripal were poisoned in Salisbury, England. They had been poisoned by a Novichok nerve agent in an attack "almost certainly" approved by Russia.
+      - title: US withdraws from JCPOA
+        description: President Trump ended US participation in the landmark 2015 Iran nuclear agreement by re-imposing all US sanctions on Iran’s core economic sectors.
+      - title: John Bolton speech to the Federalist Society on the ICC
+        description: "[The United States] will let the International Criminal Court die on its own. After all, for all intents and purposes, the ICC is already dead to us."
+      - title: VP Mike Pence remarks at Hudson Institute
+        description: "China wants nothing less than to push the United States of America from the Western Pacific and attempt to prevent us from coming to the aid of our allies. America had hoped that economic liberalization would bring China into greater partnership with us and with the world. Instead, China has chosen economic aggression, which has in turn emboldened its growing military."
+
   - type: excerpt
     date: June 2018
     title: Marise Payne, Minister for Defence
@@ -388,20 +416,6 @@ cards:
     content:
       - format: q
         val: Australia's Foreign Policy White Paper reiterated Australia's commitment to a strong multilateral human rights system and to advancing human rights globally. It is in our national interest to shape the work of the Council and uphold the international rules-based order.
-
-  - type: history
-    title:
-    content:
-      - format: p
-        val: <b>John Bolton speech to the Federalist Society on the ICC</b>
-      - format: q
-        val: The United States will let the International Criminal Court die on its own. After all, for all intents and purposes, the ICC is already dead to us.
-      - format: p
-        val: <b>VP Mike Pence remarks at Hudson Institute</b>
-      - format: q
-        val:
-          <p>China wants nothing less than to push the United States of America from the Western Pacific and attempt to prevent us from coming to the aid of our allies.</p>
-          <p>America had hoped that economic liberalization would bring China into greater partnership with us and with the world. Instead, China has chosen economic aggression, which has in turn emboldened its growing military.</p>
 
   - type: excerpt
     date: December 2018
@@ -447,18 +461,22 @@ cards:
           <p>How we hold to this commitment in an increasingly competitive environment, will define success. So too will how we call out unfair and inconsistently applied rules and coercive behaviour. This is Australia's pathway in the region.</p>
           <p>It is squarely in Australia's interests for our great friend and closest ally to remain the partner of choice. A partner who remains deeply invested in the region, and in an open global economy and a rules-based trading system.</p>
 
-  - type: history
-    title:
+  - type: anchor
+    year: 2020
+    count: 0
+
+  - type: historyTimeline
+    dates: [3 January 2020, 15 February 2020]
     content:
-      - format: p
-        val:
-          <b>3 January 2020, Qasem Soleimani assassination</b>
-          <p>The US strike that killed the head of Iran’s Islamic Revolutionary Guard Corps Qods Force, IRGC Major General Qassem Soleimani, was a major escalation of the long-standing US confrontation with Iran. Iran responded with missile attacks against a US air base in Iraq.</p>
-          <p>In March 2020, Former National Security Advisor H.R. McMaster defended the killing of Soleimani in a debate at the Hoover Institution at Stanford University. "It was the righteous use of violence," McMaster said. "I don’t really care what international law said."</p>
-      - format: p
-        val: <b>February 2020, US Secretary of Defense Mark Esper at the Munich Security Conference</b>
-      - format: q
-        val:
-          <p>It is essential that we – as an international community – wake up to the challenges presented by China’s manipulation of the long-standing international, rules-based order that has benefited all of us for many decades.</p>
-          <p>The PRC’s growing economic, military, and diplomatic power often manifests itself in ways that are threatening, coercive, and counter to the rules-based international order.</p>
-          <p>... we simply ask of Beijing what we ask of every nation&#58; to play by the rules, abide by international norms, and respect the rights and sovereignty of others.</p>
+      - title: Qasem Soleimani assassination
+        description: |
+          | The US strike that killed the head of Iran’s Islamic Revolutionary Guard Corps Qods Force, IRGC Major General Qassem Soleimani, was a major escalation of the long-standing US confrontation with Iran. Iran responded with missile attacks against a US air base in Iraq.
+          |
+          | In March 2020, Former National Security Advisor H.R. McMaster defended the killing of Soleimani in a debate at the Hoover Institution at Stanford University. "It was the righteous use of violence," McMaster said. "I don’t really care what international law said."
+      - title: US Secretary of Defense Mark Esper at the Munich Security Conference
+        description: |
+          | _It is essential that we – as an international community – wake up to the challenges presented by China’s manipulation of the long-standing international, rules-based order that has benefited all of us for many decades._
+          |
+          | _The PRC’s growing economic, military, and diplomatic power often manifests itself in ways that are threatening, coercive, and counter to the rules-based international order._
+          |
+          | _... we simply ask of Beijing what we ask of every nation&#58; to play by the rules, abide by international norms, and respect the rights and sovereignty of others._

@@ -8,29 +8,30 @@ block append config
   - page.metaTitle = `${page.title} - Lowy Institute`
   - page.description = ""
   - page.image = ""
-  
   - var cards = data.getOne("static/features/rules-based-order/data").cards
-  
-block page
+
+block page 
   include partials/header
   include partials/stickyheader
   include partials/intro
-  .card.wrap
+  .card.wrap 
     for card in cards
-      if card.type == "anchor"
+      if card.type == "anchor" 
         if card.year == 2015
-          .anchor(id=`${card.year}`)= "2014 - 2015" 
+          .anchor(id=`${card.year}`) 
+            | 2014
+            | –
+            | 2015
         else
           .anchor(id=`${card.year}`)= card.year
       else
-        - let isWide = card.type == "historyTimeline" ? "wide" : ""
-        .card.row(class=`${card.type}`)
-          .card.item(class=`${isWide}`)
-          
+        - let isWide = card.type == "highlight" ? "wide" : ""
+        .card.row(class=`${card.type} ${isWide}`)
+          .card.item
             if card.type == "quote"
               include partials/quote
             else if card.type == "historyTimeline" 
-              include partials/history 
+              include partials/history
             else if card.type == "excerpt" 
               .date.txt-sm!= card.date
             else
@@ -50,7 +51,6 @@ block page
                 
           if card.media != undefined
             include partials/media
-            
   
 block append css
   style
@@ -59,3 +59,47 @@ block append css
     
 block append scripts
   script(type="text/javascript" src="script/nav.js")
+
+block append customScripts 
+  script.
+    function setHistoryTimelines() {
+      // Adjust historyTimeline widths
+      // Show one node for screens < 650px. Two for > 650px
+      let SF = window.screen.width < 650 ? 100 : 50;
+      let historyNodes = [3,2,3,3,3,2,5,5,3,5,2];
+      $('.history-timeline').each( function(i) {
+        $(this).css('width',SF*historyNodes[i] + "%");
+      })
+    } setHistoryTimelines();
+    
+    // Resize debouncing
+    var rtime;
+    var timeout = false;
+    var delta = 200;
+    $(window).resize(function() {
+      rtime = new Date();
+      if (timeout === false) {
+          timeout = true;
+          setTimeout(resizeend, delta);
+      }
+    });
+    function resizeend() {
+      if (new Date() - rtime < delta) {
+          setTimeout(resizeend, delta);
+      } else {
+          timeout = false;
+          setHistoryTimelines();
+      }               
+    }
+    
+    function scrollHistory(btn, fw) {
+      // fw indicates fw or back button
+      let el = fw ? $(btn).next().next() : $(btn).next();
+      x = fw ? el.scrollLeft() + el.outerWidth() : el.scrollLeft() - el.outerWidth();
+      el.animate({scrollLeft: x}, 250);
+    }
+    
+    
+    
+    
+    
