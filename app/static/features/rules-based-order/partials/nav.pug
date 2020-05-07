@@ -1,0 +1,15 @@
+
+// Timeline navigation dropdown
+
+.nav-wrapper.txt-ml
+  - var date = 2008;
+  .nav-btn= date
+    img.nav-btnimg(src="img/dropbtn.svg")
+  .nav-content.txt-sm
+    while date <= 2019
+      if (date == 2009)
+        .nav-dropitem.active(id=`nav--${date}`)= date++
+      else
+        .nav-dropitem(id=`nav--${date}`)= date++  
+        
+//class=(index == "index" ? "active" : null)

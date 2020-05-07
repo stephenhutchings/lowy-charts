@@ -1,0 +1,48 @@
+title: >
+  Figure 1: Do you expect the ETS in China to affect investment decisions in future years?
+
+notes: >
+  Notes: 1. TBS TBS TBS
+
+source: >
+  Source: China Carbon Forum
+
+charts:
+  -
+    title: >
+      Lorem Ipsum
+
+    subtitle: Subtitle?
+    scale:
+      minY:  0
+      maxY: 100
+
+    legend:
+      - Yes, strongly
+      - Yes, moderately
+      - Yes, marginally
+      - No
+
+    colors:
+      - "#002a45"
+      - "#539ed4"
+      - "#d4e2e8"
+      - "#f80"
+      - "#b7c1ce"
+      - "#ffae00"
+
+    axes:
+      -
+        title: Year
+        values:
+          - 2020
+          - 2025
+          - 2030
+          - 2050
+      -
+        title: Number
+        values:
+          - [11, 36, 37, 16]
+          - [17, 50, 29, 4]
+          - [34, 43, 18, 5]
+          - [47, 30, 15, 8]

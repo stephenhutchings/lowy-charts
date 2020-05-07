@@ -1,0 +1,9 @@
+if card.content != undefined
+  for p in card.content
+    if p.format == "p"
+      .txt-m!= p.val                
+    else if p.format == "q"
+      //img.icon.flip(src="img/quotations.svg")
+      .qt.txt-sm!= p.val
+    else if p.format == "ol"
+      .txt-sm!= p.val
