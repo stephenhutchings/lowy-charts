@@ -62,7 +62,7 @@ block page
                 )
                   = chart.axes[1].title
 
-    //- .chart-source.txt-muted
+    .chart-source.txt-muted
       != page.source
 
 block append css
@@ -72,7 +72,7 @@ block append css
         margin-bottom: 12px
 
       .wrapper
-        height: 520px
+        height: 550px
 
       .col-wrap
         margin: 0 -1em
@@ -90,7 +90,7 @@ block append css
         top: 20px
         left: 36px
         right: 12px
-        bottom: 72px
+        bottom: 30px
 
       .chart-content > svg
         border-bottom: 1px solid #ccc
@@ -110,8 +110,8 @@ block append css
 
       .chart-source
         font-size: 14px
-        max-width: 800px
-        margin: 12px 8px 0
+        margin: 5px 30px 0
+        text-align: right
 
       .chart-value
         opacity: 0
@@ -149,5 +149,5 @@ block append css
         .chart-value
           opacity: 1
         .chart-content
-          bottom: 50px
           top: 10px
+          bottom: 30px
