@@ -6,7 +6,7 @@ $color-gy-lt: #6d777c
 $color-gy-dk: #3e4346
 $color-qt: #29abe2
 $color-hl: #ffc52b
- 
+
 $ls-l: 0.72px
 $ls-m: 0.6px
 $ls-s: 0.15px
@@ -20,6 +20,11 @@ $ls-s: 0.15px
   -webkit-background-size : ($property)
   -moz-background-size : ($property)
   -o-background-size : ($property)
+=keyframes($property)
+  keyframes: $property
+  -webkit-keyframes: $property
+  -moz-keyframes: $property
+  -o-keyframes: $property
 
 .txt-xxl
   font-size: 28px
@@ -53,9 +58,8 @@ html,body
   overflow-y: auto!important
   height: auto
 
-.header, .subheader
-  line-height: 16px
-  height: 64px
+.header, .stickyheader
+  height: 70px
   border-bottom: 0.5px solid $color-gy-lt
   transition: all 300ms
   background-color: $color-ff
@@ -66,39 +70,59 @@ html,body
   &-logo
     display: none
   &-title,
-    padding: 16px 0
+    padding: 20px 0
     text-align: left
-    width: 160px
+    width: 180px
   .social-share
-    padding: 24px 0
+    padding: 26px 0
     float: right
     .icon
       margin-left: 10px
 
-.subheader
-  transition: all 0ms
-  position: absolute
+.stickyheader
+  transition: animate 0ms
+  text-transform: uppercase
+  display: flex
+  flex-direction: row-reverse
   width: 100%
+  align-items: center
+  position: absolute
   height: 65px
   z-index: 1
+  & > *
+    flex: 1
 
-#subheader-graph
-  width: 160px
-  padding: 16px
+#stickyheader-graph
+  min-width: 120px
+  max-width: 160px
+  padding: 20px
 .line
   fill: none
   stroke: #000
   stroke-miterlimit: 10
   stroke-width: 3
+#counter
+  display: none
+  margin-right: 5%
+  font-weight: 600
+  color: $color-bl-dk
+  text-align: right
+.counter-num
+  font-size: 30px
+.counter-label
+  font-size: 12px
+  line-height: initial
+  text-align: left
+  margin-left: .5em
 
 .nav
   &-wrapper
-    float: right
-    padding: 12px 0
-    text-align: center
+    min-width: 90px
     transition: all 500ms
     color: $color-bl-dk
   &-btn
+    width: max-content
+    margin: 0 2.5% 0 auto
     background: none
     padding: 5px 10px
     font-weight: 600
@@ -118,7 +142,6 @@ html,body
     position: absolute
     background-color: $color-ff
     box-shadow : 0px 0px 2px $color-bl-lt
-    padding: 5px auto
     display: none
   &-dropitem
     padding: 5px 25px
@@ -128,21 +151,19 @@ html,body
       cursor: pointer
 
 .banner
-  background: url('./img/bannerBishop.png') center center no-repeat
+  background: url('./img/banner.jpg') center center no-repeat
   background-size: cover
-  height: 350px
+  height: 300px
   margin-bottom: 50px
+  display: flex
+  width: 100%
   &-title
-    color: $color-bk
-    top: 50%
-    position: relative
-    width: fit-content
-    background-color: rgba($color-ff, 0.95)
-    margin: 0 10%
-    padding: 10px 20px
+    font-size: 26px
+    color: $color-ff
+    margin: auto
     text-transform: uppercase
-    font-weight: 700
-    box-shadow: -8px 8px #002b45
+    padding: 0 20px
+
 
 .intro-txt
   text-align: left
@@ -180,13 +201,18 @@ html,body
       width: 100%
       object-fit: cover
       border-radius: 10px 10px
-  .history, .highlight
+  .highlight
     border-left: 10px solid $color-hl
     color: $color-bk
+  .historyTimeline
+    border-left: 10px solid $color-bl-dk
+    background-color: $color-bl-lt
+
   .opinion
     background: $color-bl-dk
     border-left: 10px solid $color-bl-dk
     color : $color-ff
+    position: relative
     .cardtype
       color: $color-ff
     .image
@@ -275,6 +301,19 @@ html,body
     .icon:hover
       border-bottom: 2px solid $color-bl-lt
 
+.opinion:after
+	content: ''
+	position: absolute
+	top: 0
+	left: 50%
+	width: 0
+	height: 0
+	border: 20px solid transparent
+	border-bottom-color: $color-bl-dk
+	border-top: 0
+	margin-left: -20px
+	margin-top: -20px
+
 .icon
   width: 0.5em
   margin-left: 0.5em auto
@@ -282,14 +321,13 @@ html,body
   transform: scale(-1)
 .anchor
   color: black
-  padding: 10px 0
-  //border-top: 0.5px solid $color-bl-dk
-  border-bottom: 3px solid $color-bl-dk
-  background: $color-bl-lt
+  font-size: 22px
+  width: fit-content
+  margin: 0 auto
   text-align: center
-  font-weight: 700
-  font-size: 18px
 
+.ib
+  display: inline-block
 
 ////////////// START MEDIA QUERIES ////////////////////
 
@@ -325,20 +363,35 @@ html,body
     font-size: 12px
     line-height: 14px
 
+  .banner
+    height: 400px
+    &-title
+      font-size: 40px
+
   .header
     > *
       margin: auto 30px
   .header-logo
     display: block
-    padding: 14px 0
+    padding: 16px 0
     float: left
     width: 80px
   .header-title
-    padding: 24px 0
-    text-align: center
-    width: auto
+    padding: 16px 0
+    width: fit-content
+    margin: auto
+
+  .stickyheader
+    flex-direction: row
+  #counter
+    display: block
 
   .nav
+    &-wrapper
+      margin-right: 0
+      margin-left: 5%
+    &-btn
+      margin: 0
     &-btnimg
       height: 16px
     &-dropitem
@@ -394,34 +447,38 @@ html,body
     line-height: 20px
 
   .anchor
-    background: $color-bl-lt
-    padding-left: 10%
-    text-align: left
+    position: absolute
+    max-width: 64px
+    margin-left: calc(17% - 85px)
+    padding: 10px 15px
+    border-top: 4px solid $color-bl-dk
 
   .card
     .wrap
       border-left: 1px solid black
       margin: 0 0
     .row
-      flex-direction: row
+      //flex-direction: row
       justify-content: flex-start
-      margin: 0 2% 0 5%
+      width: 65%
+      margin: auto
       border-radius: 0
       box-shadow : none
-      background : none
+    .row.wide
+      width: 100%
+      border-left: none
+      border-top: 10px solid $color-bl-dk
+      border-bottom: 10px solid $color-bl-dk
+      margin-bottom: -4px
     .item
-      width: 60%
       padding: 20px
     .media
-      align-self: center
-      width: 40%
+      width: 80%
     .video > iframe,
     .image > img
       height: 300px
     .excerpt, .row.quote
-      border-left: 10px solid $color-bl-lt
-    .opinion
-      background: $color-bl-lt
-      color: $color-bk
-      .cardtype
-        color : $color-bk
+      border-left: 10px solid $color-bl-dk
+    .historyTimeline
+      border-left: 10px solid $color-bl-dk
+      border-top: 4px solid $color-bl-dk

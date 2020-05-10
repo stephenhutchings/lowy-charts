@@ -1,11 +1,14 @@
 class stickyNav {
 
   constructor() {
-    this.currentId = 2008;
+    this.currentYear = 2008;
     this.tabContainerHeight = 65;
     this.offset = 65;
+    this.counts = this.loadCounts();
+    this.count = this.counts['2008'];
     this.setNavLinks();
     this.positionSticky();
+    this.updateCounter(2008);
     let self = this;
     $('.nav-btn').click((e) => {self.btnClick($(this), e); });
     $(window).scroll(() => { this.onScroll(); });
@@ -35,6 +38,29 @@ class stickyNav {
       document.querySelector(`#nav--${i}`).addEventListener('click', () => this.scrollToYear(i));
   }
 }
+  loadCounts() {
+    let counts = {
+      2008: 0,
+      2009: 2,
+      2010: 15,
+      2011: 38,
+      2012: 9,
+      2013: 1,
+      2014: 5,
+      2015: 8,
+      2016: 29,
+      2017: 155,
+      2018: 149,
+      2019: 17
+    };
+    return counts;
+  }
+  updateCounter(year, delta) {
+    delta > 0 ? this.count += this.counts[year] : this.count -= this.counts[this.currentYear];
+    let startHTML = "<div id='#counter'><span class='counter-num ib'>";
+    let endHTML = "</span><span class='ib counter-label'>Total<br/>Mentions</span></div>";
+    $('#counter').html(startHTML + this.count + endHTML);
+  }
   updateActive(year) {
     let navLinks = $('.nav-content');
     let newBtn = `${year}<img class="nav-btnimg" src="img/dropbtn.svg">`
@@ -42,7 +68,12 @@ class stickyNav {
     navLinks.find('div[id="nav--'+ year +'"]').addClass('active'); // Apply active class to relevant nav item
     $('.nav-btn')[0].innerHTML = newBtn;
     // Update line graph and counter
-  }
+    let delta = year - this.currentYear;
+    if (delta) {
+      this.updateCounter(year, delta);
+      this.currentYear = year;
+    }
+}
   checkAnchors() {
     let self = this;
     let anchors = $('.anchor');
@@ -58,8 +89,8 @@ class stickyNav {
       // If date anchor is in bottom half of viewport
       // This is to support upscrolling
       else if (hCurrent + vh > h && hCurrent + vh/2 < h) {
-        let year = $(this).attr('id')-1;
-        year == 2007 ? "" : self.updateActive(year);
+        let year = $(this).attr('id');
+        year == 2008 ? "" : year == 2015 ? self.updateActive(year-2) : self.updateActive(year-1);
       }
     });
   }
@@ -80,12 +111,12 @@ class stickyNav {
     let y = this.getYearY(2008) - this.offset;
     let current = $(window).scrollTop();
     if (y < current) {
-      $('.subheader').css('position', 'fixed');
-      $('.subheader').css('top', 0);
+      $('.stickyheader').css('position', 'fixed');
+      $('.stickyheader').css('top', 0);
     }
     else {
-      $('.subheader').css('position', 'absolute');
-      $('.subheader').css('top', y);
+      $('.stickyheader').css('position', 'absolute');
+      $('.stickyheader').css('top', y);
     }
   }
   onScroll() {
