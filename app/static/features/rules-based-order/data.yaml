@@ -7,6 +7,7 @@ cards:
     count: 0
 
   - type: historyTimeline
+    year: 2008
     dates: [Month 2008, Month 2008, Month 2008]
     content:
       - title: Lorem Ipsum
@@ -17,7 +18,7 @@ cards:
         description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: excerpt
-    date: March 2008
+    date: March
     title: Kevin Rudd address to The Brookings Institution, Washington
     subtitle: "The Australia-US alliance and emerging challenges in the Asia-Pacific Region."
     content:
@@ -31,13 +32,19 @@ cards:
 
 
   - type: excerpt
-    date: December 2008
+    date: Dec
     title: Kevin Rudd’s National Security Statement, House of Representatives
     content:
       - format: p
         val: In Rudd's inaugural National Security Statement, the rules-based order is listed as one of the five principles of Australia's national security&#58;
-      - format: ol
-        val: 1.	Maintaining Australia's territorial and border integrity.<br>2.	Promoting Australia's political sovereignty<br>3.	Preserving Australia's cohesive and resilient society and the long-term strengths of our economy.<br>4.	Protecting Australians and Australian interests both at home and abroad<br>5.	Promoting an international environment, particularly in the Asia-Pacific region, that is stable, peaceful and prosperous, together with a global rules based order which enhances Australia's national interests.
+      - format: q
+        val: |
+          1.  Maintaining Australia's territorial and border integrity<br/>
+          2.  Promoting Australia's political sovereignty<br/>
+          3.  Preserving Australia's cohesive and resilient society and the long-term strengths of our economy<br/>
+          4.  Protecting Australians and Australian interests both at home and abroad<br/>
+          5.  Promoting an international environment, particularly in the Asia-Pacific region, that is stable, peaceful and prosperous, together with a global rules based order which enhances Australia's national interests
+
       - format: p
         val: Rudd also said&#58;
       - format: q
@@ -53,6 +60,7 @@ cards:
     count: 2
 
   - type: historyTimeline
+    year: 2009
     dates: [January 2009, March 2009]
     content:
       - title: ICC trial of Thomas Lubanga Dyilo
@@ -61,7 +69,7 @@ cards:
         description: In March, the ICC Pre-Trial Chamber issued an arrest warrant for Omar al-Bashir, the former President of Sudan, for war crimes and crimes against humanity in Darfur. Omar al-Bashir became the first sitting head of state to be indicated by the ICC since its establishment in 2002.
 
   - type: excerpt
-    date: May 2009
+    date: May
     title: Defence White Paper
     content:
       - format: p
@@ -91,6 +99,7 @@ cards:
     count: 15
 
   - type: historyTimeline
+    year: 2010
     dates: [Month 2010, Month 2010, Month 2010]
     content:
       - title: Lorem Ipsum
@@ -101,7 +110,7 @@ cards:
         description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: excerpt
-    date: November 2010
+    date: Nov
     title: The Melbourne Statement
     content:
       - format: p
@@ -117,11 +126,13 @@ cards:
     content:
       - format: p
         val: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
   - type: anchor
     year: 2011
     count: 38
 
   - type: historyTimeline
+    year: 2011
     dates: [17 December 2010, 17 March 2011, 2 May 2011]
     content:
       - title: Attempted suicide of Mohamed Bouazizi
@@ -132,7 +143,7 @@ cards:
         description: On 2 May 2011, US president Barack Obama announced that Osama bin Laden, the leader of al-Qaeda, had been killed in a US operation in the city of Abbottabad, Pakistan.
 
   - type: excerpt
-    date: October 2011
+    date: Oct
     title: Foreign Minister Kevin Rudd's address to the Oxford Business Alumni Forum
     content:
       - format: p
@@ -145,6 +156,7 @@ cards:
     count: 9
 
   - type: historyTimeline
+    year: 2012
     dates: [Month 2012, Month 2012, Month 2012]
     content:
       - title: Lorem Ipsum
@@ -155,7 +167,7 @@ cards:
         description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: excerpt
-    date: October 2012
+    date: Oct
     title: Australia in the Asian Century White Paper
     content:
       - format: p
@@ -164,7 +176,7 @@ cards:
         val: Australia's future is irrevocably tied to the stability and sustainable security of our diverse region…We will continue to support a greater role for Asian countries in a rules-based regional and global order. Australia's alliance with the United States and a strong US presence in Asia will support regional stability, as will China's full participation in regional developments.
 
   - type: excerpt
-    date: October 2012
+    date:
     title: Julia Gillard, Speech at the launch of the White Paper on Australia in the Asian Century
     content:
       - format: p
@@ -177,6 +189,7 @@ cards:
     count: 1
 
   - type: historyTimeline
+    year: 2013
     dates: [21 August 2013, 18 September 2013]
     content:
       - title: Syria chemical attack in Ghouta and Obama’s "red lines"
@@ -185,7 +198,7 @@ cards:
         description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: excerpt
-    date: January 2013
+    date: Jan
     title: Julia Gillard launches the National Security Strategy
     content:
       - format: p
@@ -194,7 +207,7 @@ cards:
         val: We have long championed a multilateral, rules-based order in our region in which disputes are resolved peacefully, without the use or threat of force or coercion.
 
   - type: excerpt
-    date: January 2013
+    date:
     title: National Security Strategy
     content:
       - format: p
@@ -207,7 +220,7 @@ cards:
         val: The rule of law provides the framework in which government balances its responsibility to protect Australia, its people and its interests while preserving our civil liberties. These values influence our foreign and defence policy. Our values underpin our reputation as a responsible member of the international community, committed to a rules-based global order.
 
   - type: excerpt
-    date: May 2013
+    date: May
     title: Defence White Paper
     content:
       - format: p
@@ -219,7 +232,18 @@ cards:
     year: 2015
     count: 13
 
+  - type: highlight
+    title: 2013-2016&#58; The long absence of the rules-based order
+    content:
+      - format: p
+        val: Our quantitative study reveals that between 2013 and 2016 - coinciding largely with Tony Abbott’s prime ministership - there was a significant decrease in the number of references to a rules-based order in speeches and policy statements by the Australian government.
+      - format: p
+        val: The partial exception was Julie Bishop who, in October 2013, less than four weeks into her role as Australia's new Foreign Minister, gave an address to the Japan National Press Club in which she spoke about Japan and Australia being part of a "community of nations" that "have an interest in a stable, predictable, rules-based order – both around the world, and specifically in Asia." In November 2013, Bishop gave a speech in Washington, DC linking the rules-based order to international trade.
+      - format: p
+        val: These two references by Bishop represent the few instances in which the concept of a rules-based order was used in Australia’s political lexicon between 2013 and 2016. Our study found that during his time as Prime Minister (September 2013 to September 2015), Tony Abbott did not use the term at all in key speeches.
+
   - type: historyTimeline
+    year: 2014-2015
     dates: [18 September 2013, 23 November 2013, Feb/March 2014, September 2015, 30 September 2015]
     content:
       - title: Tony Abbott becomes Australia's 28th Prime Minister?
@@ -233,21 +257,12 @@ cards:
       - title: Russian military intervention in the Syrian Civil War
         description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-  - type: highlight
-    title: 2013-2016&#58; The long absence of the rules-based order
-    content:
-      - format: p
-        val: Our quantitative study reveals that between 2013 and 2016 - coinciding largely with Tony Abbott’s prime ministership - there was a significant decrease in the number of references to a rules-based order in speeches and policy statements by the Australian government.
-      - format: p
-        val: The partial exception was Julie Bishop who, in October 2013, less than four weeks into her role as Australia's new Foreign Minister, gave an address to the Japan National Press Club in which she spoke about Japan and Australia being part of a "community of nations" that "have an interest in a stable, predictable, rules-based order – both around the world, and specifically in Asia." In November 2013, Bishop gave a speech in Washington, DC linking the rules-based order to international trade.
-      - format: p
-        val: These two references by Bishop represent the few instances in which the concept of a rules-based order was used in Australia’s political lexicon between 2013 and 2016. Our study found that during his time as Prime Minister (September 2013 to September 2015), Tony Abbott did not use the term at all in key speeches.
-
   - type: anchor
     year: 2016
     count: 29
 
   - type: historyTimeline
+    year: 2016
     dates: [23 June 2016, July 2016, 3 September 2016, 9 November 2016, 17 January 2017]
     content:
       - title: Brexit
@@ -262,7 +277,7 @@ cards:
         description: Widely considered a landmark speech articulating China’s global ambitions&#58; "We should adhere to multilateralism to uphold the authority and efficacy of multilateral institutions. We should honor promises and abide by rules. One should not select or bend rules as he sees fit."
 
   - type: excerpt
-    date: February 2016
+    date: Feb
     title: Defence White Paper
     content:
       - format: p
@@ -277,7 +292,7 @@ cards:
         val: The global strategic and economic weight of the United States will be essential to the continued stability of the rules-based global order on which Australia relies for our security and prosperity. The world will continue to look to the United States for leadership in global security affairs and to lead military coalitions that support international security and the rules-based global order.
 
   - type: excerpt
-    date: March 2016
+    date: March
     title: Lowy Lecture, Prime Minister Malcolm Turnbull
     content:
       - format: p
@@ -289,7 +304,7 @@ cards:
       src: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254392635&color=ff5500
 
   - type: excerpt
-    date: July 2016
+    date: July
     title: Prime Minister Turnbull and Foreign Minister Marise Payne
     subtitle: Joint press conference on South China Sea arbitration decision
     content:
@@ -303,6 +318,7 @@ cards:
     count: 155
 
   - type: historyTimeline
+    year: 2017
     dates: [4 April 2017, 1 June 2017, 20 July 2017]
     content:
       - title: Khan Shaykhun chemical attack in Syria
@@ -313,7 +329,7 @@ cards:
         description: Alleged briefing that took place between Trump, Tillerson, Mattis, the Director of the Economic Council Gary Cohn, the Joint Chiefs and members of Trump's cabinet. The opening line of the first briefing slide read&#58; "The post-war international rules-based order is the greatest gift of the greatest generation."<br/>Trump adviser Steve Bannon allegedly commented&#58; "If you stood up and threatened to shoot [Trump], he couldn't say 'post-war rules-based international order'. It’s just not the way he thinks."
 
   - type: excerpt
-    date: March 2017
+    date: March
     title: Julie Bishop Fullerton lecture
     subtitle: Joint press conference on South China Sea arbitration decision
     content:
@@ -324,7 +340,7 @@ cards:
 
 
   - type: excerpt
-    date: June 2017
+    date: June
     title: Malcolm Turnbull, Keynote address
     subtitle: 16th IISS Asia Security Summit, Shangri-La Dialogue
     content:
@@ -334,7 +350,7 @@ cards:
         val: <p>And we should be under no illusions&#58; If we are to maintain the dynamism of the region then we must preserve the rules-based structure that has enabled it thus far. This means cooperation not unilateral actions to seize or create territory or militarise disputed areas. This means competing within the framework of international law not winning through corruption, interference or coercion ... </p><p>... some fear that China will seek to impose a latter day Monroe Doctrine on this hemisphere in order to dominate the region, marginalising the role and contribution of other nations, in particular the United States. Such a dark view of our future would see China isolating those who stand in opposition to or are not aligned with its interests, while using its economic largesse to reward those toeing the line.</p>
 
   - type: excerpt
-    date: 18 July 2017
+    date: July
     title: Independent Intelligence Review
     content:
       - format: p
@@ -343,7 +359,7 @@ cards:
         val: ... assumptions that have long underpinned Australia's security and foreign policy, including those in relation to the strength of the rules-based component of the global order, will be more uncertain.
 
   - type: excerpt
-    date: July 2017
+    date:
     title: Foreign Minister Julie Bishop
     subtitle: Comments on two North Korean ballistic missile tests in one month
     content:
@@ -353,17 +369,17 @@ cards:
         val: <b>29 July&#58;</b> "The ballistic missile tests and North Korea's ongoing reckless and menacing behaviour, are in violation of multiple UN Security Council resolutions, is a threat to regional and global security and stability and is in violation of the rules-based order we seek to promote and advance"
 
   - type: excerpt
-    date: November 2017
+    date: Nov
     title: Malcolm Turnbull
     subtitle: Launch of the Government's Foreign Policy White Paper
     content:
       - format: p
         val: From Prime Minister’s speech at the launch of the White Paper&#58;
       - format: q
-        val: <p>In the global ocean, there is always a risk, as Lee Kuan Yew observed&#58; "The big fish will eat the little fish, and the little fish will eat the shrimps". Or as the Athean ambassador said to the Melians&#58; "In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must."</p><p>So whether it's in Lee Kuan Yew’s words or Thucydides', we will never agree that might is right. The rules-based order protects us all and it protects us, in particular.</p>
+        val: <p>In the global ocean, there is always a risk, as Lee Kuan Yew observed&#58; "The big fish will eat the little fish, and the little fish will eat the shrimps". Or as the Athenian ambassador said to the Melians&#58; "In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must."</p><p>So whether it's in Lee Kuan Yew’s words or Thucydides', we will never agree that might is right. The rules-based order protects us all and it protects us, in particular.</p>
 
   - type: excerpt
-    date: November 2017
+    date:
     title: Foreign Policy White Paper
     content:
       - format: p
@@ -376,6 +392,7 @@ cards:
     count: 149
 
   - type: historyTimeline
+    year: 2018
     dates: [18 December 2017, 4 March 2018, 8 May 2018, October 2018, September 2018]
     content:
       - title: US National Security Strategy released
@@ -391,7 +408,7 @@ cards:
         description: "China wants nothing less than to push the United States of America from the Western Pacific and attempt to prevent us from coming to the aid of our allies. America had hoped that economic liberalization would bring China into greater partnership with us and with the world. Instead, China has chosen economic aggression, which has in turn emboldened its growing military."
 
   - type: excerpt
-    date: June 2018
+    date: June
     title: Marise Payne, Minister for Defence
     subtitle: 17th IISS Asia Security Summit&#58; The Shangri-La Dialogue
     content:
@@ -410,7 +427,7 @@ cards:
     supp: Former Executive Director of the Office of National Assessments, June 2018
 
   - type: excerpt
-    date: June 2018
+    date:
     title: Foreign Minister Julie Bishop
     subtitle: Statement following the US resignation from the UN Human Rights Council
     content:
@@ -418,7 +435,7 @@ cards:
         val: Australia's Foreign Policy White Paper reiterated Australia's commitment to a strong multilateral human rights system and to advancing human rights globally. It is in our national interest to shape the work of the Council and uphold the international rules-based order.
 
   - type: excerpt
-    date: December 2018
+    date: Dec
     title: Prime Minister Scott Morrison's speech to the Sydney Institute
     content:
       - format: p
@@ -434,8 +451,19 @@ cards:
     year: 2019
     count: 17
 
+  - type: historyTimeline
+    year: 2019
+    dates: [Month 2019, Month 2019, Month 2019]
+    content:
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - title: Lorem Ipsum
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
   - type: excerpt
-    date: August 2019
+    date: Aug
     title: Foreign Minister Marise Payne and Defence Minister Linda Reynolds, Joint Statement, AUSMIN talks
     content:
       - format: p
@@ -449,7 +477,7 @@ cards:
     supp: National Statement to the UN General Assembly, September 2019
 
   - type: excerpt
-    date: November 2019
+    date: Nov
     title: Address by Linda Reynolds to the Hudson Institute, Washington DC
     content:
       - format: q

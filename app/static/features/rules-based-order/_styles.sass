@@ -54,9 +54,10 @@ $ls-s: 0.15px
 html,body
   font-family: 'Sans', sans-serif
   letter-spacing: $ls-s
-  background-color: #fbfbfb!important
+  background-color: #f0f0f0!important
   overflow-y: auto!important
   height: auto
+  color: $color-bk
 
 .header, .stickyheader
   height: 70px
@@ -154,7 +155,6 @@ html,body
   background: url('./img/banner.jpg') center center no-repeat
   background-size: cover
   height: 300px
-  margin-bottom: 50px
   display: flex
   width: 100%
   &-title
@@ -164,11 +164,12 @@ html,body
     text-transform: uppercase
     padding: 0 20px
 
-
+.intro
+  background: $color-ff
+  padding: 50px 0
 .intro-txt
   text-align: left
   padding: 0 2em
-  margin-bottom: 50px
 
 .card
   .wrap
@@ -193,7 +194,7 @@ html,body
   .video
     > iframe
       width: 100%
-      height: 200px
+      height: 250px
       border-radius: 10px 10px
   .image
     > img
@@ -206,7 +207,6 @@ html,body
     color: $color-bk
   .historyTimeline
     border-left: 10px solid $color-bl-dk
-    background-color: $color-bl-lt
 
   .opinion
     background: $color-bl-dk
@@ -235,25 +235,32 @@ html,body
   color: $color-bk
 
 .cardtype,
-.date
+.date, .tl-date
   font-weight : 700
   text-transform : uppercase
   letter-spacing : $ls-m
   color: $color-bk
 
 .cardtype,
-.date,
 .heading,
-.subheading
+.subheading, .date
   text-align: center
+
+.date
+  color: $color-gy-lt
+  margin-top: -20px
+  color: #555
+  padding: 5px
+  border-radius: 5px
+
 
 .content
   > *
     margin-bottom : inherit
   .qt
-    //text-align: justify
-    padding: 0 5%
-    //border-left : 2px solid $color-bl-dk
+    font-style: italic
+    color: $color-gy-lt
+    padding: 1em 0
 
 .excerpt
   > .content
@@ -400,7 +407,12 @@ html,body
   .intro-txt
     width: 75%
     max-width: 800px
-    margin: 0 auto 150px auto
+    margin: 0 auto
+
+  .content
+    .qt
+      padding: 1.5em 2em 1em 1em
+      text-align: justify
 
   .cardtype,
   .date,
@@ -408,7 +420,60 @@ html,body
   .subheading
     text-align: left
 
+  .anchor
+    position: absolute
+    right: 85%
+    padding: 10px 15px
+    border-top: 4px solid $color-bl-dk
+
+  .date
+    position: absolute
+    right: calc(85% + 20px)
+    text-align: right
+    padding-top: 25px
+    color: $color-bl-dk
+    &:after
+      content: ''
+      position: absolute
+      height: 4px
+      width: 10px
+      background-color: $color-bl-dk
+      margin-left: 10px
+      margin-top: 8px
+
   .card
+    .wrap
+      border-left: 1px solid black
+      margin: 0 0
+    .row
+      justify-content: flex-start
+      width: 70%
+      max-width: 840px
+      margin: auto
+      border-radius: 0
+      box-shadow : none
+    .row.wide
+      width: 100%
+      max-width: none
+      border-left: none
+      border-top: 10px solid $color-bl-dk
+      border-bottom: 10px solid $color-bl-dk
+      margin-bottom: -4px
+    .item
+      padding: 20px
+    .media
+      width: 80%
+    .video > iframe,
+    .image > img
+      height: 400px
+    .excerpt, .row.quote
+      border-left: 10px solid $color-bl-dk
+    .historyTimeline
+      border-left: 4px dotted $color-bl-dk
+      border-top: 4px solid $color-bl-dk
+      width: calc(70% + 6px)
+      //border-right: 6px solid $color-ff
+
     .opinion
       .image
         width: 120px
@@ -418,11 +483,9 @@ html,body
         flex-direction: row
         justify-content: flex-start
         text-align : left
-    .video
-      > iframe
-        height: 300px
 
-@media (min-width: 850px)
+
+@media (min-width: 1200px)
 
   .txt-xl
     font-size: 30px
@@ -445,40 +508,10 @@ html,body
   .txt-xs
     font-size: 15px
     line-height: 20px
-
   .anchor
-    position: absolute
-    max-width: 64px
-    margin-left: calc(17% - 85px)
-    padding: 10px 15px
-    border-top: 4px solid $color-bl-dk
-
-  .card
-    .wrap
-      border-left: 1px solid black
-      margin: 0 0
-    .row
-      //flex-direction: row
-      justify-content: flex-start
-      width: 65%
-      margin: auto
-      border-radius: 0
-      box-shadow : none
-    .row.wide
-      width: 100%
-      border-left: none
-      border-top: 10px solid $color-bl-dk
-      border-bottom: 10px solid $color-bl-dk
-      margin-bottom: -4px
-    .item
-      padding: 20px
-    .media
-      width: 80%
-    .video > iframe,
-    .image > img
-      height: 300px
-    .excerpt, .row.quote
-      border-left: 10px solid $color-bl-dk
-    .historyTimeline
-      border-left: 10px solid $color-bl-dk
-      border-top: 4px solid $color-bl-dk
+    right: calc(50% + 420px)
+  .date
+    right: calc(50% + 420px + 15px)
+    &:after
+      margin-top: 10px
+      margin-left: 6px

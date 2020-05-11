@@ -108,7 +108,7 @@ class stickyNav {
     return document.getElementById(year).offsetTop * this.getZoomFactor();
   }
   positionSticky() {
-    let y = this.getYearY(2008) - this.offset;
+    let y = this.getYearY(2008) - this.offset - 35;
     let current = $(window).scrollTop();
     if (y < current) {
       $('.stickyheader').css('position', 'fixed');

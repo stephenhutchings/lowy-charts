@@ -28,6 +28,7 @@ $history-dot-r: 6px
   -webkit-transform: $property
 
 .skinny-scrollbar
+  //touch-action: pan-y
   position: relative
   scrollbar-height: 0px /* Firefox */
   -ms-overflow-style: none  /* IE 10+ */
@@ -45,43 +46,41 @@ $history-dot-r: 6px
     background: rgba($color-bl-dk,0.1)
 @keyframes fade
   to
-    color: $color-bk
-    background: rgba($color-bl-lt,0.85)
+    color: $color-bl-dk
+    transform: translateY(-5px)
 
 .history-wrap
   position: relative
 
 .btnfw,.btnbw
   position: absolute
-  bottom: 0
-  width: 20px
-  height: 20px
+  bottom: 32px
+  width: 24px
+  height: 24px
   cursor: pointer
-  color: $color-ff
   z-index: 100
-  background: url('./img/lt.svg') center center no-repeat
+  padding: 5px
   background-size: cover
 .btnfw
-  right: -10px
-  transform: rotate(180deg)
+  right: -15px
 .btnbw
   left: -15px
+  transform: rotate(180deg)
+  //display: none
 
 .history-timeline
   position: relative
   display: flex
   align-items: flex-end
   margin: 10px 0 20px
-  .date
+  .tl-date
     text-align: center
 .node
   transition: all 300ms
   width: 100%
-.image-overlay
-  display: none
 .event
   color: $color-bl-dk
-  max-width: 350px
+  max-width: 400px
   margin: 0 auto
   position: relative
   border-radius: .25em
@@ -117,43 +116,37 @@ $history-dot-r: 6px
 
 //--------// MEDIA QUERIES //--------//
 
-@media (min-width: 700px)
+// At this width, the layout changes from card to flat
+@media (min-width: 600px)
+  .btnfw,.btnbw
+    bottom: -45px
+  .btnfw
+    right: calc(50% - 40px)
+  .btnbw
+    left: calc(50% - 40px)
+    transform: rotate(180deg)
+
+// At this width, two history nodes are displayed at once.
+@media (min-width: 1100px)
   .history-timeline
-    //width: 150%!important
     justify-content: center
   .node
     width: auto
     flex: 1
+    cursor: default
   .event
     width: 95%
     margin: auto
     background: none
     box-shadow: none
     padding: 0
-    color: $color-bl-dk
-  .image-overlay
-    height: 400px
-    margin-bottom: 20px
-    display: block
-    //border: 1px solid black
-    //background: url('./img/ph.png') center center no-repeat
-    background-size: cover
-  .event-title
-    text-align: center
-  .event-txt
-    padding: 1em
-    bottom: 70px
-    position: absolute
   .over
     display: none
   .node:hover
-    cursor: pointer
     .over
       display: block
     .event-text
       animation: fade 0.5s forwards
-    .image-overlay
-      //visibility: hidden
   .event:after
     display: none
 
