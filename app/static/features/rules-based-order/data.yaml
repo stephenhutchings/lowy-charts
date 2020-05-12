@@ -4,7 +4,6 @@
 cards:
   - type: anchor
     year: 2008
-    count: 0
 
   - type: historyTimeline
     year: 2008
@@ -57,7 +56,6 @@ cards:
 
   - type: anchor
     year: 2009
-    count: 2
 
   - type: historyTimeline
     year: 2009
@@ -96,7 +94,6 @@ cards:
 
   - type: anchor
     year: 2010
-    count: 15
 
   - type: historyTimeline
     year: 2010
@@ -129,7 +126,6 @@ cards:
 
   - type: anchor
     year: 2011
-    count: 38
 
   - type: historyTimeline
     year: 2011
@@ -153,7 +149,6 @@ cards:
 
   - type: anchor
     year: 2012
-    count: 9
 
   - type: historyTimeline
     year: 2012
@@ -176,7 +171,7 @@ cards:
         val: Australia's future is irrevocably tied to the stability and sustainable security of our diverse region…We will continue to support a greater role for Asian countries in a rules-based regional and global order. Australia's alliance with the United States and a strong US presence in Asia will support regional stability, as will China's full participation in regional developments.
 
   - type: excerpt
-    date:
+    date: SKIP
     title: Julia Gillard, Speech at the launch of the White Paper on Australia in the Asian Century
     content:
       - format: p
@@ -186,7 +181,6 @@ cards:
 
   - type: anchor
     year: 2013
-    count: 1
 
   - type: historyTimeline
     year: 2013
@@ -207,7 +201,7 @@ cards:
         val: We have long championed a multilateral, rules-based order in our region in which disputes are resolved peacefully, without the use or threat of force or coercion.
 
   - type: excerpt
-    date:
+    date: SKIP
     title: National Security Strategy
     content:
       - format: p
@@ -230,20 +224,9 @@ cards:
 
   - type: anchor
     year: 2015
-    count: 13
 
   - type: highlight
-    title: 2013-2016&#58; The long absence of the rules-based order
-    content:
-      - format: p
-        val: Our quantitative study reveals that between 2013 and 2016 - coinciding largely with Tony Abbott’s prime ministership - there was a significant decrease in the number of references to a rules-based order in speeches and policy statements by the Australian government.
-      - format: p
-        val: The partial exception was Julie Bishop who, in October 2013, less than four weeks into her role as Australia's new Foreign Minister, gave an address to the Japan National Press Club in which she spoke about Japan and Australia being part of a "community of nations" that "have an interest in a stable, predictable, rules-based order – both around the world, and specifically in Asia." In November 2013, Bishop gave a speech in Washington, DC linking the rules-based order to international trade.
-      - format: p
-        val: These two references by Bishop represent the few instances in which the concept of a rules-based order was used in Australia’s political lexicon between 2013 and 2016. Our study found that during his time as Prime Minister (September 2013 to September 2015), Tony Abbott did not use the term at all in key speeches.
-
-  - type: historyTimeline
-    year: 2014-2015
+    year: absence
     dates: [18 September 2013, 23 November 2013, Feb/March 2014, September 2015, 30 September 2015]
     content:
       - title: Tony Abbott becomes Australia's 28th Prime Minister?
@@ -259,7 +242,6 @@ cards:
 
   - type: anchor
     year: 2016
-    count: 29
 
   - type: historyTimeline
     year: 2016
@@ -315,7 +297,6 @@ cards:
 
   - type: anchor
     year: 2017
-    count: 155
 
   - type: historyTimeline
     year: 2017
@@ -359,7 +340,7 @@ cards:
         val: ... assumptions that have long underpinned Australia's security and foreign policy, including those in relation to the strength of the rules-based component of the global order, will be more uncertain.
 
   - type: excerpt
-    date:
+    date: SKIP
     title: Foreign Minister Julie Bishop
     subtitle: Comments on two North Korean ballistic missile tests in one month
     content:
@@ -379,7 +360,7 @@ cards:
         val: <p>In the global ocean, there is always a risk, as Lee Kuan Yew observed&#58; "The big fish will eat the little fish, and the little fish will eat the shrimps". Or as the Athenian ambassador said to the Melians&#58; "In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must."</p><p>So whether it's in Lee Kuan Yew’s words or Thucydides', we will never agree that might is right. The rules-based order protects us all and it protects us, in particular.</p>
 
   - type: excerpt
-    date:
+    date: SKIP
     title: Foreign Policy White Paper
     content:
       - format: p
@@ -389,7 +370,6 @@ cards:
 
   - type: anchor
     year: 2018
-    count: 149
 
   - type: historyTimeline
     year: 2018
@@ -422,12 +402,13 @@ cards:
           </p><p>It is a good example of the rules-based global order in action.</p>
 
   - type: quote
+    date: SKIP
     quotation: The order we have known for the past seventy years has ended. It’s not being challenged. It’s not changing. It’s over.
     name: Alan Gyngell
     supp: Former Executive Director of the Office of National Assessments, June 2018
 
   - type: excerpt
-    date:
+    date: SKIP
     title: Foreign Minister Julie Bishop
     subtitle: Statement following the US resignation from the UN Human Rights Council
     content:
@@ -449,7 +430,6 @@ cards:
 
   - type: anchor
     year: 2019
-    count: 17
 
   - type: historyTimeline
     year: 2019
@@ -472,6 +452,7 @@ cards:
         val: Both countries recognised the growing strategic and economic importance of India, and the significance of South Asia and the Indian Ocean region to ensuring an open, rules-based Indo-Pacific.
 
   - type: quote
+    date: SKIP
     quotation: The UN is the prime custodian of the rules-based order ... the UN and its norms are central to a cooperative rules-based approach to global challenges.
     name: Scott Morrison
     supp: National Statement to the UN General Assembly, September 2019
@@ -491,7 +472,6 @@ cards:
 
   - type: anchor
     year: 2020
-    count: 0
 
   - type: historyTimeline
     dates: [3 January 2020, 15 February 2020]

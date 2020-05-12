@@ -4,11 +4,8 @@ class stickyNav {
     this.currentYear = 2008;
     this.tabContainerHeight = 65;
     this.offset = 65;
-    this.counts = this.loadCounts();
-    this.count = this.counts['2008'];
     this.setNavLinks();
     this.positionSticky();
-    this.updateCounter(2008);
     let self = this;
     $('.nav-btn').click((e) => {self.btnClick($(this), e); });
     $(window).scroll(() => { this.onScroll(); });
@@ -38,41 +35,12 @@ class stickyNav {
       document.querySelector(`#nav--${i}`).addEventListener('click', () => this.scrollToYear(i));
   }
 }
-  loadCounts() {
-    let counts = {
-      2008: 0,
-      2009: 2,
-      2010: 15,
-      2011: 38,
-      2012: 9,
-      2013: 1,
-      2014: 5,
-      2015: 8,
-      2016: 29,
-      2017: 155,
-      2018: 149,
-      2019: 17
-    };
-    return counts;
-  }
-  updateCounter(year, delta) {
-    delta > 0 ? this.count += this.counts[year] : this.count -= this.counts[this.currentYear];
-    let startHTML = "<div id='#counter'><span class='counter-num ib'>";
-    let endHTML = "</span><span class='ib counter-label'>Total<br/>Mentions</span></div>";
-    $('#counter').html(startHTML + this.count + endHTML);
-  }
   updateActive(year) {
-    let navLinks = $('.nav-content');
+    let navLinks = $('.nav-drop');
     let newBtn = `${year}<img class="nav-btnimg" src="img/dropbtn.svg">`
     navLinks.find('div').removeClass('active'); // Remove any active class
     navLinks.find('div[id="nav--'+ year +'"]').addClass('active'); // Apply active class to relevant nav item
     $('.nav-btn')[0].innerHTML = newBtn;
-    // Update line graph and counter
-    let delta = year - this.currentYear;
-    if (delta) {
-      this.updateCounter(year, delta);
-      this.currentYear = year;
-    }
 }
   checkAnchors() {
     let self = this;
@@ -95,7 +63,7 @@ class stickyNav {
     });
   }
   btnClick(button, e) {
-    let dropdown = $('.nav-content');
+    let dropdown = $('.nav-drop');
     let display = dropdown.css('display');
 
     display == "block" ?
@@ -108,14 +76,15 @@ class stickyNav {
     return document.getElementById(year).offsetTop * this.getZoomFactor();
   }
   positionSticky() {
-    let y = this.getYearY(2008) - this.offset - 35;
+    let y = this.getYearY(2008) - this.offset;
     let current = $(window).scrollTop();
     if (y < current) {
+      $('.stickyheader').css('display', 'flex');
       $('.stickyheader').css('position', 'fixed');
       $('.stickyheader').css('top', 0);
     }
     else {
-      $('.stickyheader').css('position', 'absolute');
+      $('.stickyheader').css('display', 'none');
       $('.stickyheader').css('top', y);
     }
   }
@@ -136,5 +105,5 @@ new stickyNav();
 
 // onClick event listener
 $(document).click(function(e) {
-  $(e.target).is('.nav-dropitem') ? "" : $('.nav-content').css('display','none')
+  $(e.target).is('.nav-dropitem') ? "" : $('.nav-drop').css('display','none')
 });

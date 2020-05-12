@@ -51,6 +51,11 @@ $ls-s: 0.15px
   font-size: 11px
   line-height: 13px
 
+.skip-date
+  margin-top: -40px!important
+  .date
+    display: none
+
 html,body
   font-family: 'Sans', sans-serif
   letter-spacing: $ls-s
@@ -59,97 +64,52 @@ html,body
   height: auto
   color: $color-bk
 
-.header, .stickyheader
-  height: 70px
-  border-bottom: 0.5px solid $color-gy-lt
-  transition: all 300ms
-  background-color: $color-ff
-  > *
-    margin: auto 20px
-
-.header
-  &-logo
-    display: none
-  &-title,
-    padding: 20px 0
-    text-align: left
-    width: 180px
-  .social-share
-    padding: 26px 0
-    float: right
-    .icon
-      margin-left: 10px
-
 .stickyheader
-  transition: animate 0ms
-  text-transform: uppercase
   display: flex
-  flex-direction: row-reverse
-  width: 100%
-  align-items: center
   position: absolute
+  width: 100%
   height: 65px
-  z-index: 1
+  padding: 0 10px
+  background: $color-ff
+  border-bottom: 0.5px solid $color-gy-lt
+  text-transform: uppercase
+  z-index: 10
   & > *
-    flex: 1
-
-#stickyheader-graph
-  min-width: 120px
-  max-width: 160px
-  padding: 20px
-.line
-  fill: none
-  stroke: #000
-  stroke-miterlimit: 10
-  stroke-width: 3
-#counter
+    margin: auto 5%
+.header-title
+  font-size: 13px
+.title-long
   display: none
-  margin-right: 5%
-  font-weight: 600
-  color: $color-bl-dk
-  text-align: right
-.counter-num
-  font-size: 30px
-.counter-label
-  font-size: 12px
-  line-height: initial
-  text-align: left
-  margin-left: .5em
-
+.social-share
+  display: none
 .nav
   &-wrapper
+    margin-left: auto
     min-width: 90px
     transition: all 500ms
     color: $color-bl-dk
   &-btn
-    width: max-content
-    margin: 0 2.5% 0 auto
-    background: none
     padding: 5px 10px
     font-weight: 600
-    border-bottom: 3px solid $color-bl-lt
-    &:hover
-      cursor: pointer
-    &::selection,
-    & > *::selection
-      color: none
-      background: none
+    border-bottom: 3px solid $color-bl-dk
+    cursor: pointer
   &-btnimg
     display: inline-block
     height: 14px
     padding-left: 6px
-  &-content
-    color: $color-gy-dk
+  &-drop
+    color: $color-bl-dk
     position: absolute
     background-color: $color-ff
-    box-shadow : 0px 0px 2px $color-bl-lt
+    box-shadow : 0px 0px 2px $color-bl-dk
+    cursor: pointer
     display: none
   &-dropitem
     padding: 5px 25px
     &.active, &:hover
-      font-weight: 600
-      background-color: $color-bl-lt
-      cursor: pointer
+      font-weight: 400
+      background-color: $color-bl-dk
+      color: $color-ff
 
 .banner
   background: url('./img/banner.jpg') center center no-repeat
@@ -167,10 +127,13 @@ html,body
 .intro
   background: $color-ff
   padding: 50px 0
+  border-bottom: 5px solid $color-bl-dk
 .intro-txt
   text-align: left
-  padding: 0 2em
+  padding: 0 20px 30px
 
+.wrap
+  border-left: 3px solid $color-bl-dk
 .card
   .wrap
     display: flex
@@ -178,13 +141,10 @@ html,body
   .row
     display: flex
     flex-direction: column
-    margin: 30px 5%
-    border-radius: 10px
-    box-shadow : 0 0 10px rgba(0,0,0,0.1)
-    background : $color-ff
+    margin: 50px 0 0
+    background : none
   .item
     margin: 30px
-    //border: solid 1px $color-bl-dk
     & > *
       margin-bottom: 15px
   .media
@@ -202,17 +162,17 @@ html,body
       width: 100%
       object-fit: cover
       border-radius: 10px 10px
-  .highlight
-    border-left: 10px solid $color-hl
-    color: $color-bk
   .historyTimeline
-    border-left: 10px solid $color-bl-dk
-
+    margin: 0
+    border-top: 1.5px dotted $color-bl-dk
+    background: $color-ff
+    box-shadow: 0px 1px 2px #0004
   .opinion
     background: $color-bl-dk
     border-left: 10px solid $color-bl-dk
     color : $color-ff
     position: relative
+    margin-top: 0
     .cardtype
       color: $color-ff
     .image
@@ -228,7 +188,7 @@ html,body
 
 
 .heading
-  font-weight : 600
+  font-weight : 400
   letter-spacing : $ls-l
 .heading,
 .subheading
@@ -236,30 +196,37 @@ html,body
 
 .cardtype,
 .date, .tl-date
-  font-weight : 700
+  font-weight : 500
   text-transform : uppercase
   letter-spacing : $ls-m
-  color: $color-bk
+  color: $color-bl-dk
 
 .cardtype,
 .heading,
-.subheading, .date
+.subheading
   text-align: center
 
 .date
-  color: $color-gy-lt
-  margin-top: -20px
-  color: #555
+  position: absolute
+  margin: -69px -20px
   padding: 5px
-  border-radius: 5px
-
+  color: $color-bl-dk
+  &:before
+    content: ''
+    position: absolute
+    height: 2px
+    width: 20px
+    background-color: $color-bl-dk
+    margin-left: -30px
+    margin-top: 7px
+    border-radius: 2px
 
 .content
   > *
     margin-bottom : inherit
   .qt
     font-style: italic
-    color: $color-gy-lt
+    font-weight: 300
     padding: 1em 0
 
 .excerpt
@@ -327,11 +294,13 @@ html,body
 .flip
   transform: scale(-1)
 .anchor
-  color: black
-  font-size: 22px
+  background: $color-bl-dk
+  margin: 10px 0
+  padding: 5px 10px 5px 20px
   width: fit-content
-  margin: 0 auto
-  text-align: center
+  color: white
+  font-size: 16px
+  border-radius: 0 2px 2px 0
 
 .ib
   display: inline-block
@@ -342,6 +311,9 @@ html,body
   .txt-m
     font-size: 16px
     line-height: 21px
+  .txt-sm
+    font-size: 15px
+    line-height: 20px
 
 @media (min-width: 600px)
 
@@ -361,8 +333,8 @@ html,body
     font-size: 18px
     line-height: 25px
   .txt-sm
-    font-size: 16px
-    line-height: 21px
+    font-size: 17px
+    line-height: 23px
   .txt-s
     font-size: 15px
     line-height: 20px
@@ -370,40 +342,39 @@ html,body
     font-size: 12px
     line-height: 14px
 
-  .banner
-    height: 400px
-    &-title
-      font-size: 40px
-
-  .header
-    > *
-      margin: auto 30px
-  .header-logo
-    display: block
-    padding: 16px 0
-    float: left
-    width: 80px
-  .header-title
-    padding: 16px 0
-    width: fit-content
-    margin: auto
-
   .stickyheader
-    flex-direction: row
-  #counter
+    flex-direction: row-reverse
+    padding: 0
+    & > *
+      margin: auto 0
+      flex: 0 0 33.33%
+      box-sizing: border-box
+  .header-title
+    font-size: 14px
+    text-align: center
+  .title-long
+    display: inline
+  .social-share
     display: block
-
+    text-align: right
+    .icon
+      padding-left: 10px
+    .icon:last-child
+      padding-right: 15px
   .nav
     &-wrapper
-      margin-right: 0
-      margin-left: 5%
+      padding-left: 8.5%
     &-btn
-      margin: 0
+      width: fit-content
+      border-bottom: none
     &-btnimg
-      height: 16px
     &-dropitem
-      padding: 5px 26px
 
+
+  .banner
+    height: 450px
+    &-title
+      font-size: 40px
   .intro-txt
     width: 75%
     max-width: 800px
@@ -411,27 +382,31 @@ html,body
 
   .content
     .qt
-      padding: 1.5em 2em 1em 1em
+      padding: 1em 2em 1em 0em
       text-align: justify
 
   .cardtype,
-  .date,
   .heading,
   .subheading
     text-align: left
 
   .anchor
     position: absolute
-    right: 85%
+    margin: 0
     padding: 10px 15px
+    right: 85%
+    font-size: 22px
+    background: none
+    color: $color-bl-dk
     border-top: 4px solid $color-bl-dk
 
   .date
-    position: absolute
+    margin: 0
     right: calc(85% + 20px)
-    text-align: right
-    padding-top: 25px
+    padding-top: 10px
     color: $color-bl-dk
+    &:before
+      display: none
     &:after
       content: ''
       position: absolute
@@ -441,17 +416,15 @@ html,body
       margin-left: 10px
       margin-top: 8px
 
+  .wrap
+    border: none
   .card
-    .wrap
-      border-left: 1px solid black
-      margin: 0 0
     .row
       justify-content: flex-start
       width: 70%
       max-width: 840px
       margin: auto
-      border-radius: 0
-      box-shadow : none
+      box-shadow: none
     .row.wide
       width: 100%
       max-width: none
@@ -468,12 +441,13 @@ html,body
       height: 400px
     .excerpt, .row.quote
       border-left: 10px solid $color-bl-dk
+      background: $color-ff
     .historyTimeline
       border-left: 4px dotted $color-bl-dk
       border-top: 4px solid $color-bl-dk
-      width: calc(70% + 6px)
-      //border-right: 6px solid $color-ff
-
+      width: 70%
+      background: $color-ff
+      padding-bottom: 30px
     .opinion
       .image
         width: 120px
@@ -500,8 +474,8 @@ html,body
     font-size: 20px
     line-height: 29px
   .txt-sm
-    font-size: 18px
-    line-height: 25px
+    font-size: 19px
+    line-height: 27px
   .txt-s
     font-size: 16px
     line-height: 21px

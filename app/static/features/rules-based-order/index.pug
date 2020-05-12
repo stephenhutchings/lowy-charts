@@ -10,28 +10,28 @@ block append config
   - page.image = ""
   - var cards = data.getOne("static/features/rules-based-order/data").cards
 
-block page 
-  include partials/header
+block page
   include partials/stickyheader
   include partials/intro
   .card.wrap 
     for card in cards
       if card.type == "anchor" 
         if card.year == 2015
-          .anchor(id=`${card.year}`) 
-            | 2014
-            | –
-            | 2015
+          .anchor(id=`${card.year}`)= ""
         else
           .anchor(id=`${card.year}`)= card.year
+          
       else
-        - let isWide = card.type == "highlight" ? "wide" : ""
-        .card.row(class=`${card.type} ${isWide}`)
+        - let isWide = card.type == "highlight" ? "wide highlight" : ""
+        - let skipDate = card.date == "SKIP" ? "skip-date" : ""
+        .card.row(class=`${card.type} ${isWide} ${skipDate}`)
           .card.item
             if card.type == "quote"
               include partials/quote
             else if card.type == "historyTimeline" 
               include partials/history
+            else if card.type == "highlight" 
+              include partials/absence
             else if card.type == "excerpt" 
               .date.txt-sm!= card.date
             else
@@ -43,9 +43,9 @@ block page
                 .txt-xl!= card.expert.name
                   .txt-ml!= card.expert.credentials
             else
-              .heading.txt-l!= card.title
+              .heading.txt-xl!= card.title
               .subheading.txt-ml!= card.subtitle 
-              
+            
             .content
               include partials/content
                 
@@ -64,10 +64,11 @@ block append customScripts
   script.
     function setHistoryTimelines() {
       // Adjust historyTimeline widths
-      // Show one node for screens < 1100px. Two for > 1100px =====> let multiplier = $(window).width() < 1100 ? 100 : 50;
-      let multiplier = 100;
+      // Show one node for screens < 900px. Two for > 1100px =====>
+      let screenFactor = $(window).width() < 900 ? 2 : 1;
       let historyNodes = [3,2,3,3,3,2,5,5,3,5,3,2];
       $('.history-timeline').each( function(i) {
+        let multiplier = $(this).prop('id') == 'absence-timeline' ? 50*screenFactor : 100 
         $(this).css('width',multiplier*historyNodes[i] + "%");
       });
     } setHistoryTimelines();
@@ -104,6 +105,7 @@ block append customScripts
       } else {
           timeout = false;
           setHistoryTimelines();
+          $('.skinny-scrollbar').each( (i, el) => showHideHistoryBtns(el) );
       }               
     }
     function scrollHistory(btn, fw) {
