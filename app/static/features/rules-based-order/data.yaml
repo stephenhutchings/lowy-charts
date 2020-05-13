@@ -39,11 +39,11 @@ cards:
         val: In Rudd's inaugural National Security Statement, the rules-based order is listed as one of the five principles of Australia's national security&#58;
       - format: q
         val: |
-          1.  Maintaining Australia's territorial and border integrity<br/>
-          2.  Promoting Australia's political sovereignty<br/>
-          3.  Preserving Australia's cohesive and resilient society and the long-term strengths of our economy<br/>
-          4.  Protecting Australians and Australian interests both at home and abroad<br/>
-          5.  Promoting an international environment, particularly in the Asia-Pacific region, that is stable, peaceful and prosperous, together with a global rules based order which enhances Australia's national interests
+          1. Maintaining Australia's territorial and border integrity<br/>
+          2. Promoting Australia's political sovereignty<br/>
+          3. Preserving Australia's cohesive and resilient society and the long-term strengths of our economy<br/>
+          4. Protecting Australians and Australian interests both at home and abroad<br/>
+          5. Promoting an international environment, particularly in the Asia-Pacific region, that is stable, peaceful and prosperous, together with a global rules based order which enhances Australia's national interests
 
       - format: p
         val: Rudd also said&#58;
@@ -110,6 +110,10 @@ cards:
         val: This statement laid out the shared US-Australian interests on the occasion of the seventieth anniversary of US-Australia diplomatic relations. It also appears to be the first time the term 'rules-based order' was used by a senior US government official – Hillary Clinton as Secretary of State.
       - format:
         val: The Melbourne Statement reaffirms US and Australian dedication to "the enhancement of an international rules-based order, both within our region and for the world."
+    media:
+      class: image
+      src: "img/example-7.jpg"
+      caption: Photo&#58; Chip Somodevilla/Getty Images
 
   - type: anchor
     year: 2011
@@ -395,9 +399,11 @@ cards:
       - title: US withdraws from JCPOA
         description: President Trump ended US participation in the landmark 2015 Iran nuclear agreement by re-imposing all US sanctions on Iran’s core economic sectors.
       - title: John Bolton speech to the Federalist Society on the ICC
-        description: "[The United States] will let the International Criminal Court die on its own. After all, for all intents and purposes, the ICC is already dead to us."
+        description: |
+          "[The United States] will let the International Criminal Court die on its own. After all, for all intents and purposes, the ICC is already dead to us."
       - title: VP Mike Pence remarks at Hudson Institute
-        description: "China wants nothing less than to push the United States of America from the Western Pacific and attempt to prevent us from coming to the aid of our allies. America had hoped that economic liberalization would bring China into greater partnership with us and with the world. Instead, China has chosen economic aggression, which has in turn emboldened its growing military."
+        description: |
+          "China wants nothing less than to push the United States of America from the Western Pacific and attempt to prevent us from coming to the aid of our allies. America had hoped that economic liberalization would bring China into greater partnership with us and with the world. Instead, China has chosen economic aggression, which has in turn emboldened its growing military."
 
   - type: excerpt
     date: June
@@ -494,13 +500,10 @@ cards:
     content:
       - title: Qasem Soleimani assassination
         description: |
-          | The US strike that killed the head of Iran’s Islamic Revolutionary Guard Corps Qods Force, IRGC Major General Qassem Soleimani, was a major escalation of the long-standing US confrontation with Iran. Iran responded with missile attacks against a US air base in Iraq.
-          |
-          | In March 2020, Former National Security Advisor H.R. McMaster defended the killing of Soleimani in a debate at the Hoover Institution at Stanford University. "It was the righteous use of violence," McMaster said. "I don’t really care what international law said."
+          The US strike that killed the head of Iran’s Islamic Revolutionary Guard Corps Qods Force, IRGC Major General Qassem Soleimani, was a major escalation of the long-standing US confrontation with Iran. Iran responded with missile attacks against a US air base in Iraq.<br/>
+          In March 2020, Former National Security Advisor H.R. McMaster defended the killing of Soleimani in a debate at the Hoover Institution at Stanford University. "It was the righteous use of violence," McMaster said. "I don’t really care what international law said."
       - title: US Secretary of Defense Mark Esper at the Munich Security Conference
         description: |
-          | _It is essential that we – as an international community – wake up to the challenges presented by China’s manipulation of the long-standing international, rules-based order that has benefited all of us for many decades._
-          |
-          | _The PRC’s growing economic, military, and diplomatic power often manifests itself in ways that are threatening, coercive, and counter to the rules-based international order._
-          |
-          | _... we simply ask of Beijing what we ask of every nation&#58; to play by the rules, abide by international norms, and respect the rights and sovereignty of others._
+          "It is essential that we – as an international community – wake up to the challenges presented by China’s manipulation of the long-standing international, rules-based order that has benefited all of us for many decades.<br/><br/>
+          The PRC’s growing economic, military, and diplomatic power often manifests itself in ways that are threatening, coercive, and counter to the rules-based international order.
+          ... we simply ask of Beijing what we ask of every nation&#58; to play by the rules, abide by international norms, and respect the rights and sovereignty of others."

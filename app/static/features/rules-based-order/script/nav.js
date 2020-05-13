@@ -4,6 +4,7 @@ class stickyNav {
     this.currentYear = 2008;
     this.tabContainerHeight = 65;
     this.offset = 65;
+    this.stickyVisible = false;
     this.setNavLinks();
     this.positionSticky();
     let self = this;
@@ -29,7 +30,7 @@ class stickyNav {
     $('html, body').animate({scrollTop: y}, 500);
   }
   setNavLinks() {
-  for(let i = 2008; i<2020; i++) {
+  for(let i = 2008; i<=2020; i++) {
     i == 2014 ?
       document.querySelector(`#nav--${i}`).addEventListener('click', () => this.scrollToYear(i+1)) :
       document.querySelector(`#nav--${i}`).addEventListener('click', () => this.scrollToYear(i));
@@ -49,15 +50,15 @@ class stickyNav {
     let hCurrent = $(window).scrollTop();
     anchors.each( function () {
       let h = $(this).offset().top;
+      let id = $(this).attr('id')
+      let year = id.slice(id.length - 4) // Remove 'anchor-' from id name to get year
       // If date anchor is in top half of viewport
       if (hCurrent + vh/2 > h && hCurrent < h) {
-        let year = $(this).attr('id');
         self.updateActive(year);
       }
       // If date anchor is in bottom half of viewport
       // This is to support upscrolling
       else if (hCurrent + vh > h && hCurrent + vh/2 < h) {
-        let year = $(this).attr('id');
         year == 2008 ? "" : year == 2015 ? self.updateActive(year-2) : self.updateActive(year-1);
       }
     });
@@ -73,28 +74,33 @@ class stickyNav {
     e.stopPropagation(); // stop event bubbling to document scope
   }
   getYearY(year) {
-    return document.getElementById(year).offsetTop * this.getZoomFactor();
+    let id = 'anchor-' + year;
+    return document.getElementById(id).offsetTop * this.getZoomFactor();
   }
   positionSticky() {
     let y = this.getYearY(2008) - this.offset;
     let current = $(window).scrollTop();
-    if (y < current) {
-      $('.stickyheader').css('display', 'flex');
-      $('.stickyheader').css('position', 'fixed');
-      $('.stickyheader').css('top', 0);
+    if (y < current) { // If we've scrolled beyond the start of the timeline
+      if (!this.stickyVisible) {
+        $('.stickyheader').css('display', 'flex');
+        $('.stickyheader').css('position', 'fixed');
+        $('.stickyheader').css('top', 0);
+        this.stickyVisible = true;
+      }
     }
     else {
       $('.stickyheader').css('display', 'none');
       $('.stickyheader').css('top', y);
+      this.stickyVisible = false;
     }
   }
   onScroll() {
     let vh = $(window).height();
     let current = $(window).scrollTop();
     let timelineTop = this.getYearY(2008) - this.offset;
+    this.positionSticky();
     if (timelineTop < current + vh) {
       this.checkAnchors();
-      this.positionSticky();
     }
   }
 

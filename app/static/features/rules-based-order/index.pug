@@ -17,10 +17,9 @@ block page
     for card in cards
       if card.type == "anchor" 
         if card.year == 2015
-          .anchor(id=`${card.year}`)= ""
+          .anchor(id=`anchor-${card.year}`)= ""
         else
-          .anchor(id=`${card.year}`)= card.year
-          
+          .anchor(id=`anchor-${card.year}`)= card.year          
       else
         - let isWide = card.type == "highlight" ? "wide highlight" : ""
         - let skipDate = card.date == "SKIP" ? "skip-date" : ""
@@ -49,10 +48,10 @@ block page
             .content
               include partials/content
           if card.type == "opinion"
-            div(style="min-height: 40px; background: #f0f0f0;")
+            .whitespace
           if card.media != undefined
             include partials/media
-  
+
 block append css
   style
     include:sass _styles.sass
@@ -63,6 +62,7 @@ block append scripts
 
 block append customScripts 
   script.
+    //$('#2016').css.('border-top', '0');
     function setHistoryTimelines() {
       // Adjust historyTimeline widths
       // Show one node for screens < 900px. Two for > 1100px =====>
