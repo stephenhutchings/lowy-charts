@@ -26,8 +26,9 @@ cards:
       - format: q
         val: The idea of a "harmonious world" depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order…we look to China to make a strong contribution to strengthening the global and regional rules-based order.
     media:
-      class: video
-      src: https://www.youtube.com/embed/2LjE9I3Cp-U
+      class: image
+      src: "img/example-5.jpg"
+      caption: Kevin Rudd opens the Australia 2020 Summit, 19 April 2008<br/>(Mark Nolan/Getty Images)
 
 
   - type: excerpt
@@ -48,11 +49,6 @@ cards:
         val: Rudd also said&#58;
       - format: q
         val: At the global level, we are committed to multilateral institutions, and in particular the United Nations, to promote a rules based international order that enhances our security and economy. We believe those that share the benefits of these systems must also share the responsibilities of supporting and enhancing them.
-    media:
-      class: quote
-      quotation: We have long championed a multilateral, rules-based order in our region in which disputes are resolved peacefully, without the use or threat of force or coercion.
-      name: Julia Gillard
-      supp: Former Prime Minister
 
   - type: anchor
     year: 2009
@@ -115,15 +111,6 @@ cards:
       - format:
         val: The Melbourne Statement reaffirms US and Australian dedication to "the enhancement of an international rules-based order, both within our region and for the world."
 
-  - type: opinion
-    expert:
-      name: Julie Bishop
-      credentials: Former Minister for Foreign Affairs
-      image: https://www.pngarts.com/files/3/Avatar-PNG-High-Quality-Image.png
-    content:
-      - format: p
-        val: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
   - type: anchor
     year: 2011
 
@@ -170,6 +157,15 @@ cards:
       - format: q
         val: Australia's future is irrevocably tied to the stability and sustainable security of our diverse region…We will continue to support a greater role for Asian countries in a rules-based regional and global order. Australia's alliance with the United States and a strong US presence in Asia will support regional stability, as will China's full participation in regional developments.
 
+  - type: opinion
+    expert:
+      name: Gareth Evans
+      credentials: Former Minister for Foreign Affairs
+      image: https://cdn0.iconfinder.com/data/icons/avatar-78/128/12-512.png
+    content:
+      - format: p
+        val: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
   - type: excerpt
     date: SKIP
     title: Julia Gillard, Speech at the launch of the White Paper on Australia in the Asian Century
@@ -212,6 +208,10 @@ cards:
         val: Adherence to the rules-based order is characterised as a reflection of Australian values and history&#58;
       - format: q
         val: The rule of law provides the framework in which government balances its responsibility to protect Australia, its people and its interests while preserving our civil liberties. These values influence our foreign and defence policy. Our values underpin our reputation as a responsible member of the international community, committed to a rules-based global order.
+    media:
+      class: video
+      src: https://www.youtube.com/embed/IYt3hsAWZNk
+      caption: Trump addresses the UN General Assembly regarding US withdrawal from UNHRC and not recognising legitimacy of ICC
 
   - type: excerpt
     date: May
@@ -221,16 +221,21 @@ cards:
         val: References to the rules-based order in this White Paper are made largely in geographic terms. Australia's primary strategic interest is defence of the continent, followed by a secure region, and finally a rules-based order. As with the 2009 Defence White Paper, this document describes the UN as central to maintaining a global rules-based order&#58;
       - format: q
         val: Both in and beyond Southeast Asia, Australia supports a rules-based regional security order that fosters cooperation, eases tensions between states and provides incentives to major powers like China and India to rise peacefully. In particular, it is in our interests that no hostile power in the Indo-Pacific is able to coerce or intimidate others through force or the threat of force.
+    media:
+      class: video
+      src: https://www.youtube.com/embed/wrs5nCPnLAc
+      caption: Prime Minister Julia Gillard introduces the key points of the 2013 Defence White Paper.
+
 
   - type: anchor
     year: 2015
 
   - type: highlight
     year: absence
-    dates: [18 September 2013, 23 November 2013, Feb/March 2014, September 2015, 30 September 2015]
+    dates: [18 September 2013, 23 November 2013, Feb/March 2014, September 2015, 30 September 2015,23 June 2016, July 2016, 3 September 2016, 9 November 2016]
     content:
-      - title: Tony Abbott becomes Australia's 28th Prime Minister?
-        description: Maybe?
+      - title: Tony Abbott becomes Australia's 28th Prime Minister(??)
+        description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       - title: China declares Air Defence Identification Zone in East China Sea
         description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       - title: Unrest in Ukraine and Crimea annexation
@@ -239,14 +244,6 @@ cards:
         description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       - title: Russian military intervention in the Syrian Civil War
         description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-  - type: anchor
-    year: 2016
-
-  - type: historyTimeline
-    year: 2016
-    dates: [23 June 2016, July 2016, 3 September 2016, 9 November 2016, 17 January 2017]
-    content:
       - title: Brexit
         description: The UK votes in a referendum on the country’s EU membership, with 51.9% of voters choosing to leave the EU.
       - title: South China Sea Arbitration
@@ -255,8 +252,9 @@ cards:
         description: Following the meeting, Obama released a statement saying he had "emphasised the importance for China, as a signatory to UNCLOS, to abide by its obligations under that treaty, which the United States views as critical to maintaining the rules-based international order."
       - title: Trump elected President
         description: Donald Trump was elected the 45th president of the United States, ushering in the era of "America-First" foreign policy. Trump comes to office as a lifelong sceptic of America's post-war alliance network, and of free trade.
-      - title: Xi Jinping Davos address
-        description: Widely considered a landmark speech articulating China’s global ambitions&#58; "We should adhere to multilateralism to uphold the authority and efficacy of multilateral institutions. We should honor promises and abide by rules. One should not select or bend rules as he sees fit."
+
+  - type: anchor
+    year: 2016
 
   - type: excerpt
     date: Feb
@@ -300,8 +298,10 @@ cards:
 
   - type: historyTimeline
     year: 2017
-    dates: [4 April 2017, 1 June 2017, 20 July 2017]
+    dates: [17 January 2017, 4 April 2017, 1 June 2017, 20 July 2017]
     content:
+      - title: Xi Jinping Davos address
+        description: Widely considered a landmark speech articulating China’s global ambitions&#58; "We should adhere to multilateralism to uphold the authority and efficacy of multilateral institutions. We should honor promises and abide by rules. One should not select or bend rules as he sees fit."
       - title: Khan Shaykhun chemical attack in Syria
         description: More than 80 people were killed in a chemical attack on the rebel-held town of Khan Sheikhoun in north-western Syria on 4 April 2017. The subsequent American missiles strikes against regime targets represented a significant reversal of US policy on Syria.
       - title: US announces withdrawal from Paris Agreement
@@ -318,7 +318,10 @@ cards:
         val: The most assertive Australian statement thus far on the 'liberal' element of the rules-based order&#58;
       - format: q
         val: <p>The importance of liberal values and institutions should not be underestimated or ignored.</p><p>While non-democracies such as China can thrive when participating in the present system, an essential pillar of our preferred order is democratic community.</p><p>Domestic democratic habits of negotiating and compromise are essential to powerful countries resolving their disagreements according to international law and rules.</p><p>History also shows democracy and democratic institutions are essential for nations if they are to reach their economic potential.</p><p>The only countries in the world who have escaped the 'middle-income' trap to become wealthy, high-income and advanced economies are democracies –with the exception of a small number of oil-rich Middle Eastern states.</p><p>Liberal-democratic institutions such as rule-of-law rather than rule by executive privilege, civilian control of the military, independent and competent courts, protection of property and intellectual property rights from state appropriation or theft, and limitations on the role of the state in commercial and social affairs remain the prerequisites for stable and prosperous societies, as they are for the creation of a vibrant and innovative private sector.</p><p>While it is appropriate for different states to discover their own pathway leading toward political reform, history shows that embrace of liberal democratic institutions is the most successful foundation for nations seeking economic prosperity and social stability.</p><p>Australia is an active and vocal advocate of the liberal rules based order because the continuation of the long and prosperous peace depend on it.</p>
-
+    media:
+      class: image
+      src: "img/example-4.jpg"
+      caption: Protesters burn a mock Chinese flag with a map of the South China sea in Manila in 2019<br/>(Ted Aljibe/AFP via Getty Images)
 
   - type: excerpt
     date: June
@@ -329,6 +332,10 @@ cards:
         val: Turnbull refers to a "US anchored rules-based order", and other references to the rules-based order place it directly in the context of great-power competition between the US and China&#58;
       - format: q
         val: <p>And we should be under no illusions&#58; If we are to maintain the dynamism of the region then we must preserve the rules-based structure that has enabled it thus far. This means cooperation not unilateral actions to seize or create territory or militarise disputed areas. This means competing within the framework of international law not winning through corruption, interference or coercion ... </p><p>... some fear that China will seek to impose a latter day Monroe Doctrine on this hemisphere in order to dominate the region, marginalising the role and contribution of other nations, in particular the United States. Such a dark view of our future would see China isolating those who stand in opposition to or are not aligned with its interests, while using its economic largesse to reward those toeing the line.</p>
+    media:
+      class: image
+      src: "img/example.jpg"
+      caption: Jim Watson/AFP via Getty Images
 
   - type: excerpt
     date: July
@@ -358,6 +365,11 @@ cards:
         val: From Prime Minister’s speech at the launch of the White Paper&#58;
       - format: q
         val: <p>In the global ocean, there is always a risk, as Lee Kuan Yew observed&#58; "The big fish will eat the little fish, and the little fish will eat the shrimps". Or as the Athenian ambassador said to the Melians&#58; "In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must."</p><p>So whether it's in Lee Kuan Yew’s words or Thucydides', we will never agree that might is right. The rules-based order protects us all and it protects us, in particular.</p>
+    media:
+      class: image
+      src: "img/example-6.jpg"
+      caption: Malcolm Turnbull, as PM in 2018, taking Indonesia’s Joko Widodo for a Sydney ferry ride<br/>(ASEANINAUS/Flickr)
+
 
   - type: excerpt
     date: SKIP
@@ -427,6 +439,10 @@ cards:
         val: On the status of Jerusalem&#58;
       - format: q
         val: The starting point for their deliberation was Australia's absolute commitment to a two-state solution, these are the guard rails, with a secure Israel and future Palestinian state living side-by-side in peace and security within internationally recognised borders. I also required that their deliberations respect Australia's obligations under international law and UN Security Council resolutions – two things that are fundamental, I think, to Australia's interests in a rules-based order. You can't look at these things in isolation. Our foreign policy is guided by our fundamental interest in ensuring that internationally agreed rules continue to safeguard our security and prosperity. We don't get to pick and choose.
+    media:
+      class: image
+      src: "img/example-3.jpg"
+      caption: Rohan Thomson / Getty Images
 
   - type: anchor
     year: 2019

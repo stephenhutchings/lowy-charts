@@ -7,11 +7,13 @@ if type == "video"
       frameborder="0"
       allowfullscreen
     )
+  .caption.txt-xs!= card.media.caption
 else if type == "image"
   .card.media.image
     img(
       src=card.media.src
     )
+  .caption.txt-xs!= card.media.caption
     
 else if type == "quote"
   .card.media.quote 

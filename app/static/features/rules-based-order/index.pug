@@ -45,10 +45,11 @@ block page
             else
               .heading.txt-xl!= card.title
               .subheading.txt-ml!= card.subtitle 
-            
+              
             .content
               include partials/content
-                
+          if card.type == "opinion"
+            div(style="min-height: 40px; background: #f0f0f0;")
           if card.media != undefined
             include partials/media
   
@@ -66,7 +67,7 @@ block append customScripts
       // Adjust historyTimeline widths
       // Show one node for screens < 900px. Two for > 1100px =====>
       let screenFactor = $(window).width() < 900 ? 2 : 1;
-      let historyNodes = [3,2,3,3,3,2,5,5,3,5,3,2];
+      let historyNodes = [3,2,3,3,3,2,9,4,5,3,2];
       $('.history-timeline').each( function(i) {
         let multiplier = $(this).prop('id') == 'absence-timeline' ? 50*screenFactor : 100 
         $(this).css('width',multiplier*historyNodes[i] + "%");

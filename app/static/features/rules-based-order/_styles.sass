@@ -111,23 +111,36 @@ html,body
       background-color: $color-bl-dk
       color: $color-ff
 
+.banner-wrap
+  height: 100vh
+  display: flex
+  flex-direction: column
 .banner
   background: url('./img/banner.jpg') center center no-repeat
   background-size: cover
-  height: 300px
   display: flex
+  flex-direction: column
+  min-height: 65%
   width: 100%
   &-title
-    font-size: 26px
+    font-size: 28px
     color: $color-ff
     margin: auto
     text-transform: uppercase
     padding: 0 20px
+.credits
+  display: flex
+  min-height: 35%
+  color: $color-bl-dk
+  text-align: center
+  & > *
+    margin: auto
 
 .intro
   background: $color-ff
   padding: 50px 0
   border-bottom: 5px solid $color-bl-dk
+  margin-bottom: -4px
 .intro-txt
   text-align: left
   padding: 0 20px 30px
@@ -143,25 +156,37 @@ html,body
     flex-direction: column
     margin: 50px 0 0
     background : none
+  .row.wide
+    border-top: 4px solid $color-bl-dk
+    border-bottom: 4px solid $color-bl-dk
+    margin-top: -20px
+    margin-left: -4px
+    p, .heading
+      max-width: 850px
+      margin-left: auto
+      margin-right: auto
   .item
     margin: 30px
     & > *
       margin-bottom: 15px
   .media
     line-height: 0
-    margin: 0 auto 2.5% auto
-    width: 95%
+    margin: -40px 0 0 0
+    width: 100%
   .video
     > iframe
       width: 100%
-      height: 250px
-      border-radius: 10px 10px
+      height: 200px
   .image
     > img
-      height: 200px
+      height: 250px
       width: 100%
       object-fit: cover
-      border-radius: 10px 10px
+  .caption
+    text-align: center
+    font-style: italic
+    color: $color-gy-lt
+    padding: 0.5em 10% 2em
   .historyTimeline
     margin: 0
     border-top: 1.5px dotted $color-bl-dk
@@ -169,10 +194,9 @@ html,body
     box-shadow: 0px 1px 2px #0004
   .opinion
     background: $color-bl-dk
-    border-left: 10px solid $color-bl-dk
     color : $color-ff
     position: relative
-    margin-top: 0
+    margin: 0
     .cardtype
       color: $color-ff
     .image
@@ -234,7 +258,7 @@ html,body
     color : $color-gy-dk
 
 .highlight
-  background-color: $color-hl
+  background-color: $color-bl-lt!important
 
 .quote
   background : none
@@ -424,31 +448,33 @@ html,body
       width: 70%
       max-width: 840px
       margin: auto
-      box-shadow: none
     .row.wide
       width: 100%
       max-width: none
       border-left: none
+      margin-bottom: -4px
+      margin-top: 0
       border-top: 10px solid $color-bl-dk
       border-bottom: 10px solid $color-bl-dk
-      margin-bottom: -4px
     .item
       padding: 20px
     .media
-      width: 80%
-    .video > iframe,
+      width: 100%
+    .video > iframe
+      height: 300px
     .image > img
       height: 400px
     .excerpt, .row.quote
       border-left: 10px solid $color-bl-dk
-      background: $color-ff
     .historyTimeline
-      border-left: 4px dotted $color-bl-dk
+      border-left: 10px solid $color-bl-dk
       border-top: 4px solid $color-bl-dk
       width: 70%
       background: $color-ff
       padding-bottom: 30px
     .opinion
+      border-left: 10px solid $color-bl-dk
+      margin-top: -20px
       .image
         width: 120px
         margin-bottom: 10px
@@ -489,3 +515,9 @@ html,body
     &:after
       margin-top: 10px
       margin-left: 6px
+
+  .wrap
+    .video > iframe
+      height: 450px
+    .image > img
+      height: 500px
