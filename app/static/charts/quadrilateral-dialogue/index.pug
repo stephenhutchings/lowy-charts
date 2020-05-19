@@ -1,0 +1,135 @@
+extend /partials/layout
+ 
+block append config
+  - page.title = "Timeline of the Quadrilateral Dialogue"
+  - var events = data.getOne("static/charts/quadrilateral-dialogue/events").events
+  - var years = _.pluck(events, "start")
+
+  - vals = (0).toPrecision(8).split("").map(function(e, i){return 1})
+  - vals = vals.map(function(e){ return +(e / (_.sum(vals) * 2).toFixed(4))});
+  - vals = vals.concat(vals).sort()
+
+  - var p = function(i){return vals[i]}
+  - order = [[1,1,3,5,1,1,1,3,1], [1,1,3,5,7,1,3,5]]
+
+block page
+  .wrapper
+    - max = _.last(years) + 1
+    - min = _.first(years) - 1
+    - len = max - min
+    //- console.log(_.groupBy(_.sortBy(events, "start"), "highlight"))
+
+    #controls
+      .btn.js-prev(tabindex="0")
+        .icon.icon-left-arrow
+      .btn.js-next(tabindex="0")
+        .icon.icon-right-arrow
+ 
+    #frame
+      #events
+        for list, j in _.groupBy(_.sortBy(events, "start"), "highlight")
+          - j = j == "true" ? 21 : 0; m = 0;
+          for e, i in list
+            - var k = (e.start - min), left = _.sum(vals.slice(0, k));
+            - var dir = Math.floor(i / 10) % 2 == 0 ? -1 : 1
+ 
+            .event.js-year(
+              tabindex="0"
+              style={left: (100 * left) + "%"}
+              class=[
+                (j + i) == 0 ? "active" : "",              
+                ( !j && i > 5) || (j && i) ? "left" : "right", 
+                !e.highlight ? "top" : "bottom",
+                `item-${order[j > 0 ? 1 : 0][i]}`,
+                "spaced",
+                e.highlight ? "highlight" : ""
+              ].join(" ")
+              data-i=_.sortBy(events, "start").indexOf(e)
+            )
+              .event-marker
+              .event-year
+                if e.end
+                  | Dec 04 –<br>
+                  | Jan 05
+                else
+                  | #{e.month}
+ 
+              .event-content(class= e.highlight ? "highlight" : "")
+                p.event-text!= e.text
+
+            - m = order[j > 0 ? 1 : 0][i]
+
+      #years
+        for n, i in new Array(len)
+          - var j = (min + i);
+          - var c = j % 100 == 0 ? "cen" : j % 1 == 0 ? "dec" : "";
+          if j % 0 == 0
+            .year(
+              style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
+              class=c
+            )
+          if j % 1 == 0
+            .year-label(
+              style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
+              class=c
+            )
+              = j
+
+    #pager
+      span#page 1 
+      | &ensp;/&ensp;#{events.length}
+
+
+block append scripts
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.2.1/balancetext.js")
+  script.
+    $(document).ready(function(){
+      var count = 0,
+          $events = $(".event"),
+          $frame = $("#frame"),
+          $page = $("#page");
+
+      $(".js-next").click(function(){count++; update()})
+      $(".js-prev").click(function(){count--; update()})
+      $(".js-year").click(function(){count = $(this).data("i"); update()})
+      $(".js-year").hover(function(){count = $(this).data("i"); update()})
+
+      function update() {
+        if (document.activeElement) document.activeElement.blur()
+        
+        count = ($events.length + count) % $events.length
+
+        $active = $events
+          .removeClass("active")
+          .filter("[data-i='" + count + "']")
+          .addClass("active")
+
+        $page.html(count + 1)
+
+        outer = $frame.width()
+        inner = $("body").outerWidth()
+        offset = $active.position().left + 40
+        offset += $active.find(".event-text").position().left
+
+        if (inner < outer) {
+          if ($active.hasClass("right")) {
+            offset -= 40
+          } else {
+            offset -= inner
+            offset -= - $active.find(".event-year").width() - 20
+          }
+          $frame.css({
+            transform: "translate3d(" + (-Math.max(offset, 0) ) + "px,0,0)"
+          })
+        } else {
+          $frame.css({
+            transform: ""
+          })
+        }
+      }
+    })
+
+block append css
+  style
+    include:sass _styles.sass
+      

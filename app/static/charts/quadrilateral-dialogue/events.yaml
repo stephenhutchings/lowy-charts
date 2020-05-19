@@ -1,0 +1,120 @@
+events:
+  - start: 2004
+    end: 2005
+    month: Dec
+    text: >
+      US, Japanese, Indian and Australian
+      navies deliver humanitarian relief
+      after Asian tsunami
+
+  - start: 2007
+    month: May
+    text: >
+      Inaugural meeting of the Quad on
+      sidelines of ASEAN Regional Forum, Manila
+
+  - start: 2007
+    month: Aug
+    text: >
+      Japanese Prime Minister Shinzo Abe
+      address to Indian parliament introducing
+      idea of a “broader Asia” partnership
+      involving India, Japan, Australia and the US
+
+  - start: 2007
+    month: Sep
+    text: >
+      Annual India‒US Malabar naval exercise
+      extended to include the United States,
+      Japan, Australia and Singapore (Bay of Bengal)
+
+  - start: 2008
+    highlight: true
+    month: Feb
+    text: >
+      Australian Foreign Minister Stephen Smith advises
+      Chinese counterpart Yang Jiechi that Australia
+      “would not be proposing” a repeat of the
+      2007 dialogue with the US, Japan and India
+
+  - start: 2012
+    month: Dec
+    text: >
+      Japanese Prime Minister Abe advocates
+      the creation of a “democratic security
+      diamond” with Australia, India and the US
+
+  - start: 2016
+    month: Aug
+    text: >
+      Japanese Prime Minister Abe speech advocating
+      “free and open Indo-Pacific” concept
+
+  - start: 2017
+    highlight: true
+    month: Aug
+    text: >
+      Japanese Foreign Minister Taro Kono
+      proposes a meeting with the foreign
+      ministers of Australia, the US and
+      India in the margins of the upcoming
+      East Asia Summit
+
+  - start: 2017
+    highlight: true
+    month: Oct
+    text: >
+      Secretary of State Tillerson speech
+      advocating “free and open Indo-Pacific”
+
+  - start: 2017
+    highlight: true
+    month: Nov
+    text: |
+      First meeting of revived Quad meeting at
+      official level (Manila, on sidelines of ASEAN)
+      <br><br>Australian Foreign Policy White Paper
+      advocates “open, inclusive and prosperous
+      Indo-Pacific”
+
+  - start: 2017
+    highlight: true
+    month: Dec
+    text: >
+      US National Security Strategy outlines US
+      interests in “free and open Indo-Pacific”
+
+  - start: 2018
+    month: Jun
+    text: >
+      Second Quad meeting (officials), Singapore
+
+  - start: 2018
+    month: Nov
+    text: >
+      Third Quad meeting (officials), Singapore
+
+  - start: 2019
+    highlight: true
+    month: May
+    text: >
+      Fourth Quad meeting (officials), Bangkok
+
+  - start: 2019
+    highlight: true
+    month: Sep
+    text: >
+      First Quad foreign ministers meeting, New York
+
+  - start: 2019
+    highlight: true
+    month: Nov
+    text: >
+      Quad meeting (officials), Bangkok
+
+  - start: 2020
+    month: Mar
+    text: >
+      ‘Quad Plus’ meeting including South
+      Korea, Vietnam, New Zealand to discuss
+      COVID-19 responses
