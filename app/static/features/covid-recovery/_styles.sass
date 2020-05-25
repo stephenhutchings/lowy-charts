@@ -1,6 +1,7 @@
 // Vars
-$color-hl: #30b3ff
-$color-dk: #002b45
+
+$color-hl: #3CC6C0
+$color-dk: #394754
 $color-lt: #e9eaef
 $color-ff: #fff
 $color-mt: #7c94a2
@@ -208,7 +209,7 @@ sup
       color: $color-dk
 
 .txt-border
-  border-left: 4px solid #30b3ff
+  border-left: 5px solid $color-hl
   position: relative
 
   > p
@@ -274,7 +275,7 @@ sup
     animation: stripe 6000ms infinite linear
 
 .stripe-lt
-  background-image: url("/features/australia-votes-2019/img/mask.png"), url("/features/australia-votes-2019/img/stripe.png")
+  background-image: url("/features/covid-recovery/img/mask.png"), url("/features/covid-recovery/img/stripe.png")
 
 a
   transition: color 300ms
@@ -444,9 +445,9 @@ strong, .txt-tu, .caption
 
 p > a
   text-decoration: none
-  background: linear-gradient(to bottom, transparent 0, rgba($color-hl, 0.7) 0, rgba($color-hl, 0.7) 1px, transparent 1px)
+  background: linear-gradient(to bottom, transparent 0, rgba($color-hl, 0.5) 0, rgba($color-hl, 0.5) 1px, transparent 1px)
   background-repeat: repeat-x
-  background-position: 0 1.05em
+  background-position: 0 1.1em
 
 .price-tag
   position: relative
@@ -757,9 +758,13 @@ p > a
     padding-top: 16px
     padding-bottom: 16px
 
-  .ph-md, .ph-lg, .ph-xl
+  .ph-lg, .ph-xl
     padding-left: 16px
     padding-right: 16px
+
+  .ph-md
+    padding-left: 8px
+    padding-right: 8px
 
   .p-xs, .pv-xs
     padding-top: 4px

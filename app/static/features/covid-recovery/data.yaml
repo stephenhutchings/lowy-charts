@@ -2,27 +2,27 @@
 # of links on the issue template.
 
 issues:
-  - href: "usa"
-    title: The United States
+  - href: "aus-economic"
+    title: Australia’s Economic Recovery
   - href: "china"
-    title: China
+    title: Managing Chinese Coercion
+  - href: "who"
+    title: Reforming the World Health Organisation
   - href: "us-china"
-    title: US-China Competition
-  - href: "international-economy"
-    title: The International Economy
-  - href: "globalisation"
-    title: Globalisation
-  - href: "multilateralism"
-    title: Multilateralism and the Nation State
-  - href: "se-asia"
-    title: Southeast Asia
+    title: The US-China rivalry
+  - href: "defence"
+    title: Australia's Security and Defence
+  - href: "g20"
+    title: The G20
+  - href: "ind-economic"
+    title: Indonesia’s Economic Recovery
+  - href: "aid"
+    title: Reforming Australian Aid
   - href: "pacific"
-    title: The Pacific
-  - href: "developing-nations"
-    title: Developing Nations
-  - href: "truth"
-    title: Misinformation, Truth, and Trust
-  - href: "extremism"
-    title: Extremism
+    title: Assisting the Pacific
+  - href: "asean"
+    title: Working with ASEAN
+  - href: "power"
+    title: Middle-Power Coalitions
   - href: "diplomacy"
     title: Diplomacy

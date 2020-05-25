@@ -2,13 +2,13 @@ extend /partials/layout
 
 block append config
   - page.includeFonts = false
-  - page.url = "https://interactives.lowyinstitute.org/features/covid19/"
+  - page.url = "https://interactives.lowyinstitute.org/features/covid-recovery/"
   - page.class = "page-0 page-menu"
-  - page.title = "The World After COVID19"
+  - page.title = "Australia's Recovery from COVID-19"
   - page.metaTitle = `${page.title} - Lowy Institute`
   - page.description = ""
-  - page.image = "http://interactives.lowyinstitute.org/features/covid19/img/thumbnail.jpg"
-  - page.feature = data.getOne("static/features/covid19/data")
+  - page.image = "http://interactives.lowyinstitute.org/features/covid-recovery/img/thumbnail.jpg"
+  - page.feature = data.getOne("static/features/covid-recovery/data")
 
 block page
   include partials/header
@@ -16,20 +16,26 @@ block page
   #scroller
     #scroll-item-intro.scroll-item
       .row
-        .col-1-2.num-lf.pv-md
+        .col-1-2.num-lf.pv-md 
           .txt-center
             .txt-sm.txt-tu.ph-sm.pv-xs.hidden-sm Lowy Institute
 
             .txt-xxl.ph-sm.pv-sm
-              | The World After COVID-19
+              | Managing Australia's Recovery from COVID-19
 
             .pv-sm.active
               .stripe-lt
 
-            .ph-xl.intro-description.txt-sans.mxw.pv-xs.txt-mmd
+            .ph-md.intro-description.txt-sans.mxw.pv-xs.txt-md
               :marked
-                How will the coronavirus pandemic change the world? <br />
-                Lowy Institute experts provide their analysis.
+                To guide the national recovery from COVID-19,<br>
+                Lowy Institute experts offer new policy recommendations<br>
+                to the Australian government.
+                
+              .txt-sm
+                :marked
+                  <br>This follows the Lowy Institute's [World After COVID-19](http://interactives.lowyinstitute.org/features/covid-recovery) feature, published 10 April.
+              
 
         .col-1-2.bg-dk.txt-ff.pv-md
           .block
