@@ -1,0 +1,49 @@
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.url = "https://interactives.lowyinstitute.org/features/covid19/"
+  - page.class = "page-0 page-menu"
+  - page.title = "The World After COVID19"
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.description = ""
+  - page.image = "http://interactives.lowyinstitute.org/features/covid19/img/thumbnail.jpg"
+  - page.feature = data.getOne("static/features/covid19/data")
+
+block page
+  include partials/header
+
+  #scroller
+    #scroll-item-intro.scroll-item
+      .row
+        .col-1-2.num-lf.pv-md
+          .txt-center
+            .txt-sm.txt-tu.ph-sm.pv-xs.hidden-sm Lowy Institute
+
+            .txt-xxl.ph-sm.pv-sm
+              | The World After COVID-19
+
+            .pv-sm.active
+              .stripe-lt
+
+            .ph-xl.intro-description.txt-sans.mxw.pv-xs.txt-mmd
+              :marked
+                How will the coronavirus pandemic change the world? <br />
+                Lowy Institute experts provide their analysis.
+
+        .col-1-2.bg-dk.txt-ff.pv-md
+          .block
+            .txt-sm.txt-tu.ph-sm.pv-sm.txt-hl Topics
+            .block
+              ul.list-bare.txt-links
+                for issue in page.feature.issues
+                  li
+                    a.txt-bare(href=`issues/${issue.href}`)
+                      != issue.title
+
+  .container
+    footer#footer
+
+block append css
+  style
+    include:sass _styles.sass

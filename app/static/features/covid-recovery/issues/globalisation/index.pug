@@ -1,0 +1,47 @@
+//-
+  This is an example issue item page with the content removed. The blocks
+  relate to those defined in the layout that's extended – in this case that's
+  the issue template that we define here...
+
+extend ../../partials/issue
+
+block append config
+  - page.title = "Globalisation"
+  - page.expert = "Stephen Grenville"
+  - page.expertrole = "Nonresident Fellow"
+  
+block intro-image
+  img.bg-img(data-src="../../img/globalisation.jpg")
+
+block intro-caption
+  :marked
+    Photo: <a href="https://unsplash.com/photos/jCBzW_Q_UGI">Jason Leung / Unsplash</a>
+
+block intro-description
+    :marked
+      The drawbridge has been raised, but&nbsp;not&nbsp;permanently
+
+block scroller
+  +item(1)
+    .row
+      .col.p-lg.bg-ff.txt-expert-content
+        .block.txt-sans.txt-md.txt-dk.pv-lg.txt-left
+          .txt-border
+            :marked
+              Globalisation has imploded. No overseas tourism, no foreign students. Australians abroad have retreated home and borders are closing. Regulations prioritise nationals over foreigners. Thomas Friedman’s "flat world" has been upended. Is this temporary or the new normal?
+
+              To answer that, consider how important globalisation has been since the Second World War. A billion people have been lifted out of poverty, riding the wave of international trade, which grew twice as fast as GDP for half a century. Technology interacted with globalisation to facilitate production-at-scale and efficient supply chains. Comparative advantage — countries should do the things that they do best — was taken to the nth degree. This boosted productivity and living standards surged. 
+
+              We will not readily abandon these stunning gains and revert to autarchy, because the sacrifices would be too great.
+
+              Nowhere is this clearer than in Australia. With a population of only 25 million, we don’t have the scale to allow self-sufficiency. Our resource endowment (think of coal and iron ore) cannot be used at home: it has to be exported. Our agricultural production is many times greater than our domestic consumption. How would Australians tourists feel if they were confined to their own shores?
+
+              On the other hand, America and China, with their huge scale and diverse resources, could adopt self-sufficiency with smaller loss. Donald Trump’s America has lost any sense of mutually beneficial globalisation and is turning inwards, with the virus inflaming existing tensions.
+
+              But globalisation should be able to survive self-isolation by a single country, even the largest. The rest of the world — and notably China — shows no sign of this inwardness. The main loss to us would be strategic — the economic weakening of our closest ally. There would be a reformatting of the international agencies which underpin globalisation, lessening the largely benign hegemonic role America has played. But the rules of globalisation are based on mutual benefit, so there is no intrinsic reason why China, say, would want to re-write the rules for economic reasons. After all China did famously well out of World Trade Organisation membership.
+
+              In this new world, trade — the key constituent of globalisation — could continue, with China still taking our exports. Global advances in technology would still be available to us. Foreign capital would still flow.
+
+              Of course, the crisis will leave us poorer and we will be interacting with a poorer world. Growth will be hobbled by higher debt. Some partner countries are likely to experience serious trauma. Income inequality will worsen, especially between nations. But the overall dimension of this loss should be kept in perspective — it is a tiny fraction of the disruption experienced in two world wars during the 20th century. If the COVID-19 crisis marks the end of globalisation, it will be the fault of policy responses rather than the result of the epidemic itself. 
+
+              This may be the end of hyper-globalisation, characterised by casual overseas holidays and over-reliance on sourcing foreign supplies instantly. However, a vaccine will be developed in time and the benefits of globalisation are so great that self-interest will see it restored, even if the scenery changes and players switch roles.
