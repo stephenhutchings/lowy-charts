@@ -56,6 +56,12 @@
   to = "https://lowy-digital-terrorism.netlify.com/features/typology-of-terror/:splat"
   status = 200
 
+# PAM Project Evaluations is not part of this repo, but can be accessed from this domain
+[[redirects]]
+  from = "/pacific-aid-map/project-evaluations/*"
+  to = "https://stephenhutchings.github.io/lowy-pam/project-evaluations/:splat"
+  status = 200
+
 [[headers]]
   # Allow CORS on fonts for emails, etc.
   for = "/fonts/*"
