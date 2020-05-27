@@ -58,8 +58,8 @@
 
 # PAM Project Evaluations is not part of this repo, but can be accessed from this domain
 [[redirects]]
-  from = "/pacific-aid-map/project-evaluations/*"
-  to = "https://stephenhutchings.github.io/lowy-pam/project-evaluations/:splat"
+  from = "/pacific-aid-map/*"
+  to = "https://stephenhutchings.github.io/lowy-pam/:splat"
   status = 200
 
 [[headers]]
