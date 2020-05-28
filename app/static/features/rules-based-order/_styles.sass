@@ -4,7 +4,7 @@ $color-bl-dk: #002b45
 $color-bl-lt: #d4e2e8
 $color-gy-lt: #6d777c
 $color-gy-dk: #3e4346
-$color-qt: #29abe2
+$color-qt: #519dd7
 $color-hl: #ffc52b
 
 $ls-l: 0.72px
@@ -56,6 +56,10 @@ $ls-s: 0.15px
 .txt-xs
   font-size: 11px
   line-height: 13px
+.txt-w700
+  font-weight: 700
+.ptr
+  cursor: pointer
 
 .skip-date
   margin-top: -40px!important
@@ -144,17 +148,49 @@ html,body
   & > *
     margin: auto
 
-.intro
-  background: $color-ff
-  padding: 50px 0
-  border-bottom: 5px solid $color-bl-dk
-  margin-bottom: -4px
+.intro-wrap
+  margin: 0 50px
+  height: 85vh
+  box-sizing: border-box
+  overflow: hidden
+.intro-menu
+  ul
+    border-left: 1px solid $color-qt
+  li
+    width: fit-content
+    margin: 0
+    transition: background 50ms, color 50ms
+  li:hover
+    color: white
+    background: $color-qt
 .intro-txt
-  text-align: left
-  padding: 0 20px 30px
+  height: 70%
+  margin-bottom: -4px
+  overflow-y: scroll
+  overflow-x: hidden
+.intro-footer
+  min-height: 15vh
+  background: $color-ff
+.tiles
+  box-sizing: border-box
+  overflow: hidden
+  width: min-content
+  margin: auto
+.tile
+  height: 120px
+  width: 120px
+  margin: 10px
+  padding: 10px
+  box-sizing: border-box
+  background: $color-bl-lt
+  & > div
+    margin: auto
 
 .wrap
   border-left: 3px solid $color-bl-dk
+  display: none
+.wrap.show
+  display: block
 .card
   .wrap
     display: flex
@@ -421,10 +457,6 @@ html,body
     height: 450px
     &-title
       font-size: 44px
-  .intro-txt
-    width: 75%
-    max-width: 800px
-    margin: 0 auto
 
   .content
     .qt

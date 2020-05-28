@@ -1,0 +1,7 @@
+
+div(style="background: white;")
+  .tiles.flex-ch
+    each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
+      .tile.txt-center.txt-tu.txt-xs.flex.ptr(onclick=`togglePM(${i})`)
+        div= pm
+  

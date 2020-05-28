@@ -80,7 +80,8 @@ class stickyNav {
   positionSticky() {
     let y = this.getYearY(2008) - this.offset;
     let current = $(window).scrollTop();
-    if (y < current) { // If we've scrolled beyond the start of the timeline
+    if (0) { // TEMP DISABLE
+    //if (y < current) { // If we've scrolled beyond the start of the timeline
       if (!this.stickyVisible) {
         $('.stickyheader').css('display', 'flex');
         $('.stickyheader').css('position', 'fixed');

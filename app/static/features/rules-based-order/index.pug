@@ -8,113 +8,62 @@ block append config
   - page.metaTitle = `${page.title} - Lowy Institute`
   - page.description = ""
   - page.image = ""
-  - var cards = data.getOne("static/features/rules-based-order/data").cards
+  - var timeline = data.getOne("static/features/rules-based-order/data").cards
 
 block page
   include partials/stickyheader
   include partials/intro
-  .card.wrap 
-    for card in cards
-      if card.type == "anchor" 
-        if card.year == 2015
-          .anchor(id=`anchor-${card.year}`)= ""
-        else
-          .anchor(id=`anchor-${card.year}`)= card.year          
-      else
-        - let isWide = card.type == "highlight" ? "wide highlight" : ""
-        - let skipDate = card.date == "SKIP" ? "skip-date" : ""
-        .card.row(class=`${card.type} ${isWide} ${skipDate}`)
-          .card.item
-            if card.type == "quote"
-              include partials/quote
-            else if card.type == "historyTimeline" 
-              include partials/history
-            else if card.type == "highlight" 
-              include partials/absence
-            else if card.type == "excerpt" 
-              .date.txt-sm!= card.date
-            else
-              .cardtype.txt-sm= card.type
-            
-            if card.type == "opinion"
-              .expert
-                img.expert.image(src=card.expert.image)
-                .txt-xl!= card.expert.name
-                  .txt-ml!= card.expert.credentials
-            else
-              .heading.txt-xl!= card.title
-              .subheading.txt-ml!= card.subtitle 
+  include partials/pm-menu
+  
+  each era in timeline
+    .card.wrap(class=era.pm)
+      for card in era.events 
+        if card.type == "anchor"
+          if card.year == 2015
+            .anchor(id=`anchor-${card.year}`)= ""
+          else
+            .anchor(id=`anchor-${card.year}`)= card.year
+        else 
+          - let isWide = card.type == "highlight" ? "wide highlight" : ""
+          - let skipDate = card.date == "SKIP" ? "skip-date" : ""
+          .card.row(class=`${card.type} ${isWide} ${skipDate}`)
+            .card.item
+              if card.type == "quote"
+                include partials/quote
+              else if card.type == "historyTimeline" 
+                include partials/history
+              else if card.type == "highlight" 
+                include partials/absence
+              else if card.type == "excerpt" 
+                .date.txt-sm!= card.date
+              else
+                .cardtype.txt-sm= card.type
               
-            .content
-              include partials/content
-          if card.type == "opinion"
-            .whitespace
-          if card.media != undefined
-            include partials/media
+              if card.type == "opinion"
+                .expert
+                  img.expert.image(src=card.expert.image)
+                  .txt-xl!= card.expert.name
+                    .txt-ml!= card.expert.credentials
+              else
+                .heading.txt-xl!= card.title
+                .subheading.txt-ml!= card.subtitle 
+                
+              .content
+                include partials/content
+            if card.type == "opinion"
+              .whitespace
+            if card.media != undefined
+              include partials/media
 
 block append css
   style
+    include style/w3-animate.css
     include:sass _styles.sass
     include:sass style/_history.sass 
     
 block append scripts
   script(type="text/javascript" src="script/nav.js")
-
-block append customScripts 
-  script.
-    //$('#2016').css.('border-top', '0');
-    function setHistoryTimelines() {
-      // Adjust historyTimeline widths
-      // Show one node for screens < 900px. Two for > 1100px =====>
-      let screenFactor = $(window).width() < 900 ? 2 : 1;
-      let historyNodes = [3,2,3,3,3,2,9,4,5,3,2];
-      $('.history-timeline').each( function(i) {
-        let multiplier = $(this).prop('id') == 'absence-timeline' ? 50*screenFactor : 100 
-        $(this).css('width',multiplier*historyNodes[i] + "%");
-      });
-    } setHistoryTimelines();
-        
-    function showHideHistoryBtns(el) {
-      let viewWidth = $(el).outerWidth();
-      let endLeft = $(el).children('.history-timeline').outerWidth() - viewWidth;
-      let mobile = $(window).width() < 600 ? 1 : 0;
-      
-      if (mobile) {        
-        $(el).scrollLeft() < viewWidth/2 ? $(el).prev().css('display','none') : $(el).prev().css('display','block'); // if at start, hide back btn
-        $(el).scrollLeft() > endLeft - viewWidth/2 ? $(el).prev().prev().css('display','none') : $(el).prev().prev().css('display','block'); // if at end, hide fwd btn
-      }
-      else {
-        $(el).scrollLeft() == 0 ? $(el).prev().find('.h-btn').css('fill','#888') : $(el).prev().find('.h-btn').css('fill','#002b45');
-        $(el).scrollLeft() >= endLeft - 5 ? $(el).prev().prev().find('.h-btn').css('fill','#888') : $(el).prev().prev().find('.h-btn').css('fill','#002b45');
-      }
-    } $('.skinny-scrollbar').each( (i, el) => showHideHistoryBtns(el) );
-    
-    // Resize debouncing
-    var rtime;
-    var timeout = false;
-    var delta = 200;
-    $(window).resize(function() {
-      rtime = new Date();
-      if (timeout === false) {
-          timeout = true;
-          setTimeout(resizeend, delta);
-      }
-    });
-    function resizeend() {
-      if (new Date() - rtime < delta) {
-          setTimeout(resizeend, delta);
-      } else {
-          timeout = false;
-          setHistoryTimelines();
-          $('.skinny-scrollbar').each( (i, el) => showHideHistoryBtns(el) );
-      }               
-    }
-    function scrollHistory(btn, fw) {
-      // fw indicates fw or back button
-      let el = fw ? $(btn).next().next() : $(btn).next();
-      x = fw ? el.scrollLeft() + el.outerWidth() : el.scrollLeft() - el.outerWidth();
-      el.animate({scrollLeft: x}, 400);
-    }
+  script(type="text/javascript" src="script/interact.js")
     
     
     
