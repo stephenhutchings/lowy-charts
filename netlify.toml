@@ -59,7 +59,7 @@
 # PAM Project Evaluations is not part of this repo, but can be accessed from this domain
 [[redirects]]
   from = "/pacific-aid-map/*"
-  to = "https://lowy-pam.netlify.app/:splat"
+  to = "https://lowy-pam.netlify.app/pacific-aid-map/:splat"
   status = 200
 
 [[headers]]
