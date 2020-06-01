@@ -74,9 +74,13 @@ html,body
   height: auto
   color: $color-bk
 
+h1,h2,h3,h4,h5,p
+  font-family: 'Sans', sans-serif
+  letter-spacing: $ls-s
+
 .stickyheader
   animation: slideup 0.3s
-  display: flex
+  display: none
   position: absolute
   width: 100%
   height: 65px
@@ -171,20 +175,30 @@ html,body
 .intro-footer
   min-height: 15vh
   background: $color-ff
+
+.tile-page
+  background: white
+  min-height: 100vh
+  & > *
+    max-width: 750px
+    margin: 0 auto
 .tiles
   box-sizing: border-box
   overflow: hidden
   width: min-content
-  margin: auto
+  margin: 0 auto
 .tile
   height: 120px
   width: 120px
   margin: 10px
   padding: 10px
   box-sizing: border-box
-  background: $color-bl-lt
+  background: $color-bl-dk
+  color: $color-ff
   & > div
     margin: auto
+.tile.active
+    background: $color-bl-dk
 
 .wrap
   border-left: 3px solid $color-bl-dk
@@ -368,7 +382,7 @@ html,body
   color: white
   font-size: 16px
   border-radius: 0 2px 2px 0
-#anchor-2016,#anchor-2015
+#anchor-2015
   border-top: 0
 
 .ib

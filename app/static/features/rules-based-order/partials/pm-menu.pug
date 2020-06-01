@@ -1,7 +1,10 @@
-
-div(style="background: white;")
+.tile-page.flex-cv
+  .pv-md
+    h1 An annotated timeline
+    .txt-m  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   .tiles.flex-ch
     each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
-      .tile.txt-center.txt-tu.txt-xs.flex.ptr(onclick=`togglePM(${i})`)
+      .tile.txt-center.txt-tu.txt-xs.flex.ptr(class=`tile-${i}` onclick=`togglePM(${i})`)
         div= pm
   
+ 

@@ -75,23 +75,29 @@ class stickyNav {
   }
   getYearY(year) {
     let id = 'anchor-' + year;
-    return document.getElementById(id).offsetTop * this.getZoomFactor();
+    //return document.getElementById(id).offsetTop * this.getZoomFactor();
+    return document.querySelector('.tile-page').offsetTop + 800 * this.getZoomFactor();
   }
   positionSticky() {
-    let y = this.getYearY(2008) - this.offset;
+    let y = this.getYearY(null) - this.offset;
     let current = $(window).scrollTop();
-    if (0) { // TEMP DISABLE
+    if (y < current) { // TEMP DISABLE
     //if (y < current) { // If we've scrolled beyond the start of the timeline
       if (!this.stickyVisible) {
-        $('.stickyheader').css('display', 'flex');
-        $('.stickyheader').css('position', 'fixed');
-        $('.stickyheader').css('top', 0);
+        let description = $('.tile-page').children('.pv-md');
+        let tiles = $('.tile-page').children('.tiles');
+        description.css('display', 'none');
+        tiles.css('position', 'fixed');
+        tiles.css('min-height', '10vh');
+        tiles.css('max-height', '10vh');
+        tiles.css('width', 'inherit');
+        tiles.css('top', 0);
         this.stickyVisible = true;
       }
     }
     else {
-      $('.stickyheader').css('display', 'none');
-      $('.stickyheader').css('top', y);
+      //$('.tile-page').css('display', 'none');
+      //$('.tile-page').css('top', y);
       this.stickyVisible = false;
     }
   }

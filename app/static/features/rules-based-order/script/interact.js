@@ -31,12 +31,13 @@ function scrollHistory(btn, fw) {
 function togglePM(i) {
   let pms = ["rudd", "gillard", "abbott", "turnbull", "morrison"];
   let pm = pms[i];
+  $('.tile-page').children('.active').removeClass('active');
+  $(`.tile-${i}`).addClass('active');
   $('.show').removeClass('show');
   $(`.card.wrap.${pm}`).addClass('show');
   scrollThis('html,body',`.card.wrap.${pm}`)
 }
 function scrollThis(p, c) {
-  console.log("hIELO");
   $(p).animate({scrollTop: $(c)[0].offsetTop}, 500);
 }
 // Set historyTimeline horizontal widths

@@ -3,11 +3,16 @@
 
 .nav-wrapper.txt-ml
   - var date = 2008;
-  .nav-btn= date
+  //.nav-btn= date
     img.nav-btnimg(src="img/dropbtn.svg")
-  .nav-drop.txt-sm
+  //.nav-drop.txt-sm
     while date <= 2020 
       if (date == 2009)
         .nav-dropitem.active(id=`nav--${date}`)= date++
       else
-        .nav-dropitem(id=`nav--${date}`)= date++        
+        .nav-dropitem(id=`nav--${date}`)= date++
+  .tiles-nav.flex-ch
+    each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
+      .tile.txt-center.txt-tu.txt-xs.flex.ptr(style="height: 80px; width: 80px; background: grey" class=`tile-${i}` onclick=`togglePM(${i})`)
+        div= pm
+  
