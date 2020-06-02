@@ -1,6 +1,7 @@
 var rtime;
 var timeout = false;
 var delta = 200;
+var headerVisible = false;
 
 // Resize debounce
 $(window).resize(function() {
@@ -31,14 +32,16 @@ function scrollHistory(btn, fw) {
 function togglePM(i) {
   let pms = ["rudd", "gillard", "abbott", "turnbull", "morrison"];
   let pm = pms[i];
-  $('.tile-page').children('.active').removeClass('active');
-  $(`.tile-${i}`).addClass('active');
+  // Nav menu
+  $('.nav-tiles').children('.active').removeClass('active');
+  $('.nav-tiles').children(`.tile-${i}`).addClass('active');
+  // Timeline content
   $('.show').removeClass('show');
   $(`.card.wrap.${pm}`).addClass('show');
-  scrollThis('html,body',`.card.wrap.${pm}`)
+  scrollThis('html,body',`.tiles`, 80)
 }
-function scrollThis(p, c) {
-  $(p).animate({scrollTop: $(c)[0].offsetTop}, 500);
+function scrollThis(p, c, o) {
+  $(p).animate({scrollTop: $(c)[0].offsetTop + o}, 500);
 }
 // Set historyTimeline horizontal widths
 function setHistoryTimelines() {
@@ -67,3 +70,29 @@ function showHideHistoryBtns(el) {
 // Final function calls
 setHistoryTimelines();
 $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
+
+// FIXED HEADER
+function toggleHeader(show) {
+  let head = $('.header');
+  let tiles = head.children('.tiles');
+  if (show) {
+    tiles.addClass('nav-tiles');
+    head.removeClass('hidden');
+    head.addClass('fixed');
+    headerVisible = true;
+  }
+  else {
+    tiles.removeClass('nav-tiles');
+    head.removeClass('fixed nav-tiles');
+    head.addClass('hidden');
+    headerVisible = false;
+  }
+}
+
+// Scroll event listener
+window.addEventListener('scroll', function(e) {
+  let current = $(window).scrollTop();
+  let tiles = $('.tile-page')[0].offsetTop + 400;
+  if (!headerVisible && current > tiles) {toggleHeader(true);}
+  else if (headerVisible && current < tiles) {toggleHeader(false);}
+});

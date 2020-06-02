@@ -1,0 +1,57 @@
+@import app/static/features/rules-based-order/style/_vars.sass
+
+.header
+  width: 100%
+  height: 100px
+  background: $color-ff
+  border-bottom: 0.5px solid $color-gy-lt
+  z-index: 10
+.header-title
+  float: left
+  max-width: 100px
+.title-long
+  display: none
+.social-share
+  display: none
+
+.nav-tiles
+  .tile
+    display: none
+    opacity: 1
+    height: 60px
+    min-width: 80px
+    background: $color-gy-lt
+    margin: 5px
+    padding: 5px
+  .tile:first-child
+    display: flex
+  .tile.active
+    font-weight: 500
+    height: 70px
+    min-width: 80px
+    background: $color-bl-dk
+
+@media (min-width: 700px)
+  .stickyheader
+    flex-direction: row-reverse
+    & > *
+      margin: auto 0
+      flex: 0 0 33.33%
+      box-sizing: border-box
+  .title-long
+    display: inline
+  .social-share
+    display: block
+    text-align: right
+    .icon
+      padding-left: 10px
+    .icon:last-child
+      padding-right: 15px
+
+  .nav
+    &-wrap
+      display: block
+
+  .nav-tiles
+    .tile
+      display: flex

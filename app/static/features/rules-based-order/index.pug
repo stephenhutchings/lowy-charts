@@ -11,7 +11,6 @@ block append config
   - var timeline = data.getOne("static/features/rules-based-order/data").cards
 
 block page
-  include partials/stickyheader
   include partials/intro
   include partials/pm-menu
   
@@ -26,13 +25,13 @@ block page
         else 
           - let isWide = card.type == "highlight" ? "wide highlight" : ""
           - let skipDate = card.date == "SKIP" ? "skip-date" : ""
-          .card.row(class=`${card.type} ${isWide} ${skipDate}`)
+          .card.row(class=`${card.type} ${skipDate}`)
             .card.item
               if card.type == "quote"
                 include partials/quote
               else if card.type == "historyTimeline" 
                 include partials/history
-              else if card.type == "highlight" 
+              else if card.type == "highlight"
                 include partials/absence
               else if card.type == "excerpt" 
                 .date.txt-sm!= card.date
@@ -55,12 +54,19 @@ block page
             if card.media != undefined
               include partials/media
 
+
+  include partials/header
+  
+  
 block append css
   style
-    include style/w3-animate.css
+    include style/_w3-animate.css
+    include:sass style/_vars.sass
+    include:sass style/_helpers.sass
+    include:sass style/_nav.sass
+    include:sass style/_history.sass
     include:sass _styles.sass
-    include:sass style/_history.sass 
-    
+
 block append scripts
   script(type="text/javascript" src="script/nav.js")
   script(type="text/javascript" src="script/interact.js")

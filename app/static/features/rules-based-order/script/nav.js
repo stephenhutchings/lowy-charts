@@ -5,7 +5,7 @@ class stickyNav {
     this.tabContainerHeight = 65;
     this.offset = 65;
     this.stickyVisible = false;
-    this.setNavLinks();
+    //this.setNavLinks();
     this.positionSticky();
     let self = this;
     $('.nav-btn').click((e) => {self.btnClick($(this), e); });
@@ -29,19 +29,19 @@ class stickyNav {
     let y = this.getYearY(year) - this.offset;
     $('html, body').animate({scrollTop: y}, 500);
   }
-  setNavLinks() {
-  for(let i = 2008; i<=2020; i++) {
-    i == 2014 ?
-      document.querySelector(`#nav--${i}`).addEventListener('click', () => this.scrollToYear(i+1)) :
-      document.querySelector(`#nav--${i}`).addEventListener('click', () => this.scrollToYear(i));
-  }
-}
+  // setNavLinks() {
+  // for(let i = 2008; i<=2020; i++) {
+  //   i == 2014 ?
+  //     document.querySelector(`#nav--${i}`).addEventListener('click', () => this.scrollToYear(i+1)) :
+  //     document.querySelector(`#nav--${i}`).addEventListener('click', () => this.scrollToYear(i));
+  // }
+// }
   updateActive(year) {
-    let navLinks = $('.nav-drop');
-    let newBtn = `${year}<img class="nav-btnimg" src="img/dropbtn.svg">`
-    navLinks.find('div').removeClass('active'); // Remove any active class
-    navLinks.find('div[id="nav--'+ year +'"]').addClass('active'); // Apply active class to relevant nav item
-    $('.nav-btn')[0].innerHTML = newBtn;
+    // let navLinks = $('.nav-drop');
+    // let newBtn = `${year}<img class="nav-btnimg" src="img/dropbtn.svg">`
+    // navLinks.find('div').removeClass('active'); // Remove any active class
+    // navLinks.find('div[id="nav--'+ year +'"]').addClass('active'); // Apply active class to relevant nav item
+    // $('.nav-btn')[0].innerHTML = newBtn;
 }
   checkAnchors() {
     let self = this;
@@ -79,27 +79,22 @@ class stickyNav {
     return document.querySelector('.tile-page').offsetTop + 800 * this.getZoomFactor();
   }
   positionSticky() {
-    let y = this.getYearY(null) - this.offset;
-    let current = $(window).scrollTop();
-    if (y < current) { // TEMP DISABLE
-    //if (y < current) { // If we've scrolled beyond the start of the timeline
-      if (!this.stickyVisible) {
-        let description = $('.tile-page').children('.pv-md');
-        let tiles = $('.tile-page').children('.tiles');
-        description.css('display', 'none');
-        tiles.css('position', 'fixed');
-        tiles.css('min-height', '10vh');
-        tiles.css('max-height', '10vh');
-        tiles.css('width', 'inherit');
-        tiles.css('top', 0);
-        this.stickyVisible = true;
-      }
-    }
-    else {
-      //$('.tile-page').css('display', 'none');
-      //$('.tile-page').css('top', y);
-      this.stickyVisible = false;
-    }
+    // console.log('hello');
+    // let y = this.getYearY(null) - this.offset;
+    // let current = $(window).scrollTop();
+    // if (1) { // TEMP DISABLE
+    // //if (y < current) { // If we've scrolled beyond the start of the timeline
+    //   if (!this.stickyVisible) {
+    //     let nav = $('.stickyheader');
+    //     nav.css('display', 'flex');
+    //     nav.css('top', 0);
+    //     this.stickyVisible = true;
+    //   }
+    // }
+    // else {
+    //   $('.stickyheader').css('display', 'none');
+    //   this.stickyVisible = false;
+    // }
   }
   onScroll() {
     let vh = $(window).height();
@@ -110,9 +105,6 @@ class stickyNav {
       this.checkAnchors();
     }
   }
-
-
-
 }
 new stickyNav();
 

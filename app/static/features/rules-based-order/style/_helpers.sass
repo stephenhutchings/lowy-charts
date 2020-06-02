@@ -1,0 +1,126 @@
+@import app/static/features/rules-based-order/style/_vars.sass
+
+@keyframes slideup
+  0%
+    transform: translateY(-65px)
+  100%
+    transform: translateY(0)
+
+@keyframes grow
+  to
+    transform: scale(1.75)
+    background: rgba($color-bl-dk,0.1)
+
+@keyframes fade
+  to
+    color: $color-bl-dk
+    transform: translateY(-5px)
+
+@keyframes appear
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@for $i from 0 through 30
+  .delay-#{$i})
+    animation-delay: ($i * 150ms)
+
+.ptr
+  cursor: pointer
+.fixed
+  position: fixed
+  top: 0
+.hidden
+  display: none
+
+.txt-xxl
+  font-size: 28px
+  line-height: 33px
+.txt-xl
+  font-size: 24px
+  line-height: 30px
+.txt-l
+  font-size: 20px
+  line-height: 27px
+.txt-ml
+  font-size: 18px
+  line-height: 24px
+.txt-m
+  font-size: 15px
+  line-height: 21px
+.txt-sm
+  font-size: 14px
+  line-height: 18px
+.txt-s
+  font-size: 13px
+  line-height: 15px
+.txt-xs
+  font-size: 11px
+  line-height: 13px
+.txt-xxs
+  font-size: 10px
+  line-height: 12px
+
+.txt-w700
+  font-weight: 700
+
+@media (min-width: 350px)
+  .txt-m
+    font-size: 16px
+    line-height: 21px
+  .txt-sm
+    font-size: 15px
+    line-height: 20px
+
+
+@media (min-width: 600px)
+
+  .txt-xxl
+    font-size: 30px
+    line-height: 44px
+  .txt-xl
+    font-size: 26px
+    line-height: 38px
+  .txt-l
+    font-size: 22px
+    line-height: 31px
+  .txt-ml
+    font-size: 20px
+    line-height: 29px
+  .txt-m
+    font-size: 18px
+    line-height: 25px
+  .txt-sm
+    font-size: 17px
+    line-height: 23px
+  .txt-s
+    font-size: 15px
+    line-height: 20px
+  .txt-xs
+    font-size: 12px
+    line-height: 14px
+
+@media (min-width: 1085px)
+
+  .txt-xl
+    font-size: 30px
+    line-height: 44px
+  .txt-l
+    font-size: 26px
+    line-height: 38px
+  .txt-ml
+    font-size: 22px
+    line-height: 31px
+  .txt-m
+    font-size: 20px
+    line-height: 29px
+  .txt-sm
+    font-size: 19px
+    line-height: 27px
+  .txt-s
+    font-size: 16px
+    line-height: 21px
+  .txt-xs
+    font-size: 15px
+    line-height: 20px

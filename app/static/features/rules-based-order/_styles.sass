@@ -1,65 +1,9 @@
-$color-ff: #fff
-$color-bk: #000
-$color-bl-dk: #002b45
-$color-bl-lt: #d4e2e8
-$color-gy-lt: #6d777c
-$color-gy-dk: #3e4346
-$color-qt: #519dd7
-$color-hl: #ffc52b
+@charset "utf-8"
 
-$ls-l: 0.72px
-$ls-m: 0.6px
-$ls-s: 0.15px
-
-=border-radius($property)
-  border-radius : $property
-  -moz-border-radius : $property
-  -webkit-border-radius : $property
-=background-size($property)
-  background-size : ($property)
-  -webkit-background-size : ($property)
-  -moz-background-size : ($property)
-  -o-background-size : ($property)
-=keyframes($property)
-  keyframes: $property
-  -webkit-keyframes: $property
-  -moz-keyframes: $property
-  -o-keyframes: $property
-
-@keyframes slideup
-  0%
-    transform: translateY(-65px)
-  100%
-    transform: translateY(0)
-
-.txt-xxl
-  font-size: 28px
-  line-height: 33px
-.txt-xl
-  font-size: 24px
-  line-height: 30px
-.txt-l
-  font-size: 20px
-  line-height: 27px
-.txt-ml
-  font-size: 18px
-  line-height: 24px
-.txt-m
-  font-size: 15px
-  line-height: 21px
-.txt-sm
-  font-size: 14px
-  line-height: 18px
-.txt-s
-  font-size: 13px
-  line-height: 15px
-.txt-xs
-  font-size: 11px
-  line-height: 13px
-.txt-w700
-  font-weight: 700
-.ptr
-  cursor: pointer
+@import app/static/features/rules-based-order/style/_vars.sass
+@import app/static/features/rules-based-order/style/_helpers.sass
+@import app/static/features/rules-based-order/style/_nav.sass
+@import app/static/features/rules-based-order/style/_history.sass
 
 .skip-date
   margin-top: -40px!important
@@ -77,54 +21,6 @@ html,body
 h1,h2,h3,h4,h5,p
   font-family: 'Sans', sans-serif
   letter-spacing: $ls-s
-
-.stickyheader
-  animation: slideup 0.3s
-  display: none
-  position: absolute
-  width: 100%
-  height: 65px
-  padding: 0 10px
-  background: $color-ff
-  border-bottom: 0.5px solid $color-gy-lt
-  text-transform: uppercase
-  z-index: 10
-  & > *
-    margin: auto 5%
-.header-title
-  font-size: 13px
-.title-long
-  display: none
-.social-share
-  display: none
-.nav
-  &-wrapper
-    margin-left: auto
-    min-width: 90px
-    transition: all 500ms
-    color: $color-bl-dk
-  &-btn
-    padding: 5px 10px
-    font-weight: 600
-    border-bottom: 3px solid $color-bl-dk
-    cursor: pointer
-  &-btnimg
-    display: inline-block
-    height: 14px
-    padding-left: 6px
-  &-drop
-    color: $color-bl-dk
-    position: absolute
-    background-color: $color-ff
-    box-shadow : 0px 0px 2px $color-bl-dk
-    cursor: pointer
-    display: none
-  &-dropitem
-    padding: 5px 25px
-    &.active, &:hover
-      font-weight: 400
-      background-color: $color-bl-dk
-      color: $color-ff
 
 .banner-wrap
   height: 100vh
@@ -192,13 +88,15 @@ h1,h2,h3,h4,h5,p
   width: 120px
   margin: 10px
   padding: 10px
+  opacity: 0
   box-sizing: border-box
   background: $color-bl-dk
   color: $color-ff
+  transition-duration: 0.5s
   & > div
     margin: auto
-.tile.active
-    background: $color-bl-dk
+  &:hover
+    background: $color-qt
 
 .wrap
   border-left: 3px solid $color-bl-dk
@@ -390,14 +288,6 @@ h1,h2,h3,h4,h5,p
 
 ////////////// START MEDIA QUERIES ////////////////////
 
-@media (min-width: 350px)
-  .txt-m
-    font-size: 16px
-    line-height: 21px
-  .txt-sm
-    font-size: 15px
-    line-height: 20px
-
 @media (min-width: 500px)
   .card
     .media
@@ -409,63 +299,9 @@ h1,h2,h3,h4,h5,p
 
 @media (min-width: 600px)
 
-  .txt-xxl
-    font-size: 30px
-    line-height: 44px
-  .txt-xl
-    font-size: 26px
-    line-height: 38px
-  .txt-l
-    font-size: 22px
-    line-height: 31px
-  .txt-ml
-    font-size: 20px
-    line-height: 29px
-  .txt-m
-    font-size: 18px
-    line-height: 25px
-  .txt-sm
-    font-size: 17px
-    line-height: 23px
-  .txt-s
-    font-size: 15px
-    line-height: 20px
-  .txt-xs
-    font-size: 12px
-    line-height: 14px
-
   .whitespace
     min-height: 40px
     background: #fff
-
-  .stickyheader
-    flex-direction: row-reverse
-    padding: 0
-    & > *
-      margin: auto 0
-      flex: 0 0 33.33%
-      box-sizing: border-box
-  .header-title
-    font-size: 14px
-    text-align: center
-  .title-long
-    display: inline
-  .social-share
-    display: block
-    text-align: right
-    .icon
-      padding-left: 10px
-    .icon:last-child
-      padding-right: 15px
-  .nav
-    &-wrapper
-      padding-left: 8.5%
-    &-btn
-      width: fit-content
-      border-bottom: none
-    &-btnimg
-    &-dropitem
-
 
   .banner
     height: 450px
@@ -520,7 +356,6 @@ h1,h2,h3,h4,h5,p
       width: calc(100% + 4px)
       max-width: none
       border-left: none
-      margin: 20px 0
       border-top: 3px dotted $color-bl-dk
       border-bottom: 3px dotted $color-bl-dk
     .item
@@ -550,27 +385,6 @@ h1,h2,h3,h4,h5,p
 
 @media (min-width: 1085px)
 
-  .txt-xl
-    font-size: 30px
-    line-height: 44px
-  .txt-l
-    font-size: 26px
-    line-height: 38px
-  .txt-ml
-    font-size: 22px
-    line-height: 31px
-  .txt-m
-    font-size: 20px
-    line-height: 29px
-  .txt-sm
-    font-size: 19px
-    line-height: 27px
-  .txt-s
-    font-size: 16px
-    line-height: 21px
-  .txt-xs
-    font-size: 15px
-    line-height: 20px
   .anchor
     right: calc(50% + 380px)
   .date
