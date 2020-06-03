@@ -53,8 +53,12 @@ block page
                         width="100%"
                         height=toPercent(fy(val))
                         y=toPercent(y-fy(val))
-                        fill=( j==3 && (i==5 || i==6) ? "url(#diagonalHatch)" : chart.colors[j] )
+                        fill=chart.colors[j]
+                        stroke=( j==3 && (i==5 || i==6) ? "#ee1607" : "" )
+                        stroke-width=( j==3 && (i==5 || i==6) ? 1 : 0 )
+                        stroke-dasharray=( j==3 && (i==5 || i==6) ? 4 : 0 )
                       )
+                        title= val.toFixed(2) <= 1 ? `${val.toFixed(2)}` : ""
                       text.chart-value(
                         x="50%"
                         y=toPercent(y - fy(val/2))
@@ -82,9 +86,6 @@ block page
 
     .chart-notes.txt-muted.txt-center
       !=page.notes
-    //.chart-source.txt-muted.txt-left
-      !=page.source
-
 
 block append css
   style
