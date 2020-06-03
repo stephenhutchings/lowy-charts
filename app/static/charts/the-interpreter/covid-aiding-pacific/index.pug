@@ -35,21 +35,32 @@ block page
                   width=toPercent(fx(0))
                   height="100%"
                 )
+                  defs
+                    pattern(
+                      id="diagonalHatch"
+                      patternUnits="userSpaceOnUse" 
+                      width="4" 
+                      height="8" 
+                      patternTransform="rotate(-45 2 2)"
+                    )
+                      rect(width="4" height="8" fill="#faa500")
+                      path(d="M -1,2 l 6,0" stroke="#fff" stroke-width="0.5")
+                      
                   - y = 1
-                  for val, i in vals
+                  for val, j in vals
                     if val
                       rect(
                         width="100%"
                         height=toPercent(fy(val))
                         y=toPercent(y-fy(val))
-                        fill=chart.colors[vals.length - i - 1]
+                        fill=( j==3 && (i==5 || i==6) ? "url(#diagonalHatch)" : chart.colors[j] )
                       )
                       text.chart-value(
                         x="50%"
                         y=toPercent(y - fy(val/2))
                         text-anchor="middle"
                         transform="translate(0 4.5)"
-                        class=( i < 4 ? "txt-fff" : "")
+                        class=( (j > 3) ? "" : "txt-fff" )
                       )
                         = val.toFixed(2) > 1 ? val.toFixed(2) : ""
 
@@ -64,16 +75,15 @@ block page
                     = chart.axes[0].values[i]
 
         ul.legend.txt-nowrap.list-bare.txt-left.flex-ch
-          for item, i in chart.legend.reverse()
+          for item, i in chart.legend
             li.legend-item
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item
 
     .chart-notes.txt-muted.txt-center
       !=page.notes
-
-      //.chart-source.txt-muted.txt-left
-        !=page.source
+    //.chart-source.txt-muted.txt-left
+      !=page.source
 
 
 block append css

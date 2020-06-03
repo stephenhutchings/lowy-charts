@@ -2,10 +2,11 @@ title: >
   International Covid-19 Financing support across the Pacific (% GDP)
 
 notes: >
-  [1] Proposed  &emsp; [2] Announced  &emsp;  [3] Available/drawn
+  [1] Announced  &emsp; [2] Available/drawn  &emsp;  [3] Proposed   &emsp;  <span width="18px" height="18px" style="color: white; background:#faa500; padding: 0 1px;">&#9585;</span> Accessible
+
 
 source: >
-  Source: ??
+  Source:
 
 charts:
   -
@@ -18,18 +19,18 @@ charts:
       maxY: 14
 
     legend:
-      - Multilateral assistance <sup>[2]</sup>
-      - Bilateral assistance <sup>[2]</sup>
-      - G20 bilateral debt standstill <sup>[2]</sup>
-      - IMF rapid financing windows <sup>[3]</sup>
-      - Broadened debt standstill <sup>[1]</sup>
+      - Multilateral assistance <sup>[1]</sup>
+      - Bilateral assistance <sup>[1]</sup>
+      - G20 bilateral debt standstill <sup>[1]</sup>
+      - IMF rapid financing windows <sup>[2]</sup>
+      - Broadened debt standstill <sup>[3]</sup>
 
     colors:
+      - "#000"
+      - "#4b4f56"
+      - "#8b8f96"
+      - "#faa500"
       - "#ffc52b"
-      - "#ffa800"
-      - "#f80"
-      - "#6b6f76"
-      - "#2C3944"
 
     axes:
       -
