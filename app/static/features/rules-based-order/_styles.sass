@@ -76,13 +76,15 @@ h1,h2,h3,h4,h5,p
   background: white
   min-height: 100vh
   & > *
-    max-width: 750px
     margin: 0 auto
 .tiles
   box-sizing: border-box
+  height: 120px
   overflow: hidden
-  width: min-content
   margin: 0 auto
+  &:hover .tile
+    background: $color-gy-lt
+    height: 110px
 .tile
   height: 120px
   width: 120px
@@ -96,7 +98,8 @@ h1,h2,h3,h4,h5,p
   & > div
     margin: auto
   &:hover
-    background: $color-qt
+    background: $color-bl-dk!important
+    height: 120px!important
 
 .wrap
   border-left: 3px solid $color-bl-dk

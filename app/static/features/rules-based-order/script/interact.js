@@ -33,12 +33,12 @@ function togglePM(i) {
   let pms = ["rudd", "gillard", "abbott", "turnbull", "morrison"];
   let pm = pms[i];
   // Nav menu
-  $('.nav-tiles').children('.active').removeClass('active');
-  $('.nav-tiles').children(`.tile-${i}`).addClass('active');
+  $('.tiles').children('.active').removeClass('active');
+  $('.tiles').children(`.tile-${i}`).addClass('active');
   // Timeline content
   $('.show').removeClass('show');
   $(`.card.wrap.${pm}`).addClass('show');
-  scrollThis('html,body',`.tiles`, 80)
+  scrollThis('html,body',`.card.wrap.${pm}`, -300)
 }
 function scrollThis(p, c, o) {
   $(p).animate({scrollTop: $(c)[0].offsetTop + o}, 500);
@@ -73,18 +73,15 @@ $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
 
 // FIXED HEADER
 function toggleHeader(show) {
-  let head = $('.header');
-  let tiles = head.children('.tiles');
+  let tiles = $('.tiles');
   if (show) {
-    tiles.addClass('nav-tiles');
-    head.removeClass('hidden');
-    head.addClass('fixed');
+    tiles.children('.tiles').css('height', '100px');
+    tiles.addClass('header nav-tiles fixed');
     headerVisible = true;
   }
   else {
-    tiles.removeClass('nav-tiles');
-    head.removeClass('fixed nav-tiles');
-    head.addClass('hidden');
+    tiles.children('.tiles').css('height', '120px');
+    tiles.removeClass('header nav-tiles fixed');
     headerVisible = false;
   }
 }
@@ -92,7 +89,7 @@ function toggleHeader(show) {
 // Scroll event listener
 window.addEventListener('scroll', function(e) {
   let current = $(window).scrollTop();
-  let tiles = $('.tile-page')[0].offsetTop + 400;
+  let tiles = $('.tile-wrap')[0].offsetTop;
   if (!headerVisible && current > tiles) {toggleHeader(true);}
   else if (headerVisible && current < tiles) {toggleHeader(false);}
 });

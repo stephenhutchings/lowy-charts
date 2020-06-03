@@ -1,9 +1,8 @@
 .tile-page.flex-cv
-  .pv-md
-    h1 Prime Minister and the rules-based order
+  .col-md.pv-md
+    h1 Prime Ministers and the rules-based order
     .txt-m  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  .header
-    .tiles.flex-ch
+  .tile-wrap: .tiles.flex-ch
       each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
         .tile.flex.txt-center.txt-tu.txt-s.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i})`)
           div= pm
