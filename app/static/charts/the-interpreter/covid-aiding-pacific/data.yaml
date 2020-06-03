@@ -2,7 +2,7 @@ title: >
   International Covid-19 Financing support across the Pacific (% GDP)
 
 notes: >
-  Notes: ??
+  [1] Proposed  &emsp; [2] Announced  &emsp;  [3] Available/drawn
 
 source: >
   Source: ??
@@ -10,27 +10,26 @@ source: >
 charts:
   -
     title: >
-      International Covid-19 Financing support across the Pacific (% GDP)
+      International Covid-19 financing support across the Pacific (% GDP)
 
-
-    subtitle: IMF debt risk ratings
+    subtitle: ""
     scale:
       minY:  0
-      maxY: 16
+      maxY: 14
 
     legend:
-      - Multilateral assistance (announced)
-      - Bilateral assistance (announced)
-      - G20 bilateral debt standstill (announced)
-      - IMF rapid financing windows (available/drawn)
-      - Broadened debt standstill (proposed)
+      - Multilateral assistance <sup>[2]</sup>
+      - Bilateral assistance <sup>[2]</sup>
+      - G20 bilateral debt standstill <sup>[2]</sup>
+      - IMF rapid financing windows <sup>[3]</sup>
+      - Broadened debt standstill <sup>[1]</sup>
 
     colors:
-      - "#002a45"
-      - "#16b56f"
-      - "#ffae00"
-      - "#ff1f2f"
-      - "#b7c1ce"
+      - "#ffc52b"
+      - "#ffa800"
+      - "#f80"
+      - "#6b6f76"
+      - "#2C3944"
 
     axes:
       -
