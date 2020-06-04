@@ -22,6 +22,11 @@ h1,h2,h3,h4,h5,p
   font-family: 'Sans', sans-serif
   letter-spacing: $ls-s
 
+.snap
+  scroll-snap-type: y mandatory
+section
+  scroll-snap-align: start
+
 .banner-wrap
   height: 100vh
   display: flex
@@ -44,13 +49,14 @@ h1,h2,h3,h4,h5,p
   display: flex
   min-height: 35%
   color: $color-bl-dk
+  background: $color-ff
   text-align: center
   & > *
     margin: auto
 
 .intro-wrap
   margin: 0 50px
-  height: 85vh
+  height: 75vh
   box-sizing: border-box
   overflow: hidden
 .intro-menu
@@ -64,13 +70,12 @@ h1,h2,h3,h4,h5,p
     color: white
     background: $color-qt
 .intro-txt
-  height: 70%
+  height: 80%
   margin-bottom: -4px
   overflow-y: scroll
   overflow-x: hidden
 .intro-footer
-  min-height: 15vh
-  background: $color-ff
+  min-height: 25vh
 
 .tile-page
   background: white
