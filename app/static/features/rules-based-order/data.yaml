@@ -1,10 +1,13 @@
 cards:
 
   - pm: rudd
+    summary: |
+      # Kevin Rudd
+      ## 2007&mdash;2010
+    credit: Photo&#58; Cherie Cullen / Wiki Commons
     events:
       - type: anchor
         year: 2008
-
       - type: historyTimeline
         year: 2008
         dates: [Month 2008, Month 2008, Month 2008]
@@ -88,9 +91,6 @@ cards:
           - format: p
             val: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-      - type: anchor
-        year: 2010
-
       - type: historyTimeline
         year: 2010
         dates: [Month 2010, Month 2010, Month 2010]
@@ -103,6 +103,10 @@ cards:
             description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - pm: gillard
+    summary: |
+      # Julia Gillard
+      ## 2010&mdash;2013
+    credit: Photo&#58; XX / XX
     events:
       - type: anchor
         year: 2010
@@ -235,6 +239,11 @@ cards:
           caption: Prime Minister Julia Gillard introduces the key points of the 2013 Defence White Paper.
 
   - pm: abbott
+    banner: img/abbott-banner.jpg
+    summary: |
+      # Tony Abbott
+      ## 2013&mdash;2015
+    credit: Photo&#58; XX / XX
     events:
       - type: anchor
         year: 2015
@@ -263,6 +272,11 @@ cards:
             description: Donald Trump was elected the 45th president of the United States, ushering in the era of "America-First" foreign policy. Trump comes to office as a lifelong sceptic of America's post-war alliance network, and of free trade.
 
   - pm: turnbull
+    banner: img/turnbull-banner.jpg
+    summary: |
+      # Malcolm Turnbull
+      ## 2015&mdash;2018
+    credit: Photo&#58; XX / XX
     events:
       - type: anchor
         year: 2016
@@ -441,6 +455,11 @@ cards:
             val: Australia's Foreign Policy White Paper reiterated Australia's commitment to a strong multilateral human rights system and to advancing human rights globally. It is in our national interest to shape the work of the Council and uphold the international rules-based order.
 
   - pm: morrison
+    banner: img/morrison-banner.jpg
+    summary: |
+      # Scott Morrison
+      ## 2018&mdash;
+    credit: Photo&#58; XX / XX
     events:
       - type: anchor
         year: 2018
@@ -502,9 +521,6 @@ cards:
             val:
               <p>How we hold to this commitment in an increasingly competitive environment, will define success. So too will how we call out unfair and inconsistently applied rules and coercive behaviour. This is Australia's pathway in the region.</p>
               <p>It is squarely in Australia's interests for our great friend and closest ally to remain the partner of choice. A partner who remains deeply invested in the region, and in an open global economy and a rules-based trading system.</p>
-
-      - type: anchor
-        year: 2020
 
       - type: historyTimeline
         dates: [3 January 2020, 15 February 2020]

@@ -38,7 +38,7 @@ function togglePM(i) {
   // Timeline content
   $('.show').removeClass('show');
   $(`.card.wrap.${pm}`).addClass('show');
-  scrollThis('html,body',`.card.wrap.${pm}`, -300)
+  scrollThis('html,body',`.card.wrap.${pm}`, -100)
 }
 function scrollThis(p, c, o) {
   $(p).animate({scrollTop: $(c)[0].offsetTop + o}, 500);
@@ -75,21 +75,22 @@ $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
 function toggleHeader(show) {
   let tiles = $('.tiles');
   if (show) {
-    tiles.children('.tiles').css('height', '100px');
+    tiles.css('height', '100px');
     tiles.addClass('header nav-tiles fixed');
     headerVisible = true;
   }
   else {
-    tiles.children('.tiles').css('height', '120px');
+    tiles.css('height', '120px');
     tiles.removeClass('header nav-tiles fixed');
     headerVisible = false;
   }
 }
 
 // Scroll event listener
-window.addEventListener('scroll', function(e) {
-  let current = $(window).scrollTop();
+function headerCheck() {
+  let c = $(window).scrollTop();
   let tiles = $('.tile-wrap')[0].offsetTop;
-  if (!headerVisible && current > tiles) {toggleHeader(true);}
-  else if (headerVisible && current < tiles) {toggleHeader(false);}
-});
+  if (!headerVisible && c > tiles) {toggleHeader(true);}
+  else if (headerVisible && c < tiles) {toggleHeader(false);}
+}
+window.addEventListener('scroll', headerCheck);

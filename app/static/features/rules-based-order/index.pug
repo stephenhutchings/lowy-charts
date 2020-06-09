@@ -15,21 +15,26 @@ block page
    
   each era in timeline
     .card.wrap(class=era.pm)
-      for card in era.events 
+      .row.banner(style=`background-image: url('./img/${era.pm}-banner.jpg'); min-height: 350px`)
+        .banner-title.txt-center!= marked(`${era.summary}`)
+        .banner-caption.txt-muted.txt-xs.txt-right!= era.credit
+      .card.row.whitespace
+      for card in era.events
         if card.type == "anchor"
           if card.year == 2015
             .anchor(id=`anchor-${card.year}`)= ""
           else
             .anchor(id=`anchor-${card.year}`)= card.year
+        else if card.type == "historyTimeline"
+          // [HOLD] DO NOTHING FOR HISTORY BLOCKS
         else 
-          - let isWide = card.type == "highlight" ? "wide highlight" : ""
           - let skipDate = card.date == "SKIP" ? "skip-date" : ""
           .card.row(class=`${card.type} ${skipDate}`)
             .card.item
               if card.type == "quote"
                 include partials/quote
               else if card.type == "historyTimeline" 
-                include partials/history
+                //include partials/history
               else if card.type == "highlight"
                 include partials/absence
               else if card.type == "excerpt" 
@@ -62,7 +67,7 @@ block append css
     include style/_w3-animate.css
     include:sass style/_vars.sass
     include:sass style/_helpers.sass
-    include:sass style/_nav.sass
+    include:sass style/_header.sass
     include:sass style/_history.sass
     include:sass _styles.sass
 

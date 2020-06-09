@@ -2,7 +2,7 @@
 
 @import app/static/features/rules-based-order/style/_vars.sass
 @import app/static/features/rules-based-order/style/_helpers.sass
-@import app/static/features/rules-based-order/style/_nav.sass
+@import app/static/features/rules-based-order/style/_header.sass
 @import app/static/features/rules-based-order/style/_history.sass
 
 .skip-date
@@ -31,8 +31,12 @@ section
   height: 100vh
   display: flex
   flex-direction: column
-.banner
-  background: url('./img/banner-edit-2.jpg') center center no-repeat
+.banner,
+.card .row.banner
+  position: relative
+  background-color: $color-bl-dk
+  background-position: center
+  background-repeat: no-repeat
   background-size: cover
   display: flex
   flex-direction: column
@@ -45,11 +49,15 @@ section
     margin: auto
     text-transform: uppercase
     padding: 0 20px
+  &-caption
+    position: absolute
+    right: 10px
+    margin-top: 320px
 .credits
   display: flex
   min-height: 35%
   color: $color-bl-dk
-  background: $color-ff
+  background-color: $color-ff
   text-align: center
   & > *
     margin: auto
@@ -68,7 +76,7 @@ section
     transition: background 50ms, color 50ms
   li:hover
     color: white
-    background: $color-qt
+    background-color: $color-qt
 .intro-txt
   height: 80%
   margin-bottom: -4px
@@ -78,18 +86,26 @@ section
   min-height: 25vh
 
 .tile-page
-  background: white
+  background-color: white
   min-height: 100vh
   & > *
     margin: 0 auto
+.tile-wrap
+  min-height: 120px
 .tiles
   box-sizing: border-box
   height: 120px
   overflow: hidden
   margin: 0 auto
+.tiles:not(.nav-tiles)
+  .tile
+    height: 120px
   &:hover .tile
-    background: $color-gy-lt
-    height: 110px
+    background-color: $color-gy-lt
+    height: 115px
+  .tile:hover
+    height: 120px
+    background-color: $color-bl-dk
 .tile
   height: 120px
   width: 120px
@@ -97,14 +113,11 @@ section
   padding: 10px
   opacity: 0
   box-sizing: border-box
-  background: $color-bl-dk
+  background-color: $color-bl-dk
   color: $color-ff
-  transition-duration: 0.5s
+  transition-duration: 0.4s
   & > div
     margin: auto
-  &:hover
-    background: $color-bl-dk!important
-    height: 120px!important
 
 .wrap
   border-left: 3px solid $color-bl-dk
@@ -154,10 +167,10 @@ section
   .historyTimeline
     margin: 0
     border-top: 1.5px dotted $color-bl-dk
-    background: $color-ff
+    background-color: $color-ff
     box-shadow: 0px 1px 2px #0004
   .opinion
-    background: $color-bl-dk
+    background-color: $color-bl-dk
     color : $color-ff
     position: relative
     margin: 0 0 40px
@@ -238,12 +251,12 @@ section
       max-width: 80px
     .bar
       height: 4px
-      background: $color-bl-dk
+      background-color: $color-bl-dk
       margin: 0 0 0 20px
       width: 100%
   .footer
     height: 4px
-    background: $color-bl-dk
+    background-color: $color-bl-dk
   .quotation
     font-weight: 600
   .name
@@ -281,14 +294,18 @@ section
 .flip
   transform: scale(-1)
 .anchor
-  background: $color-bl-dk
+  background-color: $color-bl-dk
   margin: 10px 0
   padding: 5px 10px 5px 20px
   width: fit-content
   color: white
   font-size: 16px
   border-radius: 0 2px 2px 0
-#anchor-2015
+#anchor-2008,
+#anchor-2010,
+#anchor-2015,
+#anchor-2016,
+#anchor-2018:nth-child(2)
   border-top: 0
 
 .ib
@@ -307,12 +324,7 @@ section
 
 @media (min-width: 600px)
 
-  .whitespace
-    min-height: 40px
-    background: #fff
-
   .banner
-    height: 450px
     &-title
       font-size: 44px
 
@@ -334,7 +346,7 @@ section
     font-size: 22px
     background: none
     color: $color-bl-dk
-    border-top: 4px solid $color-bl-dk
+    //border-top: 4px solid $color-bl-dk
 
   .date
     margin: 0
@@ -368,14 +380,16 @@ section
       border-bottom: 3px dotted $color-bl-dk
     .item
       padding: 20px
-    .excerpt, .row.quote
+    .excerpt, .row.quote, .whitespace
       border-left: 10px solid $color-bl-dk
-      background: $color-ff
+      background-color: $color-ff
+    .whitespace
+      min-height: 40px
     .historyTimeline
       border-left: 10px solid $color-bl-dk
       border-top: 4px solid $color-bl-dk
       width: 70%
-      background: $color-ff
+      background-color: $color-ff
       padding-bottom: 30px
       box-shadow: none
     .opinion
@@ -390,11 +404,13 @@ section
         justify-content: flex-start
         text-align : left
 
+  .row.banner
+    border-left: 10px solid $color-bl-dk
 
 @media (min-width: 1085px)
 
   .anchor
-    right: calc(50% + 380px)
+    right: calc(50% + 384px)
   .date
     right: calc(50% + 380px + 15px)
     &:after
