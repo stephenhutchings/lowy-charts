@@ -1,0 +1,33 @@
+title: >
+  Population size
+
+source: >
+  Source: XX
+
+charts:
+  -
+    subtitle: ""
+    scale:
+      minY:  0
+      maxY: 70
+    axes:
+      -
+        title: Population size
+        values:
+          - Large
+          - Medium
+          - Small
+      -
+        title: Better performing
+        values:
+          - 36
+          - 44
+          - 62
+      -
+        title: Worse performing
+        values:
+          - 64
+          - 56
+          - 38
+      -
+        title: Proportion of countries in category

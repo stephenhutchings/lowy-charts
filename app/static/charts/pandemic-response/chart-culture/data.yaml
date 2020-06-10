@@ -1,0 +1,33 @@
+title: >
+  Culture
+
+source: >
+  Source: XX
+
+charts:
+  -
+    subtitle: ""
+    scale:
+      minY:  0
+      maxY: 70
+    axes:
+      -
+        title: Culture
+        values:
+          - Asian
+          - Western
+          - Other
+      -
+        title: Better performing
+        values:
+          - 67
+          - 47
+          - 44
+      -
+        title: Worse performing
+        values:
+          - 33
+          - 53
+          - 56
+      -
+        title: Proportion of countries in category

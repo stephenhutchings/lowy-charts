@@ -1,0 +1,33 @@
+title: >
+  Economic development
+
+source: >
+  Source: XX
+
+charts:
+  -
+    subtitle: ""
+    scale:
+      minY:  0
+      maxY: 70
+    axes:
+      -
+        title: Economic development
+        values:
+          - High income
+          - Middle income
+          - Low income
+      -
+        title: Better performing
+        values:
+          - 50
+          - 42
+          - 58
+      -
+        title: Worse performing
+        values:
+          - 50
+          - 58
+          - 42
+      -
+        title: Proportion of countries in category

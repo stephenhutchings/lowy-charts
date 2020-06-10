@@ -1,0 +1,137 @@
+title: >
+  Culture
+
+source: >
+  Source: XX
+
+charts:
+  -
+    subtitle: ""
+    scale:
+      minY:  0
+      maxY: 70
+    axes:
+      -
+        title: Culture
+        values:
+          - Asian
+          - Western
+          - Other
+      -
+        title: Better performing
+        values:
+          - 67
+          - 47
+          - 44
+      -
+        title: Worse performing
+        values:
+          - 33
+          - 53
+          - 56
+      -
+        title: Proportion of countries in category
+  -
+    subtitle: ""
+    scale:
+      minY:  0
+      maxY: 80
+    axes:
+      -
+        title: Powers
+        values:
+          - Great powers
+          - Middle powers
+          - Minor powers
+      -
+        title: Better performing
+        values:
+          - 29
+          - 52
+          - 51
+      -
+        title: Worse performing
+        values:
+          - 71
+          - 48
+          - 49
+      -
+        title: Proportion of countries in category
+  -
+    subtitle: ""
+    scale:
+      minY:  0
+      maxY: 70
+    axes:
+      -
+        title: Population size
+        values:
+          - Large
+          - Medium
+          - Small
+      -
+        title: Better performing
+        values:
+          - 36
+          - 44
+          - 62
+      -
+        title: Worse performing
+        values:
+          - 64
+          - 56
+          - 38
+      -
+        title: Proportion of countries in category
+  -
+    subtitle: ""
+    scale:
+      minY:  0
+      maxY: 70
+    axes:
+      -
+        title: Economic development
+        values:
+          - High income
+          - Middle income
+          - Low income
+      -
+        title: Better performing
+        values:
+          - 50
+          - 42
+          - 58
+      -
+        title: Worse performing
+        values:
+          - 50
+          - 58
+          - 42
+      -
+        title: Proportion of countries in category
+  -
+    subtitle: ""
+    scale:
+      minY:  0
+      maxY: 60
+    axes:
+      -
+        title: Political system
+        values:
+          - Authoritarian
+          - Hybrid
+          - Democratic
+      -
+        title: Better performing
+        values:
+          - 44
+          - 43
+          - 51
+      -
+        title: Worse performing
+        values:
+          - 56
+          - 57
+          - 59
+      -
+        title: Proportion of countries in category
