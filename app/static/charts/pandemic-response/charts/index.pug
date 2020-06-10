@@ -10,11 +10,11 @@ block page
   each chart, i in charts
     .wrapper.flex(id=`chart-${i}` class=(i==0 ? "active" : ""))
       .txt-center.flex.flex-grow.flex-col
-        .chart-title.txt-lg.ptr(onclick="this.classList.toggle('visible');")
+        .chart-title.ptr(onclick="this.classList.toggle('visible');")
+          li.ptr.top= chart.axes[0].title
+            svg.btn(fill="#4b4f56" width="20" height="20" viewBox="0 0 24 24")
+              path(d="M8.586 5.586c-.781.781-.781 2.047 0 2.828l3.585 3.586-3.585 3.586c-.781.781-.781 2.047 0 2.828.39.391.902.586 1.414.586s1.024-.195 1.414-.586l6.415-6.414-6.415-6.414c-.78-.781-2.048-.781-2.828 0z")
           ul
-            li.ptr.rel= chart.axes[0].title
-              svg.btn(fill="black" width="20" height="20" viewBox="0 0 24 24")
-                path(d="M8.586 5.586c-.781.781-.781 2.047 0 2.828l3.585 3.586-3.585 3.586c-.781.781-.781 2.047 0 2.828.39.391.902.586 1.414.586s1.024-.195 1.414-.586l6.415-6.414-6.415-6.414c-.78-.781-2.048-.781-2.828 0z")
             each c, k in charts
               li.ptr(
                 onclick=`updateChart(${k})`
@@ -134,41 +134,39 @@ block append css
         border-bottom: 1px solid #ccc
 
       .chart-title
+        margin: auto
         max-height: 40px
         overflow: hidden
-        z-index: 100
         width: fit-content
-        margin: auto
+        z-index: 1
+        font-size: 20px
         
       .visible
         overflow: visible
 
       .btn
+        float: right
+        padding: 4px 12px 12px 4px
         transform: rotate(90deg)
-        position: absolute
-        padding: 10px
-        right: 0
-        top: 0
-        background: #ccc
-        &:hover
-          background: #bbb
       .ptr
         cursor: pointer
       .rel
         position: relative
+      ul
+        padding: 0
+        box-shadow: 0px 20px 20px 0px #3332
       li
         list-style: none
         margin: 0
-        padding: 4.25px 55px 4.25px 16px
-      li:not(:first-child)
+        padding: 4px 16px
+      li:hover
+        background: #eee
+      li.top
+        background: none
+        border-bottom: 1px solid #ddd
+      ul li
         background: white
-      li:not(:first-child):hover
-        background: #eee
-      .chart-title li:first-child
-        background: #eee
-        border-bottom: 2px solid #ccc
-      .chart-title li:first-child:hover .btn
-        background: #bbb
+        
           
       .chart-subtitle
         height: 0
