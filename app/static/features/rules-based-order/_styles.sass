@@ -13,19 +13,19 @@
 html,body
   font-family: 'Sans', sans-serif
   letter-spacing: $ls-s
-  background-color: #f0f0f0!important
-  overflow-y: auto!important
-  height: auto
+  background-color: $color-bg!important
   color: $color-bk
+  overflow: auto!important
+  height: auto
+  //scroll-snap-type: y proximity
 
 h1,h2,h3,h4,h5,p
   font-family: 'Sans', sans-serif
   letter-spacing: $ls-s
 
-.snap
-  scroll-snap-type: y mandatory
 section
-  scroll-snap-align: start
+  // scroll-snap-stop: always
+  // scroll-snap-align: start
 
 .banner-wrap
   height: 100vh
@@ -41,7 +41,7 @@ section
   display: flex
   flex-direction: column
   min-height: 65%
-  width: 100%
+  margin-top: 0
   &-title
     font-size: 28px
     letter-spacing: 1.5px
@@ -63,40 +63,44 @@ section
     margin: auto
 
 .intro-wrap
-  margin: 0 50px
-  height: 75vh
+  margin: 0 auto
   box-sizing: border-box
+  position: relative
+  max-height: 90vh
   overflow: hidden
-.intro-menu
-  ul
-    border-left: 1px solid $color-qt
-  li
-    width: fit-content
-    margin: 0
-    transition: background 50ms, color 50ms
-  li:hover
-    color: white
-    background-color: $color-qt
+  .faded
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    text-align: center
+    padding: 85px 0 25px
+  .title
+    padding: 0 0 .75em 0
+    margin-bottom: .5em
+    border-bottom: 1px solid $color-bl-dk
 .intro-txt
-  height: 80%
-  margin-bottom: -4px
-  overflow-y: scroll
-  overflow-x: hidden
+  box-sizing: border-box
 .intro-footer
-  min-height: 25vh
+  background: $color-bl-dk
+  color: $color-ff
+  min-height: 10vh
+  width: 100%
+  transition-duration: 500ms
 
 .tile-page
   background-color: white
   min-height: 100vh
+  overflow: hidden
+  box-sizing: border-box
   & > *
     margin: 0 auto
 .tile-wrap
-  min-height: 120px
+  //
 .tiles
   box-sizing: border-box
-  height: 120px
-  overflow: hidden
-  margin: 0 auto
+  min-height: 120px
+  margin: auto
 .tiles:not(.nav-tiles)
   .tile
     height: 120px
@@ -328,6 +332,8 @@ section
     &-title
       font-size: 44px
 
+  .intro-wrap
+    width: 60%
   .content
     .qt
       padding: 1em 2em 1em 0em
@@ -403,6 +409,8 @@ section
         flex-direction: row
         justify-content: flex-start
         text-align : left
+      .whitespace
+        border-left: 0
 
   .row.banner
     border-left: 10px solid $color-bl-dk

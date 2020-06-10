@@ -13,50 +13,51 @@ block append config
 block page
   include partials/intro
    
-  each era in timeline
-    .card.wrap(class=era.pm)
-      .row.banner(style=`background-image: url('./img/${era.pm}-banner.jpg'); min-height: 350px`)
-        .banner-title.txt-center!= marked(`${era.summary}`)
-        .banner-caption.txt-muted.txt-xs.txt-right!= era.credit
-      .card.row.whitespace
-      for card in era.events
-        if card.type == "anchor"
-          if card.year == 2015
-            .anchor(id=`anchor-${card.year}`)= ""
-          else
-            .anchor(id=`anchor-${card.year}`)= card.year
-        else if card.type == "historyTimeline"
-          // [HOLD] DO NOTHING FOR HISTORY BLOCKS
-        else 
-          - let skipDate = card.date == "SKIP" ? "skip-date" : ""
-          .card.row(class=`${card.type} ${skipDate}`)
-            .card.item
-              if card.type == "quote"
-                include partials/quote
-              else if card.type == "historyTimeline" 
-                //include partials/history
-              else if card.type == "highlight"
-                include partials/absence
-              else if card.type == "excerpt" 
-                .date.txt-sm!= card.date
-              else
-                .cardtype.txt-sm= card.type
-              
-              if card.type == "opinion"
-                .expert
-                  img.expert.image(src=card.expert.image)
-                  .txt-xl!= card.expert.name
-                    .txt-ml!= card.expert.credentials
-              else
-                .heading.txt-xl!= card.title
-                .subheading.txt-ml!= card.subtitle 
+  section
+    each era in timeline
+      .card.wrap(class=era.pm)
+        .row.banner(style=`background-image: url('./img/${era.pm}-banner.jpg'); min-height: 350px`)
+          .banner-title.txt-center!= marked(`${era.summary}`)
+          .banner-caption.txt-muted.txt-xs.txt-right!= era.credit
+        .card.row.whitespace
+        for card in era.events
+          if card.type == "anchor"
+            if card.year == 2015
+              .anchor(id=`anchor-${card.year}`)= ""
+            else
+              .anchor(id=`anchor-${card.year}`)= card.year
+          else if card.type == "historyTimeline"
+            // [HOLD] DO NOTHING FOR HISTORY BLOCKS
+          else 
+            - let skipDate = card.date == "SKIP" ? "skip-date" : ""
+            .card.row(class=`${card.type} ${skipDate}`)
+              .card.item
+                if card.type == "quote"
+                  include partials/quote
+                else if card.type == "historyTimeline" 
+                  //include partials/history
+                else if card.type == "highlight"
+                  include partials/absence
+                else if card.type == "excerpt" 
+                  .date.txt-sm!= card.date
+                else
+                  .cardtype.txt-sm= card.type
                 
-              .content
-                include partials/content
-            if card.type == "opinion"
-              .whitespace
-            if card.media != undefined
-              include partials/media
+                if card.type == "opinion"
+                  .expert
+                    img.expert.image(src=card.expert.image)
+                    .txt-xl!= card.expert.name
+                      .txt-ml!= card.expert.credentials
+                else
+                  .heading.txt-xl!= card.title
+                  .subheading.txt-ml!= card.subtitle 
+                  
+                .content
+                  include partials/content
+              if card.type == "opinion"
+                .whitespace
+              if card.media != undefined
+                include partials/media
 
 
   include partials/header

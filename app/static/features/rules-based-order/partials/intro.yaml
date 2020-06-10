@@ -1,8 +1,15 @@
 sections:
-  - h: Preamble
-    b: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   - h: Trump’s fury
-    b: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    b: |
+      On 20 July 2017, US President Donald Trump’s senior advisers attempted an ambush. It was a move that backfired spectacularly.
+
+      According to Washington Post journalists Philip Rucker and Carol Leonnig, authors of A Very Stable Genius: Donald J Trump’s Testing of America, Trump’s Secretary of State Rex Tillerson, Secretary of Defense Jim Mattis and Director of the Economic Council Gary Cohn arranged a briefing for Trump ostensibly about the situation in Afghanistan. But the advisers were concerned about the “gaping holes in the president’s knowledge of history and of the alliances forged in the wake of World War II that served as the foundation of America’s strength in the world”, and they wanted to set him right.
+
+      Mattis began with a slide which read “The post-war international rules-based order is the greatest gift of the greatest generation.” Steve Bannon, Trump’s adviser and the intellectual support to Trump’s instinctive suspicion of liberal internationalism, sat in on the meeting. According to Rucker and Leonnig, Bannon recoiled: “If you stood up and threatened to shoot [Trump], he couldn’t say ‘post-war rules-based international order’. It’s just not the way he thinks.” Bannon knew his man. Soon Trump was flying into a rage against NATO, free trade agreements and the Iran nuclear deal.
+
+      But Trump’s ignorance is hardly surprising. Although influential leaders like Mattis, Tillerson and Cohn attach increasing importance to the rules-based international order, the concept is not widely understood outside the corridors of power and academia.
+
+      The phrase rules-based international order is relatively young. It was probably first used only in the early 1990s. The term “liberal international order” has a much longer history and is still more widely used – especially in the United States – to describe the post-war international order.
   - h: Australian take up
     b: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   - h: UN-centred

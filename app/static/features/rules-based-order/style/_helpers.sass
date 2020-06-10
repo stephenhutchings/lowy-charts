@@ -24,16 +24,53 @@
 
 @for $i from 0 through 30
   .delay-#{$i})
-    animation-delay: ($i * 150ms)
+    animation-delay: ($i * 80ms)
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  20%))
+  // For Google Chrome
+  &::-webkit-scrollbar
+    width:  $size
+    height: $size
+  &::-webkit-scrollbar-thumb
+    background: $foreground-color
+    border-radius: $size
+  &::-webkit-scrollbar-track
+    background: $background-color
+    border-radius: $size
+  // For Internet Explorer
+  &
+    scrollbar-face-color: $foreground-color
+    scrollbar-track-color: $background-color
 
 .ptr
   cursor: pointer
 .fixed
   position: fixed
-  left: 0
-  top: 0
+  &-tl
+    @extend .fixed
+    left: 0
+    top: 0
+  &-b
+    @extend .fixed
+    bottom: 0
+
 .hidden
   display: none
+.faded
+  background: transparent
+  background: -webkit-linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
+  background: -moz-linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
+  background: -o-linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
+  background: linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
+.scrollbar
+  @include scrollbars(7px, $color-gy-lt)
+.br-max
+  border-radius: 9999px
+.txt-b
+  color: $color-bl-dk
+.dark
+  color: $color-ff
+  background-color: $color-bl-dk
 
 .txt-xxl
   font-size: 28px

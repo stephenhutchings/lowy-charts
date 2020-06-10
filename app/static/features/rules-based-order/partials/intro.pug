@@ -1,43 +1,42 @@
 
 - let sections = data.getOne("static/features/rules-based-order/partials/intro").sections
 
-.snap
-  section
-    .banner-wrap
-      .banner(style="background-image: url('./img/banner.jpg')")
-        .banner-title.txt-cond Australia and the<br/>Rules–Based Order:<br/>The history of an idea
-      .credits
-        div(style='padding: 0 30px')
-          strong.txt-s.txt-tu Research
-          .txt-m Sam Roggeveen, Madeleine Nyst,<br/>Ben Scott
-          p
-          strong.txt-s.txt-tu Expert Commentary
-          .txt-m Julie Bishop, Gareth Evans,<br>Rory Medcalfe, Julia Roberts
+section
+  .banner-wrap
+    .banner(style="background-image: url('./img/banner.jpg')")
+      .banner-title.txt-cond Australia and the<br/>Rules–Based Order:<br/>The history of an idea
+    .credits
+      div(style='padding: 0 30px')
+        strong.txt-s.txt-tu Research
+        .txt-m Sam Roggeveen, Madeleine Nyst,<br/>Ben Scott
+        p
+        strong.txt-s.txt-tu Expert Commentary
+        .txt-m Julie Bishop, Gareth Evans,<br>Rory Medcalfe, Julia Roberts
 
-  section
-    .intro-wrap.flex-ch
-      .intro-menu.col-sm.ph-lg
-        .txt-tu.txt-lg.txt-w700.pv-sm Introduction
-        ul.list-bare.txt-wide
-          each section, i in sections
-            li.ptr.pv-xs.ph-md(onclick=`scrollThis('.intro-txt', '.h-${i}',0)`)= section.h
-      .intro-txt.flex-grow.ph-lg.skinny-scrollbar
-        each section, i in sections
-          .txt-ml.pv-sm(class=`h-${i}`)= section.h
-          p.b= section.b 
-          
-    .intro-footer.flex-cv
-      .flex-ch.txt-tu.txt-lg.txt-w700.ptr(onclick="scrollThis('html,body', '.tile-page', 0)") Explore the timeline
-      .flex-ch.ptr(onclick="scrollThis('html,body', '.tile-page', 0)") <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" transform='rotate(90)' width="24" height="24" viewBox="0 0 24 24" class="h-btn"><path d="M8.586 5.586c-.781.781-.781 2.047 0 2.828l3.585 3.586-3.585 3.586c-.781.781-.781 2.047 0 2.828.39.391.902.586 1.414.586s1.024-.195 1.414-.586l6.415-6.414-6.415-6.414c-.78-.781-2.048-.781-2.828 0z"/></svg>
+section
+  .intro-wrap.ph-md.pv-lg
+    .title.txt-l.txt-b.txt-tu.txt-w700 Introduction
+    .intro-txt
+      each section, i in sections
+        .pv-sm(class= !!i ? 'collapse hidden' : '')
+          .txt-l(class=`h-${i}`)= section.h
+          p.b!= marked(`${section.b}`)
+    p.reveal.faded.txt-tu.txt-w700.txt-l.ptr.txt-center.p-sm(
+      onclick="readMore()"
+      ) &bull; &bull; &bull;
+  .intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', collapsed ? 0 : 53)")
+    .txt-tu.txt-w700.ptr Jump to timeline &nbsp;
+    .ptr
+      <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" transform='rotate(90)' fill="white" width="20" height="20" viewBox="0 0 24 24" class="h-btn"><path d="M8.586 5.586c-.781.781-.781 2.047 0 2.828l3.585 3.586-3.585 3.586c-.781.781-.781 2.047 0 2.828.39.391.902.586 1.414.586s1.024-.195 1.414-.586l6.415-6.414-6.415-6.414c-.78-.781-2.048-.781-2.828 0z"/></svg>
 
 
-  section
-    .tile-page.flex-cv
-      .col-md.pv-md
-        h1 Prime Ministers and the rules-based order
-        .txt-m  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      .tile-wrap: .tiles.flex-ch
-          each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
-            .tile.flex.txt-center.txt-tu.txt-s.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i})`)
-              div= pm
+section
+  .tile-page.flex-cv.pv-md
+    .col-md.pv-sm
+      h1 Prime Ministers and the rules-based order
+      .txt-m  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    .tile-wrap.pv-sm: .tiles.flex-ch.flex-wrap
+        each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
+          .tile.flex.txt-center.txt-tu.txt-s.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i})`)
+            div= pm
   

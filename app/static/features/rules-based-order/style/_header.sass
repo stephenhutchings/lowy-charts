@@ -5,6 +5,7 @@
   height: 100px
   background: $color-ff
   border-bottom: 0.5px solid $color-gy-lt
+  box-sizing: border-box
   z-index: 10
 .header-title
   float: left
@@ -15,21 +16,24 @@
   display: none
 
 .nav-tiles
+  &.tiles
+    min-height: 100px
   .tile
     height: 60px
     min-width: 80px
     background: $color-gy-lt
-    transition-duration: 0.3s
+    transition-duration: 0.2s
+  .tile:not(.active)
+    display: none
   .tile.active
     height: 65px
     background: $color-bl-dk
-  &.tiles .tile:hover
-    background: $color-bl-dk
 
-@media (min-width: 700px)
-  .stickyheader
-    flex-direction: row-reverse
-    & > *
+
+@media (min-width: 600px)
+  .header
+    //flex-direction: row-reverse
+    //& > *
       margin: auto 0
       flex: 0 0 33.33%
       box-sizing: border-box
@@ -47,6 +51,10 @@
     &-wrap
       display: block
 
+@media (min-width: 800px)
   .nav-tiles
-    .tile
+    .tile:not(.active),
+    .tile.active
       display: flex
+    &.tiles .tile:hover
+      background: $color-bl-dk
