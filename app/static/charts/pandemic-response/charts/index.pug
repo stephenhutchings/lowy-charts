@@ -135,11 +135,12 @@ block append css
 
       .chart-title
         margin: auto
-        max-height: 40px
+        max-height: 37px
         overflow: hidden
         width: fit-content
         z-index: 1
         font-size: 20px
+        user-select: none
         
       .visible
         overflow: visible
@@ -155,18 +156,19 @@ block append css
       ul
         padding: 0
         box-shadow: 0px 20px 20px 0px #3332
+        li
+          background: white
       li
         list-style: none
         margin: 0
         padding: 4px 16px
-      li:hover
-        background: #eee
-      li.top
-        background: none
-        border-bottom: 1px solid #ddd
-      ul li
-        background: white
-        
+        &.top
+          background: none
+          border-bottom: 1px solid #ddd
+          &:hover
+            background: #f8f8f8
+        &:hover
+          background: #eee
           
       .chart-subtitle
         height: 0
@@ -221,7 +223,11 @@ block append css
   
   script.
     function updateChart(d) {
-      console.log('working', d);
       document.querySelector('.active').classList.toggle('active');
       document.querySelector('#chart-'+d).classList.toggle('active');
+      document.addEventListener('click', function(e) {
+        let titles = document.querySelectorAll('.visible');
+        e.target.matches('li') || e.target.matches('.btn') || e.target.matches('path')
+         ? "" : Array.prototype.forEach.call(titles, (el => el.classList.remove('visible')));
+      });
     }
