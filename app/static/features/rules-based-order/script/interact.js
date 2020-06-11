@@ -106,12 +106,23 @@ function readMore() {
   setTimeout(() => {footerFixed = true;}, 500);
   collapsed = false;
 }
+
 function snapScroll() {
   let c = $(window).scrollTop();
-  $('section').forEach((s, i) => {
-      console.log(Math.abs(c - s.offsetTop));
+  $('section').each( (i, s) => {
       Math.abs(c - s.offsetTop) < 100 ? scrollThis('html,body', 'section', 0) : "";
   });
+}
+
+function next(fwd) {
+  let n = 5;
+  let i;
+  $('.tile').each( function(j, el) {if ( $(el).hasClass('active') ){i=j;}});
+  i = fwd ? i+1 : i-1;
+  i = i==n ? 0
+    : i<0 ? n-1
+    : i;
+  togglePM(i);
 }
 
 //onload event listener
@@ -145,8 +156,7 @@ function scrollCheck() {
     if (!footerFixed && c < y2 && c > fh) {toggleFooter(true);}
     else if (footerFixed && c > y2 + fh || c < fh) {toggleFooter(false);}
   }
-
-  // _.debounce(snapScroll, 0);
+  // snapScroll();
 }
 
 window.addEventListener('load', onLoad);

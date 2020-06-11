@@ -64,13 +64,24 @@
   background: linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
 .scrollbar
   @include scrollbars(7px, $color-gy-lt)
+.ib
+  display: inline-block
 .br-max
   border-radius: 9999px
+.flip
+  transform: scale(-1)
 .txt-b
   color: $color-bl-dk
 .dark
   color: $color-ff
   background-color: $color-bl-dk
+.hover-lt
+  &:hover
+    background: $color-qt
+
+.col-1-2
+  width: 50%
+  flex-basis: 50%
 
 .txt-xxl
   font-size: 28px

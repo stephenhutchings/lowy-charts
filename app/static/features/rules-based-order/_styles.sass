@@ -272,12 +272,6 @@ section
   .social-share
     text-align: right
     margin-right: 10px
-    .icon
-      font-size: 1.5em
-      margin: 0 10px
-      transition: all 100ms
-    .icon:hover
-      border-bottom: 2px solid $color-bl-lt
 
 .opinion:after
 	content: ''
@@ -292,11 +286,12 @@ section
 	margin-left: -20px
 	margin-top: -20px
 
-.icon
-  width: 0.5em
-  margin-left: 0.5em auto
-.flip
-  transform: scale(-1)
+.card-end
+  min-height: 80px
+  > *,
+  > * > *
+    min-height: inherit
+
 .anchor
   background-color: $color-bl-dk
   margin: 10px 0
@@ -312,8 +307,32 @@ section
 #anchor-2018:nth-child(2)
   border-top: 0
 
-.ib
-  display: inline-block
+.btn
+  width: 40px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  border-radius: 50%
+  margin-right: 8px
+  transition: all 300ms
+  cursor: pointer
+  color: $color-bl-dk
+  &:hover,
+  &:focus
+    outline: none
+    color: #fff
+    border-color: #002B45
+    background: #002B45
+  &-next
+    @extend .btn
+    float: right
+  &-prev
+    @extend .btn
+    float: left
+  .tiles &
+    display: none
+  .nav-tiles &
+    display: block
 
 ////////////// START MEDIA QUERIES ////////////////////
 

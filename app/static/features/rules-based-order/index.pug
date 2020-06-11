@@ -58,7 +58,16 @@ block page
                 .whitespace
               if card.media != undefined
                 include partials/media
+        .card.row.card-end
+          .flex-ch.dark
+            .flex-ch.ph-lg.txt-m.txt-tu.txt-w700.ptr(style="border-right: 1px solid white" onclick="next(false)")
+              .btn: .icon.icon-left-arrow.dark
+              span Prev
+            .flex-ch.ph-lg.txt-m.txt-tu.txt-w700.ptr(style="border-left: 1px solid white" onclick="next(true)") Next
+              .btn: .icon.icon-right-arrow.dark
 
+
+          
 
   include partials/header
   
