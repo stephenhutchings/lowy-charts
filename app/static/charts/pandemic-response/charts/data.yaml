@@ -6,10 +6,11 @@ source: >
 
 charts:
   -
-    subtitle: ""
+    subtitle: >
+      &#37; of better and worse performing countries in category
     scale:
       minY:  0
-      maxY: 70
+      maxY: 75
     axes:
       -
         title: Culture
@@ -30,15 +31,16 @@ charts:
           - 53
           - 56
       -
-        title: Proportion of countries in category
+        title: ""
   -
-    subtitle: ""
+    subtitle: >
+      &#37; of better and worse performing countries in category
     scale:
       minY:  0
-      maxY: 80
+      maxY: 75
     axes:
       -
-        title: Powers
+        title: Power
         values:
           - Great powers
           - Middle powers
@@ -56,15 +58,16 @@ charts:
           - 48
           - 49
       -
-        title: Proportion of countries in category
+        title: ""
   -
-    subtitle: ""
+    subtitle: >
+      &#37; of better and worse performing countries in category
     scale:
       minY:  0
-      maxY: 70
+      maxY: 75
     axes:
       -
-        title: Population size
+        title: Population
         values:
           - Large
           - Medium
@@ -82,15 +85,16 @@ charts:
           - 56
           - 38
       -
-        title: Proportion of countries in category
+        title: ""
   -
-    subtitle: ""
+    subtitle: >
+      &#37; of better and worse performing countries in category
     scale:
       minY:  0
-      maxY: 70
+      maxY: 75
     axes:
       -
-        title: Economic development
+        title: Development
         values:
           - High income
           - Middle income
@@ -108,15 +112,16 @@ charts:
           - 58
           - 42
       -
-        title: Proportion of countries in category
+        title: ""
   -
-    subtitle: ""
+    subtitle: >
+      &#37; of better and worse performing countries in category
     scale:
       minY:  0
-      maxY: 60
+      maxY: 75
     axes:
       -
-        title: Political system
+        title: Politics
         values:
           - Authoritarian
           - Hybrid
@@ -134,4 +139,4 @@ charts:
           - 57
           - 49
       -
-        title: Proportion of countries in category
+        title: ""

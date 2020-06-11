@@ -12,7 +12,7 @@ block page
       .txt-center.flex.flex-grow.flex-col
         .chart-title.ptr(onclick="this.classList.toggle('visible');")
           li.ptr.top= chart.axes[0].title
-            svg.btn(fill="#4b4f56" width="20" height="20" viewBox="0 0 24 24")
+            svg.btn(width="20" height="20" viewBox="0 0 24 24")
               path(d="M8.586 5.586c-.781.781-.781 2.047 0 2.828l3.585 3.586-3.585 3.586c-.781.781-.781 2.047 0 2.828.39.391.902.586 1.414.586s1.024-.195 1.414-.586l6.415-6.414-6.415-6.414c-.78-.781-2.048-.781-2.828 0z")
           ul
             each c, k in charts
@@ -20,7 +20,7 @@ block page
                 onclick=`updateChart(${k})`
                 style=(k==i ? 'display: none' : "")
               )= c.axes[0].title
-
+        .chart-subtitle.txt-muted.txt-sm.p-sm!= chart.subtitle
         .chart.flex-grow: .chart-content
           - scale = chart.scale
           - ln = chart.axes[1].values.length
@@ -32,25 +32,27 @@ block page
               text(text-anchor="middle" transform="rotate(-90) translate(0 -50)")= chart.axes[3].title
               
             svg(height="100%")
-              - let vn = (scale.maxY - scale.minY)/10
+              - let vn = 3
+              - let min = 0
+              - let max = 75
               for n, i in new Array(vn+1)
                 - y = 1 - (i / vn)
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i/vn) * (scale.maxY - scale.minY) + "%"
+                    = min + (i/vn) * (max - min) + "%"
                     
             svg(height="100%")
-              for n, i in new Array(4)
-                - y = (i / 8)
-                svg(y=toPercent(y))
+              for n, i in new Array(vn)
+                - y = (i / vn)
+                svg
                   line(
                     x1="0%"
                     y1=toPercent(y)
                     x2="100%"
                     y2=toPercent(y)
-                    stroke="#0001"
+                    stroke=(i==1 ? "#5552" : "#5552")
+                    stroke-dasharray=(i==1 ? "" : 5)
                   )
-                    = scale.minY + (i/8) * (scale.maxY - scale.minY) + "%"
 
             g
               for y1, i in chart.axes[1].values
@@ -63,39 +65,54 @@ block page
                   height="100%"
                 )
                   g.bars
-                    rect(
-                      width="45%"
+                    rect.value-bg(
                       y=toPercent(fy(chart.scale.maxY - y1))
-                      height=toPercent(fy(y1))
-                      fill="#002a45"
+                      height="26px"
+                      width="45%"
+                      transform="translate(0 -26)"
+                      fill="#fff"
                     )
+                    rect.value-bg(
+                      y=toPercent(fy(chart.scale.maxY - y2))
+                      x="50%"
+                      height="26px"
+                      width="45%"
+                      transform="translate(0 -26)"
+                      fill="#fff"
+                    )                    
                     text.chart-value(
                       x="22.5%"
                       y=toPercent(fy(chart.scale.maxY - y1))
                       text-anchor="middle"
                       transform="translate(0 -8)"
                     )
-                      = y1
-
-                    rect(
-                      width="45%"
-                      x="50%"
-                      y=toPercent(fy(chart.scale.maxY - y2))
-                      height=toPercent(fy(y2))
-                      fill="#539ed4"
-                    )
+                      = y1 + "%"
                     text.chart-value(
                       x="72.5%"
                       y=toPercent(fy(chart.scale.maxY - y2))
                       text-anchor="middle"
                       transform="translate(0 -8)"
                     )
-                      = y2
+                      = y2 + "%"
+
+                    rect(
+                      width="45%"
+                      y=toPercent(fy(chart.scale.maxY - y1))
+                      height=toPercent(fy(y1))
+                      fill="#002b45"
+                    )
+                    rect(
+                      width="45%"
+                      x="50%"
+                      y=toPercent(fy(chart.scale.maxY - y2))
+                      height=toPercent(fy(y2))
+                      fill="#ff1f2f"
+                    )
 
                   svg(x="50%" y="100%")
-                    text(
-                      text-anchor="end"
-                      transform="rotate(-40) translate(-8 14)"
+                    text.x-label(
+                      text-anchor="middle"
+                      transform="rotate(0) translate(-8 24)"
                     )
                       =label
 
@@ -105,7 +122,7 @@ block page
               span.legend-item-box(style="background:#002a45")
               span.legend-item-label= chart.axes[1].title
             li.legend-item
-              span.legend-item-box(style="background:#539ed4")
+              span.legend-item-box(style="background:#ff1f2f")
               span.legend-item-label= chart.axes[2].title
 
 
@@ -113,7 +130,7 @@ block append css
   style
     :sass
       .wrapper
-        height: 420px
+        height: 500px
         display: none
         
       .wrapper.active
@@ -126,12 +143,12 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 70px
+        left: 50px
         right: 20px
-        bottom: 80px
+        bottom: 40px
 
       .chart-content > svg
-        border-bottom: 1px solid #ccc
+        border-bottom: 1px solid #bbb
 
       .chart-title
         margin: auto
@@ -147,8 +164,9 @@ block append css
 
       .btn
         float: right
-        padding: 4px 12px 12px 4px
-        transform: rotate(90deg)
+        padding: 4px 0 8px 8px
+        transform: rotate(90deg) translate(-5px, 0)
+        fill: #4b4f56
       .ptr
         cursor: pointer
       .rel
@@ -161,10 +179,9 @@ block append css
       li
         list-style: none
         margin: 0
-        padding: 4px 16px
+        padding: 4px 16px 4px 24px
         &.top
-          background: none
-          border-bottom: 1px solid #ddd
+          background: #f5f5f5
           &:hover
             background: #f8f8f8
         &:hover
@@ -175,11 +192,10 @@ block append css
 
       .legend
         font-size: 15px
-        margin-bottom: 8px
 
       .legend-item
         margin: 4px 8px 0
-        padding-left: 24px
+        padding-right: 0
         position: relative
 
       .legend-item-box
@@ -189,13 +205,6 @@ block append css
         height: 1em
         width: 1em
         background: black
-
-      .chart-value
-        opacity: 0
-        transition: opacity 300ms
-
-        .chart:hover &
-          opacity: 1
 
       text
         font-size: 14px
@@ -209,17 +218,25 @@ block append css
 
       @media (max-width: 600px)
         .chart-content
-          right: 10px
-        .legend
-          flex-direction: column
-        .legend-item
-          width: fit-content
+          left: 40px
+          right: 5px
+          bottom: 80px
+          top: 30px
         .chart-value
           transform: translateX('5%')
+        .x-label
+          transform: rotate(-40deg) translate(-8px, 14px)
+          text-anchor: end
         rect
           width: 50%
         text
           font-size: 13px
+          
+      @media (max-width: 450px)
+        .legend-item
+          width: min-content
+        .chart-subtitle
+          font-size: 15px
   
   script.
     function updateChart(d) {
