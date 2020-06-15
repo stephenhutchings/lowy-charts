@@ -57,7 +57,6 @@ block append css
       .head
         font-size: 20px
         border-bottom: 1px solid #4b4f56
-        //text-align: lef
       th
         cursor: pointer
         background: white
@@ -65,8 +64,6 @@ block append css
         padding-left: 0.75rem
         padding-right: 0.75rem
       
-      .p-1 tr:nth-child(-n+0)
-        display: none
       .p-2 tr:nth-child(-n+13)
         display: none
       .p-3 tr:nth-child(-n+26)
@@ -116,8 +113,10 @@ block append css
             background: #4b4f56
         &.p-1 .icon-up
           opacity: 0
+          cursor: default
         &.p-3 .icon-down
           opacity: 0
+          cursor: default
 
   script.
     var p = 1;
