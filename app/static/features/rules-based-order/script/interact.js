@@ -20,9 +20,9 @@ function togglePM(i) {
   $('.tiles').children(`.tile-${i}`).addClass('active');
   // Timeline content
   $('.show').removeClass('show');
-  $(`.card.wrap.${pm}`).addClass('show');
+  $(`.wrap.${pm}`).addClass('show');
 
-  scrollThis('html,body',`.card.wrap.${pm}`, -100)
+  scrollThis('html,body',`.wrap.${pm}`, -100)
 }
 function scrollThis(p, c, o) {
   $(p).animate({scrollTop: $(c)[0].offsetTop + o}, 400);

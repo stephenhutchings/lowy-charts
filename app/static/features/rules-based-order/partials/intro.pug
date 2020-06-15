@@ -36,8 +36,8 @@ section
       h1 Prime Ministers and the rules-based order
       .txt-m  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     .tile-wrap.pv-sm: .tiles.flex-ch.flex-wrap
-      .btn.ptr.br-max.ib(onclick="next(false)") &larr;
+      .btn.txt-bl.ptr.br-max.ib(onclick="next(false)") &larr;
       each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
         .tile.flex.txt-center.txt-tu.txt-s.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i})`)
           div= pm
-      .btn.ptr.br-max.ib(onclick="next(true)") &rarr;
+      .btn.txt-bl.ptr.br-max.ib(onclick="next(true)") &rarr;

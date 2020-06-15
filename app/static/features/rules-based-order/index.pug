@@ -15,11 +15,10 @@ block page
    
   section
     each era in timeline
-      .card.wrap(class=era.pm)
-        .row.banner(style=`background-image: url('./img/${era.pm}-banner.jpg'); min-height: 350px`)
+      .wrap(class=era.pm)
+        .row.banner(style=`background-image: url('./img/banner-${era.pm}.jpg'); min-height: 350px`)
           .banner-title.txt-center!= marked(`${era.summary}`)
           .banner-caption.txt-muted.txt-xs.txt-right!= era.credit
-        .card.row.whitespace
         for card in era.events
           if card.type == "anchor"
             if card.year == 2015
@@ -30,8 +29,8 @@ block page
             // [HOLD] DO NOTHING FOR HISTORY BLOCKS
           else 
             - let skipDate = card.date == "SKIP" ? "skip-date" : ""
-            .card.row(class=`${card.type} ${skipDate}`)
-              .card.item
+            .row(class=`${card.type} ${skipDate}`)
+              .item
                 if card.type == "quote"
                   include partials/quote
                 else if card.type == "historyTimeline" 
@@ -55,19 +54,17 @@ block page
                 .content
                   include partials/content
               if card.type == "opinion"
-                .whitespace
               if card.media != undefined
                 include partials/media
-        .card.row.card-end
-          .flex-ch.dark
-            .flex-ch.ph-lg.txt-m.txt-tu.txt-w700.ptr(style="border-right: 1px solid white" onclick="next(false)")
-              .btn: .icon.icon-left-arrow.dark
+                
+        .row.card-end
+          .flex-ch
+            .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700.ptr(style="border-right: 1px solid white" onclick="next(false)")
+              .btn.nohover.txt-w: .icon.icon-left-arrow
               span Prev
-            .flex-ch.ph-lg.txt-m.txt-tu.txt-w700.ptr(style="border-left: 1px solid white" onclick="next(true)") Next
-              .btn: .icon.icon-right-arrow.dark
+            .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700.ptr(style="border-left: 1px solid white" onclick="next(true)") Next
+              .btn.nohover.txt-w: .icon.icon-right-arrow
 
-
-          
 
   include partials/header
   
@@ -76,6 +73,7 @@ block append css
   style
     include style/_w3-animate.css
     include:sass style/_vars.sass
+    include:sass style/_cards.sass
     include:sass style/_helpers.sass
     include:sass style/_header.sass
     include:sass style/_history.sass
