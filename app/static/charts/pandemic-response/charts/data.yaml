@@ -7,7 +7,7 @@ source: >
 charts:
   -
     subtitle: >
-      &#37; of better and worse performing countries in category
+      Proportion of better or worse performing countries
     scale:
       minY:  0
       maxY: 75

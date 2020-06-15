@@ -1,0 +1,211 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/pandemic-response/table-ranks/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex
+    - let t = page.table
+    .flex-col
+      .head Better performing
+      table#better
+        thead
+          tr
+            th.txt-left(onclick="sortTable(this,true,0)") Rank
+              span.icon.icon-down-sm.show
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm
+        tbody.p-1
+          each e, i in t.better
+            tr
+              td.txt-right= i+1
+              td= e
+    .flex-col
+      .head Worse performing
+      table#worse
+        thead
+          tr
+            th.txt-left(onclick="sortTable(this,true, 0)") Rank
+              span.icon.icon-down-sm.show
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm
+        tbody.p-1
+          - let next = t.better.length + 1
+          each e, i in t.worse
+            tr
+              td.txt-right= i + next
+              td= e
+
+    .btns.flex-ch.p-1
+      .up.icon.icon-up(onclick="pager(true)")
+      .down.icon.icon-down(onclick="pager(false)")
+      
+block append css
+  style
+    :sass
+      .wrapper
+        justify-content: center
+        position: relative
+        height: 485px
+        max-width: 600px
+        user-select: none
+      .flex-col
+        margin: 10px
+        flex: 1
+      .head
+        font-size: 20px
+        //text-align: lef
+        // border-bottom: 1px solid #4b4f56
+      th
+        cursor: pointer
+        background: white
+      td,th,h2,.head
+        padding-left: 0.75rem
+        padding-right: 0.75rem
+      
+      .p-1 tr:nth-child(-n+0)
+        display: none
+      .p-2 tr:nth-child(-n+13)
+        display: none
+      .p-3 tr:nth-child(-n+26)
+        display: none
+      
+      td
+        max-width: 0
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+      td:first-child
+        padding-right: 2.5em
+      td:last-child
+        min-width: 120px
+        
+      .icon
+        display: inline-block
+        font-size: 18px
+        padding: .25em
+        transition-duration: 250ms
+        opacity: 0
+        &.show
+          opacity: 1
+        &.rot
+          transform: rotate(180deg)
+
+      .btns
+        position: absolute
+        background: white
+        width: 100%
+        border-top: 1px solid #4b4f56
+        bottom: 0
+        & .icon
+          margin: 8px 2px 2px
+          opacity: 1
+          height: 25px
+          width: 25px
+          line-height: 25px
+          text-align: center
+          color: #4b4f56
+          background: white
+          border: 1px solid #4b4f56
+          border-radius: 4px
+          cursor: pointer
+          &:hover
+            color: white
+            background: #4b4f56
+        &.p-1 .icon-up
+          opacity: 0
+        &.p-3 .icon-down
+          opacity: 0
+
+  script.
+    var p = 1;
+    function pager(up) {
+      if ( !(p == 1 && up) && !(p == 3 && !up) ) {
+        document.querySelector('.btns').classList.remove(`p-${p}`);
+        let tb = document.querySelectorAll('tbody');
+        if (up) {
+          q = p-1;
+          Array.prototype.forEach.call(tb, function(el, i){
+            el.classList.remove(`p-${p}`);
+            el.classList.add(`p-${q}`);
+            document.querySelector('.btns').classList.add(`p-${q}`);
+          });
+          p--;
+        }
+        else {
+          q = p+1;
+          Array.prototype.forEach.call(tb, function(el, i){
+            el.classList.remove(`p-${p}`);
+            el.classList.add(`p-${q}`);
+            document.querySelector('.btns').classList.add(`p-${q}`);
+          });        
+          p++;
+        }
+      }
+    }
+    function flipSortIcon(el) {
+      let icon = el.querySelector('.icon');
+      if ( icon.classList.contains('show') ) {
+        icon.classList.toggle('rot');
+      }
+      else {
+        el.parentNode.querySelector('th > .show').classList.remove('show');
+        icon.classList.toggle('show');
+      }
+    }
+    // from https://www.w3schools.com/howto/howto_js_sort_table.asp
+    function sortTable(el, numeric, n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = el.parentNode.parentNode.parentNode;
+      switching = true;
+      dir = "asc";
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          if (numeric) {
+            if (dir == "asc") {
+              if ( Number(x.innerHTML) > Number(y.innerHTML) ) {
+                shouldSwitch = true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if ( Number(x.innerHTML) < Number(y.innerHTML) ) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+          else {
+            if (dir == "asc") {
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount ++;
+        } else {
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+      flipSortIcon(el);
+    }
+      
