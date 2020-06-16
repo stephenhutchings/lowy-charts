@@ -7,7 +7,7 @@ source: >
 charts:
   -
     subtitle: >
-      Proportion of better or worse performing countries
+      COVID-19 response: Proportion of better and worse performing countries by category
     scale:
       minY:  0
       maxY: 75

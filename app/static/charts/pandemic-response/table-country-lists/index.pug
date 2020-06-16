@@ -1,0 +1,129 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/pandemic-response/table-country-lists/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper
+    .tabs
+      each theme, i in page.table
+        - let chk = !i ? true : false
+        input(
+          id=`tab-${i}` type='radio' name='primary' checked=chk
+        )
+        label.txt-tu.txt-xs.txt-cond.txt-b.txt-center(
+          for=`tab-${i}`
+          onclick=`checkInner('tab-${i}')`
+        )= theme.name
+        .tab.primary
+          .tabs
+            each category, j in theme.categories
+              - let chk = !i && !j ? true : false
+              input(id=`tab-${i}-${j}` type='radio' name='secondary' checked=chk)
+              label.txt-tu.txt-xs.txt-b.txt-center(for=`tab-${i}-${j}`)= category.title
+              .tab.secondary
+                .grid
+                  each country in category.countries
+                    p= country
+
+
+block append css
+  style
+    :sass
+      
+      .txt-xs
+        font-size: 14px
+      .txt-b
+        font-weight: 700
+    
+      .wrapper
+        justify-content: center
+        position: relative
+        height: 720px
+        max-width: 700px
+        user-select: none
+        
+      .grid
+        display: grid
+        grid-template-columns: repeat(auto-fill,minmax(120px, 120px))
+      
+      .grid > p 
+      	padding: 0 .2em
+      	overflow: hidden
+      	text-overflow: ellipsis
+      	white-space: nowrap
+
+      .tabs
+        display: flex
+        flex-wrap: wrap 
+      
+      .tabs label
+        order: 1
+        flex: 1
+        display: block
+        padding: 1rem .5rem
+        cursor: pointer
+        background: #d4e2e8
+        transition: background ease 0.3s  
+      
+      .tab .tabs label
+        background: #e5e5e5
+      
+      .tabs .tab
+        order: 99 
+        width: 100%
+        flex-grow: 1
+        display: none
+        &.primary
+          background: #fff
+          border: 1px solid #002b45
+        &.secondary
+          background: #f5f5f5
+          padding: 1.5rem 0 .5rem 2em
+          max-height: 570px
+          min-height: 570px
+      
+      .tabs input[type="radio"] 
+      	display: none
+      .tabs input[type="radio"]:checked + label
+        background: #002b45
+        color: white
+      .tabs input[type="radio"]:checked + label + .tab
+        display: block
+    
+      .tab .tabs input[type="radio"]
+        display: none
+      .tab .tabs input[type="radio"]:checked + label
+        background: #f5f5f5
+        color: #4b4f56
+      .tab .tabs input[type="radio"]:checked + label + .tab
+        display: block
+
+      @media (max-width: 630px)
+        .tabs .tab.secondary
+          overflow-y: scroll
+      @media (max-width: 515px) 
+        .tabs .tab.secondary
+          max-height: 400px
+          min-height: 400px
+        .tabs label
+          padding: 1rem 2rem
+          border: .5px solid #002b4588
+        .tab .tabs label
+          border: .5px solid #fff8
+        .tab .tabs input[type="radio"]:checked + label
+          background: #d0d0d0
+          color: #4b4f56
+          
+      @media (max-width: 380px) 
+        .tabs .tab.secondary
+          max-height: 320px
+          min-height: 320px
+
+           
+  script.
+    function checkInner(tab) {
+      document.querySelector(`#${tab}-0`).checked = true;
+    }

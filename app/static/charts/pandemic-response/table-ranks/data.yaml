@@ -3,7 +3,7 @@ title: >
 
 table:
   better:
-    - China
+    - China*
     - Vietnam
     - Lithuania
     - New Zealand
@@ -13,7 +13,7 @@ table:
     - Australia
     - Kazakhstan
     - Slovak Republic
-    - Taiwan Province of China
+    - Taiwan
     - Estonia
     - Thailand
     - Czech Republic
@@ -61,7 +61,7 @@ table:
     - Panama
     - Canada
     - Turkey
-    - Islamic Republic of Iran
+    - Iran
     - Germany
     - Luxembourg
     - Ecuador

@@ -14,9 +14,9 @@ block page
         thead
           tr
             th.txt-left(onclick="sortTable(this,true,0)") Rank
-              span.icon.icon-down-sm.show
-            th.txt-left(onclick="sortTable(this,false, 1)") Country
               span.icon.icon-down-sm
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm.show
         tbody.p-1
           each e, i in t.better
             tr
@@ -28,9 +28,9 @@ block page
         thead
           tr
             th.txt-left(onclick="sortTable(this,true, 0)") Rank
-              span.icon.icon-down-sm.show
-            th.txt-left(onclick="sortTable(this,false, 1)") Country
               span.icon.icon-down-sm
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm.show
         tbody.p-1
           - let next = t.better.length + 1
           each e, i in t.worse
@@ -39,8 +39,10 @@ block page
               td= e
 
     .btns.flex-ch.p-1
-      .up.icon.icon-up(onclick="pager(true)")
-      .down.icon.icon-down(onclick="pager(false)")
+      .pg.txt-tu(onclick="pager()") 1 of 2
+      .down.icon.icon-down(onclick="pager()")
+      
+    .notes.txt-muted.txt-sm *Ranking for China based on missing reported data and a<br>number of imputations that cannot be considered as proved
       
 block append css
   style
@@ -48,7 +50,7 @@ block append css
       .wrapper
         justify-content: center
         position: relative
-        height: 485px
+        height: 715px
         max-width: 600px
         user-select: none
       .flex-col
@@ -64,9 +66,7 @@ block append css
         padding-left: 0.75rem
         padding-right: 0.75rem
       
-      .p-2 tr:nth-child(-n+13)
-        display: none
-      .p-3 tr:nth-child(-n+26)
+      .p-2 tr:nth-child(-n+20)
         display: none
       
       td
@@ -84,7 +84,7 @@ block append css
         font-size: 18px
         padding: .25em
         transition-duration: 250ms
-        opacity: 0
+        opacity: 0.3
         &.show
           opacity: 1
         &.rot
@@ -94,54 +94,60 @@ block append css
         position: absolute
         background: white
         width: 100%
-        border-top: 1px solid #4b4f56
         bottom: 0
         & .icon
-          margin: 8px 2px 2px
+          margin: 0 0 50px
           opacity: 1
           height: 25px
           width: 25px
           line-height: 25px
           text-align: center
           color: #4b4f56
-          background: white
-          border: 1px solid #4b4f56
           border-radius: 4px
           cursor: pointer
-          &:hover
-            color: white
-            background: #4b4f56
         &.p-1 .icon-up
           opacity: 0
           cursor: default
-        &.p-3 .icon-down
-          opacity: 0
-          cursor: default
+        &.p-2 .icon-down
+          transform: scaleY(-1)
+          
+          
+      .pg
+        font-size: 12px
+        margin-top: -50px
+        margin-left: -25px
+      .notes
+        position: absolute
+        bottom: 0
+        text-align: center
+        width: 100%
+        font-size: 14px
+        padding-top: .5em
+        border-top: 1px solid #4b4f56
 
   script.
     var p = 1;
-    function pager(up) {
-      if ( !(p == 1 && up) && !(p == 3 && !up) ) {
-        document.querySelector('.btns').classList.remove(`p-${p}`);
-        let tb = document.querySelectorAll('tbody');
-        if (up) {
-          q = p-1;
-          Array.prototype.forEach.call(tb, function(el, i){
-            el.classList.remove(`p-${p}`);
-            el.classList.add(`p-${q}`);
-            document.querySelector('.btns').classList.add(`p-${q}`);
-          });
-          p--;
-        }
-        else {
-          q = p+1;
-          Array.prototype.forEach.call(tb, function(el, i){
-            el.classList.remove(`p-${p}`);
-            el.classList.add(`p-${q}`);
-            document.querySelector('.btns').classList.add(`p-${q}`);
-          });        
-          p++;
-        }
+    var ready = false;
+    function pager() {
+      document.querySelector('.btns').classList.remove(`p-${p}`);
+      let tb = document.querySelectorAll('tbody');
+      if (p==2) {
+        Array.prototype.forEach.call(tb, function(el, i){
+          el.classList.remove(`p-${2}`);
+          el.classList.add(`p-${1}`);
+          document.querySelector('.btns').classList.add(`p-${1}`);
+          document.querySelector('.pg').innerHTML = '1 of 2';
+        });
+        p--;
+      }
+      else if (p==1) {
+        Array.prototype.forEach.call(tb, function(el, i){
+          el.classList.remove(`p-${1}`);
+          el.classList.add(`p-${2}`);
+          document.querySelector('.btns').classList.add(`p-${2}`);
+          document.querySelector('.pg').innerHTML = '2 of 2';
+        });
+        p++;
       }
     }
     function flipSortIcon(el) {
@@ -205,6 +211,11 @@ block append css
           }
         }
       }
-      flipSortIcon(el);
+      ready ? flipSortIcon(el) : "";
     }
-      
+    window.addEventListener('load', function () {
+      sortTable(document.getElementsByTagName('th')[1], false, 1);
+      sortTable(document.getElementsByTagName('th')[3], false, 1);
+      ready = true;
+    });
+    

@@ -1,0 +1,414 @@
+title: >
+  Table 2
+
+table:
+  - name: Development
+    categories:
+      - title: High income
+        countries:
+          - Australia
+          - Austria
+          - Bahrain
+          - Belgium
+          - Canada
+          - Chile
+          - Croatia
+          - Czech Republic
+          - Denmark
+          - Estonia
+          - Finland
+          - France
+          - Germany
+          - Greece
+          - Hungary
+          - Iceland
+          - Ireland
+          - Israel
+          - Italy
+          - Japan
+          - Korea
+          - Latvia
+          - Lithuania
+          - Luxembourg
+          - Netherlands
+          - New Zealand
+          - Norway
+          - Panama
+          - Poland
+          - Portugal
+          - Qatar
+          - Saudi Arabia
+          - Singapore
+          - Slovak Republic
+          - Slovenia
+          - Spain
+          - Sweden
+          - Switzerland
+          - Taiwan
+          - United Kingdom
+          - United States
+          - Uruguay
+      - title: Middle income
+        countries:
+          - Argentina
+          - Belarus
+          - Brazil
+          - Bulgaria
+          - China
+          - Colombia
+          - Costa Rica
+          - Ecuador
+          - Iran
+          - Kazakhstan
+          - Malaysia
+          - Mexico
+          - Peru
+          - Romania
+          - Russia
+          - Serbia
+          - South Africa
+          - Thailand
+          - Turkey
+      - title: Low income
+        countries:
+          - Bolivia
+          - Ghana
+          - India
+          - Indonesia
+          - Morocco
+          - Nigeria
+          - Pakistan
+          - Philippines
+          - Senegal
+          - Tunisia
+          - Ukraine
+          - Vietnam
+
+  - name: Culture
+    categories:
+      - title: Asian
+        countries:
+          - China
+          - India
+          - Indonesia
+          - Japan
+          - Korea
+          - Malaysia
+          - Pakistan
+          - Philippines
+          - Singapore
+          - Taiwan
+          - Thailand
+          - Vietnam
+
+      - title: Western
+        countries:
+          - Australia
+          - Austria
+          - Belarus
+          - Belgium
+          - Bulgaria
+          - Canada
+          - Croatia
+          - Czech Republic
+          - Denmark
+          - Estonia
+          - Finland
+          - France
+          - Germany
+          - Greece
+          - Hungary
+          - Iceland
+          - Ireland
+          - Israel
+          - Italy
+          - Latvia
+          - Lithuania
+          - Luxembourg
+          - Netherlands
+          - New Zealand
+          - Norway
+          - Poland
+          - Portugal
+          - Romania
+          - Serbia
+          - Slovak Republic
+          - Slovenia
+          - Spain
+          - Sweden
+          - Switzerland
+          - United Kingdom
+          - United States
+
+      - title: Other
+        countries:
+          - Argentina
+          - Bahrain
+          - Bolivia
+          - Brazil
+          - Chile
+          - Colombia
+          - Costa Rica
+          - Ecuador
+          - Ghana
+          - Iran
+          - Kazakhstan
+          - Mexico
+          - Morocco
+          - Nigeria
+          - Panama
+          - Peru
+          - Qatar
+          - Russia
+          - Saudi Arabia
+          - Senegal
+          - South Africa
+          - Tunisia
+          - Turkey
+          - Ukraine
+          - Uruguay
+
+  - name: Politics
+    categories:
+      - title: Authoritarian
+        countries:
+          - Bahrain
+          - Belarus
+          - China
+          - Iran
+          - Kazakhstan
+          - Qatar
+          - Russia
+          - Saudi Arabia
+      - title: Hybrid
+        countries:
+          - Bolivia
+          - Morocco
+          - Nigeria
+          - Pakistan
+          - Senegal
+          - Turkey
+          - Ukraine
+      - title: Democratic
+        countries:
+          - Argentina
+          - Australia
+          - Austria
+          - Belgium
+          - Brazil
+          - Bulgaria
+          - Canada
+          - Chile
+          - Colombia
+          - Costa Rica
+          - Croatia
+          - Czech Republic
+          - Denmark
+          - Ecuador
+          - Estonia
+          - Finland
+          - France
+          - Germany
+          - Ghana
+          - Greece
+          - Hungary
+          - Iceland
+          - India
+          - Indonesia
+          - Ireland
+          - Israel
+          - Italy
+          - Japan
+          - Korea
+          - Latvia
+          - Lithuania
+          - Luxembourg
+          - Malaysia
+          - Mexico
+          - Netherlands
+          - New Zealand
+          - Norway
+          - Panama
+          - Peru
+          - Philippines
+          - Poland
+          - Portugal
+          - Romania
+          - Serbia
+          - Singapore
+          - Slovak Republic
+          - Slovenia
+          - South Africa
+          - Spain
+          - Sweden
+          - Switzerland
+          - Taiwan
+          - Thailand
+          - Tunisia
+          - United Kingdom
+          - United States
+          - Uruguay
+
+  - name: Power
+    categories:
+      - title: Great powers
+        countries:
+          - China
+          - France
+          - India
+          - Japan
+          - Russia
+          - United Kingdom
+          - United States
+      - title: Middle powers
+        countries:
+          - Argentina
+          - Australia
+          - Brazil
+          - Canada
+          - Colombia
+          - Germany
+          - Ghana
+          - Indonesia
+          - Iran
+          - Israel
+          - Italy
+          - Korea
+          - Malaysia
+          - Mexico
+          - Morocco
+          - Nigeria
+          - Pakistan
+          - Philippines
+          - Poland
+          - Saudi Arabia
+          - South Africa
+          - Spain
+          - Taiwan
+          - Thailand
+          - Turkey
+          - Ukraine
+          - Vietnam
+      - title: Minor powers
+        countries:
+          - Austria
+          - Bahrain
+          - Belarus
+          - Belgium
+          - Bolivia
+          - Bulgaria
+          - Chile
+          - Costa Rica
+          - Croatia
+          - Czech Republic
+          - Denmark
+          - Ecuador
+          - Estonia
+          - Finland
+          - Greece
+          - Hungary
+          - Iceland
+          - Ireland
+          - Kazakhstan
+          - Latvia
+          - Lithuania
+          - Luxembourg
+          - Netherlands
+          - New Zealand
+          - Norway
+          - Panama
+          - Peru
+          - Portugal
+          - Qatar
+          - Romania
+          - Senegal
+          - Serbia
+          - Singapore
+          - Slovak Republic
+          - Slovenia
+          - Sweden
+          - Switzerland
+          - Tunisia
+          - Uruguay
+
+  - name: Population
+    categories:
+      - title: Large
+        countries:
+          - Brazil
+          - China
+          - India
+          - Indonesia
+          - Japan
+          - Mexico
+          - Nigeria
+          - Pakistan
+          - Philippines
+          - Russia
+          - United States
+      - title: Medium
+        countries:
+          - Argentina
+          - Australia
+          - Belgium
+          - Bolivia
+          - Canada
+          - Chile
+          - Colombia
+          - Czech Republic
+          - Ecuador
+          - France
+          - Germany
+          - Ghana
+          - Greece
+          - Iran
+          - Italy
+          - Kazakhstan
+          - Korea
+          - Malaysia
+          - Morocco
+          - Netherlands
+          - Peru
+          - Poland
+          - Portugal
+          - Romania
+          - Saudi Arabia
+          - Senegal
+          - South Africa
+          - Spain
+          - Sweden
+          - Taiwan
+          - Thailand
+          - Tunisia
+          - Turkey
+          - Ukraine
+          - United Kingdom
+          - Vietnam
+      - title: Small
+        countries:
+          - Austria
+          - Bahrain
+          - Belarus
+          - Bulgaria
+          - Costa Rica
+          - Croatia
+          - Denmark
+          - Estonia
+          - Finland
+          - Hungary
+          - Iceland
+          - Ireland
+          - Israel
+          - Latvia
+          - Lithuania
+          - Luxembourg
+          - New Zealand
+          - Norway
+          - Panama
+          - Qatar
+          - Serbia
+          - Singapore
+          - Slovak Republic
+          - Slovenia
+          - Switzerland
+          - Uruguay
