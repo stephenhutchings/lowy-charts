@@ -30,11 +30,9 @@ charts:
           - 33
           - 53
           - 56
-      -
-        title: ""
   -
     subtitle: >
-      &#37; of better and worse performing countries in category
+      COVID-19 response: Proportion of better and worse performing countries by category
     scale:
       minY:  0
       maxY: 75
@@ -57,11 +55,9 @@ charts:
           - 71
           - 48
           - 49
-      -
-        title: ""
   -
     subtitle: >
-      &#37; of better and worse performing countries in category
+      COVID-19 response: Proportion of better and worse performing countries by category
     scale:
       minY:  0
       maxY: 75
@@ -84,11 +80,9 @@ charts:
           - 64
           - 56
           - 38
-      -
-        title: ""
   -
     subtitle: >
-      &#37; of better and worse performing countries in category
+      COVID-19 response: Proportion of better and worse performing countries by category
     scale:
       minY:  0
       maxY: 75
@@ -111,11 +105,9 @@ charts:
           - 50
           - 58
           - 42
-      -
-        title: ""
   -
     subtitle: >
-      &#37; of better and worse performing countries in category
+      COVID-19 response: Proportion of better and worse performing countries by category
     scale:
       minY:  0
       maxY: 75
@@ -138,5 +130,3 @@ charts:
           - 56
           - 57
           - 49
-      -
-        title: ""

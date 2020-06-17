@@ -42,7 +42,10 @@ block page
       .pg.txt-tu(onclick="pager()") 1 of 2
       .down.icon.icon-down(onclick="pager()")
       
-    .notes.txt-muted.txt-sm *Ranking for China based on missing reported data and a<br>number of imputations that cannot be considered as proved
+    .notes.txt-muted.txt-sm
+      | *Ranking for China based on missing reported data and a
+      span#br <br>
+      | number of imputations that cannot be considered as proved
       
 block append css
   style
@@ -75,9 +78,10 @@ block append css
         text-overflow: ellipsis
         white-space: nowrap
       td:first-child
+        min-width: 35px
         padding-right: 2.5em
       td:last-child
-        min-width: 120px
+        min-width: 110px
         
       .icon
         display: inline-block
@@ -111,11 +115,11 @@ block append css
         &.p-2 .icon-down
           transform: scaleY(-1)
           
-          
       .pg
         font-size: 12px
         margin-top: -50px
         margin-left: -25px
+        z-index: 100
       .notes
         position: absolute
         bottom: 0
@@ -124,6 +128,25 @@ block append css
         font-size: 14px
         padding-top: .5em
         border-top: 1px solid #4b4f56
+        
+      @media (max-width: 450px)
+        html
+          overflow-y: auto
+          height: fit-content
+        .wrapper
+          height: auto
+          padding: 10px 10px
+          box-sizing: border-box
+        .flex
+          flex-direction: column
+        .btns
+          display: none
+        .p-2 tr:nth-child(-n+20)
+          display: unset
+        .notes
+          position: relative
+        #br
+          display: none
 
   script.
     var p = 1;

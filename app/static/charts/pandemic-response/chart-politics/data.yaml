@@ -13,20 +13,20 @@ charts:
       maxY: 75
     axes:
       -
-        title: Power
+        title: Politics
         values:
-          - Great powers
-          - Middle powers
-          - Minor powers
+          - Authoritarian
+          - Hybrid
+          - Democratic
       -
         title: Better performing
         values:
-          - 29
-          - 52
+          - 44
+          - 43
           - 51
       -
         title: Worse performing
         values:
-          - 71
-          - 48
+          - 56
+          - 57
           - 49

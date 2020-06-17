@@ -6,13 +6,14 @@ source: >
 
 charts:
   -
-    subtitle: ""
+    subtitle: >
+      COVID-19 response: Proportion of better and worse performing countries by category
     scale:
       minY:  0
-      maxY: 70
+      maxY: 75
     axes:
       -
-        title: Population size
+        title: Population
         values:
           - Large
           - Medium
@@ -29,5 +30,3 @@ charts:
           - 64
           - 56
           - 38
-      -
-        title: Proportion of countries in category

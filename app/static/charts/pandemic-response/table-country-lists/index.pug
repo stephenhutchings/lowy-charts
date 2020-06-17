@@ -22,16 +22,30 @@ block page
             each category, j in theme.categories
               - let chk = !i && !j ? true : false
               input(id=`tab-${i}-${j}` type='radio' name='secondary' checked=chk)
-              label.txt-tu.txt-xs.txt-b.txt-center(for=`tab-${i}-${j}`)= category.title
+              label.txt-tu.txt-xs.txt-b.txt-center(
+                for=`tab-${i}-${j}`
+                onclick=`setTimeout(checkScroll('#tab-${i}-${j}'),500);`
+              )= category.title
               .tab.secondary
                 .grid
                   each country in category.countries
                     p= country
 
-
 block append css
   style
     :sass
+      
+      ::-webkit-scrollbar 
+        -webkit-appearance: none
+      ::-webkit-scrollbar:vertical 
+        width: 9px
+      ::-webkit-scrollbar-thumb
+        background-color: rgba(0, 0, 0, .5)
+        border-radius: 10px
+        border: 2px solid #ffffff
+      ::-webkit-scrollbar-track 
+        border-radius: 10px
+        background-color: #f5f5f5
       
       .txt-xs
         font-size: 14px
@@ -49,11 +63,12 @@ block append css
         display: grid
         grid-template-columns: repeat(auto-fill,minmax(120px, 120px))
       
-      .grid > p 
-      	padding: 0 .2em
-      	overflow: hidden
-      	text-overflow: ellipsis
-      	white-space: nowrap
+      .grid > p
+        padding: 0 .2em
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        font-size: 15px
 
       .tabs
         display: flex
@@ -84,6 +99,18 @@ block append css
           padding: 1.5rem 0 .5rem 2em
           max-height: 570px
           min-height: 570px
+          position: relative
+      
+      .show-more
+        position: absolute
+        background-image: linear-gradient(#f5f5f5, #e5e5e5)
+        left: 0
+        bottom: 0
+        width: 100%
+        padding: .22em 0
+        text-align: center
+        &.hidden
+          display: none
       
       .tabs input[type="radio"] 
       	display: none
@@ -101,9 +128,11 @@ block append css
       .tab .tabs input[type="radio"]:checked + label + .tab
         display: block
 
+        
+
       @media (max-width: 630px)
         .tabs .tab.secondary
-          overflow-y: scroll
+          overflow-y: auto
       @media (max-width: 515px) 
         .tabs .tab.secondary
           max-height: 400px
@@ -116,7 +145,7 @@ block append css
         .tab .tabs input[type="radio"]:checked + label
           background: #d0d0d0
           color: #4b4f56
-          
+
       @media (max-width: 380px) 
         .tabs .tab.secondary
           max-height: 320px
@@ -127,3 +156,4 @@ block append css
     function checkInner(tab) {
       document.querySelector(`#${tab}-0`).checked = true;
     }
+    
