@@ -129,12 +129,7 @@ section
   margin-right: 8px
   transition: all 300ms
   cursor: pointer
-  &:not(.nohover):hover,
-  &:focus
-    outline: none
-    color: #fff
-    border-color: #002B45
-    background: #002B45
+  user-select: none
   &-next
     @extend .btn
     float: right
@@ -158,3 +153,11 @@ section
 
   .intro-wrap
     width: 60%
+
+  .btn
+    &:not(.nohover):hover,
+    &:focus
+      outline: none
+      color: #fff
+      border-color: #002B45
+      background: #002B45
