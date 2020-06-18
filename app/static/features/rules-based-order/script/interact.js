@@ -91,7 +91,6 @@ function readMore() {
   $('.intro-txt .collapse').toggleClass('hidden');
 
   collapsed = !collapsed;
-  footerFixed = !collapsed;
 
   let pv = 48;
   let th = $('.intro-txt').outerHeight(true) + $('.intro-wrap .title').outerHeight(true) + 2*pv;
@@ -106,12 +105,12 @@ function readMore() {
   }, 100);
 
   // ADJUST FOOTER
+  toggleFooter(!collapsed);
   $('.intro-footer')
-    .toggleClass('fixed-b')
     .toggleClass('txt-l')
     .css('min-height', collapsed ? '10vh' : '3.5em');
 
-  collapsed ? scrollThis('html,body', '.tile-page',0) : "";
+  collapsed ? scrollThis('html,body', '.tile-page',53) : "";
 }
 
 function snapScroll() {
