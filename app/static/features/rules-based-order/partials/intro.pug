@@ -5,6 +5,10 @@ section
   .banner-wrap
     .banner(style="background-image: url('./img/banner.jpg')")
       .banner-title.txt-cond.txt-center Australia and the<br/>Rules–Based Order:<br/>The history of an idea
+    .ptr.txt-w.txt-xl.txt-center.rot-90.icon.icon-right-arrow(
+      onclick="scrollThis('html,body','.intro-wrap',0)"
+      style="position: absolute; top: 50%; width: 100%"
+    )
     .credits
       div(style='padding: 0 30px')
         strong.txt-s.txt-tu Research
@@ -21,13 +25,13 @@ section
         .pv-sm(class= !!i ? 'collapse hidden' : '')
           .txt-l(class=`h-${i}`)= section.h
           p.b!= marked(`${section.b}`)
-    p.reveal.faded.txt-tu.txt-w700.txt-l.ptr.txt-center.p-sm(
+    span.ib.reveal.faded.txt-tu.txt-w700.txt-m.ptr.txt-center.p-sm(
       onclick="readMore()"
       ) &bull; &bull; &bull;
   .intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', collapsed ? 0 : 53)")
     .txt-tu.txt-w700.ptr Jump to timeline &nbsp;
-    .ptr
-      <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" transform='rotate(90)' fill="white" width="20" height="20" viewBox="0 0 24 24" class="h-btn"><path d="M8.586 5.586c-.781.781-.781 2.047 0 2.828l3.585 3.586-3.585 3.586c-.781.781-.781 2.047 0 2.828.39.391.902.586 1.414.586s1.024-.195 1.414-.586l6.415-6.414-6.415-6.414c-.78-.781-2.048-.781-2.828 0z"/></svg>
+    .ptr.icon.icon-down
+      
 
 
 section

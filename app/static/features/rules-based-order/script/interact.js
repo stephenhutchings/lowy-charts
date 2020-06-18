@@ -89,22 +89,29 @@ function resetWrapHeight(p, c) {
 function readMore() {
   // TOGGLE VISIBLE TEXT
   $('.intro-txt .collapse').toggleClass('hidden');
+
+  collapsed = !collapsed;
+  footerFixed = !collapsed;
+
   let pv = 48;
   let th = $('.intro-txt').outerHeight(true) + $('.intro-wrap .title').outerHeight(true) + 2*pv;
-  let h = $('.intro-txt .hidden').length ? 0.9*vh : th;
-  $('.intro-wrap').animate({'max-height': h});
-  scrollThis('html,body', '.intro-wrap', 95);
+  let h = collapsed ? 0.9*vh : th;
 
-  // REMOVE REVEAL
-  $('.reveal').addClass('hidden');
+  $('.intro-wrap').animate({'max-height': h}, 750,"");
+
+  let html = collapsed ? '&bull; &bull; &bull;' : '<span class="txt-ml icon icon-upload"><br></span><span class="txt-s">Show less</span>';
+  setTimeout(() => {
+    $('.reveal').html(html);
+    $('.reveal').css('padding-top', collapsed ? '85px' : '0' );
+  }, 100);
 
   // ADJUST FOOTER
   $('.intro-footer')
-    .addClass('fixed-b txt-s')
-    .removeClass('txt-l')
-    .css('min-height', '3.5em');
-  setTimeout(() => {footerFixed = true;}, 500);
-  collapsed = false;
+    .toggleClass('fixed-b')
+    .toggleClass('txt-l')
+    .css('min-height', collapsed ? '10vh' : '3.5em');
+
+  collapsed ? scrollThis('html,body', '.tile-page',0) : "";
 }
 
 function snapScroll() {
