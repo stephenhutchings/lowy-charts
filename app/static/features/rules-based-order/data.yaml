@@ -106,7 +106,7 @@ cards:
     summary: |
       # Julia Gillard
       ## 2010&mdash;2013
-    credit: Photo&#58; XX / XX
+    credit: Photo&#58; DFID / Russell Watkins / Wiki Commons
     events:
       - type: anchor
         year: 2010
@@ -243,7 +243,7 @@ cards:
     summary: |
       # Tony Abbott
       ## 2013&mdash;2015
-    credit: Photo&#58; XX / XX
+    credit: Photo&#58; U.S. Department of State / Wiki Commons
     events:
       - type: anchor
         year: 2015
@@ -272,11 +272,10 @@ cards:
             description: Donald Trump was elected the 45th president of the United States, ushering in the era of "America-First" foreign policy. Trump comes to office as a lifelong sceptic of America's post-war alliance network, and of free trade.
 
   - pm: turnbull
-    banner: img/turnbull-banner.jpg
     summary: |
       # Malcolm Turnbull
       ## 2015&mdash;2018
-    credit: Photo&#58; XX / XX
+    credit: Photo&#58; Matt Roberts / ABC / Wiki Commons
     events:
       - type: anchor
         year: 2016
@@ -455,7 +454,6 @@ cards:
             val: Australia's Foreign Policy White Paper reiterated Australia's commitment to a strong multilateral human rights system and to advancing human rights globally. It is in our national interest to shape the work of the Council and uphold the international rules-based order.
 
   - pm: morrison
-    banner: img/morrison-banner.jpg
     summary: |
       # Scott Morrison
       ## 2018&mdash;
