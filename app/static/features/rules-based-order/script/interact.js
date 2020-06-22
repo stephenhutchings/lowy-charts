@@ -1,4 +1,5 @@
 var vh = window.innerHeight;
+var hTopHeader = 50; // height of uppermost header (pixels)
 var headerVisible = false;
 var footerFixed = false;
 var collapsed = true;
@@ -25,7 +26,7 @@ function togglePM(i) {
   scrollThis('html,body',`.wrap.${pm}`, -100)
 }
 function scrollThis(p, c, o) {
-  $(p).animate({scrollTop: $(c)[0].offsetTop + o}, 400);
+  $(p).animate({scrollTop: $(c)[0].offsetTop + o - hTopHeader}, 400);
 }
 // Set historyTimeline horizontal widths
 function setHistoryTimelines() {
@@ -60,12 +61,12 @@ function toggleHeader(show) {
   let tiles = $('.tiles');
   if (show) {
     tiles.css('height', '100px');
-    tiles.addClass('header nav-tiles fixed-tl');
+    tiles.addClass('header nav-tiles');
     headerVisible = true;
   }
   else {
     tiles.css('height', 'initial');
-    tiles.removeClass('header nav-tiles fixed-tl');
+    tiles.removeClass('header nav-tiles');
     headerVisible = false;
   }
 }

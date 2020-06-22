@@ -1,6 +1,30 @@
-//.header.flex-ch
-  //.header-title.txt-tu
-    a.title-long.txt-bare(href="/features/rules-based-order/") Lowy Institute<br>
-    span Rules Based Order
-  include nav
-  //include social
+.lowy-header.fixed-tl.dark.ph-md.txt-xs
+  a.header-logo.txt-tu.txt-bare.ptr(href="https://www.lowyinstitute.org/") Lowy Institute
+  .header-title.txt-tu.ptr Rules-based Order: The history of an idea
+  .social
+    a.p-xs.icon.icon-social-facebook(
+	    rel="noopener noreferrer" 
+      onclick="window.open(this.href, '', 'width=600, height=300');" 
+      target='_blank'
+      href=[
+        "https://www.facebook.com/sharer.php?u=",
+        encodeURIComponent(page.url),
+      ].join("")
+    )
+    a.p-xs.icon.icon-social-twitter(
+      rel="noopener noreferrer" 
+      onclick="window.open(this.href, '', 'width=600, height=300');"       
+      target='_blank'
+      href=[
+        "https://twitter.com/share?url=",
+        encodeURIComponent(page.url),
+        "&text=",
+        encodeURIComponent(page.title),
+        "&via=LowyInstitute"
+      ].join("")
+    )
+    a.p-xs.icon.icon-mail(
+      rel="noopener noreferrer" 
+      onclick="window.open(this.href, '', 'width=600, height=300');"       
+      href='mailto:?subject=Australia%20and%20the%20Rules-based%20Order&body=%20https://interactives.lowyinstitute.org/features/rules-based-order/'
+    )
