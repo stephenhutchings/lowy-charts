@@ -123,6 +123,36 @@ section
     margin: auto
 
 
+.intro-txt a
+  position: relative
+  padding: 0.3em 0.4rem
+  margin-right: .5em
+  line-height: 1.2rem
+  font-size: 0.7rem
+  font-weight: 600
+  background: $color-bl-dk
+  color: white
+  border-radius: 100%
+  text-align: center
+  text-decoration: none
+  vertical-align: top
+
+  span
+    position: absolute
+    bottom: 130%
+    left: -75px
+    min-width: 150px
+    padding: 1em
+    border-radius: .5em
+    transition-duration: .5s
+    background: $color-ff
+    color: $color-bk
+    display: none
+
+  &:hover span
+    display: block
+    animation: appear .4s forwards
+
 .btn
   width: 40px
   height: 40px
@@ -131,7 +161,6 @@ section
   border-radius: 50%
   margin-right: 8px
   transition: all 300ms
-  cursor: pointer
   user-select: none
   &-next
     @extend .btn
@@ -143,6 +172,7 @@ section
     display: none
   .nav-tiles &
     display: block
+
 
 
 ////////////// START MEDIA QUERIES ////////////////////

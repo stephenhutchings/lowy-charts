@@ -53,10 +53,8 @@ function showHideHistoryBtns(el) {
   else {
     $(el).scrollLeft() == 0 ? $(el).prev().find('.h-btn').css('fill','#888') : $(el).prev().find('.h-btn').css('fill','#002b45');
     $(el).scrollLeft() >= endLeft - 5 ? $(el).prev().prev().find('.h-btn').css('fill','#888') : $(el).prev().prev().find('.h-btn').css('fill','#002b45');
-  }}
-// Final function calls
-setHistoryTimelines();
-$('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
+  }
+}
 
 // FIXED HEADER
 function toggleHeader(show) {
@@ -134,11 +132,6 @@ function next(fwd) {
   togglePM(i);
 }
 
-//onload event listener
-function onLoad() {
-  resetWrapHeight('.tile-wrap','.tiles');
-}
-
 // Resize event listener
 function resizeCallback() {
   vh = window.innerHeight;
@@ -172,6 +165,24 @@ function scrollCheck() {
     if (!footerFixed && c < y2 && c > fh) {toggleFooter(true);}
     else if (footerFixed && c > y2 + fh || c < fh) {toggleFooter(false);}
   }
+}
+
+function setAnnotations() {
+  $('.intro-txt a').each( function(i, el) {
+    s = el.appendChild(document.createElement("span"));
+    data = el.getAttribute('tooltip');
+    s.innerHTML = data;
+
+    // TODO: adjust position to keep within viewport
+  });
+}
+
+
+function onLoad() {
+  resetWrapHeight('.tile-wrap','.tiles');
+  setAnnotations();
+  setHistoryTimelines();
+  $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
 }
 
 window.addEventListener('load', onLoad);

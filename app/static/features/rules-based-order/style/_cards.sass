@@ -173,10 +173,10 @@
     margin-bottom: 70px!important
     .col-1-2
       transition-duration: 400ms
-    &:hover .col-1-2
+    &:not(.nohover):hover .col-1-2:not(.disable)
       background: $color-gy-lt
       opacity: 0.5
-    &:hover .col-1-2:hover
+    &:not(.nohover):hover .col-1-2:not(.disable):hover
       background: $color-bl-dk
       opacity: 1
 

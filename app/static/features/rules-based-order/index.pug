@@ -57,15 +57,21 @@ block page
               if card.media != undefined
                 include partials/media
                 
-        .row.card-end
+        .row.card-end(class=(i==0 || i==4 ? "nohover" : ""))
           .flex-ch
-            if i
-              .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700.ptr(style="border-right: 1px solid white" onclick="next(false)")
-                .btn.nohover.txt-w: .icon.icon-left-arrow
-                span Prev
-            if i < 4
-              .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700.ptr(style="border-left: 1px solid white" onclick="next(true)") Next
-                .btn.nohover.txt-w: .icon.icon-right-arrow
+            .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700(
+              onclick=(i ? "next(false)" : "")
+              class=(i ? "ptr" : "disable")
+              style="border-right: 1px solid white"
+            )
+              .btn.nohover.txt-w: .icon.icon-left-arrow
+              span Prev
+            .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700.ptr(
+                onclick=(i!=4 ? "next(true)" : "")
+                class=(i!=4 ? "ptr" : "disable")
+                style="border-left: 1px solid white"
+              ) Next
+              .btn.nohover.txt-w: .icon.icon-right-arrow
 
 
   include partials/header
@@ -83,7 +89,6 @@ block append css
 
 block append scripts
   script(type="text/javascript" src="script/interact.js")
-    
     
     
     
