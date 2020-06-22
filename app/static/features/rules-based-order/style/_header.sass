@@ -9,17 +9,22 @@
 .header-logo
   position: absolute
   float: left
+  display: none
   &:hover
     /*override base.sass*/
     color: $color-ff
 .header-title
   width: fit-content
-  margin: auto
+  margin: 0
   white-space: nowrap
+  span
+    display: none
 .social
   position: absolute
   top: 0
   right: 32px
+  a:last-child
+    padding-right: 0
   a:hover
     color: $color-ff
 
@@ -48,8 +53,16 @@
     height: 65px
     background: $color-bl-dk
 
+@media (min-width: 450px)
+  .header-logo
+    display: block
+  .header-title
+    margin: auto
 
 @media (min-width: 600px)
+  .header-title
+    span
+      display: inline
 
   .nav
     &-wrap
