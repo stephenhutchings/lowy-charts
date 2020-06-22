@@ -6,14 +6,17 @@
   line-height: 50px
   height: 50px
   box-sizing: border-box
+  font-weight: 500
+  > *
+    transition-duration: 0.4s
+    &:hover
+      color: rgba($color-ff,0.85)
 .header-logo
   position: absolute
   float: left
   display: none
-  &:hover
-    /*override base.sass*/
-    color: $color-ff
 .header-title
+  display: block
   width: fit-content
   margin: 0
   white-space: nowrap
@@ -23,6 +26,8 @@
   position: absolute
   top: 0
   right: 32px
+  &:hover
+    color: rgba($color-ff,0.6)
   a:last-child
     padding-right: 0
   a:hover

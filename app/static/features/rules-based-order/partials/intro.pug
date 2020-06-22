@@ -5,7 +5,7 @@ section
   .banner-wrap
     .banner(style="background-image: url('./img/banner.jpg')")
       .banner-title.txt-cond.txt-center Australia and the<br/>Rules–Based Order:<br/>The history of an idea
-    .ptr.txt-w.txt-xl.txt-center.rot-90.icon.icon-right-arrow(
+    .ptr.txt-w.txt-xl.txt-center.icon.icon-down(
       onclick="scrollThis('html,body','.intro-wrap',0)"
       style="position: absolute; top: 50%; width: 100%"
     )
@@ -40,8 +40,8 @@ section
       h1 Prime Ministers and the rules-based order
       .txt-m  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     .tile-wrap.pv-sm: .tiles.flex-ch.flex-wrap
-      .btn.txt-bl.ptr.br-max.ib(onclick="next(false)") &larr;
+      #tiles-prev.btn.txt-bl.ptr.br-max.ib(onclick="next(false)") &larr;
       each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
         .tile.flex.txt-center.txt-tu.txt-s.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i})`)
           div= pm
-      .btn.txt-bl.ptr.br-max.ib(onclick="next(true)") &rarr;
+      #tiles-next.btn.txt-bl.ptr.br-max.ib(onclick="next(true)") &rarr;

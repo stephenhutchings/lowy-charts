@@ -12,6 +12,7 @@ function scrollHistory(btn, fw) {
   x = fw ? el.scrollLeft() + el.outerWidth() : el.scrollLeft() - el.outerWidth();
   el.animate({scrollLeft: x}, 400);
 }
+
 // on PM click
 function togglePM(i) {
   let pms = ["rudd", "gillard", "abbott", "turnbull", "morrison"];
