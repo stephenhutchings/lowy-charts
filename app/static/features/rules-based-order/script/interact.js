@@ -1,5 +1,6 @@
 var vh = window.innerHeight;
 var hTopHeader = 50; // height of uppermost header (pixels)
+var hTopVisible = false;
 var headerVisible = false;
 var footerFixed = false;
 var collapsed = true;
@@ -149,7 +150,14 @@ function resizeCallback() {
 function scrollCheck() {
   let c = $(window).scrollTop()+hTopHeader+10;
 
-  // toggle header
+  // toggle top header
+  let y = $('.credits')[0].offsetTop;
+  if ( (!hTopVisible && c > y) || (hTopVisible && c < y) ) {
+    $('.top-header').toggleClass('hidden');
+    hTopVisible = !hTopVisible;
+  }
+
+  // toggle tile header
   let y0 = $('.tile-wrap')[0].offsetTop;
   let y1 = $('.tile.active').length ? $('.tile.active')[0].offsetTop : 99999;
   if (!headerVisible && c > y1) {toggleHeader(true);}
