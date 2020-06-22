@@ -94,15 +94,17 @@ function readMore() {
   collapsed = !collapsed;
 
   let pv = 48;
-  let th = $('.intro-txt').outerHeight(true) + $('.intro-wrap .title').outerHeight(true) + 2*pv;
+  let th = $('.intro-txt').outerHeight(true) + $('.intro-wrap .title').outerHeight(true) + 2.5*pv;
   let h = collapsed ? 0.9*vh : th;
 
   $('.intro-wrap').animate({'max-height': h}, 750,"");
 
   let html = collapsed ? '&bull; &bull; &bull;' : '<span class="txt-ml icon icon-upload"><br></span><span class="txt-s">Show less</span>';
+
   setTimeout(() => {
-    $('.reveal').html(html);
-    $('.reveal').css('padding-top', collapsed ? '85px' : '0' );
+    $('.reveal')
+      .html(html)
+      .css('padding-top', collapsed ? '85px' : '0' );
   }, 100);
 
   // ADJUST FOOTER
@@ -111,7 +113,7 @@ function readMore() {
     .toggleClass('txt-l')
     .css('min-height', collapsed ? '10vh' : '3.5em');
 
-  collapsed ? scrollThis('html,body', '.tile-page',53) : "";
+  collapsed ? scrollThis('html,body', '.tile-page',103) : "";
 }
 
 function snapScroll() {
