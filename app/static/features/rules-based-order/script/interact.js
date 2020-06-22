@@ -23,10 +23,10 @@ function togglePM(i) {
   $('.show').removeClass('show');
   $(`.wrap.${pm}`).addClass('show');
 
-  scrollThis('html,body',`.wrap.${pm}`, -100)
+  scrollThis('html,body',`.wrap.${pm}`, -150)
 }
 function scrollThis(p, c, o) {
-  $(p).animate({scrollTop: $(c)[0].offsetTop + o - hTopHeader}, 400);
+  $(p).animate({scrollTop: $(c)[0].offsetTop + o}, 400);
 }
 // Set historyTimeline horizontal widths
 function setHistoryTimelines() {
@@ -147,7 +147,7 @@ function resizeCallback() {
 
 // onScroll event listener
 function scrollCheck() {
-  let c = $(window).scrollTop();
+  let c = $(window).scrollTop()+hTopHeader+10;
 
   // toggle header
   let y0 = $('.tile-wrap')[0].offsetTop;
@@ -155,7 +155,7 @@ function scrollCheck() {
   if (!headerVisible && c > y1) {toggleHeader(true);}
   else if (headerVisible && c < y0) {toggleHeader(false);}
 
-  // toggle footer
+  // toggle intro footer
   let fh = $('.intro-footer').outerHeight();
   let ty = $('.tile-page')[0].offsetTop;
   let y2 = ty - vh;
@@ -163,7 +163,6 @@ function scrollCheck() {
     if (!footerFixed && c < y2 && c > fh) {toggleFooter(true);}
     else if (footerFixed && c > y2 + fh || c < fh) {toggleFooter(false);}
   }
-  // snapScroll();
 }
 
 window.addEventListener('load', onLoad);
