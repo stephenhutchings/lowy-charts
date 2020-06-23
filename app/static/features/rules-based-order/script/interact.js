@@ -173,15 +173,11 @@ function scrollCheck() {
 }
 
 function createAnnotations() {
+  // Creates nested divs for each annotation link in introduction
   $('.intro-txt a').each( function(i, el) {
     s = el.appendChild(document.createElement("span"));
     data = el.getAttribute('tooltip');
     s.innerHTML = data;
-
-    // TODO: adjust position to keep within viewport
-    // s.offsetLeft
-    // if divL < 0 -> left = -divL-75
-    // if div R > vw -> right = -1.2em
   });
 }
 
@@ -190,7 +186,6 @@ function positionAnnotations() {
   $('.intro-txt a span').each( function(i, el) {
 
     el.style.display = 'inline';
-
     l = el.getBoundingClientRect().left;
     r = el.getBoundingClientRect().right;
     dr = vw - r;
