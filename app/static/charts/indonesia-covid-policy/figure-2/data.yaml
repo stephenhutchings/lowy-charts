@@ -1,105 +1,140 @@
 title: >
-  Figure 1: Indonesia’s external sector vulnerabilities are being tested
+  Figure 2: Collapsing growth and the constrained policy response
 
 source: >
-  Source: Central Statistics Agency, Bank Indonesia, CEIC Data, author’s calculations
+  Source: National accounts, IHS Markit, CEIC Data, International Monetary Fund, author’s calculations
 
 notes: >
-  Notes:&emsp;
-  1/ Other Emerging Asia: includes China, India, Philippines, Thailand, and Malaysia.&emsp;
-  2/ Non-Asia emerging economies includes: Argentina, Brazil, Mexico, Russia, South Africa, and Turkey.&emsp;
-  3/ NFCs = Non-financial corporations.
+  Notes:
 
 charts:
   -
     title: >
-      The rupiah was among the hardest-hit but has recovered considerably
+      Economic growth collapsed even before lockdowns were imposed in early April
     subtitle: >
-      Exchange rates v USD; 20 Jan 2020 = 100
+      Growth in GDP at constant prices
     scale:
+      ticks: 9
       minY: 0
-      maxY: 3000
-      ticks: 7
-
+      maxY: 8
     legend:
-      - Grants
-      - Loans
-      - Other
-
+      - Year-on-year growth
+      - Seasonally adjusted annualised rate
     colors:
       - "#002a45"
       - "#539ed4"
-      - "#b7c1ce"
-
-    axes:
-      -
-        title: Year
-        values:
-          - 2011
-          - 2012
-          - 2013
-          - 2014
-          - 2015
-          - 2016
-          - 2017
-      -
-        title: Number
-        values:
-          - [ 2121206354, 175626706.2, 69274789.13 ]
-          - [ 2049054577, 233328836.9, 64283683.6 ]
-          - [ 2019578389, 487956538, 72189680.88 ]
-          - [ 1963658824, 392495726, 98091259.79 ]
-          - [ 1935494555, 439902788, 94812462.79 ]
-          - [ 1709656633, 424423679.7, 99166269.85 ]
-          - [ 1909023502, 393318142.5, 121245684.7 ]
-  -
-    title: >
-      Hard currency reserves remain adequate relative to annual gross financing needs
-    subtitle: >
-      USD billions, ratio = 1 considered adequate
-    scale:
-      minY: [0,0]
-      maxY: [0.1,0.05]
-    legend:
-      - name: Total (LHS)
-        scale: 0
-      - name: Grants (LHS)
-        scale: 0
-      - name: Loans (RHS)
-        scale: 1
-      - name: Other (RHS)
-        scale: 1
-    colors:
-      - "#002a45"
-      - "#539ed4"
-      - "#ff1f2f"
-      - "#b7c1ce"
     axes:
       -
         title: Years
         values:
-          - 2011
-          - 2012
-          - 2013
-          - 2014
-          - 2015
-          - 2016
-          - 2017
+          - Mar-11
+          - Mar-12
+          - Mar-13
+          - Mar-14
+          - Mar-15
+          - Mar-16
+          - Mar-17
+          - Mar-18
+          - Mar-19
+          - Mar-20
       -
-        title: China debt % of GDP
+        title: Growth in GDP (%)
         values:
-          - [0.091343464, 0.081889055, 0.006780059, 0.002674349]
-          - [0.078888013, 0.068883159, 0.007843826, 0.002161027]
-          - [0.085980795, 0.067311431, 0.016263322, 0.002406042]
-          - [0.075048253, 0.060046619, 0.012002106, 0.002999527]
-          - [0.079895779, 0.062601098, 0.014228094, 0.003066588]
-          - [0.073637705, 0.056373171, 0.013994686, 0.003269848]
-          - [0.074639896, 0.05879273,  0.012113129, 0.003734037]
+          - [ 6.48, 6.4 ]
+          - [ 6.27, 5.7 ]
+          - [ 6.01, 6.1 ]
+          - [ 5.94, 5.4 ]
+          - [ 6.11, 7.3 ]
+          - [ 6.21, 5.9 ]
+          - [ 5.94, 5.2 ]
+          - [ 5.87, 4.9 ]
+          - [ 5.54, 6.3 ]
+          - [ 5.59, 6.0 ]
+          - [ 5.52, 5.0 ]
+          - [ 5.58, 4.7 ]
+          - [ 5.12, 5.0 ]
+          - [ 4.94, 5.1 ]
+          - [ 4.93, 5.1 ]
+          - [ 5.05, 4.7 ]
+          - [ 4.83, 4.7 ]
+          - [ 4.74, 4.5 ]
+          - [ 4.78, 5.3 ]
+          - [ 5.15, 5.8 ]
+          - [ 4.94, 4.5 ]
+          - [ 5.21, 5.3 ]
+          - [ 5.03, 4.7 ]
+          - [ 4.94, 5.0 ]
+          - [ 5.01, 5.4 ]
+          - [ 5.01, 5.1 ]
+          - [ 5.06, 4.9 ]
+          - [ 5.19, 4.9 ]
+          - [ 5.06, 5.8 ]
+          - [ 5.27, 5.5 ]
+          - [ 5.17, 4.4 ]
+          - [ 5.18, 4.3 ]
+          - [ 5.07, 6.6 ]
+          - [ 5.05, 5.1 ]
+          - [ 5.02, 4.0 ]
+          - [ 4.97, 3.3 ]
+          - [ 3, 0.2]
   -
     title: >
-      Overseas debt has grown, but is still largely manageable
+      Economic contraction looks similar or worse than other emerging markets
     subtitle: >
-      External debt, USD billions
+      Headline Manufacturing PMI (50 = neutral)
+    scale:
+      ticks: 8
+      minY: 25
+      maxY: 60
+    legend:
+      - Brazil
+      - China
+      - India
+      - Indonesia
+      - Mexico
+      - Philippines
+      - Thailand
+      - Turkey
+      - Vietnam
+    colors:
+      - "#002a45"
+      - "#002a45"
+      - "#002a45"
+      - "#539ed4"
+      - "#002a45"
+      - "#002a45"
+      - "#002a45"
+      - "#002a45"
+      - "#002a45"
+    axes:
+      -
+        title: Years
+        values:
+          - Oct-19
+          - Nov-19
+          - Dec-19
+          - Jan-20
+          - Feb-20
+          - Mar-20
+          - Apr-20
+          - May-20
+      -
+        title: Economic contraction
+        values:
+          - [ 52, 52, 50, 46, 50, 54, 50, 50, 49 ]
+          - [ 54, 53, 53, 50, 49, 54, 50, 49, 54 ]
+          - [ 49, 53, 53, 51, 49, 54, 51, 48, 53 ]
+          - [ 50, 46, 56, 48, 48, 48, 50, 47, 52 ]
+          - [ 53, 35, 55, 53, 49, 52, 50, 52, 42 ]
+          - [ 49, 56, 52, 45, 48, 39, 46, 49, 43 ]
+          - [ 35, 52, 26, 28, 34, 31, 36, 35, 34 ]
+          - [ 38, 52, 34, 29, 38, 40, 41, 43, 44 ]
+
+  -
+    title: >
+      Indonesia has one of Asia's smallest COVID-19 fiscal response packages
+    subtitle: >
+      Fiscal & quasi-fiscal measures, % of GDP
     scale:
       minY: 0
       maxY: 450
@@ -190,9 +225,9 @@ charts:
 
   -
     title: >
-      Foreign holdings of Indonesian securities a potential source of outflows
+      Bank Indonesia has left interest rates elevated compared to others in Asia
     subtitle: >
-      Liabilities to non-residents, USD billions
+      Central bank key policy rates, per cent
     scale:
       minY: 0
       maxY: 300
