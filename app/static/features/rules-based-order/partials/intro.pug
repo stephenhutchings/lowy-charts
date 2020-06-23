@@ -18,11 +18,11 @@ section
         .txt-m Julie Bishop, Gareth Evans,<br>Rory Medcalfe, Julia Roberts
 
 section
-  .intro-wrap.ph-md.pv-xl
+  .intro-wrap.pv-xl
     .title.txt-l.txt-b.txt-tu.txt-w700 Introduction
     .intro-txt
       each section, i in sections
-        .pv-sm(class= !!i ? 'collapse hidden' : '')
+        .txt-sm.pv-sm(class= !!i ? 'collapse hidden' : '')
           .txt-l(class=`h-${i}`)= section.h
           p.b!= marked(`${section.b}`)
     span.ib.reveal.faded.txt-tu.txt-w700.txt-m.ptr.txt-center.p-sm(
@@ -31,8 +31,6 @@ section
   .intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', 106)")
     .txt-tu.txt-w700.ptr Jump to timeline &nbsp;
     .ptr.icon.icon-down
-      
-
 
 section
   .tile-page.flex-cv.pv-md

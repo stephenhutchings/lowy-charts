@@ -1,4 +1,5 @@
 var vh = window.innerHeight;
+var vw = window.innerWidth;
 var hTopHeader = 50; // height of uppermost header (pixels)
 var hTopVisible = false;
 var headerVisible = false;
@@ -97,7 +98,7 @@ function readMore() {
   let th = $('.intro-txt').outerHeight(true) + $('.intro-wrap .title').outerHeight(true) + 2.5*pv;
   let h = collapsed ? 0.9*vh : th;
 
-  $('.intro-wrap').animate({'max-height': h}, 750,"");
+  $('.intro-wrap').animate({'max-height': h}, 400,"");
 
   let html = collapsed ? '&bull; &bull; &bull;' : '<span class="txt-ml icon icon-upload"><br></span><span class="txt-s">Show less</span>';
 
@@ -114,6 +115,8 @@ function readMore() {
     .css('min-height', collapsed ? '10vh' : '3.5em');
 
   collapsed ? scrollThis('html,body', '.tile-page',103) : "";
+
+  positionAnnotations();
 }
 
 function snapScroll() {
@@ -169,20 +172,40 @@ function scrollCheck() {
   }
 }
 
-function setAnnotations() {
+function createAnnotations() {
   $('.intro-txt a').each( function(i, el) {
     s = el.appendChild(document.createElement("span"));
     data = el.getAttribute('tooltip');
     s.innerHTML = data;
 
     // TODO: adjust position to keep within viewport
+    // s.offsetLeft
+    // if divL < 0 -> left = -divL-75
+    // if div R > vw -> right = -1.2em
+  });
+}
+
+function positionAnnotations() {
+  // Adjusts position of tooltip to keep within viewport
+  $('.intro-txt a span').each( function(i, el) {
+
+    el.style.display = 'inline';
+
+    l = el.getBoundingClientRect().left;
+    r = el.getBoundingClientRect().right;
+    dr = vw - r;
+
+    l < 0 ? el.style.left = -(l+75)+'px' : "";
+    dr < 0 ? el.style.left = (dr-75)+'px' : "";
+
+    el.style.removeProperty('display');
   });
 }
 
 
 function onLoad() {
   resetWrapHeight('.tile-wrap','.tiles');
-  setAnnotations();
+  createAnnotations();
   setHistoryTimelines();
   $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
 }
