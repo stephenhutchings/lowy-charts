@@ -1,0 +1,93 @@
+title: >
+  Figure 1: Indonesia’s external sector vulnerabilities are being tested
+
+source: >
+  Source: Central Statistics Agency, Bank Indonesia, CEIC Data, author’s calculations
+
+notes: >
+  Notes:&emsp;
+  1/ Other Emerging Asia: includes China, India, Philippines, Thailand, and Malaysia.&emsp;
+  2/ Non-Asia emerging economies includes: Argentina, Brazil, Mexico, Russia, South Africa, and Turkey.&emsp;
+  3/ NFCs = Non-financial corporations.
+
+charts:
+  -
+    title: >
+      Panel A: In current US$ (millions)
+    scale:
+      minY: 0
+      maxY: 3000
+      ticks: 7
+
+    legend:
+      - Grants
+      - Loans
+      - Other
+
+    colors:
+      - "#002a45"
+      - "#539ed4"
+      - "#b7c1ce"
+
+    axes:
+      -
+        title: Year
+        values:
+          - 2011
+          - 2012
+          - 2013
+          - 2014
+          - 2015
+          - 2016
+          - 2017
+      -
+        title: Number
+        values:
+          - [ 2121206354, 175626706.2, 69274789.13 ]
+          - [ 2049054577, 233328836.9, 64283683.6 ]
+          - [ 2019578389, 487956538, 72189680.88 ]
+          - [ 1963658824, 392495726, 98091259.79 ]
+          - [ 1935494555, 439902788, 94812462.79 ]
+          - [ 1709656633, 424423679.7, 99166269.85 ]
+          - [ 1909023502, 393318142.5, 121245684.7 ]
+  -
+    title: >
+      Panel B: As a share of regional GDP
+    scale:
+      minY: [0,0]
+      maxY: [0.1,0.05]
+    legend:
+      - name: Total (LHS)
+        scale: 0
+      - name: Grants (LHS)
+        scale: 0
+      - name: Loans (RHS)
+        scale: 1
+      - name: Other (RHS)
+        scale: 1
+    colors:
+      - "#002a45"
+      - "#539ed4"
+      - "#ff1f2f"
+      - "#b7c1ce"
+    axes:
+      -
+        title: Years
+        values:
+          - 2011
+          - 2012
+          - 2013
+          - 2014
+          - 2015
+          - 2016
+          - 2017
+      -
+        title: China debt % of GDP
+        values:
+          - [0.091343464, 0.081889055, 0.006780059, 0.002674349]
+          - [0.078888013, 0.068883159, 0.007843826, 0.002161027]
+          - [0.085980795, 0.067311431, 0.016263322, 0.002406042]
+          - [0.075048253, 0.060046619, 0.012002106, 0.002999527]
+          - [0.079895779, 0.062601098, 0.014228094, 0.003066588]
+          - [0.073637705, 0.056373171, 0.013994686, 0.003269848]
+          - [0.074639896, 0.05879273,  0.012113129, 0.003734037]
