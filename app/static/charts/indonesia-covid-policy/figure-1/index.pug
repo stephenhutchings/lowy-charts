@@ -44,24 +44,23 @@ block page
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             )
-              for item, i in chart.legend
+              for item, ii in chart.legend
+                - var i = chart.legend.length - ii - 1
                 polyline(
                   fill="none"
                   stroke=chart.colors[i]
                   stroke-dasharray=2
-                  stroke-width=1
+                  stroke-width=(i ? 1 : 4)
                   stroke-linejoin="round"
                   stroke-linecap="round"
-                  points=(chart.axes[1].values.map(function(y, ix, a) {
-                    if (typeof y[i] === 'number') {
+                  points=(chart.axes[1].values
+                    .filter( y => y[i] != null )
+                    .map( (y, ix, a) => {
                       return ([
                         100 * fx(ix, a.length),
                         100 * fy(scale.maxY + scale.minY - y[i])
                       ].join(" "))
-                    }
-                    else {
-                    }
-                  })).join(",")
+                    })).join(",")
                 )
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
@@ -135,6 +134,7 @@ block page
                   polyline(
                     fill="none"
                     stroke=chart.colors[i]
+                    stroke-width=4
                     stroke-dasharray=(i==3 ? 6 : 0)
                     points=(chart.axes[1].values.map((y, ix, a) => (
                       [
@@ -366,7 +366,6 @@ block append css
 
       polyline
         vector-effect: non-scaling-stroke
-        stroke-width: 4
 
       .br-top
         border-top: 1px solid #888
