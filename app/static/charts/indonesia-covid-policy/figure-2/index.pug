@@ -98,6 +98,11 @@ block page
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             )
+              - var neutralY = 100*fy(scale.maxY + scale.minY - 50)
+              line(
+                x1="0" y1=neutralY x2="100" y2=neutralY
+                style="stroke: #000; stroke-width: 0.5"
+              )
               for item, i in chart.legend
                 polyline(
                   fill="none"
@@ -122,7 +127,7 @@ block page
                   background:none; 
                   border-top: ${i==highlight ? '4.5px solid' : '2.5px dashed'};
                   border-color:${chart.colors[i]};
-                  top: ${i==highlight ? "8px" : '9.5px'};
+                  top: ${i==highlight ? "6px" : '7px'};
                   width: 1em`
               )
               span.legend-item-label!= item
@@ -133,7 +138,7 @@ block page
         .chart-title= chart.title
         .chart-subtitle.txt-muted= chart.subtitle
 
-        .chart.flex-grow: .chart-content
+        .chart.flex-grow: .chart-content(style='bottom: 65px; top: 40px')
           - scale = chart.scale
           - fx = (i) => (i + 0.5) / (chart.axes[1].values.length + 0.5)
           - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
@@ -232,136 +237,169 @@ block page
                   background:none; 
                   border-top: ${i==highlight ? '4.5px solid' : '2.5px solid'};
                   border-color:${chart.colors[i]};
-                  top: ${i==highlight ? "8px" : '9px'};
+                  top: ${i==highlight ? "6px" : '7px'};
                   width: 1em`
               )
               span.legend-item-label!= item
 
 
-    .chart-source.txt-muted
+    .br-top: .chart-source.txt-muted
       !=page.source
 
 
-block append css
-  style
-    :sass
-      .wrapper
-        height: 750px
-        overflow: visible
-        position: relative
-
-      .col-wrap
-        margin: .5em -1em
-
-      .col-md
-        padding: 0 1em
-        width: 50%
-
-      .chart
-        box-sizing: border-box
-        position: relative
-
-      .chart-content
-        position: absolute
-        top: 20px
-        left: 50px
-        right: 50px
-        bottom: 30px
-
-      .chart-content > svg
-        border-bottom: 1px solid #ccc
-
-      .page-title
-        margin-bottom: 12px
-
-      .chart-title,
-      .chart-subtitle
-        padding: 0 24px
-
-      .chart-title
-        max-width: 320px
-        margin: auto
-
-      .chart-subtitle
-        height: 0
-        text-transform: uppercase
-        font-weight: 600
-        font-size: 10px
-
-      .legend
-        font-size: 14px
-        margin: auto
-        min-height: 3em
-
-      .legend-item
-        margin: 4px 8px 0
-        padding-left: 16px
-        position: relative
-        flex: 1 0 0%
-
-      .legend-item-box
-        position: absolute
-        left: 0
-        top: 4px
-        height: .8em
-        width: .8em
-        background: black
-
-      text
-        font-size: 13px
-
-        &:not([fill])
-          fill: currentColor
-
-      svg
-        overflow: visible
-
-      sup
-        line-height: 0
-
-      polyline
-        vector-effect: non-scaling-stroke
-
-      .chart-notes
-        padding: 16px 20px 0
-        font-size: 14px
-        line-height: 1.2
-
-      .chart-source
-        padding: 0 20px 0
-        font-size: 14px
-        max-width: max-content
-        margin: 12px auto 0
-
-      .chart-value
-        opacity: 0
-        transition: opacity 300ms
-
-        &.txt-fff
-          fill: #fff
-
-        .chart:hover &
-          opacity: 1
-
-      .hover-hide
-        transition: opacity 300ms
-
-        .chart:hover &
-          opacity: 0
-
-      @media screen and (max-width: 800px)
-        .wrapper
-          height: 1200px
-          margin: 0
-        .chart-notes
-          padding-top: 0
-        .col-wrap
-          flex-direction: column
-          align-items: center
-          max-height: 500px
-          min-height: 500px
-        .col-md
-          max-width: 600px
-          width: 100%
-          height: 50%
-          padding-bottom: 8px
+      block append css
+        style
+          :sass
+            .wrapper
+              height: 800px
+              overflow: visible
+              position: relative
+      
+            .col-wrap
+              margin-top: 20px
+              
+            .col-md
+              padding: 0 1em
+              width: 50%
+      
+            .chart
+              box-sizing: border-box
+              position: relative
+      
+            .chart-content
+              position: absolute
+              top: 20px
+              bottom: 45px
+              .col-md:first-child &
+                left: 60px
+                right: 10px
+              .col-md:last-child &
+                left: 10px
+                right: 60px
+                
+            .chart-content > svg
+              border-bottom: 1px solid #ccc
+      
+            .page-title
+              margin-bottom: 0px
+              font-size: 18px
+      
+            .chart-title,
+            .chart-subtitle
+              .col-md:first-child &
+                padding-left: 60px
+                padding-right: 10px
+              .col-md:last-child &
+                padding-left: 10px
+                padding-right: 60px
+      
+            .chart-title
+              font-weight: 500
+              font-size: 15px
+              max-width: 320px
+              line-height: 1.2
+              margin: auto
+      
+            .chart-subtitle
+              height: 0
+              text-transform: uppercase
+              font-weight: 600
+              font-size: 10px
+              margin-bottom: -10px
+      
+            .legend
+              max-width: 100%
+              font-size: 13px
+              margin: auto
+              min-height: 3em
+              .col-md:first-child &
+                padding-left: 30px
+              .col-md:last-child &
+                padding-right: 30px
+ 
+            .legend-item
+              margin: 4px 8px 0
+              padding-left: 16px
+              position: relative
+      
+            .legend-item-box
+              position: absolute
+              left: 0
+              top: 4px
+              height: .8em
+              width: .8em
+              background: black
+      
+            text
+              font-size: 13px
+      
+              &:not([fill])
+                fill: currentColor
+      
+            svg
+              overflow: visible
+      
+            sup
+              line-height: 0
+      
+            polyline
+              vector-effect: non-scaling-stroke
+      
+            .br-top
+              border-top: 1px solid #888
+              padding: 4px 5px 0
+              margin-top: 5px
+              > *
+                margin: 0 4px
+      
+            .chart-source
+              font-size: 12px
+              max-width: max-content
+              flex: 0.45
+      
+            .chart-value
+              opacity: 0
+              transition: opacity 300ms
+      
+              &.txt-fff
+                fill: #fff
+      
+              .chart:hover &
+                opacity: 1
+      
+            .hover-hide
+              transition: opacity 300ms
+      
+              .chart:hover &
+                opacity: 0
+      
+            @media screen and (max-width: 800px)
+              .wrapper
+                height: 1350px
+                margin: 0
+              .chart-content
+                left: 60px!important
+                right: 60px!important
+              .chart-notes
+                padding-top: 0
+              .col-wrap
+                flex-direction: column
+                align-items: center
+                max-height: 600px
+                min-height: 600px
+              .col-md
+                max-width: 600px
+                width: 100%
+                height: 50%
+                padding-bottom: 8px
+              .flex.br-top
+                flex-direction: column
+              .chart-source
+                padding-top: 4px
+      
+              .chart-title,
+              .chart-subtitle
+                .col-md:first-child &,
+                .col-md:last-child &
+                  padding: 0
+                  

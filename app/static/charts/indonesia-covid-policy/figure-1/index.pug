@@ -71,9 +71,9 @@ block page
                 span.legend-item-box(
                   style=`
                     background:none; 
-                    border-top: ${i==highlight ? '4.5px solid' : '2.5px dashed'};
+                    border-top: ${i==0 ? '4.5px solid' : '2.5px dashed'};
                     border-color:${chart.colors[i]};
-                    top: ${i==highlight ? "8px" : '9.5px'};
+                    top: ${i==0 ? "6px" : '7px'};
                     width: 1em`
                 )
                 span.legend-item-label!= item
@@ -151,7 +151,7 @@ block page
               span.legend-item-box(style=`
                 background: ${i==2 || i==3 ? 'none' : chart.colors[i]};
                 border-top: ${i==2 ? '2.5px solid #539ed4' : i==3 ? '2.5px dashed #539ed4' : ''};
-                top: ${i==2 || i==3 ? '9px' : ''};`
+                top: ${i==2 || i==3 ? '7px' : ''};`
               )
               span.legend-item-label!= item.name
               
@@ -334,8 +334,11 @@ block append css
         font-size: 13px
         margin: auto
         min-height: 3em
-        padding: 0 10px
-
+        .col-md:first-child &
+          padding-left: 30px
+        .col-md:last-child &
+          padding-right: 30px
+          
       .legend-item
         margin: 4px 8px 0
         padding-left: 16px

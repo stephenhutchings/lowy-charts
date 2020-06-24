@@ -2,7 +2,7 @@ title: >
   Figure 2: Collapsing growth and the constrained policy response
 
 source: >
-  Source: National accounts, IHS Markit, CEIC Data, International Monetary Fund, author’s calculations
+  <b>Source:</b> National accounts, IHS Markit, CEIC Data, International Monetary Fund, author’s calculations
 
 notes: >
   Notes:
@@ -136,7 +136,7 @@ charts:
       Fiscal & quasi-fiscal measures, % of GDP
     scale:
       minY:  0
-      maxY: 25
+      maxY: 20
     axes:
       -
         title: Countries
