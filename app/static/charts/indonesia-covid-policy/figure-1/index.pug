@@ -14,88 +14,27 @@ block page
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
         - scale = chart.scale
-        - fx = (i, len) => (i) / (len - 1)
+        - fx = (i, len) => (i) / (len-1)
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
-
+        
         .chart-title= chart.title
-        .chart-subtitle= chart.subtitle
+        .chart-subtitle.txt-muted.txt-sm!= chart.subtitle
 
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
             svg(height="100%")
               for n, i in new Array(scale.ticks)
-                - y = 1 - (i / (scale.ticks - 1))
+                - y = 1 - (i / (scale.ticks-1))
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    if i > 0
-                      = (scale.minY + (i/(scale.ticks - 1)) * (scale.maxY - scale.minY))
+                    = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY)
 
             svg(width="100%" y="100%")
               for year, i in chart.axes[0].values
-                svg(x=toPercent(fx(i, chart.axes[1].values.length)))
+                svg(x=toPercent(fx(i, chart.axes[0].values.length)))
                   text(
-                    text-anchor="middle"
-                    transform="translate(0 20)"
-                  )
-                    = year
-
-            svg(
-              width="100%"
-              height="100%"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-            )
-              for item, ii in chart.legend
-                - var i = chart.legend.length - ii
-                path(
-                  fill=chart.colors[i - 1]
-                  d="M" + (chart.axes[1].values.map((y, ix, a) => (
-                    [
-                      100 * fx(ix, a.length),
-                      100 * fy(scale.maxY - _.sum(y.slice(0,i)) * 0.000001)
-                    ].join(" ")
-                  )
-                  ).concat(["100 100", "0 100"])
-                  ).join("L") + "Z"
-                )
-
-        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
-          for item, i in chart.legend
-            li.legend-item
-              span.legend-item-box(style=`background:${chart.colors[i]}`)
-              span.legend-item-label!= item
-      .col-md.flex-grow.flex.flex-col
-        - chart = page.charts[1]
-        - scale = chart.scale
-        - fx = (i, len) => (i + 0.5) / (len)
-        - fy = (y, s) => (y - scale.minY[s]) / (scale.maxY[s] - scale.minY[s])
-
-        .chart-title= chart.title
-        .chart-subtitle= chart.subtitle
-
-        .chart.flex-grow: .chart-content
-          svg(height="100%" width="100%")
-            svg(height="100%" width="100%")
-              for j in [0,1]
-                for n, i in new Array(6)
-                  - y = 1 - (i / 5)
-                  if j == 0
-                    svg(y=toPercent(y))
-                      text(text-anchor="end" transform="translate(-8 4)")
-                        = (100 * (scale.minY[j] + (i/5) * (scale.maxY[j] - scale.minY[j]))).toFixed(0)
-                        | %
-                  else
-                    svg(y=toPercent(y) x="100%")
-                      text(transform="translate(8 4)")
-                        = (100 * (scale.minY[j] + (i/5) * (scale.maxY[j] - scale.minY[j]))).toFixed(0)
-                        | %
-
-            svg(width="100%" y="100%")
-              for year, i in chart.axes[0].values
-                svg.hover-hide(x=toPercent(fx(i, chart.axes[1].values.length)))
-                  text(
-                    text-anchor="middle"
-                    transform="translate(0 20)"
+                    text-anchor="end"
+                    transform="rotate(-45) translate(-5 15)"
                   )
                     = year
 
@@ -109,49 +48,114 @@ block page
                 polyline(
                   fill="none"
                   stroke=chart.colors[i]
-                  points=(chart.axes[1].values.map((y, ix, a) => (
-                    [
-                      100 * fx(ix, a.length),
-                      100 * fy(scale.maxY[item.scale] - y[i], item.scale)
-                    ].join(" ")
-                  ))).join(",")
+                  stroke-dasharray=2
+                  stroke-width=1
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  points=(chart.axes[1].values.map(function(y, ix, a) {
+                    if (typeof y[i] === 'number') {
+                      return ([
+                        100 * fx(ix, a.length),
+                        100 * fy(scale.maxY + scale.minY - y[i])
+                      ].join(" "))
+                    }
+                    else {
+                    }
+                  })).join(",")
                 )
 
-            for item, i in chart.legend
-              g
-                for val, ix in chart.axes[1].values
-                  circle(
-                    r=5
-                    cx=toPercent(fx(ix, chart.axes[1].values.length))
-                    cy=toPercent(fy(scale.maxY[item.scale] - val[i], item.scale))
-                    fill=chart.colors[i]
-                  )
-                  svg.chart-value(
-                    x=toPercent(fx(ix, chart.axes[1].values.length))
-                    y=toPercent(fy(scale.maxY[item.scale] - val[i], item.scale))
-                  )
-                    //- circle(fill=chart.colors[i] r=12)
-                    rect(
-                      y=(i % 2 == 0 ? -12 : 24) - 12
-                      height=14
-                      width=24
-                      x=-12
-                      fill="#fff"
-                    )
-                    text(
-                      y=(i % 2 == 0 ? -12 : 24)
-                      xy=4
-                      text-anchor="middle"
-                      fill=chart.colors[i]
-                    )
-                      = (val[i] * 100).toFixed(1)
+        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+          for item, i in chart.legend
+            if (i==0||i==1||i==3)
+              li.legend-item
+                span.legend-item-box(
+                  style=`
+                    background:none; 
+                    border-top: ${i==highlight ? '4.5px solid' : '2.5px dashed'};
+                    border-color:${chart.colors[i]};
+                    top: ${i==highlight ? "8px" : '9.5px'};
+                    width: 1em`
+                )
+                span.legend-item-label!= item
 
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[1]
+        - scale = chart.scale
+        - fx = (i, len) => (i) / (len - 1)
+        - fy = (y, s) => (y - scale.minY[s]) / (scale.maxY[s] - scale.minY[s])
+
+        .chart-title= chart.title
+        .chart-subtitle= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          svg(height="100%" width="100%")
+            svg(height="100%" width="100%")
+              for j in [0,1]
+                for n, i in new Array(scale.ticks[j])
+                  - y = 1 - (i / (scale.ticks[j]-1))
+                  if j == 0
+                    svg(y=toPercent(y))
+                      text(text-anchor="end" transform="translate(-8 4)")
+                        = (scale.minY[j] + (i/(scale.ticks[j]-1)) * (scale.maxY[j] - scale.minY[j])).toFixed(0)
+                  else
+                    svg(y=toPercent(y) x="100%")
+                      text(transform="translate(8 4)")
+                        = (scale.minY[j] + (i/(scale.ticks[j]-1)) * (scale.maxY[j] - scale.minY[j])).toFixed(1)
+
+            svg(width="100%" y="100%")
+              for year, i in chart.axes[0].values
+                svg(x=toPercent(fx(i, chart.axes[0].values.length)))
+                  text(
+                    text-anchor="end"
+                    transform="rotate(-45) translate(-5 15)"
+                  )
+                    = year
+
+            svg(
+              width="100%"
+              height="100%"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            )
+              for item, i in chart.legend
+                if i==0 || i==1
+                  - var ii = 2 - i
+                  path(
+                    fill=chart.colors[i]
+                    d="M" + (chart.axes[1].values.map((y, ix, a) => (
+                      [
+                        100 * fx(ix, a.length),
+                        100 * fy(scale.maxY[item.scale] - _.sum(y.slice(0,ii)), item.scale)
+                      ].join(" ")
+                    )
+                    ).concat(["100 100", "0 100"])
+                    ).join("L") + "Z"
+                  )            
+              for item, i in chart.legend
+                if i==2 || i==3
+                  polyline(
+                    fill="none"
+                    stroke=chart.colors[i]
+                    stroke-dasharray=(i==3 ? 6 : 0)
+                    points=(chart.axes[1].values.map((y, ix, a) => (
+                      [
+                        100 * fx(ix, a.length),
+                        100 * fy(scale.maxY[item.scale] - y[i], item.scale)
+                      ].join(" ")
+                    ))).join(",")
+                  )
+              
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
           for item, i in chart.legend
             li.legend-item
-              span.legend-item-box(style=`background:${chart.colors[i]}`)
+              span.legend-item-box(style=`
+                background: ${i==2 || i==3 ? 'none' : chart.colors[i]};
+                border-top: ${i==2 ? '2.5px solid #539ed4' : i==3 ? '2.5px dashed #539ed4' : ''};
+                top: ${i==2 || i==3 ? '9px' : ''};`
+              )
               span.legend-item-label!= item.name
+              
     .col-wrap.txt-center.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[2]
@@ -269,7 +273,7 @@ block append css
   style
     :sass
       .wrapper
-        height: 750px
+        height: 800px
         overflow: visible
         position: relative
 
@@ -347,7 +351,7 @@ block append css
         stroke-width: 4
 
       .chart-notes
-        padding: 16px 20px 0
+        padding: 8px 20px 0
         font-size: 14px
         line-height: 1.2
 

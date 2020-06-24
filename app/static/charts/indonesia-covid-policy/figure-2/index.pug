@@ -173,61 +173,70 @@ block page
                       transform="rotate(-45) translate(-6 12)"
                       class=label.highlight ? "txt-bold" : ""
                     )
-                      =label.text
-                
+                      =label.text  
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[3]
         - scale = chart.scale
-        - fx = (i, len) => (i) / (len - 1)
+        - fx = (i, len) => (i + 0.75) / (len + 0.5)
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
-      
+        
+        - highlight = 5
+                
         .chart-title= chart.title
-        .chart-subtitle= chart.subtitle
-      
+        .chart-subtitle.txt-muted.txt-sm!= chart.subtitle
+
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
             svg(height="100%")
               for n, i in new Array(scale.ticks)
-                - y = 1 - (i / (scale.ticks - 1))
+                - y = 1 - (i / (scale.ticks-1))
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    = (scale.minY + (i/(scale.ticks - 1)) * (scale.maxY - scale.minY))
-      
+                    = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY) + "%"
+
             svg(width="100%" y="100%")
               for year, i in chart.axes[0].values
                 svg(x=toPercent(fx(i, chart.axes[0].values.length)))
                   text(
-                    text-anchor="middle"
-                    transform="translate(-2.4 20)"
+                    text-anchor="end"
+                    transform="translate(0 20)"
                   )
-                    if i != chart.axes[0].values.length - 1
-                      = year
-      
+                    = year
+
             svg(
               width="100%"
               height="100%"
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             )
-              for item, ii in chart.legend
-                - var i = chart.legend.length - ii
-                path(
-                  fill=chart.colors[i - 1]
-                  d="M" + (chart.axes[1].values.map((y, ix, a) => (
+              for item, i in chart.legend
+                polyline(
+                  fill="none"
+                  stroke=chart.colors[i]
+                  stroke-width=(i==highlight ? 4.5 : 1)
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  points=(chart.axes[1].values.map((y, ix, a) => (
                     [
                       100 * fx(ix, a.length),
-                      100 * fy(scale.maxY - _.sum(y.slice(0,i)))
+                      100 * fy(scale.maxY + scale.minY - y[i])
                     ].join(" ")
-                  )
-                  ).concat(["100 100", "0 100"])
-                  ).join("L") + "Z"
+                  ))).join(",")
                 )
-      
+
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
           for item, i in chart.legend
             li.legend-item
-              span.legend-item-box(style=`background:${chart.colors[i]}`)
+              span.legend-item-box(
+                style=`
+                  background:none; 
+                  border-top: ${i==highlight ? '4.5px solid' : '2.5px solid'};
+                  border-color:${chart.colors[i]};
+                  top: ${i==highlight ? "8px" : '9px'};
+                  width: 1em`
+              )
               span.legend-item-label!= item
+
 
     .chart-source.txt-muted
       !=page.source
