@@ -77,7 +77,6 @@ block page
                     width: 1em`
                 )
                 span.legend-item-label!= item
-
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[1]
         - scale = chart.scale
@@ -85,7 +84,7 @@ block page
         - fy = (y, s) => (y - scale.minY[s]) / (scale.maxY[s] - scale.minY[s])
 
         .chart-title= chart.title
-        .chart-subtitle= chart.subtitle
+        .chart-subtitle.txt-muted.txt-sm= chart.subtitle
 
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
@@ -164,7 +163,7 @@ block page
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
 
         .chart-title= chart.title
-        .chart-subtitle= chart.subtitle
+        .chart-subtitle.txt-muted.txt-sm= chart.subtitle
 
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
@@ -216,7 +215,7 @@ block page
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
       
         .chart-title= chart.title
-        .chart-subtitle= chart.subtitle
+        .chart-subtitle.txt-muted.txt-sm= chart.subtitle
       
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
@@ -263,10 +262,11 @@ block page
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item
 
-    .chart-notes.txt-muted
-      !=page.notes
-    .chart-source.txt-muted
-      !=page.source
+    .flex.br-top
+      .chart-notes.txt-muted
+        !=page.notes
+      .chart-source.txt-muted
+        !=page.source
 
 
 block append css
@@ -278,8 +278,8 @@ block append css
         position: relative
 
       .col-wrap
-        margin: .5em -1em
-
+        margin-top: 20px
+        
       .col-md
         padding: 0 1em
         width: 50%
@@ -291,22 +291,35 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 50px
-        right: 50px
-        bottom: 30px
-
+        bottom: 45px
+        .col-md:first-child &
+          left: 60px
+          right: 10px
+        .col-md:last-child &
+          left: 10px
+          right: 60px
+          
       .chart-content > svg
         border-bottom: 1px solid #ccc
 
       .page-title
-        margin-bottom: 12px
+        margin-bottom: 0px
+        font-size: 18px
 
       .chart-title,
       .chart-subtitle
-        padding: 0 24px
+        .col-md:first-child &
+          padding-left: 60px
+          padding-right: 10px
+        .col-md:last-child &
+          padding-left: 10px
+          padding-right: 60px
 
       .chart-title
+        font-weight: 500
+        font-size: 15px
         max-width: 320px
+        line-height: 1.2
         margin: auto
 
       .chart-subtitle
@@ -314,17 +327,19 @@ block append css
         text-transform: uppercase
         font-weight: 600
         font-size: 10px
+        margin-bottom: -10px
 
       .legend
-        font-size: 14px
+        max-width: 100%
+        font-size: 13px
         margin: auto
         min-height: 3em
+        padding: 0 10px
 
       .legend-item
         margin: 4px 8px 0
         padding-left: 16px
         position: relative
-        flex: 1 0 0%
 
       .legend-item-box
         position: absolute
@@ -350,16 +365,22 @@ block append css
         vector-effect: non-scaling-stroke
         stroke-width: 4
 
+      .br-top
+        border-top: 1px solid #888
+        padding: 4px 5px 0
+        margin-top: 4px
+        > *
+          margin: 0 4px
+        
       .chart-notes
-        padding: 8px 20px 0
-        font-size: 14px
+        font-size: 12px
         line-height: 1.2
+        flex: 1
 
       .chart-source
-        padding: 0 20px 0
-        font-size: 14px
+        font-size: 12px
         max-width: max-content
-        margin: 12px auto 0
+        flex: 0.45
 
       .chart-value
         opacity: 0
@@ -379,17 +400,31 @@ block append css
 
       @media screen and (max-width: 800px)
         .wrapper
-          height: 1200px
+          height: 1350px
           margin: 0
+        .chart-content
+          left: 60px!important
+          right: 60px!important
         .chart-notes
           padding-top: 0
         .col-wrap
           flex-direction: column
           align-items: center
-          max-height: 500px
-          min-height: 500px
+          max-height: 600px
+          min-height: 600px
         .col-md
           max-width: 600px
           width: 100%
           height: 50%
           padding-bottom: 8px
+        .flex.br-top
+          flex-direction: column
+        .chart-source
+          padding-top: 4px
+
+        .chart-title,
+        .chart-subtitle
+          .col-md:first-child &,
+          .col-md:last-child &
+            padding: 0
+            
