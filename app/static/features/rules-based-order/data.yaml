@@ -23,11 +23,13 @@ cards:
         date: March
         title: Kevin Rudd address to The Brookings Institution, Washington
         subtitle: "The Australia-US alliance and emerging challenges in the Asia-Pacific Region."
-        content:
-          - format: p
-            val: Rudd's first visit to Washington as prime minister included a speech at the Brookings Institution replete with references to world order, including the first known use of 'rules-based order' by an Australian Prime Minister-based order&#58;
-          - format: q
-            val: The idea of a "harmonious world" depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order…we look to China to make a strong contribution to strengthening the global and regional rules-based order.
+        content: |
+          ## Kevin Rudd address to The Brookings Institution, Washington
+          ### The Australia-US alliance and emerging challenges in the Asia-Pacific Region.
+
+          Rudd's first visit to Washington as prime minister included a speech at the Brookings Institution replete with references to world order, including the first known use of 'rules-based order' by an Australian Prime Minister-based order&#58;
+
+          _The idea of a "harmonious world" depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order…we look to China to make a strong contribution to strengthening the global and regional rules-based order._
         media:
           class: image
           src: "img/example-5.jpg"

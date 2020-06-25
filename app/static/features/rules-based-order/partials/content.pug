@@ -1,6 +1,2 @@
-if card.content != undefined
-  for p in card.content
-    if p.format == "p"
-      .txt-m!= p.val
-    else if p.format == "q"
-      .qt.txt-sm!= p.val
+if typeof card.content === 'string'
+  div!= marked(card.content)
