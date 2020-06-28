@@ -2,27 +2,29 @@
 # of links on the issue template.
 
 issues:
+  - href: "introduction"
+    title: Introduction
+  - href: "china"
+    title: Chinese Economic Coercion
+  - href: "us-china"
+    title: Shaping the US Approach to China
+  - href: "security"
+    title: Maintaining Australia’s security
+  - href: "who"
+    title: Strengthening the WHO
+  - href: "g20"
+    title: Curing the G20's Irrelevance
+  - href: "power"
+    title: Forming Middle-Power Coalitions
   - href: "aus-economic"
     title: Australia’s Economic Recovery
-  - href: "china"
-    title: Managing Chinese Coercion
-  - href: "who"
-    title: Reforming the World Health Organisation
-  - href: "us-china"
-    title: The US-China rivalry
-  - href: "defence"
-    title: Australia's Security and Defence
-  - href: "g20"
-    title: The G20
   - href: "ind-economic"
-    title: Indonesia’s Economic Recovery
-  - href: "aid"
-    title: Reforming Australian Aid
-  - href: "pacific"
-    title: Assisting the Pacific
+    title: Assisting Indonesia
   - href: "asean"
-    title: Working with ASEAN
-  - href: "power"
-    title: Middle-Power Coalitions
+    title: Stepping up in SE Asia
+  - href: "pacific"
+    title: Helping the Pacific
+  - href: "aid"
+    title: Reviving Australia’s Aid Program
   - href: "diplomacy"
-    title: Diplomacy
+    title: Revaluing Australia's diplomacy

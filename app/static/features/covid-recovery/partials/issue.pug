@@ -62,17 +62,18 @@ block page
       .container
         ul.link-grid.list-bare.txt-ff
           li.col-fw.txt-sm.txt-tu.txt-hl.pv-sm Explore more topics
-          for issue in page.feature.issues
-            if issue.href != page.issue
-              li.col-1-3
-                a.txt-bare.pv-md.ph-xs(
-                  href=`/features/covid-recovery/issues/${issue.href}`
-                )
-                  span.txt-md!= typogr.typogrify(issue.title)
-            else
-              li.col-1-3(id="active")
-                .pv-md.ph-xs
-                  span.txt-md!= typogr.typogrify(issue.title)
+          for issue, i in page.feature.issues
+            if i
+              if issue.href != page.issue
+                li.col-1-3
+                  a.txt-bare.pv-md.ph-xs(
+                    href=`/features/covid-recovery/issues/${issue.href}`
+                  )
+                    span.txt-md!= typogr.typogrify(issue.title)
+              else
+                li.col-1-3(id="active")
+                  .pv-md.ph-xs
+                    span.txt-md!= typogr.typogrify(issue.title)
 
   include footer
 

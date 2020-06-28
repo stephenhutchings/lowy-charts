@@ -213,10 +213,12 @@ sup
   border-left: 5px solid $color-hl
   position: relative
 
-  > p
-    //margin: -0.2em 0 -0.3em
+  > p, li
     margin: 0 1.5em 1em 1.7em
     line-height: 1.5em
+
+  > ul
+    margin-left: 1.5em
 
 .txt-source
   position: absolute
@@ -285,7 +287,7 @@ a
   &:focus
     color: $color-hl
 
-li
+.link-grid li
   margin-bottom: 0
   line-height: inherit
 
@@ -542,7 +544,7 @@ p > a
   line-height: 1
   vertical-align: bottom
 
-  ul
+  ul.link-grid
     list-style: none
     padding: 0
     position: absolute
@@ -550,7 +552,7 @@ p > a
     top: 0
     height: 10em
 
-  li
+  li .link-grid
     margin: 0
     line-height: inherit
     user-select: none
