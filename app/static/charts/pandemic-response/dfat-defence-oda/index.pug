@@ -41,8 +41,8 @@ block page
             for year, i in chart.axes[0].values
               svg(x=toPercent(fx(i, chart.axes[0].values.length)))
                 text(
-                  text-anchor="middle"
-                  transform="translate(0 30)"
+                  text-anchor="end"
+                  transform="rotate(-45) translate(-5 15)"
                 )
                   = year
 
@@ -69,6 +69,7 @@ block page
             g
               for val, ix in chart.axes[1].values
                 circle(
+                  class=`c-${i}`
                   r=5
                   cx=toPercent(fx(ix, chart.axes[1].values.length))
                   cy=toPercent(fy(scale.maxY - val[i]))
@@ -81,7 +82,7 @@ block page
                 )
                   text.chart-value(
                     class=`series-${i}`
-                    y=(i != 0 ? -12 : 24)
+                    y=( ((i==2 && ix%2)) ? 24 : -12 )
                     text-anchor="middle"
                     fill=chart.colors[i]
                   )
@@ -118,12 +119,19 @@ block page
     .chart-source.txt-muted.txt-right!= page.source
 
   script.
+    var line = null;
     document.querySelectorAll('.hoverarea').forEach( (el, i) => {
       el.addEventListener('mouseover', (e) => {
-        document.querySelectorAll(`.chart-value.series-${i}`).forEach( v => v.style.opacity = 1 )
+        line = i;
+        document.querySelectorAll(`.chart-value.series-${i}`).forEach( v => v.style.opacity = 1 );
+        document.querySelectorAll(`polyline`).forEach( (l, ii) => ii != line ? l.style.opacity = 0.3 : "" );
+        document.querySelectorAll(`circle`).forEach( (c, ii) => c.classList.contains(`c-${line}`) ? "" : c.style.opacity = 0.3 );
       });
       el.addEventListener('mouseleave', (e) => {
-        document.querySelectorAll(`.chart-value.series-${i}`).forEach( v => v.style.opacity = 0 )
+        line = null;
+        document.querySelectorAll(`.chart-value.series-${i}`).forEach( v => v.style.opacity = 0 );
+        document.querySelectorAll(`polyline`).forEach( l => l.style.opacity = 1 );
+        document.querySelectorAll(`circle`).forEach( (c, ii) => c.style.opacity = 1 );
       });
     });
 
@@ -131,7 +139,7 @@ block append css
   style
     :sass
       .wrapper
-        height: 550px
+        height: 580px
         overflow: visible
         position: relative
 
@@ -156,7 +164,7 @@ block append css
         top: 20px
         left: 50px
         right: 40px
-        bottom: 32px
+        bottom: 60px
 
       .chart-content > svg
         border-bottom: 1px solid #ccc
@@ -185,21 +193,24 @@ block append css
 
       svg
         overflow: visible
-
+        
       sup
         line-height: 0
 
       polyline
         vector-effect: non-scaling-stroke
+        
+      circle, polyline
+        transition-duration: 300ms
 
       .chart-notes
         font-size: 14px
-        margin: 12px 10px 0
+        margin: 6px 10px 0
         line-height: 1.2
 
       .chart-source
         font-size: 14px
-        margin: 12px 10px 0
+        margin: 4px 10px 0
 
       .chart-value
         opacity: 0
