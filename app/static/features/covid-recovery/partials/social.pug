@@ -1,0 +1,19 @@
+.social-share
+  span.social-share-label Share
+  a.icon.icon-social-facebook(
+    href=[
+      "https://www.facebook.com/sharer.php?u=",
+      encodeURIComponent(page.url),
+    ].join("")
+    target="_blank"
+  )
+  a.icon.icon-social-twitter(
+    href=[
+      "https://twitter.com/share?url=",
+      encodeURIComponent(page.url),
+      "&text=",
+      encodeURIComponent(page.title),
+      "&via=LowyInstitute"
+    ].join("")
+    target="_blank"
+  )

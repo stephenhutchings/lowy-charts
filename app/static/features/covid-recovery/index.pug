@@ -1,0 +1,63 @@
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.url = "https://interactives.lowyinstitute.org/features/covid-recovery/"
+  - page.class = "page-0 page-menu"
+  - page.title = "Emerging From COVID"
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.description = ""
+  - page.image = "http://interactives.lowyinstitute.org/features/covid-recovery/img/thumbnail.jpg"
+  - page.feature = data.getOne("static/features/covid-recovery/data")
+
+block page
+  
+  .container
+    header#header.txt-tu.txt-sm.num-lf
+      a.txt-bare.header-logo.home(href="https://www.lowyinstitute.org/")
+        | Lowy Institute
+      include partials/social
+
+
+  #scroller
+    #scroll-item-intro.scroll-item
+      .row
+        .col-1-2.num-lf.pv-md 
+          .txt-center
+            .txt-sm.txt-tu.ph-sm.pv-xs.hidden-sm Lowy Institute
+
+            .txt-xxl.ph-sm.pv-sm
+              :marked
+                Emerging From COVID,<br>
+                Securing Australia's Future:<br>
+                Policy Responses To The Pandemic
+
+            .pv-sm.active
+              .stripe-lt
+
+            .ph-lg.intro-description.txt-sans.mxw.pv-xs.txt-md
+              :marked
+                In this new feature, Lowy Institute experts provide policy recommendations
+                for Australia to address issues that are critical to our 
+                <span style="white-space: nowrap;"> nation's — and </span> the
+                <span style="white-space: nowrap;"> world's — </span>
+                successful emergence from the pandemic.
+                
+              .txt-sm.ph-sm
+                :marked
+                  <br>This feature follows the Institute's [World After COVID-19](http://interactives.lowyinstitute.org/features/covid19) feature, in which Lowy Institute experts looked at how the coronavirus pandemic would change the world.
+              
+
+        .col-1-2.bg-dk.txt-ff.pv-md
+          .block
+            .txt-sm.txt-tu.ph-sm.pv-sm.txt-hl Topics
+            .block
+              ul.list-bare.txt-links
+                for issue in page.feature.issues
+                  li
+                    a.txt-bare(href=`issues/${issue.href}`)
+                      != issue.title
+
+block append css
+  style
+    include:sass _styles.sass

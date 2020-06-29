@@ -1,0 +1,41 @@
+//-
+  This is an example issue item page with the content removed. The blocks
+  relate to those defined in the layout that's extended – in this case that's
+  the issue template that we define here...
+
+extend ../../partials/issue
+
+block append config
+  - page.title = "Reviving Australia’s Aid Program"
+  - page.expert = "Jonathan Pryke"
+  - page.expertrole = "Director, Pacific Islands Program"
+  
+block intro-image
+  img.bg-img(data-src="../../img/aid.jpg")
+
+block intro-caption
+  :marked
+    Photo:<br><a href="https://www.flickr.com/photos/dfataustralianaid">DFAT / Flickr</a>
+
+block intro-description
+    :marked
+      “In a region where crises amplify fragility and instability, the bill will be much larger for Australia if it does not act now to provide the right amount, and the right kinds, of support to its neighbours.”
+
+block scroller
+  +item(1)
+    .row
+      .col.p-lg.bg-ff.txt-expert-content
+        .block.txt-sans.txt-md.txt-dk.pv-lg.txt-left
+          .txt-border
+            :marked
+              Since 2014, through successive budget cuts, a hasty merger of AusAID into DFAT, and the consequent attrition of development professionals, the Australian aid program has become a shell of its former self. The Coalition government has cut the aid program by almost a third from its $5.5 billion peak in 2013–14, adjusting for inflation. The aid program, when measured as a portion of Australia’s Gross National Income (GNI), is now the least generous it has ever been in Australia’s history. 
+              
+              One thing that is clear as we emerge from the COVID pandemic is that Australia will find itself in a region much poorer and less stable than it was in 2019. Australia will no longer have the luxury of spending so little to help ensure regional prosperity and stability. 
+              
+              Australia stands out globally for its success in handling both the health and economic crises of the pandemic. This makes Australia one of the only countries with the means to take a leadership role in helping our region get back on its feet after COVID-19. Seventeen of Australia’s closest twenty neighbours are aid recipients. Doing more to help our region is not only our moral duty; it is also in Australia’s national interest. 
+              
+              Presuming the government does not cut the aid budget this year, the economic contraction Australia will face in 2020 will, by default, increase our apparent generosity. Thereafter, Canberra should increase our level of official development assistance (the proportion of ODA to Gross National Income) by 0.01 per cent each year until Australia at least meets the OECD average of 0.38 per cent. This increase, roughly $400 million in the first year, should be focused exclusively on rapid economic stimulus in Southeast Asia and the Pacific. Even at this modest rate of growth, the aid program would not return to its 0.34 per cent peak for another 15 years.
+              
+              Increasing the aid budget without significant reform will not be enough, however. As aid volumes have declined, so too has capacity. The government recognised this in calling for a development review last year, which has rightly been put on hold during the COVID crisis. This review should not, however, be abandoned but instead expanded by appointing an independent review team, similar to the 2011 Hollway review, to give it real teeth. The objectives of Australian aid, the governance and management of aid within DFAT, the accountability and measurement of aid performance, and the modalities of aid delivery are all areas in need of reform. 
+              
+              Increasing and improving the aid program will be a tough sell in a climate where Australian voters are already facing an intergenerational tax burden. But in a region where crises amplify fragility and instability, the bill will be much larger for Australia if it does not act now to provide the right amount, and the right kinds, of support to its neighbours.
