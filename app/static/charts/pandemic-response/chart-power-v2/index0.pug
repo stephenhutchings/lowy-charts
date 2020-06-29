@@ -15,11 +15,11 @@ block page
       .chart.flex-grow: .chart-content
         - scale = chart.scale
         - ln = chart.axes[1].values.length
-        - fx = (i) => (i + 0.75) / (ln + 0.75)
+        - fx = (i) => (i + 0.32) / (ln + 0.5)
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
         
-        svg(height="100%" width="100%")
-        
+        svg(height="100%" width="100%")        
+          
           svg(height="100%")
             - let vn = 3
             - let min = 0
@@ -50,46 +50,148 @@ block page
               svg(
                 x=toPercent(fx(i))
                 y=toPercent(0)
-                width=toPercent(fx(0))
+                width="20%"
                 height="100%"
               )
                 g.bars
+                  rect.value-bg(
+                    y=toPercent(fy(chart.scale.maxY - y1))
+                    height="26px"
+                    width="45%"
+                    transform="translate(0 -26)"
+                    fill="#fff"
+                  )
+                  rect.value-bg(
+                    y=toPercent(fy(chart.scale.maxY - y2))
+                    x="50%"
+                    height="26px"
+                    width="45%"
+                    transform="translate(0 -26)"
+                    fill="#fff"
+                  )                    
+                  text.chart-value(
+                    x="22.5%"
+                    y=toPercent(fy(chart.scale.maxY - y1))
+                    text-anchor="middle"
+                    transform="translate(0 -8)"
+                  )
+                    = y1 + "%"
+                  text.chart-value(
+                    x="72.5%"
+                    y=toPercent(fy(chart.scale.maxY - y2))
+                    text-anchor="middle"
+                    transform="translate(0 -8)"
+                  )
+                    = y2 + "%"
+
                   rect(
-                    width="50%"
+                    width="45%"
                     y=toPercent(fy(chart.scale.maxY - y1))
                     height=toPercent(fy(y1))
                     fill="#3CC6C0"
                   )
-                  text.chart-value(
-                    x="50%"
-                    y=toPercent(fy(chart.scale.maxY - y1))
-                    text-anchor="middle"
-                    transform="translate(-22 -8)"
-                  )
-                    = y1+'%'
-
                   rect(
-                    width="50%"
+                    width="45%"
                     x="50%"
                     y=toPercent(fy(chart.scale.maxY - y2))
                     height=toPercent(fy(y2))
                     fill="#394754"
                   )
-                  text.chart-value(
-                    x="100%"
-                    y=toPercent(fy(chart.scale.maxY - y2))
-                    text-anchor="middle"
-                    transform="translate(-22 -8)"
-                  )
-                    = y2+'%'
 
                 svg(x="50%" y="100%")
                   text.x-label(
                     text-anchor="middle"
-                    transform="translate(0 20)"
+                    transform="rotate(0) translate(-8 24)"
                   )
                     =label
-      
+      .chart.flex-grow: .chart-content
+        - chart = page.charts[1]
+        svg(height="100%" width="100%")        
+          svg(height="100%")
+            - vn = 3
+            - min = 0
+            - max = 75
+            for n, i in new Array(vn+1)
+              - y = 1 - (i / vn)
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = min + (i/vn) * (max - min) + "%"
+                  
+          svg(height="100%")
+            for n, i in new Array(vn)
+              - y = (i / vn)
+              svg
+                line(
+                  x1="0%"
+                  y1=toPercent(y)
+                  x2="100%"
+                  y2=toPercent(y)
+                  stroke="#5552"
+                  stroke-dasharray=(i==1 ? "" : 5)
+                )
+
+          g
+            for y1, i in chart.axes[1].values
+              - y2 = chart.axes[2].values[i]
+              - label = chart.axes[0].values[i]
+              svg(
+                x=toPercent(fx(i))
+                y=toPercent(0)
+                width="20%"
+                height="100%"
+              )
+                g.bars
+                  rect.value-bg(
+                    y=toPercent(fy(chart.scale.maxY - y1))
+                    height="26px"
+                    width="45%"
+                    transform="translate(0 -26)"
+                    fill="#fff"
+                  )
+                  rect.value-bg(
+                    y=toPercent(fy(chart.scale.maxY - y2))
+                    x="50%"
+                    height="26px"
+                    width="45%"
+                    transform="translate(0 -26)"
+                    fill="#fff"
+                  )                    
+                  text.chart-value(
+                    x="22.5%"
+                    y=toPercent(fy(chart.scale.maxY - y1))
+                    text-anchor="middle"
+                    transform="translate(0 -8)"
+                  )
+                    = y1 + "%"
+                  text.chart-value(
+                    x="72.5%"
+                    y=toPercent(fy(chart.scale.maxY - y2))
+                    text-anchor="middle"
+                    transform="translate(0 -8)"
+                  )
+                    = y2 + "%"
+
+                  rect(
+                    width="45%"
+                    y=toPercent(fy(chart.scale.maxY - y1))
+                    height=toPercent(fy(y1))
+                    fill="#3CC6C0"
+                  )
+                  rect(
+                    width="45%"
+                    x="50%"
+                    y=toPercent(fy(chart.scale.maxY - y2))
+                    height=toPercent(fy(y2))
+                    fill="#394754"
+                  )
+
+                svg(x="50%" y="100%")
+                  text.x-label(
+                    text-anchor="middle"
+                    transform="rotate(0) translate(-8 24)"
+                  )
+                    =label
+
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
           li.legend-item
@@ -195,5 +297,3 @@ block append css
           font-size: 15px
         .chart-notes
           font-size: 12px
-        .chart-value
-          display: none

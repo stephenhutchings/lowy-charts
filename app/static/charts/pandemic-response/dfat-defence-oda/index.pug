@@ -39,7 +39,7 @@ block page
 
           svg(width="100%" y="100%")
             for year, i in chart.axes[0].values
-              svg(x=toPercent(fx(i, chart.axes[0].values.length)))
+              svg.x-label(x=toPercent(fx(i, chart.axes[0].values.length)))
                 text(
                   text-anchor="end"
                   transform="rotate(-45) translate(-5 15)"
@@ -221,7 +221,9 @@ block append css
 
       
       @media screen and (max-width: 600px)
-
+        
+        .x-label:nth-child(even)
+          display: none
         circle
           display: none
         .col-wrap
