@@ -891,7 +891,7 @@ p > a
       max-height: none
 
 @media (max-width: 450px)
-  .header-logo
+  .header-logo:not(.home)
     display: none
   .header-title
     text-align: left
@@ -899,6 +899,12 @@ p > a
     border: none
     > p
       margin: 0 0 1em
+
+  .txt-links li
+    line-height: 2em
+    margin: 0
+    &:nth-last-child(1n+2)
+      border-bottom: 0.5px solid rgba($color-lt, 0.25)
 
 @keyframes prompt
   to
