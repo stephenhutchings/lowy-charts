@@ -6,6 +6,12 @@ $color-lt: #e9eaef
 $color-ff: #fff
 $color-mt: #7c94a2
 
+@keyframes zoomout
+  from
+    transform: translate3d(0, 0, 0) scale(1.1)
+  to
+    transform: translate3d(0, 0, 0) scale(1)
+
 // Colors
 .bg-hl
   background: $color-hl
@@ -139,11 +145,7 @@ $color-mt: #7c94a2
   height: 100%
   .bg-img
     max-width: none
-    transform: translate3d(0, 0, 0) scale(1)
-
-    .active &
-      transition: transform 12s
-      transform: translate3d(0, 0, 0) scale(1)
+    animation: zoomout 7s linear 0s 1 normal none
 
 .frame
   position: relative
@@ -157,12 +159,12 @@ $color-mt: #7c94a2
 
 // Font size
 .txt-xxl
-  font-size: 60px
-  line-height: 1
+  font-size: 38px
+  line-height: 1.2
   font-weight: 200
   letter-spacing: -0.01em
 .txt-xl
-  font-size: 40px
+  font-size: 36px
   line-height: 1
   margin: -4px 0 4px
   letter-spacing: -0.01em
@@ -314,7 +316,7 @@ strong, .txt-tu, .caption
   letter-spacing: 0.02em
 
 iframe
-  padding: 1em 0
+  padding: 1.5em 0
   margin-left: 5%
   width: 90%
   border: none
@@ -635,8 +637,6 @@ p > a
     max-width: none
 
 @media (max-width: 1280px), (max-height: 920px)
-  .txt-xxl
-    font-size: 48px
   .txt-xl,
   .txt-title
     font-size: 32px
@@ -688,19 +688,11 @@ p > a
 
 @media (max-width: 800px), (max-height: 625px)
   .hidden-sm,
-  .page-issue .header-logo,
   .header-page,
   .scroll-prompt,
   .social-share-label,
   #footer
     display: none
-
-  .page-issue #header .header-title
-    line-height: 16px
-    text-align: left
-    padding: 12px 0px
-    max-width: 120px
-    margin-left: 0
 
   #header .social-share
     display: flex
@@ -708,6 +700,9 @@ p > a
 
   #header:before
     margin: 0 -8px
+
+  #title-long
+    display: none
 
   #scroller
     scroll-snap-type: none
@@ -896,6 +891,10 @@ p > a
       max-height: none
 
 @media (max-width: 450px)
+  .header-logo
+    display: none
+  .header-title
+    text-align: left
   .txt-border
     border: none
     > p

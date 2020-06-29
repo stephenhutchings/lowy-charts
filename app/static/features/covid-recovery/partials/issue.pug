@@ -12,7 +12,7 @@ block append config
   - page.feature = data.getOne("static/features/covid-recovery/data")
 
 block prepend head
-  - page.url = "https://interactives.lowyinstitute.org/features/covid19/"
+  - page.url = "https://interactives.lowyinstitute.org/features/covid-recovery/"
   - page.url += "issues/" + page.issue
   - page.metaTitle = `${page.title} - COVID-19 Recovery – Lowy Insitute`
 
@@ -38,15 +38,13 @@ block page
           .fill
             .row
               .col-fw.p-md
-                //.pv-xs
-                  .p-xs.txt-sm.txt-tu.bg-hl.txt-ff Topic
-                .txt-xxl.pv-xs.ph-xl= page.title
-                .txt-sm.txt-tu.pv-sm.txt-expert-author= page.expert
+                .txt-xl.pv-xs.ph-xl= page.title
+                .txt-sm.txt-tu.pv-sm.ph-lg.txt-expert-author= page.expert
                   <br>
                   span.txt-mt= page.expertrole
 
             .row.bg-dk
-              .col-fw.ph-xl.pv-md.txt-ff.txt-lg-lh
+              .col-fw.ph-lg.pv-md.txt-ff.txt-lg-lh
                 block intro-description
 
         .col-1-2.bg-lt.txt-ff
