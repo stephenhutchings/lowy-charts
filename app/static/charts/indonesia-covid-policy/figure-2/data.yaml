@@ -27,16 +27,16 @@ charts:
       -
         title: Years
         values:
-          - Mar-11
-          - Mar-12
-          - Mar-13
-          - Mar-14
-          - Mar-15
-          - Mar-16
-          - Mar-17
-          - Mar-18
-          - Mar-19
-          - Mar-20
+          - 2011
+          - 2012
+          - 2013
+          - 2014
+          - 2015
+          - 2016
+          - 2017
+          - 2018
+          - 2019
+          - 2020
       -
         title: Growth in GDP (%)
         values:

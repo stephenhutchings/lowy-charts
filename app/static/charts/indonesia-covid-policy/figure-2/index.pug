@@ -81,7 +81,7 @@ block page
                 - y = 1 - (i / (scale.ticks-1))
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY) + "%"
+                    = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY)
 
             svg(width="100%" y="100%")
               for year, i in chart.axes[0].values
@@ -197,7 +197,7 @@ block page
                 - y = 1 - (i / (scale.ticks-1))
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY) + "%"
+                    = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY)
 
             svg(width="100%" y="100%")
               for year, i in chart.axes[0].values

@@ -104,8 +104,8 @@ block page
               for year, i in chart.axes[0].values
                 svg(x=toPercent(fx(i, chart.axes[0].values.length)))
                   text(
-                    text-anchor="end"
-                    transform="rotate(-45) translate(-5 15)"
+                    text-anchor="middle"
+                    transform="translate(0 20)"
                   )
                     = year
 
@@ -178,8 +178,8 @@ block page
               for year, i in chart.axes[0].values
                 svg(x=toPercent(fx(i, chart.axes[0].values.length)))
                   text(
-                    text-anchor="end"
-                    transform="rotate(-45) translate(-5 15)"
+                    text-anchor="middle"
+                    transform="translate(0 20)"
                   )
                     = year
 
@@ -294,7 +294,7 @@ block append css
         bottom: 45px
         .col-md:first-child &
           left: 60px
-          right: 10px
+          right: 15px
         .col-md:last-child &
           left: 10px
           right: 60px
@@ -310,7 +310,7 @@ block append css
       .chart-subtitle
         .col-md:first-child &
           padding-left: 60px
-          padding-right: 10px
+          padding-right: 15px
         .col-md:last-child &
           padding-left: 10px
           padding-right: 60px
