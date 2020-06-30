@@ -47,9 +47,6 @@ block page
                     img.expert.image(src=card.expert.image)
                     .txt-xl!= card.expert.name
                       .txt-ml!= card.expert.credentials
-                else
-                  .heading.txt-xl!= card.title
-                  .subheading.txt-ml!= card.subtitle 
                   
                 .content
                   include partials/content
