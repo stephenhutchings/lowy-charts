@@ -40,7 +40,8 @@ block page
                     img.image(src=`./img/${card.id}.jpg`)
                     div!= marked(card.expert)
 
-                include partials/content
+                if typeof card.content === 'string'
+                  .content!= marked(card.content)
                   
               if card.media != undefined
                 include partials/media
@@ -79,7 +80,10 @@ block append css
     include:sass _styles.sass
 
 block append scripts
+  script(type="text/javascript" src="script/base.js")
+  script(type="text/javascript" src="script/annotation.js")
   script(type="text/javascript" src="script/interact.js")
+  script(type="text/javascript" src="script/mini-timeline.js")
     
     
     

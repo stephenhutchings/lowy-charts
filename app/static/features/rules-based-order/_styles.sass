@@ -125,19 +125,23 @@ blockquote
     margin: auto
 
 
-.intro-txt a
+cite
   position: relative
-  padding: 0.3em 0.4rem
+  display: inline-block
+  font-size: .7rem
+  height: 2em
+  width: 2em
+  line-height: 2em
   margin-right: .5em
-  line-height: 1.2rem
-  font-size: 0.7rem
   font-weight: 600
-  background: $color-bl-dk
-  color: white
   border-radius: 100%
+  background: $color-bl-dk
+  color: $color-ff
   text-align: center
   text-decoration: none
+  font-style: normal
   vertical-align: top
+  cursor: pointer
 
   span
     position: absolute
@@ -149,11 +153,27 @@ blockquote
     transition-duration: .5s
     background: $color-ff
     color: $color-bk
+    font-weight: 500
+    line-height: 1.6
+    letter-spacing: 0.5px
     display: none
+
+  &.bishop span,
+  &.maude span,
+    left: -125px
+    min-width: 250px
+    padding: 1em
+    background: $color-bg
+    text-align: left
+
 
   &:hover span
     display: block
     animation: appear .4s forwards
+
+
+
+
 
 .btn
   width: 40px
