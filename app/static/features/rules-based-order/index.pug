@@ -35,8 +35,6 @@ block page
                   include partials/quote
                 else if card.type == "historyTimeline" 
                   //include partials/history
-                else if card.type == "highlight"
-                  include partials/absence
                 else if card.type == "excerpt" 
                   .date.txt-sm!= card.date
                 else
@@ -44,9 +42,9 @@ block page
                 
                 if card.type == "opinion"
                   .expert
-                    img.expert.image(src=card.expert.image)
-                    .txt-xl!= card.expert.name
-                      .txt-ml!= card.expert.credentials
+                    img.expert.image(src="")
+                    .txt-xl!= Name
+                      .txt-ml!= Cred
                   
                 .content
                   include partials/content

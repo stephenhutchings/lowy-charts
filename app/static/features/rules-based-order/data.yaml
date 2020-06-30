@@ -118,7 +118,7 @@ cards:
       - type: excerpt
         date: Oct
         content: |
-          ## [Foreign Minister Kevin Rudd&#39;s address to the Oxford Business Alumni Forum](https://webarchive.nla.gov.au/wayback/20190808181854/https:/foreignminister.gov.au/speeches/Pages/2011/kr> sp> 111013b.aspx?ministerid=2)
+          ## [Foreign Minister Kevin Rudd&#39;s address to the Oxford Business Alumni Forum](https://webarchive.nla.gov.au/wayback/20190808181854/https:/foreignminister.gov.au/speeches/Pages/2011/kr_sp_111013b.aspx?ministerid=2)
 
           Rudd warns that &quot;The worst outcome that you could ever imagine for a country like Australia, is that there be conflict or war between the United States and China&quot;, and argues that the development of new institutions is a race against time:
 
@@ -130,20 +130,11 @@ cards:
       - type: excerpt
         date: Oct
         content: |
-          ## [Australia in the Asian Century White Paper](https://www.defence.gov.au/whitepaper/2013/docs/australia> in> the> asian> century> white> paper.pdf)
+          ## [Australia in the Asian Century White Paper](https://www.defence.gov.au/whitepaper/2013/docs/australia_in_the_asian_century_white_paper.pdf)
 
           This document did not focus on security. Notably, on two occasions it argues that Australia should play a part in increasing the role of Asian countries in the rules-based order:
 
           > Australia&#39;s future is irrevocably tied to the stability and sustainable security of our diverse region…We will continue to support a greater role for Asian countries in a rules-based regional and global order. Australia&#39;s alliance with the United States and a strong US presence in Asia will support regional stability, as will China&#39;s full participation in regional developments.
-
-      - type: opinion
-        expert:
-          name: Gareth Evans
-          credentials: Former Minister for Foreign Affairs
-          image: https://cdn0.iconfinder.com/data/icons/avatar-78/128/12-512.png
-        content:
-          - format: p
-            val: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
       - type: excerpt
         date: SKIP
@@ -205,11 +196,71 @@ cards:
       # Tony Abbott
       ## 2013&mdash;2015
     credit: Photo&#58; U.S. Department of State / Wiki Commons
+
     events:
+
+      - type: opinion
+        content: |
+          ## Julie Bishop
+          ### Former Minister for Foreign Affairs
+
+          The government was firmly committed to the rules-based order through its actions. For example, when Malaysian airlines MH17 was shot down over Ukraine in July 2014 one of our first responses was to seek the support of the United Nations Security Council. Likewise, the government campaigned for and won a seat on the UN Human Rights Council and we submitted to voluntary arbitration through UNCLOS on our maritime boundary dispute with Timor-Leste.
+
+      - type: anchor
+        year: 2014
+
+      - type: excerpt
+        date: Aug
+        content: |
+          ## Joint Doorstop Interview, Canberra
+
+          &quot;You cannot have an international order if [might is right](https://pmtranscripts.pmc.gov.au/release/transcript-31835). You cannot have a safe and secure world if powerful countries are able to take what they want. Plainly, what we have seen in Ukraine over the last six months or so, is an increasingly aggressive role by Russia and it seems that Russia is now stepping out of the shadows and overtly trying to achieve its objects of domination in Ukraine and it is completely, absolutely and utterly unacceptable.&quot;
+
+      - type: excerpt
+        date: Sep
+        content: |
+          ## [Address to United Nations General Assembly in New York](https://pmtranscripts.pmc.gov.au/release/transcript-23848)
+
+          > &quot;Like any institution, the United Nations is an imperfect instrument.Still, it&#39;s better than might-is-right and it gives good arguments the best chance to prevail. Despite faults and failures, the UN has worked for peace and progress for nearly 70 years and Australia has been proud to play its part.&quot;
+
+      - type: excerpt
+        date: Nov
+        content: |
+          ## Address to Parliamentary Dinner for President Xi
+
+          ### Parliament House, Canberra
+
+          > &quot;I have never heard a Chinese leader commit so explicitly to a [rule-based international order](https://pmtranscripts.pmc.gov.au/release/transcript-23978) founded on the principle that we should all treat others as we would be treated ourselves.&quot;
+
       - type: anchor
         year: 2015
 
-      - type: highlight
+      - type: excerpt
+        date: Jun
+        content: |
+          ## Address to the USA Independence Day Reception
+
+          ### US Embassy, Canberra
+
+          > &quot;America was, is, and will be the indispensable nation – [the one reliable bulwark against a world where might is right](https://pmtranscripts.pmc.gov.au/release/transcript-24586).&quot;
+
+      - type: excerpt
+        date: Jul
+        content: |
+          ## Address to the USA Independence Day Reception
+
+          ### US Embassy, Canberra
+
+          > &quot;America was, is, and will be the indispensable nation – [the one reliable bulwark against a world where might is right](https://pmtranscripts.pmc.gov.au/release/transcript-24586).&quot;
+
+      - type: excerpt
+        date: Aug
+        content: |
+          ## Address to the 70th Anniversary of Victory in the Pacific Dinner
+
+          > &quot;[So let us for a moment consider what has been achieved in the post-war world](https://pmtranscripts.pmc.gov.au/release/transcript-24704): 70 years of peace in western Europe; 70 years of peace between China and Japan; a rules-based international order, guaranteed by the United States, that has fostered the greatest expansion of safety, of prosperity and of democracy that the world has ever seen; with many hundreds of millions of people, especially in Asia, moving from the Third World to the Middle Class in just two generations&quot;
+
+      - type: XXX
         year: absence
         dates: [18 September 2013, 23 November 2013, Feb/March 2014, September 2015, 30 September 2015,23 June 2016, July 2016, 3 September 2016, 9 November 2016]
         content:
@@ -243,40 +294,59 @@ cards:
 
       - type: excerpt
         date: Feb
-        title: Defence White Paper
-        content:
-          - format: p
-            val: There are 56 references to the 'rules based' order in this White Paper, which explicitly points to Russia and North Korea as challenges to the order, and also lists terrorism, piracy, and people smugglers as other risks.
-          - format: p
-            val: The definition of the rules-based order in this White Paper stresses the capacity for evolution in the order, and argues that the order has become more important due to 'growing interconnectivity'&#58;
-          - format: q
-            val: The stability of the rules-based global order is essential for Australia’s security and prosperity. A rules-based global order means a shared commitment by all countries to conduct their activities in accordance with agreed rules which evolve over time, such as international law and regional security arrangements. This shared commitment has become even more important with growing interconnectivity, which means that events across the world have the potential to affect Australia's security and prosperity. The Government is committed to making practical and effective military contributions to global security operations to maintain the rules-based order and address shared security challenges where it is in our interest to do so.
-          - format: p
-            val: The US is described as being central to the stability of the rules-based order&#58;
-          - format: q
-            val: The global strategic and economic weight of the United States will be essential to the continued stability of the rules-based global order on which Australia relies for our security and prosperity. The world will continue to look to the United States for leadership in global security affairs and to lead military coalitions that support international security and the rules-based global order.
+        content: |
+          ## [Defence White Paper](https://www.defence.gov.au/WhitePaper/Links.asp)
+
+          There are 56 references to the &#39;rules based&#39; order in this White Paper, which explicitly points to Russia and North Korea as challenges to the order, and also lists terrorism, piracy, and people smugglers as other risks.
+
+          The definition of the rules-based order in this White Paper stresses the capacity for evolution in the order, and argues that the order has become more important due to &#39;growing interconnectivity&#39;:
+
+          > The stability of the rules-based global order is essential for Australia&#39;s security and prosperity. A rules-based global order means a shared commitment by all countries to conduct their activities in accordance with agreed rules which evolve over time, such as international law and regional security arrangements. This shared commitment has become even more important with growing interconnectivity, which means that events across the world have the potential to affect Australia&#39;s security and prosperity. The Government is committed to making practical and effective military contributions to global security operations to maintain the rules-based order and address shared security challenges where it is in our interest to do so.
+
+          The US is described as being central to the stability of the rules-based order:
+
+          > The global strategic and economic weight of the United States will be essential to the continued stability of the rules-based global order on which Australia relies for our security and prosperity. The world will continue to look to the United States for leadership in global security affairs and to lead military coalitions that support international security and the rules-based global order.
 
       - type: excerpt
-        date: March
-        title: Lowy Lecture, Prime Minister Malcolm Turnbull
-        content:
-          - format: p
-            val: This speech again places the US at the centre of the rules-based order&#58;
-          - format: q
-            val: Now the greatest run of peace and prosperity this planet has ever known – centred right here in our Indo-Pacific region – was all made possible by the system of rules and institutions which the United States and its allies built from the ashes of World War II.
+        date: Mar
+        content: |
+          ## [Lowy Lecture, Prime Minister Malcolm Turnbull](https://www.lowyinstitute.org/publications/2016-lowy-lecture-prime-minister-australia-malcolm-turnbull)
+
+          This speech again places the US at the centre of the rules-based order:
+
+          > Now the greatest run of peace and prosperity this planet has ever known – centred right here in our Indo-Pacific region – was all made possible by the system of rules and institutions which the United States and its allies built from the ashes of World War II.
         media:
           class: sound
           src: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254392635&color=ff5500
 
       - type: excerpt
-        date: July
-        title: Prime Minister Turnbull and Foreign Minister Marise Payne
-        subtitle: Joint press conference on South China Sea arbitration decision
-        content:
-          - format: p
-            val: The Hague Tribunal's decision on the South China Sea became pivotal to subsequent debate about China's ambitions, its commitment to the rules-based order, and the willingness of the US and regional states to defend that order&#58;
-          - format: q
-            val: This Tribunal, as you know, is established in accordance with the United Nations Convention on the Law of the Sea, which is a codification of international maritime law. It was established so that countries can resolve disputes peacefully in accordance with international law. The UN convention on the Law of the Sea, and the Arbitral Tribunal are absolutely crucial elements of the international rules based order which underpins peace, stability and prosperity around the world but especially in our part of the world for decades. All of us, all countries large and small have benefitted enormously from this system which facilitates trade and enables disputes to be resolved in accordance with rules rather than by coercive means.
+        date: Apr
+        content: |
+          ## Launch of Australian Cyber Security Centre
+
+          In his [April 2016 address](https://pmtranscripts.pmc.gov.au/release/transcript-40306) launching the Australian Cyber Security Centre, Prime Minister Turnbull disclosed the capability and emphasised consistency with the rules-based order:
+
+          > &quot;Defensive measures may not always be adequate to respond to serious cyber incidents … The Government can draw on a range of options to respond, such as law enforcement, diplomatic or economic measures.An offensive cyber capability, housed in the Australian Signals Directorate, provides another option … *The use of such a capability is subject to stringent legal oversight and is consistent with our support for the international rules-based order and our obligations under international law.* Acknowledging this offensive capability, adds a level of deterrence. It adds to our credibility as we promote norms of good behaviour on the international stage.&quot; (emphasis added)
+
+      - type: excerpt
+        date: Jul
+        content: |
+          ## [Joint press conference](https://pmtranscripts.pmc.gov.au/release/transcript-40347)
+
+          ### Prime Minister Turnbull and Foreign Minister Marise Payne on the South China Sea arbitration decision \&lt;a\&gt; BISHOP - This judgement was not as strongly supported by the US as had been expected. It did not receive endorsement by ASEAN or of all claimant nations, which emboldened China to expand its South China Sea militarisation. \&lt;/a\&gt;
+
+          The Hague Tribunal&#39;s decision on the South China Sea became pivotal to subsequent debate surrounding China&#39;s ambitions, its commitment to the rules-based order, and the willingness of the US and regional states to defend that order:
+
+          > This Tribunal, as you know, is established in accordance with the United Nations Convention on the Law of the Sea, which is a codification of international maritime law. It was established so that countries can resolve disputes peacefully in accordance with international law. The UN convention on the Law of the Sea, and the Arbitral Tribunal are absolutely crucial elements of the international rules based order which underpins peace, stability and prosperity around the world but especially in our part of the world for decades. All of us, all countries large and small have benefitted enormously from this system which facilitates trade and enables disputes to be resolved in accordance with rules rather than by coercive means.
+
+      - type: opinion
+        content: |
+          ## Richard Maude
+          ### Foreign Policy Expert
+
+          China&#39;s attempts to exercise de-facto control of the South China Sea, and in particular the building of large Chinese military facilities on disputed features, raised significant concerns in Australia about Beijing&#39;s willingness to abide by international law and settle disputes peacefully and without the threat or use of force.
+
+          The precedents for the way China might use its growing power elsewhere in the region were ominous. China helped negotiate UNCLOS, including the setting of extensive exclusive economic zones, and subsequently ratified the Treaty. Yet Beijing denounced and ignored the Tribunal&#39;s findings, which had the effect of significantly narrowing the legal basis of China&#39;s claims in the South China Sea.
 
       - type: anchor
         year: 2017
@@ -295,61 +365,84 @@ cards:
             description: Alleged briefing that took place between Trump, Tillerson, Mattis, the Director of the Economic Council Gary Cohn, the Joint Chiefs and members of Trump's cabinet. The opening line of the first briefing slide read&#58; "The post-war international rules-based order is the greatest gift of the greatest generation."<br/>Trump adviser Steve Bannon allegedly commented&#58; "If you stood up and threatened to shoot [Trump], he couldn't say 'post-war rules-based international order'. It’s just not the way he thinks."
 
       - type: excerpt
-        date: March
-        title: Julie Bishop Fullerton lecture
-        subtitle: Joint press conference on South China Sea arbitration decision
-        content:
-          - format: p
-            val: The most assertive Australian statement thus far on the 'liberal' element of the rules-based order&#58;
-          - format: q
-            val: <p>The importance of liberal values and institutions should not be underestimated or ignored.</p><p>While non-democracies such as China can thrive when participating in the present system, an essential pillar of our preferred order is democratic community.</p><p>Domestic democratic habits of negotiating and compromise are essential to powerful countries resolving their disagreements according to international law and rules.</p><p>History also shows democracy and democratic institutions are essential for nations if they are to reach their economic potential.</p><p>The only countries in the world who have escaped the 'middle-income' trap to become wealthy, high-income and advanced economies are democracies –with the exception of a small number of oil-rich Middle Eastern states.</p><p>Liberal-democratic institutions such as rule-of-law rather than rule by executive privilege, civilian control of the military, independent and competent courts, protection of property and intellectual property rights from state appropriation or theft, and limitations on the role of the state in commercial and social affairs remain the prerequisites for stable and prosperous societies, as they are for the creation of a vibrant and innovative private sector.</p><p>While it is appropriate for different states to discover their own pathway leading toward political reform, history shows that embrace of liberal democratic institutions is the most successful foundation for nations seeking economic prosperity and social stability.</p><p>Australia is an active and vocal advocate of the liberal rules based order because the continuation of the long and prosperous peace depend on it.</p>
-        media:
-          class: image
-          src: "img/example-4.jpg"
-          caption: Protesters burn a mock Chinese flag with a map of the South China sea in Manila in 2019<br/>(Ted Aljibe/AFP via Getty Images)
+        date: Mar
+        content: |
+          ## [Julie Bishop Fullerton lecture](https://www.foreignminister.gov.au/minister/julie-bishop/speech/change-and-uncertainty-indo-pacific-strategic-challenges-and-opportunities)
+
+          The most assertive Australian statement thus far on the &#39;liberal&#39; element of the rules-based order:
+
+          > The importance of liberal values and institutions should not be underestimated or ignored.
+
+          > While non-democracies such as China can thrive when participating in the present system, an essential pillar of our preferred order is democratic community.
+
+          > Domestic democratic habits of negotiating and compromise are essential to powerful countries resolving their disagreements according to international law and rules.
+
+          > History also shows democracy and democratic institutions are essential for nations if they are to reach their economic potential.
+
+          > The only countries in the world who have escaped the &#39;middle-income&#39; trap to become wealthy, high-income and advanced economies are democracies –with the exception of a small number of oil-rich Middle Eastern states.
+
+          > Liberal-democratic institutions such as rule-of-law rather than rule by executive privilege, civilian control of the military, independent and competent courts, protection of property and intellectual property rights from state appropriation or theft, and limitations on the role of the state in commercial and social affairs remain the prerequisites for stable and prosperous societies, as they are for the creation of a vibrant and innovative private sector.
+
+          > While it is appropriate for different states to discover their own pathway leading toward political reform, history shows that embrace of liberal democratic institutions is the most successful foundation for nations seeking economic prosperity and social stability.
+
+          > Australia is an active and vocal advocate of the liberal rules based order because the continuation of the long and prosperous peace depend on it.&quot;>
+
+      - type: opinion
+        content: |
+          ## Julie Bishop
+
+          ### Former Minister for Foreign Affairs
+
+          The speech was intended as strong support for the rules-based order and for democracy and freedom. These are enduring values that must be defended strongly. It is simply a statement of fact that most high-income nations are liberal democracies with independent institutions.
+
+          My speeches reflected my understanding that the rules-based order was developed, under United States leadership, to prevent a repeat of the horrors of global conflict in the two world wars. It was designed to protect the rights of all nations and to prevent more powerful countries coercing and dominating less powerful countries.
+
 
       - type: excerpt
-        date: June
-        title: Malcolm Turnbull, Keynote address
-        subtitle: 16th IISS Asia Security Summit, Shangri-La Dialogue
-        content:
-          - format: p
-            val: Turnbull refers to a "US anchored rules-based order", and other references to the rules-based order place it directly in the context of great-power competition between the US and China&#58;
-          - format: q
-            val: <p>And we should be under no illusions&#58; If we are to maintain the dynamism of the region then we must preserve the rules-based structure that has enabled it thus far. This means cooperation not unilateral actions to seize or create territory or militarise disputed areas. This means competing within the framework of international law not winning through corruption, interference or coercion ... </p><p>... some fear that China will seek to impose a latter day Monroe Doctrine on this hemisphere in order to dominate the region, marginalising the role and contribution of other nations, in particular the United States. Such a dark view of our future would see China isolating those who stand in opposition to or are not aligned with its interests, while using its economic largesse to reward those toeing the line.</p>
-        media:
-          class: image
-          src: "img/example.jpg"
-          caption: Jim Watson/AFP via Getty Images
+        date: Jun
+        content: |
+          ## Malcolm Turnbull, Keynote address
+
+          ### 16th IISS Asia Security Summit, Shangri-La Dialogue
+
+          Turnbull refers to a &quot;US anchored rules-based order&quot;, and other references to the rules-based order place it directly in the context of great-power competition between the US and China:
+
+          > And we should be under no illusions: If we are to maintain the dynamism of the region then we must preserve the rules-based structure that has enabled it thus far. This means cooperation not unilateral actions to seize or create territory or militarise disputed areas. This means competing within the framework of international law not winning through corruption, interference or coercion ...
+          ... some fear that China will seek to impose a latter day Monroe Doctrine on this hemisphere in order to dominate the region, marginalising the role and contribution of other nations, in particular the United States. Such a dark view of our future would see China isolating those who stand in opposition to or are not aligned with its interests, while using its economic largesse to reward those toeing the line.
 
       - type: excerpt
-        date: July
-        title: Independent Intelligence Review
-        content:
-          - format: p
-            val: The Review points to "fundamental changes to in the international system" and assesses that "The trend in the global balance of wealth and power is favouring China and India. The Western ascendancy in international institutions and values ... is eroding"&#58;
-          - format: q
-            val: ... assumptions that have long underpinned Australia's security and foreign policy, including those in relation to the strength of the rules-based component of the global order, will be more uncertain.
+        date: Jul
+        content: |
+          ## [Independent Intelligence Review](https://www.pmc.gov.au/resource-centre/national-security/report-2017-independent-intelligence-review)
+
+          The Review points to &quot;fundamental changes to in the international system&quot; and assesses that &quot;The trend in the global balance of wealth and power is favouring China and India. The Western ascendancy in international institutions and values…is eroding&quot;:
+
+          > ... assumptions that have long underpinned Australia&#39;s security and foreign policy, including those in relation to the strength of the rules-based component of the global order, will be more uncertain.
 
       - type: excerpt
         date: SKIP
-        title: Foreign Minister Julie Bishop
-        subtitle: Comments on two North Korean ballistic missile tests in one month
-        content:
-          - format: p
-            val: <b>5 July&#58;</b> "The world expects that we live in a rules-based system and this unacceptable missile launch is in breach of numerous United Nations Security Council Resolutions."
-          - format: p
-            val: <b>29 July&#58;</b> "The ballistic missile tests and North Korea's ongoing reckless and menacing behaviour, are in violation of multiple UN Security Council resolutions, is a threat to regional and global security and stability and is in violation of the rules-based order we seek to promote and advance"
+        content: |
+          ## Foreign Minister Julie Bishop&#39;s comments on two North Korean ballistic missile tests in one month
+
+          [Bishop, 29 July](https://www.foreignminister.gov.au/minister/julie-bishop/media-release/australia-condemns-latest-north-korean-ballistic-missile-test):
+
+          > The ballistic missile tests and North Korea&#39;s ongoing reckless and menacing behaviour, are in violation of multiple UN Security Council resolutions, is a threat to regional and global security and stability and is in violation of the rules-based order we seek to promote and advance.
+
+          [Bishop, 5 July](https://www.foreignminister.gov.au/minister/julie-bishop/media-release/australia-condemns-dprk-missile-test)
+
+          > The world expects that we live in a rules-based system and this unacceptable missile launch is in breach of numerous United Nations Security Council Resolutions. \&lt;a\&gt;BISHOP - North Korea is a rogue state in that it refuses to abide by international conventions and continues to pose a threat to South Korea and Japan. It uses the threat of military action to extract concessions from other nations and the regime&#39;s treatment of its own people is reprehensible.\&lt;/a\&gt;
 
       - type: excerpt
         date: Nov
-        title: Malcolm Turnbull
-        subtitle: Launch of the Government's Foreign Policy White Paper
-        content:
-          - format: p
-            val: From Prime Minister’s speech at the launch of the White Paper&#58;
-          - format: q
-            val: <p>In the global ocean, there is always a risk, as Lee Kuan Yew observed&#58; "The big fish will eat the little fish, and the little fish will eat the shrimps". Or as the Athenian ambassador said to the Melians&#58; "In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must."</p><p>So whether it's in Lee Kuan Yew’s words or Thucydides', we will never agree that might is right. The rules-based order protects us all and it protects us, in particular.</p>
+        content: |
+          ## Malcolm Turnbull, Launch of the Government&#39;s Foreign Policy White Paper
+
+          From Prime Minister&#39;s speech at the launch of the White Paper:
+
+          > In the global ocean, there is always a risk, as Lee Kuan Yew observed: &quot;The big fish will eat the little fish, and the little fish will eat the shrimps&quot;. Or as the Athean ambassador said to the Melians: &quot;In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must.
+
+          > So whether it&#39;s in Lee Kuan Yew&#39;s words or Thucydides&#39;, we will never agree that might is right. \&lt;a\&gt;MAUDE - This is a central element of the 2017 Foreign Policy White Paper&#39;s framing of the rules-based order – the idea that, as a middle power, Australia will always be better off in a global order that is based at least in part on agreed rules, even if imperfectly applied, rather than power alone.\&lt;/a\&gt; The rules-based order protects us all and it protects us, in particular.
+
         media:
           class: image
           src: "img/example-6.jpg"
@@ -358,12 +451,29 @@ cards:
 
       - type: excerpt
         date: SKIP
-        title: Foreign Policy White Paper
-        content:
-          - format: p
-            val: According to the Prime Minister's introduction, "This Foreign Policy White Paper shows Australia to be focused on our region, determined to realise a secure, open and prosperous Indo–Pacific, while also strengthening and diversifying partnerships across the globe." References to the rules-based order in this White Paper reflect this regional focus, but not exclusively&#58;
-          - format: q
-            val: Australia's interests are strongly served by acting with others to support a rules-based international order. Australia will encourage and tangibly support the leadership of the United States to this end.
+        content: |
+          ## Foreign Policy White Paper \&lt;a\&gt; BISHOP - The central theme of the Foreign Policy White paper was a defence of the rules-based order. It was my judgement that the order was under challenge by China, Russia, North Korea and some other nations. There was apathy or indifference to its importance in many developing nations. The WP was intended to be a call to action for our institutions and for other nations to defend the order, as if it were broken, the world would be facing an unpredictable future.\&lt;/a\&gt;
+
+          According to the Prime Minister&#39;s introduction, &quot;This Foreign Policy White Paper shows Australia to be focused on our region, determined to realise a secure, open and prosperous Indo–Pacific, while also strengthening and diversifying partnerships across the globe.&quot;
+
+          References to the rules-based order in this White Paper reflect this regional focus, but not exclusively:
+
+          > Australia&#39;s interests are strongly served by acting with others to support a rules-based international order. Australia will encourage and tangibly support the leadership of the United States to this end.
+
+          The White Paper also includes references to the &quot;liberal character of the rules-based order&quot; and the &quot;rules-based component of the international order&quot;:
+
+          > Australia will continue strongly to support US global leadership. The Government recognises there is greater debate and uncertainty in the United States about the costs and benefits of its leadership in parts of the international system. We believe that the United States&#39; engagement to support a rules-based order is in its own interests and in the interests of wider international stability and prosperity. Without sustained US support, the effectiveness and liberal character of the rules-based order will decline.
+
+          > Australia has a long record of helping to develop the rules-based component of the global order.
+
+
+      - type: opinion
+        content: |
+          ## Richard Maude
+
+          ### Foreign Policy Expert
+
+          The White Paper is also clear that Australia will support reforms that give new and emerging powers a greater role in the international system. It says Australia will be a willing partner in such a shared project. The White Paper is clear, though, that we should guard against illiberal changes to rules and norms. Change that undermined international law or the rights and freedoms set out in UN declarations, for example, would not be in Australia&#39;s interests.
 
       - type: anchor
         year: 2018
@@ -387,32 +497,45 @@ cards:
               "China wants nothing less than to push the United States of America from the Western Pacific and attempt to prevent us from coming to the aid of our allies. America had hoped that economic liberalization would bring China into greater partnership with us and with the world. Instead, China has chosen economic aggression, which has in turn emboldened its growing military."
 
       - type: excerpt
-        date: June
-        title: Marise Payne, Minister for Defence
-        subtitle: 17th IISS Asia Security Summit&#58; The Shangri-La Dialogue
-        content:
-          - format: p
-            val: Argues the rules-based order is essential for moderating the great-power contest between the US and China&#59;
-          - format: q
-            val:
-              <p>... strategic competition has to be bound by principles and rules.
-              </p><p>The most recent positive example from Australia’s perspective of how this approach can function positively and effectively is the maritime boundary treaty signed between Australia and Timor-Leste in March.
-              </p><p>This treaty was negotiated through the first ever conciliation held under the auspices of the UN Convention on the Law of the Sea. The Treaty is a testament to the way in which international law, in particular in this case the UN Convention on the Law of the Sea, reinforces stability and allows countries to engage and resolve disputes peacefully, without coercion and by the rules.
-              </p><p>It is a good example of the rules-based global order in action.</p>
+        date: Jun
+        content: |
+          ## [Marise Payne, Minister for Defence](https://www.minister.defence.gov.au/minister/marise-payne/speeches/minister-defence-17th-iiss-asia-security-summit-shangri-la-dialogue)
 
-      - type: quote
-        date: SKIP
-        quotation: The order we have known for the past seventy years has ended. It’s not being challenged. It’s not changing. It’s over.
-        name: Alan Gyngell
-        supp: Former Executive Director of the Office of National Assessments, June 2018
+          ### 17th IISS Asia Security Summit: The Shangri-La Dialogue
+
+          Argues the rules-based order is essential for moderating the great-power contest between the US and China:
+
+          > strategic competition has to be bound by principles and rules.
+
+          > The most recent positive example from Australia&#39;s perspective of how this approach can function positively and effectively is the maritime boundary treaty signed between Australia and Timor-Leste in March.
+
+          > This treaty was negotiated through the first ever conciliation held under the auspices of the UN Convention on the Law of the Sea. The Treaty is a testament to the way in which international law, in particular in this case the UN Convention on the Law of the Sea, reinforces stability and allows countries to engage and resolve disputes peacefully, without coercion and by the rules.
+
+          > It is a good example of the rules-based global order in action.
+
+      # - type: quote
+      #   date: SKIP
+      #   quotation: The order we have known for the past seventy years has ended. It’s not being challenged. It’s not changing. It’s over.
+      #   name: Alan Gyngell
+      #   supp: Former Executive Director of the Office of National Assessments, June 2018
 
       - type: excerpt
         date: SKIP
-        title: Foreign Minister Julie Bishop
-        subtitle: Statement following the US resignation from the UN Human Rights Council
-        content:
-          - format: q
-            val: Australia's Foreign Policy White Paper reiterated Australia's commitment to a strong multilateral human rights system and to advancing human rights globally. It is in our national interest to shape the work of the Council and uphold the international rules-based order.
+        content: |
+          ## [Foreign Minister Julie Bishop](https://www.foreignminister.gov.au/minister/julie-bishop/media-release/united-states-resigns-un-human-rights-council)
+
+          ### Statement following the US resignation from the UN Human Rights Council \&lt;a\&gt; MAUDE - The Human Rights Council is too often a dismal and dispiriting example of multilateralism. But if the West, including the United States, does not help shape contemporary understandings of human rights then others will, often in ways that diverge from our interests and values. Disengagement creates a vacuum that others step into. \&lt;/a\&gt;
+
+          > Australia&#39;s Foreign Policy White Paper reiterated Australia&#39;s commitment to a strong multilateral human rights system and to advancing human rights globally. It is in our national interest to shape the work of the Council and uphold the international rules-based order.
+
+      - type: opinion
+        content: |
+          ## Julie Bishop
+
+          ### Former Minister for Foreign Affairs
+
+          This came down to a difference of opinion with the Trump administration, where I had argued that the US should remain in the HRC to drive reform and effect change from within. The Administration determined that the HRC was beyond redemption and that attempts to improve it would inevitably fail and therefore the more dramatic step of resigning would send a stronger message.
+
 
   - pm: morrison
     summary: |
@@ -420,76 +543,89 @@ cards:
       ## 2018&mdash;
     credit: Photo&#58; U.S. Department of State / Wiki Commons
     events:
+
       - type: anchor
         year: 2018
+
       - type: excerpt
         date: Dec
-        title: Prime Minister Scott Morrison's speech to the Sydney Institute
-        content:
-          - format: p
-            val: On the Joint Comprehensive Plan of Action (the Iran nuclear deal)&#58;
-          - format: q
-            val: ... maintaining support for the JCPOA serves our interests in nuclear non-proliferation and in reinforcing the rules-based international system. It is consistent with Australia's position on other non-proliferation issues ... And it serves our interest in encouraging rules-based approaches to resolving other issues of international concern, including the South China Sea.
-          - format: p
-            val: On the status of Jerusalem&#58;
-          - format: q
-            val: The starting point for their deliberation was Australia's absolute commitment to a two-state solution, these are the guard rails, with a secure Israel and future Palestinian state living side-by-side in peace and security within internationally recognised borders. I also required that their deliberations respect Australia's obligations under international law and UN Security Council resolutions – two things that are fundamental, I think, to Australia's interests in a rules-based order. You can't look at these things in isolation. Our foreign policy is guided by our fundamental interest in ensuring that internationally agreed rules continue to safeguard our security and prosperity. We don't get to pick and choose.
-        media:
-          class: image
-          src: "img/example-3.jpg"
-          caption: Rohan Thomson / Getty Images
+        content: |
+          ## [Prime Minister Scott Morrison&#39;s speech to the Sydney Institute](https://www.pm.gov.au/media/address-sydney-institute)
+
+          On the Joint Comprehensive Plan of Action (the Iran nuclear deal):
+
+          > ... maintaining support for the JCPOA serves our interests in nuclear non-proliferation and in reinforcing the rules-based international system. It is consistent with Australia&#39;s position on other non-proliferation issues…And it serves our interest in encouraging rules-based approaches to resolving other issues of international concern, including the South China Sea.
+
+          Morrison also announced that Australia would recognise West Jerusalem as the capital of Israel:
+
+          > The starting point for their deliberation was Australia&#39;s absolute commitment to a two-state solution, these are the guard rails, with a secure Israel and future Palestinian state living side-by-side in peace and security within internationally recognised borders. I also required that their deliberations respect Australia&#39;s obligations under international law and UN Security Council resolutions – two things that are fundamental, I think, to Australia&#39;s interests in a rules-based order. You can&#39;t look at these things in isolation. Our foreign policy is guided by our fundamental interest in ensuring that internationally agreed rules continue to safeguard our security and prosperity. We don&#39;t get to pick and choose.
 
       - type: anchor
         year: 2019
-
-      - type: historyTimeline
-        year: 2019
-        dates: [Month 2019, Month 2019, Month 2019]
-        content:
-          - title: Lorem Ipsum
-            description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          - title: Lorem Ipsum
-            description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          - title: Lorem Ipsum
-            description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
       - type: excerpt
         date: Aug
-        title: Foreign Minister Marise Payne and Defence Minister Linda Reynolds, Joint Statement, AUSMIN talks
-        content:
-          - format: p
-            val: Notably, this statement brings together the rules-based order with another popular and contested concept in contemporary Australian foreign policy, 'Indo-Pacific'&#58;
-          - format: q
-            val: Both countries recognised the growing strategic and economic importance of India, and the significance of South Asia and the Indian Ocean region to ensuring an open, rules-based Indo-Pacific.
+        content: |
+          ## [Foreign Minister Marise Payne and Defence Minister Linda Reynolds](https://www.foreignminister.gov.au/minister/marise-payne/media-release/joint-statement-australia-us-ministerial-consultations-ausmin-2019)
+
+          ### Joint Statement, AUSMIN talks
+
+          Notably, this statement brings together the rules-based order with another popular and contested concept in contemporary Australian foreign policy, &#39;Indo-Pacific&#39;:
+
+          > Both countries recognised the growing strategic and economic importance of India, and the significance of South Asia and the Indian Ocean region to ensuring an open, rules-based Indo-Pacific.
 
       - type: quote
-        date: SKIP
         quotation: The UN is the prime custodian of the rules-based order ... the UN and its norms are central to a cooperative rules-based approach to global challenges.
         name: Scott Morrison
-        supp: National Statement to the UN General Assembly, September 2019
+        supp: National Statement to the UN General Assembly, Sept. 2019
+
+      - type: excerpt
+        date: Oct
+        content: |
+          ## Prime Minister Scott Morrison&#39;s speech to the Lowy Institute
+
+          &quot;Australia does and must always seek to have a responsible and participative international agency in addressing global issues. This is positive and practical globalism. Our interests are not served by isolationism and protectionism. But it also does not serve our national interests when international institutions demand conformity rather than independent cooperation on global issues … We should avoid any reflex towards a negative globalism that coercively seeks to impose a mandate from an often ill-defined borderless global community. And worse still, an unaccountable internationalist bureaucracy … When it comes to setting global standards, we&#39;ve not been as involved as we could be. We cannot afford to leave it to others to set the standards that will shape our global economy. I&#39;m determined for Australia will play a more active role in standards setting.&quot;
+        media:
+          class: video
+          src: ""
+          caption: Video of speech
 
       - type: excerpt
         date: Nov
-        title: Address by Linda Reynolds to the Hudson Institute, Washington DC
-        content:
-          - format: q
-            val: Australia does not take for granted a regional default inclination towards the advantages of existing rules-based systems – nor should the United States. As clear as those advantages are to us, we must constantly prove them to others. Through actions and demonstrable sovereign respect, not just words.
-          - format: p
-            val: On regional engagement with the US&#58;
-          - format: q
-            val:
-              <p>How we hold to this commitment in an increasingly competitive environment, will define success. So too will how we call out unfair and inconsistently applied rules and coercive behaviour. This is Australia's pathway in the region.</p>
-              <p>It is squarely in Australia's interests for our great friend and closest ally to remain the partner of choice. A partner who remains deeply invested in the region, and in an open global economy and a rules-based trading system.</p>
+        content: |
+          ## [Address by Linda Reynolds to the Hudson Institute, Washington DC](https://www.minister.defence.gov.au/minister/lreynolds/speeches/keynote-address-hudson-institute-washington-dc-0)
 
-      - type: historyTimeline
-        dates: [3 January 2020, 15 February 2020]
-        content:
-          - title: Qasem Soleimani assassination
-            description: |
-              The US strike that killed the head of Iran’s Islamic Revolutionary Guard Corps Qods Force, IRGC Major General Qassem Soleimani, was a major escalation of the long-standing US confrontation with Iran. Iran responded with missile attacks against a US air base in Iraq.<br/>
-              In March 2020, Former National Security Advisor H.R. McMaster defended the killing of Soleimani in a debate at the Hoover Institution at Stanford University. "It was the righteous use of violence," McMaster said. "I don’t really care what international law said."
-          - title: US Secretary of Defense Mark Esper at the Munich Security Conference
-            description: |
-              "It is essential that we – as an international community – wake up to the challenges presented by China’s manipulation of the long-standing international, rules-based order that has benefited all of us for many decades.<br/><br/>
-              The PRC’s growing economic, military, and diplomatic power often manifests itself in ways that are threatening, coercive, and counter to the rules-based international order.
-              ... we simply ask of Beijing what we ask of every nation&#58; to play by the rules, abide by international norms, and respect the rights and sovereignty of others."
+          > Australia does not take for granted a regional default inclination towards the advantages of existing rules-based systems – nor should the United States. As clear as those advantages are to us, we must constantly prove them to others. Through actions and demonstrable sovereign respect, not just words.
+
+          On regional engagement with the US:
+
+          > How we hold to this commitment in an increasingly competitive environment, will define success. So too will how we call out unfair and inconsistently applied rules and coercive behaviour. This is Australia&#39;s pathway in the region.
+
+          > It is squarely in Australia&#39;s interests for our great friend and closest ally to remain the partner of choice. A partner who remains deeply invested in the region, and in an open global economy and a rules-based trading system.
+
+      - type: anchor
+        date: 2020
+
+      - type: excerpt
+        date: Jun
+        content: |
+          ## [Address by Marise Payne to the National Security College](https://www.minister.defence.gov.au/minister/lreynolds/speeches/keynote-address-hudson-institute-washington-dc-0)
+
+          ### Australian National University, Canberra
+
+          > At the heart of successful international cooperation is the concept that each country shares, rather than yields, a portion of its sovereign decision-making. And in return, each gets something from it that is greater than their contribution.
+          > COVID-19 has shown that our international order is as important as ever. There is need for reform in several areas, but the pandemic has brought into stark relief the major role of international institutions in addressing and coordinating a global response to a global problem across multiple lines of effort. What has been exposed is the magnitude of the consequences if we fail to ensure these institutions are fit-for-purpose, accountable to member states, and free from undue influence.
+          > [video to come]
+
+      # - type: historyTimeline
+      #   dates: [3 January 2020, 15 February 2020]
+      #   content:
+      #     - title: Qasem Soleimani assassination
+      #       description: |
+      #         The US strike that killed the head of Iran’s Islamic Revolutionary Guard Corps Qods Force, IRGC Major General Qassem Soleimani, was a major escalation of the long-standing US confrontation with Iran. Iran responded with missile attacks against a US air base in Iraq.<br/>
+      #         In March 2020, Former National Security Advisor H.R. McMaster defended the killing of Soleimani in a debate at the Hoover Institution at Stanford University. "It was the righteous use of violence," McMaster said. "I don’t really care what international law said."
+      #     - title: US Secretary of Defense Mark Esper at the Munich Security Conference
+      #       description: |
+      #         "It is essential that we – as an international community – wake up to the challenges presented by China’s manipulation of the long-standing international, rules-based order that has benefited all of us for many decades.<br/><br/>
+      #         The PRC’s growing economic, military, and diplomatic power often manifests itself in ways that are threatening, coercive, and counter to the rules-based international order.
+      #         ... we simply ask of Beijing what we ask of every nation&#58; to play by the rules, abide by international norms, and respect the rights and sovereignty of others."
