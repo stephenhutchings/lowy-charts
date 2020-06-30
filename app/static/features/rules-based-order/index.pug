@@ -19,12 +19,10 @@ block page
         .row.banner(style=`background-image: url('./img/banner-${era.pm}.jpg'); min-height: 350px`)
           .banner-title.txt-center!= marked(`${era.summary}`)
           .banner-caption.txt-muted.txt-xs.txt-right!= era.credit
+          // [INSERT INTRO TO PM HERE]
         for card in era.events
           if card.type == "anchor"
-            if card.year == 2015
-              .anchor(id=`anchor-${card.year}`)= ""
-            else
-              .anchor(id=`anchor-${card.year}`)= card.year
+            .anchor(id=`anchor-${card.year}`)= card.year
           else if card.type == "historyTimeline"
             // [HOLD] DO NOTHING FOR HISTORY BLOCKS
           else 
@@ -37,21 +35,19 @@ block page
                   //include partials/history
                 else if card.type == "excerpt" 
                   .date.txt-sm!= card.date
-                else
-                  .cardtype.txt-sm= card.type
-                
-                if card.type == "opinion"
-                  .expert
-                    img.expert.image(src="")
-                    .txt-xl!= Name
-                      .txt-ml!= Cred
+                else if card.type == "commentary"
+                  .expert.flex
+                    img.image(src=`./img/${card.id}.jpg`)
+                    div!= marked(card.expert)
+
+                include partials/content
                   
-                .content
-                  include partials/content
-              if card.type == "opinion"
               if card.media != undefined
                 include partials/media
-                
+        
+        
+        // PREV & NEXT PM BUTTONS
+        
         .row.card-end(class=(i==0 || i==4 ? "nohover" : ""))
           .flex-ch
             .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700(

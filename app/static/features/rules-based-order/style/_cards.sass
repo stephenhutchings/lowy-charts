@@ -42,23 +42,27 @@
   border-top: 1.5px dotted $color-bl-dk
   background-color: $color-ff
   box-shadow: 0px 1px 2px #0004
-.opinion
+
+.commentary
   background-color: $color-bl-dk
   color : $color-ff
   position: relative
   margin: 0 0 40px
-  .cardtype
-    color: $color-ff
+
+  // .content:before
+  //   content: "“"
+  //   top: 0
+  //   position: absolute
+  //   font-size: 60px
+
+.expert
+  flex-direction: column
+  align-items: center
+  text-align: center
   .image
-    width: 120px
+    width: 100px
+    border-radius: 100%
     margin-bottom: 10px
-  .expert
-    font-weight : 600
-    display : flex
-    flex-direction : column
-    align-items : center
-    justify-content : center
-    text-align : center
 
 .cardtype,
 .date, .tl-date
@@ -87,16 +91,6 @@
     margin-top: 7px
     border-radius: 2px
 
-.content
-  > *
-    padding: 10px 0
-  .qt
-    font-style: italic
-    font-weight: 300
-
-.excerpt
-  > .content
-    color : $color-gy-dk
 
 .highlight
   background-color: $color-ff!important
@@ -135,7 +129,7 @@
     text-align: right
     margin-right: 10px
 
-.opinion:after
+.commentary:after
 	content: ''
 	position: absolute
 	top: 0
@@ -152,7 +146,7 @@
   margin-top: -40px
   .date
     display: none
-.opinion + .skip-date
+.commentary + .skip-date
   margin-top: 0px
 
 .card-end
@@ -201,11 +195,6 @@
 
 @media (min-width: 600px)
 
-  .content
-    .qt
-      padding: 1em 2em 1em 0em
-      text-align: justify
-
   .cardtype,
   .heading,
   .subheading
@@ -251,11 +240,11 @@
     border-bottom: 1px solid $color-bl-dk
   .item
     padding: 20px
+
   .excerpt, .row.quote
     border-left: 10px solid $color-bl-dk
     background-color: $color-ff
-  .highlight
-    border-left: 10px solid $color-ff
+
   .historyTimeline
     border-left: 10px solid $color-bl-dk
     border-top: 4px solid $color-bl-dk
@@ -263,17 +252,14 @@
     background-color: $color-ff
     padding-bottom: 30px
     box-shadow: none
-  .opinion
+
+  .commentary
     border-left: 10px solid $color-bl-dk
-    margin-top: -20px
+  .expert
+    flex-direction: row
+    text-align : left
     .image
-      width: 120px
-      margin-bottom: 10px
-    .expert
-      margin-right: 30px
-      flex-direction: row
-      justify-content: flex-start
-      text-align : left
+      margin: 0 2em 0 0
 
   .row.banner
     border-left: 10px solid $color-bl-dk

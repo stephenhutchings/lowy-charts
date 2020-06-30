@@ -35,7 +35,7 @@ cards:
           In Rudd&#39;s inaugural National Security Statement, the rules-based order is listed as one of the five principles of Australia&#39;s national security:
 
           > 1. Maintaining Australia&#39;s territorial and border integrity.
-          > 2. Promoting Australia&#39;s political sovereignty
+          > 2. Promoting Australia&#39;s political sovereignty.
           > 3. Preserving Australia&#39;s cohesive and resilient society and the long-term strengths of our economy.
           > 4. Protecting Australians and Australian interests both at home and abroad.
           > 5. Promoting an international environment, particularly in the Asia-Pacific region, that is stable, peaceful and prosperous, together with a global rules based order which enhances Australia&#39;s national interests.
@@ -199,11 +199,12 @@ cards:
 
     events:
 
-      - type: opinion
-        content: |
+      - type: commentary
+        id: bishop
+        expert: |
           ## Julie Bishop
           ### Former Minister for Foreign Affairs
-
+        content: |
           The government was firmly committed to the rules-based order through its actions. For example, when Malaysian airlines MH17 was shot down over Ukraine in July 2014 one of our first responses was to seek the support of the United Nations Security Council. Likewise, the government campaigned for and won a seat on the UN Human Rights Council and we submitted to voluntary arbitration through UNCLOS on our maritime boundary dispute with Timor-Leste.
 
       - type: anchor
@@ -339,11 +340,12 @@ cards:
 
           > This Tribunal, as you know, is established in accordance with the United Nations Convention on the Law of the Sea, which is a codification of international maritime law. It was established so that countries can resolve disputes peacefully in accordance with international law. The UN convention on the Law of the Sea, and the Arbitral Tribunal are absolutely crucial elements of the international rules based order which underpins peace, stability and prosperity around the world but especially in our part of the world for decades. All of us, all countries large and small have benefitted enormously from this system which facilitates trade and enables disputes to be resolved in accordance with rules rather than by coercive means.
 
-      - type: opinion
-        content: |
+      - type: commentary
+        id: maude
+        expert: |
           ## Richard Maude
           ### Foreign Policy Expert
-
+        content: |
           China&#39;s attempts to exercise de-facto control of the South China Sea, and in particular the building of large Chinese military facilities on disputed features, raised significant concerns in Australia about Beijing&#39;s willingness to abide by international law and settle disputes peacefully and without the threat or use of force.
 
           The precedents for the way China might use its growing power elsewhere in the region were ominous. China helped negotiate UNCLOS, including the setting of extensive exclusive economic zones, and subsequently ratified the Treaty. Yet Beijing denounced and ignored the Tribunal&#39;s findings, which had the effect of significantly narrowing the legal basis of China&#39;s claims in the South China Sea.
@@ -387,12 +389,12 @@ cards:
 
           > Australia is an active and vocal advocate of the liberal rules based order because the continuation of the long and prosperous peace depend on it.&quot;>
 
-      - type: opinion
-        content: |
+      - type: commentary
+        id: bishop
+        expert: |
           ## Julie Bishop
-
           ### Former Minister for Foreign Affairs
-
+        content: |
           The speech was intended as strong support for the rules-based order and for democracy and freedom. These are enduring values that must be defended strongly. It is simply a statement of fact that most high-income nations are liberal democracies with independent institutions.
 
           My speeches reflected my understanding that the rules-based order was developed, under United States leadership, to prevent a repeat of the horrors of global conflict in the two world wars. It was designed to protect the rights of all nations and to prevent more powerful countries coercing and dominating less powerful countries.
@@ -467,7 +469,11 @@ cards:
           > Australia has a long record of helping to develop the rules-based component of the global order.
 
 
-      - type: opinion
+      - type: commentary
+        id: maude
+        expert: |
+          ## Richard Maude
+          ### Foreign Policy Expert
         content: |
           ## Richard Maude
 
@@ -528,13 +534,13 @@ cards:
 
           > Australia&#39;s Foreign Policy White Paper reiterated Australia&#39;s commitment to a strong multilateral human rights system and to advancing human rights globally. It is in our national interest to shape the work of the Council and uphold the international rules-based order.
 
-      - type: opinion
-        content: |
+      - type: commentary
+        id: bishop
+        expert: |
           ## Julie Bishop
-
           ### Former Minister for Foreign Affairs
-
-          This came down to a difference of opinion with the Trump administration, where I had argued that the US should remain in the HRC to drive reform and effect change from within. The Administration determined that the HRC was beyond redemption and that attempts to improve it would inevitably fail and therefore the more dramatic step of resigning would send a stronger message.
+        content: |
+          This came down to a difference of commentary with the Trump administration, where I had argued that the US should remain in the HRC to drive reform and effect change from within. The Administration determined that the HRC was beyond redemption and that attempts to improve it would inevitably fail and therefore the more dramatic step of resigning would send a stronger message.
 
 
   - pm: morrison
