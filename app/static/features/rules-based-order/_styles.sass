@@ -32,9 +32,6 @@ blockquote
 .card .row.banner
   position: relative
   background-color: $color-bl-dk
-  background-position: center
-  background-repeat: no-repeat
-  background-size: cover
   display: flex
   flex-direction: column
   min-height: 65%
@@ -153,25 +150,29 @@ cite
     transition-duration: .5s
     background: $color-ff
     color: $color-bk
+    font-size: .8rem
     font-weight: 500
     line-height: 1.6
-    letter-spacing: 0.5px
+    letter-spacing: 0.4px
     display: none
+
+  &.bishop
+    background-image: url('./img/bishop-xs.jpg')
+  &.maude
+    background-image: url('./img/maude-xs.jpg')
 
   &.bishop span,
   &.maude span,
     left: -125px
     min-width: 250px
     padding: 1em
-    background: $color-bg
     text-align: left
-
+    background: $color-bl-dk
+    color: $color-ff
 
   &:hover span
     display: block
     animation: appear .4s forwards
-
-
 
 
 
@@ -223,6 +224,10 @@ cite
       color: #fff
       border-color: #002B45
       background: #002B45
+
+  .bishop span,
+  .maude span,
+    background: $color-bg
 
 @media (min-width: 900px)
   .intro-wrap

@@ -334,7 +334,7 @@ cards:
         content: |
           ## [Joint press conference](https://pmtranscripts.pmc.gov.au/release/transcript-40347)
 
-          ### Prime Minister Turnbull and Foreign Minister Marise Payne on the South China Sea arbitration decision <cite id="jb-1" class="bishop" tooltip=" This judgement was not as strongly supported by the US as had been expected. It did not receive endorsement by ASEAN or of all claimant nations, which emboldened China to expand its South China Sea militarisation.">JB</cite>
+          ### Prime Minister Turnbull and Foreign Minister Marise Payne on the South China Sea arbitration decision <cite class="bishop" tooltip=" This judgement was not as strongly supported by the US as had been expected. It did not receive endorsement by ASEAN or of all claimant nations, which emboldened China to expand its South China Sea militarisation."></cite>
 
           The Hague Tribunal&#39;s decision on the South China Sea became pivotal to subsequent debate surrounding China&#39;s ambitions, its commitment to the rules-based order, and the willingness of the US and regional states to defend that order:
 
@@ -432,7 +432,7 @@ cards:
 
           [Bishop, 5 July](https://www.foreignminister.gov.au/minister/julie-bishop/media-release/australia-condemns-dprk-missile-test)
 
-          > The world expects that we live in a rules-based system and this unacceptable missile launch is in breach of numerous United Nations Security Council Resolutions. <cite id="jb-2" class="bishop" tooltip="North Korea is a rogue state in that it refuses to abide by international conventions and continues to pose a threat to South Korea and Japan. It uses the threat of military action to extract concessions from other nations and the regime&#39;s treatment of its own people is reprehensible.">JB</cite>
+          > The world expects that we live in a rules-based system and this unacceptable missile launch is in breach of numerous United Nations Security Council Resolutions. <cite class="bishop" tooltip="North Korea is a rogue state in that it refuses to abide by international conventions and continues to pose a threat to South Korea and Japan. It uses the threat of military action to extract concessions from other nations and the regime&#39;s treatment of its own people is reprehensible."></cite>
 
       - type: excerpt
         date: Nov
@@ -443,7 +443,7 @@ cards:
 
           > In the global ocean, there is always a risk, as Lee Kuan Yew observed: &quot;The big fish will eat the little fish, and the little fish will eat the shrimps&quot;. Or as the Athean ambassador said to the Melians: &quot;In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must.
 
-          > So whether it&#39;s in Lee Kuan Yew&#39;s words or Thucydides&#39;, we will never agree that might is right. <cite id="rm-1" class="maude" tooltip="This is a central element of the 2017 Foreign Policy White Paper&#39;s framing of the rules-based order – the idea that, as a middle power, Australia will always be better off in a global order that is based at least in part on agreed rules, even if imperfectly applied, rather than power alone.">RM</cite> The rules-based order protects us all and it protects us, in particular.
+          > So whether it&#39;s in Lee Kuan Yew&#39;s words or Thucydides&#39;, we will never agree that might is right. <cite class="maude" tooltip="This is a central element of the 2017 Foreign Policy White Paper&#39;s framing of the rules-based order – the idea that, as a middle power, Australia will always be better off in a global order that is based at least in part on agreed rules, even if imperfectly applied, rather than power alone."></cite> The rules-based order protects us all and it protects us, in particular.
 
         media:
           class: image
@@ -454,7 +454,7 @@ cards:
       - type: excerpt
         date: SKIP
         content: |
-          ## Foreign Policy White Paper <cite class="bishop" tooltip="The central theme of the Foreign Policy White paper was a defence of the rules-based order. It was my judgement that the order was under challenge by China, Russia, North Korea and some other nations. There was apathy or indifference to its importance in many developing nations. The WP was intended to be a call to action for our institutions and for other nations to defend the order, as if it were broken, the world would be facing an unpredictable future.">JB</cite>
+          ## Foreign Policy White Paper <cite class="bishop" tooltip="The central theme of the Foreign Policy White paper was a defence of the rules-based order. It was my judgement that the order was under challenge by China, Russia, North Korea and some other nations. There was apathy or indifference to its importance in many developing nations. The WP was intended to be a call to action for our institutions and for other nations to defend the order, as if it were broken, the world would be facing an unpredictable future."></cite>
 
           According to the Prime Minister&#39;s introduction, &quot;This Foreign Policy White Paper shows Australia to be focused on our region, determined to realise a secure, open and prosperous Indo–Pacific, while also strengthening and diversifying partnerships across the globe.&quot;
 
@@ -530,7 +530,7 @@ cards:
         content: |
           ## [Foreign Minister Julie Bishop](https://www.foreignminister.gov.au/minister/julie-bishop/media-release/united-states-resigns-un-human-rights-council)
 
-          ### Statement following the US resignation from the UN Human Rights Council <cite class="maude" tooltip="The Human Rights Council is too often a dismal and dispiriting example of multilateralism. But if the West, including the United States, does not help shape contemporary understandings of human rights then others will, often in ways that diverge from our interests and values. Disengagement creates a vacuum that others step into.">RM</cite>
+          ### Statement following the US resignation from the UN Human Rights Council <cite class="maude" tooltip="The Human Rights Council is too often a dismal and dispiriting example of multilateralism. But if the West, including the United States, does not help shape contemporary understandings of human rights then others will, often in ways that diverge from our interests and values. Disengagement creates a vacuum that others step into."></cite>
 
           > Australia&#39;s Foreign Policy White Paper reiterated Australia&#39;s commitment to a strong multilateral human rights system and to advancing human rights globally. It is in our national interest to shape the work of the Council and uphold the international rules-based order.
 
@@ -634,4 +634,4 @@ cards:
       #       description: |
       #         "It is essential that we – as an international community – wake up to the challenges presented by China’s manipulation of the long-standing international, rules-based order that has benefited all of us for many decades.<br/><br/>
       #         The PRC’s growing economic, military, and diplomatic power often manifests itself in ways that are threatening, coercive, and counter to the rules-based international order.
-      #         ... we simply ask of Beijing what we ask of every nation&#58; to play by the rules, abide by international norms, and respect the rights and sovereignty of others."
+      #         ... we simply ask of Beijing what we ask of every nation&#58; to play by the rules, abide by international nos, and respect the rights and sovereignty of others."

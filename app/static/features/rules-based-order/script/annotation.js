@@ -1,11 +1,14 @@
 const annotations = document.querySelectorAll('cite');
 
 // Creates nested divs for each annotation link in introduction
+// Sets background image class for all commentator annotations
 function createAnnotations() {
   annotations.forEach( (el, i) => {
     s = el.appendChild(document.createElement("span"));
     data = el.getAttribute('tooltip');
     s.innerHTML = data;
+
+    el.classList.length ? el.classList.add('bg-ccnr') : "";
   });
 }
 
@@ -24,6 +27,6 @@ function positionAnnotations() {
     l < 0 ? textbox.style.left = -(l+offset)+'px' : "";
     dr < 0 ? textbox.style.left = (dr-offset)+'px' : "";
 
-    //textbox.style.removeProperty('display');
+    textbox.style.removeProperty('display');
   });
 }
