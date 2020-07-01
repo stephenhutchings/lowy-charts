@@ -19,12 +19,13 @@
   z-index: 1
   padding: 5px
   background-size: cover
+
 .btnfw
   right: -15px
 .btnbw
   left: -15px
   transform: rotate(180deg)
-  //display: none
+
 
 .history-timeline
   position: relative
@@ -38,10 +39,11 @@
   width: 100%
 .event
   color: $color-bl-dk
-  max-width: 400px
+  max-width: 500px
   margin: 0 auto
   position: relative
   border-radius: .25em
+  text-align: justify
 .event-title
   margin: 0.25em 0.75em
   font-weight: 600
@@ -78,6 +80,8 @@
 @media (min-width: 600px)
   .btnfw,.btnbw
     bottom: -45px
+    border: 1px solid $color-bl-dk
+    border-radius: 100%
   .btnfw
     right: calc(50% - 40px)
   .btnbw

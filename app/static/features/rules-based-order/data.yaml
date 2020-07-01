@@ -96,19 +96,23 @@ cards:
           src: "img/example-7.jpg"
           caption: Photo&#58; Chip Somodevilla/Getty Images
 
-      - type: anchor
-        year: 2011
-
       - type: historyTimeline
         year: 2011
-        dates: [17 December 2010, 17 March 2011, 2 May 2011]
+        dates: [December 2010, March 2011, May 2011, January 2013]
         content:
-          - title: Attempted suicide of Mohamed Bouazizi
-            description: On 17 December 2010, Tunisian street vendor Mohamed Bouazizi self-immolated, sparking a series of protests against poor economic management and political autocracy that would topple many governments in the Middle East. The Arab Spring – as it came to be known – was a loosely related group of pro-democracy uprisings that enveloped several largely Muslim countries and resulted in regime change in Tunisia, Egypt and Libya, and brutal civil wars in Syria and Yemen.
+          - title: Start of the Arab Uprisings
+            description: ""
           - title: Libya UN Resolution 1973
-            description: Early in the Arab Spring, Libya attracted international condemnation over its government’s indiscriminate and disproportionate use of military force against protesters. On 17 March 2011, the UN Security Council passed a resolution authorising "all necessary measures" to protect civilians in Libya from pro-Gaddafi forces. UNSCR 1973 included the declaration of a no-fly zone over Libya, but specifically excluded a UN-mandated occupying ground force.
+            description: |
+             With Libyan leader Gaddafi’s forces poised to crush the uprising, the UN Security Council passed a resolution authorising "all necessary measures" to protect civilians. UNSCR 1973 included the declaration of a no-fly zone over Libya, but specifically excluded a UN-mandated occupying ground force.
+             Australia’s then Foreign Minister, Kevin Rudd pressed for the no-fly zone, and commented publicly about the “tortuous” diplomatic effort it took to obtain the mandate. "Let us all hope and pray that this final resolve of the international community is not too late for the people of Libya," Rudd said.
           - title: Osama bin Laden assassination
             description: On 2 May 2011, US president Barack Obama announced that Osama bin Laden, the leader of al-Qaeda, had been killed in a US operation in the city of Abbottabad, Pakistan.
+          - title: Australia on the United Nations Security Council 2013–2014
+            description: On 1 January 2013, Australia commenced a two-year term as a non-permanent member of the UN Security Council. This was the fifth time Australia had sat on the UNSC since the organisation held its first session in January 1946, over which Australia presided. Australia's term on the Council coincided with marked increase in challenges to the rules-based order and an increasingly complex global security environment.
+
+      - type: anchor
+        year: 2011
 
       - type: excerpt
         date: Sep
@@ -521,7 +525,7 @@ cards:
           ## Richard Maude
           ### Foreign Policy Expert
         content: |
-         Allan is right, the post-war order is gone, but many of its institutions and systems remain. These are under immense pressure from anti-globalisation, populism, nationalism and authoritarianism, from the Trump Administration on one side and China on the other.
+         Alan is right, the post-war order is gone, but many of its institutions and systems remain. These are under immense pressure from anti-globalisation, populism, nationalism and authoritarianism, from the Trump Administration on one side and China on the other.
 
          Getting agreement on responses to many of our most urgent global problems – like climate change or even fighting the COVID 19 pandemic – is harder than ever. Yet there will always be some form of rules-based layer to global order. Much less certain is how effective these elements of the international system will be and whose values they will reflect. In some areas, like governance of the internet, competing systems and philosophies are emerging. Great power competition and diverging values and interests mean fault lines are likely to continue to run through much of the multilateral, rule-setting system for the foreseeable future.
 

@@ -24,8 +24,6 @@ block page
         for card in era.events
           if card.type == "anchor"
             .anchor(id=`anchor-${card.year}`)= card.year
-          else if card.type == "historyTimeline"
-            // [HOLD] DO NOTHING FOR HISTORY BLOCKS
           else 
             - let skipDate = card.date == "SKIP" ? "skip-date" : ""
             .row(class=`${card.type} ${skipDate}`)
@@ -33,7 +31,7 @@ block page
                 if card.type == "quote"
                   include partials/quote
                 else if card.type == "historyTimeline" 
-                  //include partials/history
+                  include partials/history
                 else if card.type == "excerpt" 
                   .date.txt-sm!= card.date
                 else if card.type == "commentary"

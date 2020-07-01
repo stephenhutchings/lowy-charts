@@ -4,7 +4,7 @@
 function setHistoryTimelines() {
   // Show one node for screens < 900px. Two for > 1100px
   let screenFactor = $(window).width() < 900 ? 2 : 1;
-  let historyNodes = [3,2,3,3,3,2,9,4,5,3,2];
+  let historyNodes = [4];
   $('.history-timeline').each( function(i) {
     let multiplier = $(this).prop('id') == 'absence-timeline' ? 50*screenFactor : 100
     $(this).css('width',multiplier*historyNodes[i] + "%");
@@ -25,7 +25,7 @@ function scrollHistory(btn, fw) {
 function showHideHistoryBtns(el) {
   let viewWidth = $(el).outerWidth();
   let endLeft = $(el).children('.history-timeline').outerWidth() - viewWidth;
-  let mobile = $(window).width() < 600 ? 1 : 0;
+  let mobile = $(window).width() < 600;
 
   if (mobile) {
     $(el).scrollLeft() < viewWidth/2 ? $(el).prev().css('display','none') : $(el).prev().css('display','block'); // if at start, hide back btn
