@@ -111,12 +111,12 @@ block page
                   stroke-width=(i==highlight ? 4.5 : 1)
                   stroke-linejoin="round"
                   stroke-linecap="round"
-                  points=(chart.axes[1].values.map((y, ix, a) => (
-                    [
+                  points=(chart.axes[1].values.map((y, ix, a) => {
+                    return y[i] ? [
                       100 * fx(ix, a.length),
                       100 * fy(scale.maxY + scale.minY - y[i])
-                    ].join(" ")
-                  ))).join(",")
+                    ].join(" ") : "";
+                  })).join(",")
                 )
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
