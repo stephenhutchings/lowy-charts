@@ -4,7 +4,7 @@
 function setHistoryTimelines() {
   // Show one node for screens < 900px. Two for > 1100px
   let screenFactor = $(window).width() < 900 ? 2 : 1;
-  let historyNodes = [4];
+  let historyNodes = [4, 8, 1, 3, 1, 2, 4, 2, 2];
   $('.history-timeline').each( function(i) {
     let multiplier = $(this).prop('id') == 'absence-timeline' ? 50*screenFactor : 100
     $(this).css('width',multiplier*historyNodes[i] + "%");

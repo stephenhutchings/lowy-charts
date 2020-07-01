@@ -23,7 +23,7 @@ block page
         
         for card in era.events
           if card.type == "anchor"
-            .anchor(id=`anchor-${card.year}`)= card.year
+            .anchor(id=`anchor-${card.year}`)= card.year            
           else 
             - let skipDate = card.date == "SKIP" ? "skip-date" : ""
             .row(class=`${card.type} ${skipDate}`)

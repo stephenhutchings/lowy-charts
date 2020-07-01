@@ -15,7 +15,7 @@
         .node
           .event
             .event-text.txt-s!= event.description
-            .event-title.txt-m= event.title
+            .event-title.txt-m!= event.title
           .timeline
             .dot(style=`left: calc(50% - ${dotRadius}px)`)
               .dot.over

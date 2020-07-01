@@ -22,8 +22,8 @@ function onLoad() {
 function resizeCallback() {
   vh = window.innerHeight;
   headerVisible ? "" : resetWrapHeight('.tile-wrap','.tiles');
-  // setHistoryTimelines();
-  // $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
+  setHistoryTimelines();
+  $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
 }
 
 // onScroll event listener
