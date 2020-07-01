@@ -149,9 +149,9 @@ charts:
           - text: Thailand
           - text: India
           - text: China
-          - text: Vietnam
           - text: Indonesia
             highlight: true
+          - text: Vietnam
           - text: Philippines
 
       -
@@ -165,9 +165,12 @@ charts:
           - 9.6
           - 6.2
           - 4.8
+          - 4.2
           - 4.1
-          - 4.0
           - 3.1
+
+
+
   -
     title: >
       Bank Indonesia has left interest rates elevated compared to others in Asia
