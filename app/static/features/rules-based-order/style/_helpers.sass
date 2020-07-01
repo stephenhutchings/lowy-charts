@@ -93,14 +93,21 @@
   width: 50%
   flex-basis: 50%
 
-.txt-xxl, .txt-xl, .txt-l, .txt-ml
+.txt-xxl, .txt-xl,
+.txt-l, .txt-ml,
 h1,h2,h3,h4
   font-family: 'Sans', sans-serif
   font-weight : 400
-  letter-spacing : $ls-l
+  margin-bottom: 1em
 
   a
     text-decoration: none
+
+h2 + h3
+  margin-top: -0.7em
+
+p
+  font-size: 16px
 
 .txt-xxl,h1
   font-size: 28px
@@ -156,7 +163,7 @@ h1,h2,h3,h4
   .txt-ml, h3
     font-size: 20px
     line-height: 29px
-  .txt-m, h4
+  .txt-m, h4, p
     font-size: 18px
     line-height: 25px
   .txt-sm
@@ -183,7 +190,7 @@ h1,h2,h3,h4
   .txt-m, h4
     font-size: 20px
     line-height: 29px
-  .txt-sm
+  .txt-sm, p
     font-size: 19px
     line-height: 27px
   .txt-s, h5

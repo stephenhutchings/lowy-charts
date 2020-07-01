@@ -1,10 +1,12 @@
 cards:
 
   - pm: rudd
-    summary: |
+    details: |
       # Kevin Rudd
       ## 2007&mdash;2010
-    credit: Photo&#58; Cherie Cullen / Wiki Commons
+    caption: Photo&#58; Cherie Cullen / Wiki Commons
+    summary: |
+      Kevin Rudd began his term seeking to shape the US-China relationship, establish new regional institutions and enhance international cooperation on climate change. His government’s first official act was ratification of the Kyoto Protocol. Rudd was challenged by the 2008 Global Financial Crisis and a marked increase in arrivals of boats carrying asylum seekers. He leveraged the GFC to lobby for establishment of a G20 leaders’ meeting – including Australia. And his government launched Australia’s successful bid for non-permanent seat on the UN Security Council (from 2013-2014)
     events:
       - type: anchor
         year: 2008
@@ -14,13 +16,13 @@ cards:
         content: |
           ## [Kevin Rudd address to The Brookings Institution, Washington](https://pmtranscripts.pmc.gov.au/release/transcript-15833)
 
-          ### &quot;The Australia-US alliance and emerging challenges in the Asia-Pacific Region.&quot;
+          ### The Australia-US alliance and emerging challenges in the Asia-Pacific Region.
 
           Rudd&#39;s first visit to Washington as prime minister included a speech at the Brookings Institution replete with references to world order, including the first known use of &#39;rules-based order&#39; by an Australian Prime Minister:
 
-          > The idea of a &quot;harmonious world&quot; depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order…we look to China to make a strong contribution to strengthening the global and regional rules-based order.
+          > The idea of a 'harmonious world' depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order…we look to China to make a strong contribution to strengthening the global and regional rules-based order.
 
-          Rudd then travelled to Beijing where he delivered the same message, telling an audience of Chinese students in Peking University that realisation of the Chinese goal of a &#39;harmonious world&#39; depended on China &quot;being a participant in the world order and … acting in accordance with the rules of that order&quot;.
+          Rudd then travelled to Beijing where he delivered the same message, telling an audience of Chinese students in Peking University that realisation of the Chinese goal of a &#39;harmonious world&#39; depended on China being a participant in the world order and … acting in accordance with the rules of that order.
         media:
           class: image
           src: "img/example-5.jpg"
@@ -66,10 +68,12 @@ cards:
           > These strategic interests are presented in geographical terms, as a hierarchy that reflects both relative priorities for action from a defence planning perspective, and our realistic capacity for influence through the employment of military power. They are interlocking - a stable rules-based global security order increases the likelihood of strategic stability in the Asia-Pacific region, which in turn makes more likely the maintenance of a secure immediate neighbourhood and ultimately a secure Australia.
 
   - pm: gillard
-    summary: |
+    details: |
       # Julia Gillard
       ## 2010&mdash;2013
-    credit: Photo&#58; DFID / Russell Watkins / Wiki Commons
+    caption: Photo&#58; DFID / Russell Watkins / Wiki Commons
+    summary: |
+      Admitting that foreign policy was not her “passion”, Julia Gillard spoke more about regional order than global order. She referred to creating “space for a rising China” and focussed on Australia’s domestic readiness for the Asian Century. Gillard laid the groundwork for the resumption of uranium sales to India. The Palestinian push for recognition in multilateral fora occupied her government more than many expected. To reduce boat arrivals, Gillard sought, but failed, to achieve agreements with Timor Leste and then Malaysia
     events:
 
       - type: anchor
@@ -82,11 +86,11 @@ cards:
 
           This statement laid out the shared US-Australian interests on the occasion of the seventieth anniversary of US-Australia diplomatic relations. It also appears to be the first time the term &#39;rules-based order&#39; was used by a senior US government official – Hillary Clinton as Secretary of State.
 
-          The Melbourne Statement reaffirms US and Australian dedication to &quot;the enhancement of an international rules-based order, both within our region and for the world.&quot;
+          The Melbourne Statement reaffirms US and Australian dedication to the enhancement of an international rules-based order, both within our region and for the world.
 
           Speaking in Melbourne, Secretary Clinton [said](https://www.nzherald.co.nz/world/news/article.cfm?c_id=2&amp;objectid=10686147):
 
-          > &quot;We obviously share the view that we want to see China&#39;s rise be successful, bringing benefits to the Chinese people, but [we want China] to take on greater responsibility and a rules-based approach towards all of its neighbours.&quot;
+          > We obviously share the view that we want to see China&#39;s rise be successful, bringing benefits to the Chinese people, but [we want China] to take on greater responsibility and a rules-based approach towards all of its neighbours.
         media:
           class: image
           src: "img/example-7.jpg"
@@ -120,7 +124,7 @@ cards:
         content: |
           ## [Foreign Minister Kevin Rudd&#39;s address to the Oxford Business Alumni Forum](https://webarchive.nla.gov.au/wayback/20190808181854/https:/foreignminister.gov.au/speeches/Pages/2011/kr_sp_111013b.aspx?ministerid=2)
 
-          Rudd warns that &quot;The worst outcome that you could ever imagine for a country like Australia, is that there be conflict or war between the United States and China&quot;, and argues that the development of new institutions is a race against time:
+          Rudd warns that "the worst outcome that you could ever imagine for a country like Australia, is that there be conflict or war between the United States and China", and argues that the development of new institutions is a race against time:
 
           > We began to debate two or three years ago on how we could build an Asia Pacific community in a region which doesn&#39;t have regional institutions capable of bringing around the table the Americans, the Chinese and the rest of us, on how we craft the rules of the game for this region, for the next half-century. Because if you fail to do that, and to cultivate and to develop a culture, and have it of economic and security policy and foreign policy cooperation, it is very easy to drift in the reverse direction.
 
@@ -191,11 +195,14 @@ cards:
           > Both in and beyond Southeast Asia, Australia supports a rules-based regional security order that fosters cooperation, eases tensions between states and provides incentives to major powers like China and India to rise peacefully. In particular, it is in our interests that no hostile power in the Indo-Pacific is able to coerce or intimidate others through force or the threat of force.
 
   - pm: abbott
-    banner: img/abbott-banner.jpg
-    summary: |
+    details: |
       # Tony Abbott
       ## 2013&mdash;2015
-    credit: Photo&#58; U.S. Department of State / Wiki Commons
+    caption: Photo&#58; U.S. Department of State / Wiki Commons
+    summary: |
+      Tony Abbott came to office with countering people smuggling as his top priority. But a series of dramatic international events also demanded his attention. In 2014, ISIS swept through Iraq and Syria, Russia annexed Crimea and, in July, Russian-backed Ukrainian separatists shot down Malaysian Airways Flight MH17. In the same period China became more internationally assertive. In 2013, Xi Jinping announced his One Belt One Road initiative and China declared an Air Defence Identification Zone over the East China Sea. China also stepped up its island-building in the South China Sea.
+
+      While Abbott used the term "rules-based order" less often than other prime ministers, he often spoke against a world in which “might is right,” and made frequent use of the phrase “good global citizen” to describe both Australia and what Australia wanted China to be.
 
     events:
 
@@ -211,27 +218,33 @@ cards:
         year: 2014
 
       - type: excerpt
+        date: Jun
+        content: |
+          ## The US and Australia make common cause in the Pacific
+
+          > Thanks to the new and broader Force Posture Agreement that we just concluded; our two nations have the opportunity for even deeper defense collaboration in Asia. The agreement recognizes that we must adapt to new strategic circumstances — and that we will do more together to support the stability and security of an [open, rules-based region](https://pmtranscripts.pmc.gov.au/release/transcript-23578) on which the future prosperity of all countries depends.
+
+      - type: excerpt
         date: Aug
         content: |
           ## Joint Doorstop Interview, Canberra
 
-          &quot;You cannot have an international order if [might is right](https://pmtranscripts.pmc.gov.au/release/transcript-31835). You cannot have a safe and secure world if powerful countries are able to take what they want. Plainly, what we have seen in Ukraine over the last six months or so, is an increasingly aggressive role by Russia and it seems that Russia is now stepping out of the shadows and overtly trying to achieve its objects of domination in Ukraine and it is completely, absolutely and utterly unacceptable.&quot;
+          > You cannot have an international order if [might is right](https://pmtranscripts.pmc.gov.au/release/transcript-31835). You cannot have a safe and secure world if powerful countries are able to take what they want. Plainly, what we have seen in Ukraine over the last six months or so, is an increasingly aggressive role by Russia and it seems that Russia is now stepping out of the shadows and overtly trying to achieve its objects of domination in Ukraine and it is completely, absolutely and utterly unacceptable.
 
       - type: excerpt
         date: Sep
         content: |
           ## [Address to United Nations General Assembly in New York](https://pmtranscripts.pmc.gov.au/release/transcript-23848)
 
-          > &quot;Like any institution, the United Nations is an imperfect instrument.Still, it&#39;s better than might-is-right and it gives good arguments the best chance to prevail. Despite faults and failures, the UN has worked for peace and progress for nearly 70 years and Australia has been proud to play its part.&quot;
+          > Like any institution, the United Nations is an imperfect instrument. Still, it's better than might-is-right and it gives good arguments the best chance to prevail. Despite faults and failures, the UN has worked for peace and progress for nearly 70 years and Australia has been proud to play its part.
 
       - type: excerpt
         date: Nov
         content: |
           ## Address to Parliamentary Dinner for President Xi
-
           ### Parliament House, Canberra
 
-          > &quot;I have never heard a Chinese leader commit so explicitly to a [rule-based international order](https://pmtranscripts.pmc.gov.au/release/transcript-23978) founded on the principle that we should all treat others as we would be treated ourselves.&quot;
+          > I have never heard a Chinese leader commit so explicitly to a [rule-based international order](https://pmtranscripts.pmc.gov.au/release/transcript-23978) founded on the principle that we should all treat others as we would be treated ourselves.
 
       - type: anchor
         year: 2015
@@ -240,55 +253,32 @@ cards:
         date: Jun
         content: |
           ## Address to the USA Independence Day Reception
-
           ### US Embassy, Canberra
 
-          > &quot;America was, is, and will be the indispensable nation – [the one reliable bulwark against a world where might is right](https://pmtranscripts.pmc.gov.au/release/transcript-24586).&quot;
+          > America was, is, and will be the indispensable nation – [the one reliable bulwark against a world where might is right](https://pmtranscripts.pmc.gov.au/release/transcript-24586).
 
       - type: excerpt
         date: Jul
         content: |
-          ## Address to the USA Independence Day Reception
+          ## Joint Doorstop Interview
+          ### RAAF Base Williamtown
 
-          ### US Embassy, Canberra
-
-          > &quot;America was, is, and will be the indispensable nation – [the one reliable bulwark against a world where might is right](https://pmtranscripts.pmc.gov.au/release/transcript-24586).&quot;
+          > ... obviously, what we want to do is encourage China to assume a role commensurate with its strength and that&#39;s why under the right conditions, which we were able to obtain, we were so keen to be involved in the Asian Infrastructure Investment Bank and the Asian Infrastructure Investment Bank is a good illustration of the role that China can have within a [rules-based](https://pmtranscripts.pmc.gov.au/release/transcript-24592) international order.&quot;
 
       - type: excerpt
         date: Aug
         content: |
           ## Address to the 70th Anniversary of Victory in the Pacific Dinner
 
-          > &quot;[So let us for a moment consider what has been achieved in the post-war world](https://pmtranscripts.pmc.gov.au/release/transcript-24704): 70 years of peace in western Europe; 70 years of peace between China and Japan; a rules-based international order, guaranteed by the United States, that has fostered the greatest expansion of safety, of prosperity and of democracy that the world has ever seen; with many hundreds of millions of people, especially in Asia, moving from the Third World to the Middle Class in just two generations&quot;
-
-      - type: XXX
-        year: absence
-        dates: [18 September 2013, 23 November 2013, Feb/March 2014, September 2015, 30 September 2015,23 June 2016, July 2016, 3 September 2016, 9 November 2016]
-        content:
-          - title: Tony Abbott becomes Australia's 28th Prime Minister(??)
-            description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          - title: China declares Air Defence Identification Zone in East China Sea
-            description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          - title: Unrest in Ukraine and Crimea annexation
-            description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          - title: Australia extended its air strikes from Iraq to include Syria
-            description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          - title: Russian military intervention in the Syrian Civil War
-            description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          - title: Brexit
-            description: The UK votes in a referendum on the country’s EU membership, with 51.9% of voters choosing to leave the EU.
-          - title: South China Sea Arbitration
-            description: Hague Tribunal finds against Beijing in South China Sea case
-          - title: Obama meets with Xi Jinping
-            description: Following the meeting, Obama released a statement saying he had "emphasised the importance for China, as a signatory to UNCLOS, to abide by its obligations under that treaty, which the United States views as critical to maintaining the rules-based international order."
-          - title: Trump elected President
-            description: Donald Trump was elected the 45th president of the United States, ushering in the era of "America-First" foreign policy. Trump comes to office as a lifelong sceptic of America's post-war alliance network, and of free trade.
+          > [So let us for a moment consider what has been achieved in the post-war world](https://pmtranscripts.pmc.gov.au/release/transcript-24704): 70 years of peace in western Europe; 70 years of peace between China and Japan; a rules-based international order, guaranteed by the United States, that has fostered the greatest expansion of safety, of prosperity and of democracy that the world has ever seen; with many hundreds of millions of people, especially in Asia, moving from the Third World to the Middle Class in just two generations
 
   - pm: turnbull
-    summary: |
+    details: |
       # Malcolm Turnbull
       ## 2015&mdash;2018
-    credit: Photo&#58; Matt Roberts / ABC / Wiki Commons
+    caption: Photo&#58; Matt Roberts / ABC / Wiki Commons
+    summary: |
+      Malcolm Turnbull’s international agenda was dominated by the counter-ISIS struggle, increasingly assertive Chinese behaviour – including in Australia, the election of US President Donald Trump, and escalating tensions on the Korean Peninsula. The Turnbull government’s reaction includes a series of major policy documents and internal reforms in which the RBO figured prominently.
     events:
       - type: anchor
         year: 2016
@@ -327,7 +317,7 @@ cards:
 
           In his [April 2016 address](https://pmtranscripts.pmc.gov.au/release/transcript-40306) launching the Australian Cyber Security Centre, Prime Minister Turnbull disclosed the capability and emphasised consistency with the rules-based order:
 
-          > &quot;Defensive measures may not always be adequate to respond to serious cyber incidents … The Government can draw on a range of options to respond, such as law enforcement, diplomatic or economic measures.An offensive cyber capability, housed in the Australian Signals Directorate, provides another option … *The use of such a capability is subject to stringent legal oversight and is consistent with our support for the international rules-based order and our obligations under international law.* Acknowledging this offensive capability, adds a level of deterrence. It adds to our credibility as we promote norms of good behaviour on the international stage.&quot; (emphasis added)
+          > Defensive measures may not always be adequate to respond to serious cyber incidents … The Government can draw on a range of options to respond, such as law enforcement, diplomatic or economic measures.An offensive cyber capability, housed in the Australian Signals Directorate, provides another option … *The use of such a capability is subject to stringent legal oversight and is consistent with our support for the international rules-based order and our obligations under international law.* Acknowledging this offensive capability, adds a level of deterrence. It adds to our credibility as we promote norms of good behaviour on the international stage. (emphasis added)
 
       - type: excerpt
         date: Jul
@@ -387,7 +377,7 @@ cards:
 
           > While it is appropriate for different states to discover their own pathway leading toward political reform, history shows that embrace of liberal democratic institutions is the most successful foundation for nations seeking economic prosperity and social stability.
 
-          > Australia is an active and vocal advocate of the liberal rules based order because the continuation of the long and prosperous peace depend on it.&quot;>
+          > Australia is an active and vocal advocate of the liberal rules based order because the continuation of the long and prosperous peace depend on it.>
 
       - type: commentary
         id: bishop
@@ -407,7 +397,7 @@ cards:
 
           ### 16th IISS Asia Security Summit, Shangri-La Dialogue
 
-          Turnbull refers to a &quot;US anchored rules-based order&quot;, and other references to the rules-based order place it directly in the context of great-power competition between the US and China:
+          Turnbull refers to a US anchored rules-based order, and other references to the rules-based order place it directly in the context of great-power competition between the US and China:
 
           > And we should be under no illusions: If we are to maintain the dynamism of the region then we must preserve the rules-based structure that has enabled it thus far. This means cooperation not unilateral actions to seize or create territory or militarise disputed areas. This means competing within the framework of international law not winning through corruption, interference or coercion ...
           ... some fear that China will seek to impose a latter day Monroe Doctrine on this hemisphere in order to dominate the region, marginalising the role and contribution of other nations, in particular the United States. Such a dark view of our future would see China isolating those who stand in opposition to or are not aligned with its interests, while using its economic largesse to reward those toeing the line.
@@ -417,7 +407,7 @@ cards:
         content: |
           ## [Independent Intelligence Review](https://www.pmc.gov.au/resource-centre/national-security/report-2017-independent-intelligence-review)
 
-          The Review points to &quot;fundamental changes to in the international system&quot; and assesses that &quot;The trend in the global balance of wealth and power is favouring China and India. The Western ascendancy in international institutions and values…is eroding&quot;:
+          The Review points to fundamental changes to in the international system and assesses that The trend in the global balance of wealth and power is favouring China and India. The Western ascendancy in international institutions and values…is eroding:
 
           > ... assumptions that have long underpinned Australia&#39;s security and foreign policy, including those in relation to the strength of the rules-based component of the global order, will be more uncertain.
 
@@ -441,7 +431,7 @@ cards:
 
           From Prime Minister&#39;s speech at the launch of the White Paper:
 
-          > In the global ocean, there is always a risk, as Lee Kuan Yew observed: &quot;The big fish will eat the little fish, and the little fish will eat the shrimps&quot;. Or as the Athean ambassador said to the Melians: &quot;In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must.
+          > In the global ocean, there is always a risk, as Lee Kuan Yew observed: The big fish will eat the little fish, and the little fish will eat the shrimps. Or as the Athean ambassador said to the Melians: In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must.
 
           > So whether it&#39;s in Lee Kuan Yew&#39;s words or Thucydides&#39;, we will never agree that might is right. <cite class="maude" tooltip="This is a central element of the 2017 Foreign Policy White Paper&#39;s framing of the rules-based order – the idea that, as a middle power, Australia will always be better off in a global order that is based at least in part on agreed rules, even if imperfectly applied, rather than power alone."></cite> The rules-based order protects us all and it protects us, in particular.
 
@@ -456,13 +446,13 @@ cards:
         content: |
           ## Foreign Policy White Paper <cite class="bishop" tooltip="The central theme of the Foreign Policy White paper was a defence of the rules-based order. It was my judgement that the order was under challenge by China, Russia, North Korea and some other nations. There was apathy or indifference to its importance in many developing nations. The WP was intended to be a call to action for our institutions and for other nations to defend the order, as if it were broken, the world would be facing an unpredictable future."></cite>
 
-          According to the Prime Minister&#39;s introduction, &quot;This Foreign Policy White Paper shows Australia to be focused on our region, determined to realise a secure, open and prosperous Indo–Pacific, while also strengthening and diversifying partnerships across the globe.&quot;
+          According to the Prime Minister&#39;s introduction, This Foreign Policy White Paper shows Australia to be focused on our region, determined to realise a secure, open and prosperous Indo–Pacific, while also strengthening and diversifying partnerships across the globe.
 
           References to the rules-based order in this White Paper reflect this regional focus, but not exclusively:
 
           > Australia&#39;s interests are strongly served by acting with others to support a rules-based international order. Australia will encourage and tangibly support the leadership of the United States to this end.
 
-          The White Paper also includes references to the &quot;liberal character of the rules-based order&quot; and the &quot;rules-based component of the international order&quot;:
+          The White Paper also includes references to the liberal character of the rules-based order and the rules-based component of the international order:
 
           > Australia will continue strongly to support US global leadership. The Government recognises there is greater debate and uncertainty in the United States about the costs and benefits of its leadership in parts of the international system. We believe that the United States&#39; engagement to support a rules-based order is in its own interests and in the interests of wider international stability and prosperity. Without sustained US support, the effectiveness and liberal character of the rules-based order will decline.
 
@@ -556,10 +546,19 @@ cards:
 
 
   - pm: morrison
-    summary: |
+    details: |
       # Scott Morrison
       ## 2018&mdash;
-    credit: Photo&#58; U.S. Department of State / Wiki Commons
+    caption: Photo&#58; U.S. Department of State / Wiki Commons
+    summary: |
+      Like Julia Gillard, Scott Morrison has described his “instincts and passions” as having “always been domestic”. But as Prime Minister he has been compelled to grapple with President Xi’s increasingly assertive China, President Trump’s increasingly disruptive United States and intensifying competition between the two great powers. Immediately before becoming Prime Minister, Morrison made a highly consequential decision for Australia’s relationship with China by (as acting Home Affairs Minister) signing off on the decision to exclude Chinese vendors from Australia’s 5G network.
+
+      Early in his term Morrison had to decide whether to break with the dominant international legal view and follow the United States in recognising Jerusalem as Israel’s capital. The decision had wider implications for international norms against the acquisition of territory by force. Morrison opted for a compromise; announcing that Australia would recognise West Jerusalem as Israel’s capital but would not immediately move its embassy from Tel Aviv.
+
+      In October 2019, Morrison delivered a major speech at the Lowy Institute on the RBO in which he distinguished between “positive” and “negative” globalism. He emphasised the importance of Australia playing a “more active role” in standards setting and tasked the Department of Foreign Affairs to undertake “a comprehensive audit of global institutions and rule-making processes.” Since then the government’s national security agenda has been dominated by non-traditional issues, including the unprecedented bushfires and a global pandemic.
+
+      Australia’s call for an inquiry into the origins of COVID-19 and the performance of the World Health Organization refocussed attention on the RBO and China. In June 2020, Foreign Minister Payne declared that "COVID-19 has shown that our international order is as important as ever.” (Theme 9 and 10 ) Payne said the DFAT audit had found that "multilateral organisations, especially international standard-setting bodies, create rules that are vital to Australia's security, interests, values and prosperity."
+
     events:
 
       - type: anchor
@@ -602,7 +601,7 @@ cards:
         content: |
           ## Prime Minister Scott Morrison&#39;s speech to the Lowy Institute
 
-          &quot;Australia does and must always seek to have a responsible and participative international agency in addressing global issues. This is positive and practical globalism. Our interests are not served by isolationism and protectionism. But it also does not serve our national interests when international institutions demand conformity rather than independent cooperation on global issues … We should avoid any reflex towards a negative globalism that coercively seeks to impose a mandate from an often ill-defined borderless global community. And worse still, an unaccountable internationalist bureaucracy … When it comes to setting global standards, we&#39;ve not been as involved as we could be. We cannot afford to leave it to others to set the standards that will shape our global economy. I&#39;m determined for Australia will play a more active role in standards setting.&quot;
+          Australia does and must always seek to have a responsible and participative international agency in addressing global issues. This is positive and practical globalism. Our interests are not served by isolationism and protectionism. But it also does not serve our national interests when international institutions demand conformity rather than independent cooperation on global issues … We should avoid any reflex towards a negative globalism that coercively seeks to impose a mandate from an often ill-defined borderless global community. And worse still, an unaccountable internationalist bureaucracy … When it comes to setting global standards, we&#39;ve not been as involved as we could be. We cannot afford to leave it to others to set the standards that will shape our global economy. I&#39;m determined for Australia will play a more active role in standards setting.
         media:
           class: video
           src: ""

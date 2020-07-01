@@ -17,12 +17,24 @@ html,body
 
 blockquote
   border: none
-  margin: 1.5em 0
-  padding: 1em 3em 1em 0em
-  //font-style: normal
-  color: $color-bk
+  margin: 0
+  padding: 0 1em 1.4em 0
+  font-style: normal
   line-height: 1.6em
-  text-align: justify
+  font-size: inherit
+
+  &:last-child
+    padding-bottom: 0
+
+  p
+    font-size: .95em
+
+  p:before
+    content: "“"
+    font-size: 25px
+    vertical-align: sub
+    padding: 0 5px
+
 
 .banner-wrap
   height: 100vh
@@ -227,6 +239,10 @@ cite
   .bishop span,
   .maude span,
     background: $color-bg
+
+  blockquote
+    padding-right: 3em
+    text-align: justify
 
 @media (min-width: 900px)
   .intro-wrap

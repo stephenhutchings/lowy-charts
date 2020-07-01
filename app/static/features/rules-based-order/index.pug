@@ -17,9 +17,10 @@ block page
     each era, i in timeline
       .wrap(class=era.pm)
         .row.banner.bg-ccnr(style=`background-image: url('./img/banner-${era.pm}.jpg'); min-height: 350px`)
-          .banner-title.txt-center!= marked(`${era.summary}`)
-          .banner-caption.txt-muted.txt-xs.txt-right!= era.credit
-          // [INSERT INTRO TO PM HERE]
+          .banner-title.txt-center!= marked(era.details)
+          .banner-caption.txt-muted.txt-xs.txt-right!= era.caption
+        .row.pale: .item!= marked(era.summary)
+        
         for card in era.events
           if card.type == "anchor"
             .anchor(id=`anchor-${card.year}`)= card.year

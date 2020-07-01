@@ -92,8 +92,9 @@
     border-radius: 2px
 
 
-.highlight
-  background-color: $color-ff!important
+.pale
+  background-color: rgba($color-bl-dk, 0.9)
+  color: $color-ff
   margin-top: 0
 
 .quote
@@ -234,12 +235,13 @@
     width: 70%
     max-width: 760px
     margin: auto
-  .row:nth-child(2)
-    padding-top: 40px
   .row:nth-last-child(2)
     border-bottom: 1px solid $color-bl-dk
   .item
     padding: 20px
+
+  .pale
+    border-left: 10px solid $color-bl-dk
 
   .excerpt, .row.quote
     border-left: 10px solid $color-bl-dk
