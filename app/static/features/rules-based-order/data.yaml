@@ -519,11 +519,23 @@ cards:
 
           > It is a good example of the rules-based global order in action.
 
-      # - type: quote
-      #   date: SKIP
-      #   quotation: The order we have known for the past seventy years has ended. It’s not being challenged. It’s not changing. It’s over.
-      #   name: Alan Gyngell
-      #   supp: Former Executive Director of the Office of National Assessments, June 2018
+      - type: quote
+        date: SKIP
+        quotation: The order we have known for the past seventy years has ended. It’s not being challenged. It’s not changing. It’s over.
+        name: Alan Gyngell
+        supp: Former Executive Director of the Office of National Assessments, June 2018
+
+      - type: commentary
+        id: maude
+        expert: |
+          ## Richard Maude
+          ### Foreign Policy Expert
+        content: |
+         Allan is right, the post-war order is gone, but many of its institutions and systems remain. These are under immense pressure from anti-globalisation, populism, nationalism and authoritarianism, from the Trump Administration on one side and China on the other.
+
+         Getting agreement on responses to many of our most urgent global problems – like climate change or even fighting the COVID 19 pandemic – is harder than ever. Yet there will always be some form of rules-based layer to global order. Much less certain is how effective these elements of the international system will be and whose values they will reflect. In some areas, like governance of the internet, competing systems and philosophies are emerging. Great power competition and diverging values and interests mean fault lines are likely to continue to run through much of the multilateral, rule-setting system for the foreseeable future.
+
+         Still, history doesn’t always work in straight lines. We can find space to work with China within some rules-based systems, like trade for example. America could still rediscover that its security and prosperity are enhanced when it leads by the power of its example and invests in global public goods. It doesn’t look hopeful now, but perhaps China and the US could emerge from the COVID 19 pandemic with a renewed understanding that even as they compete, none of the world’s major global challenges can be addressed adequately without cooperation between them.
 
       - type: excerpt
         date: SKIP

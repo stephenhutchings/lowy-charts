@@ -1,3 +1,85 @@
+const sources = [
+  {
+    "id": "1",
+    "ref": "Address by former FM, Gareth Evans, March 1990"
+  },
+  {
+    "id": "2",
+    "ref": "2016 Defence White Paper"
+  },
+  {
+    "id": "3",
+    "ref": "Prime Minister Scott Morrison’s address to the United Nations General Assembly, September 2019"
+  },
+  {
+    "id": "4",
+    "ref": "Foreign Minister, Marise Payne’s address to the ANU National Security College, June 2020"
+  },
+  {
+    "id": "5",
+    "ref": "Prime Minister Julia Gillard’s speech to the African Union Permanent Representatives, March 2011"
+  },
+  {
+    "id": "6",
+    "ref": "Foreign Minister Julie Bishop’s comments on North Korean ballistic missile tests, July 2017"
+  },
+  {
+    "id": "7",
+    "ref": "Prime Minister Tony Abbott’s address to the United Nations General Assembly in New York, September 2019"
+  },
+  {
+    "id": "8",
+    "ref": "Prime Minister Malcolm Turnbull’s speech at the launch of the Foreign Policy White Paper, November 2017"
+  },
+  {
+    "id": "9",
+    "ref": "Prime Minister Malcolm Turnbull’s keynote address at the Shangri-La Dialogue, June 2017"
+  },
+  {
+    "id": "10",
+    "ref": "Joint press conference by Prime Minister Turnbull and Foreign Minister Payne on South China Sea arbitration decision, July 2016"
+  },
+  {
+    "id": "11",
+    "ref": "2017 Foreign Policy White Paper"
+  },
+  {
+    "id": "12",
+    "ref": "Prime Minister Malcolm Turnbull’s remarks to US Chamber of Commerce, January 2016"
+  },
+  {
+    "id": "13",
+    "ref": "Defence Minister Linda Reynolds’ address to the Hudson Institute, Washington DC, November 2019"
+  },
+  {
+    "id": "14",
+    "ref": "2013 Defence White Paper"
+  },
+  {
+    "id": "15",
+    "ref": "Prime Minister Kevin Rudd’s address to The Brookings Institution, Washington, March 2008"
+  },
+  {
+    "id": "16",
+    "ref": "Prime Minister Tony Abbott’s address to Parliamentary dinner for Xi Jinping, November 2014"
+  },
+  {
+    "id": "17",
+    "ref": "Prime Minister Malcolm Turnbull’s speech at lunch in honour of Premier Li, March 2017"
+  },
+  {
+    "id": "18",
+    "ref": "2012 Australia in the Asian Century White Paper"
+  },
+  {
+    "id": "19",
+    "ref": "Prime Minister Scott Morrison’s address to the Sydney Institute, December 2018"
+  },
+  {
+    "id": "20",
+    "ref": "2009 Defence White Paper"
+  }
+];
 const annotations = document.querySelectorAll('cite');
 
 // Creates nested divs for each annotation link in introduction
@@ -22,7 +104,6 @@ function positionAnnotations() {
     r = textbox.getBoundingClientRect().right;
     dr = vw - r;
     offset = (r-l)/2;
-    console.log(l, r);
 
     l < 0 ? textbox.style.left = -(l+offset)+'px' : "";
     dr < 0 ? textbox.style.left = (dr-offset)+'px' : "";
