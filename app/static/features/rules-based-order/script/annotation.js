@@ -85,13 +85,18 @@ const annotations = document.querySelectorAll('cite');
 // Creates nested divs for each annotation link in introduction
 // Sets background image class for all commentator annotations
 function createAnnotations() {
-  annotations.forEach( (el, i) => {
-    s = el.appendChild(document.createElement("span"));
-    data = el.getAttribute('tooltip');
-    s.innerHTML = data;
 
-    el.classList.length ? el.classList.add('bg-ccnr') : "";
+  annotations.forEach( (el, i) => {
+
+    let isComment = el.classList.length;
+    let attr = isComment ? el.getAttribute('tooltip') : el.getAttribute('ref');
+    let data = isComment ? attr : sources.find(src => src.id == attr ).ref;
+
+    el.appendChild(document.createElement("span")).innerHTML = data;
+
+    isComment ? el.classList.add('bg-ccnr') : el.innerHTML += attr;
   });
+
 }
 
 // Adjusts position of tooltip to keep within viewport

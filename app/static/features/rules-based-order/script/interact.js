@@ -53,26 +53,23 @@ function resetWrapHeight(p, c) {
 }
 
 function readMore() {
-  // TOGGLE VISIBLE TEXT
-  $('.intro-txt .collapse').toggleClass('hidden');
 
   collapsed = !collapsed;
-
   let pv = 48;
-  let th = $('.intro-txt').outerHeight(true) + $('.intro-wrap .title').outerHeight(true) + 2.5*pv;
+  let th = $('.intro-txt').outerHeight(true) + $('.intro-wrap .title').outerHeight(true) + 5*pv;
   let h = collapsed ? 0.9*vh : th;
+  let html = collapsed ? '&bull; &bull; &bull;' : '<span class="txt-ml icon icon-upload"><br></span><span class="txt-s">Show less</span>';
 
   $('.intro-wrap').animate({'max-height': h}, 400,"");
 
-  let html = collapsed ? '&bull; &bull; &bull;' : '<span class="txt-ml icon icon-upload"><br></span><span class="txt-s">Show less</span>';
-
+  // TOGGLE READ-MORE BUTTON
   setTimeout(() => {
     $('.reveal')
       .html(html)
       .css('padding-top', collapsed ? '85px' : '0' );
   }, 100);
 
-  // ADJUST FOOTER
+  // TOGGLE SKIP TO TIMELINE FOOTER
   toggleFooter(!collapsed);
   $('.intro-footer')
     .toggleClass('txt-l')
