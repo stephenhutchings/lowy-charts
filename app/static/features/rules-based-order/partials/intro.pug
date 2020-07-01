@@ -1,5 +1,5 @@
 
-- let sections = data.getOne("static/features/rules-based-order/partials/intro").sections
+- let intro = data.getOne("static/features/rules-based-order/partials/intro").intro[0]
 
 section
   .banner-wrap
@@ -20,14 +20,12 @@ section
 section
   .intro-wrap.pv-xl
     .title.txt-l.txt-b.txt-tu.txt-w700 Introduction
-    .intro-txt
-      each section, i in sections
-        .txt-sm.pv-sm(class= !!i ? 'collapse hidden' : '')
-          .txt-l(class=`h-${i}`)= section.h
-          p.b!= marked(`${section.b}`)
+    .intro-txt!= marked(intro)
+    
     span.ib.reveal.faded.txt-tu.txt-w700.txt-m.ptr.txt-center.p-sm(
       onclick="readMore()"
       ) &bull; &bull; &bull;
+      
   .intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', 106)")
     .txt-tu.txt-w700.ptr Jump to timeline &nbsp;
     .ptr.icon.icon-down
