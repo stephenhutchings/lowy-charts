@@ -109,7 +109,7 @@ function positionAnnotations() {
       l = textbox.getBoundingClientRect().left;
       r = textbox.getBoundingClientRect().right;
       dr = r - vw;
-      initial = (l-r)/2;
+      initial = (l-r)/2 + 14;
 
       l < 0 ? textbox.style.left = (initial-l)+'px' : "";
       dr > 0 ? textbox.style.left = (initial - dr)+'px' : "";
@@ -121,8 +121,6 @@ function positionAnnotations() {
       w = eventNode.getBoundingClientRect().width;
       textbox.style.minWidth = w+'px';
       textbox.style.left = -(w/2)+10+'px';
-
-      console.log(textbox, eventNode.getBoundingClientRect().width);
     }
   });
 }

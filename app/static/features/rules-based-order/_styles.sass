@@ -183,7 +183,7 @@ cite
 
   &.bishop span,
   &.maude span,
-    left: -150px
+    left: calc(-150px + 1em)
     min-width: 300px
     padding: 1em
     text-align: left
@@ -244,9 +244,10 @@ cite
       border-color: #002B45
       background: #002B45
 
-  .bishop span,
-  .maude span,
-    background: $color-bg
+  cite.bishop span,
+  cite.maude span
+    min-width: 350px
+    left: calc(-175px + 1em)
 
   blockquote
     padding-right: 3em
@@ -255,6 +256,11 @@ cite
 @media (min-width: 900px)
   .intro-wrap
     width: 75%
+
+  cite.bishop span,
+  cite.maude span
+    min-width: 400px
+    left: calc(-200px + 1em)
 
 @media (min-width: 1085px)
   .intro-wrap

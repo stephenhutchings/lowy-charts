@@ -20,6 +20,7 @@ function onLoad() {
 // Resize event listener
 function resizeCallback() {
   vh = window.innerHeight;
+  vw = window.innerWidth;
   headerVisible ? "" : resetWrapHeight('.tile-wrap','.tiles');
   setHistoryTimelines();
   positionAnnotations();
