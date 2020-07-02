@@ -6,9 +6,11 @@ function setHistoryTimelines() {
   let screenFactor = $(window).width() < 900 ? 2 : 1;
   let historyNodes = [4, 8, 1, 3, 1, 2, 4, 2, 2];
   $('.history-timeline').each( function(i) {
-    let multiplier = $(this).prop('id') == 'absence-timeline' ? 50*screenFactor : 100
+    let multiplier = 100;
     $(this).css('width',multiplier*historyNodes[i] + "%");
   });
+
+  $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
 }
 
 
@@ -17,7 +19,7 @@ function scrollHistory(btn, fw) {
   // fw indicates fw or back button
   let el = fw ? $(btn).next().next() : $(btn).next();
   x = fw ? el.scrollLeft() + el.outerWidth() : el.scrollLeft() - el.outerWidth();
-  el.animate({scrollLeft: x}, 400);
+  el.animate({scrollLeft: x}, 200);
 }
 
 

@@ -20,7 +20,7 @@ function togglePM(i) {
   positionAnnotations();
 }
 
-// FIXED HEADER
+// TOGGLE PM-TILE HEADER
 function toggleHeader(show) {
   let tiles = $('.tiles');
   if (show) {
@@ -35,7 +35,7 @@ function toggleHeader(show) {
   }
 }
 
-// FIXED FOOTER
+// TOGGLE FIXED FOOTER
 function toggleFooter(show) {
   if (show) {
     $('.intro-footer').addClass('fixed-b');

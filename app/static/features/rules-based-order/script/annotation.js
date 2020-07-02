@@ -80,7 +80,7 @@ const sources = [
     "ref": "2009 Defence White Paper"
   }
 ];
-const annotations = document.querySelectorAll('cite');
+var annotations = document.querySelectorAll('cite');
 
 // Creates nested divs for each annotation link in introduction
 // Sets background image class for all commentator annotations
@@ -104,15 +104,25 @@ function positionAnnotations() {
 
   annotations.forEach( (el, i) => {
     textbox = el.querySelector('span');
-    textbox.style.display = 'inline';
-    l = textbox.getBoundingClientRect().left;
-    r = textbox.getBoundingClientRect().right;
-    dr = vw - r;
-    offset = (r-l)/2;
+    if ( !el.classList.contains('no-reposition') ) {
+      textbox.style.display = 'inline';
+      l = textbox.getBoundingClientRect().left;
+      r = textbox.getBoundingClientRect().right;
+      dr = r - vw;
+      initial = (l-r)/2;
 
-    l < 0 ? textbox.style.left = -(l+offset)+'px' : "";
-    dr < 0 ? textbox.style.left = (dr-offset)+'px' : "";
+      l < 0 ? textbox.style.left = (initial-l)+'px' : "";
+      dr > 0 ? textbox.style.left = (initial - dr)+'px' : "";
 
-    textbox.style.removeProperty('display');
+      textbox.style.removeProperty('display');
+    }
+    else { // For the comments in a history box
+      eventNode = el.parentNode.parentNode;
+      w = eventNode.getBoundingClientRect().width;
+      textbox.style.minWidth = w+'px';
+      textbox.style.left = -(w/2)+10+'px';
+
+      console.log(textbox, eventNode.getBoundingClientRect().width);
+    }
   });
 }

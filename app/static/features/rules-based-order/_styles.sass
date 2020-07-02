@@ -95,6 +95,7 @@ blockquote
   min-height: 10vh
   width: 100%
   transition-duration: 500ms
+  margin-bottom: 0
   &:not(.fixed-b)
     position: relative
 
@@ -143,12 +144,16 @@ cite
   cursor: pointer
   padding: 5px 0 5px 5px
 
+  &:hover
+    font-weight: bold
+    text-decoration: underline
+
   span
     text-align: center
     position: absolute
     bottom: 130%
-    left: -100px
-    min-width: 200px
+    left: -125px
+    min-width: 250px
     padding: 1em
     border-radius: .5em
     transition-duration: .5s
@@ -158,6 +163,7 @@ cite
     font-weight: 500
     line-height: 1.6
     letter-spacing: 0.4px
+    box-sizing: border-box
     display: none
 
   &.bishop,
@@ -167,6 +173,8 @@ cite
     width: 2em
     padding: 0
     border-radius: 100%
+    &:hover
+      border: 1px solid $color-bl-dk
 
   &.bishop
     background-image: url('./img/bishop-xs.jpg')
@@ -175,17 +183,17 @@ cite
 
   &.bishop span,
   &.maude span,
-    left: -125px
-    min-width: 250px
+    left: -150px
+    min-width: 300px
     padding: 1em
     text-align: left
     background: $color-bl-dk
     color: $color-ff
+    font-weight: 300
 
   &:hover span
     display: block
     animation: appear .4s forwards
-
 
 .btn
   width: 40px

@@ -15,7 +15,6 @@ function onLoad() {
   resetWrapHeight('.tile-wrap','.tiles');
   createAnnotations();
   setHistoryTimelines();
-  $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
 }
 
 // Resize event listener
@@ -23,7 +22,7 @@ function resizeCallback() {
   vh = window.innerHeight;
   headerVisible ? "" : resetWrapHeight('.tile-wrap','.tiles');
   setHistoryTimelines();
-  $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );
+  positionAnnotations();
 }
 
 // onScroll event listener
