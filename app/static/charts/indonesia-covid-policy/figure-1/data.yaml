@@ -12,7 +12,7 @@ notes: >
 charts:
   -
     title: >
-      The rupiah was among the hardest-hit but has recovered considerably
+      A. The rupiah was among the hardest-hit but has recovered considerably
     subtitle: >
       Exchange rates v USD; 20 Jan 2020 = 100
     scale:
@@ -200,11 +200,9 @@ charts:
           - [ 95.9, 85.5, 76.6, 94.1, null, 94.8, 101.8, 88.6, 84.3, 98.4, 85.6, 81.3 ]
           - [ null, null, null, null, null, null, null, 89.0, null, null, null, null ]
           - [ 95.0, 85.3, 76.9, null, 96.9, 94.7, 101.9, null, 84.0, 98.4, 85.6, 80.7 ]
-
-
   -
     title: >
-      Hard currency reserves remain adequate relative to annual gross financing needs
+      B. Hard currency reserves remain adequate relative to annual gross financing needs
     subtitle: >
       USD billions, ratio = 1 considered adequate
     scale:
@@ -276,7 +274,7 @@ charts:
           - [ 27.7, 60.5, 121.0, 1.4 ]
   -
     title: >
-      Overseas debt has grown, but is still largely manageable
+      C. Overseas debt has grown, but is still largely manageable
     subtitle: >
       External debt, USD billions
     scale:
@@ -362,7 +360,7 @@ charts:
           - [ 47, 181, 122, 48 ]
   -
     title: >
-      Foreign holdings of Indonesian securities a potential source of outflows
+      D. Foreign holdings of Indonesian securities a potential source of outflows
     subtitle: >
       Liabilities to non-residents, USD billions
     scale:

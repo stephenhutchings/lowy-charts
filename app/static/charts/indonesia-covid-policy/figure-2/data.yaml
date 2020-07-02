@@ -10,7 +10,7 @@ notes: >
 charts:
   -
     title: >
-      Economic growth collapsed even before lockdowns were imposed in early April
+      A. Economic growth collapsed even before lockdowns were imposed in early April
     subtitle: >
       Growth in GDP at constant prices
     scale:
@@ -79,7 +79,7 @@ charts:
           - [ 3, 0.2]
   -
     title: >
-      Economic contraction looks similar or worse than other emerging markets
+      B. Economic contraction looks similar or worse than other emerging markets
     subtitle: >
       Headline Manufacturing PMI (50 = neutral)
     scale:
@@ -131,7 +131,7 @@ charts:
           - [ "", "", "", 49, 43, "", 51, 39 ]
   -
     title: >
-      Indonesia has one of Asia's smallest COVID-19 fiscal response packages
+      C. Indonesia has one of Asia's smallest COVID-19 fiscal response packages
     subtitle: >
       Fiscal & quasi-fiscal measures, % of GDP
     scale:
@@ -168,10 +168,9 @@ charts:
           - 4.2
           - 4.1
           - 3.1
-
   -
     title: >
-      Bank Indonesia has left interest rates elevated compared to others in Asia
+      D. Bank Indonesia has left interest rates elevated compared to others in Asia
     subtitle: >
       Central bank key policy rates, per cent
     scale:
