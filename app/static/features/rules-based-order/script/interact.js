@@ -56,7 +56,7 @@ function readMore() {
 
   collapsed = !collapsed;
   let pv = 48;
-  let th = $('.intro-txt').outerHeight(true) + $('.intro-wrap .title').outerHeight(true) + 5*pv;
+  let th = $('.intro-txt').outerHeight(true) + 5*pv;
   let h = collapsed ? 0.9*vh : th;
   let html = collapsed ? '&bull; &bull; &bull;' : '<span class="txt-ml icon icon-upload"><br></span><span class="txt-s">Show less</span>';
 

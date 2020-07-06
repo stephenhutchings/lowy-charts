@@ -35,6 +35,16 @@ blockquote
     vertical-align: sub
     padding: 0 5px
 
+.intro-txt blockquote
+  padding: 0 1.5em
+  margin-bottom: 1.4em
+
+  p:after
+    content: "”"
+    font-size: 25px
+    vertical-align: sub
+    padding: 0 5px
+
 
 .banner-wrap
   height: 100vh
@@ -76,6 +86,7 @@ blockquote
   overflow: hidden
   padding-left: 1em
   padding-right: 1em
+
   .faded
     position: absolute
     bottom: 0
@@ -83,12 +94,17 @@ blockquote
     width: 100%
     text-align: center
     padding: 85px 0 25px
-  .title
+
+.intro-txt
+  box-sizing: border-box
+
+  h1
     padding: 1em 0 .75em 0
     margin-bottom: .5em
     border-bottom: 1px solid $color-bl-dk
-.intro-txt
-  box-sizing: border-box
+    font-weight: 700
+    text-transform: uppercase
+
 .intro-footer
   background: $color-bl-dk
   color: $color-ff
