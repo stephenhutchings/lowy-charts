@@ -102,7 +102,7 @@ function createAnnotations() {
 
     el.appendChild(document.createElement("span")).innerHTML = data;
 
-    isComment ? el.classList.add('bg-ccnr') : el.innerHTML += attr;
+    isComment ? el.classList.add('bg-ccnr') : el.innerHTML += '^';
   });
 
 }

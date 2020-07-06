@@ -157,33 +157,36 @@ h3 cite
 
 cite
   position: relative
-  font-size: .6em
+  font-size: .8em
   text-decoration: none
   font-style: normal
   vertical-align: top
   cursor: pointer
-  padding: 5px 0 5px 5px
+  padding: 5px 5px 5px 0
+  font-weight: 500
+  transition-duration: 200ms
 
   &:hover
-    font-weight: bold
-    text-decoration: underline
+    font-weight: 600
+    color: #888
+    text-shadow: 0px -4px black
 
   span
     text-align: center
     position: absolute
-    bottom: 130%
+    bottom: 110%
     left: -125px
     min-width: 250px
     padding: 1em
     border-radius: .5em
-    transition-duration: .5s
+    transition-duration: opacity .5s
     background: $color-ff
     color: $color-bk
     font-size: .8rem
-    font-weight: 500
     line-height: 1.6
     letter-spacing: 0.4px
     box-sizing: border-box
+    text-shadow: none
     display: none
 
   &.bishop,
@@ -253,9 +256,9 @@ cite
       font-size: 44px
 
   .intro-wrap
-    width: 90%
-    padding-left: 80px
-    padding-right: 80px
+    width: 100%
+    padding-left: 100px
+    padding-right: 100px
 
   .btn
     &:not(.nohover):hover,
@@ -267,8 +270,8 @@ cite
 
   cite.bishop span,
   cite.maude span
-    min-width: 350px
-    left: calc(-175px + 1em)
+    min-width: 300px
+    left: calc(-150px + 1em)
 
   blockquote
     padding-right: 3em
@@ -276,7 +279,9 @@ cite
 
 @media (min-width: 900px)
   .intro-wrap
-    width: 75%
+    width: 100%
+    padding-left: 200px
+    padding-right: 200px
 
   cite.bishop span,
   cite.maude span
@@ -285,8 +290,8 @@ cite
 
 @media (min-width: 1085px)
   .intro-wrap
-    width: 70%
+    width: 90%
 
-@media (min-width: 1300px)
+@media (min-width: 1200px)
   .intro-wrap
-    width: 65%
+    width: 85%
