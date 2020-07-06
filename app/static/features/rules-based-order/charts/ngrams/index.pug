@@ -248,6 +248,14 @@ block append css
       @media screen and (max-width: 700px)
         .chart-content
           bottom: 10px
+          .col-md:first-child &
+            top: 10px
+            bottom: 20px
+          .col-md:last-child &
+            left: 40px
+            top: 40px
+            bottom: 0
+            
         .col-wrap
           display: block
           height: 100%
