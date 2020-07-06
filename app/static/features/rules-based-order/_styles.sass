@@ -110,10 +110,12 @@ blockquote
   color: $color-ff
   min-height: 10vh
   width: 100%
-  transition-duration: 500ms
+  transition-duration: 200ms
   margin-bottom: 0
+
   &:not(.fixed-b)
     position: relative
+
 
 
 .tile-page
@@ -260,6 +262,13 @@ cite
     padding-left: 100px
     padding-right: 100px
 
+  .intro-footer.fixed-b
+    flex-direction: column
+    width: 90px
+    text-align: center
+    padding: 1.25em .5em
+    right: 0
+
   .btn
     &:not(.nohover):hover,
     &:focus
@@ -276,6 +285,8 @@ cite
   blockquote
     padding-right: 3em
     text-align: justify
+
+
 
 @media (min-width: 900px)
   .intro-wrap

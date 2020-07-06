@@ -72,7 +72,7 @@ function readMore() {
   // TOGGLE SKIP TO TIMELINE FOOTER
   toggleFooter(!collapsed);
   $('.intro-footer')
-    .toggleClass('txt-l')
+    .toggleClass('txt-xs')
     .css('min-height', collapsed ? '10vh' : '3.5em');
 
   collapsed ? scrollThis('html,body', '.tile-page',103) : "";
