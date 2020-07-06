@@ -24,18 +24,23 @@ section
       onclick="readMore()"
       ) &bull; &bull; &bull;
       
-  .intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', 106)")
+  .intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', 0)")
     .txt-tu.txt-w700.ptr Jump to timeline &nbsp;
     .ptr.icon.icon-down
 
 section
   .tile-page.flex-cv.pv-md
-    .col-md.pv-sm
-      h1 Timeline: Rules-based order by Prime Minister
-      .txt-m  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    .col-lg.pv-sm
+      h1 Annotated Timeline
+      .txt-m 
+        :marked
+          The timeline below highlights key moments in the evolution of the rules-based order.
+          From Kevin Rudd, the first Australian Prime Minister to use the term, through to current PM Scott Morrison,
+          we track how the idea has been shaped by each cabinet and significant global events.
+          Expert commentators offer inside knowledge along the way.
     .tile-wrap.pv-sm: .tiles.flex-ch.flex-wrap
       #tiles-prev.btn.txt-bl.ptr.br-max.ib(onclick="next(false)") &larr;
       each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
-        .tile.flex.txt-center.txt-tu.txt-s.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i})`)
+        .tile.flex.txt-center.txt-tu.txt-s.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i}, true)`)
           div= pm
       #tiles-next.btn.txt-bl.ptr.br-max.ib(onclick="next(true)") &rarr;

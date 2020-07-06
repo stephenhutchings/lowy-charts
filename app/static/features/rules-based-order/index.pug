@@ -15,7 +15,7 @@ block page
    
   section
     each era, i in timeline
-      .wrap(class=era.pm)
+      .wrap(class=`${era.pm} ${!i ? "show" : ""}`)
         .row.banner.bg-ccnr(style=`background-image: url('./img/banner-${era.pm}.jpg'); min-height: 350px`)
           .banner-title.txt-center!= marked(era.details)
           .banner-caption.txt-muted.txt-xs.txt-right!= era.caption

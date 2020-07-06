@@ -15,6 +15,7 @@ function onLoad() {
   resetWrapHeight('.tile-wrap','.tiles');
   createAnnotations();
   setHistoryTimelines();
+  togglePM(0, false);
 }
 
 // Resize event listener

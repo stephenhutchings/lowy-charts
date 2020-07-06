@@ -5,18 +5,20 @@ function scrollThis(p, c, o) {
 }
 
 // on PM click
-function togglePM(i) {
+function togglePM(i, scroll) {
   let pms = ["rudd", "gillard", "abbott", "turnbull", "morrison"];
   let pm = pms[i];
+
   // Nav menu
   $('.tiles').addClass('nav-tiles');
   $('.tiles').children('.active').removeClass('active');
   $('.tiles').children(`.tile-${i}`).addClass('active');
+
   // Timeline content
   $('.show').removeClass('show');
   $(`.wrap.${pm}`).addClass('show');
 
-  scrollThis('html,body',`.wrap.${pm}`, -150)
+  scroll ? scrollThis('html,body',`.wrap.${pm}`, -150) : "";
   positionAnnotations();
 }
 
@@ -95,5 +97,5 @@ function next(fwd) {
   i = i==n ? 0
     : i<0 ? n-1
     : i;
-  togglePM(i);
+  togglePM(i, true);
 }

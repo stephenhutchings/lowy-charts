@@ -101,12 +101,13 @@ blockquote
 .intro-txt
   box-sizing: border-box
 
-  h1
-    padding: 1em 0 .75em 0
-    margin-bottom: 1.4em
-    border-bottom: 1px solid $color-bl-dk
-    font-weight: 700
-    text-transform: uppercase
+.intro-txt h1,
+.tile-page h1
+  padding: 1em 0 .75em 0
+  margin-bottom: 1.4em
+  border-bottom: 1px solid $color-bl-dk
+  font-weight: 700
+  text-transform: uppercase
 
 .intro-footer
   background: $color-bl-dk
@@ -123,13 +124,12 @@ blockquote
 
 .tile-page
   background-color: white
-  min-height: 100vh
+  min-height: 50vh
   overflow: hidden
   box-sizing: border-box
   & > *
     margin: 0 auto
 .tile-wrap
-  //
 .tiles
   box-sizing: border-box
   min-height: 120px

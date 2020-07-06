@@ -70,7 +70,7 @@ block page
                   y=toPercent(fy(scale.maxY - chart.axes[1].values[n][i] ))
                   class="label"
                   text-anchor="end"
-                  transform="translate(-10 10)"
+                  transform="translate(-20 10)"
                   fill=chart.colors[i]
                 )
                   = `"${item}"`
@@ -245,7 +245,7 @@ block append css
         font-weight: 500
         font-size: 13px
 
-      @media screen and (max-width: 700px)
+      @media screen and (max-width: 660px)
         .chart-content
           .col-md:first-child &
             left: 40px
