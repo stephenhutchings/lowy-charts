@@ -25,7 +25,7 @@ const sources = [
   },
   {
     "id": "7",
-    "ref": "Prime Minister Tony Abbott’s address to the United Nations General Assembly in New York, September 2019"
+    "ref": "Prime Minister Tony Abbott’s address to the United Nations General Assembly in New York, September 2014"
   },
   {
     "id": "8",
@@ -78,6 +78,14 @@ const sources = [
   {
     "id": "20",
     "ref": "2009 Defence White Paper"
+  },
+  {
+    "id": "21",
+    "ref": "2020 Defence Strategic Update"
+  },
+  {
+    "id": "22",
+    "ref": "2020 Speech by PM Morrison to launch the Defence Strategic Update"
   }
 ];
 var annotations = document.querySelectorAll('cite');
