@@ -135,7 +135,7 @@ block page
                   class="label"
                   y=toPercent(fy(scale.maxY - chart.axes[1].values[n][i] ))
                   text-anchor="end"
-                  transform="translate(-20 -5)"
+                  transform="translate(0 -15)"
                   fill=chart.colors[i]
                 )
                   = `"${item}"`
@@ -181,8 +181,13 @@ block append css
         position: absolute
         top: 40px
         left: 50px
-        right: 30px
+        right: 20px
         bottom: 40px
+        
+        .col-md:first-child &
+        right: 10px
+        .col-md:last-child &
+          left: 20px
 
       .chart-content > svg
         border-bottom: 1px solid #ccc
@@ -240,7 +245,7 @@ block append css
         font-weight: 500
         font-size: 13px
 
-      @media screen and (max-width: 750px)
+      @media screen and (max-width: 700px)
         .chart-content
           bottom: 10px
         .col-wrap
