@@ -50,7 +50,6 @@ blockquote
 
 
 .banner-wrap
-  height: 100vh
   display: flex
   flex-direction: column
 .banner,
@@ -59,7 +58,7 @@ blockquote
   background-color: $color-bl-dk
   display: flex
   flex-direction: column
-  min-height: 65%
+  min-height: 70vh
   margin-top: 0
   &-title
     font-size: 28px
@@ -73,13 +72,18 @@ blockquote
     right: 10px
     margin-top: 320px
 .credits
-  display: flex
-  min-height: 35%
   color: $color-bl-dk
   background-color: $color-ff
   text-align: center
-  & > *
-    margin: auto
+  min-height: 30vh
+
+#experts
+  margin-top: 1em
+
+  cite
+    height: 2.5em
+    width: 2.5em
+
 
 .intro-wrap
   margin: 0 auto
@@ -119,8 +123,6 @@ blockquote
 
   &:not(.fixed-b)
     position: relative
-
-
 
 .tile-page
   background-color: white
@@ -195,7 +197,8 @@ cite
     display: none
 
   &.bishop,
-  &.maude
+  &.maude,
+  &.medcalfe
     display: inline-block
     height: 2em
     width: 2em
@@ -208,9 +211,12 @@ cite
     background-image: url('./img/bishop-xs.jpg')
   &.maude
     background-image: url('./img/maude-xs.jpg')
+  &.medcalfe
+    background-image: url('./img/medcalfe.jpg')
 
   &.bishop span,
   &.maude span,
+  &.medcalfe span
     left: calc(-150px + 1em)
     min-width: 300px
     padding: 1em
@@ -258,7 +264,7 @@ cite
 
   .banner
     &-title
-      font-size: 44px
+      font-size: 40px
 
   .intro-wrap
     width: 100%
@@ -281,7 +287,8 @@ cite
       background: #002B45
 
   cite.bishop span,
-  cite.maude span
+  cite.maude span,
+  cite.medcalfe span
     min-width: 300px
     left: calc(-150px + 1em)
 
@@ -298,7 +305,8 @@ cite
     padding-right: 200px
 
   cite.bishop span,
-  cite.maude span
+  cite.maude span,
+  cite.medcalfe span
     min-width: 400px
     left: calc(-200px + 1em)
 

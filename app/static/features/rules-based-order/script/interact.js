@@ -60,7 +60,7 @@ function readMore() {
   let pv = 48;
   let th = $('.intro-txt').outerHeight(true) + 5*pv;
   let h = collapsed ? 0.9*vh : th;
-  let html = collapsed ? '&bull; &bull; &bull;' : '<span class="txt-ml icon icon-upload"><br></span><span class="txt-s">Show less</span>';
+  let html = collapsed ? 'Continue reading ...' : '<span class="txt-ml icon icon-upload"></span><br>Show less';
 
   $('.intro-wrap').animate({'max-height': h}, 400,"");
 
@@ -77,7 +77,7 @@ function readMore() {
     .toggleClass('txt-xs')
     .css('min-height', collapsed ? '10vh' : '3.5em');
 
-  collapsed ? scrollThis('html,body', '.tile-page',103) : "";
+  collapsed ? scrollThis('html,body', '.intro-wrap',0) : "";
 
   positionAnnotations();
 }

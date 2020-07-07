@@ -5,24 +5,30 @@ section
   .banner-wrap
     .banner.bg-ccnr(style="background-image: url('./img/banner.jpg')")
       .banner-title.txt-cond.txt-center Australia and the<br/>Rules–Based Order:<br/>The history of an idea
-    .ptr.txt-w.txt-xl.txt-center.icon.icon-down(
+      p.txt-s.txt-center(style="color: #fffc; position: absolute; bottom: 25%; width: 100%") by Ben Scott, Sam Roggeveen, Madeleine Nyst
+    //.ptr.txt-w.txt-xl.txt-center.icon.icon-down(
       onclick="scrollThis('html,body','.intro-wrap',0)"
-      style="position: absolute; top: 50%; width: 100%"
-    )
-    .credits
-      div(style='padding: 0 30px')
-        strong.txt-s.txt-tu Research
-        .txt-m Ben Scott, Sam Roggeveen<br/>Madeleine Nyst
-        p
-        strong.txt-s.txt-tu Expert Commentary
-        .txt-m Julie Bishop, Richard Maude<br>Professor Rory Medcalf
-
+      style="position: absolute; top: 30%; width: 100%"
+      )
+    .credits.flex.flex-cv
+      strong.txt-s.txt-tu Expert Commentary From
+      #experts.flex.flex-ch.txt-sm
+        .txt-nowrap.txt-center(style="pointer-events: none;")
+          cite.bishop.bg-ccnr
+          | <br>Julie Bishop
+        .txt-nowrap.txt-center(style="pointer-events: none; margin: 0 2em;")
+          cite.medcalfe.bg-ccnr
+          | <br>Pf. Rory Medcalfe
+        .txt-nowrap.txt-center(style="pointer-events: none;")
+          cite.maude.bg-ccnr
+          | <br>Richard Maude
+          
 section
   .intro-wrap.pv-xl
     .intro-txt!= marked(intro)    
-    span.ib.reveal.faded.txt-tu.txt-w700.txt-m.ptr.txt-center.p-sm(
+    span.ib.reveal.faded.txt-tu.txt-w700.txt-s.ptr.txt-center.p-sm(
       onclick="readMore()"
-      ) &bull; &bull; &bull;
+      ) Continue reading ...
       
   .intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', 0)")
     .txt-tu.txt-w700.ptr Jump to timeline &nbsp;
