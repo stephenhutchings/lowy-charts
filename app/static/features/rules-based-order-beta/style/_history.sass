@@ -1,0 +1,120 @@
+@import app/static/features/rules-based-order-beta/style/_vars.sass
+
+.history-wrap
+  position: relative
+  margin-bottom: -15px!important
+
+.history-title
+  text-align: center
+  text-transform: uppercase
+  font-weight: 500
+  color: $color-bl-dk
+
+.btnfw,.btnbw
+  position: absolute
+  bottom: 32px
+  width: 24px
+  height: 24px
+  cursor: pointer
+  z-index: 1
+  padding: 5px
+  background-size: cover
+
+.btnfw
+  right: -15px
+.btnbw
+  left: -15px
+  transform: rotate(180deg)
+
+
+.history-timeline
+  position: relative
+  display: flex
+  align-items: flex-end
+  margin: 10px 0 20px
+  .tl-date
+    text-align: center
+.node
+  transition: all 300ms
+  width: 100%
+.event
+  color: $color-bl-dk
+  max-width: 500px
+  margin: 0 auto
+  position: relative
+  border-radius: .25em
+  text-align: justify
+.event-title
+  margin: 0.25em 0.75em
+  font-weight: 600
+  text-align: center
+.event-text
+  padding: 0 10px
+
+.dot
+  content: ''
+  position: relative
+  background: $color-bl-dk
+  width: $history-dot-d
+  height: $history-dot-d
+  border-radius: $history-dot-d
+  transform: translateY(20px)
+  .over
+    transform: translateY(0px) translateX(0px)
+    animation: grow 1.5s ease-out 0s infinite
+
+.line
+  height: 4px
+  background: $color-bl-dk
+  margin: 12px 0
+  &-start
+    margin-left: 50%
+    border-radius: 2.5px 0 0 2.5px
+  &-end
+    margin-right: 50%
+    border-radius: 0 2.5px 2.5px 0
+
+//--------// MEDIA QUERIES //--------//
+
+// At this width, the layout changes from card to flat
+@media (min-width: 600px)
+  .btnfw,.btnbw
+    bottom: -45px
+    border: 1px solid $color-bl-dk
+    border-radius: 100%
+  .btnfw
+    right: calc(50% - 40px)
+  .btnbw
+    left: calc(50% - 40px)
+    transform: rotate(180deg)
+
+// At this width, two history nodes are displayed at once.
+@media (min-width: 1100px)
+  .history-timeline
+    justify-content: center
+  .node
+    width: auto
+    flex: 1
+    cursor: default
+  .event
+    width: 95%
+    margin: auto
+    background: none
+    box-shadow: none
+    padding: 0
+  .over
+    display: none
+  .node:hover
+    .over
+      display: block
+    .event-text
+      animation: fade 0.5s forwards
+  .event:after
+    display: none
+
+  .skinny-scrollbar
+    scrollbar-height: 0 /* Firefox */
+    ms-overflow-style: none  /* IE 10+ */
+    &::-webkit-scrollbar
+      height: 0
+      background: transparent /* Chrome/Safari/Webkit */

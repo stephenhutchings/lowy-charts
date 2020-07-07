@@ -1,0 +1,319 @@
+@charset "utf-8"
+
+@import app/static/features/rules-based-order-beta/style/_cards.sass
+@import app/static/features/rules-based-order-beta/style/_vars.sass
+@import app/static/features/rules-based-order-beta/style/_helpers.sass
+@import app/static/features/rules-based-order-beta/style/_header.sass
+@import app/static/features/rules-based-order-beta/style/_history.sass
+
+
+html,body
+  font-family: 'Sans', sans-serif
+  letter-spacing: $ls-s
+  background-color: $color-bg!important
+  color: $color-bk
+  overflow: auto!important
+  height: auto
+
+blockquote
+  border: none
+  margin: 0
+  padding: 0 1em 1.4em 0
+  font-style: normal
+  line-height: 1.6em
+  font-size: inherit
+
+  &:last-child
+    padding-bottom: 0
+
+  p
+    font-size: .95em
+
+  p:before
+    content: "“"
+    font-size: 25px
+    vertical-align: sub
+    padding: 0 5px
+
+.intro-txt h2
+  margin-top: 2em
+
+.intro-txt blockquote
+  padding: 0 1.5em
+  margin-bottom: 1.4em
+
+  p:after
+    content: "”"
+    font-size: 25px
+    vertical-align: sub
+    padding: 0 5px
+
+
+.banner-wrap
+  display: flex
+  flex-direction: column
+.banner,
+.card .row.banner
+  position: relative
+  background-color: $color-bl-dk
+  display: flex
+  flex-direction: column
+  min-height: 70vh
+  margin-top: 0
+  &-title
+    font-size: 28px
+    letter-spacing: 1.5px
+    color: $color-ff
+    margin: auto
+    text-transform: uppercase
+    padding: 0 20px
+  &-caption
+    position: absolute
+    right: 10px
+    margin-top: 320px
+.credits
+  color: $color-bl-dk
+  background-color: $color-ff
+  text-align: center
+  min-height: 30vh
+
+#experts
+  margin-top: 1em
+
+  cite
+    height: 2.5em
+    width: 2.5em
+
+
+.intro-wrap
+  margin: 0 auto
+  box-sizing: border-box
+  position: relative
+  max-height: 90vh
+  overflow: hidden
+  padding-left: 1em
+  padding-right: 1em
+
+  .faded
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    text-align: center
+    padding: 85px 0 25px
+
+.intro-txt
+  box-sizing: border-box
+
+.intro-txt h1,
+.tile-page h1
+  padding: 1em 0 .75em 0
+  margin-bottom: 1.4em
+  border-bottom: 1px solid $color-bl-dk
+  font-weight: 700
+  text-transform: uppercase
+
+.intro-footer
+  background: $color-bl-dk
+  color: $color-ff
+  min-height: 10vh
+  width: 100%
+  transition-duration: 200ms
+  margin-bottom: 0
+
+  &:not(.fixed-b)
+    position: relative
+
+.tile-page
+  background-color: white
+  min-height: 50vh
+  overflow: hidden
+  box-sizing: border-box
+  & > *
+    margin: 0 auto
+.tile-wrap
+.tiles
+  box-sizing: border-box
+  min-height: 120px
+  margin: auto
+.tiles:not(.nav-tiles)
+  .tile
+    height: 120px
+  &:hover .tile
+    background-color: $color-gy-lt
+  .tile:hover
+    height: 120px
+    background-color: $color-bl-dk
+.tile
+  height: 120px
+  width: 120px
+  margin: 10px
+  padding: 10px
+  opacity: 0
+  box-sizing: border-box
+  background-color: $color-bl-dk
+  color: $color-ff
+  transition-duration: 0.4s
+  & > div
+    margin: auto
+
+h2 cite,
+h3 cite
+  float: right
+  margin: 0 5px
+
+cite
+  position: relative
+  font-size: .8em
+  text-decoration: none
+  font-style: normal
+  vertical-align: top
+  cursor: pointer
+  padding: 5px 5px 5px 0
+  font-weight: 500
+  transition-duration: 200ms
+
+  &:hover
+    font-weight: 600
+    color: #888
+    text-shadow: 0px -4px black
+
+  span
+    text-align: center
+    position: absolute
+    bottom: 110%
+    left: -125px
+    min-width: 250px
+    padding: 1em
+    border-radius: .5em
+    transition-duration: opacity .5s
+    background: $color-ff
+    color: $color-bk
+    font-size: .8rem
+    line-height: 1.6
+    letter-spacing: 0.4px
+    box-sizing: border-box
+    text-shadow: none
+    display: none
+
+  &.bishop,
+  &.maude,
+  &.medcalfe
+    display: inline-block
+    height: 2em
+    width: 2em
+    padding: 0
+    border-radius: 100%
+    &:hover
+      border: 1px solid $color-bl-dk
+
+  &.bishop
+    background-image: url('./img/bishop-xs.jpg')
+  &.maude
+    background-image: url('./img/maude-xs.jpg')
+  &.medcalfe
+    background-image: url('./img/medcalfe.jpg')
+
+  &.bishop span,
+  &.maude span,
+  &.medcalfe span
+    left: calc(-150px + 1em)
+    min-width: 300px
+    padding: 1em
+    text-align: left
+    background: $color-bl-dk
+    color: $color-ff
+    font-weight: 300
+    border: 1px solid $color-ff
+
+  &:hover span
+    display: block
+    animation: appear .4s forwards
+
+.btn
+  width: 40px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  border-radius: 50%
+  margin-right: 8px
+  transition: all 300ms
+  user-select: none
+  &-next
+    @extend .btn
+    float: right
+  &-prev
+    @extend .btn
+    float: left
+  .tiles &
+    display: none
+  .nav-tiles &
+    display: block
+
+
+
+////////////// START MEDIA QUERIES ////////////////////
+
+@media (min-width: 400px)
+
+  .intro-wrap
+    padding-left: 10%
+    padding-right: 10%
+
+@media (min-width: 600px)
+
+  .banner
+    &-title
+      font-size: 40px
+
+  .intro-wrap
+    width: 100%
+    padding-left: 100px
+    padding-right: 100px
+
+  .intro-footer.fixed-b
+    flex-direction: column
+    width: 90px
+    text-align: center
+    padding: 1.25em .5em
+    right: 0
+
+  .btn
+    &:not(.nohover):hover,
+    &:focus
+      outline: none
+      color: #fff
+      border-color: #002B45
+      background: #002B45
+
+  cite.bishop span,
+  cite.maude span,
+  cite.medcalfe span
+    min-width: 300px
+    left: calc(-150px + 1em)
+
+  blockquote
+    padding-right: 3em
+    text-align: justify
+
+
+
+@media (min-width: 900px)
+  .intro-wrap
+    width: 100%
+    padding-left: 200px
+    padding-right: 200px
+
+  cite.bishop span,
+  cite.maude span,
+  cite.medcalfe span
+    min-width: 400px
+    left: calc(-200px + 1em)
+
+@media (min-width: 1085px)
+  .intro-wrap
+    width: 90%
+
+@media (min-width: 1200px)
+  .intro-wrap
+    width: 85%

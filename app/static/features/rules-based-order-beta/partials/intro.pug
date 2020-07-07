@@ -1,0 +1,52 @@
+
+- let intro = data.getOne("static/features/rules-based-order-beta/partials/intro").intro[0]
+
+section
+  .banner-wrap
+    .banner.bg-ccnr(style="background-image: url('./img/banner.jpg')")
+      .banner-title.txt-cond.txt-center Australia and the<br/>Rules–Based Order:<br/>The history of an idea
+      p.txt-s.txt-center(style="color: #fffc; position: absolute; bottom: 25%; width: 100%") by Ben Scott, Sam Roggeveen, Madeleine Nyst
+    //.ptr.txt-w.txt-xl.txt-center.icon.icon-down(
+      onclick="scrollThis('html,body','.intro-wrap',0)"
+      style="position: absolute; top: 30%; width: 100%"
+      )
+    .credits.flex.flex-cv
+      strong.txt-s.txt-tu Expert Commentary From
+      #experts.flex.flex-ch.txt-sm
+        .txt-nowrap.txt-center(style="pointer-events: none;")
+          cite.bishop.bg-ccnr
+          | <br>Julie Bishop
+        .txt-nowrap.txt-center(style="pointer-events: none; margin: 0 2em;")
+          cite.medcalfe.bg-ccnr
+          | <br>Pf. Rory Medcalf
+        .txt-nowrap.txt-center(style="pointer-events: none;")
+          cite.maude.bg-ccnr
+          | <br>Richard Maude
+          
+section
+  .intro-wrap.pv-xl
+    .intro-txt!= marked(intro)    
+    span.ib.reveal.faded.txt-tu.txt-w700.txt-s.ptr.txt-center.p-sm(
+      onclick="readMore()"
+      ) Continue reading ...
+      
+  .intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', 0)")
+    .txt-tu.txt-w700.ptr Jump to timeline &nbsp;
+    .ptr.icon.icon-down
+
+section
+  .tile-page.flex-cv.pv-md
+    .col-lg.pv-sm
+      h1 Annotated Timeline
+      .txt-m 
+        :marked
+          The timeline below highlights key moments in the evolution of the rules-based order.
+          From Kevin Rudd, the first Australian Prime Minister to use the term, through to current PM Scott Morrison,
+          we track how the idea has been shaped by each cabinet and significant global events.
+          Expert commentators offer inside knowledge along the way.
+    .tile-wrap.pv-sm: .tiles.flex-ch.flex-wrap
+      #tiles-prev.btn.txt-bl.ptr.br-max.ib(onclick="next(false)") &larr;
+      each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
+        .tile.flex.txt-center.txt-tu.txt-s.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i}, true)`)
+          div= pm
+      #tiles-next.btn.txt-bl.ptr.br-max.ib(onclick="next(true)") &rarr;

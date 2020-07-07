@@ -1,0 +1,88 @@
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.url = "https://interactives.lowyinstitute.org/features/rules-based-order-beta/"
+  - page.class = ""
+  - page.title = "Rules Based Order"
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.description = ""
+  - page.image = ""
+  - var timeline = data.getOne("static/features/rules-based-order/data").cards
+
+block page
+  include partials/intro
+   
+  section
+    each era, i in timeline
+      .wrap(class=`${era.pm} ${!i ? "show" : ""}`) 
+        .row.banner.bg-ccnr(style=`background-image: url('./img/banner-${era.pm}.jpg'); min-height: 350px`)
+          .banner-title.txt-center!= marked(era.details)
+          .banner-caption.txt-muted.txt-xs.txt-right!= era.caption
+        .row.pale: .item!= marked(era.summary)
+        
+        for card in era.events
+          if card.type == "anchor"
+            .anchor(id=`anchor-${card.year}`)= card.year            
+          else 
+            - let skipDate = card.date == "SKIP" ? "skip-date" : ""
+            .row(class=`${card.type} ${skipDate}`)
+              .item
+                if card.type == "quote"
+                  include partials/quote
+                else if card.type == "historyTimeline" 
+                  include partials/history
+                else if card.type == "excerpt" 
+                  .date.txt-sm!= card.date
+                else if card.type == "commentary"
+                  .expert.flex
+                    img.image(src=`./img/${card.id}.jpg`)
+                    div!= marked(card.expert)
+
+                if typeof card.content === 'string'
+                  .content!= marked(card.content)
+                  
+              if card.media != undefined
+                include partials/media
+        
+        
+        // PREV & NEXT PM BUTTONS
+        
+        .row.card-end(class=(i==0 || i==4 ? "nohover" : ""))
+          .flex-ch
+            .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700(
+              onclick=(i ? "next(false)" : "")
+              class=(i ? "ptr" : "disable")
+              style="border-right: 1px solid white"
+            )
+              .btn.nohover.txt-w: .icon.icon-left-arrow
+              span Prev
+            .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700.ptr(
+                onclick=(i!=4 ? "next(true)" : "")
+                class=(i!=4 ? "ptr" : "disable")
+                style="border-left: 1px solid white"
+              ) Next
+              .btn.nohover.txt-w: .icon.icon-right-arrow
+
+
+  include partials/header
+  
+  
+block append css
+  style
+    include style/_w3-animate.css
+    include:sass style/_vars.sass
+    include:sass style/_cards.sass
+    include:sass style/_helpers.sass
+    include:sass style/_header.sass
+    include:sass style/_history.sass
+    include:sass _styles.sass
+
+block append scripts
+  script(type="text/javascript" src="script/base.js")
+  script(type="text/javascript" src="script/annotation.js")
+  script(type="text/javascript" src="script/interact.js")
+  script(type="text/javascript" src="script/mini-timeline.js")
+    
+    
+    
