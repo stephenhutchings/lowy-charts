@@ -7,14 +7,14 @@ extend /partials/layout
 block append config
   - page.includeFonts = false
   - page.class = "page-article page-0"
-  - page.image = "http://interactives.lowyinstitute.org/features/covid-recovery/img/thumbnail.jpg"
+  - page.image = "http://interactives.lowyinstitute.org/features/rbo-debate/img/thumbnail.jpg"
   - page.article = __.filepath.match(/([^\/]+)\/index.pug$/)[1]
-  - page.feature = data.getOne("static/features/covid-recovery/data")
+  - page.feature = data.getOne("static/features/rbo-debate/data")
 
 block prepend head
-  - page.url = "https://interactives.lowyinstitute.org/features/covid-recovery/"
-  - page.url += "articles/" + page.article
-  - page.metaTitle = `${page.title} - COVID-19 Recovery – Lowy Insitute`
+  - page.url = "https://interactives.lowyinstitute.org/features/rbo-debate/"
+  - page.url += "responses/" + page.article
+  - page.metaTitle = `${page.title} - RBO Debate – Lowy Insitute`
 
 block page
   include header
@@ -25,13 +25,9 @@ block page
       class=(index == "index" ? "active" : null)
     )
       block
+      
+  #scroller
 
-  #scroller(
-    data-view="scroller"
-    data-pager=".pager-page"
-    data-index=".pager-index"
-    data-offset="1"
-  )
     +item("intro")
       .row
         .col-1-2
@@ -54,31 +50,26 @@ block page
             .caption.txt-ff
               block intro-caption
 
-    block scroller
+    block scroller 
 
     +item("links")
       .container
         ul.link-grid.list-bare.txt-ff
           li.col-fw.txt-sm.txt-tu.txt-hl.pv-sm Explore more topics
           for article, i in page.feature.articles
-            if i
-              if article.href != page.article
-                li.col-1-3
-                  a.txt-bare.pv-md.ph-xs(
-                    href=`/features/covid-recovery/articles/${article.href}`
-                  )
-                    span.txt-md!= typogr.typogrify(article.title)
-              else
-                li.col-1-3(id="active")
-                  .pv-md.ph-xs
-                    span.txt-md!= typogr.typogrify(article.title)
+            if article.href != page.article
+              li.col-1-3
+                a.txt-bare.pv-md.ph-xs(
+                  href=`/features/rbo-debate/articles/${article.href}`
+                )
+                  span.txt-md!= typogr.typogrify(article.title)
+            else
+              li.col-1-3(id="active")
+                .pv-md.ph-xs
+                  span.txt-md!= typogr.typogrify(article.title)
 
   include footer
 
 block append css
   style
     include:sass ../_styles.sass
-
-//block append scripts
-  script
-    include:coffee ../coffee/scroller.coffee
