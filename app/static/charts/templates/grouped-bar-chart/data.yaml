@@ -2,22 +2,23 @@ title: >
   Grouped bar chart
 
 source: >
-  Source: Lorem ipsum
+  <b>Source:</b> Lorem ipsum
 
 notes: >
-  Notes: Lorem ipsum
+  <b>Notes:</b> Lorem ipsum
 
 subtitle: >
   Subtitle goes here
 
 scale:
   minY:  0
-  maxY: 100
+  maxY: 80
+  percentage: true
   steps: 5
   minorLines: true
   dotted: [1, 3] # Index of dotted gridlines
 
-axes:
+series:
   -
     title: Pandemic performance
     rotate: false
@@ -26,6 +27,7 @@ axes:
       - Middle powers
       - Authoritarian
       - Democratic
+      - Test
   -
     title: Better performing
     color: "dark"
@@ -34,6 +36,7 @@ axes:
       - 52
       - 44
       - 51
+      - 50
   -
     title: Worse performing
     color: "highlight"
@@ -41,12 +44,14 @@ axes:
       - 71
       - 48
       - 56
-      - 49
+      - 56
+      - 40
   -
     title: Decent performing
     color: "grey"
     values:
       - 70
       - 46
+      - 46
       - 55
-      - 44
+      - 60
