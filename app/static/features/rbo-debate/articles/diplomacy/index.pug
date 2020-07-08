@@ -1,0 +1,39 @@
+//-
+  This is an example issue item page with the content removed. The blocks
+  relate to those defined in the layout that's extended – in this case that's
+  the issue template that we define here...
+
+extend ../../partials/issue
+
+block append config
+  - page.title = "Diplomacy"
+  - page.expert = "Alex Oliver"
+  - page.expertrole = "Director of Research"
+
+block intro-image
+  img.bg-img(data-src="../../img/diplomacy.jpg")
+
+block intro-caption
+  :marked
+    Photo: <a href="http://www.inkmedia.eu/">Ink Media / Flickr</a>
+
+block intro-description
+    :marked
+      Post-COVID-19 diplomacy will be&nbsp;refinanced
+
+block scroller
+  +item(1)
+    .row
+      .col.p-lg.bg-ff.txt-expert-content
+        .block.txt-sans.txt-md.txt-dk.pv-lg.txt-left
+          .txt-border
+            :marked
+              Diplomacy, if it is noticed at all by the average citizen, is generally regarded as the preserve of an elite foreign policy community. Only in times of crisis do people become aware that the nation’s diplomatic network performs a crucial service — that of providing consular assistance to citizens abroad. Yet that service is frequently found wanting, even as entire foreign ministries mobilise to protect their stranded nationals. Previous crises have catalysed changes in the ways diplomatic networks function; a crisis on the global scale of COVID-19 will permanently reshape them. 
+
+              Many of the world’s diplomatic networks have been in retreat since the global financial crisis of 2008. Embassies and consulates were closed, diplomats returned to headquarters, staff numbers reduced, sometimes dramatically. The former diplomatic superpowers — France, the United Kingdom, Spain, Russia — all cut back the size of their networks, some by almost one fifth. In Australia’s case, the number of our diplomats posted to overseas missions is smaller than it was 30 years ago, yet our GDP is six times larger. Expenditure on diplomacy has stagnated while investment in defence has burgeoned.  
+
+              In April 2020, the scale of the consular crisis has become crystal clear. Of Australia’s one million-strong diaspora and several hundred thousand short-term trip-makers, 200,000 have returned home in the past three weeks. The United Kingdom is reportedly spending £75 million to repatriate 300,000 of its citizens currently abroad. The United States has repatriated 43,000 Americans from 78 countries since late January. The list goes on.
+
+              Emergency consular assistance on this scale is unprecedented. It dwarfs the repatriations following the Arab Spring revolts, or even the Lebanon crisis in 2006. In the aftermath, as with those other crises, ministries of foreign affairs across the globe will trawl through the ‘lessons learned’ and make permanent changes to their crisis management plans. Where their networks are thin (such as Australia’s in parts of South America), regional rapid response hubs will be created or boosted. New consulates may be opened in destinations becoming more popular with tourists. Consular ranks will be augmented with regional specialists. Crisis contingency funds will need boosting.
+
+              All of this means governments will need to rethink their approach to diplomacy. The paring-back and efficiency drives in foreign ministries have stripped them of capacity, and with it the ability to respond with agility to crises. Those crises expose governments to hyper-criticism by citizens striking out when they feel most vulnerable. That sort of pressure is hard for governments to ignore. If it leads to more sensible investment in diplomatic resourcing, that’s no bad thing.
