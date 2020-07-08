@@ -1,16 +1,18 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/pandemic-response/chart-power-v2/data"
+  - var datapath = "static/charts/templates/grouped-bar-chart/data"
+  - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
-
+  - chart = page
+  - colors = []
   
 block page
-  - chart = page.charts[0]
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
-      .chart-title= chart.axes[0].title
+      .chart-title= chart.title
       .chart-subtitle.txt-muted.txt-sm.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - scale = chart.scale
@@ -20,33 +22,37 @@ block page
         
         svg(height="100%" width="100%")
         
+          // Y-Axis labels
           svg(height="100%")
-            - let vn = 3
-            - let min = 0
-            - let max = 75
-            for n, i in new Array(vn+1)
-              - y = 1 - (i / vn)
+            - let steps = chart.scale.steps-1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
-                  = min + (i/vn) * (max - min) + "%"
-                  
-          svg(height="100%")
-            for n, i in new Array(vn)
-              - y = (i / vn)
-              svg
-                line(
-                  x1="0%"
-                  y1=toPercent(y)
-                  x2="100%"
-                  y2=toPercent(y)
-                  stroke="#5552"
-                  stroke-dasharray=(i==1 ? "" : 5)
-                ) 
+                  = chart.scale.minY + (i/steps) * (chart.scale.maxY - chart.scale.minY) + "%"
+                
+          // Y-Axis minor lines
+          if chart.scale.minorLines
+            svg(height="100%")
+              for n, i in new Array(steps)
+                - y = (i / steps)
+                svg
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5552"
+                    stroke-dasharray=(chart.scale.dotted.includes(steps-i) ? 5 : "")
+                  ) 
 
           g
             for y1, i in chart.axes[1].values
               - y2 = chart.axes[2].values[i]
               - label = chart.axes[0].values[i]
+              - colors.push(chart.colors[chart.axes[i].color])
+              - console.log(colors)
+
               svg(
                 x=toPercent(fx(i))
                 y=toPercent(0)
@@ -58,8 +64,9 @@ block page
                     width="50%"
                     y=toPercent(fy(chart.scale.maxY - y1))
                     height=toPercent(fy(y1))
-                    fill="#3CC6C0"
+                    fill=`black`
                   )
+                  
                   text.chart-value(
                     x="50%"
                     y=toPercent(fy(chart.scale.maxY - y1))
@@ -83,6 +90,7 @@ block page
                   )
                     = y2+'%'
 
+                // X-Axis labels
                 svg(x="50%" y="100%")
                   text.x-label(
                     text-anchor="middle"
@@ -92,15 +100,14 @@ block page
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
-          li.legend-item
-            span.legend-item-box(style="background:#3CC6C0")
-            span.legend-item-label= chart.axes[1].title
-          li.legend-item
-            span.legend-item-box(style="background:#394754")
-            span.legend-item-label= chart.axes[2].title
+          for ax, i in new Array(chart.axes.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.axes[i].color]}`)
+                span.legend-item-label= chart.axes[i].title
 
-    
-        .chart-notes.txt-left.txt-muted Country performance in response to COVID-19 is determined by a composite score based on six equally weighted indicators: total confirmed cases and deaths, total confirmed cases and deaths per million people, total tests per confirmed case and per thousand people.
+      .chart-source.txt-left.txt-muted= chart.source
+      .chart-notes.txt-left.txt-muted= chart.notes
       
 
 block append css

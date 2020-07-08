@@ -1,35 +1,52 @@
 title: >
-  Pandemic performance
+  Grouped bar chart
 
 source: >
-  Source: XX
+  Source: Lorem ipsum
 
-charts:
+notes: >
+  Notes: Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+scale:
+  minY:  0
+  maxY: 100
+  steps: 5
+  minorLines: true
+  dotted: [1, 3] # Index of dotted gridlines
+
+axes:
   -
-    subtitle: >
-      COVID-19 response: Proportion of better and worse performing countries by category
-    scale:
-      minY:  0
-      maxY: 75
-    axes:
-      -
-        title: Pandemic performance
-        values:
-          - Great powers
-          - Middle powers
-          - Authoritarian
-          - Democratic
-      -
-        title: Better performing
-        values:
-          - 29
-          - 52
-          - 44
-          - 51
-      -
-        title: Worse performing
-        values:
-          - 71
-          - 48
-          - 56
-          - 49
+    title: Pandemic performance
+    rotate: false
+    values:
+      - Great powers
+      - Middle powers
+      - Authoritarian
+      - Democratic
+  -
+    title: Better performing
+    color: "dark"
+    values:
+      - 29
+      - 52
+      - 44
+      - 51
+  -
+    title: Worse performing
+    color: "highlight"
+    values:
+      - 71
+      - 48
+      - 56
+      - 49
+  -
+    title: Decent performing
+    color: "grey"
+    values:
+      - 70
+      - 46
+      - 55
+      - 44
