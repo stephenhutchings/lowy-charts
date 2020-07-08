@@ -1,0 +1,35 @@
+title: >
+  Pandemic performance
+
+source: >
+  Source: XX
+
+charts:
+  -
+    subtitle: >
+      COVID-19 response: Proportion of better and worse performing countries by category
+    scale:
+      minY:  0
+      maxY: 75
+    axes:
+      -
+        title: Pandemic performance
+        values:
+          - Great powers
+          - Middle powers
+          - Authoritarian
+          - Democratic
+      -
+        title: Better performing
+        values:
+          - 29
+          - 52
+          - 44
+          - 51
+      -
+        title: Worse performing
+        values:
+          - 71
+          - 48
+          - 56
+          - 49
