@@ -1,0 +1,52 @@
+//-
+  This is an example issue item page with the content removed. The blocks
+  relate to those defined in the layout that's extended – in this case that's
+  the issue template that we define here...
+
+extend ../../partials/issue
+
+block append config
+  - page.title = "Curing the G20's irrelevance"
+  - page.expert = "Stephen Grenville"
+  - page.expertrole = "Nonresident Fellow"
+  
+block intro-image
+  img.bg-img(data-src="../../img/g20.jpg")
+
+block intro-caption
+  :marked
+    Photo:<br><a href="https://www.flickr.com/photos/palazzochigi/22643723817/in/photostream/">Palazzo Chigi / Flickr</a>
+
+block intro-description
+    :marked
+      “Australia has more reason than most members to strive for substance in the G20’s next meeting, as the Group is in danger of slipping into irrelevance.”
+
+block scroller
+  +item(1)
+    .row
+      .col.p-lg.bg-ff.txt-expert-content
+        .block.txt-sans.txt-md.txt-dk.pv-lg.txt-left
+          .txt-border
+            :marked
+              A pandemic provides the perfect opportunity for a global coordinator to demonstrate its worth. Health and economic issues have international ramifications aplenty. The G20 — founded to provide precisely this kind of high-level global coordination — has been barely visible.
+              
+              In normal times, the G20 is little more than a photo opportunity for leaders, with useful chats on the sidelines. The hope was that when substantive issues occurred, G20 would rise to the challenge.
+              
+              This, however, requires leadership. UK Prime Minister Gordon Brown provided such leadership in 2009, with coordination of fiscal stimulus. This modest initiative fostered the hope that, when needed, the G20 could again play a global coordinating role.
+              
+              The G20 is currently chaired by Saudi Arabia, which has little capacity for global leadership. President Trump is actively unsympathetic. Other members are absorbed with domestic aspects. Unsurprisingly, the ad hoc virtual meeting of leaders in March produced nothing beyond platitudes.
+              
+              The meeting came too early in the crisis, when leaders were distracted. The virus blame game between America and China continued unabated. Since then, the trade spat has deepened into a strategic tussle, with other countries sucked into the vortex. ‘Peak globalisation’ is now behind us. 
+              
+              This is the current inhospitable environment for the G20. It may not matter for G7 countries, which have retained their own exclusive global club. But for mid-sized countries like Australia, heavily dependent on globalisation for their high living standards, the G20 provides a rare opportunity to play on the global stage.
+              
+              What specific proposals could Australia develop for the November Leaders’ Summit? 
+              
+              One urgent health issue stands out. A return to normality depends crucially on a vaccine. If one is found, the next issue is to speed its production and ensure an equitable distribution, prioritising those in greatest need. Leaving this to individual countries and companies is unlikely to be optimal. A few fine words in a communiqué is not enough. A plan with specific commitments is needed.
+              
+              On the economy, here are two specific proposals: 
+              
+              * When the G20 finance ministers met in April, they agreed on a foreign-debt moratorium for 76 of the poorest countries. But it is not only the poorest nations that need debt relief: the substantial US dollar-denominated debt built up over recent years by many emerging economies is at risk of disruptive defaults as the pandemic worsens. This could trigger renewed capital outflows. Both debtors and creditors could benefit from delaying repayment until the uncertainty lessens, but someone needs to initiate a proposal. In the longer term, formal debt-rescheduling procedures are needed, especially for sovereign debt. But the urgent low-cost task is simply to postpone repayments.
+              * Another issuance of International Monetary Fund (IMF) Special Drawing Rights would be very timely for the emerging economies and would have minimal cost for the major Fund members.
+              
+              Gordon Brown’s 2009 initiative is remembered because it was relevant, substantive, and he lobbied tirelessly in support. Australia has more reason than most members to strive for substance in the G20’s next meeting, as the Group is in danger of slipping into irrelevance. These three proposals would show what the G20 can do.
