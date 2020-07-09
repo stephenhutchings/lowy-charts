@@ -1,5 +1,6 @@
 
 - let intro = data.getOne("static/features/rules-based-order/partials/intro").intro[0]
+- let themes = data.getOne("static/features/rules-based-order/partials/intro").themes[0]
 
 section
   .banner-wrap
@@ -24,15 +25,18 @@ section
           | <br>Richard Maude
           
 section
-  .intro-wrap.pv-xl
+  .intro-wrap.pv-xl(style="border-bottom:2px solid #002b45")
     .intro-txt!= marked(intro)    
     span.ib.reveal.faded.txt-tu.txt-w700.txt-s.ptr.txt-center.p-sm(
       onclick="readMore()"
       ) Continue reading ...
       
-  .intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', 0)")
+  //.intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', 0)")
     .txt-tu.txt-w700.ptr Jump to timeline &nbsp;
     .ptr.icon.icon-down
+
+  .intro-wrap.pv-xl(style="max-height: none")
+    .intro-txt!= marked(themes)
 
 section
   .tile-page.flex-cv.pv-md
