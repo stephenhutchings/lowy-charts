@@ -35,7 +35,8 @@ blockquote
     vertical-align: sub
     padding: 0 5px
 
-.intro-txt h2
+.intro-txt h2,
+.themes-txt h2
   margin-top: 2em
 
 .intro-txt blockquote
@@ -85,14 +86,17 @@ blockquote
     width: 2.5em
 
 
-.intro-wrap
+.intro-wrap,
+.themes-wrap
   margin: 0 auto
   box-sizing: border-box
   position: relative
-  max-height: 90vh
   overflow: hidden
   padding-left: 1em
   padding-right: 1em
+
+.intro-wrap
+  max-height: 100vh
 
   .faded
     position: absolute
@@ -106,6 +110,7 @@ blockquote
   box-sizing: border-box
 
 .intro-txt h1,
+.themes-txt h1,
 .tile-page h1
   padding: 1em 0 .75em 0
   margin-bottom: 1.4em
@@ -256,7 +261,8 @@ cite
 
 @media (min-width: 400px)
 
-  .intro-wrap
+  .intro-wrap,
+  .themes-wrap
     padding-left: 10%
     padding-right: 10%
 
@@ -266,7 +272,8 @@ cite
     &-title
       font-size: 40px
 
-  .intro-wrap
+  .intro-wrap,
+  .themes-wrap
     width: 100%
     padding-left: 100px
     padding-right: 100px
@@ -299,7 +306,8 @@ cite
 
 
 @media (min-width: 900px)
-  .intro-wrap
+  .intro-wrap,
+  .themes-wrap
     width: 100%
     padding-left: 200px
     padding-right: 200px
@@ -311,9 +319,11 @@ cite
     left: calc(-200px + 1em)
 
 @media (min-width: 1085px)
-  .intro-wrap
+  .intro-wrap,
+  .themes-wrap
     width: 90%
 
 @media (min-width: 1200px)
-  .intro-wrap
+  .intro-wrap,
+  .themes-wrap
     width: 85%
