@@ -10,18 +10,19 @@ notes: >
 subtitle: >
   Subtitle goes here
 
-scale:
+axes:
   minY:  0
   maxY: 80
+  stepsY: 5
+  rotateX: false
   percentage: true
-  steps: 5
   minorLines: true
   dotted: [1, 3] # Index of dotted gridlines
 
 series:
   -
     title: Pandemic performance
-    rotate: false
+
     values:
       - Great powers
       - Middle powers
