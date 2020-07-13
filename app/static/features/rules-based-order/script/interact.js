@@ -4,6 +4,20 @@ function scrollThis(p, c, o) {
   $(p).animate({scrollTop: $(c)[0].offsetTop + o}, 400);
 }
 
+// TOGGLE THEMES/TIMELINE INDEX
+const menu = document.getElementById('theme-menu');
+menu.querySelectorAll('h2').forEach( (btn) => {
+  btn.addEventListener('click', (e) => {
+    links = e.target.nextElementSibling;
+    h = links.style.maxHeight;
+    links.style.maxHeight = (!h || h=='0px') ? '200vh' : 0;
+
+    e.target.querySelector('span').classList.toggle('icon-right-sm');
+    e.target.querySelector('span').classList.toggle('icon-down-sm');
+
+  });
+});
+
 // on PM click
 function togglePM(i, scroll) {
   let pms = ["rudd", "gillard", "abbott", "turnbull", "morrison"];

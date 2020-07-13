@@ -13,56 +13,55 @@ block append config
 block page
   include partials/intro
    
-  section
-    each era, i in timeline
-      .wrap(class=`${era.pm} ${!i ? "show" : ""}`) 
-        .row.banner.bg-ccnr(style=`background-image: url('./img/banner-${era.pm}.jpg'); min-height: 350px`)
-          .banner-title.txt-center!= marked(era.details)
-          .banner-caption.txt-muted.txt-xs.txt-right!= era.caption
-        .row.pale: .item!= marked(era.summary)
-        
-        for card in era.events
-          if card.type == "anchor"
-            .anchor(id=`anchor-${card.year}`)= card.year            
-          else 
-            - let skipDate = card.date == "SKIP" ? "skip-date" : ""
-            .row(class=`${card.type} ${skipDate}`)
-              .item
-                if card.type == "quote"
-                  include partials/quote
-                else if card.type == "historyTimeline" 
-                  include partials/history
-                else if card.type == "excerpt" 
-                  .date.txt-sm!= card.date
-                else if card.type == "commentary"
-                  .expert.flex
-                    img.image(src=`./img/${card.id}.jpg`)
-                    div!= marked(card.expert)
+  each era, i in timeline
+    .wrap(class=`${era.pm} ${!i ? "show" : ""}`) 
+      .row.banner.bg-ccnr(style=`background-image: url('./img/banner-${era.pm}.jpg'); min-height: 350px`)
+        .banner-title.txt-center!= marked(era.details)
+        .banner-caption.txt-muted.txt-xs.txt-right!= era.caption
+      .row.pale: .item!= marked(era.summary)
+      
+      for card in era.events
+        if card.type == "anchor"
+          .anchor(id=`anchor-${card.year}`)= card.year            
+        else 
+          - let skipDate = card.date == "SKIP" ? "skip-date" : ""
+          .row(class=`${card.type} ${skipDate}`)
+            .item
+              if card.type == "quote"
+                include partials/quote
+              else if card.type == "historyTimeline" 
+                include partials/history
+              else if card.type == "excerpt" 
+                .date.txt-sm!= card.date
+              else if card.type == "commentary"
+                .expert.flex
+                  img.image(src=`./img/${card.id}.jpg`)
+                  div!= marked(card.expert)
 
-                if typeof card.content === 'string'
-                  .content!= marked(card.content)
-                  
-              if card.media != undefined
-                include partials/media
-        
-        
-        // PREV & NEXT PM BUTTONS
-        
-        .row.card-end(class=(i==0 || i==4 ? "nohover" : ""))
-          .flex-ch
-            .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700(
-              onclick=(i ? "next(false)" : "")
-              class=(i ? "ptr" : "disable")
-              style="border-right: 1px solid white"
-            )
-              .btn.nohover.txt-w: .icon.icon-left-arrow
-              span Prev
-            .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700.ptr(
-                onclick=(i!=4 ? "next(true)" : "")
-                class=(i!=4 ? "ptr" : "disable")
-                style="border-left: 1px solid white"
-              ) Next
-              .btn.nohover.txt-w: .icon.icon-right-arrow
+              if typeof card.content === 'string'
+                .content!= marked(card.content)
+                
+            if card.media != undefined
+              include partials/media
+      
+      
+      // PREV & NEXT PM BUTTONS
+      
+      .row.card-end(class=(i==0 || i==4 ? "nohover" : ""))
+        .flex-ch
+          .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700(
+            onclick=(i ? "next(false)" : "")
+            class=(i ? "ptr" : "disable")
+            style="border-right: 1px solid white"
+          )
+            .btn.nohover.txt-w: .icon.icon-left-arrow
+            span Prev
+          .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700.ptr(
+              onclick=(i!=4 ? "next(true)" : "")
+              class=(i!=4 ? "ptr" : "disable")
+              style="border-left: 1px solid white"
+            ) Next
+            .btn.nohover.txt-w: .icon.icon-right-arrow
 
 
   include partials/header

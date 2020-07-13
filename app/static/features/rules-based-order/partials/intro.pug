@@ -25,17 +25,43 @@ section
           | <br>Richard Maude
           
 section
-  .intro-wrap.pv-xl(style="border-bottom:2px solid #002b45")
+  .section-wrap.intro-wrap.pv-xl
     .intro-txt!= marked(intro)    
     span.ib.reveal.faded.txt-tu.txt-w700.txt-s.ptr.txt-center.p-sm(
       onclick="readMore()"
       ) Continue reading ...
       
+section.dark
+  .section-wrap.pv-lg
+    h1 Meanings of the RBO
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  #theme-menu.flex.theme-links
+    .col-2-3
+      h2 Themes &emsp;
+        span.icon.icon-right-sm.icon-md
+      .flex.theme-links.txt-m
+        .col-1-2
+          ul
+            each theme in ["Centred on multilateral organisations", "Reflecting our values", "Delivering 70 years of peace and prosperity", "Constraining power", "US dependent"]
+              li= theme
+        .col-1-2
+          ul
+            each theme in ["Shaping China", "Friends in the region and around the globe", "Under unprecedented pressure", "Saving and evolving", "Tangible deeds"]
+              li= theme
+    .col-1-3
+      h2 Governments &emsp;
+        span.icon.icon-right-sm.icon-md
+      .theme-links
+        ul
+          each government in ["Kevin Rudd (2007&mdash;2010)", "Julia Gillard (2010&mdash;2013)", "Tony Abbott (2013&mdash;2015)", "Malcolm Turnbull (2015&mdash;2018)", "Scott Morrison (2018&mdash; )"]
+            li!= government
+
   //.intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', 0)")
     .txt-tu.txt-w700.ptr Jump to timeline &nbsp;
     .ptr.icon.icon-down
 
-  .themes-wrap.pv-xl(style="max-height: none")
+section
+  .section-wrap.pv-xl(style="max-height: none")
     .themes-txt!= marked(themes)
 
 section

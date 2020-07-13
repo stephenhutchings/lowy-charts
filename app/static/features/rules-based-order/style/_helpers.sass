@@ -73,7 +73,8 @@
   display: inline-block
 .br-max
   border-radius: 100%
-.rot-90
+.rot-90,
+.rot-90:before
   transform: rotate(90deg)
 .flip
   transform: scale(-1)
@@ -89,9 +90,23 @@
   color: $color-ff
   background-color: $color-bl-dk
 
+.fill
+  height: 100vh
+  min-height: 100vh
+  max-height: 100vh
+  max-width: 100vw
+  box-sizing: border-box
+  overflow: hidden
+
 .col-1-2
   width: 50%
   flex-basis: 50%
+.col-1-3
+  width: 33.3%
+  flex-basis: 33.3%
+.col-2-3
+  width: 66.7%
+  flex-basis: 66.7%
 
 .txt-xxl, .txt-xl,
 .txt-l, .txt-ml,
