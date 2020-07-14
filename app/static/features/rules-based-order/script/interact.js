@@ -1,11 +1,14 @@
 
 
-function scrollThis(p, c, o) {
-  $(p).animate({scrollTop: $(c)[0].offsetTop + o}, 400);
+function scrollThis(p, c, o, i) {
+  i = i || 0;
+  $(p).animate({scrollTop: $(c)[i].offsetTop + o}, 400);
 }
 
 // TOGGLE THEMES/TIMELINE INDEX
 const menu = document.getElementById('theme-menu');
+const themeBody = document.querySelector('.themes-txt');
+
 menu.querySelectorAll('h2').forEach( (btn) => {
   btn.addEventListener('click', (e) => {
     links = e.target.nextElementSibling;
@@ -14,9 +17,21 @@ menu.querySelectorAll('h2').forEach( (btn) => {
 
     e.target.querySelector('span').classList.toggle('icon-right-sm');
     e.target.querySelector('span').classList.toggle('icon-down-sm');
-
   });
 });
+
+menu.querySelectorAll('li').forEach( (el, i) => {
+  el.addEventListener('click', (e) => {
+    if (i < 10) {
+      y = themeBody.querySelectorAll('h2')[i].getBoundingClientRect().top + window.pageYOffset;
+      $('html,body').animate({scrollTop: y-70}, 400);
+    }
+    else {
+      togglePM(i-10, true);
+    }
+  });
+});
+
 
 // on PM click
 function togglePM(i, scroll) {
