@@ -14,6 +14,7 @@ window.addEventListener('scroll', scrollCheck);
 function onLoad() {
   resetWrapHeight('.tile-wrap','.tiles');
   createAnnotations();
+  initThemeMenu();
   setHistoryTimelines();
   togglePM(0, false);
 }
