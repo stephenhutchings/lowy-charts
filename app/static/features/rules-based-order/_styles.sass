@@ -241,6 +241,7 @@ cite
     line-height: 1.6
     letter-spacing: 0.4px
     box-sizing: border-box
+    z-index: 100
     text-shadow: none
     display: none
 
@@ -353,7 +354,7 @@ cite
     padding-right: 200px
 
   #theme-menu
-    padding: 2em 0
+    padding: 0 0 2em
     margin: auto
 
   .theme-links
@@ -394,13 +395,14 @@ cite
         height: 1px
         width: 0
         background: none repeat scroll 0 0 transparent
-        transition: width 0.1s ease 0s
+        transition: width 0.2s ease 0s, opacity 0.3s ease 0s
         content: ""
-        background: $color-qt
-        opacity: 1
+        background: $color-bg
+        opacity: 0
 
       &:hover:after
         width: 100%
+        opacity: 0.6
 
 
   cite.bishop span,
