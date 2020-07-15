@@ -193,14 +193,17 @@ section h1
   ul
     list-style-type: none
     padding: .25em 0
-    // display: none
 
   li
     padding: .5em 0 .5em 1.5em
     font-weight: 500
-    cursor: pointer
 
+    a
+      position: relative
+      text-decoration: none
 
+    a:hover
+        color: $color-ff
 
 h2 cite,
 h3 cite
@@ -342,8 +345,8 @@ cite
     text-align: justify
 
 
-
 @media (min-width: 900px)
+
   .section-wrap
     width: 100%
     padding-left: 200px
@@ -380,6 +383,25 @@ cite
 
     li
       padding: .5rem 1rem
+
+    li a
+
+      &:after
+        display: block
+        position: absolute
+        left: 0
+        bottom: -.3em
+        height: 1px
+        width: 0
+        background: none repeat scroll 0 0 transparent
+        transition: width 0.1s ease 0s
+        content: ""
+        background: $color-qt
+        opacity: 1
+
+      &:hover:after
+        width: 100%
+
 
   cite.bishop span,
   cite.maude span,
