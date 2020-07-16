@@ -169,6 +169,10 @@ block page
       != page.source
 
   script.
+  
+    const lightbox = document.querySelector("#lightbox");
+    const inset = document.querySelector("#inset");
+    const icon = document.querySelector(".icon path");
     
     function positionInset(screenSize) {
       w = screenSize == 'small' ? 65 : 36;
@@ -177,28 +181,32 @@ block page
       document.querySelector("#inset").setAttribute('x', x + "%");
     }
     
-    function update() {
-      window.innerWidth < 550 ? positionInset('small') : positionInset('large');
-    }
-        
-    document.addEventListener('DOMContentLoaded', update);
-    window.onresize = update;
-    
-    const lightbox = document.querySelector("#lightbox");
-    const inset = document.querySelector("#inset");
-    const icon = document.querySelector(".icon path");
-    
-    lightbox.addEventListener('mouseenter', () => {
+    function hoveron() {
       inset.style.opacity = 1;
       icon.setAttribute('stroke-width',"0");
       lightbox.style.fill = "#002b4522";
-    });
+    }
     
-    lightbox.addEventListener('mouseleave', () => {
+    function hoveroff() {
       inset.style.opacity = 0;
       icon.setAttribute('stroke-width',"1");
       lightbox.style.fill = "transparent";
-    });
+    }
+    
+    function update() {
+      window.innerWidth < 550 ? positionInset('small') : positionInset('large');
+    }
+    
+    function startup() {
+      lightbox.addEventListener('mouseenter', hoveron);
+      lightbox.addEventListener('touchstart', hoveron);
+      lightbox.addEventListener('mouseleave', hoveroff);
+      lightbox.addEventListener('touchend', hoveroff);
+      update();
+    }
+    
+    document.addEventListener('DOMContentLoaded', startup);
+    window.onresize = update;
 
 
 block append css
