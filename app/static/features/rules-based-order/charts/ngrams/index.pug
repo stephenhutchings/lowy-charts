@@ -12,6 +12,7 @@ block page
     .col-wrap.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
+        - inset = page.charts[1]
         - scale = chart.scale
         - fx = (i, len) => (i) / (len-1)
         - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
@@ -63,82 +64,85 @@ block page
                   ))).join(",")
                 )
 
-            for item, i in chart.legend
-              svg(x="100%")
-                - n = chart.axes[1].values.length - 1
-                text(
-                  y=toPercent(fy(scale.maxY - chart.axes[1].values[n][i] ))
-                  class="label"
-                  text-anchor="end"
-                  transform="translate(-20 10)"
-                  fill=chart.colors[i]
-                )
-                  = `"${item}"`
-              
-      .col-md.flex-grow.flex.flex-col
-        - chart = page.charts[1]
-        - scale = chart.scale
-        - fx = (i, len) => (i) / (len-1)
-        - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
-
-        .chart.flex-grow: .chart-content
-          svg(height="100%" width="100%")
-            svg(height="100%")
-              for n, i in new Array(6)
-                - y = 1 - (i / 5)
-                svg(y=toPercent(y))
-                  text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i/5) * (scale.maxY - scale.minY) + "%"
-                    
-            svg(width="100%" y="100%")
-              for year, i in chart.axes[0].values
-                svg(x=toPercent(fx(i, chart.axes[0].values.length)))
-                  text(
-                    text-anchor="end"
-                    transform="rotate(-30) translate(-2 18)"
-                  )
-                    = year
-                    
-            svg(width="100%" height="100%")
-              for n, i in new Array(6)
-                - y = 1 - (i / 5)
-                line(
-                  x1="0" y1=toPercent(y) x2="100%" y2=toPercent(y)
-                  stroke="#ddd"
-                  stroke-width=.5
-                )
-
-            svg(
-              width="100%"
-              height="100%"
+            // INSET
+            - let len = chart.axes[1].values.length
+            svg#lightbox(
+              x=toPercent((len-17)/len)
+              y=100*fy(scale.maxY - 1.3)+"%"
+              width=100*fx(17, len)+"%"
+              height=100*(fy(1.3) - fy(-0.1))+"%"
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             )
-              for item, i in chart.legend
+              rect(
+                width=100
+                height=100
+                fill="transparent"
+                stroke="black"
+                stroke-width=.25
+              )  
+            
+            svg#inset(
+              x=toPercent((len-17)/len)
+              y=toPercent(fy(scale.maxY - 9))
+              width=toPercent(fx(17, len))
+              height=toPercent(fy(8.5) - fy(2))
+              viewBox="0 0 100 100"
+              preserveAspectRatio="xMinYMax"
+            )
+          
+              rect(
+                x=-20
+                y=-10
+                width=135
+                height=125
+                fill="white"
+                stroke="black"
+                stroke-width=.25
+              )
+                            
+              for item, i in inset.legend
                 polyline(
                   fill="none"
                   stroke=chart.colors[i]
                   stroke-linejoin="round"
-                  points=(chart.axes[1].values.map((y, ix, a) => 
+                  points=(inset.axes[1].values.map((y, ix, a) => 
                     y[i] == null ? "" : (
                     [
                       100 * fx(ix, a.length),
-                      100 * fy(scale.maxY - y[i])
+                      100 * fy(scale.maxY - 10*y[i])
                     ].join(" ")
                   ))).join(",")
                 )
+                
+              svg(height="100")
+                for n, i in new Array(6)
+                  - y = 1 - (i / 5)
+                  svg(y=toPercent(y))
+                    line( x1="0" y1=y x2="100" y2=y stroke=(i ? "#0002" : "#0005") stroke-width=.25 stroke-dasharray=(i ? ".5" : "")) 
+                    text(text-anchor="end" transform="translate(-3 1.75) scale(0.35)")
+                      = (scale.minY + (i/5) * (scale.maxY - scale.minY))/10 + (i==0 ? "" : "%")
+                  
 
-            for item, i in chart.legend
+              svg(width="100" y="100")
+                for year, i in [1992, 2000, 2008]
+                  svg(x=toPercent(fx(i, 3)))
+                    text( text-anchor="middle" transform="translate(0 9) scale(0.35)" )
+                      = year
+                
+
+            //for item, i in chart.legend
               svg(x="100%")
                 - n = chart.axes[1].values.length - 3
                 text(
-                  class="label"
                   y=toPercent(fy(scale.maxY - chart.axes[1].values[n][i] ))
+                  class="label"
                   text-anchor="end"
                   transform="translate(0 -15)"
                   fill=chart.colors[i]
                 )
                   = `"${item}"`
+
 
 
     //- .chart-notes.txt-muted.txt-left
@@ -152,7 +156,7 @@ block append css
   style
     :sass
       .wrapper
-        height: 500px
+        height: 550px
         overflow: visible
         position: relative
 
@@ -179,15 +183,10 @@ block append css
 
       .chart-content
         position: absolute
-        top: 40px
-        left: 50px
-        right: 20px
+        top: 30px
+        left: 40px
+        right: 50px
         bottom: 40px
-        
-        .col-md:first-child &
-        right: 10px
-        .col-md:last-child &
-          left: 20px
 
       .chart-content > svg
         border-bottom: 1px solid #ccc
@@ -245,23 +244,6 @@ block append css
         font-weight: 500
         font-size: 13px
 
-      @media screen and (max-width: 660px)
-        .chart-content
-          .col-md:first-child &
-            left: 40px
-            top: 10px
-            bottom: 20px
-          .col-md:last-child &
-            left: 35px
-            top: 40px
-            bottom: 0
-            
-        .col-wrap
-          display: block
-          height: 100%
-        .col-md
-          width: 100%
-          height: 50%
-          padding-bottom: 8px
+      @media screen and (max-width: 650px)
         .label
           font-size: 12px

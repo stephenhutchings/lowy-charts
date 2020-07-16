@@ -14,54 +14,6 @@ source: >
 charts:
   -
     title: >
-      Rules-based international order
-
-    scale:
-      minY: 0
-      maxY: 1
-
-    legend:
-      - rules-based international order
-
-    colors:
-      - "#002a45"
-
-    axes:
-      -
-        title: Year
-        values:
-          - 1992
-          - 1994
-          - 1996
-          - 1998
-          - 2000
-          - 2002
-          - 2004
-          - 2006
-          - 2008
-      -
-        title: Occurence
-        values:
-          - [ 0.00 ]
-          - [ 0.00 ]
-          - [ 0.00 ]
-          - [ 0.17 ]
-          - [ 0.17 ]
-          - [ 0.23 ]
-          - [ 0.25 ]
-          - [ 0.29 ]
-          - [ 0.31 ]
-          - [ 0.37 ]
-          - [ 0.30 ]
-          - [ 0.50 ]
-          - [ 0.56 ]
-          - [ 0.65 ]
-          - [ 0.71 ]
-          - [ 0.82 ]
-          - [ 0.94 ]
-
-  -
-    title: >
       RBO vs. Liberal International Order
 
     scale:
@@ -137,3 +89,51 @@ charts:
           - [ 0.71, 8.95 ]
           - [ 0.82, 9.07 ]
           - [ 0.94, 7.85 ]
+
+  -
+    title: >
+      Rules-based international order
+
+    scale:
+      minY: 0
+      maxY: 1
+
+    legend:
+      - rules-based international order
+
+    colors:
+      - "#002a45"
+
+    axes:
+      -
+        title: Year
+        values:
+          - 1992
+          - 1994
+          - 1996
+          - 1998
+          - 2000
+          - 2002
+          - 2004
+          - 2006
+          - 2008
+      -
+        title: Occurence
+        values:
+          - [ 0.00 ]
+          - [ 0.00 ]
+          - [ 0.00 ]
+          - [ 0.17 ]
+          - [ 0.17 ]
+          - [ 0.23 ]
+          - [ 0.25 ]
+          - [ 0.29 ]
+          - [ 0.31 ]
+          - [ 0.37 ]
+          - [ 0.30 ]
+          - [ 0.50 ]
+          - [ 0.56 ]
+          - [ 0.65 ]
+          - [ 0.71 ]
+          - [ 0.82 ]
+          - [ 0.94 ]
