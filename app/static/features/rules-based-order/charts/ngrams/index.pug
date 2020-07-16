@@ -64,24 +64,41 @@ block page
                   ))).join(",")
                 )
 
-            // INSET
+            // LIGHTBOX
             - let len = chart.axes[1].values.length
             svg#lightbox(
-              x=toPercent((len-17)/len)
+              x=toPercent((len-16)/len)
               y=100*fy(scale.maxY - 1.3)+"%"
-              width=100*fx(17, len)+"%"
-              height=100*(fy(1.3) - fy(-0.1))+"%"
+              width=100*fx(16, len)+"%"
+              height=100*(fy(1.3) - fy(-0.05))+"%"
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             )
               rect(
                 width=100
                 height=100
-                fill="transparent"
-                stroke="black"
-                stroke-width=.25
-              )  
+              )
+              
+            // ZOOM ICON
+            svg.icon(
+              version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              x=toPercent((len-9)/len)
+              y=100*fy(scale.maxY - 1.25)+"%"
+            )
+              rect(
+                width=25
+                height=25
+                fill="#002b45"
+                rx=2
+              )
+              path(
+                d="M13 11h-2v-2c0-.276-.224-.5-.5-.5s-.5.224-.5.5v2h-2c-.276 0-.5.224-.5.5s.224.5.5.5h2v2c0 .276.224.5.5.5s.5-.224.5-.5v-2h2c.276 0 .5-.224.5-.5s-.224-.5-.5-.5zM18.432 14.97l-.536-.537-.749-.75c.227-.688.354-1.42.354-2.183 0-3.859-3.141-7-7-7s-7 3.141-7 7 3.141 7 7 7c.763 0 1.496-.127 2.184-.354l.75.749 1.512 1.51.061.061.064.055c.601.506 1.348.784 2.104.784 1.726 0 3.13-1.404 3.13-3.131 0-.84-.328-1.628-.924-2.218l-.95-.986zm-12.932-3.47c0-2.757 2.243-5 5-5s5 2.243 5 5-2.243 5-5 5-5-2.243-5-5z"
+              )
             
+            // INSET
             svg#inset(
               x=toPercent((len-17)/len)
               y=toPercent(fy(scale.maxY - 9))
@@ -90,17 +107,17 @@ block page
               viewBox="0 0 100 100"
               preserveAspectRatio="xMinYMax"
             )
-          
+            
               rect(
                 x=-20
                 y=-10
                 width=135
                 height=125
-                fill="white"
-                stroke="black"
+                fill="#fff"
+                stroke="#0008"
                 stroke-width=.25
               )
-                            
+
               for item, i in inset.legend
                 polyline(
                   fill="none"
@@ -129,36 +146,69 @@ block page
                   svg(x=toPercent(fx(i, 3)))
                     text( text-anchor="middle" transform="translate(0 9) scale(0.35)" )
                       = year
-                
-
-            //for item, i in chart.legend
-              svg(x="100%")
-                - n = chart.axes[1].values.length - 3
+                      
+              svg
                 text(
-                  y=toPercent(fy(scale.maxY - chart.axes[1].values[n][i] ))
-                  class="label"
-                  text-anchor="end"
-                  transform="translate(0 -15)"
-                  fill=chart.colors[i]
+                  y=80
+                  x=80
+                  text-anchor="start"
+                  fill="#002b45"
+                  transform="scale(0.38)"
+                  font-weight="600"
                 )
-                  = `"${item}"`
+                  tspan "Rules-based
+                  tspan(x=80 dy="1em") international order"
 
+        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+          for item, i in chart.legend
+            li.legend-item
+              span.legend-item-box(style=`background:${chart.colors[i]}`)
+              span.legend-item-label!= `"${item}"`
 
+    .chart-source.txt-cond.txt-muted.txt-right
+      != page.source
 
-    //- .chart-notes.txt-muted.txt-left
-      !=page.notes
-
-      .chart-source.txt-muted.txt-left
-        !=page.source
+  script.
+    
+    function positionInset(screenSize) {
+      w = screenSize == 'small' ? 65 : 36;
+      x = screenSize == 'small' ? 90.5-w : 95.25-w;
+      document.querySelector("#inset").setAttribute('width', w + "%");
+      document.querySelector("#inset").setAttribute('x', x + "%");
+    }
+    
+    function update() {
+      window.innerWidth < 550 ? positionInset('small') : positionInset('large');
+    }
+        
+    document.addEventListener('DOMContentLoaded', update);
+    window.onresize = update;
+    
+    const lightbox = document.querySelector("#lightbox");
+    const inset = document.querySelector("#inset");
+    const icon = document.querySelector(".icon path");
+    
+    lightbox.addEventListener('mouseenter', () => {
+      inset.style.opacity = 1;
+      icon.setAttribute('stroke-width',"0");
+      lightbox.style.fill = "#002b4522";
+    });
+    
+    lightbox.addEventListener('mouseleave', () => {
+      inset.style.opacity = 0;
+      icon.setAttribute('stroke-width',"1");
+      lightbox.style.fill = "transparent";
+    });
 
 
 block append css
   style
     :sass
       .wrapper
-        height: 550px
-        overflow: visible
+        height: 560px
+        overflow: hidden
         position: relative
+        max-width: 720px
 
       .page-title
         font-size: 20px
@@ -185,8 +235,8 @@ block append css
         position: absolute
         top: 30px
         left: 40px
-        right: 50px
-        bottom: 40px
+        right: 10px
+        bottom: 50px
 
       .chart-content > svg
         border-bottom: 1px solid #ccc
@@ -196,7 +246,7 @@ block append css
 
       .legend
         font-size: 15px
-        max-width: 320px
+        max-width: 80%
         margin: auto
 
       .legend-item
@@ -243,7 +293,25 @@ block append css
       .label
         font-weight: 500
         font-size: 13px
-
-      @media screen and (max-width: 650px)
-        .label
-          font-size: 12px
+        
+      #lightbox
+        fill: transparent
+        transition-duration: .4s
+        cursor: pointer
+        
+        rect
+          stroke: "#0007"
+          stroke-width: 0.5px
+        
+      #inset
+        fill: transparent
+        opacity: 0
+        transition-duration: .2s
+        
+      .icon 
+        pointer-events: none
+        transition-duration: .2s
+      
+        path
+          fill: #fff
+          stroke: #002b45
