@@ -198,10 +198,10 @@ block page
     }
     
     function startup() {
-      lightbox.addEventListener('mouseenter', hoveron);
-      lightbox.addEventListener('touchstart', hoveron);
-      lightbox.addEventListener('mouseleave', hoveroff);
-      lightbox.addEventListener('touchend', hoveroff);
+      lightbox.addEventListener('mouseover', hoveron);
+      /* lightbox.addEventListener('touchstart', hoveron); */
+      lightbox.addEventListener('mouseout', hoveroff);
+      /* lightbox.addEventListener('touchend', hoveroff); */
       update();
     }
     
@@ -306,6 +306,7 @@ block append css
         fill: transparent
         transition-duration: .4s
         cursor: pointer
+        user-select: none
         
         rect
           stroke: "#0007"
@@ -315,6 +316,7 @@ block append css
         fill: transparent
         opacity: 0
         transition-duration: .2s
+        user-select: none
         
       .icon 
         pointer-events: none
