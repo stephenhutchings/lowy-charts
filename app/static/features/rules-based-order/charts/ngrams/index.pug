@@ -199,9 +199,9 @@ block page
     
     function startup() {
       lightbox.addEventListener('mouseover', hoveron);
-      /* lightbox.addEventListener('touchstart', hoveron); */
       lightbox.addEventListener('mouseout', hoveroff);
-      /* lightbox.addEventListener('touchend', hoveroff); */
+      lightbox.addEventListener('touchcancel', hoveroff);
+      /* lightbox.addEventListener('touchstart', hoveron); */
       update();
     }
     
