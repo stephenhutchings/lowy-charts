@@ -99,6 +99,7 @@ block page
                 d="M13 11h-2v-2c0-.276-.224-.5-.5-.5s-.5.224-.5.5v2h-2c-.276 0-.5.224-.5.5s.224.5.5.5h2v2c0 .276.224.5.5.5s.5-.224.5-.5v-2h2c.276 0 .5-.224.5-.5s-.224-.5-.5-.5zM18.432 14.97l-.536-.537-.749-.75c.227-.688.354-1.42.354-2.183 0-3.859-3.141-7-7-7s-7 3.141-7 7 3.141 7 7 7c.763 0 1.496-.127 2.184-.354l.75.749 1.512 1.51.061.061.064.055c.601.506 1.348.784 2.104.784 1.726 0 3.13-1.404 3.13-3.131 0-.84-.328-1.628-.924-2.218l-.95-.986zm-12.932-3.47c0-2.757 2.243-5 5-5s5 2.243 5 5-2.243 5-5 5-5-2.243-5-5z"
               )
             
+            
             // INSET
             svg#inset(
               x=toPercent((len-17)/len)
@@ -118,6 +119,24 @@ block page
                 stroke="#0008"
                 stroke-width=.25
               )
+              
+              //g#lines
+                line(
+                  x1=115
+                  y1=115
+                  x2=115
+                  y2=120
+                  stroke="red"
+                  stroke-width=0.5
+                )
+                line(
+                  x1=-20
+                  y1=115
+                  x2=0
+                  y2=120
+                  stroke="red"
+                  stroke-width=0.5
+                )
 
               for item, i in inset.legend
                 polyline(
@@ -174,13 +193,14 @@ block page
     const wrapper = document.querySelector(".wrapper");
     const lightbox = document.querySelector("#lightbox rect");
     const inset = document.querySelector("#inset");
+    const lines = document.querySelector("#lines");
     const icon = document.querySelector(".icon path");
     
     function positionInset(screenSize) {
       w = screenSize == 'small' ? 65 : 36;
       x = screenSize == 'small' ? 90.5-w : 95.25-w;
-      document.querySelector("#inset").setAttribute('width', w + "%");
-      document.querySelector("#inset").setAttribute('x', x + "%");
+      inset.setAttribute('width', w + "%");
+      inset.setAttribute('x', x + "%");
     }
     
     function hoveron(e) {
