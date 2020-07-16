@@ -114,7 +114,7 @@ block page
                 y=-10
                 width=135
                 height=125
-                fill="#DDE3E6"
+                fill="#f0f0f0"
                 stroke="#0008"
                 stroke-width=.25
               )
@@ -187,7 +187,6 @@ block page
       inset.style.opacity = 1;
       icon.setAttribute('stroke-width',"0");
       lightbox.style.fill = "#002b4522";
-      lightbox.setAttribute('stroke-width',"0.25");
       e.stopPropagation();
     }
     
@@ -195,7 +194,6 @@ block page
       if (inset.style.opacity) {
         inset.style.opacity = 0;
         icon.setAttribute('stroke-width',"1");
-        lightbox.setAttribute('stroke-width',"0");
         lightbox.style.fill = "transparent";
       }
     }
@@ -251,6 +249,7 @@ block append css
         left: 40px
         right: 10px
         bottom: 50px
+        user-select: none
 
       .chart-content > svg
         border-bottom: 1px solid #ccc
@@ -316,12 +315,12 @@ block append css
         
         rect
           stroke: #0008
-        
+      
       #inset
         fill: transparent
         opacity: 0
         transition-duration: .2s
-        user-select: none
+        
         
       .icon 
         pointer-events: none
