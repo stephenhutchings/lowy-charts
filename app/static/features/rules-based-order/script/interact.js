@@ -69,17 +69,47 @@ function toggleHeader(show) {
   }
 }
 
-// TOGGLE FIXED FOOTER
-function toggleFooter(show) {
-  if (show) {
-    $('.intro-footer').addClass('fixed-b');
-    footerFixed = true;
-  }
-  else {
-    $('.intro-footer').removeClass('fixed-b');
-    footerFixed = false;
-  }
+// ENABLE SIDE MENU
+function enableSideMenu() {
+  $('#side-menu').toggleClass('fixed-side-menu');
+  $('#side-menu').toggleClass('hidden');
+  sideMenuVisible = !sideMenuVisible;
 }
+
+// TOGGLE SIDE MENU
+function toggleSideMenu(el) {
+
+  const p = el.parentElement;
+  const c = el.firstElementChild;
+  const w = p.querySelector('.menu-body').getBoundingClientRect().width + 2;
+  let closed = !el.classList.contains('closed');
+
+  el.classList.toggle('closed');
+
+  closed ? p.style.right = -w + 'px' : p.style.right = 0;
+  c.classList.toggle('icon-cancel');
+  c.classList.toggle('icon-menu');
+}
+
+function initSideMenu() {
+
+  const menu = document.getElementById('side-menu');
+  const themeBody = document.querySelector('.themes-txt');
+
+  // SET MENU EVENT LISTENERS
+  menu.querySelectorAll('li').forEach( (el, i) => {
+    el.addEventListener('click', (e) => {
+      if (i < 10) {
+        y = themeBody.querySelectorAll('h2')[i].getBoundingClientRect().top + window.pageYOffset;
+        $('html,body').animate({scrollTop: y-70}, 400);
+      }
+      else {
+        togglePM(i-10, true);
+      }
+    });
+  });
+}
+
 
 function resetWrapHeight(p, c) {
   let h = $(c).outerHeight(true);
@@ -104,21 +134,14 @@ function readMore() {
   }, 100);
 
   // TOGGLE SKIP TO TIMELINE FOOTER
-  toggleFooter(!collapsed);
-  $('.intro-footer')
-    .toggleClass('txt-xs')
-    .css('min-height', collapsed ? '10vh' : '3.5em');
+  // toggleFooter(!collapsed);
+  // $('.intro-footer')
+  //   .toggleClass('txt-xs')
+  //   .css('min-height', collapsed ? '10vh' : '3.5em');
 
   collapsed ? scrollThis('html,body', '.intro-wrap',0) : "";
 
   positionAnnotations();
-}
-
-function snapScroll() {
-  let c = $(window).scrollTop();
-  $('section').each( (i, s) => {
-      Math.abs(c - s.offsetTop) < 100 ? scrollThis('html,body', 'section', 0) : "";
-  });
 }
 
 function next(fwd) {

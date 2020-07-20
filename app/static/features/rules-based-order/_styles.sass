@@ -120,17 +120,6 @@ section h1
   font-weight: 700
   text-transform: uppercase
 
-.intro-footer
-  background: $color-bl-dk
-  color: $color-ff
-  min-height: 10vh
-  width: 100%
-  transition-duration: 200ms
-  margin-bottom: 0
-
-  &:not(.fixed-b)
-    position: relative
-
 .tile-page
   background-color: white
   min-height: 50vh
@@ -209,6 +198,41 @@ section h1
 
     a:hover
         color: $color-ff
+
+#side-menu
+  z-index: 10
+  font-size: 13px
+  box-shadow: 0 1px 3px 0px $color-bl-dk
+  transition-duration: .3s
+
+  .menu-body
+    box-sizing: border-box
+
+  .button
+    position: absolute
+    top: 0
+    left: -25px
+    height: 50px
+    width: 50px
+    line-height: 50px
+    background: $color-bl-dk
+    border-radius: 100%
+
+  .icon
+    font-size: 18px
+    &:before
+      padding-left: 5px
+
+  ul
+    list-style-type: none
+    padding: 0
+    margin-top: .5em
+
+    &:hover
+      li
+        opacity: 0.75
+      li:hover
+        opacity: 1
 
 h2 cite,
 h3 cite
@@ -335,13 +359,6 @@ cite
       margin: 0 1em 0 2.5em
     .txt-nowrap:nth-child(3)
       margin: 0 1.5em 0 1em
-
-  .intro-footer.fixed-b
-    flex-direction: column
-    width: 90px
-    text-align: center
-    padding: 1.25em .5em
-    right: 0
 
   .btn
     &:not(.nohover):hover,

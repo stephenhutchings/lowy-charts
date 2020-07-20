@@ -3,7 +3,7 @@ var vw = window.innerWidth;
 var hTopHeader = 50; // height of uppermost header (pixels)
 var hTopVisible = false;
 var headerVisible = false;
-var footerFixed = false;
+var sideMenuVisible = false;
 var collapsed = true;
 
 window.addEventListener('DOMContentLoaded', onLoad);
@@ -15,6 +15,7 @@ function onLoad() {
   resetWrapHeight('.tile-wrap','.tiles');
   createAnnotations();
   initThemeMenu();
+  initSideMenu();
   setHistoryTimelines();
   togglePM(0, false);
 }
@@ -46,11 +47,7 @@ function scrollCheck() {
   else if (headerVisible && c < y0) {toggleHeader(false);}
 
   // toggle intro footer
-  let fh = $('.intro-footer').outerHeight();
-  let ty = $('.tile-page')[0].offsetTop;
-  let y2 = ty - vh;
-  if (!collapsed) {
-    if (!footerFixed && c < y2 && c > fh) {toggleFooter(true);}
-    else if (footerFixed && c > y2 + fh || c < fh) {toggleFooter(false);}
-  }
+  let sideMenu = $('.side-menu').outerHeight();
+  let y2 = $('#theme-menu')[0].offsetTop + vh/2.5;
+  (!sideMenuVisible && c > y2 ) || (sideMenuVisible && c < y2 ) ? enableSideMenu() : "";
 }

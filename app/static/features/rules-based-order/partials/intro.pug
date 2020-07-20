@@ -59,12 +59,22 @@ section.dark
         span.icon.icon-right-sm.icon-md
       .theme-links.txt-m
         ul
-          each government in ["Kevin Rudd (2007&mdash;2010)", "Julia Gillard (2010&mdash;2013)", "Tony Abbott (2013&mdash;2015)", "Malcolm Turnbull (2015&mdash;2018)", "Scott Morrison (2018&mdash; )"]
+          each government in ["Rudd Government (2007&mdash;2010)", "Gillard Government (2010&mdash;2013)", "Abbott Government (2013&mdash;2015)", "Turnbull Government (2015&mdash;2018)", "Morrison Government (2018&mdash; )"]
             li: a!= government
 
-  //.intro-footer.flex-ch.txt-m(onclick="scrollThis('html,body', '.tile-page', 0)")
-    .txt-tu.txt-w700.ptr Jump to timeline &nbsp;
-    .ptr.icon.icon-down
+  #side-menu.hidden.dark.flex-cv
+    .button.ptr(onclick="toggleSideMenu(this)")
+      span.icon.icon-cancel
+    .menu-body.p-md
+      .txt-tu.txt-muted.txt-w700.ptr Themes 
+      ul
+        each theme, i in ["Multilateral", "Reflecting our values", "Delivering peace & prosperity", "Constraining power", "US dependent", "Shaping China", "Regional and global friends", "Under pressure", "Saving and evolving", "Tangible deeds"]
+          li.ptr.txt-bare= theme
+      .txt-tu.txt-muted.txt-w700.ptr Timeline
+      ul
+        each government in ["2007&mdash;2010 (Rudd Govt.)", "2010&mdash;2013 (Gillard Govt.)", "2013&mdash;2015 (Abbott Govt.)", "2015&mdash;2018 (Turnbull Govt.)", "2018&mdash; (Morrison Govt.)"]
+          li.ptr.txt-bare!= government
+        
 
 section
   .section-wrap.pv-xl(style="max-height: none")
