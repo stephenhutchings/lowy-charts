@@ -59,18 +59,18 @@ section.dark
         span.icon.icon-right-sm.icon-md
       .theme-links.txt-m
         ul
-          each government in ["Rudd Government (2007&mdash;2010)", "Gillard Government (2010&mdash;2013)", "Abbott Government (2013&mdash;2015)", "Turnbull Government (2015&mdash;2018)", "Morrison Government (2018&mdash; )"]
+          each government in ["2007&mdash;2010 (Rudd Govt.)", "2010&mdash;2013 (Gillard Govt.)", "2013&mdash;2015 (Abbott Govt.)", "2015&mdash;2018 (Turnbull Govt.)", "2018&mdash; (Morrison Govt.)"]
             li: a!= government
 
-  #side-menu.hidden.dark.flex-cv
+  #side-menu.fixed-side-menu.hidden.dark.flex-cv
     .button.ptr(onclick="toggleSideMenu(this)")
       span.icon.icon-cancel
     .menu-body.p-md
-      .txt-tu.txt-muted.txt-w700.ptr Themes 
+      .txt-tu.txt-muted.txt-w700 Themes 
       ul
         each theme, i in ["Multilateral", "Reflecting our values", "Delivering peace & prosperity", "Constraining power", "US dependent", "Shaping China", "Regional and global friends", "Under pressure", "Saving and evolving", "Tangible deeds"]
           li.ptr.txt-bare= theme
-      .txt-tu.txt-muted.txt-w700.ptr Timeline
+      .txt-tu.txt-muted.txt-w700 Timeline
       ul
         each government in ["2007&mdash;2010 (Rudd Govt.)", "2010&mdash;2013 (Gillard Govt.)", "2013&mdash;2015 (Abbott Govt.)", "2015&mdash;2018 (Turnbull Govt.)", "2018&mdash; (Morrison Govt.)"]
           li.ptr.txt-bare!= government

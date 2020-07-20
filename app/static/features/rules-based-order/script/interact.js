@@ -71,9 +71,13 @@ function toggleHeader(show) {
 
 // ENABLE SIDE MENU
 function enableSideMenu() {
-  $('#side-menu').toggleClass('fixed-side-menu');
+  const menuBtn = document.querySelector('#side-menu .button');
+
   $('#side-menu').toggleClass('hidden');
   sideMenuVisible = !sideMenuVisible;
+
+  sideMenuVisible ? menuBtn.parentElement.style.removeProperty('right') : "";
+  toggleSideMenu(menuBtn);
 }
 
 // TOGGLE SIDE MENU
@@ -82,11 +86,11 @@ function toggleSideMenu(el) {
   const p = el.parentElement;
   const c = el.firstElementChild;
   const w = p.querySelector('.menu-body').getBoundingClientRect().width + 2;
-  let closed = !el.classList.contains('closed');
+  let close = !el.classList.contains('closed');
 
   el.classList.toggle('closed');
 
-  closed ? p.style.right = -w + 'px' : p.style.right = 0;
+  close ? p.style.right = -w + 'px' : p.style.right = 0;
   c.classList.toggle('icon-cancel');
   c.classList.toggle('icon-menu');
 }
@@ -96,7 +100,6 @@ function initSideMenu() {
   const menu = document.getElementById('side-menu');
   const themeBody = document.querySelector('.themes-txt');
 
-  // SET MENU EVENT LISTENERS
   menu.querySelectorAll('li').forEach( (el, i) => {
     el.addEventListener('click', (e) => {
       if (i < 10) {
