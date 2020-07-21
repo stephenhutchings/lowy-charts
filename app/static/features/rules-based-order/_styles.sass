@@ -22,6 +22,9 @@ blockquote
   font-style: normal
   line-height: 1.6em
   font-size: inherit
+  font-family: "Semi", sans-serif
+  font-style: italic
+
 
   &:last-child
     padding-bottom: 0
@@ -29,26 +32,23 @@ blockquote
   p
     font-size: .95em
 
-  p:before
+  p:before,
+  p:after
     content: "“"
-    font-size: 25px
-    vertical-align: sub
-    padding: 0 5px
+    font-size: 22px
+    padding: 0 4px
+
+  p:after
+    content: "”"
+    padding: 0
 
 .intro-txt h2,
 .themes-txt h2
   margin-top: 2em
 
 .intro-txt blockquote
-  padding: 0 1.5em
+  padding: 0 2.5em 0 1.5em
   margin-bottom: 1.4em
-
-  p:after
-    content: "”"
-    font-size: 25px
-    vertical-align: sub
-    padding: 0 5px
-
 
 .banner-wrap
   display: flex
@@ -462,6 +462,7 @@ cite
 @media (min-width: 1200px)
   .section-wrap
     width: 85%
+    max-width: 1200px
   #theme-menu
     width: 80%
     max-width: 950px

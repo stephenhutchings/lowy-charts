@@ -2,7 +2,7 @@ cards:
 
   - pm: rudd
     details: |
-      # Kevin Rudd
+      # Rudd Government
       ### Dec 2007 &mdash; Jun 2010
     caption: Photo&#58; Cherie Cullen / Wiki Commons
     summary: |
@@ -69,7 +69,7 @@ cards:
 
   - pm: gillard
     details: |
-      # Julia Gillard
+      # Gillard Government
       ### Jun 2010 &mdash; Jun 2013
     caption: Photo&#58; DFID / Russell Watkins / Wiki Commons
     summary: |
@@ -225,7 +225,7 @@ cards:
 
   - pm: abbott
     details: |
-      # Tony Abbott
+      # Abbott Government
       ### Sep 2013 &mdash; Sep 2015
     caption: Photo&#58; U.S. Department of State / Wiki Commons
     summary: |
@@ -303,7 +303,7 @@ cards:
 
   - pm: turnbull
     details: |
-      # Malcolm Turnbull
+      # Turnbull Government
       ### Sep 2015 &mdash; Aug 2018
     caption: Photo&#58; Matt Roberts / ABC / Wiki Commons
     summary: |
@@ -607,7 +607,7 @@ cards:
 
   - pm: morrison
     details: |
-      # Scott Morrison
+      # Morrison Government
       ### Aug 2018&mdash;
     caption: Photo&#58; U.S. Department of State / Wiki Commons
     summary: |
