@@ -1,0 +1,126 @@
+events:
+  - start: 2019
+    monthId: 1
+    month: Dec
+    day: 31
+    text: >
+      &bull;&ensp;National Health Commission inspection team arrives in Wuhan, Hubei Province
+      <br><br>
+      &bull;&ensp;Wuhan Health Commission reports cluster of pneumonia cases
+
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 3
+    text: >
+      Dr Li Wenliang detained by police in Wuhan for spreading 'false rumours' about a new virus
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 5
+    text: >
+      WHO publishes Disease Outbreak News report of pneumonia of unknown cause in Wuhan
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 7
+    text: >
+      Politburo Standing Committee (PSC) meeting
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 14
+    text: >
+      &bull;&ensp;National health officials warn of major public health event in closed conference call
+      <br><br>
+      &bull;&ensp;WHO news release states no clear evidence of human-to-human transmission
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 17-18
+    text: >
+      President Xi visits Myanmar
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 18-20
+    text: >
+      Xi visits Yunnan Province
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 20
+    text: >
+      &bull;&ensp;Premier Li Keqiang issues first instructions on coronavirus management at State Council Standing Committee meeting
+      <br><br>
+      &bull;&ensp;Xi issues “important instructions” from Kunming
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 21
+    text: >
+      Wuhan Health Commission advises 15 medical staff have been infected with a new coronavirus pneumonia
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 23
+    text: |
+      Wuhan lockdown commences
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 25
+    text: >
+      Lunar New Year and first of several publicised PSC emergency meetings
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 27
+    text: >
+      Premier Li visits Wuhan
+
+  - start: 2020
+    monthId: 2
+    month: Jan
+    day: 28
+    text: >
+      WHO delegation to Beijing led by Director-General Tedros Ghebreyesus to discuss coronavirus with Chinese leadership
+
+  - start: 2020
+    monthId: 3
+    month: Feb
+    day: 23
+    text: >
+      Conference call of 170 000 party officials and military personnel
+
+  - start: 2020
+    monthId: 4
+    month: Mar
+    day: 10
+    text: >
+      Xi first visit to Wuhan
+
+  - start: 2020
+    monthId: 4
+    month: Mar
+    day: 11
+    text: >
+      WHO declares pandemic
+
+  - start: 2020
+    monthId: 5
+    month: Apr
+    day: 7
+    text: >
+      Wuhan lockdown lifted
