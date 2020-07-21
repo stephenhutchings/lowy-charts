@@ -101,10 +101,53 @@ block page
       .chart-source.txt-right.txt-muted!= chart.source
       .chart-notes.txt-right.txt-muted!= chart.notes
       
+      .tooltip aofhsodfho
+      
+  script.
 
+    const enableTooltips = true;
+    const nCategories = 3;
+    
+    const chart = document.querySelectorAll('.chart-content');
+    const rects = document.querySelectorAll('rect');
+    const vals = document.querySelectorAll('.chart-value');
+    const series = document.querySelectorAll('.x-label');
+    const tooltip = document.querySelector('.tooltip');
+    const legendItems = document.querySelectorAll('.legend-item-label');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let box = el.getBoundingClientRect();
+        let val = vals[i].innerHTML;
+        let ser = series[i].innerHTML;
+        let cat = legendItems[i%3].innerHTML;
+        
+        tooltip.style.left = box.left - 100 + 'px';
+        tooltip.style.top = box.top + 10 + 'px';
+        tooltip.style.opacity = 1;
+        
+        tooltip.innerHTML = val + " of " + ser + " were " + cat;
+        
+      });
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+    }
+    
+  
 block append css
   style
     :sass
+      
+
+    
       .wrapper
         height: 550px
 
@@ -131,6 +174,20 @@ block append css
         height: 10px
         margin-top: -10px
         font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
 
       li
         list-style: none
