@@ -58,7 +58,7 @@ block page
                 y=toPercent(fy(minY))
                 width=toPercent(fx(0))
                 height="100%"
-              )   
+              )
               
                 g.bars
 
@@ -104,9 +104,10 @@ block page
       .tooltip aofhsodfho
       
   script.
-
+    /* --- USER TO UPDATE --- */
     const enableTooltips = true;
-    const nCategories = 3;
+    const nCategories = 2;
+    /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
     const rects = document.querySelectorAll('rect');
@@ -127,9 +128,9 @@ block page
         let box = el.getBoundingClientRect();
         let val = vals[i].innerHTML;
         let ser = series[i].innerHTML;
-        let cat = legendItems[i%3].innerHTML;
+        let cat = legendItems[i%nCategories].innerHTML;
         
-        tooltip.style.left = box.left - 100 + 'px';
+        tooltip.style.left = box.left - 90 + 'px';
         tooltip.style.top = box.top + 10 + 'px';
         tooltip.style.opacity = 1;
         
@@ -145,8 +146,6 @@ block page
 block append css
   style
     :sass
-      
-
     
       .wrapper
         height: 550px
@@ -225,6 +224,7 @@ block append css
       .chart-value
         opacity: 0
         transition-duration: .4s
+        pointer-events: none
       
         .chart-content:hover &
           opacity: 1
