@@ -1,5 +1,5 @@
 title: >
-  Response to COVID-19 by Political System
+  Response to COVID-19 by Power
 
 source: >
   <b>Source:</b> Lorem ipsum
@@ -24,30 +24,30 @@ series:
   -
     title: Year
     values:
-      - Authoritarian
-      - Hybrid
-      - Democratic
+      - Great powers
+      - Middle powers
+      - Minor powers
 
   -
     title: Better
     color: "dark"
     values:
-      - 45.4545
-      - 0
-      - 35
+      - 14.29
+      - 29.63
+      - 37.78
 
   -
     title: Average
     color: "grey"
     values:
-      - 9
-      - 87.5
-      - 30
+      - 28.57
+      - 37.04
+      - 31.11
 
   -
     title: Worse
     color: "orange"
     values:
-      - 45.4545
-      - 12.5
-      - 35
+      - 57.14
+      - 33.33
+      - 31.11

@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/templates/stacked-bar-chart/data"
+  - var datapath = "static/charts/pandemic-response/geography/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -31,7 +31,7 @@ block page
               - y = 1 - (i / (steps))
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
-                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
+                  = Math.round(minY + range*(i/steps), 0) + (axes.percentage ? "%" : "")
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -63,6 +63,7 @@ block page
 
                 for v, j in vals
                   - ci = axes.reverse ? vals.length-j : j+1
+                  
                   if v > 0
                     rect(
                       y=toPercent(y-fy(v))
@@ -70,16 +71,16 @@ block page
                       width="100%"
                       fill=chart.colors[chart.series[ci].color]
                     )
-                      text.chart-value(
-                        x="50%"
-                        y=toPercent(y - fy(v/2))
-                        text-anchor="middle"
-                        transform="translate(0 4.5)"
-                        style=`color: ${(j < 3 ? "white" : "")}`
-                      )
-                        = v.toFixed(0) + (axes.percentage ? "%" : "")
+                    text.chart-value(
+                      x="50%"
+                      y=toPercent(y - fy(v/2))
+                      text-anchor="middle"
+                      transform="translate(0 4.5)"
+                      style=`color: ${(j < 3 ? "white" : "")}`
+                    )
+                      = v.toFixed(0) + (axes.percentage ? "%" : "")
 
-                  - y -= fy(v)
+                    - y -= fy(v)
                     
                 // X-Axis labels
                 svg.x-label(x="50%" y="100%")
@@ -107,8 +108,8 @@ block page
 
     /* --- USER TO UPDATE --- */
     const enableTooltips = true;
-    const nLegendItems = 4;
-    const nSeries = 6;
+    const nLegendItems = 3;
+    const nSeries = 4;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
@@ -159,7 +160,7 @@ block append css
 
       .chart-content
         position: absolute
-        top: 20px
+        top: 25px
         left: 50px
         right: 20px
         bottom: 40px
@@ -232,19 +233,11 @@ block append css
       
         .chart-content:hover &
           opacity: 1
-
-      @media (max-width: 700px)
-        
-        .x-label text
-          text-anchor: end
-          transform: rotate(-45deg) translate(-8px, 14px)
-
-        text
-          font-size: 13px
           
       @media (max-width: 450px)
         .chart-content
-          bottom: 40px
+          top: 35px
+          bottom: 50px
         .legend
           flex-direction: column
         .chart-title
@@ -255,3 +248,8 @@ block append css
         .chart-source
           text-align: center
           font-size: 13px
+        text
+          font-size: 13px
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 14px)

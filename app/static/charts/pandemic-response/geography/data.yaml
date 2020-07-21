@@ -1,5 +1,5 @@
 title: >
-  Response to COVID-19 by Political System
+  Response to COVID-19 by Geography
 
 source: >
   <b>Source:</b> Lorem ipsum
@@ -24,30 +24,34 @@ series:
   -
     title: Year
     values:
-      - Authoritarian
-      - Hybrid
-      - Democratic
+      - Asia-Pacific
+      - Middle East and Africa
+      - Europe
+      - Americas
 
   -
     title: Better
     color: "dark"
     values:
-      - 45.4545
-      - 0
-      - 35
+      - 52.94
+      - 35.71
+      - 30.30
+      - 13.33
 
   -
     title: Average
     color: "grey"
     values:
-      - 9
-      - 87.5
-      - 30
+      - 35.29
+      - 35.71
+      - 30.30
+      - 33.33
 
   -
     title: Worse
     color: "orange"
     values:
-      - 45.4545
-      - 12.5
-      - 35
+      - 11.76
+      - 28.57
+      - 39.39
+      - 53.33

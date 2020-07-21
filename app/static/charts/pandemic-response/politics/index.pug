@@ -62,7 +62,7 @@ block page
                 - vals = axes.reverse ? vals.reverse() : vals
 
                 for v, j in vals
-                  - ci = axes.reverse ? n-j-2 : j+1
+                  - ci = axes.reverse ? vals.length-j : j+1
                   
                   if v > 0
                     rect(
@@ -160,7 +160,7 @@ block append css
 
       .chart-content
         position: absolute
-        top: 20px
+        top: 25px
         left: 50px
         right: 20px
         bottom: 40px
@@ -233,19 +233,11 @@ block append css
       
         .chart-content:hover &
           opacity: 1
-
-      @media (max-width: 700px)
-        
-        .x-label text
-          text-anchor: end
-          transform: rotate(-45deg) translate(-8px, 14px)
-
-        text
-          font-size: 13px
           
       @media (max-width: 450px)
         .chart-content
-          bottom: 40px
+          top: 35px
+          bottom: 50px
         .legend
           flex-direction: column
         .chart-title
@@ -256,3 +248,8 @@ block append css
         .chart-source
           text-align: center
           font-size: 13px
+        text
+          font-size: 13px
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 14px)
