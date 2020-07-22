@@ -53,13 +53,13 @@ blockquote
 .banner-wrap
   display: flex
   flex-direction: column
-.banner,
-.card .row.banner
+.banner
   position: relative
   background-color: $color-bl-dk
   display: flex
   flex-direction: column
-  min-height: 60vh
+  max-height: 100vh
+  min-height: 100vh
   margin-top: 0
   &-title
     font-size: 28px
@@ -72,23 +72,25 @@ blockquote
     position: absolute
     right: 10px
     margin-top: 320px
-.credits
-  color: $color-bl-dk
-  background-color: $color-ff
-  text-align: center
-  min-height: 40vh
 
 #experts
-  margin-top: 1.5em
+  margin-top: 1em
+  line-height: 2rem
+  font-size: 1.1rem
+
   > *
     pointer-events: none
-    padding-top: .75em
 
+  > .flex-ch
+    flex-direction: column
 
+  .txt-nowrap
+    margin: .4em 0
 
   cite
-    height: 2.5em
-    width: 2.5em
+    height: 2rem
+    width: 2rem
+    margin: 0 .75em 0 0
 
 
 .section-wrap
@@ -134,18 +136,14 @@ section h1
   margin: auto
 .tiles:not(.nav-tiles)
   .tile
-    height: 120px
+    height: 80px
   &:hover .tile
     background-color: $color-gy-lt
   .tile:hover
-    height: 120px
     background-color: $color-bl-dk
 .tile
-  height: 120px
-  width: 120px
   margin: 10px
-  padding: 10px
-  opacity: 0
+  padding: 10px 15px
   box-sizing: border-box
   background-color: $color-bl-dk
   color: $color-ff
@@ -353,13 +351,6 @@ cite
     padding-left: 100px
     padding-right: 100px
 
-  #experts
-    flex-direction: row
-    .txt-nowrap:nth-child(2)
-      margin: 0 1em 0 2.5em
-    .txt-nowrap:nth-child(3)
-      margin: 0 1.5em 0 1em
-
   .btn
     &:not(.nohover):hover,
     &:focus
@@ -386,6 +377,15 @@ cite
     width: 100%
     padding-left: 200px
     padding-right: 200px
+
+  .banner
+    min-height: 70vh
+
+  #experts
+    > .flex-ch
+      flex-direction: row
+    .txt-nowrap
+      margin: 0.4em 1em
 
   #theme-menu
     padding: 0 0 2em

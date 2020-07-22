@@ -24,7 +24,7 @@ function onLoad() {
 function resizeCallback() {
   vh = window.innerHeight;
   vw = window.innerWidth;
-  headerVisible ? "" : resetWrapHeight('.tile-wrap','.tiles');
+  // headerVisible ? "" : resetWrapHeight('.tile-wrap','.tiles');
   setHistoryTimelines();
   positionAnnotations();
 }
@@ -34,7 +34,7 @@ function scrollCheck() {
   let c = $(window).scrollTop()+hTopHeader+10;
 
   // toggle top header
-  let y = $('.credits')[0].offsetTop;
+  let y = $('.intro-wrap')[0].offsetTop;
   if ( (!hTopVisible && c > y) || (hTopVisible && c < y) ) {
     $('.top-header').toggleClass('hidden');
     hTopVisible = !hTopVisible;

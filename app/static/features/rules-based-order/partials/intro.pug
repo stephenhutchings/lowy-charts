@@ -3,30 +3,30 @@
 - let themes = data.getOne("static/features/rules-based-order/partials/intro").themes[0]
 - let governments = ["2007&mdash;2010 (Rudd Govt.)", "2010&mdash;2013 (Gillard Govt.)", "2013&mdash;2015 (Abbott Govt.)", "2015&mdash;2018 (Turnbull Govt.)", "2018&mdash; (Morrison Govt.)"]
 
+//p.txt-s.txt-center(style="color: #fffc; position: absolute; bottom: 25%; width: 100%") by Ben Scott, Sam Roggeveen, Madeleine Nyst
+
 section
   .banner-wrap
-    .banner.bg-ccnr(style="background-image: url('./img/banner.jpg')")
-      .banner-title.txt-cond.txt-center Australia and the<br/>Rules–Based Order:<br/>The history of an idea
-      p.txt-s.txt-center(style="color: #fffc; position: absolute; bottom: 25%; width: 100%") by Ben Scott, Sam Roggeveen, Madeleine Nyst
-    //.ptr.txt-w.txt-xl.txt-center.icon.icon-down(
-      onclick="scrollThis('html,body','.intro-wrap',0)"
-      style="position: absolute; top: 30%; width: 100%"
-      )
-    .credits.flex.flex-cv
-      strong.txt-s.txt-tu Expert Commentary From
-      #experts.flex.flex-cv.txt-sm
-        .txt-nowrap.txt-center
-          cite.bishop.bg-ccnr
-          | <br>Julie Bishop
-        .txt-nowrap.txt-center
-          cite.medcalfe.bg-ccnr
-          | <br>Pf. Rory Medcalf
-        .txt-nowrap.txt-center
-          cite.charlesworth.bg-ccnr
-          | <br>Hilary Charlesworth
-        .txt-nowrap.txt-center
-          cite.maude.bg-ccnr
-          | <br>Richard Maude
+    .banner.bg-ccnr(style="background-image: url('./img/banner.jpg')").flex-ch
+      .flex-cv.txt-w
+        .banner-title.txt-cond.txt-center Australia and the<br/>Rules–Based Order:<br/>The history of an idea
+          <hr>      
+        .txt-s.txt-tu.txt-center(style="opacity: 0.8; font-weight: 500") With Expert Commentary From
+        #experts.txt-semi
+          .flex-ch
+            .txt-nowrap.txt-center
+              cite.bishop.bg-ccnr
+              | Julie Bishop
+            .txt-nowrap.txt-center
+              cite.medcalfe.bg-ccnr
+              | Rory Medcalf
+          .flex-ch
+            .txt-nowrap.txt-center
+              cite.charlesworth.bg-ccnr
+              | Hilary Charlesworth
+            .txt-nowrap.txt-center
+              cite.maude.bg-ccnr
+              | Richard Maude
           
 section
   .section-wrap.intro-wrap.pv-xl
@@ -93,7 +93,7 @@ section
           Expert commentators offer inside knowledge along the way.
     .tile-wrap.pv-sm: .tiles.flex-ch.flex-wrap
       #tiles-prev.btn.txt-bl.ptr.br-max.ib(onclick="next(false)") &larr;
-      each pm, i in governments
-        .tile.flex.txt-center.txt-tu.txt-s.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i}, true)`)
+      each pm, i in ["2007&mdash;2010<br>(Rudd)", "2010&mdash;2013<br>(Gillard)", "2013&mdash;2015<br>(Abbott)", "2015&mdash;2018<br>(Turnbull)", "2018&mdash;<br>(Morrison)"]
+        .tile.flex.txt-center.txt-tu.txt-xs.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i}, true)`)
           div!= pm
       #tiles-next.btn.txt-bl.ptr.br-max.ib(onclick="next(true)") &rarr;
