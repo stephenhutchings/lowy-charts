@@ -50,7 +50,7 @@ function togglePM(i, scroll) {
   $('.show').removeClass('show');
   $(`.wrap.${pm}`).addClass('show');
 
-  scroll ? scrollThis('html,body',`.wrap.${pm}`, -50) : "";
+  scroll ? scrollThis('html,body',`.wrap.${pm}`, -50, 0) : "";
   positionAnnotations();
 }
 
@@ -151,7 +151,7 @@ function readMore() {
 function next(fwd) {
   let n = 5;
   let i;
-  $('.tile').each( function(j, el) {if ( $(el).hasClass('active') ){i=j;}});
+  $('.wrap').each( (j, el) => { $(el).hasClass('show') ? i=j : "" });
   i = fwd ? i+1 : i-1;
   i = i==n ? 0
     : i<0 ? n-1
