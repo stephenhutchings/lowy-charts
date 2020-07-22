@@ -55,7 +55,6 @@ block page
                   width=toPercent(year/range)
                   height="100%"
                   fill=`#539ed4`
-                  stroke="#000"
                   style=`opacity: ${(0.01+i/30)}`
                 )
                 line(
@@ -64,7 +63,7 @@ block page
                   x2=x
                   y2="100%"
                   stroke="#ccc"
-                  stroke-width=1
+                  stroke-width=(i ? 1 : 0)
                   stroke-dasharray=4
                 )
               svg(
