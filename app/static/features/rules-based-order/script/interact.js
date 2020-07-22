@@ -42,32 +42,33 @@ function togglePM(i, scroll) {
   let pm = pms[i];
 
   // Nav menu
-  $('.tiles').addClass('nav-tiles');
-  $('.tiles').children('.active').removeClass('active');
-  $('.tiles').children(`.tile-${i}`).addClass('active');
+  // $('.tiles').addClass('nav-tiles');
+  // $('.tiles').children('.active').removeClass('active');
+  // $('.tiles').children(`.tile-${i}`).addClass('active');
 
   // Timeline content
   $('.show').removeClass('show');
   $(`.wrap.${pm}`).addClass('show');
 
-  scroll ? scrollThis('html,body',`.wrap.${pm}`, -150) : "";
+  scroll ? scrollThis('html,body',`.wrap.${pm}`, -50) : "";
   positionAnnotations();
 }
 
-// TOGGLE PM-TILE HEADER
-function toggleHeader(show) {
-  let tiles = $('.tiles');
-  if (show) {
-    tiles.css('height', '100px');
-    tiles.addClass('header nav-tiles');
-    headerVisible = true;
-  }
-  else {
-    tiles.css('height', 'initial');
-    tiles.removeClass('header nav-tiles');
-    headerVisible = false;
-  }
-}
+// TOGGLE PM-TILE HEADER //
+  /*
+  function toggleHeader(show) {
+    let tiles = $('.tiles');
+    if (show) {
+      tiles.css('height', '100px');
+      tiles.addClass('header nav-tiles');
+      headerVisible = true;
+    }
+    else {
+      tiles.css('height', 'initial');
+      tiles.removeClass('header nav-tiles');
+      headerVisible = false;
+    }
+  }*/
 
 // ENABLE SIDE MENU
 function enableSideMenu() {
@@ -114,10 +115,10 @@ function initSideMenu() {
 }
 
 
-function resetWrapHeight(p, c) {
-  let h = $(c).outerHeight(true);
-  $(p).css('min-height', h+'px');
-}
+// function resetWrapHeight(p, c) {
+//   let h = $(c).outerHeight(true);
+//   $(p).css('min-height', h+'px');
+// }
 
 function readMore() {
 

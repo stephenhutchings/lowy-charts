@@ -12,7 +12,7 @@ window.addEventListener('scroll', scrollCheck);
 
 // DOM load event listener
 function onLoad() {
-  resetWrapHeight('.tile-wrap','.tiles');
+  // resetWrapHeight('.tile-wrap','.tiles');
   createAnnotations();
   initThemeMenu();
   initSideMenu();
@@ -41,10 +41,10 @@ function scrollCheck() {
   }
 
   // toggle tile header
-  let y0 = $('.tile-wrap')[0].offsetTop;
-  let y1 = $('.tile.active').length ? $('.tile.active')[0].offsetTop : 99999;
-  if (!headerVisible && c > y1) {toggleHeader(true);}
-  else if (headerVisible && c < y0) {toggleHeader(false);}
+  // let y0 = $('.tile-wrap')[0].offsetTop;
+  // let y1 = $('.tile.active').length ? $('.tile.active')[0].offsetTop : 99999;
+  // if (!headerVisible && c > y1) {toggleHeader(true);}
+  // else if (headerVisible && c < y0) {toggleHeader(false);}
 
   // toggle intro footer
   let sideMenu = $('.side-menu').outerHeight();

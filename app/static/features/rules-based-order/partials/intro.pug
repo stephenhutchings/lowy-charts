@@ -1,6 +1,7 @@
 
 - let intro = data.getOne("static/features/rules-based-order/partials/intro").intro[0]
 - let themes = data.getOne("static/features/rules-based-order/partials/intro").themes[0]
+- let governments = ["2007&mdash;2010 (Rudd Govt.)", "2010&mdash;2013 (Gillard Govt.)", "2013&mdash;2015 (Abbott Govt.)", "2015&mdash;2018 (Turnbull Govt.)", "2018&mdash; (Morrison Govt.)"]
 
 section
   .banner-wrap
@@ -59,7 +60,7 @@ section.dark
         span.icon.icon-right-sm.icon-md
       .theme-links.txt-m
         ul
-          each government in ["2007&mdash;2010 (Rudd Govt.)", "2010&mdash;2013 (Gillard Govt.)", "2013&mdash;2015 (Abbott Govt.)", "2015&mdash;2018 (Turnbull Govt.)", "2018&mdash; (Morrison Govt.)"]
+          each government in governments
             li: a!= government
 
   #side-menu.fixed-side-menu.hidden.dark.flex-cv
@@ -72,7 +73,7 @@ section.dark
           li.ptr.txt-bare= theme
       .txt-tu.txt-muted.txt-w700 Timeline
       ul
-        each government in ["2007&mdash;2010 (Rudd Govt.)", "2010&mdash;2013 (Gillard Govt.)", "2013&mdash;2015 (Abbott Govt.)", "2015&mdash;2018 (Turnbull Govt.)", "2018&mdash; (Morrison Govt.)"]
+        each government in governments
           li.ptr.txt-bare!= government
         
 
@@ -92,7 +93,7 @@ section
           Expert commentators offer inside knowledge along the way.
     .tile-wrap.pv-sm: .tiles.flex-ch.flex-wrap
       #tiles-prev.btn.txt-bl.ptr.br-max.ib(onclick="next(false)") &larr;
-      each pm, i in ["Kevin Rudd", "Julia Gillard", "Tony Abbott", "Malcolm Turnbull", "Scott Morrison"]
+      each pm, i in governments
         .tile.flex.txt-center.txt-tu.txt-s.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i}, true)`)
-          div= pm
+          div!= pm
       #tiles-next.btn.txt-bl.ptr.br-max.ib(onclick="next(true)") &rarr;
