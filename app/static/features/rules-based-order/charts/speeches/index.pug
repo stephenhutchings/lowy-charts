@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/features/rules-based-order/charts/speeches-2/data"
+  - var datapath = "static/features/rules-based-order/charts/speeches/data"
   - _.extend(page, data.getOne(datapath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
