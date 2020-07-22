@@ -2,23 +2,25 @@ title: >
   Mentions of "Rules-based (order or system)" <br>
   in Prime Minister and Foreign Minister Speeches
 
-source: |
-  Source: Lowy Calculations
+source: Source Lowy Calculations
 
 charts:
   -
-    title: Mentions
+    title: >
+      Mentions
 
     scale:
-      minY:  0
+      minY: 0
       maxY: 180
+      
+    legend:
+      - Speeches
 
     colors:
       - "#002a45"
-
     axes:
       -
-        title: Year
+        title: Years
         values:
           - 2008
           - 2009
