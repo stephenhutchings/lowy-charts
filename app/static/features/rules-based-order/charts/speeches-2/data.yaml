@@ -1,6 +1,8 @@
 title: >
-  Mentions of "Rules-based (order or system)" <br>
-  in Prime Minister and Foreign Minister Speeches
+  Talking Rules-Based Order
+
+subtitle: >
+  Number of mentions in Australian PM, FM and DM Speeches by year
 
 source: Source Lowy Calculations
 
@@ -12,7 +14,7 @@ charts:
     scale:
       minY: 0
       maxY: 180
-      
+
     legend:
       - Speeches
 

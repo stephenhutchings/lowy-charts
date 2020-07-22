@@ -9,8 +9,8 @@ block page
   .wrapper.flex.flex-col.txt-center
     - chart = page.charts[0]
     - scale = chart.scale
-    .page-title= chart.title
-    .chart-subtitle.txt-muted!= chart.subtitle
+    .page-title!= page.title
+    .chart-subtitle.txt-muted.txt-semi.txt-tu!= page.subtitle
     .flex-grow.flex.flex-col.txt-sm
       - fx = (i, len) => (i) / (len-1)
       - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
@@ -25,11 +25,11 @@ block page
                   = scale.minY + (i/9) * (scale.maxY - scale.minY)
                   
               svg(width="100%" height="100%")
-                  line(
-                    x1="0" y1=toPercent(y) x2="100%" y2=toPercent(y)
-                    stroke="#ddd"
-                    stroke-width=.5
-                  )
+              //  line(
+                  x1="0" y1=toPercent(y) x2="100%" y2=toPercent(y)
+                  stroke="#ddd"
+                  stroke-width=.5
+                )
 
           svg(width="100%" y="100%")
             for year, i in chart.axes[0].values
@@ -44,23 +44,40 @@ block page
             - let years = [2,3,2,3,2]
             - let range = _.sum(years)
             for name, i in ["Rudd", "Gillard", "Abbott", "Turnbull", "Morrison"]
-              - let cumulativeYears = _.sum( years.map( (yrs,ii) => ii < i ? yrs : 0 ) ) + years[i]/2
+              - let cumulativeYears = _.sum( years.map( (yrs,ii) => ii < i ? yrs : 0 ) )
+              - let year = years[i]
               - let x = toPercent(cumulativeYears/range)
+              - let xMid = toPercent((cumulativeYears + years[i]/2)/range)
               svg(width="100%" height="100%")
-                line(
-                  x1=x y1="0" x2=x y2="100%"
+                rect(
+                  x=x
+                  y=0
+                  width=toPercent(year/range)
+                  height="100%"
+                  fill=`#539ed4`
                   stroke="#000"
+                  stroke-width=0
+                  stroke-dasharray=4
+                  style=`opacity: ${(0.01+i/30)}`
+                )
+                line.era(
+                  x1=x
+                  y1=0
+                  x2=x
+                  y2="100%"
+                  stroke="#ccc"
                   stroke-width=1
+                  stroke-dasharray=4
                 )
               svg(
-                x=x
+                x=xMid
                 y="50%"
                 preserveAspectRatio="xMidYMid"
               )
                 text(
                   text-anchor="middle"
                   transform="scale(3) rotate(-90) translate(0 4)"
-                  fill="#4443"
+                  fill="#002b4533"
                 )
                   = name
 
@@ -108,14 +125,14 @@ block page
                   )
                     = val
 
-      ul.legend.txt-nowrap.list-bare.txt-left.flex.flex-ch
+      //ul.legend.txt-nowrap.list-bare.txt-left.flex.flex-ch
         for item, i in chart.legend
           li.legend-item
             span.legend-item-label!= item
             span.legend-item-box(style=`background:${chart.colors[i]}`)
       
-    .chart-notes.txt-muted.txt-right!= page.notes
-    .chart-source.txt-muted.txt-right!= page.source
+    .chart-notes.txt-muted.txt-right.txt-cond!= page.notes
+    .chart-source.txt-muted.txt-right.txt-cond!= page.source
 
 block append css
   style
@@ -128,6 +145,10 @@ block append css
       .page-title
         font-size: 20px
         font-weight: 400
+        
+      .chart-subtitle
+        font-size: 15px
+        font-weight: 500
         margin-bottom: 12px
 
       .col-wrap
@@ -203,6 +224,9 @@ block append css
 
       
       @media screen and (max-width: 600px)
+              
+        .chart-subtitle
+          font-size: 13px
         
         .x-label:nth-child(even)
           display: none
