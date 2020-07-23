@@ -1,13 +1,12 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/templates/grouped-bar-chart/data"
+  - var datapath = "static/charts/templates/stacked-bar/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
   - chart = page
-  - colors = []
   
 block page
   .wrapper.flex
@@ -50,45 +49,45 @@ block page
                   )
 
           // Chart rects
-          g
-          
-            for seriesname, i in chart.series[0].values
+          g.bars
+            - const n = chart.series[0].values.length
+            for undef, i in new Array(n)
               svg(
                 x=toPercent(fx(i))
-                y=toPercent(fy(minY))
                 width=toPercent(fx(0))
                 height="100%"
-              )
-              
-                g.bars
+              )   
+                - y = 1
+                - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
+                - vals = axes.reverse ? vals.reverse() : vals
 
-                  for set, j in chart.series.filter( (s, i) => i )
-                    - y = set.values[i]
-                    - w = 100/(chart.series.length-1)
-                  
+                for v, j in vals
+                  - ci = axes.reverse ? vals.length-j : j+1
+                  if v > 0
                     rect(
-                      x=(j*w)
-                      y=toPercent(fy(maxY) - fy(y))
-                      width=w
-                      height=toPercent(fy(y))
-                      fill=chart.colors[set.color]
+                      y=toPercent(y-fy(v))
+                      height=toPercent(fy(v))
+                      width="100%"
+                      fill=chart.colors[chart.series[ci].color]
                     )
-
-                    text.chart-value(
-                      x=(j*w)
-                      y=toPercent(fy(maxY) - fy(y))
-                      text-anchor="middle"
-                      transform=`translate(${w/2} -10)`
-                    )
-                      = y + (axes.percentage ? "%" : "")
-
-                    // X-Axis labels
-                    svg.x-label(x="50%" y="100%")
-                      text(
-                        text-anchor=axes.rotateX ? "end" : "middle"
-                        transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
+                      text.chart-value(
+                        x="50%"
+                        y=toPercent(y - fy(v/2))
+                        text-anchor="middle"
+                        transform="translate(0 4.5)"
+                        style=`color: ${(j < 3 ? "white" : "")}`
                       )
-                        =seriesname
+                        = v.toFixed(0) + (axes.percentage ? "%" : "")
+
+                  - y -= fy(v)
+                    
+                // X-Axis labels
+                svg.x-label(x="50%" y="100%")
+                  text(
+                    text-anchor=axes.rotateX ? "end" : "middle"
+                    transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
+                  )
+                    =chart.series[0].values[i]
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -101,12 +100,15 @@ block page
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
-      .tooltip aofhsodfho
-      
+      .tooltip
+
   script.
+
+
     /* --- USER TO UPDATE --- */
     const enableTooltips = true;
-    const nCategories = 2;
+    const nLegendItems = 4;
+    const nSeries = 6;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
@@ -125,28 +127,29 @@ block page
     function addHoverEventListeners(el, i) {
       el.addEventListener('mouseover', () => {
         
-        let box = el.getBoundingClientRect();
         let val = vals[i].innerHTML;
-        let ser = series[i].innerHTML;
-        let cat = legendItems[i%nCategories].innerHTML;
+        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
+        let cat = legendItems[i % nLegendItems].innerHTML;
+        let box = el.getBoundingClientRect();
         
-        tooltip.style.left = box.left - 90 + 'px';
-        tooltip.style.top = box.top + 10 + 'px';
+        tooltip.innerHTML = val + " of " + ser + " countries were " + cat + " performing";
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
         
-        tooltip.innerHTML = val + " of " + ser + " were " + cat;
-        
       });
+      
       el.addEventListener('mouseleave', () => { 
         tooltip.style.opacity = 0;
       });
+      
     }
     
   
 block append css
   style
     :sass
-    
+  
       .wrapper
         height: 550px
 
@@ -187,6 +190,7 @@ block append css
         font-size: 14px
         text-transform: lowercase
         max-width: 180px
+        box-sizing: border-box
 
       li
         list-style: none
@@ -201,6 +205,7 @@ block append css
         margin: 4px 8px 0
         padding-right: 0
         position: relative
+        white-space: nowrap
 
       .legend-item-box
         position: absolute
@@ -224,37 +229,24 @@ block append css
       .chart-value
         opacity: 0
         transition-duration: .4s
-        pointer-events: none
       
         .chart-content:hover &
           opacity: 1
 
       @media (max-width: 700px)
-        .chart-content
-          left: 40px
-          right: 5px
-          bottom: 80px
-          top: 30px
-          
-        rect
-          width: 50%
-          
-        $n-series: 3
-        @for $i from 2 through $n-series
-          rect:nth-of-type(#{$i})
-            x: ($i - 1)*50%
-          
+        
         .x-label text
           text-anchor: end
           transform: rotate(-45deg) translate(-8px, 14px)
-          
-          
+
         text
           font-size: 13px
           
       @media (max-width: 450px)
-        .legend-item
-          width: min-content
+        .chart-content
+          bottom: 40px
+        .legend
+          flex-direction: column
         .chart-title
           font-size: 18px
         .chart-subtitle
@@ -263,5 +255,3 @@ block append css
         .chart-source
           text-align: center
           font-size: 13px
-        .chart-value
-          display: none
