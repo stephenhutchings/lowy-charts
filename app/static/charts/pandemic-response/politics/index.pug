@@ -128,12 +128,15 @@ block page
     function addHoverEventListeners(el, i) {
       el.addEventListener('mouseover', () => {
         
-        let ind = nLegendItems - 1 -(i % nLegendItems);
-        i >= 5 ? ind = Math.abs(i-7) : ""; // hacky fix for missing rect
+        let iCat = nLegendItems - 1 -(i % nLegendItems);
+        i >= 5 ? iCat = Math.abs(i-7) : ""; // hacky fix for missing rect
+        
+        let iSer = Math.floor(i/nLegendItems);
+        i >= 5 ? iSer = Math.floor((i+1)/nLegendItems) : ""; // hacky fix for missing rect
         
         let val = vals[i].innerHTML;
-        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
-        let cat = legendItems[ind].innerHTML;
+        let ser = series[iSer].innerHTML;
+        let cat = legendItems[iCat].innerHTML;
         let box = el.getBoundingClientRect();
         
         tooltip.innerHTML = val + " of countries with " + (Math.floor(i/nLegendItems)==0 ? "an " : "a " ) + ser + " political system were " + cat + " performing";
