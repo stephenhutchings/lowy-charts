@@ -70,14 +70,14 @@ block page
                       width="100%"
                       fill=chart.colors[chart.series[ci].color]
                     )
-                      text.chart-value(
-                        x="50%"
-                        y=toPercent(y - fy(v/2))
-                        text-anchor="middle"
-                        transform="translate(0 4.5)"
-                        style=`color: ${(j < 3 ? "white" : "")}`
-                      )
-                        = v.toFixed(0) + (axes.percentage ? "%" : "")
+                    text.chart-value(
+                      x="50%"
+                      y=toPercent(y - fy(v/2))
+                      text-anchor="middle"
+                      transform="translate(0 4.5)"
+                      style=`color: ${(j < 3 ? "white" : "")}`
+                    )
+                      = v.toFixed(0) + (axes.percentage ? "%" : "")
 
                   - y -= fy(v)
                     
@@ -229,9 +229,10 @@ block append css
       .chart-value
         opacity: 0
         transition-duration: .4s
+        pointer-events: none
       
-        .chart-content:hover &
-          opacity: 1
+      .chart-content:hover .chart-value
+        opacity: 1
 
       @media (max-width: 700px)
         

@@ -128,12 +128,15 @@ block page
     function addHoverEventListeners(el, i) {
       el.addEventListener('mouseover', () => {
         
+        let ind = nLegendItems - 1 -(i % nLegendItems);
+        i >= 5 ? ind = Math.abs(i-7) : ""; // hacky fix for missing rect
+        
         let val = vals[i].innerHTML;
         let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
-        let cat = legendItems[i % nLegendItems].innerHTML;
+        let cat = legendItems[ind].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = val + " of " + ser + " countries were " + cat + " performing";
+        tooltip.innerHTML = val + " of countries with " + (Math.floor(i/nLegendItems)==0 ? "an " : "a " ) + ser + " political system were " + cat + " performing";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -149,107 +152,22 @@ block page
   
 block append css
   style
+    include:sass ../_styles.sass
+
     :sass
-  
       .wrapper
-        height: 550px
-
-      .chart
-        box-sizing: border-box
-        position: relative
-
-      .chart-content
-        position: absolute
-        top: 25px
-        left: 50px
-        right: 20px
-        bottom: 40px
-
-      .chart-content > svg
-        border-bottom: 1px solid #bbb
-
-      .chart-title
-        margin: auto
-        font-size: 20px
-        
-      .chart-subtitle
-        font-weight: 600
-        height: 10px
-        margin-top: -10px
-        font-size: 15px
-        
-      .tooltip
-        position: absolute
-        left: 0
-        background: #fffe
-        padding: .75em
-        opacity: 0
-        border-radius: .2em
-        box-shadow: 0 0 5px 0 #0004
-        transition-duration: 0.5s
-        pointer-events: none
-        font-size: 14px
-        text-transform: lowercase
-        max-width: 180px
-        box-sizing: border-box
-
-      li
-        list-style: none
-        margin: 0
-        padding: 4px 16px 4px 24px
-
-      .legend
-        font-size: 15px
-        margin-bottom: .75em
-
-      .legend-item
-        margin: 4px 8px 0
-        padding-right: 0
-        position: relative
-        white-space: nowrap
-
-      .legend-item-box
-        position: absolute
-        left: 0
-        top: .5em
-        height: 1em
-        width: 1em
-        background: black
-
-      text
-        font-size: 14px
-        fill: currentColor
-
-      svg
-        overflow: visible
-        
-      .chart-notes, .chart-source
-        margin-left: 2em
-        font-size: 15px
-        
-      .chart-value
-        opacity: 0
-        transition-duration: .4s
+        max-width: 800px
       
-        .chart-content:hover &
-          opacity: 1
-          
+      .tooltip
+        text-transform: lowercase
+        
       @media (max-width: 450px)
-        .chart-content
-          top: 35px
-          bottom: 50px
-        .legend
-          flex-direction: column
-        .chart-title
-          font-size: 18px
-        .chart-subtitle
-          font-size: 14px
-        .chart-notes,
-        .chart-source
-          text-align: center
-          font-size: 13px
-        text
-          font-size: 13px
+        
         .x-label text
-          text-anchor: end
-          transform: rotate(-45deg) translate(-8px, 14px)
+          text-anchor: middle
+          transform: translate(0, 20px)
+          
+        .chart-content
+          bottom: 35px
+          
+      
