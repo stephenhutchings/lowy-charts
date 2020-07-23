@@ -75,10 +75,12 @@ function enableSideMenu() {
   const menuBtn = document.querySelector('#side-menu .button');
 
   $('#side-menu').toggleClass('hidden');
+
   sideMenuVisible = !sideMenuVisible;
   sideMenuVisible ? menuBtn.parentElement.style.removeProperty('right') : "";
 
   toggleSideMenu(menuBtn);
+  vw < 900 ? toggleSideMenu(menuBtn) : ""; // Menu collapsed for small screens by default
 }
 
 // TOGGLE SIDE MENU

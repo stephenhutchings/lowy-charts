@@ -40,14 +40,14 @@ function scrollCheck() {
     hTopVisible = !hTopVisible;
   }
 
+  // toggle side menu
+  let y2 = $('#theme-menu')[0].offsetTop + vh/2.5;
+  (!sideMenuVisible && c > y2 ) || (sideMenuVisible && c < y2 ) ? enableSideMenu() : "";
+  
   // toggle tile header
   // let y0 = $('.tile-wrap')[0].offsetTop;
   // let y1 = $('.tile.active').length ? $('.tile.active')[0].offsetTop : 99999;
   // if (!headerVisible && c > y1) {toggleHeader(true);}
   // else if (headerVisible && c < y0) {toggleHeader(false);}
 
-  // toggle side menu
-  let sideMenu = $('.side-menu').outerHeight();
-  let y2 = $('#theme-menu')[0].offsetTop + vh/2.5;
-  (!sideMenuVisible && c > y2 ) || (sideMenuVisible && c < y2 ) ? enableSideMenu() : "";
 }
