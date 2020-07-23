@@ -76,8 +76,8 @@ function enableSideMenu() {
 
   $('#side-menu').toggleClass('hidden');
   sideMenuVisible = !sideMenuVisible;
-
   sideMenuVisible ? menuBtn.parentElement.style.removeProperty('right') : "";
+
   toggleSideMenu(menuBtn);
 }
 
@@ -113,7 +113,6 @@ function initSideMenu() {
     });
   });
 }
-
 
 // function resetWrapHeight(p, c) {
 //   let h = $(c).outerHeight(true);

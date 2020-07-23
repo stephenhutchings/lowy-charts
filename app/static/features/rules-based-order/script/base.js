@@ -46,7 +46,7 @@ function scrollCheck() {
   // if (!headerVisible && c > y1) {toggleHeader(true);}
   // else if (headerVisible && c < y0) {toggleHeader(false);}
 
-  // toggle intro footer
+  // toggle side menu
   let sideMenu = $('.side-menu').outerHeight();
   let y2 = $('#theme-menu')[0].offsetTop + vh/2.5;
   (!sideMenuVisible && c > y2 ) || (sideMenuVisible && c < y2 ) ? enableSideMenu() : "";
