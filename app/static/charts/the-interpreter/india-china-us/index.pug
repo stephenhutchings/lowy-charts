@@ -37,7 +37,7 @@ block page
                   
           svg(width="100%")
             for n, i in new Array(4)
-              - x = i ? 100*fx(i*3 - 1/8)+"%" : 100*fx(i*3)+"%"
+              - x = i ? 100*(fx(i*3)+fx(-1/6))+"%" : 100*fx(i*3)+"%"
               line(
                 x1=x x2=x
                 y1="100%" y2="120%"
@@ -175,6 +175,7 @@ block append css
       .wrapper
         height: 550px
         max-width: 830px
+        padding: 0 1em
 
       .chart
         box-sizing: border-box
