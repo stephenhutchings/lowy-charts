@@ -156,7 +156,7 @@ block page
         ser.includes('China') ? ser = "China over India" : "";
         ser.includes('India') ? ser = "India over China" : "";
         
-        tooltip.style.left = l < 0 ? '3px' : dr < 0 ? l+dr-3+'px' : l+'px';
+        tooltip.style.left = l < 0 ? '3px' : dr < 0 ? (l-27)+'px' : l+'px';
         tooltip.style.top = box.top + 10 + 'px';
         
         tooltip.style.opacity = 1;
