@@ -145,6 +145,8 @@ block page
       el.addEventListener('mouseover', () => {
         
         let box = el.getBoundingClientRect();
+        let l = box.left - 90;
+        let dr = window.innerWidth - (l + 180);
         let val = vals[i].innerHTML;
         let ser = series[i].innerHTML;
         let cat = legendItems[i%nCategories].innerHTML;
@@ -154,9 +156,9 @@ block page
         ser.includes('China') ? ser = "China over India" : "";
         ser.includes('India') ? ser = "India over China" : "";
         
-        
-        tooltip.style.left = box.left - 90 + 'px';
+        tooltip.style.left = l < 0 ? '3px' : dr < 0 ? l+dr-3+'px' : l+'px';
         tooltip.style.top = box.top + 10 + 'px';
+        
         tooltip.style.opacity = 1;
         
         tooltip.innerHTML = val + " of " + bucket + " would support " + ser + " if they were engaged in " + cat.toLowerCase();
