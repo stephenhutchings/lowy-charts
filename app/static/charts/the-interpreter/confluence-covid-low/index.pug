@@ -91,10 +91,11 @@ block page
 
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+          - let order = [3,1,2,4,0]
           for item, i in chart.legend
             li.legend-item
-              span.legend-item-box(style=`background:${chart.colors[i]}`)
-              span.legend-item-label!= item
+              span.legend-item-box(style=`background:${chart.colors[order[i]]}`)
+              span.legend-item-label!= chart.legend[order[i]]
 
     .chart-source.txt-muted.txt-center
       !=page.source
