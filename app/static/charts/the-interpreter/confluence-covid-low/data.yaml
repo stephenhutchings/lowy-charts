@@ -2,8 +2,7 @@ title: >
   Cumulative confirmed cases of Covid-19
 
 source: >
-  Source: <a href="https://ig.ft.com/coronavirus-chart/?areas=tha&areas=khm&areas=vnm&areas=nzl&areas=twn&areasRegional=usny&areasRegional=usca&areasRegional=usfl&areasRegional=ustx&cumulative=1&logScale=1&perMillion=0&values=cases" target="_blank">Financial Times</a>
-
+  Source: Max Roser, Hannah Ritchie, Esteban Ortiz-Ospina and Joe Hasell (2020) - "Coronavirus Pandemic (COVID-19)". Published and retrieved from <a href="https://ourworldindata.org/coronavirus" target="_blank">OurWorldInData.org</a>
 charts:
   -
     title: "Cumulative confirmed cases of Covid-19"

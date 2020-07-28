@@ -96,7 +96,7 @@ block page
               span.legend-item-box(style=`background:${chart.colors[order[i]]}`)
               span.legend-item-label!= chart.legend[order[i]]
 
-    .chart-source.txt-muted.txt-center
+    .chart-source.txt-muted.txt-cond
       !=page.source
 
 
@@ -165,7 +165,9 @@ block append css
 
       .chart-source
         font-size: 14px
-        margin-top: 12px
+        margin: 12px auto 0
+        text-align: center
+        max-width: 470px
 
       .chart-value
         opacity: 0
