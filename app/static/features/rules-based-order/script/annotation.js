@@ -57,7 +57,7 @@ const sources = [
   },
   {
     "id": "15",
-    "ref": "Prime Minister Kevin Rudd’s address to The Brookings Institution, Washington, March 2008"
+    "ref": "Prime Minister Kevin Rudd’s address to The Brookings Institution, Washington DC, March 2008"
   },
   {
     "id": "16",
@@ -85,7 +85,15 @@ const sources = [
   },
   {
     "id": "22",
-    "ref": "2020 Speech by PM Morrison to launch the Defence Strategic Update"
+    "ref": "Address by Prime Minister Morrison to launch the 2020 Defence Strategic Update"
+  },
+  {
+    "id": "23",
+    "ref": "Prime Minister Malcolm Turnbull’s 2016 Lowy Lecture"
+  },
+  {
+    "id": "24",
+    "ref": "2013 PM&C Strategy Document 'Strong and Secure: A Strategy for Australia’s National Security'"
   }
 ];
 var annotations = document.querySelectorAll('cite');
