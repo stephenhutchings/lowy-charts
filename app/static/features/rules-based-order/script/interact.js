@@ -8,7 +8,7 @@ function scrollThis(p, c, o, i) {
 function initThemeMenu(){
 
   const menu = document.getElementById('theme-menu');
-  const themeBody = document.querySelector('.themes-txt');
+  const headings = document.querySelector('.themes-txt').querySelectorAll('h2:not(.expert-name)');
 
   // FOR MOBILE: TOGGLE THEMES/TIMELINE INDEX
   menu.querySelectorAll('h2').forEach( (btn) => {
@@ -26,7 +26,7 @@ function initThemeMenu(){
   menu.querySelectorAll('li').forEach( (el, i) => {
     el.addEventListener('click', (e) => {
       if (i < 10) {
-        y = themeBody.querySelectorAll('h2')[i].getBoundingClientRect().top + window.pageYOffset;
+        y = headings[i].getBoundingClientRect().top + window.pageYOffset;
         $('html,body').animate({scrollTop: y-70}, 400);
       }
       else {

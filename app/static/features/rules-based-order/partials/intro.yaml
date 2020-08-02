@@ -66,7 +66,7 @@ themes:
       <div class="item">
         <div class="expert flex"><img class="image" src="./img/charlesworth.jpg">
           <div>
-            <h2 style="margin-top: 0;">Hilary Charlesworth</h2>
+            <h2 class="expert-name" style="margin-top: 0;">Hilary Charlesworth</h2>
             <h3>Expert</h3>
           </div>
         </div>
