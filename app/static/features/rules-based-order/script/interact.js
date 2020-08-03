@@ -60,7 +60,6 @@ function enableSideMenu() {
   sideMenuVisible ? menuBtn.parentElement.style.removeProperty('right') : "";
 
   toggleSideMenu(menuBtn);
-  vw < 900 ? toggleSideMenu(menuBtn) : ""; // Menu collapsed for small screens by default
 }
 
 // TOGGLE SIDE MENU
