@@ -53,6 +53,7 @@ blockquote
 .banner-wrap
   display: flex
   flex-direction: column
+
 .banner
   position: relative
   background-color: $color-bl-dk
@@ -61,17 +62,26 @@ blockquote
   max-height: 100vh
   min-height: 100vh
   margin-top: 0
+
   &-title
-    font-size: 28px
-    letter-spacing: 1.5px
+    font-size: 40px
     color: $color-ff
     margin: auto
-    text-transform: uppercase
+    font-weight: 200
     padding: 0 20px
+
+    span
+      display: inline-block
+      line-height: 1.5
+      text-transform: uppercase
+      font-weight: 400
+      font-size: 18px
+
   &-caption
     position: absolute
     right: 10px
     margin-top: 320px
+
 
 #experts
   margin-top: 1em
@@ -350,16 +360,10 @@ cite
 
 @media (min-width: 600px)
 
-  .banner
-    &-title
-      font-size: 90px
-      font-weight: 200
-      text-transform: none
-
-      span
-        font-size: 26px
-        text-transform: uppercase
-        font-weight: 400
+  .banner-title
+    font-size: 60px
+    span
+      font-size: 26px
 
   .section-wrap
     width: 100%
@@ -409,6 +413,11 @@ cite
 
 
 @media (min-width: 900px)
+
+  .banner-title
+    font-size: 90px
+    span
+      font-size: 26px
 
   .section-wrap
     width: 100%
