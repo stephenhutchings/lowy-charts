@@ -26,6 +26,10 @@
   left: -15px
   transform: rotate(180deg)
 
+.h-btn
+  display: block
+  &.disabled
+    display: none
 
 .history-timeline
   position: relative
@@ -78,12 +82,32 @@
 
 // At this width, the layout changes from card to flat
 @media (min-width: 600px)
+
+  .h-btn
+    fill: #002b45
+    &.disabled
+      display: block
+      fill: #888
+      pointer-events: none
+
   .btnfw,.btnbw
     bottom: -45px
     border: 1px solid $color-bl-dk
     border-radius: 100%
+    transition-duration: 0.2s
+    &.disabled
+      border-color: #888
+      pointer-events: none
+
+    &:hover
+      background: $color-bl-dk
+      svg
+        fill: white
+
+
   .btnfw
     right: calc(50% - 40px)
+
   .btnbw
     left: calc(50% - 40px)
     transform: rotate(180deg)

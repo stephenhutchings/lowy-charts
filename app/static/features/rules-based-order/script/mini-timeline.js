@@ -25,16 +25,22 @@ function scrollHistory(btn, fw) {
 
 // Set side-scroll buttons for historyTimelines
 function showHideHistoryBtns(el) {
+
   let viewWidth = $(el).outerWidth();
   let endLeft = $(el).children('.history-timeline').outerWidth() - viewWidth;
   let mobile = $(window).width() < 600;
 
+  let btnBack = $(el).prev();
+  let btnFwd = $(el).prev().prev();
+  let btnBackSvg = btnBack.children('svg');
+  let btnFwdSvg = btnFwd.children('svg');
+
   if (mobile) {
-    $(el).scrollLeft() < viewWidth/2 ? $(el).prev().css('display','none') : $(el).prev().css('display','block'); // if at start, hide back btn
-    $(el).scrollLeft() > endLeft - viewWidth/2 ? $(el).prev().prev().css('display','none') : $(el).prev().prev().css('display','block'); // if at end, hide fwd btn
+    $(el).scrollLeft() < viewWidth/2 ? btnBackSvg.addClass('disabled') : btnBackSvg.removeClass('disabled'); // if at start, hide back btn
+    $(el).scrollLeft() > endLeft - viewWidth/2 ? btnFwdSvg.addClass('disabled') : btnFwdSvg.removeClass('disabled'); // if at end, hide fwd btn
   }
   else {
-    $(el).scrollLeft() == 0 ? $(el).prev().find('.h-btn').css('fill','#888') : $(el).prev().find('.h-btn').css('fill','#002b45');
-    $(el).scrollLeft() >= endLeft - 5 ? $(el).prev().prev().find('.h-btn').css('fill','#888') : $(el).prev().prev().find('.h-btn').css('fill','#002b45');
+    $(el).scrollLeft() == 0 ? (btnBack.addClass('disabled') && btnBackSvg.addClass('disabled')) : (btnBack.removeClass('disabled') && btnBackSvg.removeClass('disabled'));
+    $(el).scrollLeft() >= endLeft - 5 ? (btnFwd.addClass('disabled') && btnFwdSvg.addClass('disabled')) : (btnFwd.removeClass('disabled') && btnFwdSvg.removeClass('disabled'));
   }
 }
