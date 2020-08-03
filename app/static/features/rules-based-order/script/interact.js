@@ -41,11 +41,6 @@ function togglePM(i, scroll) {
   let pms = ["rudd", "gillard", "abbott", "turnbull", "morrison"];
   let pm = pms[i];
 
-  // Nav menu
-  // $('.tiles').addClass('nav-tiles');
-  // $('.tiles').children('.active').removeClass('active');
-  // $('.tiles').children(`.tile-${i}`).addClass('active');
-
   // Timeline content
   $('.show').removeClass('show');
   $(`.wrap.${pm}`).addClass('show');
@@ -54,21 +49,6 @@ function togglePM(i, scroll) {
   positionAnnotations();
 }
 
-// TOGGLE PM-TILE HEADER //
-  /*
-  function toggleHeader(show) {
-    let tiles = $('.tiles');
-    if (show) {
-      tiles.css('height', '100px');
-      tiles.addClass('header nav-tiles');
-      headerVisible = true;
-    }
-    else {
-      tiles.css('height', 'initial');
-      tiles.removeClass('header nav-tiles');
-      headerVisible = false;
-    }
-  }*/
 
 // ENABLE SIDE MENU
 function enableSideMenu() {
@@ -137,12 +117,6 @@ function readMore() {
       .html(html)
       .css('padding-top', collapsed ? '85px' : '0' );
   }, 100);
-
-  // TOGGLE SKIP TO TIMELINE FOOTER
-  // toggleFooter(!collapsed);
-  // $('.intro-footer')
-  //   .toggleClass('txt-xs')
-  //   .css('min-height', collapsed ? '10vh' : '3.5em');
 
   collapsed ? scrollThis('html,body', '.intro-wrap',0) : "";
 
