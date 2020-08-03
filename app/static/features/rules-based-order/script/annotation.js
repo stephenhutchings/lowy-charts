@@ -96,6 +96,7 @@ const sources = [
     "ref": "2013 PM&C Strategy Document 'Strong and Secure: A Strategy for Australia’s National Security'"
   }
 ];
+
 var annotations = document.querySelectorAll('cite');
 
 // Creates nested divs for each annotation link in introduction
@@ -103,7 +104,7 @@ var annotations = document.querySelectorAll('cite');
 function createAnnotations() {
 
   annotations.forEach( (el, i) => {
-
+    console.log(el)
     let isComment = el.classList.length;
     let attr = isComment ? el.getAttribute('tooltip') : el.getAttribute('ref');
     let data = isComment ? attr : sources.find(src => src.id == attr ).ref;
@@ -124,7 +125,7 @@ function positionAnnotations() {
       textbox.style.display = 'inline';
       l = textbox.getBoundingClientRect().left;
       r = textbox.getBoundingClientRect().right;
-      dr = r - vw;
+      dr = r + 30 - vw;
       initial = (l-r)/2 + 14;
 
       l < 0 ? textbox.style.left = (initial-l)+'px' : "";
