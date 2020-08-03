@@ -52,19 +52,20 @@ block page
           .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700(
             onclick=(i ? "next(false)" : "")
             class=(i ? "ptr" : "disable")
-            style="border-right: 1px solid white"
+            style="border-right: 1px solid white; box-sizing: border-box;"
           )
             .btn.nohover.txt-w: .icon.icon-left-arrow
             span Prev
           .flex-ch.col-1-2.dark.ph-lg.txt-m.txt-tu.txt-w700.ptr(
               onclick=(i!=4 ? "next(true)" : "")
               class=(i!=4 ? "ptr" : "disable")
-              style="border-left: 1px solid white"
+              style="border-left: 1px solid white; box-sizing: border-box;"
             ) Next
             .btn.nohover.txt-w: .icon.icon-right-arrow
 
 
   include partials/header
+  include partials/footer
   
   
 block append css
