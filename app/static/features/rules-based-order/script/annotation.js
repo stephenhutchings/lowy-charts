@@ -104,7 +104,6 @@ var annotations = document.querySelectorAll('cite');
 function createAnnotations() {
 
   annotations.forEach( (el, i) => {
-    console.log(el)
     let isComment = el.classList.length;
     let attr = isComment ? el.getAttribute('tooltip') : el.getAttribute('ref');
     let data = isComment ? attr : sources.find(src => src.id == attr ).ref;

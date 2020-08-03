@@ -79,19 +79,18 @@ section
   .section-wrap.pv-xl(style="max-height: none; overflow: visible")
     .themes-txt!= marked(themes)
 
-section
-  .tile-page.flex-cv.pv-md
-    .col-lg.pv-sm
-      h1 Annotated Timeline
-      .txt-m 
-        :marked
-          The timeline below highlights key moments in the evolution of the rules-based order.
-          From Kevin Rudd, the first Australian Prime Minister to use the term, through to current PM Scott Morrison,
-          we track how the idea has been shaped by each cabinet and significant global events.
-          Expert commentators offer inside knowledge along the way.
-    .tile-wrap.pv-sm: .tiles.flex-ch.flex-wrap
-      #tiles-prev.btn.txt-bl.ptr.br-max.ib(onclick="next(false)") &larr;
-      each pm, i in ["2007&mdash;2010<br>(Rudd)", "2010&mdash;2013<br>(Gillard)", "2013&mdash;2015<br>(Abbott)", "2015&mdash;2018<br>(Turnbull)", "2018&mdash;<br>(Morrison)"]
-        .tile.flex.txt-center.txt-tu.txt-xs.ptr.appear(class=`tile-${i} delay-${i+1}` onclick=`togglePM(${i}, true)`)
-          div!= pm
-      #tiles-next.btn.txt-bl.ptr.br-max.ib(onclick="next(true)") &rarr;
+section(style="background-color: white")
+  .section-wrap.timeline-section.flex-cv.pv-md
+    h1 Annotated Timeline
+    .txt-m 
+      :marked
+        The timeline below highlights key moments in the evolution of the rules-based order.
+        From Kevin Rudd, the first Australian Prime Minister to use the term, through to current PM Scott Morrison,
+        we track how the idea has been shaped by each cabinet and significant global events.
+        Expert commentators offer inside knowledge along the way.
+    iframe.chart.ngram(
+      width="100%" height="650px"
+      style="margin: 50px 0 20px"
+      src="https://project-rbo--lowy-charts.netlify.app/features/rules-based-order/charts/speeches"
+      frameborder=0 scrolling=no
+    )

@@ -44,19 +44,6 @@
   box-sizing: border-box
   z-index: 10
 
-.nav-tiles
-  &.tiles
-    min-height: 100px
-  .tile
-    height: 60px
-    min-width: 80px
-    background: $color-gy-lt
-    transition-duration: 0.2s
-  .tile:not(.active)
-    display: none
-  .tile.active
-    height: 65px
-    background: $color-bl-dk
 
 @media (min-width: 450px)
   .header-logo
@@ -68,11 +55,3 @@
   .header-title
     span
       display: inline
-
-@media (min-width: 950px)
-  .nav-tiles
-    .tile:not(.active),
-    .tile.active
-      display: flex
-    &.tiles .tile:hover
-      background: $color-bl-dk
