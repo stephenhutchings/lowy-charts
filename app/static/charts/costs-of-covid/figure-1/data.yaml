@@ -1,8 +1,8 @@
 title: >
-  Figure 1: Business Investment
+  Figure 1: Business investment
 
 source: >
-  <b>Source:</b> ???
+  <b>Source:</b> Australian Bureau of Statistics
 
 notes: >
   <b>Notes:</b> ???
@@ -10,9 +10,9 @@ notes: >
 charts:
   -
     title: >
-      A. Business Investment as a Share of GDP
+      A. Business investment as a share of GDP
     subtitle: >
-      As Gross Fixed Capital Formation [%]
+      As gross fixed capital formation (GFCF) [%]
     scale:
       ticks: 11
       minY: 0

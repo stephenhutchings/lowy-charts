@@ -12,7 +12,7 @@ notes: >
 charts:
   -
     title: >
-      Comparing Household and Business Debt
+      Comparing household and business debt
     scale:
       ticks: [6,7]
       minY: [0, 50]
