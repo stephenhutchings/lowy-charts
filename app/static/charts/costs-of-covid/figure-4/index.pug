@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/costs-of-covid/figure-2/data"
+  - var datapath = "static/charts/costs-of-covid/figure-4/data"
   - _.extend(page, data.getOne(datapath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
@@ -9,45 +9,42 @@ block page
   .wrapper.flex.flex-col
 
     .page-title.txt-center= page.title
+    .chart-subtitle.txt-muted.txt-center.txt-sm!= page.subtitle
 
     .col-wrap.txt-center.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
         - scale = chart.scale
         - fx = (i, len) => (i + 0.75) / (len + 0.5)
-        - fy = (y, s) => (y - scale.minY[s]) / (scale.maxY[s] - scale.minY[s])
+        - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
 
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
             svg(height="100%" width="100%")
-              for j in [0,1]
-                for n, i in new Array(scale.ticks[j])
-                  - y = 1 - (i / (scale.ticks[j]-1))
-                  if j == 0
-                    svg(y=toPercent(y))
-                      text(text-anchor="end" transform="translate(-8 4)")
-                        = (scale.minY[j] + (i/(scale.ticks[j]-1)) * (scale.maxY[j] - scale.minY[j])).toFixed(0) + "%"
-                  else
-                    svg(y=toPercent(y) x="100%")
-                      text(transform="translate(8 4)")
-                        = (scale.minY[j] + (i/(scale.ticks[j]-1)) * (scale.maxY[j] - scale.minY[j])).toFixed(0) + "%"
+              for n, i in new Array(scale.ticks)
+                - y = 1 - (i / (scale.ticks-1))
+                svg(y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = (scale.minY + (i/(scale.ticks-1)) * (scale.maxY - scale.minY)).toFixed(0)
+                
+                svg
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#9992"
+                    stroke-dasharray=((i%2) ? 5 : "")
+                  )
 
             svg(width="100%" y="100%")
-              - let labels = ["Household debt", "Business debt"]
-              for item, i in chart.legend
-                svg( x=toPercent(i) y="-50%" )
-                  text(
-                    text-anchor="middle"
-                    transform=`rotate(${-90 + i*-180}) translate(0 ${-10*i-40})`
-                  )!=labels[i]
-                
               for year, i in chart.axes[0].values
                 svg(x=toPercent(fx(i, chart.axes[0].values.length)))
                   text(
                     text-anchor="end"
                     transform="rotate(-45) translate(-5 15)"
                   )
-                    = !((i+4)%4) || i==chart.axes[0].values.length-1 ? year : ""
+                    = !((i+2)%2) || i==chart.axes[0].values.length-1 ? year : ""
 
             svg(
               width="100%"
@@ -56,8 +53,7 @@ block page
               preserveAspectRatio="none"
             )
               for item, i in chart.legend
-                - let points = chart.axes[1].values.map((y, ix, a) => ([ 100 * fx(ix, a.length), 100 * fy(scale.minY[item.scale] + scale.maxY[item.scale] - y[i], item.scale) ].join(" ") ))
-                - i ? points.splice(0,1) : ""
+                - let points = chart.axes[1].values.map((y, ix, a) => ([ 100 * fx(ix, a.length), 100 * fy(scale.minY + scale.maxY - y) ].join(" ") ))
                 polyline(
                   fill="none"
                   stroke=chart.colors[i]
@@ -66,7 +62,7 @@ block page
                   points=points.join(",")
                 )
                 
-        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+        //ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
           for item, i in chart.legend
             li.legend-item
               span.legend-item-box(
@@ -79,8 +75,8 @@ block page
               )
               span.legend-item-label!= item.name
 
-    .txt
-      //.chart-source.txt-muted
+    .txt-center
+      .chart-source.txt-muted.txt-semi
         !=page.source
       //.chart-source.txt-center
         !=page.notes
@@ -110,8 +106,8 @@ block page
               position: absolute
               top: 20px
               bottom: 45px
-              left: 75px
-              right: 85px
+              left: 65px
+              right: 35px
                 
             .chart-content > svg
               border-bottom: 1px solid #ccc
@@ -197,10 +193,4 @@ block page
             @media (max-width: 450px)
               .legend
                 font-size: 13px
-                flex-direction: column
-                max-width: 70%
-                white-space: normal
-              .legend-item
-                text-align: center
-                margin: 4px 0 0
               

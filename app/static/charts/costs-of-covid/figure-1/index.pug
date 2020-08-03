@@ -29,6 +29,16 @@ block page
                   text(text-anchor="end" transform="translate(-8 4)")
                     = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY) + "%"
 
+                svg(class="y-minor")
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#9992"
+                    stroke-dasharray=((i%2) ? 5 : "")
+                  )
+
             svg(width="100%" y="100%")
               for year, i in chart.axes[0].values
                 svg(x=toPercent(fx(i, chart.axes[0].values.length)) )
@@ -89,6 +99,16 @@ block page
                   text(text-anchor="end" transform="translate(-8 4)")
                     = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY)
 
+                svg(class="y-minor")
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#9992"
+                    stroke-dasharray=((i%2) ? 5 : "")
+                  )
+
             svg(width="100%" y="100%")
               for year, i in chart.axes[0].values
                 svg(x=toPercent(fx(i, chart.axes[0].values.length)))
@@ -126,7 +146,7 @@ block page
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item
 
-    .chart-source.txt-muted
+    .chart-source.txt-muted.txt-semi
       !=page.source
       //.chart-source.txt-muted
         !=page.notes
@@ -257,11 +277,15 @@ block page
       
               .chart:hover &
                 opacity: 0
+                
+            .y-label:nth-last-child(2),
+            .y-minor:last-child
+              display: none
       
             @media screen and (max-width: 750px)
               .wrapper
                 overflow: hidden
-                height: 700px
+                height: 750px
               .chart-content
                 left: 60px!important
                 right: 35px!important
@@ -289,7 +313,6 @@ block page
                 .col-md:last-child &
                   padding: 0
                 
-              .y-label:nth-child(2n)
-                display: none
+  
       
                   
