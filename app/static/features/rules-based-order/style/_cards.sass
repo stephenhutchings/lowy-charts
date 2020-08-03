@@ -116,9 +116,11 @@
     height: 4px
     background-color: $color-bl-dk
   .quotation
-    font-weight: 600
+    font-weight: 500
+    margin-bottom: 0.5em
   .name
-    font-weight: 700
+    font-weight: 500
+    margin-bottom: 8px
     color: $color-gy-dk
   .supp
     margin-bottom: 0.8em
@@ -126,6 +128,17 @@
   .social-share
     text-align: right
     margin-right: 10px
+  .social-share a
+    border: 1px solid $color-bl-dk
+    border-radius: 50%
+    display: inline-block
+    width: 35px
+    height: 35px
+    text-align: center
+    line-height: 35px
+    &:first-child
+      margin-right: 5px
+
 
 .commentary:after
 	content: ''
@@ -258,6 +271,23 @@
 
   .row.banner
     border-left: 10px solid $color-bl-dk
+
+  .quote
+    .quotation
+      font-weight: 400
+    .name
+      font-size: 20px
+      margin-bottom: 0
+    .supp
+      font-size: 16px
+    .social-share a
+      border: none
+      margin-top: -1em
+      transition-duration: 0.2s
+      &:hover
+        color: white
+        background: $color-bl-dk
+
 
 @media (min-width: 1085px)
 

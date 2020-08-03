@@ -4,5 +4,24 @@
 .quotation.txt-l!= card.quotation
 .name.txt-l!= card.name
 .supp.txt-m!= card.supp
-include social 
+.social-share
+  a.icon.icon-social-facebook(
+    target="_blank"
+    href=[
+      "https://www.facebook.com/sharer.php?u=",
+      encodeURIComponent(page.url),
+    ].join("")
+  )
+  a.icon.icon-social-twitter(
+    target="_blank"
+    href=[
+      "https://twitter.com/share?url=",
+      encodeURIComponent(page.url),
+      "&text=",
+      encodeURIComponent(card.quotation),
+      " –",
+      encodeURIComponent(card.name),
+      "&via=LowyInstitute"
+    ].join("")
+  )
 .quote-footer
