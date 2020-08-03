@@ -101,12 +101,12 @@ function toggleSideMenu(el) {
 function initSideMenu() {
 
   const menu = document.getElementById('side-menu');
-  const themeBody = document.querySelector('.themes-txt');
+  const headings = document.querySelector('.themes-txt').querySelectorAll('h2:not(.expert-name)');
 
   menu.querySelectorAll('li').forEach( (el, i) => {
     el.addEventListener('click', (e) => {
       if (i < 10) {
-        y = themeBody.querySelectorAll('h2')[i].getBoundingClientRect().top + window.pageYOffset;
+        y = headings[i].getBoundingClientRect().top + window.pageYOffset;
         $('html,body').animate({scrollTop: y-70}, 400);
       }
       else {
