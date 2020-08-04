@@ -12,9 +12,8 @@ window.addEventListener('scroll', scrollCheck);
 
 // DOM load event listener
 function onLoad() {
-  // resetWrapHeight('.tile-wrap','.tiles');
   createAnnotations();
-  initThemeMenu();
+  initContentsMenu();
   initSideMenu();
   setHistoryTimelines();
   togglePM(0, false);
@@ -24,9 +23,9 @@ function onLoad() {
 function resizeCallback() {
   vh = window.innerHeight;
   vw = window.innerWidth;
-  // headerVisible ? "" : resetWrapHeight('.tile-wrap','.tiles');
   setHistoryTimelines();
   positionAnnotations();
+  vw < 900 ? initContentsMenuForMobile() : initContentsMenuForMobile(true);
 }
 
 // onScroll event listener
@@ -43,11 +42,5 @@ function scrollCheck() {
   // toggle side menu
   let y2 = $('#theme-menu')[0].offsetTop + vh/2.5;
   (!sideMenuVisible && c > y2 ) || (sideMenuVisible && c < y2 ) ? enableSideMenu() : "";
-  
-  // toggle tile header
-  // let y0 = $('.tile-wrap')[0].offsetTop;
-  // let y1 = $('.tile.active').length ? $('.tile.active')[0].offsetTop : 99999;
-  // if (!headerVisible && c > y1) {toggleHeader(true);}
-  // else if (headerVisible && c < y0) {toggleHeader(false);}
 
 }
