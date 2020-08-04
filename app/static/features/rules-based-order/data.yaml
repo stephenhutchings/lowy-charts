@@ -714,7 +714,10 @@ cards:
           ## Address by Linda Reynolds to the Hudson Institute, Washington DC
 
           > Australia does not take for granted a regional default inclination towards the advantages of existing rules-based systems — nor should the United States. As clear as those advantages are to us, we must constantly prove them to others. Through actions and demonstrable sovereign respect, not just words.
-
+        media:
+          class: image
+          src: "img/reynolds.jpg"
+          caption: Linda Reynolds at the Hudson Institute &ndash; @LindaReynoldsWA / Facebook
       - type: anchor
         year: 2020
 
