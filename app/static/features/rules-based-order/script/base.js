@@ -25,7 +25,7 @@ function resizeCallback() {
   vw = window.innerWidth;
   setHistoryTimelines();
   positionAnnotations();
-  vw < 900 ? initContentsMenuForMobile() : initContentsMenuForMobile(true);
+  vw < 750 ? initContentsMenuForMobile() : initContentsMenuForMobile(true);
 }
 
 // onScroll event listener

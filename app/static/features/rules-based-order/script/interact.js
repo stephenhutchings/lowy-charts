@@ -15,6 +15,8 @@ function initContentsMenuForMobile(disable) {
   disable = disable || false;
   const menu = document.getElementById('theme-menu');
   menu.querySelectorAll('h2').forEach( (btn) => {
+    let h = btn.nextElementSibling.style.maxHeight;
+    let icon = btn.querySelector('span');
     disable ? btn.removeEventListener('click', contentsListener, true) : btn.addEventListener('click', contentsListener, true);
     disable ? btn.nextElementSibling.style.maxHeight = '200vh' : "";
   });
@@ -39,7 +41,7 @@ function initContentsMenu() {
   });
 
   // FOR MOBILE: TOGGLE COLLAPSABLE THEMES/TIMELINE BUTTONS
-  vw < 900 ? initContentsMenuForMobile() : "";
+  vw < 750 ? initContentsMenuForMobile() : "";
 
 }
 
