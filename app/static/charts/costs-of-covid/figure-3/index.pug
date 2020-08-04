@@ -25,6 +25,10 @@ block page
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
                     = (scale.minY[0] + (i/(scale.ticks[0]-1)) * (scale.maxY[0] - scale.minY[0])).toFixed(0) + "%"
+                
+                svg(y=toPercent(y) x="100%")
+                  text(text-anchor="start" transform="translate(8 4)")
+                    = (scale.minY[1] + (i/(scale.ticks[1]-1)) * (scale.maxY[1] - scale.minY[1])).toFixed(0) + "%"
 
                 svg
                   line(
