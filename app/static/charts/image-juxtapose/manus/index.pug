@@ -35,11 +35,11 @@ block page
     window.addEventListener("resize", () => { vw = window.innerWidth; maintainAspectRatio(); });
     
     wrap.addEventListener('mousemove', slide);
-    /* wrap.addEventListener('touchmove', slide); */
+    wrap.addEventListener('touchmove', slide);
     wrap.addEventListener('mouseup', stop);
-    /* wrap.addEventListener('touchend', stop); */
+    wrap.addEventListener('touchend', stop);
     slider.addEventListener('mousedown', () => mouseDown = true);
-    /* slider.addEventListener('touchstart', () => mouseDown = true); */
+    slider.addEventListener('touchstart', () => mouseDown = true);
       
     function slide(e) {
       if (mouseDown) {
