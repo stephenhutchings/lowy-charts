@@ -12,6 +12,7 @@ window.addEventListener('scroll', scrollCheck);
 
 // DOM load event listener
 function onLoad() {
+  document.querySelector('html').setAttribute("ontouchmove", "");
   createAnnotations();
   initContentsMenu();
   initSideMenu();
