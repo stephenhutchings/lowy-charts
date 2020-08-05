@@ -163,12 +163,18 @@
 .card-end
   min-height: 70px
   margin-top: 20px!important
+  font-size: 15px
+  .gov
+    display: none
+  .col-1-2
+    flex-basis: 100%
   > *,
   > * > *
     min-height: inherit
   @media (min-width: 600px)
     margin-bottom: 70px!important
     .col-1-2
+      flex-basis: 50%
       transition-duration: 400ms
     &:not(.nohover):hover .col-1-2:not(.disable)
       background: $color-gy-lt
@@ -176,6 +182,9 @@
     &:not(.nohover):hover .col-1-2:not(.disable):hover
       background: $color-bl-dk
       opacity: 1
+  @media (min-width: 800px)
+    .gov
+      display: inline
 
 .anchor
   background-color: $color-bl-dk

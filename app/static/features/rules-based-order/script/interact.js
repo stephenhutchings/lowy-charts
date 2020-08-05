@@ -131,7 +131,7 @@ function readMore() {
   positionAnnotations();
 }
 
-function next(fwd) {
+function next(btn, fwd) {
   let n = 5;
   let i;
   $('.wrap').each( (j, el) => { $(el).hasClass('show') ? i=j : "" });
