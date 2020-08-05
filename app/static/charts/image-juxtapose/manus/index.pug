@@ -17,6 +17,8 @@ block page
   
   script.
     
+    let vw = window.innerWidth;
+    
     let wrap = document.querySelector('.wrapper');
     let img = document.querySelector('.window');
     let slider = document.querySelector('.slider');
@@ -27,9 +29,17 @@ block page
     let w = wrap.getBoundingClientRect().width;
     let mouseDown = false;
     
+    let maintainAspectRatio = function() { vw < 800 ? wrap.style.height = 0.75*vw  + 'px' : "" };
+    
+    window.onload = maintainAspectRatio;
+    window.addEventListener("resize", () => { vw = window.innerWidth; maintainAspectRatio(); });
+    
     wrap.addEventListener('mousemove', slide);
+    /* wrap.addEventListener('touchmove', slide); */
     wrap.addEventListener('mouseup', stop);
+    /* wrap.addEventListener('touchend', stop); */
     slider.addEventListener('mousedown', () => mouseDown = true);
+    /* slider.addEventListener('touchstart', () => mouseDown = true); */
       
     function slide(e) {
       if (mouseDown) {
