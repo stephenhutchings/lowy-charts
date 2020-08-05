@@ -51,9 +51,8 @@ block page
       .row.card-end(class=(i==0 || i==4 ? "nohover" : ""))
         .flex-ch.txt-w500
           if i
-            .flex-ch.col-1-2.dark.txt-tu(
+            .flex-ch.col-1-2.dark.txt-tu.ptr(
               onclick=(i ? "next(this, false)" : "")
-              class=(i ? "ptr" : "disable")
               style=`border-right: ${i!=4 ? "1px solid white" : ""}; box-sizing: border-box; position: relative;`
             )
               .btn.nohover.txt-w(style="position:absolute; left: 10px"): .icon.icon-left-arrow
@@ -62,7 +61,6 @@ block page
           if i!=4
             .flex-ch.col-1-2.dark.txt-tu.ptr(
               onclick=(i!=4 ? "next(this, true)" : "")
-              class=(i!=4 ? "ptr" : "disable")
               style=`border-left: ${i ? "1px solid white" : ""}; box-sizing: border-box; position: relative;`
             )
               span(style="padding-right: 1em")!=(i==4 ? "" : years[i+1][0])
