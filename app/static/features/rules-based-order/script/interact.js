@@ -128,7 +128,7 @@ function readMore() {
 
   collapsed ? scrollThis('html,body', '.intro-wrap',0) : "";
 
-  positionAnnotations();
+  // positionAnnotations();
 }
 
 function next(btn, fwd) {

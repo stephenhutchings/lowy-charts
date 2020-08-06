@@ -26,7 +26,7 @@ function resizeCallback() {
   vh = window.innerHeight;
   vw = window.innerWidth;
   setHistoryTimelines();
-  positionAnnotations();
+  // positionAnnotations();
   vw < 750 ? initContentsMenuForMobile() : initContentsMenuForMobile(true);
 }
 

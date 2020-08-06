@@ -263,6 +263,7 @@ cite
     position: absolute
     bottom: 110%
     left: -125px
+    width: 250px
     min-width: 250px
     padding: 1em
     border-radius: .5em
@@ -302,18 +303,16 @@ cite
   &.maude span,
   &.medcalf span,
   &.charlesworth span
-    left: calc(-150px + 1em)
-    min-width: 300px
+    left: calc(-140px + 1em)
+    width: 280px
+    min-width: 280px
     padding: 1em
     text-align: left
     background: $color-bl-dk
     color: $color-ff
     font-weight: 300
     border: 1px solid $color-ff
-
-  //&:hover span
-    display: block
-    animation: appear .4s forwards
+    transition-duration: 0.5s
 
 .btn
   width: 40px
