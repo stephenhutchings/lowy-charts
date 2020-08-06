@@ -99,6 +99,14 @@ const sources = [
 
 var annotations = document.querySelectorAll('cite');
 
+document.addEventListener('touchend', () => {
+  if (citatationOpen) {
+    document.querySelectorAll('cite span').forEach((el, i) => {
+      el.style.display === 'block' ? el.style.display = 'none' : ""
+    });
+  }
+});
+
 // Creates nested divs for each annotation link in introduction
 // Sets background image class for all commentator annotations
 function createAnnotations() {
@@ -115,7 +123,6 @@ function createAnnotations() {
     el.addEventListener('mouseover', hoverAnnotation);
     el.addEventListener('mouseleave', unhoverAnnotation);
     el.addEventListener('touchstart', hoverAnnotation);
-    el.addEventListener('touchend', unhoverAnnotation);
   });
 
 }
@@ -159,6 +166,8 @@ function hoverAnnotation(e) {
 
   t < 0 ? ( (textbox.style.top = '110%') && (textbox.style.bottom = 'auto') ) : ""; // If hidden, show it below the avatar
   r > 0 ? ( textbox.style.left = (l0-r) + 'px' ) : ""; // If cutoff on right
+
+  citatationOpen = true;
 }
 
 // Event listener for hiding annotations
@@ -169,4 +178,6 @@ function unhoverAnnotation(e) {
   textbox.style.removeProperty('bottom');
   textbox.style.removeProperty('top');
 
+  citatationOpen = false;
+  e.stopPropagation();
 }

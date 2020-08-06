@@ -5,6 +5,7 @@ var hTopVisible = false;
 var headerVisible = false;
 var sideMenuVisible = false;
 var collapsed = true;
+var citatationOpen = false;
 
 window.addEventListener('DOMContentLoaded', onLoad);
 window.addEventListener('resize', _.debounce(resizeCallback, 200));
