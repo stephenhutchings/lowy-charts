@@ -127,29 +127,13 @@ function createAnnotations() {
 
 }
 
-// Adjusts position of tooltip to keep within viewport
+// Adjusts position of tooltip for History Timeline comments
 function positionAnnotations() {
-
-  annotations.forEach( (el, i) => {
-    textbox = el.querySelector('span');
-    if ( !el.classList.contains('no-reposition') ) {
-      // textbox.style.display = 'inline';
-      // l = textbox.getBoundingClientRect().left;
-      // r = textbox.getBoundingClientRect().right;
-      // dr = r + 30 - vw;
-      // initial = (l-r)/2 + 14;
-      //
-      // l < 0 ? textbox.style.left = (initial-l)+'px' : "";
-      // dr > 0 ? textbox.style.left = (initial - dr)+'px' : "";
-      //
-      // textbox.style.removeProperty('display');
-    }
-    else { // For the comments in a history box
-      eventNode = el.parentNode.parentNode;
-      w = eventNode.getBoundingClientRect().width;
-      textbox.style.minWidth = w+'px';
-      textbox.style.left = -(w/2)+10+'px';
-    }
+  document.querySelectorAll('.no-reposition span').forEach( (el, i) => {
+    eventNode = el.parentNode.parentNode.parentNode;
+    w = eventNode.getBoundingClientRect().width;
+    el.style.minWidth = w+'px';
+    el.style.left = -(w/2)+10+'px';
   });
 }
 
@@ -158,19 +142,18 @@ function hoverAnnotation(e) {
 
   let l0, rect, t, l, r, dr;
   let textbox = e.target.firstElementChild; // Get bubble box
+
   textbox.style.display = 'block'; // Show it
   rect = textbox.getBoundingClientRect(); // Get its coordinates
   t = rect.top;
   l = rect.left;
   r = rect.right - vw;
-  w = rect.width;
-  l0 = -w/2+15;
+  l0 = -rect.width/2+15;
 
   t < 0 ? ( (textbox.style.top = '110%') && (textbox.style.bottom = 'auto') ) : ""; // If hidden up top, show it below the avatar
-
-  if (l < 0 && r > 0) {textbox.style.minWidth = '250px'; textbox.style.left = (l0-l+20) + 'px'; console.log('both');} // if cutoff both sides
-  else if (l < 0) { textbox.style.left = (l0-l+10) + 'px'; console.log('left');} // If cutoff on left
-  else if (r > 0) { textbox.style.left = (l0-r-10) + 'px'; console.log('right');} // If cutoff on right
+  if (l < 0 && r > 0) {textbox.style.minWidth = '250px'; textbox.style.left = (l0-l+20) + 'px'; } // if cutoff both sides
+  else if (l < 0) { textbox.style.left = (l0-l+10) + 'px'; } // If cutoff on left
+  else if (r > 0) { textbox.style.left = (l0-r-10) + 'px'; } // If cutoff on right
 
   citatationOpen = true;
 }
