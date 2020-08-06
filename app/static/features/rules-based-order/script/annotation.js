@@ -133,7 +133,7 @@ function positionAnnotations() {
       initial = (l-r)/2 + 14;
 
       l < 0 ? textbox.style.left = (initial-l)+'px' : "";
-      dr > 0 ? textbox.style.left = dr = r + 30 - vw; : "";
+      dr > 0 ? textbox.style.left = (initial - dr)+'px' : "";
 
       textbox.style.removeProperty('display');
     }
@@ -149,15 +149,16 @@ function positionAnnotations() {
 // Event listener for mouse-over annotations
 function hoverAnnotation(e) {
 
-  let rect, t, l, r, dr;
+  let l0, rect, t, l, r, dr;
   let textbox = e.target.firstElementChild; // Get bubble box
   textbox.style.display = 'block'; // Show it
+  l0 = (l-r)/2 + 14
   rect = textbox.getBoundingClientRect(); // Get its top coordinate
   t = rect.top;
   r = rect.right + 30 - vw;
 
   t < 0 ? ( (textbox.style.top = '110%') && (textbox.style.bottom = 'auto') ) : ""; // If hidden, show it below the avatar
-  r > 0 ? ( (textbox.style.left = r + 'px') : ""; // If cutoff on right
+  r > 0 ? ( textbox.style.left = (l0-r) + 'px' ) : ""; // If cutoff on right
 }
 
 // Event listener for hiding annotations
