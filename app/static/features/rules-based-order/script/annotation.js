@@ -99,8 +99,6 @@ const sources = [
 
 var annotations = document.querySelectorAll('cite');
 
-document.addEventListener('touchend', unhoverAnnotation);
-
 // Creates nested divs for each annotation link in introduction
 // Sets background image class for all commentator annotations
 function createAnnotations() {
@@ -117,6 +115,7 @@ function createAnnotations() {
     el.addEventListener('mouseover', hoverAnnotation);
     el.addEventListener('mouseleave', unhoverAnnotation);
     el.addEventListener('touchstart', hoverAnnotation);
+    el.addEventListener('touchend', unhoverAnnotation);
   });
 
 }
@@ -134,7 +133,7 @@ function positionAnnotations() {
       initial = (l-r)/2 + 14;
 
       l < 0 ? textbox.style.left = (initial-l)+'px' : "";
-      dr > 0 ? textbox.style.left = (initial - dr)+'px' : "";
+      dr > 0 ? textbox.style.left = dr = r + 30 - vw; : "";
 
       textbox.style.removeProperty('display');
     }
@@ -150,12 +149,15 @@ function positionAnnotations() {
 // Event listener for mouse-over annotations
 function hoverAnnotation(e) {
 
-  let t;
+  let rect, t, l, r, dr;
   let textbox = e.target.firstElementChild; // Get bubble box
   textbox.style.display = 'block'; // Show it
-  t = textbox.getBoundingClientRect().top; // Get its top coordinate
+  rect = textbox.getBoundingClientRect(); // Get its top coordinate
+  t = rect.top;
+  r = rect.right + 30 - vw;
 
   t < 0 ? ( (textbox.style.top = '110%') && (textbox.style.bottom = 'auto') ) : ""; // If hidden, show it below the avatar
+  r > 0 ? ( (textbox.style.left = r + 'px') : ""; // If cutoff on right
 }
 
 // Event listener for hiding annotations
@@ -165,5 +167,5 @@ function unhoverAnnotation(e) {
   textbox.style.display = 'none';
   textbox.style.removeProperty('bottom');
   textbox.style.removeProperty('top');
-  
+
 }
