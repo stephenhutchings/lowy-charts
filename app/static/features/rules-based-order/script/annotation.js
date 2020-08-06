@@ -99,6 +99,8 @@ const sources = [
 
 var annotations = document.querySelectorAll('cite');
 
+document.addEventListener('touchend', unhoverAnnotation);
+
 // Creates nested divs for each annotation link in introduction
 // Sets background image class for all commentator annotations
 function createAnnotations() {
@@ -115,7 +117,6 @@ function createAnnotations() {
     el.addEventListener('mouseover', hoverAnnotation);
     el.addEventListener('mouseleave', unhoverAnnotation);
     el.addEventListener('touchstart', hoverAnnotation);
-    el.addEventListener('touchend', unhoverAnnotation);
   });
 
 }
@@ -164,5 +165,5 @@ function unhoverAnnotation(e) {
   textbox.style.display = 'none';
   textbox.style.removeProperty('bottom');
   textbox.style.removeProperty('top');
-
+  
 }
