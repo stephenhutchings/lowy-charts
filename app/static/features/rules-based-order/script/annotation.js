@@ -111,6 +111,11 @@ function createAnnotations() {
     el.appendChild(document.createElement("span")).innerHTML = data;
 
     isComment ? el.classList.add('bg-ccnr') : el.innerHTML += '^';
+
+    el.addEventListener('mouseover', hoverAnnotation);
+    el.addEventListener('mouseleave', unhoverAnnotation);
+    el.addEventListener('touchstart', hoverAnnotation);
+    el.addEventListener('touchend', unhoverAnnotation);
   });
 
 }
@@ -139,4 +144,25 @@ function positionAnnotations() {
       textbox.style.left = -(w/2)+10+'px';
     }
   });
+}
+
+// Event listener for mouse-over annotations
+function hoverAnnotation(e) {
+
+  let t;
+  let textbox = e.target.firstElementChild; // Get bubble box
+  textbox.style.display = 'block'; // Show it
+  t = textbox.getBoundingClientRect().top; // Get its top coordinate
+
+  t < 0 ? ( (textbox.style.top = '110%') && (textbox.style.bottom = 'auto') ) : ""; // If hidden, show it below the avatar
+}
+
+// Event listener for hiding annotations
+function unhoverAnnotation(e) {
+
+  let textbox = e.target.firstElementChild;
+  textbox.style.display = 'none';
+  textbox.style.removeProperty('bottom');
+  textbox.style.removeProperty('top');
+
 }
