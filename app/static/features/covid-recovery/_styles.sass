@@ -285,9 +285,14 @@ sup
 a
   transition: color 300ms
 
+  svg
+    transition: fill 300ms
+
   &:hover,
+  &:hover svg,
   &:focus
     color: $color-hl
+    fill: $color-hl
 
 .link-grid li
   margin-bottom: 0
