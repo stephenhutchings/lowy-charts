@@ -9,7 +9,7 @@ notes: >
   Notes:
 
 source: >
-  Source: <a target="_blank" href="https://books.google.com/ngrams/interactive_chart?content=%5Brules+-+based+international+order%5D%2Cliberal+international+order&year_start=1960&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2C%5Brules%20-%20based%20international%20order%5D%3B%2Cc0%3B.t1%3B%2Cliberal%20international%20order%3B%2Cc0#t1%3B%2C%5Brules%20-%20based%20international%20order%5D%3B%2Cc0%3B.t1%3B%2Cliberal%20international%20order%3B%2Cc0">Google Ngram Viewer</a>
+  Source: <a target="_blank" href="https://books.google.com/ngrams/interactive_chart?content=%5Brules+-+based+international+order%5D%2Cliberal+international+order&year_start=1960&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2C%5Brules%20-%20based%20international%20order%5D%3B%2Cc0%3B.t1%3B%2Cliberal%20international%20order%3B%2Cc0#t1%3B%2C%5Brules%20-%20based%20international%20order%5D%3B%2Cc0%3B.t1%3B%2Cliberal%20international%20order%3B%2Cc0">Google Ngram Viewer</a>. &emsp; Data unavailable after 2008.
 
 charts:
   -
@@ -99,7 +99,7 @@ charts:
       maxY: 1
 
     legend:
-      - rules-based international order
+      - Rules-based international order
 
     colors:
       - "#002a45"
