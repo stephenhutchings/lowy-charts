@@ -614,13 +614,13 @@ cards:
         content: |
           With the government of Prime Minister Scott Morrison, some questions were raised of how committed Australia would remain to the rules-based order it had long espoused. One line in the Prime Minister’s 2019 Lowy Lecture — criticising ‘negative globalism’ — became the focus of such concern. However, developments in 2020 have confirmed a continued, if modified, Australian commitment to international institutions and ‘practical multilateralism’, the theme of Foreign Minister Marise Payne’s National Security College speech in June 2020. This new approach to the rules-based order includes Australia’s efforts to propel international coordination and investigation of the COVID-19 pandemic, and to mobilise in protection of interests and values against Chinese coercion and misinformation. Part of this push involves self-selecting coalitions of democracies and middle powers as well as selective use of multilateralism. Perhaps this foreshadows a policy of international engagement with a harder edge for a darker decade — and how much of the early twenty-first century rules-based order will survive the gathering storm remains a critical question.
 
-      - type: historyTimeline
-        index: 4
-        dates: [19 June 2020]
-        content:
-          - title: State-backed cyber-attack on Australia
-            description: |
-              The Australian government announced several political and private-sector organisations in Australia had come under cyber-attack carried out by a “sophisticated state-based cyber-actor”, but refused to confirm which country was behind the attack. That reluctance is part of the emerging rules of this new game of cyber competition as countries struggle to develop a framework to manage growing state-on-state rivalry in the cyber realm.
+      # - type: historyTimeline
+      #   index: 4
+      #   dates: [19 June 2020]
+      #   content:
+      #     - title: State-backed cyber-attack on Australia
+      #       description: |
+      #         The Australian government announced several political and private-sector organisations in Australia had come under cyber-attack carried out by a “sophisticated state-based cyber-actor”, but refused to confirm which country was behind the attack. That reluctance is part of the emerging rules of this new game of cyber competition as countries struggle to develop a framework to manage growing state-on-state rivalry in the cyber realm.
 
       - type: anchor
         year: 2018
@@ -758,6 +758,31 @@ cards:
           Responding to this new threat environment, the Minister announced the government’s commitment to pursue three new Defence objectives: shape, deter, and respond. Reynolds emphasised that these new objectives will be centred on maintaining a stable, rules-based order in our immediate region.
 
           > Our updated strategy — prioritises Defence’s engagement in our region, the Indo–Pacific. This is where shaping is key. It is where we work even closer with our regional friends to ensure a stable, prosperous and rules-based region. One in which the sovereignty of all states, large and small, is respected.
+
+      - type: excerpt
+        date: Aug
+        content: |
+          ## Scott Morrison, Aspen Security Forum Address
+
+          The Prime Minister uses his address, entitled 'Tomorrow in the Indo-Pacific' to share the strategic assessment that drove Australia’s Defence Strategic Update.
+
+          He notes that the deteriorating strategic situation has led some to “fret about the weakening of the rules-based international order. Fair enough.” He underlines Australia’s support for “international engagement framed by agreed rules and norms, not crude economic or political coercion.”
+
+          As well as urging China to accept “broader strategic responsibility”, he encourages both Washington DC and Beijing to commit to “rules-based economic interaction.”
+
+          Morrison adopts the concept of “international society”, formulated by Anglo-Australian scholar Hedley Bull to frame his address, citing Bull’s 1977 book, _The Anarchical Society_, and referring to Bull himself six times throughout the address. Morrison uses this concept to expand on his concerns about sovereignty and “negative globalism”. He also refers to Robert Kagan’s 2018 book, _The Jungle Grows Back_.
+
+          On Bull and his concept of “international society”:
+
+          > Hedley Bull, whose 1977 work, The Anarchical Society, remains one of the most influential works on global politics of the last half century … Bull coined the notion of ‘a society of states’ or ‘international society’ – said to exist when sovereign nations consider themselves to be ‘bound by a common set of rules in their relations and share in the working of common institutions.
+
+          On multilateral institutions and “negative globalism”:
+
+          > As Hedley Bull argued, [multilateral institutions] are symptoms of a well-functioning society of states, not the cause.  When global institutions and their bureaucracies become unaccountable, when they become vulnerable to manipulation or coercion, when they lose the confidence of their membership, they fail in their task to help the sovereign nations that establish them agree a common sets of rules to guide their relationships. In my Lowy Institute speech nearly a year ago, I described that trend as negative globalism. And my view hasn’t changed.  As I said and repeat now, we believe in a positive globalism, where nations like Australia engage directly with others, as equal, sovereign nations, in the pursuit of common objectives through these fora.
+
+          On the US-China rivalry:
+
+          > Together, China and the United States have a special responsibility to uphold what Bull described as ‘the common set of rules’ that build an international society. Now, that means respecting international law and the peaceful resolution of disputes, including trade disputes. It means a commitment to rules-based economic interaction. Neither coercion nor abdication from the international system is the way forward…We must tend that garden and we must rebuild Bull’s ‘international society’ anew.
 
 
 # media:
