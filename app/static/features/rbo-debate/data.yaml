@@ -1,47 +1,73 @@
-# This content fills both the menu of links on the first page and the footer of links on the article template.
-
 articles:
   - href: "chinese-order"
     title: An order aligned with Chinese values
-    author: Elizabeth
+    author: Elizabeth Economy
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "counting-on-history"
     title: Counting on history
     author: John Culver
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "ideological-insecurities"
     title: Accommodating ideological insecurities?
-    author: Peter Greer
+    author: Tanner Greer
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "rewiring-the-global-order"
     title: Rewiring the global order
-    author: Tobin Walker
+    author: Dan Tobin
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "hide-and-bide"
     title: Back to 'hide and bide'?
-    author: Kelly Slater
+    author: David Kelly
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "an-a-la-carte-strategy"
     title: An à la carte strategy
-    author: Nadege Rolland
+    author: Nadège Rolland
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "can-washington-compromise"
     title: Can Washington compromise?
-    author: Mister Wu
+    author: Wu Xinbo
+    position: Author Job Title
+    img: "placeholder.jpg"
 
 responses:
   - href: "us-right-at-home"
     title: The US must get it right at home
-    author: Elizabeth
+    author: Elizabeth Economy
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "jinping-china"
     title: Xi Jinping's China may not last forever
     author: John Culver
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "ideological-disarmament"
     title: An ideological disarmament agreement?
-    author: Peter Greer
+    author: Tanner Greer
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "separate-houses"
     title: Separate houses means less anxiety
-    author: Tobin Walker
+    author: Dan Tobin
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "looking-for-a-draw"
     title: Looking for a draw
-    author: Kelly Slater
+    author: David Kelly
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "compromise-or-coexistence"
     title: Compromise or coexistence?
-    author: Nadege Rolland
+    author: Nadège Rolland
+    position: Author Job Title
+    img: "placeholder.jpg"
   - href: "final-wu-title"
     title: Final Wu title
-    author: Mister Wu
+    author: Wu Xinbo
+    position: Author Job Title
+    img: "placeholder.jpg"

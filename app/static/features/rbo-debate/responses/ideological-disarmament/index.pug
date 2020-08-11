@@ -6,54 +6,22 @@
 extend ../../partials/article
 
 block append config
-  - page.title = "Forming a coalition of competent middle powers to lead on global health problems"
-  - page.expert = "Hervé Lemahieu with Alyssa Leng"
-  - page.expertrole = "ASIAN POWER AND DIPLOMACY PROGRAM"
+  - page.attributes = data.getOne("static/features/rbo-debate/data").responses[2]
 
-block intro-image
-  img.bg-img(data-src="../../img/middle-powers.jpg")
-
-block intro-caption
+block pullquote
   :marked
-    Photo:<br><a href="https://unsplash.com/photos/jJyX8IJIY0k">Maria Stewart / Unsplash</a>
+    “The most gripping sentence from the article here. One which is impossible to ignore.”
 
-block intro-description
-    :marked
-      “COVID-19 has shown that there are opportunities for creative diplomacy in a more horizontal world. Change will have to come not from a single power source, but from a networked grid of competent middle powers.”
+block content
+  :marked
+    The coronavirus has intensified US−China strategic competition and sent bilateral relations into a tailspin. The rivalry, which even before the virus extended to all aspects of the relationship — economic, military, diplomatic and ideological — will accelerate the decoupling of the two economies and deepen mistrust between the countries and their peoples.
 
-block scroller
-  +item(1)
-    .row
-      .col.p-lg.bg-ff.txt-expert-content
-        .block.txt-sans.txt-md.txt-dk.pv-lg.txt-left
-          .txt-border
-            :marked
-              The coronavirus is a powerful reminder that legitimacy and leadership on the world stage start with the capacity of leaders to govern competently at home. The reputations of both China and the United States have diminished as a result of their handling of the emergency. Both have written themselves out of global crisis leadership.
-              
-              By contrast, recent Lowy Institute research reveals that a larger proportion of small and middle powers have done better at handling COVID-19 than their great power counterparts.
-              
-              <iframe width="100%" height="550px" src="https://interactives.lowyinstitute.org/charts/pandemic-response/chart-power-v2/"></iframe>
-              
-              Countries such as Australia, New Zealand, Taiwan, South Korea, Vietnam and Denmark slowed the spread of the virus through bold policy interventions at an earlier point on their epidemic curve. This places many advanced middle powers in a unique position to carve out constructive roles for themselves in global pandemic response and recovery efforts.
-              
-              The major dividing line in effective crisis response, according to Francis Fukuyama, has not been regime type, “but whether citizens trust their leaders, and whether those leaders preside over a competent and effective state.” Trust and state capacity are often comparative advantages for countries that have smaller populations, greater social cohesion, and capable institutions.   
-              
-              Australian government agencies, research institutes, and scientists are now at the forefront of what Lowy Institute Executive Director Michael Fullilove has termed “coalitions of the competent”. These informal groupings have sprung up across international jurisdictions to lead the way in a multitude of policy areas: from the resumption of international travel through shared ‘travel bubbles’, to research on the development of a vaccine and therapies to treat the virus.
-              
-              Middle powers have also shown that, when they work together, they can forge global consensus even in a multipolar and dislocated international system. When Australia and the European Union successfully steered a resolution through the World Health Assembly, they did so with the largest number of co-sponsors in the 72-year history of the WHO.
-              
-              The net result is the global health body’s handling of the pandemic will be open to scrutiny, but the organisation's centrality to global health policy has not been undermined.
-              
-              Now that the vote is won, other things become possible.
-              
-              Creative diplomacy will be required to strengthen global health governance. The pandemic has shown the need for reliable information to be shared equitably and rapidly between countries. To address this, middle powers should consider establishing an enhanced global monitoring facility, based in the WHO, but with independent accountability.
-              
-              In the interim, a middle power grouping can also consider activating a dispute settlement mechanism under the International Health Regulations to clarify the application and interpretation of existing procedures. This may help improve the openness and transparency of the WHO Emergency Committee process, provide clarification for a stepped-up level of emergency alerts, and reassess the WHO Secretariat’s role in providing travel advice during a pandemic.
-              
-              Finally, with the loss of US funding all but certain, the race is on for middle powers to fill the WHO’s most egregious financing gaps.
-              
-              Australia is already pivoting its aid program to work with the WHO on capacity building in its near abroad. This regional approach can be enhanced by working with a consortium of donors on a coordinated global funding strategy.
-              
-              Similar foresight and coordination will be required to replace the loss of a US voice at the World Health Assembly — particularly when the time comes to appoint the next Director-General of the WHO.
-              
-              COVID-19 has shown that there are opportunities for creative diplomacy in a more horizontal world. Change will have to come not from a single power source, but from a networked grid of competent middle powers. 
+    Rather than seek cooperation to mitigate the COVID-19 crisis as they did in response to the global financial crisis and the Ebola outbreak, Beijing and Washington are engaged in a rancorous struggle over where and how the virus began. The mutual scapegoating may continue for months or even years after the virus is brought under control. The blame game will create enduring resentment on both sides that could influence policies toward each other across a range of issues, especially if Donald Trump is re-elected for a second term in November. 
+
+    Bilateral rivalry is spreading from the diplomatic, economic and military realms to the ideological sphere with Beijing and Washington touting the superiority of their respective governance models. China has launched an aggressive domestic and global propaganda campaign to divert attention away from the Chinese Communist Party’s missteps in the early phase of the epidemic and hype its achievements in getting the virus quickly under control within its borders. The United States has initiated its own drive to push back against China’s disinformation strategy and portray Beijing as unfit for global leadership. The acrimony has extended to government spokespeople in both capitals, who are hurling insults back and forth, and engaging in tit-for-tat diatribes. Even the race to develop a vaccine is being politicised, as both sides contend to show the world that its scientists are superior. 
+
+    The COVID-19 pandemic will accelerate the trend of reducing the interdependence of the US and Chinese economies. China’s policies for achieving greater self-reliance in advanced technology set this in motion and gained additional momentum with the US decision to exclude Chinese companies from its 5G networks. Trade between the two nations has already slowed as a result of tariffs and other measures. United States’ efforts to reduce reliance on China for pharmaceuticals and medical supplies will expand the ‘decoupling’ that is already taking place in some technology sectors. The downturn in the Chinese economy and rising unemployment will tempt Chinese leaders to rely heavily on nationalism, which will be directed against foreigners and especially Americans. Rising xenophobia in China and anti-Chinese prejudice in the United States may further curtail economic interaction, including by adding to existing pressures to pull supply chains out of China. 
+
+    Despite China’s good faith efforts to meet the Phase I trade deal deadlines, Beijing will probably not be able to purchase the agreed target of US$200 billion in American goods and services over the next two years. Economic downturn in both the United States and China will slow progress toward a Phase II agreement. As a result, friction will continue over thorny issues such as China’s subsidisation of companies and its policies aimed at dominating key strategic technologies.  Bilateral disagreement will persist over tariffs, with the Trump administration keen to keep them in place and China eager to see tariffs lifted.
+
+    United States−China relations are at their worst point in modern memory and are poised to get even worse as a result of the COVID-19 epidemic. The rest of the world should plan accordingly and attempt to limit damage to their interests as the zero-sum competition between the two most powerful countries escalates to new levels.
