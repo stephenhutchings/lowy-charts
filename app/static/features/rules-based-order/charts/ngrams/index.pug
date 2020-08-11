@@ -11,11 +11,12 @@ block page
     .page-subtitle.txt-tu.txt-muted!= page.subtitle
     .col-wrap.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
-        - chart = page.charts[0]
-        - inset = page.charts[1]
+        - chart = page.charts[1]
+        - inset = page.charts[0]
         - scale = chart.scale
+        - scaleInset = inset.scale
         - fx = (i, len) => (i) / (len-1)
-        - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+        - fy = (y, s) => (y - s.minY) / (s.maxY - s.minY)
 
         .chart.flex-grow: .chart-content
           svg(height="100%" width="100%")
@@ -59,7 +60,7 @@ block page
                   points=(chart.axes[1].values.map((y, ix, a) => (
                     [
                       100 * fx(ix, a.length),
-                      100 * fy(scale.maxY - y[i])
+                      100 * fy(scale.maxY - y[i], scale)
                     ].join(" ")
                   ))).join(",")
                 )
@@ -67,10 +68,10 @@ block page
             // LIGHTBOX
             - let len = chart.axes[1].values.length
             svg#lightbox(
-              x=toPercent((len-16)/len)
-              y=100*fy(scale.maxY - 1.3)+"%"
-              width=100*fx(16, len)+"%"
-              height=100*(fy(1.3) - fy(-0.05))+"%"
+              x=toPercent(0.9)
+              y=toPercent(0.8)
+              width=toPercent(0.1)
+              height=toPercent(0.2)
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             )
@@ -86,8 +87,8 @@ block page
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              x=toPercent((len-9)/len)
-              y=100*fy(scale.maxY - 1.25)+"%"
+              x=toPercent(0.93)
+              y=100*fy(scale.maxY - 0.125, scale)+"%"
             )
               rect(
                 width=25
@@ -103,10 +104,8 @@ block page
             
             // INSET
             svg#inset(
-              x=toPercent((len-17)/len)
-              y=toPercent(fy(scale.maxY - 9))
-              width=toPercent(fx(17, len))
-              height=toPercent(fy(8.5) - fy(2))
+              y="0%"
+              height="100%"
               viewBox="0 0 100 100"
               preserveAspectRatio="xMinYMax"
             )
@@ -121,34 +120,15 @@ block page
                 stroke-width=.25
               )
               
-              //g#lines
-                line(
-                  x1=115
-                  y1=115
-                  x2=115
-                  y2=120
-                  stroke="red"
-                  stroke-width=0.5
-                )
-                line(
-                  x1=-20
-                  y1=115
-                  x2=0
-                  y2=120
-                  stroke="red"
-                  stroke-width=0.5
-                )
-
               for item, i in inset.legend
                 polyline(
                   fill="none"
-                  stroke=chart.colors[i]
+                  stroke=inset.colors[i]
                   stroke-linejoin="round"
-                  points=(inset.axes[1].values.map((y, ix, a) => 
-                    y[i] == null ? "" : (
+                  points=(inset.axes[1].values.map((y, ix, a) => (
                     [
                       100 * fx(ix, a.length),
-                      100 * fy(scale.maxY - 10*y[i])
+                      100 * fy(scaleInset.maxY - y[i], scaleInset)
                     ].join(" ")
                   ))).join(",")
                 )
@@ -159,11 +139,11 @@ block page
                   svg(y=toPercent(y))
                     line( x1="0" y1=y x2="100" y2=y stroke=(i ? "#0002" : "#0005") stroke-width=.25 stroke-dasharray=(i ? ".5" : "")) 
                     text(text-anchor="end" transform="translate(-3 1.75) scale(0.35)")
-                      = (scale.minY + (i/5) * (scale.maxY - scale.minY))/10 + (i==0 ? "" : "%")
+                      = (scaleInset.minY + (i/5) * (scaleInset.maxY - scaleInset.minY)) + (i==0 ? "" : "%")
                   
 
               svg(width="100" y="100")
-                for year, i in [1992, 2000, 2008]
+                for year, i in [1960, 1985, 2008]
                   svg(x=toPercent(fx(i, 3)))
                     text( text-anchor="middle" transform="translate(0 9) scale(0.35)" )
                       = year
@@ -173,12 +153,21 @@ block page
                   y=80
                   x=80
                   text-anchor="start"
+                  fill="#539ed4"
+                  transform="scale(0.38)"
+                  font-weight="600"
+                )
+                  tspan(x=15) "Liberal international order"
+                text(
+                  y=220
+                  x=150
+                  text-anchor="start"
                   fill="#002b45"
                   transform="scale(0.38)"
                   font-weight="600"
                 )
                   tspan "Rules-based
-                  tspan(x=80 dy="1em") international order"
+                  tspan(x=135 dy="1em") international order"
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
           for item, i in chart.legend
@@ -198,10 +187,12 @@ block page
     const icon = document.querySelector(".icon path");
     
     function positionInset(screenSize) {
-      w = screenSize == 'small' ? 65 : 36;
-      x = screenSize == 'small' ? 90.5-w : 95.25-w;
+      let w = screenSize == 'small' ? 75 : 85;
+      let x = screenSize == 'small' ? 4 : 18;
+      let y = screenSize == 'small' ? -10 : 0;
       inset.setAttribute('width', w + "%");
       inset.setAttribute('x', x + "%");
+      inset.setAttribute('y', y + "%");
     }
     
     function hoveron(e) {
@@ -220,7 +211,7 @@ block page
     }
     
     function update() {
-      window.innerWidth < 550 ? positionInset('small') : positionInset('large');
+      window.innerWidth < 600 ? positionInset('small') : positionInset('large');
     }
     
     function startup() {
@@ -341,6 +332,7 @@ block append css
         fill: transparent
         opacity: 0
         transition-duration: .2s
+        pointer-events: none
         
         
       .icon 
