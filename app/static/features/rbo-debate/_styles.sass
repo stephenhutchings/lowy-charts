@@ -4,6 +4,28 @@ $yellow: #FFD010
 $dark: #282200
 $mute: #909090
 
+// Root settings
+
+body
+  font-family: Sans
+  font-size: 22px
+  line-height: 1.25
+  overflow: hidden
+  font-weight: 300
+  color: $dark
+  font-feature-settings: "liga" 0
+  text-rendering: geometricPrecision
+
+*
+  box-sizing: border-box
+
+p, pre, dl, dd, ul, ol, svg
+  margin-bottom: 1em
+
+h2, h3, h4
+  font-weight: 600
+  letter-spacing: 0.02em!important
+
 // Colors
 .bg-red
   background: $red
@@ -25,28 +47,93 @@ $mute: #909090
 .txt-ff
   color: white
 
+
 // Typography
 
-.txt-sans
-  font-family: Sans, sans-serif
-.txt-cond
-  font-family: Cond, sans-serif
+.txt-spaced
+  line-height: 1.5
+
 .strong
   font-weight: 600
   font-style: normal
   letter-spacing: 0.02em
 
-// Root settings
-
-body
-  font-family: Cond
-  font-size: 16px
-  line-height: 1.25
-  overflow: hidden
+.title
   font-weight: 300
-  color: $dark
-  font-feature-settings: "liga" 0
-  text-rendering: geometricPrecision
+  font-size: 66px
+  line-height: 66px
 
-p, pre, dl, dd, ul, ol, svg
-  margin-bottom: 1em
+// Sizes
+.xl
+  font-size: 38px
+.lg
+  font-size: 26px
+.md
+  font-size: 22px
+.sm
+  font-size: 18px
+.xs
+  font-size: 14px
+
+
+// layout
+
+.landing
+  max-width: 850px
+  padding-top: 50px
+  margin-bottom: 50px
+
+  p
+    max-width: 700px
+
+  a
+    display: inline-flex
+    align-items: baseline
+
+
+.container
+  background: $red
+
+.wrap
+  width: 100%
+
+.links
+  width: 90%
+  max-width: 900px
+  padding: 70px
+
+  h2
+    color: $dark
+
+  h3
+    color: $red
+    margin-bottom: 1em
+
+
+  .col-1-2:first-child
+    padding-right: 40px
+  .col-1-2:last-child
+    padding-left: 40px
+
+  .link
+    margin: 60px 0
+
+    &:first-child
+      margin-top: 40px
+
+.col-1-2
+  width: 50%
+  flex-basis: 50%
+
+
+
+
+
+
+
+
+
+
+
+
+.plc

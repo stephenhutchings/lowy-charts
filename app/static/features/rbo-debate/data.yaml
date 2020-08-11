@@ -1,33 +1,47 @@
 # This content fills both the menu of links on the first page and the footer of links on the article template.
 
 articles:
-  - href: "usa"
-    title: The United States
-  - href: "china"
-    title: China
-  - href: "us-china"
-    title: US-China Competition
-  - href: "international-economy"
-    title: The International Economy
-  - href: "globalisation"
-    title: Globalisation
-  - href: "multilateralism"
-    title: Multilateralism and the Nation State
-  - href: "se-asia"
-    title: Southeast Asia
+  - href: "chinese-order"
+    title: An order aligned with Chinese values
+    author: Elizabeth
+  - href: "counting-on-history"
+    title: Counting on history
+    author: John Culver
+  - href: "ideological-insecurities"
+    title: Accommodating ideological insecurities?
+    author: Peter Greer
+  - href: "rewiring-the-global-order"
+    title: Rewiring the global order
+    author: Tobin Walker
+  - href: "hide-and-bide"
+    title: Back to 'hide and bide'?
+    author: Kelly Slater
+  - href: "an-a-la-carte-strategy"
+    title: An à la carte strategy
+    author: Nadege Rolland
+  - href: "can-washington-compromise"
+    title: Can Washington compromise?
+    author: Mister Wu
 
 responses:
-  - href: "china"
-    title: Dealing with economic coercion
-  - href: "us-china"
-    title: Shaping the US approach to China
-  - href: "security"
-    title: Maintaining Australia’s security
-  - href: "who"
-    title: Strengthening the WHO
-  - href: "g20"
-    title: Curing the G20's irrelevance
-  - href: "power"
-    title: Forming middle-power coalitions
-  - href: "aus-economic"
-    title: Managing our economic recovery
+  - href: "us-right-at-home"
+    title: The US must get it right at home
+    author: Elizabeth
+  - href: "jinping-china"
+    title: Xi Jinping's China may not last forever
+    author: John Culver
+  - href: "ideological-disarmament"
+    title: An ideological disarmament agreement?
+    author: Peter Greer
+  - href: "separate-houses"
+    title: Separate houses means less anxiety
+    author: Tobin Walker
+  - href: "looking-for-a-draw"
+    title: Looking for a draw
+    author: Kelly Slater
+  - href: "compromise-or-coexistence"
+    title: Compromise or coexistence?
+    author: Nadege Rolland
+  - href: "final-wu-title"
+    title: Final Wu title
+    author: Mister Wu
