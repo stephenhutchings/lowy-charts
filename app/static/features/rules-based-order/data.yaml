@@ -8,6 +8,14 @@ cards:
     summary: |
       Kevin Rudd began his term seeking to shape the US–China relationship, establish new regional institutions, and enhance international cooperation on climate change. His government’s first official act was ratification of the Kyoto Protocol. Rudd was challenged by the 2008 global financial crisis (GFC) and a marked increase in arrivals of boats carrying asylum seekers. He leveraged the GFC to lobby for establishment of a G20 leaders’ meeting — including Australia. His government launched Australia’s successful bid for a non-permanent seat on the UN Security Council (from 2013–2014).
     events:
+
+      - type: historyTimeline
+        index: 0
+        dates: [2007-2009]
+        content:
+          - title: Global Financial Crisis
+            description: Responding to the GFC, twenty of the world’s largest economies — the Group of Twenty (G20) — assembled at the leaders' level for the first time ever in late 2008. The redistribution of global growth that occurred in the wake of the crisis sparked a commitment from world leaders to work towards a set of global financial rules that would reduce the chances of such an international economic crisis happening again. Australia was a key contributor to these discussions.
+
       - type: anchor
         year: 2008
 
@@ -30,15 +38,6 @@ cards:
           In June 2008 Rudd proposed a far-reaching ‘Asia Pacific Community,’ a new regional body that he described as the first step towards an Asian version of the EU. But the proposal got little regional traction, arguably demonstrating the limited regional appetite for closer multilateral ties.
 
           > We need to have a vision for an Asia Pacific Community, a vision that embraces: A regional institution which spans the entire Asia–Pacific region — including the United States, Japan, China India, Indonesia and the other states of the region; [And] a regional institution which is able to engage in the full spectrum of dialogue, cooperation and action on economic and political matters and future challenges related to security. The purpose is to encourage the development of a genuine and comprehensive sense of community whose habitual operating principle is cooperation.
-
-      - type: historyTimeline
-        index: 0
-        dates: [2007-2009, December 2007]
-        content:
-          - title: Global Financial Crisis
-            description: Responding to the GFC, twenty of the world’s largest economies — the Group of Twenty (G20) — assembled at the leaders' level for the first time ever in late 2008. The redistribution of global growth that occurred in the wake of the crisis sparked a commitment from world leaders to work towards a set of global financial rules that would reduce the chances of such an international economic crisis happening again. Australia was a key contributor to these discussions.
-          - title: Kyoto ratification
-            description: Ratifying the Kyoto Protocol on climate change and reversing the previous government’s policy became the “first official act of the new Australian government", under Kevin Rudd. Australia's new stance on Kyoto isolated the US as the only developed nation not to have ratified the treaty.
 
       - type: excerpt
         date: Dec
@@ -90,6 +89,21 @@ cards:
       <span style="float: left; font-size: 12px; line-height: 1.2; opacity: 0.8;">*This section of the timeline includes Kevin Rudd’s second term as Prime Minister from June to September 2013.</span>
     events:
 
+      - type: historyTimeline
+        index: 1
+        dates: [March 2011, 1 January 2013, 21 August 2013]
+        content:
+          - title: Libya UN Resolution 1973
+            description: |
+             With Libyan leader Muammar Gaddafi’s forces poised to crush an uprising, the UN Security Council passed a resolution authorising "all necessary measures" to protect civilians. UNSCR 1973 included the declaration of a no-fly zone over Libya, but specifically precluded a UN-mandated occupying ground force.
+             Australia’s then Foreign Minister, Kevin Rudd, pressed for the no-fly zone, and commented publicly about the “tortuous” diplomatic effort it took to obtain the mandate. "Let us all hope and pray that this final resolve of the international community is not too late for the people of Libya," Rudd said.
+          - title: Australia on the UNSC 2013–2014
+            description: Australia commenced a two-year term as a non-permanent member of the United Nations Security Council. This was the fifth time Australia had sat on the UNSC since the organisation held its first session in January 1946, over which Australia presided. Australia's 2013–2014 term on the Council coincided with a marked increase in challenges to the rules-based order and an increasingly complex global security environment.
+          - title: |
+              Syria chemical attack in Ghouta and Obama’s “red lines”<br>
+              <cite class="medcalf no-reposition" tooltip="This was a critical moment in the erosion of American credibility. Russia drew the clear impression that America was becoming risk-averse and hesitant, and proceeded to annex Crimea and foment conflict with Ukraine. But the repercussions of the 'red line' failure reached to the heart of the Indo– Pacific too, with the intensification of China’s challenge in the South China Sea"></cite>
+            description: After US President Barack Obama declared the use of chemical weapons would be "a red line", the Syrian regime shelled a neighbourhood outside Damascus with rockets containing sarin, killing 1429 people. The US did not respond militarily. Russia facilitated a deal under which the Syrian Government joined the Chemical Weapons Convention and agreed to hand over its chemical weapon stockpile for destruction.
+
       - type: anchor
         year: 2010
 
@@ -104,18 +118,11 @@ cards:
 
           Secretary Clinton said, “We obviously share the view that we want to see China's rise be successful, bringing benefits to the Chinese people, but [we want China] to take on greater responsibility and a rules-based approach toward all of its neighbours."
 
-      - type: historyTimeline
-        index: 1
-        dates: [March 2011, 2 May 2011, 1 January 2013]
-        content:
-          - title: Libya UN Resolution 1973
-            description: |
-             With Libyan leader Muammar Gaddafi’s forces poised to crush an uprising, the UN Security Council passed a resolution authorising "all necessary measures" to protect civilians. UNSCR 1973 included the declaration of a no-fly zone over Libya, but specifically precluded a UN-mandated occupying ground force.
-             Australia’s then Foreign Minister, Kevin Rudd, pressed for the no-fly zone, and commented publicly about the “tortuous” diplomatic effort it took to obtain the mandate. "Let us all hope and pray that this final resolve of the international community is not too late for the people of Libya," Rudd said.
-          - title: Osama bin Laden killed
-            description: US President Barack Obama announced that Osama bin Laden, the leader of al-Qaeda, had been killed in a US operation in the city of Abbottabad, Pakistan.
-          - title: Australia on the United Nations Security Council 2013–2014
-            description: Australia commenced a two-year term as a non-permanent member of the UN Security Council. This was the fifth time Australia had sat on the UNSC since the organisation held its first session in January 1946, over which Australia presided. Australia's 2013–2014 term on the Council coincided with a marked increase in challenges to the rules-based order and an increasingly complex global security environment.
+      - type: quote
+        quotation: |
+          ... we simply ask of Beijing what we ask of every nation: to play by the rules, abide by international norms, and respect the rights and sovereignty of others.
+        name: Mark Esper, US Secretary of Defense
+        supp:	Munich Security Conference, 15 Feb 2020
 
       - type: anchor
         year: 2011
@@ -203,16 +210,6 @@ cards:
 
           > Both in and beyond Southeast Asia, Australia supports a rules-based regional security order that fosters cooperation, eases tensions between states and provides incentives to major powers like China and India to rise peacefully. In particular, it is in our interests that no hostile power in the Indo–Pacific is able to coerce or intimidate others through force or the threat of force.
 
-
-      - type: historyTimeline
-        index: 2
-        dates: [21 August 2013]
-        content:
-          - title: |
-              Syria chemical attack in Ghouta and Obama’s “red lines”<br>
-              <cite class="medcalf no-reposition" tooltip="This was a critical moment in the erosion of American credibility. Russia drew the clear impression that America was becoming risk-averse and hesitant, and proceeded to annex Crimea and foment conflict with Ukraine. But the repercussions of the 'red line' failure reached to the heart of the Indo– Pacific too, with the intensification of China’s challenge in the South China Sea"></cite>
-            description: After US President Barack Obama declared the use of chemical weapons would be "a red line", the Syrian regime shelled a neighbourhood outside Damascus with rockets containing sarin, killing 1429 people. The US did not respond militarily. Russia facilitated a deal under which the Syrian Government joined the Chemical Weapons Convention and agreed to hand over its chemical weapon stockpile for destruction.
-
       - type: commentary
         id: bishop
         expert: |
@@ -241,6 +238,39 @@ cards:
           ### Former Minister for Foreign Affairs
         content: |
           The government was firmly committed to the rules-based order through its actions. For example, when Malaysia Airlines flight MH17 was shot down over Ukraine in July 2014, one of our first responses was to seek the support of the United Nations Security Council. Likewise, the government campaigned for and won a seat on the UN Human Rights Council and we submitted to voluntary arbitration through UNCLOS on our maritime boundary dispute with Timor-Leste.
+
+      - type: historyTimeline
+        index: 2
+        dates: [18 September 2013, 23 November 2013, Feb/March 2014, July 2014, August 2014, September 2015, 30 September 2015, 12 July 2016]
+        content:
+          - title: |
+              Australian Government introduces Operation Sovereign Borders <br>
+              <cite class="bishop no-reposition" tooltip="The goal was to prevent criminal people-smuggling networks from preying on vulnerable people and enticing many of them to their deaths. Critics of the policy rarely acknowledged that more than 1200 people died at sea in the five years prior to Operation Sovereign Borders (OSB)."></cite>
+            description: Operation Sovereign Borders (OSB) is a “military-led border security operation aimed at combating maritime people-smuggling and protecting Australia’s borders”. Under this policy, anyone attempting to reach Australia by boat is turned back to their country of departure or sent to an offshore processing facility. The policy also incorporates activities to disrupt and deter people-smuggling within the region. Turnbacks raise a number of human rights concerns around Australia’s international legal obligations.
+          - title: |
+              China declares Air Defence Identification Zone in East China Sea<br>
+              <cite class="bishop no-reposition" tooltip="There was concern at the time due to the lack of prior consultation and that it extended over the disputed Senkaku/Diaoyu islands. The United States informed China that it did not recognise the air defence identification zone (ADIZ) and demonstrated that by undertaking flights. The United States urged other nations and commercial airlines likewise to not observe it, however most did so for reasons of safety."></cite>
+            description: In November 2013, China declared the establishment of its first air defence identification zone (ADIZ) in the East China Sea (ECS). US Secretary of State John Kerry called the declaration a “unilateral action” and “an attempt to change the status quo” in the region. A week later, the US flew two B-52 bombers through the designated airspace without complying with China’s identification procedures.
+          - title: |
+              Unrest in Ukraine and Crimea annexation <br>
+              <cite class="bishop no-reposition" tooltip="This caused great alarm as it was a direct challenge to the rules-based order, which was designed to prevent such behaviour. There was initial concern about the appetite of European nations, reliant on Russian energy, to take firm action. However, the EU did respond forcefully with strong sanctions. Australia also imposed sanctions in support of our objections to the breach of sovereignty."></cite>
+            description: The Crimean Peninsula was annexed from Ukraine by the Russian Federation between February and March 2014. It was the first time one European country had taken territory from another since the redrawing of the borders after the Second World War.
+          - title: |
+              Downing of Malaysian Airlines flight MH17 <br>
+              <cite class="medcalf no-reposition" tooltip="For Australia, this was a critical and confronting moment: the loss of many Australian lives in a brutal breach of international law, and a test of whether the international community could be mobilised for a lawful and effective response."></cite>
+            description: Malaysia Airlines flight MH17, en route from Amsterdam to Kuala Lumpur, was travelling over conflict-hit Ukraine on 17 July 2014 when it disappeared from radar. In October 2015, a 15-month investigation by the Dutch Safety Board found that the plane had crashed after being hit by a Russian-made Buk missile over eastern Ukraine. A total of 298 passengers, including 38 Australian citizens and residents, were killed.
+          - title: Addendum to the Lombok Treaty
+            description: Foreign Minister Bishop and her Indonesian counterpart signed a joint understanding that neither country would "use any of their intelligence, including surveillance capacities, or other resources, in ways that would harm the interests of the Parties".
+          - title: |
+              Australia extended its air strikes from Iraq to include Syria <br>
+              <cite class="bishop no-reposition" tooltip="There had to be a clear legal basis to the military operations to protect Australian military personnel from any potential challenges in the international courts. We had to negotiate some sensitivities with the Iraqi government to ensure our aircraft had flight approvals, while the army needed appropriate approvals to deploy for the mission of training and supporting the Iraqi army."></cite>
+            description: Prime Minister Tony Abbott announced Australia would join US-led airstrikes and extend its military campaign from Iraq into Syria. The government maintained the legal basis for the extended air strikes as the "collective self-defence" of Iraq. Australia (mirroring the US) referred to areas of Syria under control of Islamic State as “ungoverned space”.
+          - title: |
+              Russian military intervention in the Syrian Civil War<br>
+              <cite class="bishop no-reposition" tooltip="Russian bombing began while I was participating in the final meeting of the Friends of Syria group being held in New York. It was the most acrimonious multilateral meeting that I experienced and left many seasoned diplomats shocked. Russia and Iran coordinated in playing the spoiler role that disrupted the discussions and led to the collapse of talks."></cite>
+            description: Russian aircraft began bombing rebel and Islamic State targets in Syria, marking a fundamental change in the dynamics of the Syrian Civil War. Co-opting the US position that the Islamic State represented the biggest threat in the region, Putin was able to present the regime of Bashar al-Assad as the best placed force to combat the terrorist group.
+          - title: Hague Tribunal finds against Beijing in South China Sea case
+            description: An international tribunal in The Hague backed the Philippines in a case on the disputed waters of the South China Sea, ruling that rocky outcrops claimed by China cannot be used as the basis of territorial claims.
 
       - type: anchor
         year: 2014
@@ -305,38 +335,6 @@ cards:
 
           > So let us for a moment consider what has been achieved in the post-war world: 70 years of peace in western Europe; 70 years of peace between China and Japan; a rules-based international order, guaranteed by the United States, that has fostered the greatest expansion of safety, of prosperity and of democracy that the world has ever seen; with many hundreds of millions of people, especially in Asia, moving from the Third World to the Middle Class in just two generations.
 
-      - type: historyTimeline
-        index: 3
-        dates: [18 September 2013, 23 November 2013, Feb/March 2014, July 2014, August 2014, September 2015, 30 September 2015]
-        content:
-          - title: |
-              Australian Government introduces Operation Sovereign Borders <br>
-              <cite class="bishop no-reposition" tooltip="The goal was to prevent criminal people-smuggling networks from preying on vulnerable people and enticing many of them to their deaths. Critics of the policy rarely acknowledged that more than 1200 people died at sea in the five years prior to Operation Sovereign Borders (OSB)."></cite>
-            description: Operation Sovereign Borders (OSB) is a “military-led border security operation aimed at combating maritime people-smuggling and protecting Australia’s borders”. Under this policy, anyone attempting to reach Australia by boat is turned back to their country of departure or sent to an offshore processing facility. The policy also incorporates activities to disrupt and deter people-smuggling within the region. Turnbacks raise a number of human rights concerns around Australia’s international legal obligations.
-          - title: |
-              China declares Air Defence Identification Zone in East China Sea<br>
-              <cite class="bishop no-reposition" tooltip="There was concern at the time due to the lack of prior consultation and that it extended over the disputed Senkaku/Diaoyu islands. The United States informed China that it did not recognise the air defence identification zone (ADIZ) and demonstrated that by undertaking flights. The United States urged other nations and commercial airlines likewise to not observe it, however most did so for reasons of safety."></cite>
-            description: In November 2013, China declared the establishment of its first air defence identification zone (ADIZ) in the East China Sea (ECS). US Secretary of State John Kerry called the declaration a “unilateral action” and “an attempt to change the status quo” in the region. A week later, the US flew two B-52 bombers through the designated airspace without complying with China’s identification procedures.
-          - title: |
-              Unrest in Ukraine and Crimea annexation <br>
-              <cite class="bishop no-reposition" tooltip="This caused great alarm as it was a direct challenge to the rules-based order, which was designed to prevent such behaviour. There was initial concern about the appetite of European nations, reliant on Russian energy, to take firm action. However, the EU did respond forcefully with strong sanctions. Australia also imposed sanctions in support of our objections to the breach of sovereignty."></cite>
-            description: The Crimean Peninsula was annexed from Ukraine by the Russian Federation between February and March 2014. It was the first time one European country had taken territory from another since the redrawing of the borders after the Second World War.
-          - title: |
-              Downing of Malaysian Airlines flight MH17 <br>
-              <cite class="medcalf no-reposition" tooltip="For Australia, this was a critical and confronting moment: the loss of many Australian lives in a brutal breach of international law, and a test of whether the international community could be mobilised for a lawful and effective response."></cite>
-            description: Malaysia Airlines flight MH17, en route from Amsterdam to Kuala Lumpur, was travelling over conflict-hit Ukraine on 17 July 2014 when it disappeared from radar. In October 2015, a 15-month investigation by the Dutch Safety Board found that the plane had crashed after being hit by a Russian-made Buk missile over eastern Ukraine. A total of 298 passengers, including 38 Australian citizens and residents, were killed.
-          - title: Addendum to the Lombok Treaty
-            description: Foreign Minister Bishop and her Indonesian counterpart signed a joint understanding that neither country would "use any of their intelligence, including surveillance capacities, or other resources, in ways that would harm the interests of the Parties".
-          - title: |
-              Australia extended its air strikes from Iraq to include Syria <br>
-              <cite class="bishop no-reposition" tooltip="There had to be a clear legal basis to the military operations to protect Australian military personnel from any potential challenges in the international courts. We had to negotiate some sensitivities with the Iraqi government to ensure our aircraft had flight approvals, while the army needed appropriate approvals to deploy for the mission of training and supporting the Iraqi army."></cite>
-            description: Prime Minister Tony Abbott announced Australia would join US-led airstrikes and extend its military campaign from Iraq into Syria. The government maintained the legal basis for the extended air strikes as the "collective self-defence" of Iraq. Australia (mirroring the US) referred to areas of Syria under control of Islamic State as “ungoverned space”.
-          - title: |
-              Russian military intervention in the Syrian Civil War<br>
-              <cite class="bishop no-reposition" tooltip="Russian bombing began while I was participating in the final meeting of the Friends of Syria group being held in New York. It was the most acrimonious multilateral meeting that I experienced and left many seasoned diplomats shocked. Russia and Iran coordinated in playing the spoiler role that disrupted the discussions and led to the collapse of talks."></cite>
-            description: Russian aircraft began bombing rebel and Islamic State targets in Syria, marking a fundamental change in the dynamics of the Syrian Civil War. Co-opting the US position that the Islamic State represented the biggest threat in the region, Putin was able to present the regime of Bashar al-Assad as the best placed force to combat the terrorist group.
-
-
   - pm: turnbull
     details: |
       # Turnbull Government
@@ -345,6 +343,23 @@ cards:
     summary: |
       Prime Minister Malcolm Turnbull’s international agenda was dominated by the struggle against Islamic State, increasingly assertive Chinese behaviour (including in Australia), the election of US President Donald Trump, and escalating tensions on the Korean Peninsula. The Turnbull government’s reaction included a series of major policy documents and internal reforms in which the RBO figured prominently.
     events:
+
+      - type: historyTimeline
+        index: 3
+        dates: [3 September 2016, 9 November 2016, 1 June 2017, 6 March 2018, 8 May 2018]
+        content:
+          - title: President Obama met with Xi Jinping
+            description: Obama later released a statement saying he had emphasised “the importance for China, as a signatory to UNCLOS, to abide by its obligations under that treaty, which the United States views as critical to maintaining the rules-based international order".
+          - title: Donald Trump elected President
+            description: Donald Trump was elected the 45th president of the United States, ushering in the era of ‘America-First’ foreign policy. Trump comes to office as a lifelong sceptic of America’s post-war alliance network, and of free trade.
+          - title: United States announces withdrawal from Paris Agreement
+            description: While the United States remains a signatory to the United Nations Framework Convention on Climate Change foundation treaty (UNFCCC), its decision to withdraw from the Paris Agreement represents the growing trend towards isolationism and protectionism that has come to define the Trump presidency.
+          - title: Australia and Timor-Leste sign The Maritime Boundary Treaty
+            description: |
+              Touted as an example of the “rules-based order in action”, this Treaty, initiated under the 1982 United Nations Convention on the Law of the Sea, took almost two years of negotiation and resulted in Australia and Timor-Leste reaching an agreement on a maritime boundary in the Timor Sea. Since the 1970s, Australia had been engaged in negotiations first with Portugal, then Indonesia, and finally Timor-Leste over the maritime boundary. Ownership and control of significant oil and gas reserves were at the centre of the dispute.
+          - title: US withdraws from the Joint Comprehensive Plan of Action (JCPOA)
+            description: President Trump ended US participation in the landmark 2015 Iran nuclear agreement by re-imposing all US sanctions on Iran’s core economic sectors. The US decision undermines geopolitical stability and further isolates the United States.
+
       - type: anchor
         year: 2016
 
@@ -386,15 +401,6 @@ cards:
           [The United States] will let the International Criminal Court die on its own. After all, for all intents and purposes, the ICC is already dead to us.
         name: John Bolton, Former National Security Advisor
         supp: Speech at the Federalist Society, Sep 2018
-
-      - type: historyTimeline
-        index: 4
-        dates: [23 June 2016, July 2016]
-        content:
-          - title: Brexit
-            description: The UK voted in a referendum on the country’s EU membership, with 51.9 per cent of voters choosing to leave the EU.
-          - title: Hague Tribunal finds against Beijing in South China Sea case
-            description: An international tribunal in The Hague backed the Philippines in a case on the disputed waters of the South China Sea, ruling that rocky outcrops claimed by China cannot be used as the basis of territorial claims.
 
       - type: excerpt
         date: Apr
@@ -438,23 +444,6 @@ cards:
 
           Meanwhile, ever since 2002, China has variously delayed or distorted prospects for a Code of Conduct on the Behaviour of Forces in the South China Sea. Once it had completed its island-building to essentially remake the facts in the water, China turned its diplomacy towards seeking a Code of Conduct that would not so much constrain its own behaviour but rather exclude ‘external’ countries from freedom of navigation in those waterways.
 
-      - type: quote
-        quotation: America had hoped that economic liberalization would bring China into greater partnership with us and with the world. Instead, China has chosen economic aggression, which has in turn emboldened its growing military.
-        name: Vice President Mike Pence
-        supp:	Speech at the Hudson Institute, Sep 2018
-
-
-      - type: historyTimeline
-        index: 5
-        dates: [3 September 2016, 9 November 2016, 17 January 2017]
-        content:
-          - title: President Obama met with Xi Jinping
-            description: Obama later released a statement saying he had emphasised “the importance for China, as a signatory to UNCLOS, to abide by its obligations under that treaty, which the United States views as critical to maintaining the rules-based international order".
-          - title: Donald Trump elected President
-            description: Donald Trump was elected the 45th president of the United States, ushering in the era of ‘America-First’ foreign policy. Trump comes to office as a lifelong sceptic of America’s post-war alliance network, and of free trade.
-          - title: Xi Jinping address to the World Economic Forum in Davos
-            description: Widely considered a landmark speech articulating China’s global ambitions&#58; _"We should adhere to multilateralism to uphold the authority and efficacy of multilateral institutions. We should honour promises and abide by rules. One should not select or bend rules as he sees fit."_
-
       - type: anchor
         year: 2017
 
@@ -485,14 +474,6 @@ cards:
           My speeches reflected my understanding that the rules-based order was developed, under US leadership, to prevent a repeat of the horrors of global conflict in the two world wars. It was designed to protect the rights of all nations and to prevent more powerful countries coercing and dominating less powerful countries.
 
 
-      - type: historyTimeline
-        index: 6
-        dates: [4 April 2017]
-        content:
-          - title: Khan Shaykhun chemical attack in Syria
-            description: More than 80 people were killed in a chemical attack on the rebel-held town of Khan Sheikhoun in north-western Syria on 4 April 2017. The Trump administration responded with uncharacteristic military action, in the form of missile strikes against regime targets, to enforce an international norm.
-
-
       - type: excerpt
         date: Jun
         content: |
@@ -504,12 +485,11 @@ cards:
 
           > Some fear that China will seek to impose a latter day Monroe Doctrine on this hemisphere in order to dominate the region, marginalising the role and contribution of other nations, in particular the United States. Such a dark view of our future would see China isolating those who stand in opposition to or are not aligned with its interests, while using its economic largesse to reward those toeing the line.
 
-      - type: historyTimeline
-        index: 7
-        dates: [1 June 2017]
-        content:
-          - title: United States announces withdrawal from Paris Agreement
-            description: While the United States remains a signatory to the United Nations Framework Convention on Climate Change foundation treaty (UNFCCC), its decision to withdraw from the Paris Agreement represents the growing trend towards isolationism and protectionism that has come to define the Trump presidency.
+      - type: quote
+        quotation: |
+          We should adhere to multilateralism to uphold the authority and efficacy of multilateral institutions. We should honour promises and abide by rules. One should not select or bend rules as he sees fit.
+        name: Xi Jinping
+        supp: Address to the World Economic Forum in Davos, Jan 2017
 
       - type: excerpt
         date: July
@@ -579,22 +559,6 @@ cards:
 
           > The role of the power and influence of the United States in creating incentives for countries to abide by the rules cannot be overstated … Any absence of US and allied leadership within these and other institutions risks declining relevance and influence in global affairs — and others may fill the gap bringing with them a different set of values and principles, and without the necessary commitment to preserving the best of the international rules based order.
 
-
-      - type: historyTimeline
-        index: 8
-        dates: [18 December 2017, 4 March 2018, 6 March 2018, 8 May 2018]
-        content:
-          - title: US National Security Strategy released
-            description: |
-              This document refers to “rules” on thirteen separate occasions. The majority of references relate to the promotion of fair-trade relations and target states that the United States see as adhering selectively to the rules and agreements of free trade.
-          - title: Russian nerve gas attack in the UK
-            description: Sergei Skripal, a former Russian military officer and double agent for the UK's intelligence services, and his daughter Yulia Skripal were poisoned in Salisbury, England. They had been poisoned by a Novichok nerve agent in an attack "almost certainly" approved by Russia.
-          - title: Australia and Timor-Leste sign The Maritime Boundary Treaty
-            description: |
-              Touted as an example of the “rules-based order in action”, this Treaty, initiated under the 1982 United Nations Convention on the Law of the Sea, took almost two years of negotiation and resulted in Australia and Timor-Leste reaching an agreement on a maritime boundary in the Timor Sea. Since the 1970s, Australia had been engaged in negotiations first with Portugal, then Indonesia, and finally Timor-Leste over the maritime boundary. Ownership and control of significant oil and gas reserves were at the centre of the dispute.
-          - title: US withdraws from the Joint Comprehensive Plan of Action (JCPOA)
-            description: President Trump ended US participation in the landmark 2015 Iran nuclear agreement by re-imposing all US sanctions on Iran’s core economic sectors. The US decision undermines geopolitical stability and further isolates the United States.
-
       - type: commentary
         id: medcalf
         expert: |
@@ -650,6 +614,14 @@ cards:
         content: |
           With the government of Prime Minister Scott Morrison, some questions were raised of how committed Australia would remain to the rules-based order it had long espoused. One line in the Prime Minister’s 2019 Lowy Lecture — criticising ‘negative globalism’ — became the focus of such concern. However, developments in 2020 have confirmed a continued, if modified, Australian commitment to international institutions and ‘practical multilateralism’, the theme of Foreign Minister Marise Payne’s National Security College speech in June 2020. This new approach to the rules-based order includes Australia’s efforts to propel international coordination and investigation of the COVID-19 pandemic, and to mobilise in protection of interests and values against Chinese coercion and misinformation. Part of this push involves self-selecting coalitions of democracies and middle powers as well as selective use of multilateralism. Perhaps this foreshadows a policy of international engagement with a harder edge for a darker decade — and how much of the early twenty-first century rules-based order will survive the gathering storm remains a critical question.
 
+      - type: historyTimeline
+        index: 4
+        dates: [19 June 2020]
+        content:
+          - title: State-backed cyber-attack on Australia
+            description: |
+              The Australian government announced several political and private-sector organisations in Australia had come under cyber-attack carried out by a “sophisticated state-based cyber-actor”, but refused to confirm which country was behind the attack. That reluctance is part of the emerging rules of this new game of cyber competition as countries struggle to develop a framework to manage growing state-on-state rivalry in the cyber realm.
+
       - type: anchor
         year: 2018
 
@@ -668,6 +640,10 @@ cards:
 
           > The starting point for their deliberation was Australia’s absolute commitment to a two-state solution, these are the guard rails, with a secure Israel and future Palestinian state living side-by-side in peace and security within internationally recognised borders. I also required that their deliberations respect Australia’s obligations under international law and UN Security Council resolutions — two things that are fundamental, I think, to Australia’s interests in a rules-based order. You can’t look at these things in isolation. Our foreign policy is guided by our fundamental interest in ensuring that internationally agreed rules continue to safeguard our security and prosperity. We don’t get to pick and choose.
 
+      - type: quote
+        quotation: America had hoped that economic liberalization would bring China into greater partnership with us and with the world. Instead, China has chosen economic aggression, which has in turn emboldened its growing military.
+        name: Vice President Mike Pence
+        supp:	Speech at the Hudson Institute, Sep 2018
 
       - type: anchor
         year: 2019
@@ -720,19 +696,6 @@ cards:
           caption: Linda Reynolds at the Hudson Institute &ndash; @LindaReynoldsWA / Facebook
       - type: anchor
         year: 2020
-
-      - type: historyTimeline
-        index: 9
-        dates: [3 January 2020, 15 February 2020]
-        content:
-          - title: Qasem Soleimani assassination
-            description: |
-              The US strike that killed the head of Iran’s Islamic Revolutionary Guard Corps Quds Force, IRGC Major General Qassem Soleimani, was a serious escalation of the long-standing US confrontation with Iran. Iran responded with missile attacks against a US air base in Iraq.
-          - title: US Secretary of Defense Mark Esper at the Munich Security Conference
-            description: |
-              <i>"It is essential that we — as an international community — wake up to the challenges presented by China’s manipulation of the long-standing international, rules-based order that has benefited all of us for many decades."<br/><br/>
-              "The PRC’s growing economic, military, and diplomatic power often manifests itself in ways that are threatening, coercive, and counter to the rules-based international order."<br><br>
-              "... we simply ask of Beijing what we ask of every nation: to play by the rules, abide by international norms, and respect the rights and sovereignty of others."</i>
 
       - type: quote
         date: SKIP
