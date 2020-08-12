@@ -1,10 +1,12 @@
 // Vars
+
 $red: #b90000
 $yellow: #FFD010
 $dark: #282200
 $mute: #909090
 
 $header-height: 60
+
 
 // Root settings
 
@@ -28,7 +30,9 @@ h2, h3, h4
   font-weight: 600
   letter-spacing: 0.02em!important
 
+
 // Colors
+
 .bg-red
   background: $red
 .bg-yel
@@ -71,7 +75,9 @@ h2, h3, h4
   padding: .5em 1.5em
   font-weight: 400
 
+
 // Sizes
+
 .xl
   font-size: 38px
 .lg
@@ -117,6 +123,8 @@ h2, h3, h4
     color: $red
     margin-bottom: 1em
 
+  svg
+    display: inline
 
   .col-1-2:first-child
     padding-right: 40px
@@ -125,6 +133,7 @@ h2, h3, h4
 
   .link
     margin: 60px 0
+    padding: 20px 0
 
     &:first-child
       margin-top: 40px
@@ -132,7 +141,7 @@ h2, h3, h4
 .col-1-2
   width: 50%
   flex-basis: 50%
-
+  position: relative
 
 
 // Article pages
@@ -141,10 +150,22 @@ h2, h3, h4
   height: 100vh
 
 
+// Helpers
 
-
-
-
+.hide
+  opacity: 0
+.fade
+  opacity: 0.1
+.show
+  opacity: 1
+.no-ptr
+  pointer-events: none
+.ptr
+  cursor: pointer
+.pos-abs
+  position: absolute
+.ease-out
+  transition: ease-out 300ms
 
 
 
