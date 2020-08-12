@@ -34,26 +34,35 @@ function initAnimateSort() {
 
 function animateSort(e) {
 
-  let label, currentFocus;
+  let label, map, el, t, h;
   let parent = document.querySelector('.links');
-  let inFocus = !!document.querySelectorAll('.links .fade').length; // True if any element is currently in focus
-  let targets = document.querySelectorAll('.link, .links h3, .links > p'); // Elements targeted  for fading
+  let inFocus = !!document.querySelectorAll('.links .fade').length;       // True if any element is currently in focus
+  let faders = document.querySelectorAll('.link, .links h3, .links > p'); // Elements targeted  for fading
+  let sorters = document.querySelectorAll('.link');                       // Elements targeted  for sorting
 
   if (!inFocus) {
+    map = JSON.parse(this.dataset.map);
+    t = this.offsetTop;
+    h = this.offsetHeight-20;
     this.querySelector('.hide').classList.add('show');
     this.querySelector('h2 a').classList.add('txt-red');
 
-    targets.forEach( el => {
-      el === this ? "" : el.classList.add('fade');
-    });
+    faders.forEach( (el, i) => el === this ? "" : el.classList.add('fade') );
+
+    for (i=0; i < map.length; i++ ) {
+      el = sorters[map[i]-1];
+      el.classList.remove('fade');
+      el.style.top = t + (1 + 2*i - map.length)*(h/2) + "px";
+    }
   }
   else {
+    let sortElArr = [...document.querySelectorAll('.link')];   // Object list of sorting elements
     parent.querySelector('.show').classList.remove('show');
     parent.querySelector('h2 a.txt-red').classList.remove('txt-red');
 
-    targets.forEach( el => {
-      el.classList.remove('fade');
-    });
+    faders.forEach( el => el.classList.remove('fade') );
+
+    spreadY(sortElArr);
   }
 
 }

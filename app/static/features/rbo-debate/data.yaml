@@ -1,73 +1,87 @@
 articles:
-  - href: "chinese-order"
-    title: An order aligned with Chinese values
-    author: Elizabeth Economy
-    position: Author Job Title
-    img: "placeholder.jpg"
   - href: "counting-on-history"
     title: Counting on history
     author: John Culver
     position: Author Job Title
     img: "placeholder.jpg"
+    map: [9,10,12,13]
+  - href: "chinese-order"
+    title: An order aligned with Chinese values
+    author: Elizabeth Economy
+    position: Author Job Title
+    img: "placeholder.jpg"
+    map: [8,12]
   - href: "ideological-insecurities"
     title: Accommodating ideological insecurities?
     author: Tanner Greer
     position: Author Job Title
     img: "placeholder.jpg"
-  - href: "rewiring-the-global-order"
-    title: Rewiring the global order
-    author: Dan Tobin
-    position: Author Job Title
-    img: "placeholder.jpg"
+    map: [8,9,11,12]
   - href: "hide-and-bide"
     title: Back to 'hide and bide'?
     author: David Kelly
     position: Author Job Title
     img: "placeholder.jpg"
+    map: [9,12]
   - href: "an-a-la-carte-strategy"
     title: An à la carte strategy
     author: Nadège Rolland
     position: Author Job Title
     img: "placeholder.jpg"
+    map: [8,9,10]
+  - href: "rewiring-the-global-order"
+    title: Rewiring the global order
+    author: Dan Tobin
+    position: Author Job Title
+    img: "placeholder.jpg"
+    map: [8,9,10,11,12]
   - href: "can-washington-compromise"
     title: Can Washington compromise?
     author: Wu Xinbo
     position: Author Job Title
     img: "placeholder.jpg"
+    map: [9,12]
 
 responses:
-  - href: "us-right-at-home"
-    title: The US must get it right at home
-    author: Elizabeth Economy
-    position: Author Job Title
-    img: "placeholder.jpg"
   - href: "jinping-china"
     title: Xi Jinping's China may not last forever
     author: John Culver
     position: Author Job Title
     img: "placeholder.jpg"
+    map: [2,3,5,6]
+  - href: "us-right-at-home"
+    title: The US must get it right at home
+    author: Elizabeth Economy
+    position: Author Job Title
+    img: "placeholder.jpg"
+    map: [1,3,4,5,6,7]
   - href: "ideological-disarmament"
     title: An ideological disarmament agreement?
     author: Tanner Greer
     position: Author Job Title
     img: "placeholder.jpg"
-  - href: "separate-houses"
-    title: Separate houses means less anxiety
-    author: Dan Tobin
-    position: Author Job Title
-    img: "placeholder.jpg"
+    map: [1,5,6]
   - href: "looking-for-a-draw"
     title: Looking for a draw
     author: David Kelly
     position: Author Job Title
     img: "placeholder.jpg"
+    map: [3,6]
   - href: "compromise-or-coexistence"
     title: Compromise or coexistence?
     author: Nadège Rolland
     position: Author Job Title
     img: "placeholder.jpg"
+    map: [1,2,3,4,6,7]
+  - href: "separate-houses"
+    title: Separate houses means less anxiety
+    author: Dan Tobin
+    position: Author Job Title
+    img: "placeholder.jpg"
+    map: [1]
   - href: "final-wu-title"
     title: Final Wu title
     author: Wu Xinbo
     position: Author Job Title
     img: "placeholder.jpg"
+    map: []
