@@ -20,27 +20,27 @@
 @keyframes growIn
   0%
     background: white
-    width: 200px
-    opacity: 0.75
+    width: 235px
     overflow: hidden
   100%
     background: white
     width: 90px
-    opacity: 0.75
     overflow: hidden
 
 @keyframes animWidth
   0%
     transform: scaleY(0.5) scaleX(2) rotate(0deg)
-  60%
+  35%
     transform: scaleX(1) rotate(0deg)
     background-color: #eee
     opacity: 1
-  65%
-    transform: scaleX(1.83) rotate(180deg)
+  70%
+    transform: scaleX(1)
+  90%
+    transform: scaleX(1.86)
   100%
     opacity: 1
-    transform: scaleY(0) scaleX(1.83) rotate(180deg)
+    transform: scaleX(1.86)
 
 @media (min-width: 600px)
   @for $i from 0 through 30
@@ -64,17 +64,17 @@
     scrollbar-track-color: $background-color
 
 .loader
-  height: 1px
+  height: .5px
   margin: 35px auto 50px
   position: relative
-  animation: 1.5s ease 1 forwards 3.15s growIn
+  animation: 1.5s ease 1 forwards 3.5s growIn
 
 .loader-bit
-  animation: 4s cubic-bezier(0.98, 0.96, 0.07, 1.06) 1 animWidth
+  animation: 2s cubic-bezier(0.7, 0.5, 1, 1) 1 forwards animWidth
   background-color: white
   border-radius: 0
   display: inline-block
-  height: 50%
+  height: 100%
   opacity: 0
   vertical-align: top
   transform: scale(1.5)
@@ -83,7 +83,7 @@
 
 @for $i from 1 through 16
   .loader-bit:nth-child(#{$i})
-    animation-delay: (0.5s + $i * 0s)
+    animation-delay: (1s + $i * 0s)
 
 .ptr
   cursor: pointer
