@@ -59,6 +59,7 @@ function animateSort(e) {
   else {
     let sortElArr = [...document.querySelectorAll('.link')];   // Object list of sorting elements
     parent.querySelector('.show').classList.remove('show');
+    parent.querySelector('h2 a:not(.no-ptr)').classList.add('no-ptr');
     parent.querySelector('h2 a.txt-red').classList.remove('txt-red');
 
     faders.forEach( el => el.classList.remove('fade') );
