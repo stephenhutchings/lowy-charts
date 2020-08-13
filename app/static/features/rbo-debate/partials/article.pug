@@ -19,15 +19,20 @@ block page
 
   include header
   
-  .article-landing(
+  .article-landing.flex-cv(
     style=`background: linear-gradient(0deg, rgba(185, 0, 0, 0.7), rgba(185, 0, 0, 0.7)), url(../../img/${page.attributes.img}) center no-repeat;`
   )
-    h1.pg-title.txt-cond.mx-auto.bg-ff= page.attributes.title
-    h4.txt-sm.txt-tu.mx-auto.bg-ff!= page.attributes.author + "<br>"
-      span= page.attributes.position
+    .row(style="min-height: 10vh")
+    .pg-title.article-w.txt-center.mx-auto
+      h1.txt-cond.bg-ff= page.attributes.title
+      h4.pg-author.sm.txt-tu.bg-ff!= page.attributes.author + "<br>"
+        span.txt-mute= page.attributes.position
+    .row(style="min-height: 20vh")
+    .pullquote.article-w.xl.txt-ff.txt-center.txt-semi.mx-auto.flex-cv
+      block pullquote
 
-  block pullquote
-  block content
+  .content.article-w.mx-auto
+    block content
 
   include footer
 

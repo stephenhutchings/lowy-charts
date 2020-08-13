@@ -46,6 +46,7 @@ function animateSort(e) {
     h = this.offsetHeight-20;
     this.querySelector('.hide').classList.add('show');
     this.querySelector('h2 a').classList.add('txt-red');
+    this.querySelector('h2 a').classList.remove('no-ptr');
 
     faders.forEach( (el, i) => el === this ? "" : el.classList.add('fade') );
 

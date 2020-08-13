@@ -5,10 +5,13 @@ $yellow: #FFD010
 $dark: #282200
 $mute: #909090
 
-$header-height: 60
+$header-height: 55px
 
 
 // Root settings
+
+html
+  overflow: visible
 
 body
   font-family: Sans
@@ -29,6 +32,23 @@ p, pre, dl, dd, ul, ol, svg
 h2, h3, h4
   font-weight: 600
   letter-spacing: 0.02em!important
+
+header
+  z-index: 10
+  position: fixed
+  width: 100vw
+  height: $header-height
+  line-height: $header-height
+  letter-spacing: 0.06em
+  padding: 0 2em
+  background: white
+  box-shadow: 0px 4px 4px #0004
+
+a
+  transition: 400ms ease-in-out
+  color: $dark
+  &:hover
+    color: $red
 
 
 // Colors
@@ -62,14 +82,14 @@ h2, h3, h4
 .strong
   font-weight: 600
   font-style: normal
-  letter-spacing: 0.02em
+  letter-spacing: 0.03em
 
 .title
   font-weight: 300
   font-size: 66px
   line-height: 66px
 
-.pg-title
+.pg-title h1
   font-size: 60px
   line-height: 60px
   padding: .5em 1.5em
@@ -94,7 +114,7 @@ h2, h3, h4
 
 .landing
   max-width: 850px
-  padding-top: 50px
+  padding-top: 160px
   margin-bottom: 50px
 
   p
@@ -103,6 +123,10 @@ h2, h3, h4
   a
     display: inline-flex
     align-items: baseline
+    color: white
+
+    &:hover
+      box-shadow: 0 1px 0 0 $yellow
 
 
 .container
@@ -132,7 +156,6 @@ h2, h3, h4
     padding-left: 40px
 
   .link
-    // margin: 60px 0
     padding: 20px 0
 
 .col-1-2
@@ -140,12 +163,36 @@ h2, h3, h4
   flex-basis: 50%
   position: relative
 
+.logo
+  max-width: 80px
+  line-height: 1.1
+  padding: 12.5px 0
+
+#title-short
+  display: none
+
 
 // Article pages
+
+.article-w
+  max-width: 800px
 
 .article-landing
   height: 100vh
 
+.pg-title
+
+  h1
+    display: inline-block
+    padding: 0.5em 1em
+    margin-bottom: 0
+
+  h4
+    display: inline-block
+    padding: 1em 2.5em
+
+.content
+  padding: 120px 0
 
 // Helpers
 
@@ -163,6 +210,10 @@ h2, h3, h4
   position: absolute
 .ease-out
   transition: ease-out 300ms
+.fl-l
+  float: left
+.fl-r
+  float: right
 
 
 
