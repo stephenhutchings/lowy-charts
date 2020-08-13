@@ -9,11 +9,13 @@ block append config
   - page.image = "http://interactives.lowyinstitute.org/features/rbo-debate/img/thumbnail.jpg"
   - page.article = __.filepath.match(/([^\/]+)\/index.pug$/)[1]
   - page.feature = data.getOne("static/features/rbo-debate/data")
+  - page.title = page.feature.title
+  
 
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/rbo-debate/"
   - page.url += "/" + page.article
-  - page.metaTitle = `${page.title} - RBO Debates – Lowy Insitute`
+  - page.metaTitle = `${page.attributes.title} - RBO Debates – Lowy Institute`
 
 block page
 
@@ -31,7 +33,7 @@ block page
     .pullquote.article-w.xl.txt-ff.txt-center.txt-semi.mx-auto.flex-cv
       block pullquote
 
-  .content.article-w.mx-auto
+  .content.article-w.txt-semi.mx-auto
     block content
 
   include footer

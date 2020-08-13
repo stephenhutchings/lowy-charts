@@ -27,7 +27,10 @@ body
   box-sizing: border-box
 
 p, pre, dl, dd, ul, ol, svg
-  margin-bottom: 1em
+  margin-bottom: 1.5em
+
+  &:last-child
+    margin-bottom: 0
 
 h2, h3, h4
   font-weight: 600
@@ -147,6 +150,9 @@ a
     color: $red
     margin-bottom: 1em
 
+  p
+    margin-bottom: 0.5em
+
   svg
     display: inline
 
@@ -178,7 +184,7 @@ a
 // Article pages
 
 .article-w
-  max-width: 800px
+  max-width: 675px
 
 .article-landing
   height: 100vh
@@ -187,8 +193,9 @@ a
 
   h1
     display: inline-block
-    padding: 0.5em 1em
+    padding: 0.5em
     margin-bottom: 0
+    line-height: 1.1
 
   h4
     display: inline-block
@@ -196,6 +203,8 @@ a
 
 .content
   padding: 120px 0
+  line-height: 1.4
+  font-weight: 300
 
 
 // Helpers
