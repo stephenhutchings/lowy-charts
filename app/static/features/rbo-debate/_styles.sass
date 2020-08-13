@@ -48,6 +48,7 @@ header
   box-shadow: 0px 4px 4px #0004
 
 a
+  text-decoration: none
   transition: 400ms ease-in-out
   color: $dark
   &:hover
@@ -138,7 +139,7 @@ a
 .wrap
   width: 100%
 
-.links
+.list
   width: 90%
   max-width: 900px
   padding: 70px
@@ -150,24 +151,30 @@ a
     color: $red
     margin-bottom: 1em
 
+  a:hover
+    color: lighten($red, 15)
+    svg path
+      fill: lighten($red, 15)
+
   p
     margin-bottom: 0.5em
 
   svg
     display: inline
 
-  .col-1-2:first-child
-    padding-right: 40px
-  .col-1-2:last-child
-    padding-left: 40px
+  .flex
+    margin-top: 70px
 
-  .link
-    padding: 20px 0
+  .col-1-2:first-child
+    margin-right: 30px
+  .col-1-2:last-child
+    margin-left: 30px
 
 .col-1-2
   width: 50%
   flex-basis: 50%
   position: relative
+  min-height: 10px
 
 .logo
   max-width: 80px
@@ -206,6 +213,9 @@ a
   line-height: 1.4
   font-weight: 300
 
+  strong
+    font-weight: 600
+
 
 // Helpers
 
@@ -223,12 +233,19 @@ a
   position: absolute
 .ease-out
   transition: ease-out 300ms
-.fl-l
-  float: left
-.fl-r
-  float: right
 
 
+// Misc
 
+.box
+  position: absolute
+  min-height: 20px
+  width: 20px
+  border: 1px solid $red
+  transition: ease-out 300ms
+  left: calc(100% + 20px)
 
-.plc
+  &-left
+    border-right: none
+  &-right
+    border-left: none

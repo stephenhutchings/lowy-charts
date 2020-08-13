@@ -3,15 +3,16 @@
 var vh = window.innerHeight;
 var vw = window.innerWidth;
 
+var isFocused = false;
 
 
 // Setup
 
 document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('click', e => isFocused ? unfocus() : "" );
 
 function init() {
   initAnimateSort();
-  console.log('Loaded');
 }
 
 
@@ -19,12 +20,12 @@ function init() {
 
 function initAnimateSort() {
 
-  let [l,r] = document.querySelectorAll('.col-1-2');    // L-R container columns
-  let sortElObj = document.querySelectorAll('.link');   // Object list of sorting elements
-  let sortElArr = [...sortElObj];                       // Array list of sorting elements
+  let [l,r] = document.querySelectorAll('.col-1-2');          // L-R container columns
+  let sortElObj = document.querySelectorAll('.list-item');    // Object list of sorting elements
+  let sortElArr = [...sortElObj];                             // Array list of sorting elements
 
-  sortElObj.forEach( el => {                            // Default setup for every sortable object
-    el.addEventListener('click', animateSort);
+  sortElObj.forEach( el => {                                   // Default setup for every sortable object
+    el.addEventListener('click', e => { isFocused ? unfocus(el) : focus(el); e.stopPropagation(); });
     el.classList.add('pos-abs');
   });
 
@@ -32,41 +33,48 @@ function initAnimateSort() {
 
 }
 
-function animateSort(e) {
+function focus(el) {
 
-  let label, map, el, t, h;
-  let parent = document.querySelector('.links');
-  let inFocus = !!document.querySelectorAll('.links .fade').length;       // True if any element is currently in focus
-  let faders = document.querySelectorAll('.link, .links h3, .links > p'); // Elements targeted  for fading
-  let sorters = document.querySelectorAll('.link');                       // Elements targeted  for sorting
+  let i, targets;
+  let t = el.offsetTop;
+  let h = el.offsetHeight;
+  let map = JSON.parse(el.dataset.map);
+  let faders = document.querySelectorAll('.list-item, .list > h3, .list > p');  // Elements targeted for fading
+  let sorters = document.querySelectorAll('.list-item');                        // Elements targeted for sorting
 
-  if (!inFocus) {
-    map = JSON.parse(this.dataset.map);
-    t = this.offsetTop;
-    h = this.offsetHeight-20;
-    this.querySelector('.hide').classList.add('show');
-    this.querySelector('h2 a').classList.add('txt-red');
-    this.querySelector('h2 a').classList.remove('no-ptr');
+  el.querySelector('.read-more').classList.remove('no-ptr');  // Activate link on 'read article' button
+  el.querySelector('.read-more').classList.add('show');       // Show 'read article' button
+  el.querySelector('h2 a').classList.add('txt-red');          // Colorise article title
+  el.querySelector('h2 a').classList.remove('no-ptr');        // Activate link on article title
 
-    faders.forEach( (el, i) => el === this ? "" : el.classList.add('fade') );
+  faders.forEach( (item, i) => item === el ? "" : item.classList.add('fade') );
 
-    for (i=0; i < map.length; i++ ) {
-      el = sorters[map[i]-1];
-      el.classList.remove('fade');
-      el.style.top = t + (1 + 2*i - map.length)*(h/2) + "px";
-    }
-  }
-  else {
-    let sortElArr = [...document.querySelectorAll('.link')];   // Object list of sorting elements
-    parent.querySelector('.show').classList.remove('show');
-    parent.querySelector('h2 a:not(.no-ptr)').classList.add('no-ptr');
-    parent.querySelector('h2 a.txt-red').classList.remove('txt-red');
-
-    faders.forEach( el => el.classList.remove('fade') );
-
-    spreadY(sortElArr);
+  for (i=0; i < map.length; i++ ) {
+    targets = sorters[map[i]-1];
+    targets.classList.remove('fade');
+    targets.style.top = t + (1 + 2*i - map.length)*(h/2) + "px";
   }
 
+  isFocused = true;
+}
+
+function unfocus (el) {
+  let list = document.querySelector('.list');
+  let faders = document.querySelectorAll('.list-item, .list > h3, .list > p'); // Elements targeted  for fading
+  let sortElArr = [...document.querySelectorAll('.list-item')];                // Object list of sorting elements
+  let focusedHeading = list.querySelector('h2 a:not(.no-ptr)');
+  let focusedButton = list.querySelector('.read-more:not(.no-ptr)');
+
+  focusedHeading.classList.remove('txt-red');
+  focusedHeading.classList.add('no-ptr');
+  focusedButton.classList.remove('show');
+  focusedButton.classList.add('no-ptr');
+
+  faders.forEach( el => el.classList.remove('fade') );
+
+  spreadY(sortElArr);
+
+  isFocused = false;
 }
 
 
@@ -76,13 +84,15 @@ function spreadY(a) {
 
   let i = y = 0;
   let n = a.length/2;
-  let parent = document.querySelector('.links');
+  let itemMargin = 20;
+  let listMargin = 70
+  let list = document.querySelector('.list');
 
   for (i; i < n; i++) {
     a[i].style.top = a[i+n].style.top = y + 'px';
-    y += Math.max(a[i].offsetHeight, a[i+n].offsetHeight);
+    y += Math.max(a[i].offsetHeight, a[i+n].offsetHeight) + itemMargin;
   }
 
-  parent.style.height = document.body.scrollHeight - parent.offsetTop + "px";
+  list.style.height = document.body.scrollHeight - list.offsetTop + listMargin + "px";
 
 }
