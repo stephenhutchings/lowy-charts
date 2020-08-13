@@ -1,5 +1,12 @@
 .social-share.fl-r
-  span.social-share-label Share
+  span.social-share-label Share&emsp;
+  a.icon.icon-mail(
+    href=[
+      "mailto:add-recipient?subject=Debating%20China%20and%20the%20Rules-Based%20Order&body=From%20the%20Lowy%20Institute%3A%20",
+      encodeURIComponent(page.url),
+    ].join("")
+    target="_blank"
+  )
   a.icon.icon-social-facebook(
     href=[
       "https://www.facebook.com/sharer.php?u=",
