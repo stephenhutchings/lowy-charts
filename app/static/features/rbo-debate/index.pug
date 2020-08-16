@@ -16,10 +16,17 @@ block page
   
     include partials/header
 
-    .landing.mx-auto.txt-center.txt-ff
-      h1.title.txt-cond China and the Rules-Based Order
-      p.mx-auto.pv-md In this debate feature, seven experts share their thoughts on China’s approach to the rules-based international order and respond to one another’s arguments.&emsp;
-        a.strong.txt-bare.ease-out Read introduction&ensp;
+    .landing.mx-auto.txt-ff
+      h1.title.txt-cond.txt-center China and the Rules-Based Order
+      .pv-md     
+        :marked
+          China’s growing economic and military power has prompted urgent questions about its approach to the rules-based international order. On the one hand, China could be expected to have a stake in maintaining the existing order which, after all, has provided the stability necessary for the country’s rise. On the other hand, it cannot be assumed that China supports all elements of the current order, which Beijing argues it had no hand in creating. Key components of the rules-based order were established by the United States as the dominant power after the Second World War. Hopes that China would peacefully integrate into the existing order were boosted when China acceded to the World Trade Organization in 2001. Instead, a much stronger China, led by Xi Jinping since 2013, has shown increased willingness to disregard international norms, most notably in the South China Sea. 
+
+          To interpret and explain these issues, we asked a select group of experts about Beijing’s goals for the international order and the changes it seeks. Recognising that China’s relationship with the rules-based order is closely tied to its relationship with the United States, we also asked our experts what compromises China might agree to, and under what circumstances a US–China accommodation on the future of the order could be reached.
+          
+          This Lowy Debate feature presents our experts’ thoughts on China’s approach to the rules-based international order and their responses to each other’s arguments.In this debate feature, seven experts share their thoughts on China’s approach to the rules-based international order and respond to one another’s arguments.&emsp;
+
+        //a.strong.txt-bare.ease-out Read introduction&ensp;
           svg.ease-out(width="15" height="15" viewBox="0 -2 15 15" fill="white" xmlns="http://www.w3.org/2000/svg")
             path(d="M7.34185 0.358246C6.88568 0.835907 6.88568 1.60798 7.34185 2.08564L10.017 4.88687H1.16667C0.522668 4.88687 0 5.43416 0 6.10851C0 6.78285 0.522668 7.33015 1.16667 7.33015H10.017L7.34185 10.1314C6.88568 10.609 6.88568 11.3811 7.34185 11.8588C7.56935 12.097 7.86802 12.2167 8.16669 12.2167C8.46535 12.2167 8.76402 12.097 8.99152 11.8588L14.483 6.10851L8.99152 0.358246C8.53535 -0.119415 7.79802 -0.119415 7.34185 0.358246Z")
 
@@ -35,7 +42,7 @@ block page
               h4.xs.txt-tu.txt-mute= article.author
               h2.md.txt-semi
                 a.no-ptr.txt-bare.ease-out(href=`articles/${article.href}`)= article.title
-              p.sm.txt-semi If the United States gets it right at home, there will be no debate.
+              p.sm.txt-semi= article.quote
               h4.read-more.hide.no-ptr.xs.ease-out: a.txt-red(href=`articles/${article.href}`) Read article
                 svg(width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg")
                   path.ease-out(fill="#B90000" d="M6.08313 0.293243C5.70517 0.684233 5.70517 1.31622 6.08313 1.70721L8.29966 4.00015H0.966651C0.433059 4.00015 0 4.44814 0 5.00012C0 5.55211 0.433059 6.0001 0.966651 6.0001H8.29966L6.08313 8.29304C5.70517 8.68403 5.70517 9.31602 6.08313 9.70701C6.27163 9.902 6.51909 10 6.76655 10C7.01402 10 7.26148 9.902 7.44998 9.70701L12 5.00012L7.44998 0.293243C7.07202 -0.0977476 6.46109 -0.0977476 6.08313 0.293243Z")
@@ -46,7 +53,7 @@ block page
               h4.xs.txt-tu.txt-mute= response.author
               h2.md.txt-semi
                 a.no-ptr.txt-bare.ease-out(href=`responses/${response.href}`)= response.title
-              p.sm.txt-semi If the United States gets it right at home, there will be no debate.
+              p.sm.txt-semi= response.quote
               h4.read-more.hide.no-ptr.xs.txt-red.ease-out: a.txt-red(href=`responses/${response.href}`) Read article
                 svg.ease-out(width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg")
                   path.ease-out(fill="#B90000" d="M6.08313 0.293243C5.70517 0.684233 5.70517 1.31622 6.08313 1.70721L8.29966 4.00015H0.966651C0.433059 4.00015 0 4.44814 0 5.00012C0 5.55211 0.433059 6.0001 0.966651 6.0001H8.29966L6.08313 8.29304C5.70517 8.68403 5.70517 9.31602 6.08313 9.70701C6.27163 9.902 6.51909 10 6.76655 10C7.01402 10 7.26148 9.902 7.44998 9.70701L12 5.00012L7.44998 0.293243C7.07202 -0.0977476 6.46109 -0.0977476 6.08313 0.293243Z")
