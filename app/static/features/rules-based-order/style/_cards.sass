@@ -139,6 +139,9 @@
     &:first-child
       margin-right: 5px
 
+.commentary + .quote
+  padding-top: 80px
+  padding-bottom: 40px
 
 .commentary:after
 	content: ''
@@ -153,10 +156,10 @@
 	margin-left: -20px
 	margin-top: -20px
 
-.skip-date
+.skip-date:not(.quote)
   margin-top: -40px
-  .date
-    display: none
+.skip-date .date
+  display: none
 .commentary + .skip-date
   margin-top: 0px
 
