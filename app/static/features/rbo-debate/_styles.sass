@@ -146,6 +146,9 @@ a
   max-width: 900px
   padding: 70px
 
+  &-item
+    padding-top: 10px
+
   h2
     color: $dark
 
@@ -239,15 +242,33 @@ a
 
 // Misc
 
-.box
+.bracket
   position: absolute
   min-height: 20px
   width: 20px
   border: 1px solid $red
-  transition: ease-out 300ms
+  transition: opacity ease-out 400ms
   left: calc(100% + 20px)
+
+  &:before
+    color: $red
+    position: absolute
+    font-style: italic
+    font-family: 'Semi', sans-serif
+    font-size: 20px
+    bottom: calc(100% + 10px)
+    white-space: nowrap
 
   &-left
     border-right: none
+
+    &:before
+      content: 'Responded to by'
+      left: calc(40px)
+
   &-right
     border-left: none
+
+    &:before
+      content: 'Responds to these articles'
+      right: 40px
