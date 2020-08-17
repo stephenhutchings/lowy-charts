@@ -40,24 +40,23 @@ function focus(el) {
   let h = el.offsetHeight;
   let map = JSON.parse(el.dataset.map);
   let lhs = map[0] < 8 ? true : false;
-  let faders = document.querySelectorAll('.list-item, .list > h3, .list > p');  // Elements targeted for fading
-  let sorters = document.querySelectorAll('.list-item');                        // Elements targeted for sorting
-  let bracket = document.querySelector('.bracket');                             // Bracket to wrap around sorted els
+  let listItems = document.querySelectorAll('.list-item');    // Elements targeted for fading/sorting
+  let bracket = document.querySelector('.bracket');           // Bracket to wrap around sorted els
 
   el.querySelector('.read-more').classList.remove('no-ptr');  // Activate link on 'read article' button
   el.querySelector('.read-more').classList.add('show');       // Show 'read article' button
   el.querySelector('h2 a').classList.add('txt-red');          // Colorise article title
   el.querySelector('h2 a').classList.remove('no-ptr');        // Activate link on article title
 
-  faders.forEach( (item, i) => item === el ? "" : item.classList.add('fade') );
+  listItems.forEach( (item, i) => item === el ? "" : item.classList.add('fade') );
 
-  targets = map.map( (v,i) => sorters[v-1] );       // Get DOM elements
+  targets = map.map( (v,i) => listItems[v-1] );       // Get DOM elements
   heights = targets.map( (el) => el.offsetHeight ); // Get their heights
   hSum = heights.reduce( (sum, h) => sum + h );     // Sum all their heights
 
   if (targets.length > 1) {                         // Set top of mapped elements
     tBlock = t + h/2 - hSum/2;
-    tBlock < 0 ? tBlock = 0 : "";
+    tBlock = checkBlockBounds(tBlock, hSum);
     targets.forEach( (el, i) => {
       el.classList.remove('fade');
       ti = heights.reduce( (sum, h, j) => j<=i ? sum + h : sum ); // Cumulative height of items thus far
@@ -71,7 +70,6 @@ function focus(el) {
     targets[0].style.top = tBlock + "px";
   }
 
-
   bracket.style.top = tBlock + "px";
   bracket.style.height = hSum-10 + "px";
   bracket.classList.remove('hide');
@@ -83,11 +81,11 @@ function focus(el) {
 
 function unfocus (el) {
   let list = document.querySelector('.list');
-  let faders = document.querySelectorAll('.list-item, .list > h3, .list > p'); // Elements targeted  for fading
-  let sortElArr = [...document.querySelectorAll('.list-item')];                // Object list of sorting elements
+  let listItems = document.querySelectorAll('.list-item');                 // Elements targeted  for fading
+  let sortElArr = [...document.querySelectorAll('.list-item')];         // Object list of sorting elements
   let focusedHeading = list.querySelector('h2 a:not(.no-ptr)');
   let focusedButton = list.querySelector('.read-more:not(.no-ptr)');
-  let bracket = document.querySelector('.bracket');                             // Bracket to wrap around sorted els
+  let bracket = document.querySelector('.bracket');                      // Bracket to wrap around sorted els
 
   focusedHeading.classList.remove('txt-red');
   focusedHeading.classList.add('no-ptr');
@@ -96,7 +94,7 @@ function unfocus (el) {
 
   bracket.classList.add('hide');
 
-  faders.forEach( el => el.classList.remove('fade') );
+  listItems.forEach( el => el.classList.remove('fade') );
 
   spreadY(sortElArr);
 
@@ -119,6 +117,19 @@ function spreadY(a) {
     y += Math.max(a[i].offsetHeight, a[i+n].offsetHeight) + itemMargin;
   }
 
-  list.style.height = document.body.scrollHeight - list.offsetTop + listPaddingBottom + "px";
+  list.style.height=="" ? list.style.height = document.body.scrollHeight - list.offsetTop + listPaddingBottom + "px" : "";
 
+}
+
+
+function checkBlockBounds(t, h) {
+  let list = document.querySelector('.list');
+  let listItemsOffset = (list.querySelector('.flex').offsetTop + list.querySelector('.flex').offsetHeight) - list.offsetTop;
+  let listHeight = list.offsetHeight - listItemsOffset;
+  let bottomClearance = listHeight - t - h;
+
+  t < 0 ? t = 0 : "";
+  bottomClearance < 0 ? t = t + bottomClearance : "";
+  console.log(bottomClearance);
+  return t;
 }
