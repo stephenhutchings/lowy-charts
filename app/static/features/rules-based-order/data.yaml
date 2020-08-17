@@ -436,6 +436,18 @@ cards:
         year: 2017
 
       - type: excerpt
+        date: SKIP
+        content: |
+          <div style="margin: -20px 0"></div>
+
+      - type: quote
+        date: Jan
+        quotation: |
+          We should adhere to multilateralism to uphold the authority and efficacy of multilateral institutions. We should honour promises and abide by rules. One should not select or bend rules as he sees fit.
+        name: Xi Jinping
+        supp: Address to the World Economic Forum in Davos, Jan 2017
+
+      - type: excerpt
         date: Mar
         content: |
           ## Fullerton lecture — Change and uncertainty in the Indo–Pacific
@@ -472,13 +484,6 @@ cards:
           > And we should be under no illusions: If we are to maintain the dynamism of the region then we must preserve the rules-based structure that has enabled it thus far. This means cooperation not unilateral actions to seize or create territory or militarise disputed areas. This means competing within the framework of international law not winning through corruption, interference or coercion.
 
           > Some fear that China will seek to impose a latter day Monroe Doctrine on this hemisphere in order to dominate the region, marginalising the role and contribution of other nations, in particular the United States. Such a dark view of our future would see China isolating those who stand in opposition to or are not aligned with its interests, while using its economic largesse to reward those toeing the line.
-
-      - type: quote
-        date: SKIP
-        quotation: |
-          We should adhere to multilateralism to uphold the authority and efficacy of multilateral institutions. We should honour promises and abide by rules. One should not select or bend rules as he sees fit.
-        name: Xi Jinping
-        supp: Address to the World Economic Forum in Davos, Jan 2017
 
       - type: excerpt
         date: July
