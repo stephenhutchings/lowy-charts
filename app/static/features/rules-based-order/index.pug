@@ -12,6 +12,17 @@ block append config
   - var governements = [['Rudd', ' (2007&ndash;2010)'], ['Gillard', ' (2010&ndash;2013)'], ['Abbott', ' (2013&ndash;2015)'], ['Turnbull', ' (2015&ndash;2018)'], ['Morrison', ' (2018&mdash;)']]
 
 block page
+
+  // TEMP EMBARGO MODAL
+  
+  #embargo.fixed.flex.flex-ch
+    .flex-cv.txt-center.txt-lg
+      | The contents of this Lowy Institute digital feature are embargoed.
+      | By entering the site, you agree not to share any information until public launch.
+      .btn.ptr Accept
+  
+  // END EMBARGO MODAL
+
   include partials/intro
    
   each era, i in timeline

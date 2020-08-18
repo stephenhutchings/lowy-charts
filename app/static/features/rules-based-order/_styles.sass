@@ -6,6 +6,29 @@
 @import app/static/features/rules-based-order/style/_header.sass
 @import app/static/features/rules-based-order/style/_history.sass
 
+// EMBARGO MODAL: TO BE REMOVED
+#embargo
+  min-height: 100vh
+  min-width: 100vw
+  color: white
+  background: #002b45
+  z-index: 100
+
+  .flex-cv
+    max-width: 500px
+
+  .btn
+    width: auto
+    background: $color-qt
+    padding: 0.25em 1em
+    border-radius: 10px
+    margin: 20px auto
+
+    &:hover
+      background: darken($color-qt, 10)
+
+
+// END EMBARGO MODAL
 
 html,body
   font-family: 'Sans', sans-serif

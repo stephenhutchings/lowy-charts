@@ -13,6 +13,7 @@ window.addEventListener('scroll', scrollCheck);
 
 // DOM load event listener
 function onLoad() {
+  document.querySelector('#embargo .btn').addEventListener('click', () => document.querySelector('#embargo').style.display = 'none');
   document.querySelector('html').setAttribute("ontouchmove", "");
   createAnnotations();
   initContentsMenu();
