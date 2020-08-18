@@ -13,7 +13,11 @@ block page
     .flex.flex-grow.flex-col
       .chart-title.txt-semi.txt-center= chart.title
       .chart-subtitle.cfawc.txt-tu.txt-cond.txt-center!= chart.subtitle
+      .flex
+        each t in ['Events', 'Impact']
+          .col-title.txt-tu.flex-1= t
       .scroll
+        .fade
         .timeline-wrap
           each event in chart.events
             .flex.flex-col.pv-sm
@@ -25,7 +29,7 @@ block page
                 .event-wrap.flex
                   .event.txt-semi!= event.event
                   .impact.txt-semi.italic!= event.impact
-        
+          
   
 block append css
   style
@@ -69,22 +73,25 @@ block append css
         padding-bottom: 10px
         border-bottom: 1px solid #b90000
         
-        //&:after
-          content: ''
-          position: absolute
-          left: 50%
-          width: 0
-          height: 0
-          border-top: 7px solid transparent
-          border-bottom: 7px solid transparent
-          border-right: 10px solid $red
-          margin-top: -7.5px
-          box-shadow: 0 0 0 2px white
-        
+      .col-title
+        color: $red
+        font-size: 14px
+        &:first-child
+          margin-left: 31px
+        &:last-child
+          margin-left: -62px
+      
       .scroll
         overflow-y: scroll
         position: relative
         padding-right: 16px
+        
+      .fade
+        position: fixed
+        background: linear-gradient(180deg, #fff 0%, #fff0 5%, #fff0 95%, #fff 100%)
+        width: 700px
+        height: 400px
+        pointer-events: none
 
       .timeline-wrap
         border-left: 1px solid $red
@@ -130,8 +137,6 @@ block append css
         
       .impact
         margin-left: 1.5em
-        &:before
-          content: 'Reaction: '
           
         
       .flex > .event
@@ -142,6 +147,12 @@ block append css
       .hide
         opacity: 0
         height: 0
+        
+      .flex-1
+        flex: 1
+        
+      .rel
+        position: relative
     
       @media (max-width: 767px)
         body
@@ -155,3 +166,5 @@ block append css
           margin-left: 0
           margin-top: 8px
           font-style: italic
+          &:before
+            content: 'Impact: '
