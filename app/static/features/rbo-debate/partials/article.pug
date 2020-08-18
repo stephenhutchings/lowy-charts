@@ -31,7 +31,7 @@ block page
         span.txt-mute= page.attributes.position
     .row(style="min-height: 20vh")
     .pullquote.article-w.xl.txt-ff.txt-center.txt-semi.mx-auto.flex-cv
-      block pullquote
+      span!= "&ldquo;" + page.attributes.quote + "&rdquo;"
 
   .content.article-w.txt-semi.mx-auto
     block content

@@ -8,10 +8,6 @@ extend ../../partials/article
 block append config
   - page.attributes = data.getOne("static/features/rbo-debate/data").responses[2]
 
-block pullquote
-  :marked
-    “The most gripping sentence from the article here. One which is impossible to ignore.”
-
 block content
   :marked
     Reading the various responses to this project, I am reminded of [a story told by Admiral Timothy Keating](http://archive.indianexpress.com/news/china-proposed-division-of-pacific-indian-ocean-regions-we-declined-us-admiral/459851/) of a meeting he had with a senior PLAN (People's Liberation Army Navy) officer when he served as chief admiral of PACOM (United States Pacific Command). In Keating's words, the PLAN officer suggested,

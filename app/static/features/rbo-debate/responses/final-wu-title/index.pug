@@ -8,10 +8,6 @@ extend ../../partials/article
 block append config
   - page.attributes = data.getOne("static/features/rbo-debate/data").responses[6]
 
-block pullquote
-  :marked
-    “The most gripping sentence from the article here. One which is impossible to ignore.”
-
 block content
   :marked
     Still to come
