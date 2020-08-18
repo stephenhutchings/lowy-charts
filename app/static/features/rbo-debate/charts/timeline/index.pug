@@ -6,28 +6,32 @@ block append config
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
   - chart = page
   
+  - var cfawcDates = [1991, 2006, 2014, 2018]
+  
 block page
   .wrapper.flex
     .flex.flex-grow.flex-col
-      h1.chart-title.txt-semi= chart.title
+      .chart-title.txt-semi.txt-center= chart.title
+      .chart-subtitle.cfawc.txt-tu.txt-cond.txt-center!= chart.subtitle
       .timeline-wrap
         each event in chart.events
           .flex.flex-col.pv-sm
             strong.year(
-              class=(event.year=="0000" ? "hide" : "pv-sm")
+              class=(event.year==0000 ? "hide" : "pv-sm")
+              class=(cfawcDates.includes(event.year) ? "cfawc" : "")
             )!= event.year
-            .event-wrap.flex
-              .event.txt-semi!= event.event
-              .impact.txt-semi.italic!= event.impact
+            if event.year != 2006 && event.year != 2018
+              .event-wrap.flex
+                .event.txt-semi!= event.event
+                .impact.txt-semi.italic!= event.impact
         
   
 block append css
   style
     :sass
     
-      html, body
+      html
         height: auto
-        overflow-y: scroll 
     
       $red: #b90000
   
@@ -50,14 +54,20 @@ block append css
 
       .chart-title
         margin: auto
-        font-size: 26px
-        margin-bottom: 1.1em
+        font-size: 28px
         color: black
+        
+      .chart-subtitle
+        margin: 5px auto 22px
+        font-weight: 600
+        font-size: 16px
+        color: $red
 
       .timeline-wrap
         border-left: 1px solid $red
         border-top: 1px solid $red
         padding-left: 20px
+        margin-left: 10px
         
         &:before
           content: ''
@@ -74,27 +84,38 @@ block append css
       .year
         color: $red
         
-        &:before
-          content: ''
-          position: absolute
-          width: 12px
-          height: 12px
-          background: $red
-          border-radius: 50%
-          box-shadow: 0 0 0 2px white
-          margin-left: -26px
-          margin-top: 6px
-          
+      .year:before,
+      .cfawc:before
+        content: ''
+        position: absolute
+        width: 12px
+        height: 12px
+        margin-left: -26px
+        margin-top: 6px
+        background: $red
+        border-radius: 50%
+        box-shadow: 0 0 0 2px white
+      
+      .cfawc:before
+        background: $red
+        box-shadow: 0 0 0 2px $red
+        border: 2px solid white
+        margin-top: 4px
+        margin-left: -28.5px
+        
+      .cfawc.chart-subtitle:before
+        margin-left: -22px
+        height: 10px
+        width: 10px
+        margin-top: 4px
         
       .event
         color: black
         
       .impact
         margin-left: 1.5em
-        //align-self: center
         &:before
-          content: 'Impact: '
-          //font-style: italic
+          content: 'Reaction: '
           
         
       .flex > .event
