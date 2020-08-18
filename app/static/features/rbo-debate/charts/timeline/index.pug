@@ -13,29 +13,37 @@ block page
     .flex.flex-grow.flex-col
       .chart-title.txt-semi.txt-center= chart.title
       .chart-subtitle.cfawc.txt-tu.txt-cond.txt-center!= chart.subtitle
-      .timeline-wrap
-        each event in chart.events
-          .flex.flex-col.pv-sm
-            strong.year(
-              class=(event.year==0000 ? "hide" : "pv-sm")
-              class=(cfawcDates.includes(event.year) ? "cfawc" : "")
-            )!= event.year
-            if event.year != 2006 && event.year != 2018
-              .event-wrap.flex
-                .event.txt-semi!= event.event
-                .impact.txt-semi.italic!= event.impact
+      .scroll
+        .timeline-wrap
+          each event in chart.events
+            .flex.flex-col.pv-sm
+              strong.year(
+                class=(event.year==0000 ? "hide" : "pv-sm")
+                class=(cfawcDates.includes(event.year) ? "cfawc" : "")
+              )!= event.year
+              if event.year != 2006 && event.year != 2018
+                .event-wrap.flex
+                  .event.txt-semi!= event.event
+                  .impact.txt-semi.italic!= event.impact
         
   
 block append css
   style
     :sass
     
-      html
-        height: auto
-        overflow: visible
-    
       $red: #b90000
-  
+    
+      ::-webkit-scrollbar
+        width: 5px
+      ::-webkit-scrollbar-track
+        background: #f3f3f3
+        border-radius: 5px
+      ::-webkit-scrollbar-thumb
+        background: lighten($red, 0)
+        border-radius: 5px
+      ::-webkit-scrollbar-thumb:hover
+        background: $red
+      
       li
         list-style-type: none
         
@@ -44,14 +52,8 @@ block append css
         padding-left: 0
   
       .wrapper
-        // height: 550px
+        height: 500px
         max-width: 700px
-        // overflow-y: scroll
-        scrollbar-width: thin
-        &::-webkit-scrollbar
-          width: 5px
-        &::-webkit-scrollbar-track
-          border-radius: 50%
 
       .chart-title
         margin: auto
@@ -59,23 +61,15 @@ block append css
         color: black
         
       .chart-subtitle
-        margin: 5px auto 22px
+        margin: 5px auto 10px
         font-weight: 600
+        width: 100%
         font-size: 16px
         color: $red
-
-      .timeline-wrap
-        border-left: 1px solid $red
-        border-top: 1px solid $red
-        padding-left: 20px
-        margin-left: 10px
+        padding-bottom: 10px
+        border-bottom: 1px solid #b90000
         
-        > .flex:last-child
-          padding-bottom: 0
-          .year
-            padding-bottom: 0
-        
-        &:before
+        //&:after
           content: ''
           position: absolute
           left: 50%
@@ -86,6 +80,22 @@ block append css
           border-right: 10px solid $red
           margin-top: -7.5px
           box-shadow: 0 0 0 2px white
+        
+      .scroll
+        overflow-y: scroll
+        position: relative
+        padding-right: 16px
+
+      .timeline-wrap
+        border-left: 1px solid $red
+        padding-left: 20px
+        margin-left: 10px
+        margin-top: 10px
+        
+        > .flex:last-child
+          padding-bottom: 0
+          .year
+            padding-bottom: 0
 
       .year
         color: $red
