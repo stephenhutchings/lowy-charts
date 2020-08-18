@@ -172,7 +172,7 @@ block page
           for item, i in chart.legend
             li.legend-item
               span.legend-item-box(style=`background:${chart.colors[i]}`)
-              span.legend-item-label!= `"${item}"`
+              span.legend-item-label!= `&ldquo;${item}&rdquo;`
 
     .chart-source.txt-cond.txt-muted.txt-center
       != page.source

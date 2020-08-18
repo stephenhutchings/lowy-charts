@@ -1,15 +1,16 @@
 title: >
-  Google Ngrams: Frequency of phrases in English corpus
+  &ldquo;Rules-based order&rdquo; was coined after the Cold War
 
 subtitle: >
-  Relative frequency of terms
-  ( <span style="text-transform: none">x</span>10<sup style="font-size:.75em">–9</sup> )
+
 
 notes: >
   Notes:
 
 source: >
-  Source: <a target="_blank" href="https://books.google.com/ngrams/interactive_chart?content=%5Brules+-+based+international+order%5D%2Cliberal+international+order&year_start=1960&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2C%5Brules%20-%20based%20international%20order%5D%3B%2Cc0%3B.t1%3B%2Cliberal%20international%20order%3B%2Cc0#t1%3B%2C%5Brules%20-%20based%20international%20order%5D%3B%2Cc0%3B.t1%3B%2Cliberal%20international%20order%3B%2Cc0">Google Ngram Viewer</a>. &emsp; Data unavailable after 2008.
+  Source: <a target="_blank" href="https://books.google.com/ngrams/interactive_chart?content=%5Brules+-+based+international+order%5D%2Cliberal+international+order&year_start=1960&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2C%5Brules%20-%20based%20international%20order%5D%3B%2Cc0%3B.t1%3B%2Cliberal%20international%20order%3B%2Cc0#t1%3B%2C%5Brules%20-%20based%20international%20order%5D%3B%2Cc0%3B.t1%3B%2Cliberal%20international%20order%3B%2Cc0">Google Ngrams</a> - frequency of phrases in English corpus.<br>
+  Graph shows relative frequency of terms ( <span style="text-transform: none">x</span>10<sup style="font-size:.75em">–9</sup> ).&ensp;
+  Data unavailable after 2008.
 
 charts:
   -
