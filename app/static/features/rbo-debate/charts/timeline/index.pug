@@ -1,0 +1,114 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/features/rbo-debate/charts/timeline/"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .flex.flex-grow.flex-col
+      h1.chart-title.txt-semi= chart.title
+      .timeline-wrap
+        each event in chart.events
+          .flex.flex-col.pv-sm
+            strong.year(
+              class=(event.year=="0000" ? "hide" : "pv-sm")
+            )!= event.year
+            .event-wrap.flex
+              .event.txt-semi!= event.event
+              .impact.txt-semi.italic!= event.impact
+        
+  
+block append css
+  style
+    :sass
+    
+      html, body
+        height: auto
+        overflow-y: scroll 
+    
+      $red: #b90000
+  
+      li
+        list-style-type: none
+        
+      ul
+        margin-bottom: 0
+        padding-left: 0
+  
+      .wrapper
+        // height: 550px
+        max-width: 700px
+        // overflow-y: scroll
+        scrollbar-width: thin
+        &::-webkit-scrollbar
+          width: 5px
+        &::-webkit-scrollbar-track
+          border-radius: 50%
+
+      .chart-title
+        margin: auto
+        font-size: 26px
+        margin-bottom: 1.1em
+        color: black
+
+      .timeline-wrap
+        border-left: 1px solid $red
+        border-top: 1px solid $red
+        padding-left: 20px
+        
+        &:before
+          content: ''
+          position: absolute
+          left: 50%
+          width: 0
+          height: 0
+          border-top: 7px solid transparent
+          border-bottom: 7px solid transparent
+          border-right: 10px solid $red
+          margin-top: -7.5px
+          box-shadow: 0 0 0 2px white
+
+      .year
+        color: $red
+        
+        &:before
+          content: ''
+          position: absolute
+          width: 12px
+          height: 12px
+          background: $red
+          border-radius: 50%
+          box-shadow: 0 0 0 2px white
+          margin-left: -26px
+          margin-top: 6px
+          
+        
+      .event
+        color: black
+        
+      .impact
+        margin-left: 1.5em
+        //align-self: center
+        &:before
+          content: 'Impact: '
+          //font-style: italic
+          
+        
+      .flex > .event
+        flex: 0.8
+      .flex > .impact
+        flex: 1
+        
+      .hide
+        opacity: 0
+        height: 0
+    
+      @media (max-width: 500px)
+        .event-wrap
+          flex-direction: column
+        .impact
+          align-self: baseline
+          margin-left: 0
