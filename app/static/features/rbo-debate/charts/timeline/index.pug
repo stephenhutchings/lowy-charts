@@ -32,6 +32,7 @@ block append css
     
       html
         height: auto
+        overflow: visible
     
       $red: #b90000
   
@@ -68,6 +69,11 @@ block append css
         border-top: 1px solid $red
         padding-left: 20px
         margin-left: 10px
+        
+        > .flex:last-child
+          padding-bottom: 0
+          .year
+            padding-bottom: 0
         
         &:before
           content: ''
@@ -127,9 +133,15 @@ block append css
         opacity: 0
         height: 0
     
+      @media (max-width: 767px)
+        body
+          font-size: 17px
+        
       @media (max-width: 500px)
         .event-wrap
           flex-direction: column
         .impact
           align-self: baseline
           margin-left: 0
+          margin-top: 8px
+          font-style: italic
