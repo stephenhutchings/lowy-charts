@@ -268,14 +268,14 @@ h3 cite
   margin: 0 1.5em 0 0
 
   + cite
-    margin-right: 5px
+    margin-right: 6px
 
 blockquote p cite
   position: absolute
   margin-left: 2.5em
 
   + cite
-    margin-left: 5em
+    margin-left: 5.5em
 
 cite
   position: relative
@@ -588,6 +588,31 @@ cite
   .section-wrap
     width: 90%
 
+  #experts
+    font-size: 26px
+    line-height: 65px
+
+    cite
+      height: 65px
+      width: 65px
+
+  cite.bishop,
+  cite.maude,
+  cite.medcalf,
+  cite.charlesworth
+    height: 2.5em
+    width: 2.5em
+
+    span
+      font-size: 0.9rem
+      min-width: 350px
+      left: calc(-175px + 1em)
+
+  cite#example-avatar
+    height: 2em
+    width: 2em
+
+
 @media (min-width: 1200px)
   .section-wrap
     width: 85%
@@ -595,6 +620,3 @@ cite
   #theme-menu
     width: 80%
     max-width: 950px
-
-  #experts
-    font-size: 26px
