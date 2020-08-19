@@ -1,5 +1,17 @@
 @import app/static/features/rules-based-order/style/_vars.sass
 
+@keyframes pulse
+  0%
+    box-shadow: 0 0 0 -1px #002b45
+  100%
+    box-shadow: 0 0 3px 5px #002b4500
+
+@keyframes pulse-white
+  0%
+    box-shadow: 0 0 0 0 $color-qt
+  100%
+    box-shadow: 0 0 3px 5px rgba($color-qt, 0)
+
 @keyframes slideup
   0%
     transform: translateY(-65px)
@@ -7,9 +19,12 @@
     transform: translateY(0)
 
 @keyframes grow
-  to
-    transform: scale(1.75)
-    background: rgba($color-bl-dk,0.1)
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)
 
 @keyframes appear
   from
