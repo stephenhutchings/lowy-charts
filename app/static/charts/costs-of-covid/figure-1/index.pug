@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/costs-of-covid/figure-1/data"
+  - var datapath = "static/charts/costs-of-covid/figure-1a/data"
   - _.extend(page, data.getOne(datapath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
@@ -63,23 +63,10 @@ block page
                   points=(chart.axes[1].values.map((y, ix, a) => (
                     [
                       100 * fx(ix, a.length),
-                      100 * fy(scale.maxY - y[i])
+                      100 * fy(scale.minY + scale.maxY - y[i])
                     ].join(" ")
                   ))).join(",")
                 )
-
-        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
-          for item, i in chart.legend
-            li.legend-item
-              span.legend-item-box(
-                style=`
-                  background:none; 
-                  border-top: 2.5px solid;
-                  border-color:${chart.colors[i]};
-                  top: 7px;
-                  width: 1em`
-              )
-              span.legend-item-label!= item
               
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[1]
@@ -97,7 +84,7 @@ block page
                 - y = 1 - (i / (scale.ticks-1))
                 svg(class="y-label" y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY)
+                    = "$" + (scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY)) + "B"
 
                 svg(class="y-minor")
                   line(
@@ -116,7 +103,7 @@ block page
                     text-anchor="end"
                     transform="rotate(-45) translate(-5 15)"
                   )
-                    = !((i+4)%4) || i==chart.axes[0].values.length-1 ? year : ""
+                    = !((i+1)%2) || i==chart.axes[0].values.length-1 ? year : ""
 
             svg(
               width="100%"
@@ -124,27 +111,19 @@ block page
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             )
-              for item, ii in chart.legend
-                - var i = chart.legend.length - ii
-                path(
-                  fill=chart.colors[i - 1]
+              for item, i in chart.legend
+                polyline(
+                  fill="none"
+                  stroke=chart.colors[i]
                   stroke-linejoin="round"
-                  stroke-linecap="round"
-                  d="M" + (chart.axes[1].values.map((y, ix, a) => (
+                  stroke-width=3
+                  points=(chart.axes[1].values.map((y, ix, a) => (
                     [
                       100 * fx(ix, a.length),
-                      100 * fy(scale.maxY + scale.minY - _.sum(y.slice(0,i)))
+                      100 * fy(scale.minY + scale.maxY - y[i])
                     ].join(" ")
-                  )
-                  ).concat(["100 100", "0 100"])
-                  ).join("L") + "Z"
+                  ))).join(",")
                 )
-
-        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
-          for item, i in chart.legend
-            li.legend-item
-              span.legend-item-box(style=`background:${chart.colors[i]}`)
-              span.legend-item-label!= item
 
     .chart-source.txt-muted.txt-semi
       !=page.source
@@ -173,14 +152,14 @@ block page
       
             .chart-content
               position: absolute
-              top: 20px
+              top: 5px
               bottom: 45px
               .col-md:first-child &
                 left: 60px
-                right: 10px
+                right: 30px
               .col-md:last-child &
-                left: 10px
-                right: 60px
+                left: 30px
+                right: 40px
                 
             .chart-content > svg
               border-bottom: 1px solid #ccc
@@ -193,9 +172,9 @@ block page
             .chart-subtitle
               .col-md:first-child &
                 padding-left: 60px
-                padding-right: 10px
+                padding-right: 30px
               .col-md:last-child &
-                padding-left: 10px
+                padding-left: 30px
                 padding-right: 60px
       
             .chart-title
@@ -258,6 +237,7 @@ block page
                 margin: 0 4px
       
             .chart-source
+              padding-top: 1em
               font-size: 12px
               max-width: max-content
               margin: auto
@@ -287,7 +267,7 @@ block page
                 overflow: hidden
                 height: 750px
               .chart-content
-                left: 60px!important
+                left: 75px!important
                 right: 35px!important
               .chart-notes
                 padding-top: 0
@@ -299,7 +279,7 @@ block page
                 width: 100%
                 height: 50%
                 &:first-child
-                  padding-bottom: 10px
+                  padding-bottom: 30px
               .flex.br-top
                 flex-direction: column
               .chart-source
