@@ -29,12 +29,13 @@ block page
 
             svg(width="100%" y="100%")
               for year, i in chart.axes[0].values
-                svg(x=toPercent(fx(i, chart.axes[0].values.length)))
-                  text(
-                    text-anchor="end"
-                    transform="rotate(-30) translate(-2 18)"
-                  )
-                    = year
+                if (i%5==0 && i!=chart.axes[0].values.length-1) || i==chart.axes[0].values.length-2
+                  svg(x=toPercent(fx(i, chart.axes[0].values.length)))
+                    text(
+                      text-anchor="end"
+                      transform="rotate(-30) translate(-2 18)"
+                    )
+                      = year
                     
             svg(width="100%" height="100%")
               for n, i in new Array(6)
@@ -57,18 +58,19 @@ block page
                   stroke=chart.colors[i]
                   stroke-linejoin="round"
                   stroke-linecap="round"
-                  points=(chart.axes[1].values.map((y, ix, a) => (
-                    [
+                  points=(chart.axes[1].values.map( (y, ix, a) => {
+                    return y[i]==null ? "" : [
                       100 * fx(ix, a.length),
                       100 * fy(scale.maxY - y[i], scale)
-                    ].join(" ")
-                  ))).join(",")
+                    ].join(" ") 
+                    }
+                  )).join(",")
                 )
 
             // LIGHTBOX
             - let len = chart.axes[1].values.length
             svg#lightbox(
-              x=toPercent(0.88)
+              x=toPercent(0.85)
               y=100*fy(scale.minY + 0.03, scale)+"%"
               width="38"
               height="38"
@@ -87,7 +89,7 @@ block page
               width="34"
               height="34"
               viewBox="0 0 24 24"
-              x=toPercent(0.88)
+              x=toPercent(0.85)
               y=100*fy(scale.minY + 0.04, scale)+"%"
             )
               rect(
