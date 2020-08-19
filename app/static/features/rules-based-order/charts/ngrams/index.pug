@@ -68,15 +68,15 @@ block page
             // LIGHTBOX
             - let len = chart.axes[1].values.length
             svg#lightbox(
-              x=toPercent(0.9)
-              y=toPercent(0.8)
-              width=toPercent(0.1)
-              height=toPercent(0.2)
+              x=toPercent(0.88)
+              y=100*fy(scale.minY + 0.03, scale)+"%"
+              width="38"
+              height="38"
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             )
               rect(
-                width=100
+                width=50
                 height=100
                 stroke-width=0
               )
@@ -87,8 +87,8 @@ block page
               width="34"
               height="34"
               viewBox="0 0 24 24"
-              x=toPercent(0.925)
-              y=100*fy(scale.maxY - 0.14, scale)+"%"
+              x=toPercent(0.88)
+              y=100*fy(scale.minY + 0.04, scale)+"%"
             )
               rect(
                 width=25
@@ -138,12 +138,12 @@ block page
                   svg(y=toPercent(y))
                     line( x1="0" y1=y x2="100" y2=y stroke=(i ? "#0002" : "#0005") stroke-width=.25 stroke-dasharray=(i ? ".5" : "")) 
                     text(text-anchor="end" transform="translate(-3 1.75) scale(0.35)")
-                      = (scaleInset.minY + (i/5) * (scaleInset.maxY - scaleInset.minY)) + (i==0 ? "" : "%")
+                      = ((scaleInset.minY + (i/5) * (scaleInset.maxY - scaleInset.minY))).toFixed(1) + (i==0 ? "" : "%")
                   
 
               svg(width="100" y="100")
-                for year, i in [1960, 1985, 2008]
-                  svg(x=toPercent(fx(i, 3)))
+                for year, i in [1985, 2019]
+                  svg(x=toPercent(fx(i, 2)))
                     text( text-anchor="middle" transform="translate(0 9) scale(0.35)" )
                       = year
                       
@@ -156,17 +156,16 @@ block page
                   transform="scale(0.38)"
                   font-weight="600"
                 )
-                  tspan(x=15) "Liberal international order"
+                  tspan(x=60) "Liberal international order"
                 text(
-                  y=220
-                  x=150
+                  y=280
+                  x=85
                   text-anchor="start"
                   fill="#002b45"
                   transform="scale(0.38)"
                   font-weight="600"
                 )
-                  tspan "Rules-based
-                  tspan(x=135 dy="1em") international order"
+                  tspan "Rules-based order"
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
           for item, i in chart.legend
@@ -174,7 +173,7 @@ block page
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= `&ldquo;${item}&rdquo;`
 
-    .chart-source.txt-cond.txt-muted.txt-center
+    .chart-source.txt-cond.txt-muted.txt-left
       != page.source
 
   script.
@@ -336,10 +335,21 @@ block append css
         transition-duration: .2s
         pointer-events: none
         
-        
+      @keyframes pulse
+        0%
+          stroke: #002b45
+          stroke-width: 0
+        100%
+          stroke: #002b4500
+          stroke-width: 10px
+            
       .icon 
         pointer-events: none
         transition-duration: .2s
+
+        rect
+          animation: pulse 2s infinite ease
+          
       
         path
           fill: #fff
