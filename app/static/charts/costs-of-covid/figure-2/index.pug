@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/costs-of-covid/figure-2a/data"
+  - var datapath = "static/charts/costs-of-covid/figure-2/data"
   - _.extend(page, data.getOne(datapath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
