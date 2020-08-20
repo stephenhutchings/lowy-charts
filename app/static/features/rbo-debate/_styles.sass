@@ -217,6 +217,7 @@ iframe
     padding: 1em 2.5em
 
 .pg-author
+
   > div
     padding-top: 4px
     line-height: 1.1
@@ -227,8 +228,12 @@ iframe
   font-weight: 300
 
   a
-    box-shadow: inset 0 -2px #fff, inset 0 -3px $red
+    box-shadow: inset 0 -2px #fff, inset 0 -3px $mute
     text-shadow: -2px 1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 2px 1px 0 #fff
+
+    &:hover
+      color: black
+      box-shadow: inset 0 -1px #fff, inset 0 -3px $red
 
   strong
     font-weight: 600

@@ -1,8 +1,13 @@
-//-
-  This footer appears on the bottom of each issue page, where it's included
-  through the `include` keyword.
+- var response = page.attributes.map[0] < 8
 
-.container
-  footer#footer
-    nav.pager
-      .pager-page
+footer.mx-auto.article-w
+  if response
+    .md This article is a response to the following articles
+    ul
+      each i in page.attributes.map
+        li= page.feature.articles[i-1].title  
+  else
+    .md This article is mentioned in the following response articles  
+    ul
+      each i in page.attributes.map
+        li= page.feature.responses[i-8].title
