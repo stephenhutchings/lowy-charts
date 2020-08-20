@@ -5,42 +5,42 @@ articles:
     position: Former CIA Analyst &<br>Intelligence Officer
     img: "placeholder.jpg"
     quote: A continued US decline, and a shift in global norms and values to align with Chinese preferences.
-    map: [9,10,12,13]
+    map: [9,10,12,13,14]
   - href: "chinese-order"
     title: An order aligned with Chinese values
     author: Elizabeth Economy
     position: Director for Asia Studies,<br>Council on Foreign Relations
     img: "placeholder.jpg"
     quote: "[Xi Jinping’s initiatives] all speak in one form or another to his desire to transform the rules-based order."
-    map: [8,12]
+    map: [8,12,14]
   - href: "ideological-insecurities"
     title: The challenge of ideological insecurities
     author: Tanner Greer
     position: Journalist & Researcher<br>Specialising in the Asia–Pacific
     img: "placeholder.jpg"
     quote: "[Chinese leaders see] the nefarious hand of an enemy who has learned to weaponise values [to] overthrow regimes."
-    map: [8,9,11,12]
+    map: [8,9,11,12,14]
   - href: "hide-and-bide"
     title: Back to 'hide and bide'?
     author: David Kelly
     position: Chinese Studies Educator<br>Director, China Policy
     img: "placeholder.jpg"
     quote: By hiding and biding, China can oppose the United States and avoid bidding to undertake the hegemon’s responsibilities.
-    map: [9,12]
+    map: [9,12,14]
   - href: "an-a-la-carte-strategy"
     title: An à la carte strategy
     author: Nadège Rolland
     position: Senior Fellow, National<br>Bureau of Asian Research
     img: "placeholder.jpg"
     quote: The goal is not necessarily to fundamentally restructure the existing institutions, but for them to serve China’s interests.
-    map: [8,9,10]
+    map: [8,9,10,14]
   - href: "rewiring-the-global-order"
     title: Rewiring the global order
     author: Daniel Tobin
     position: Faculty of China Studies,<br>National Intelligence University
     img: "placeholder.jpg"
     quote: Rejuvenation requires not simply that Beijing be left alone, but that the party’s governance achievements be actively lauded by the globe.
-    map: [8,9,10,11,12]
+    map: [8,9,10,11,12,14]
   - href: "can-washington-compromise"
     title: Can Washington compromise?
     author: Wu Xinbo
@@ -92,10 +92,10 @@ responses:
     img: "placeholder.jpg"
     quote: Rivalry, however, is not the same as confrontation, and need not lead to conflict.
     map: [1]
-  - href: "final-wu-title"
-    title: Final Wu title
+  - href: "washington-call-shots"
+    title: Can Washington call the shots?
     author: Wu Xinbo
     position: Professor & Dean, International<br>Studies at Fudan University
     img: "placeholder.jpg"
-    quote:
-    map: []
+    quote: When pondering the emerging world order, [the US] should adopt a healthy dose of humility and open-mindedness.
+    map: [1,2,3,4,5,6]

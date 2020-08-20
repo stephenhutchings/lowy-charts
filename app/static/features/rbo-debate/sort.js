@@ -28,8 +28,6 @@ function initAnimateSort() {
     el.classList.add('pos-abs');
   });
 
-
-
   spreadY(sortElArr);      // Position each article along y axis (for side-by-side view on desktop)
 
 }
@@ -55,7 +53,7 @@ function focus(el) {
 
   targets = map.map( (v,i) => listItems[v-1] );     // Get DOM elements
   heights = targets.map( (el) => el.offsetHeight ); // Get their heights
-  hSum = heights.reduce( (sum, h) => sum + h );     // Sum all their heights
+  hSum = heights.length ? heights.reduce( (sum, h) => sum + h ) : 0;     // Sum all their heights
 
   if (targets.length > 1) {                         // Set top of mapped elements
     tBlock = t + h/2 - hSum/2;
@@ -69,17 +67,21 @@ function focus(el) {
       el.style.top = tBlock + ti + "px";                          // Offset this from the block top
     });
   }
-  else {
+  else if (targets.length==1){
     tBlock = t;
     targets[0].classList.remove('fade');
     targets[0].style.top = tBlock + "px";
   }
 
-  bracket.style.top = tBlock + "px";
-  bracket.style.height = hSum-10 + "px";
-  bracket.classList.remove('hide');
-  lhs ? bracket.classList.remove('bracket-left') : bracket.classList.remove('bracket-right');
-  lhs ? bracket.classList.add('bracket-right') : bracket.classList.add('bracket-left');
+  if (targets.length) {
+    bracket.style.top = tBlock + "px";
+    bracket.style.height = hSum-10 + "px";
+    bracket.classList.remove('hide');
+    lhs ? bracket.classList.remove('bracket-left') : bracket.classList.remove('bracket-right');
+    lhs ? bracket.classList.add('bracket-right') : bracket.classList.add('bracket-left');
+    map.length==6 && lhs ? bracket.classList.add('bracket-right-all') : bracket.classList.remove('bracket-right-all');
+    map.length==6 && !lhs ? bracket.classList.add('bracket-left-all') : bracket.classList.remove('bracket-left-all');
+  }
 
   isFocused = true;
 }
