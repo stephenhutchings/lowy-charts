@@ -1,0 +1,52 @@
+extend /partials/layout
+
+block append config
+
+block page
+
+  .wrapper
+    object(type="image/svg+xml" data="map.svg" class="map")
+    
+  
+  //script.
+    
+    let vw = window.innerWidth;
+    
+    let wrap = document.querySelector('.wrapper');
+    let img = document.querySelector('.window');
+    let slider = document.querySelector('.slider');
+    let labelL = document.querySelector('.label-left');
+    let labelR = document.querySelector('.label-right');
+    
+    let l = wrap.getBoundingClientRect().left;
+    let w = wrap.getBoundingClientRect().width;
+    let mouseDown = false;
+    
+    let maintainAspectRatio = function() { vw < 800 ? wrap.style.height = 0.75*vw  + 'px' : "" };
+    
+    window.onload = maintainAspectRatio;
+    window.addEventListener("resize", () => { vw = window.innerWidth; maintainAspectRatio(); });
+    
+    wrap.addEventListener('mousemove', slide);
+    wrap.addEventListener('touchmove', slide);
+    wrap.addEventListener('mouseup', stop);
+    wrap.addEventListener('touchend', stop);
+    slider.addEventListener('mousedown', () => mouseDown = true);
+    slider.addEventListener('touchstart', () => mouseDown = true);
+
+block append css
+
+  style
+    :sass
+
+      .wrapper
+        max-width: 800px
+        height: 600px
+        overflow: hidden
+        position: relative
+        
+      
+      
+      
+      
+      
