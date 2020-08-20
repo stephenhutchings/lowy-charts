@@ -9,12 +9,11 @@ var isFocused = false;
 // Setup
 
 document.addEventListener('DOMContentLoaded', init);
-document.addEventListener('click', e => isFocused ? unfocus() : "" );
+document.addEventListener('click', e => isFocused ? unfocus(e, this) : "" );
 
 function init() {
   initAnimateSort();
 }
-
 
 // Animate sort functions
 
@@ -25,9 +24,11 @@ function initAnimateSort() {
   let sortElArr = [...sortElObj];                             // Array list of sorting elements
 
   sortElObj.forEach( el => {                                   // Default setup for every sortable object
-    el.addEventListener('click', e => { isFocused ? unfocus(el) : focus(el); e.stopPropagation(); });
+    el.addEventListener('click', e => { isFocused ? unfocus(e, el) : focus(el); e.stopPropagation(); });
     el.classList.add('pos-abs');
   });
+
+
 
   spreadY(sortElArr);      // Position each article along y axis (for side-by-side view on desktop)
 
@@ -43,14 +44,16 @@ function focus(el) {
   let listItems = document.querySelectorAll('.list-item');    // Elements targeted for fading/sorting
   let bracket = document.querySelector('.bracket');           // Bracket to wrap around sorted els
 
-  el.querySelector('.read-more').classList.remove('no-ptr');  // Activate link on 'read article' button
+  el.classList.add('focused');
+  el.classList.remove('ptr');
+  el.querySelector('.read-more').classList.remove('no-ptr-ev');  // Activate link on 'read article' button
   el.querySelector('.read-more').classList.add('show');       // Show 'read article' button
   el.querySelector('h2 a').classList.add('txt-red');          // Colorise article title
-  el.querySelector('h2 a').classList.remove('no-ptr');        // Activate link on article title
+  el.querySelector('h2 a').classList.remove('no-ptr-ev');        // Activate link on article title
 
   listItems.forEach( (item, i) => item === el ? "" : item.classList.add('fade') );
 
-  targets = map.map( (v,i) => listItems[v-1] );       // Get DOM elements
+  targets = map.map( (v,i) => listItems[v-1] );     // Get DOM elements
   heights = targets.map( (el) => el.offsetHeight ); // Get their heights
   hSum = heights.reduce( (sum, h) => sum + h );     // Sum all their heights
 
@@ -58,7 +61,9 @@ function focus(el) {
     tBlock = t + h/2 - hSum/2;
     tBlock = checkBlockBounds(tBlock, hSum);
     targets.forEach( (el, i) => {
-      el.classList.remove('fade');
+      el.classList.add('target', 'z1');
+      el.classList.remove('fade','ptr');
+      el.querySelector('h2 a').classList.remove('no-ptr-ev');     // Activate link on article title
       ti = heights.reduce( (sum, h, j) => j<=i ? sum + h : sum ); // Cumulative height of items thus far
       ti -= heights[i];                                           // Minus height of this item
       el.style.top = tBlock + ti + "px";                          // Offset this from the block top
@@ -79,26 +84,42 @@ function focus(el) {
   isFocused = true;
 }
 
-function unfocus (el) {
-  let list = document.querySelector('.list');
-  let listItems = document.querySelectorAll('.list-item');                 // Elements targeted  for fading
-  let sortElArr = [...document.querySelectorAll('.list-item')];         // Object list of sorting elements
-  let focusedHeading = list.querySelector('h2 a:not(.no-ptr)');
-  let focusedButton = list.querySelector('.read-more:not(.no-ptr)');
-  let bracket = document.querySelector('.bracket');                      // Bracket to wrap around sorted els
+function unfocus (e, el) {
 
-  focusedHeading.classList.remove('txt-red');
-  focusedHeading.classList.add('no-ptr');
-  focusedButton.classList.remove('show');
-  focusedButton.classList.add('no-ptr');
+  let focusedDiv = document.querySelector('.focused');
 
-  bracket.classList.add('hide');
+  // Only unfocus if click was not on any active elements
+  if ( !(e.target===focusedDiv || e.target.parentElement===focusedDiv || e.target.parentElement.classList.contains('target') )) {
 
-  listItems.forEach( el => el.classList.remove('fade') );
+    let list = document.querySelector('.list');
+    let listItems = document.querySelectorAll('.list-item');           // Elements targeted  for fading
+    let sortElArr = [...document.querySelectorAll('.list-item')];      // Object list of sorting elements
+    let focusedButton = focusedDiv.querySelector('.read-more');
+    let focusedHeading = focusedDiv.querySelector('h2 a');
+    let targets = document.querySelectorAll('.target');
+    let bracket = document.querySelector('.bracket');                   // Bracket to wrap around sorted elmts
 
-  spreadY(sortElArr);
+    targets.forEach( (el) => {
+      el.classList.remove('target', 'z1');
+      el.classList.add('ptr');
+      el.querySelector('h2 a').classList.add('no-ptr-ev', 'ptr');
+    });
 
-  isFocused = false;
+    focusedDiv.classList.remove('focused');
+    focusedDiv.classList.add('ptr');
+    focusedHeading.classList.remove('txt-red');
+    focusedHeading.classList.add('no-ptr-ev');
+    focusedButton.classList.remove('show');
+    focusedButton.classList.add('no-ptr-ev');
+
+    bracket.classList.add('hide');
+
+    listItems.forEach( el => el.classList.remove('fade') );
+
+    spreadY(sortElArr);
+
+    isFocused = false;
+  }
 }
 
 
@@ -130,6 +151,5 @@ function checkBlockBounds(t, h) {
 
   t < 0 ? t = 0 : "";
   bottomClearance < 0 ? t = t + bottomClearance : "";
-  console.log(bottomClearance);
   return t;
 }
