@@ -1,13 +1,17 @@
 - var response = page.attributes.map[0] < 8
 
-footer.mx-auto.article-w
+footer.mx-auto.article-w.pv-lg.txt-center
   if response
     .md This article is a response to the following articles
-    ul
+    ul.bare-list
+      - var articles = page.feature.articles
       each i in page.attributes.map
-        li= page.feature.articles[i-1].title  
+        li: a(href=`/features/rbo-debate/articles/${articles[i-1].href}`)= articles[i-1].title  
   else
-    .md This article is mentioned in the following response articles  
-    ul
+    .md This article is mentioned in the following response articles
+    ul.bare-list
+      - var responses = page.feature.responses
       each i in page.attributes.map
-        li= page.feature.responses[i-8].title
+        li: a(href=`/features/rbo-debate/responses/${responses[i-8].href}`)= responses[i-8].title
+  
+  h2: a(href="/features/rbo-debate/") Or see all Debate Threads
