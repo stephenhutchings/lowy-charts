@@ -130,9 +130,13 @@ blockquote
 #lowy-authors
   display: none
 
-  @media (min-width: 600px) and (min-height: 685px)
+  @media (min-width: 600px) and (min-height: 600px)
       display: block
       margin-top: 50px
+
+  @media (min-width: 1085px) and (max-height: 700px)
+      margin-top: 10px
+
 
 .section-wrap
   margin: 0 auto
@@ -571,11 +575,6 @@ cite
 
 @media (min-width: 1000px)
 
-  .banner-title
-    font-size: 40px
-    span
-      font-size: 82px
-
   #theme-menu
     width: 90%
 
@@ -584,9 +583,14 @@ cite
     padding: 1em 3em
 
 
-@media (min-width: 1085px)
+@media (min-width: 1085px) and (min-height: 650px)
   .section-wrap
     width: 90%
+
+  .banner-title
+    font-size: 40px
+    span
+      font-size: 82px
 
   #experts
     font-size: 26px
