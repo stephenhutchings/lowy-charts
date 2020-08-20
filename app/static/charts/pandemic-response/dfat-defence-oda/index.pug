@@ -4,6 +4,7 @@ block append config
   - var datapath = "static/charts/pandemic-response/dfat-defence-oda/data"
   - _.extend(page, data.getOne(datapath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - page.image= 'chart.png'
 
 block page
   .wrapper.flex.flex-col.txt-center
