@@ -5,6 +5,7 @@ block append config
 block page
 
   .wrapper
+    object(type="image/svg+xml" data="inset.svg" class="inset")
     svg(xmlns='http://www.w3.org/2000/svg' version='1.2' baseprofile='tiny' viewbox='0 0 800 582' stroke-linecap='round' stroke-linejoin='round')
       g#labels(font-family='sans-serif' text-anchor='middle')
         g(text-anchor='end')
@@ -253,6 +254,12 @@ block append css
         overflow: hidden
         position: relative
         
+      .inset
+        position: absolute
+        top: 0
+        right: 0
+        width: 130px
+        
       .fixed-bl
         position: absolute
         bottom: 0
@@ -274,6 +281,12 @@ block append css
         top: 5px
         height: 10px
         width: 20px
+        
+      .legend-item-tt
+        display: inline-block
+        height: 10px
+        width: 20px
+        margin-right: 10px
       
       .tooltip
         position: absolute
@@ -285,7 +298,6 @@ block append css
         transition-duration: 0.5s
         pointer-events: none
         font-size: 14px
-        max-width: 210px
         box-sizing: border-box
         
       .fade

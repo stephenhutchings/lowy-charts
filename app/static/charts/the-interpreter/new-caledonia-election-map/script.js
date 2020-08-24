@@ -271,7 +271,14 @@ function addTooltip(el,i) {
     let commune = data.filter( c => c.id == el.dataset.id )[0];
     let box = el.getBoundingClientRect();
 
-    tooltip.innerHTML = `<b>${commune.name}</b><br>${commune.kanak}% Kanak population<br>${commune.for_independence}% vote for independence`;
+    let legendItem = [
+      `<span class="legend-item-tt" style="background:${getColor(commune.kanak)}"></span>`,
+      `<span class="legend-item-tt" style="background:${getColor(commune.for_independence)}"></span>`
+    ]
+
+    tooltip.innerHTML = `<b>${commune.name}</b><br>
+                        ${legendItem[0]} ${commune.kanak}% Kanak population<br>
+                        ${legendItem[1]} ${commune.for_independence}% vote for independence`;
     tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
     tooltip.style.top = box.top - tooltip.offsetHeight - 5 + 'px';
     tooltip.style.opacity = 1;
@@ -292,7 +299,6 @@ function colorize(d) {
     commune = data.filter( c => c.id == poly.dataset.id )[0];
     poly.style.fill = getColor(commune[dataset]);
   });
-  console.log('coloring');
 }
 
 function getColor(n) {
