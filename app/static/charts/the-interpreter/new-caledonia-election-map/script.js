@@ -244,15 +244,12 @@ let vw = window.innerWidth;
 /* let l = wrap.getBoundingClientRect().left;
 let w = wrap.getBoundingClientRect().width; */
 
-let commune;
 let polygons = document.querySelectorAll('#map path');
 let wrap = document.querySelector('.wrapper');
-let labels = document.querySelectorAll('#labels g');
 
-const maintainAspectRatio = function() { vw < 800 ? wrap.style.height = 0.75*vw  + 'px' : "" };
-
-window.onload = maintainAspectRatio;
-window.addEventListener("resize", () => { vw = window.innerWidth; maintainAspectRatio(); });
+// window.onload = maintainAspectRatio;
+// window.addEventListener("resize", () => { vw = window.innerWidth; maintainAspectRatio(); });
+// const maintainAspectRatio = function() { vw < 800 ? wrap.style.height = 0.75*vw  + 'px' : "" };
 
 document.addEventListener("DOMContentLoaded", initialise);
 
@@ -270,15 +267,14 @@ function addTooltip(el,i) {
     let centroid = document.querySelectorAll('circle')[i];
     let commune = data.filter( c => c.id == el.dataset.id )[0];
     let box = el.getBoundingClientRect();
+    let children = tooltip.children;
 
-    let legendItem = [
-      `<span class="legend-item-tt" style="background:${getColor(commune.kanak)}"></span>`,
-      `<span class="legend-item-tt" style="background:${getColor(commune.for_independence)}"></span>`
-    ]
+    children[0].innerHTML = commune.name;                   // Title
+    children[1].style.background = getColor(commune.kanak); // Coloured box
+    children[2].innerHTML = commune.kanak;                  // Value
+    children[4].style.background = getColor(commune.for_independence);
+    children[5].innerHTML = commune.for_independence;
 
-    tooltip.innerHTML = `<b>${commune.name}</b><br>
-                        ${legendItem[0]} ${commune.kanak}% Kanak population<br>
-                        ${legendItem[1]} ${commune.for_independence}% vote for independence`;
     tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
     tooltip.style.top = box.top - tooltip.offsetHeight - 5 + 'px';
     tooltip.style.opacity = 1;

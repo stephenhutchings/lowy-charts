@@ -5,6 +5,9 @@ block append config
 block page
 
   .wrapper
+    
+    .chart-title.txt-semi New Caledonia votes for independence
+  
     object(type="image/svg+xml" data="inset.svg" class="inset")
     svg(xmlns='http://www.w3.org/2000/svg' version='1.2' baseprofile='tiny' viewbox='0 0 800 582' stroke-linecap='round' stroke-linejoin='round')
       g#labels(font-family='sans-serif' text-anchor='middle')
@@ -222,22 +225,30 @@ block page
           line(x1='383' y1='368' x2='360' y2='405')
     
     .fixed-bl
-    
-      .input.flex.flex-cv
-        .row
-          input(type="radio" id="pop" name="select" value="pop" checked)
-          label(for="pop") Kanak population
-        .row
-          input(type="radio" id="vote" name="select" value="vote")
-          label(for="vote") Voted for independence
-
       ul.legend.txt-nowrap.flex.flex-cv.list-bare
         for item, i in ["#de333e", "#ff8F91","#9EACB3","#3661B6","#09306B"]
           li.legend-item
             span.legend-item-box(style=`background:${item}`)
             span.legend-item-label!= `${i*20}&ndash;${20+i*20}%`
-            
+      .input.flex.flex-cv
+        .row
+          input(type="radio" id="pop" name="select" value="pop" checked)
+          label(for="pop") % population Kanak
+        .row
+          input(type="radio" id="vote" name="select" value="vote")
+          label(for="vote") % population voted for independence
+    
+    //.fixed-br.txt-cond.txt-muted Source: Author's calculations
+    
   .tooltip
+    .tt-title.txt-bold
+    .tt-item-box
+    span.tt-item
+    span % Kanak population<br>
+    .tt-item-box
+    span.tt-item
+    span % vote for independence
+      
   
   script(src="script.js")
 
@@ -250,15 +261,27 @@ block append css
 
       .wrapper
         max-width: 800px
-        height: 560px
+        height: 640px
         overflow: hidden
         position: relative
-        
+      
+      .chart-title
+        line-height: 1
+        margin-bottom: 12px
+        font-weight: 500
+        color: black
+        font-size: 1.8rem
+      
       .inset
         position: absolute
         top: 0
         right: 0
         width: 130px
+      
+      .fixed-br
+        position: absolute
+        bottom: 0
+        right: 0  
         
       .fixed-bl
         position: absolute
@@ -269,6 +292,7 @@ block append css
         font-size: 15px
         max-width: 320px
         margin: auto
+        margin-bottom: 18px
 
       .legend-item
         margin: 4px 8px 0
@@ -281,12 +305,6 @@ block append css
         top: 5px
         height: 10px
         width: 20px
-        
-      .legend-item-tt
-        display: inline-block
-        height: 10px
-        width: 20px
-        margin-right: 10px
       
       .tooltip
         position: absolute
@@ -299,6 +317,12 @@ block append css
         pointer-events: none
         font-size: 14px
         box-sizing: border-box
+
+      .tt-item-box
+        display: inline-block
+        height: 10px
+        width: 20px
+        margin-right: 10px
         
       .fade
         opacity: 0.2
@@ -320,3 +344,33 @@ block append css
       circle
         display: none
         
+      @media (max-width: 570px)
+      
+        .chart-title
+          font-size: 1.5rem
+      
+      @media (max-width: 500px)
+        
+        .chart-title
+          text-align: center
+          
+        .inset
+          margin: auto
+          position: relative
+          display: block
+          width: 100px
+          
+        .fixed-bl
+          width: 100%
+          
+          > *
+            text-align: center
+            
+        .legend
+          max-width: 140px
+            
+        label
+          font-size: 17px
+          
+        .row:first-child
+          margin-bottom: 10px
