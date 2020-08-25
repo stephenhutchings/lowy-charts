@@ -17,10 +17,25 @@ block page
               span.icon.icon-down-sm
             th.txt-left(onclick="sortTable(this,false, 1)") Country
               span.icon.icon-down-sm.show
-        tbody.p-1
+        tbody
           each e, i in t.better
             tr
               td.txt-right= i+1
+              td= e
+    .flex-col
+      .head Average performing
+      table#average
+        thead
+          tr
+            th.txt-left(onclick="sortTable(this,true, 0)") Rank
+              span.icon.icon-down-sm
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm.show
+        tbody.p-1
+          - let next = t.better.length + 1
+          each e, i in t.average
+            tr
+              td.txt-right= i + next
               td= e
     .flex-col
       .head Worse performing
@@ -31,21 +46,18 @@ block page
               span.icon.icon-down-sm
             th.txt-left(onclick="sortTable(this,false, 1)") Country
               span.icon.icon-down-sm.show
-        tbody.p-1
-          - let next = t.better.length + 1
+        tbody
+          - next = t.better.length + t.average.length + 1
           each e, i in t.worse
             tr
               td.txt-right= i + next
               td= e
 
-    .btns.flex-ch.p-1
+    //.btns.flex-ch.p-1
       .pg.txt-tu(onclick="pager()") 1 of 2
       .down.icon.icon-down(onclick="pager()")
       
-    .notes.txt-muted.txt-sm
-      | *Ranking for China based on missing reported data and a
-      span#br <br>
-      | number of imputations that cannot be considered as proved
+    .notes.txt-muted.txt-sm *Taiwan is included in the Index as a self-governing territory
       
 block append css
   style
@@ -53,9 +65,8 @@ block append css
       .wrapper
         justify-content: center
         position: relative
-        height: 715px
-        max-width: 600px
-        user-select: none
+        height: 760px
+        max-width: 620px
       .flex-col
         margin: 10px 0
         flex: 1
@@ -65,30 +76,37 @@ block append css
       th
         cursor: pointer
         background: white
-      td,th,h2,.head
-        padding-left: 0.75rem
-        padding-right: 0.75rem
+        padding: 6px 0 0
+        text-transform: uppercase
+        font-size: 14px
+        letter-spacing: 0.03em
+        user-select: none
+        
+      th:last-child,
+      td:last-child
+        padding-left: 0.25rem
       
       .p-2 tr:nth-child(-n+20)
         display: none
       
       td
         max-width: 0
-        overflow: hidden
-        text-overflow: ellipsis
         white-space: nowrap
+        font-size: 15px
       td:first-child
         min-width: 35px
-        padding-right: 2.5em
+        padding-right: 1.25em
       td:last-child
         min-width: 110px
         
       .icon
         display: inline-block
         font-size: 18px
-        padding: .25em
+        padding: 0 2px
         transition-duration: 250ms
+        vertical-align: inherit
         opacity: 0.3
+        transform-origin: 50% 45%
         &.show
           opacity: 1
         &.rot
@@ -109,13 +127,14 @@ block append css
           color: #4b4f56
           border-radius: 4px
           cursor: pointer
-        &.p-1 .icon-up
+          
+        // &.p-1 .icon-up
           opacity: 0
           cursor: default
-        &.p-2 .icon-down
+        // &.p-2 .icon-down
           transform: scaleY(-1)
           
-      .pg
+      // .pg
         font-size: 12px
         margin-top: -50px
         margin-left: -25px
@@ -129,7 +148,7 @@ block append css
         padding-top: .5em
         border-top: 1px solid #4b4f56
         
-      @media (max-width: 450px)
+      @media (max-width: 620px)
         html
           overflow-y: auto
           height: fit-content
@@ -139,19 +158,34 @@ block append css
           box-sizing: border-box
         .flex
           flex-direction: column
-        .btns
-          display: none
-        .p-2 tr:nth-child(-n+20)
-          display: unset
         .notes
           position: relative
-        #br
-          display: none
+
+        table
+          width: 100%
+          table-layout: fixed
+          
+        .head
+          text-align: center
+          
+        th:first-child
+          text-align: right
+          
+        th:first-child
+          padding-right: 0.25em
+        td:first-child
+          padding-right: 1.25em
+        th:last-child,
+        td:last-child
+          width: 54%
+          padding-left: 0
+          
+
 
   script.
     var p = 1;
     var ready = false;
-    function pager() {
+    /* function pager() {
       document.querySelector('.btns').classList.remove(`p-${p}`);
       let tb = document.querySelectorAll('tbody');
       if (p==2) {
@@ -172,7 +206,7 @@ block append css
         });
         p++;
       }
-    }
+    } */
     function flipSortIcon(el) {
       let icon = el.querySelector('.icon');
       if ( icon.classList.contains('show') ) {
@@ -239,6 +273,7 @@ block append css
     window.addEventListener('load', function () {
       sortTable(document.getElementsByTagName('th')[1], false, 1);
       sortTable(document.getElementsByTagName('th')[3], false, 1);
+      sortTable(document.getElementsByTagName('th')[5], false, 1);
       ready = true;
     });
     

@@ -3,78 +3,85 @@ title: >
 
 table:
   better:
-    - China*
-    - Vietnam
-    - Lithuania
     - New Zealand
-    - Bahrain
-    - Iceland
-    - Latvia
+    - Vietnam
+    - Taiwan*
     - Australia
-    - Kazakhstan
     - Slovak Republic
-    - Taiwan
-    - Estonia
     - Thailand
-    - Czech Republic
-    - Slovenia
-    - Israel
-    - Korea
-    - Uruguay
-    - Tunisia
+    - China
+    - Latvia
+    - Malta
     - Malaysia
+    - Lithuania
+    - Tunisia
+    - Uruguay
+    - South Korea
     - Greece
-    - Ghana
-    - South Africa
-    - Bulgaria
-    - Costa Rica
-    - Croatia
-    - Poland
-    - Senegal
-    - Hungary
-    - Japan
-    - Nigeria
     - Morocco
-    - Denmark
+    - Slovenia
+    - Estonia
+    - Iceland
+    - Hungary
+    - Czech Republic
+    - Japan
+    - Croatia
     - Norway
+    - Finland
+
+
+  average:
+    - Denmark
+    - Kenya
+    - Côte d'Ivoire
+    - Poland
+    - Bulgaria
+    - United Arab Emirates
+    - Ghana
+    - Senegal
+    - Nigeria
+    - Israel
     - Philippines
-    - Argentina
+    - Luxembourg
+    - Austria
+    - Costa Rica
+    - Serbia
+    - Kazakhstan
+    - Indonesia
+    - Bahrain
+    - Romania
+    - Ukraine
+    - Singapore
+    - Portugal
+    - India
+    - Belarus
+    - Germany
+    - Switzerland
 
   worse:
-    - Indonesia
-    - Colombia
-    - Finland
-    - Ukraine
-    - Pakistan
-    - Serbia
-    - India
-    - Romania
-    - Austria
-    - Saudi Arabia
-    - Bolivia
-    - Portugal
-    - Chile
-    - Mexico
     - Russia
-    - Singapore
-    - Belarus
-    - Panama
     - Canada
-    - Turkey
-    - Iran
-    - Germany
-    - Luxembourg
-    - Ecuador
-    - Switzerland
-    - Peru
-    - Brazil
-    - Sweden
-    - Qatar
+    - Pakistan
     - Ireland
+    - Turkey
+    - Qatar
+    - Kuwait
+    - Argentina
     - Netherlands
-    - France
-    - Italy
+    - Saudi Arabia
     - United Kingdom
     - Belgium
+    - Colombia
+    - Iran
+    - South Africa
+    - Italy
     - Spain
+    - Sweden
+    - Panama
+    - Ecuador
     - United States
+    - Bolivia
+    - Mexico
+    - Chile
+    - Peru
+    - Brazil
