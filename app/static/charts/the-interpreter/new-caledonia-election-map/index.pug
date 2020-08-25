@@ -6,7 +6,8 @@ block page
 
   .wrapper
     
-    .chart-title.txt-cond Kanaks for Independence:<br>New Caledonia's 2018 Referendum
+    .chart-title.txt-cond New Caledonia's 2018 Referendum
+    .chart-subtitle Demographics in the vote for independence
   
     object(type="image/svg+xml" data="inset.svg" class="inset")
     svg(xmlns='http://www.w3.org/2000/svg' version='1.2' baseprofile='tiny' viewbox='0 0 800 582' stroke-linecap='round' stroke-linejoin='round')
@@ -227,7 +228,7 @@ block page
     .fixed-bl
     
       ul.legend.txt-nowrap.flex.flex-cv.list-bare
-        for item, i in ["#de333e", "#ff8F91","#9EACB3","#3661B6","#09306B"]
+        for item, i in ["#003B36", "#5B7E67","#9C9E93","#ff6f30","#d74000"]
           li.legend-item
             span.legend-item-box(style=`background:${item}`)
             span.legend-item-label!= `${i*20}&ndash;${20+i*20}%`
@@ -241,8 +242,22 @@ block page
         .row
           input(type="radio" id="vote" name="select" value="vote")
           label(for="vote") Pro-independence votes
-    
-    //.fixed-br.txt-cond.txt-muted Source: Author's calculations
+      
+      svg(xmlns='http://www.w3.org/2000/svg' width='150' viewbox='0 0 556.6 48')
+        path(d='M0,47.2V.8H10.2V37.9H33.3L31,47.2Z' fill='#002b45')
+        path(d='M59.9,48C45.6,48,35.3,37.3,35.3,24.1h0c0-13.2,10.5-24,24.8-24S84.7,10.7,84.7,23.9h0C84.7,37.2,74.3,48,59.9,48ZM74,24c0-8-5.8-14.6-14.1-14.6S46,15.9,46,23.9h0c0,8,5.9,14.6,14.1,14.6S74,32.1,74,24.1Z' fill='#002b45')
+        path(d='M138.7,47.5h-8.9L119.3,17.2,108.8,47.5H100L84.1.8h11l9.6,31.4L115.1.7h8.7l10.4,31.5L143.8.8h10.7Z' fill='#002b45')
+        path(d='M186.1,28.7V47.2H175.9V28.9L158.1.8H170l11.1,18.6L192.3.8h11.6Z' fill='#002b45')
+        path(d='M225.7,47.2V.8h10.2V47.2Z' fill='#002b45')
+        path(d='M275.8,47.2,253.4,17.7V47.2H243.3V.8h9.4l21.8,28.5V.8h10V47.2Z' fill='#002b45')
+        path(d='M308.5,47.8a29.1,29.1,0,0,1-19.7-7.4l6-7.2c4.2,3.4,8.5,5.6,13.9,5.6s6.6-1.6,6.6-4.4h0c0-2.6-1.5-3.9-9.3-5.9s-15.4-5-15.4-14.2h0c0-8.4,6.8-14,16.3-14A26.8,26.8,0,0,1,324.1,6l-5.3,7.7c-4.1-2.9-8.2-4.6-12.1-4.6s-5.9,1.8-5.9,4.1h0c0,3,1.9,4,10,6.1s14.7,5.8,14.7,13.9h0C325.5,42.7,318.5,47.8,308.5,47.8Z' fill='#002b45')
+        path(d='M353,10.2l-.2,37H342.6l.2-37H328.6V.7h38.4l-2.4,9.4Z' fill='#002b45')
+        path(d='M371.8,47.2V.8H382V47.2Z' fill='#002b45')
+        path(d='M411.8,10.2v37H401.6v-37H387.5V.8H426l-2.4,9.4Z' fill='#002b45')
+        path(d='M501.8,10.2v37H491.6v-37H477.5V.8h38.4l-2.3,9.4Z' fill='#002b45')
+        path(d='M451.3,47.9c-12.4,0-20.1-7-20.1-20.6V.8h10.3V27c0,7.6,3.7,11.5,10,11.5s10-3.8,10-11.2V.8h10.2V27C471.7,41,463.8,47.9,451.3,47.9Z' fill='#002b45')
+        path(d='M521.3,47.2V.8h35l-2.3,9H531.4v9.5h21.9l-2.3,9H531.4v9.8h25.2l-2.3,9.1Z' fill='#002b45')
+
     
   .tooltip
     .tt-title.txt-bold
@@ -270,11 +285,16 @@ block append css
         position: relative
       
       .chart-title
-        line-height: 1.4
-        margin-bottom: 12px
+        line-height: 1.1
         font-weight: 500
         color: black
         font-size: 1.8rem
+        max-width: 450px
+        
+      .chart-subtitle
+        margin-bottom: 12px
+        font-weight: 500
+        font-size: 1.2rem
         max-width: 450px
       
       .inset
@@ -362,12 +382,19 @@ block append css
       circle
         display: none
         
+      @media (max-width: 900px)
+        .wrapper
+          padding-right: 40px
+        
       @media (max-width: 570px)
       
         .chart-title
           font-size: 1.5rem
       
       @media (max-width: 500px)
+        
+        .wrapper
+          padding-right: 0
         
         .chart-title
           text-align: center

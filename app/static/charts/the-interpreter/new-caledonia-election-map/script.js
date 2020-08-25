@@ -299,7 +299,7 @@ function colorize(d) {
 
 function getColor(n) {
   // n --> decimal number
-  let colors = ["#de333e", "#ff8F91","#9EACB3","#3661B6","#09306B"];
+  let colors = ["#003B36", "#5B7E67","#9C9E93","#ff6f30","#d74000"];
   let i = n < 0.2 ? 0 :
           n < 0.4 ? 1 :
           n < 0.6 ? 2 :
