@@ -24,12 +24,15 @@ block page
               input(id=`tab-${i}-${j}` type='radio' name='secondary' checked=chk)
               label.txt-tu.txt-xs.txt-b.txt-center(
                 for=`tab-${i}-${j}`
-                onclick=`setTimeout(checkScroll('#tab-${i}-${j}'),500);`
+                style=(i==1 && j==3 ? "flex: 1.25" : "")
               )= category.title
               .tab.secondary
                 .grid
                   each country in category.countries
                     p= country
+
+    .notes.txt-muted *Taiwan is included in the Index as a self-governing territory
+
 
 block append css
   style
@@ -51,18 +54,18 @@ block append css
       .txt-xs
         font-size: 14px
       .txt-b
-        font-weight: 700
+        font-weight: 600
     
       .wrapper
         justify-content: center
         position: relative
-        height: 720px
+        height: 515px
         max-width: 700px
         user-select: none
         
       .grid
         display: grid
-        grid-template-columns: repeat(auto-fill,minmax(120px, 120px))
+        grid-template-columns: repeat(auto-fill,minmax(160px, 160px))
       
       .grid > p
         padding: 0 .2em
@@ -70,6 +73,7 @@ block append css
         text-overflow: ellipsis
         white-space: nowrap
         font-size: 15px
+        margin-bottom: 1em
 
       .tabs
         display: flex
@@ -97,10 +101,11 @@ block append css
           border: 1px solid #002b45
         &.secondary
           background: #f5f5f5
-          padding: 1.5rem 0 .5rem 2em
-          max-height: 570px
-          min-height: 570px
+          padding: 1.25rem 0 1rem 2em
+          max-height: 320px
+          min-height: 320px
           position: relative
+          overflow-y: auto
       
       .show-more
         position: absolute
@@ -130,10 +135,11 @@ block append css
         display: block
 
         
-
-      @media (max-width: 630px)
-        .tabs .tab.secondary
-          overflow-y: auto
+      .notes
+        font-size: 0.8em
+        margin-top: 5px
+        text-align: center
+        
       @media (max-width: 515px) 
         .tabs .tab.secondary
           max-height: 400px
@@ -146,11 +152,16 @@ block append css
         .tab .tabs input[type="radio"]:checked + label
           background: #d0d0d0
           color: #4b4f56
+          
+        .wrapper
+          height: 670px
 
       @media (max-width: 380px) 
         .tabs .tab.secondary
           max-height: 320px
           min-height: 320px
+          
+
 
            
   script.

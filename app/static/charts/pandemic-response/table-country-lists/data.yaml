@@ -17,7 +17,6 @@ table:
           - Denmark
           - Estonia
           - Finland
-          - France
           - Germany
           - Greece
           - Hungary
@@ -26,10 +25,11 @@ table:
           - Israel
           - Italy
           - Japan
-          - Korea
+          - Kuwait
           - Latvia
           - Lithuania
           - Luxembourg
+          - Malta
           - Netherlands
           - New Zealand
           - Norway
@@ -41,92 +41,113 @@ table:
           - Singapore
           - Slovak Republic
           - Slovenia
+          - South Korea
           - Spain
           - Sweden
           - Switzerland
-          - Taiwan
+          - Taiwan*
+          - United Arab Emirates
           - United Kingdom
           - United States
           - Uruguay
+
       - title: Middle income
         countries:
           - Argentina
           - Belarus
+          - Bolivia
           - Brazil
           - Bulgaria
           - China
           - Colombia
           - Costa Rica
+          - Côte d'Ivoire
           - Ecuador
-          - Iran
-          - Kazakhstan
-          - Malaysia
-          - Mexico
-          - Peru
-          - Romania
-          - Russia
-          - Serbia
-          - South Africa
-          - Thailand
-          - Turkey
-      - title: Low income
-        countries:
-          - Bolivia
           - Ghana
           - India
           - Indonesia
+          - Iran
+          - Kazakhstan
+          - Kenya
+          - Malaysia
+          - Mexico
           - Morocco
           - Nigeria
           - Pakistan
+          - Peru
           - Philippines
+          - Romania
+          - Russia
           - Senegal
+          - Serbia
+          - South Africa
+          - Thailand
           - Tunisia
+          - Turkey
           - Ukraine
           - Vietnam
 
-  - name: Culture
+
+  - name: Region
     categories:
-      - title: Asian
+      - title: Americas
         countries:
+          - Argentina
+          - Bolivia
+          - Brazil
+          - Canada
+          - Chile
+          - Colombia
+          - Costa Rica
+          - Ecuador
+          - Mexico
+          - Panama
+          - Peru
+          - United States
+          - Uruguay
+
+      - title: Asia-Pacific
+        countries:
+          - Australia
           - China
           - India
           - Indonesia
           - Japan
-          - Korea
+          - Kazakhstan
           - Malaysia
+          - New Zealand
           - Pakistan
           - Philippines
+          - Russia
           - Singapore
-          - Taiwan
+          - South Korea
+          - Taiwan*
           - Thailand
           - Vietnam
 
-      - title: Western
+
+      - title: Europe
         countries:
-          - Australia
           - Austria
           - Belarus
           - Belgium
           - Bulgaria
-          - Canada
           - Croatia
           - Czech Republic
           - Denmark
           - Estonia
           - Finland
-          - France
           - Germany
           - Greece
           - Hungary
           - Iceland
           - Ireland
-          - Israel
           - Italy
           - Latvia
           - Lithuania
           - Luxembourg
+          - Malta
           - Netherlands
-          - New Zealand
           - Norway
           - Poland
           - Portugal
@@ -137,36 +158,28 @@ table:
           - Spain
           - Sweden
           - Switzerland
+          - Ukraine
           - United Kingdom
-          - United States
 
-      - title: Other
+      - title: Middle East & Africa
         countries:
-          - Argentina
           - Bahrain
-          - Bolivia
-          - Brazil
-          - Chile
-          - Colombia
-          - Costa Rica
-          - Ecuador
+          - Côte d'Ivoire
           - Ghana
           - Iran
-          - Kazakhstan
-          - Mexico
+          - Israel
+          - Kenya
+          - Kuwait
           - Morocco
           - Nigeria
-          - Panama
-          - Peru
           - Qatar
-          - Russia
           - Saudi Arabia
           - Senegal
           - South Africa
           - Tunisia
           - Turkey
-          - Ukraine
-          - Uruguay
+          - United Arab Emirates
+
 
   - name: Politics
     categories:
@@ -177,18 +190,25 @@ table:
           - China
           - Iran
           - Kazakhstan
+          - Kuwait
           - Qatar
           - Russia
           - Saudi Arabia
+          - United Arab Emirates
+          - Vietnam
+
       - title: Hybrid
         countries:
           - Bolivia
+          - Côte d'Ivoire
+          - Kenya
           - Morocco
           - Nigeria
           - Pakistan
           - Senegal
           - Turkey
           - Ukraine
+
       - title: Democratic
         countries:
           - Argentina
@@ -207,7 +227,6 @@ table:
           - Ecuador
           - Estonia
           - Finland
-          - France
           - Germany
           - Ghana
           - Greece
@@ -219,11 +238,11 @@ table:
           - Israel
           - Italy
           - Japan
-          - Korea
           - Latvia
           - Lithuania
           - Luxembourg
           - Malaysia
+          - Malta
           - Mexico
           - Netherlands
           - New Zealand
@@ -239,27 +258,35 @@ table:
           - Slovak Republic
           - Slovenia
           - South Africa
+          - South Korea
           - Spain
           - Sweden
           - Switzerland
-          - Taiwan
+          - Taiwan*
           - Thailand
           - Tunisia
           - United Kingdom
           - United States
           - Uruguay
 
+
   - name: Power
     categories:
-      - title: Great powers
+      - title: Major powers
         countries:
           - China
-          - France
           - India
           - Japan
           - Russia
           - United Kingdom
           - United States
+          - Nigeria
+          - Germany
+          - Turkey
+          - Saudi Arabia
+          - South Africa
+          - Iran
+
       - title: Middle powers
         countries:
           - Argentina
@@ -267,28 +294,25 @@ table:
           - Brazil
           - Canada
           - Colombia
-          - Germany
           - Ghana
           - Indonesia
-          - Iran
           - Israel
           - Italy
-          - Korea
+          - Kenya
           - Malaysia
           - Mexico
           - Morocco
-          - Nigeria
           - Pakistan
           - Philippines
           - Poland
-          - Saudi Arabia
-          - South Africa
+          - South Korea
           - Spain
-          - Taiwan
+          - Taiwan*
           - Thailand
-          - Turkey
           - Ukraine
+          - United Arab Emirates
           - Vietnam
+
       - title: Minor powers
         countries:
           - Austria
@@ -299,6 +323,7 @@ table:
           - Bulgaria
           - Chile
           - Costa Rica
+          - Côte d'Ivoire
           - Croatia
           - Czech Republic
           - Denmark
@@ -310,9 +335,11 @@ table:
           - Iceland
           - Ireland
           - Kazakhstan
+          - Kuwait
           - Latvia
           - Lithuania
           - Luxembourg
+          - Malta
           - Netherlands
           - New Zealand
           - Norway
@@ -330,6 +357,7 @@ table:
           - Switzerland
           - Tunisia
           - Uruguay
+
 
   - name: Population
     categories:
@@ -346,6 +374,7 @@ table:
           - Philippines
           - Russia
           - United States
+
       - title: Medium
         countries:
           - Argentina
@@ -355,16 +384,16 @@ table:
           - Canada
           - Chile
           - Colombia
+          - Côte d'Ivoire
           - Czech Republic
           - Ecuador
-          - France
           - Germany
           - Ghana
           - Greece
           - Iran
           - Italy
           - Kazakhstan
-          - Korea
+          - Kenya
           - Malaysia
           - Morocco
           - Netherlands
@@ -375,15 +404,17 @@ table:
           - Saudi Arabia
           - Senegal
           - South Africa
+          - South Korea
           - Spain
           - Sweden
-          - Taiwan
+          - Taiwan*
           - Thailand
           - Tunisia
           - Turkey
           - Ukraine
           - United Kingdom
           - Vietnam
+
       - title: Small
         countries:
           - Austria
@@ -399,9 +430,11 @@ table:
           - Iceland
           - Ireland
           - Israel
+          - Kuwait
           - Latvia
           - Lithuania
           - Luxembourg
+          - Malta
           - New Zealand
           - Norway
           - Panama
@@ -411,4 +444,5 @@ table:
           - Slovak Republic
           - Slovenia
           - Switzerland
+          - United Arab Emirates
           - Uruguay
