@@ -5,10 +5,10 @@ source: >
   <b>Source:</b> Lorem ipsum
 
 notes: >
-  <b>Notes:</b> Lorem ipsum
+  Country performance in response to COVID-19 is determined by a composite score based on six weighted indicators: total confirmed cases and deaths, total confirmed cases and deaths per million people, tests per confirmed case and tests per thousand people.
 
 subtitle: >
-  Proportion of better, average and worse performing countries by category
+  Proportion of countries in category
 
 axes:
   minY:  0
@@ -32,22 +32,22 @@ series:
     title: Better
     color: "dark"
     values:
-      - 45.4545
-      - 0
-      - 35
+      - 18.18
+      - 11.11
+      - 38.60
 
   -
     title: Average
     color: "grey"
     values:
-      - 9
-      - 87.5
-      - 30
+      - 36.36
+      - 55.56
+      - 29.82
 
   -
     title: Worse
     color: "orange"
     values:
-      - 45.4545
-      - 12.5
-      - 35
+      - 45.45
+      - 33.33
+      - 31.58

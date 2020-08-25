@@ -12,7 +12,6 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -32,7 +31,12 @@ block page
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
                   = Math.round(minY + range*(i/steps), 0) + (axes.percentage ? "%" : "")
-                
+            
+            svg(y=toPercent(.5) x="-60")
+              text(class="txt-muted txt-tu p-sm" text-anchor="middle" transform="rotate(-90)")
+                = chart.subtitle
+
+  
           // Y-Axis minor lines
           if chart.axes.minorLines
             svg(height="100%")
@@ -98,8 +102,8 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      //.chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      .chart-source.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-muted.txt-cond!= chart.notes
       
       .tooltip
 
@@ -155,9 +159,7 @@ block append css
         max-width: 800px
       .tooltip
         text-transform: lowercase
-      .chart-notes
-        text-align: left
-        margin-top: 0.5em
+
         
       @media (max-width: 450px)
         .chart-content

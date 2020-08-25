@@ -12,7 +12,6 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -32,6 +31,9 @@ block page
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
                   = Math.round(minY + range*(i/steps), 0) + (axes.percentage ? "%" : "")
+            svg(y=toPercent(.5) x="-60")
+              text(class="txt-muted txt-tu p-sm" text-anchor="middle" transform="rotate(-90)")
+                = chart.subtitle
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -98,8 +100,8 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      .chart-source.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-muted.txt-cond!= chart.notes
       
       .tooltip
 
@@ -128,11 +130,8 @@ block page
     function addHoverEventListeners(el, i) {
       el.addEventListener('mouseover', () => {
         
-        let iCat = nLegendItems - 1 -(i % nLegendItems);
-        i >= 5 ? iCat = Math.abs(i-7) : ""; // hacky fix for missing rect
-        
+        let iCat = nLegendItems - 1 -(i % nLegendItems);        
         let iSer = Math.floor(i/nLegendItems);
-        i >= 5 ? iSer = Math.floor((i+1)/nLegendItems) : ""; // hacky fix for missing rect
         
         let val = vals[i].innerHTML;
         let ser = series[iSer].innerHTML;

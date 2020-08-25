@@ -1,14 +1,14 @@
 title: >
-  Response to COVID-19 by Geography
+  Response to COVID-19 by Region
 
 source: >
   <b>Source:</b> Lorem ipsum
 
 notes: >
-  <b>Notes:</b> Lorem ipsum
+  Country performance in response to COVID-19 is determined by a composite score based on six weighted indicators: total confirmed cases and deaths, total confirmed cases and deaths per million people, tests per confirmed case and tests per thousand people.
 
 subtitle: >
-  Proportion of better, average and worse performing countries by category
+  Proportion of countries in category
 
 axes:
   minY:  0
@@ -25,33 +25,33 @@ series:
     title: Year
     values:
       - Asia-Pacific
-      - Middle East and Africa
       - Europe
+      - Middle East & Africa
       - Americas
 
   -
     title: Better
     color: "dark"
     values:
-      - 52.94
-      - 35.71
-      - 30.30
-      - 13.33
+      - 56.25
+      - 40.63
+      - 12.50
+      - 7.69
 
   -
     title: Average
     color: "grey"
     values:
-      - 35.29
-      - 35.71
-      - 30.30
-      - 33.33
+      - 31.25
+      - 37.50
+      - 50.00
+      - 7.69
 
   -
     title: Worse
     color: "orange"
     values:
-      - 11.76
-      - 28.57
-      - 39.39
-      - 53.33
+      - 12.50
+      - 21.88
+      - 37.50
+      - 84.62
