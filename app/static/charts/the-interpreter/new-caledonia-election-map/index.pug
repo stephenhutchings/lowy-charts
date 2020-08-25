@@ -6,7 +6,7 @@ block page
 
   .wrapper
     
-    .chart-title.txt-semi New Caledonia votes for independence
+    .chart-title.txt-cond Kanaks for Independence:<br>New Caledonia's 2018 Referendum
   
     object(type="image/svg+xml" data="inset.svg" class="inset")
     svg(xmlns='http://www.w3.org/2000/svg' version='1.2' baseprofile='tiny' viewbox='0 0 800 582' stroke-linecap='round' stroke-linejoin='round')
@@ -225,18 +225,22 @@ block page
           line(x1='383' y1='368' x2='360' y2='405')
     
     .fixed-bl
+    
       ul.legend.txt-nowrap.flex.flex-cv.list-bare
         for item, i in ["#de333e", "#ff8F91","#9EACB3","#3661B6","#09306B"]
           li.legend-item
             span.legend-item-box(style=`background:${item}`)
             span.legend-item-label!= `${i*20}&ndash;${20+i*20}%`
+            
       .input.flex.flex-cv
+        .radio-title.txt-tu.txt-xs.txt-bold
+          | Dataset
         .row
           input(type="radio" id="pop" name="select" value="pop" checked)
-          label(for="pop") % population Kanak
+          label(for="pop") Kanak population
         .row
           input(type="radio" id="vote" name="select" value="vote")
-          label(for="vote") % population voted for independence
+          label(for="vote") Pro-independence votes
     
     //.fixed-br.txt-cond.txt-muted Source: Author's calculations
     
@@ -247,7 +251,7 @@ block page
     span % Kanak population<br>
     .tt-item-box
     span.tt-item
-    span % vote for independence
+    span % vote yes for independence
       
   
   script(src="script.js")
@@ -261,16 +265,17 @@ block append css
 
       .wrapper
         max-width: 800px
-        height: 640px
+        height: 660px
         overflow: hidden
         position: relative
       
       .chart-title
-        line-height: 1
+        line-height: 1.4
         margin-bottom: 12px
         font-weight: 500
         color: black
         font-size: 1.8rem
+        max-width: 450px
       
       .inset
         position: absolute
@@ -291,8 +296,7 @@ block append css
       .legend
         font-size: 15px
         max-width: 320px
-        margin: auto
-        margin-bottom: 18px
+        margin-bottom: 24px
 
       .legend-item
         margin: 4px 8px 0
@@ -323,9 +327,23 @@ block append css
         height: 10px
         width: 20px
         margin-right: 10px
-        
+      
+      .input
+        padding: 0.75em 1em
+        box-shadow: 0 0 5px 1px #90909055
+        margin: 0 0 5px 5px
+      
+      .radio-title
+        margin-bottom: 6px
+      
+      .txt-xs
+        font-size: 0.8rem
+      
       .fade
         opacity: 0.2
+
+      label
+        font-size: 18px
       
       text
         font-size: 12px
@@ -359,6 +377,11 @@ block append css
           position: relative
           display: block
           width: 100px
+          
+        .input
+          width: 250px
+          margin-left: auto
+          margin-right: auto
           
         .fixed-bl
           width: 100%

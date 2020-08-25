@@ -271,9 +271,9 @@ function addTooltip(el,i) {
 
     children[0].innerHTML = commune.name;                   // Title
     children[1].style.background = getColor(commune.kanak); // Coloured box
-    children[2].innerHTML = commune.kanak;                  // Value
+    children[2].innerHTML = Math.round(100*commune.kanak);   // Value
     children[4].style.background = getColor(commune.for_independence);
-    children[5].innerHTML = commune.for_independence;
+    children[5].innerHTML =  Math.round(100*commune.for_independence);
 
     tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
     tooltip.style.top = box.top - tooltip.offsetHeight - 5 + 'px';
