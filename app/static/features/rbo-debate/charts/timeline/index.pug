@@ -35,10 +35,10 @@ block page
       - maxY = 22
       - stepsX = 5
       - stepsY = 3
-      - fx = (i) => (i + 0.6) / (ln + 0.25)
+      - fx = (i) => (i) / (ln-1)
       - fy = (y) => (y - minY) / (maxY-minY)
       - toPercent = (n) => (n * 100).toFixed(2) + "%"  
-    
+      
       // Y AXIS
       svg.chart-wrap(width="100%" height="100%")
       
@@ -46,7 +46,7 @@ block page
         for n, i in new Array(stepsY+1)
           - y = 1 - (i / (stepsY))
           svg(y=toPercent(y))
-            text(text-anchor="end" transform="translate(8 4)")
+            text(text-anchor="end" transform="translate(-8 4)")
               = "$" + (minY + (maxY-minY)*(i/stepsY)) + "T"
 
         // X-Axis labels
@@ -59,20 +59,23 @@ block page
               text-anchor="middle"
               transform="translate(0 20)"
             )= x
-              
-        // 
-          // MINOR AXIS LINES
-          line(
-            x1=toPercent(fx(0))
-            y1=toPercent(y)
-            x2=toPercent(fx(ln))
-            y2=toPercent(y)
-            stroke="black"
-            stroke-width=0.5
-            stroke-dasharray=5
+            text(
+              text-anchor="middle"
+              transform="translate(0 9)"
+              fill="#ccc"
+            ) ❘
+            
+            
+        // MINOR AXIS LINES
+        //line(
+          x1=toPercent(fx(0))
+          y1=toPercent(y)
+          x2=toPercent(fx(ln))
+          y2=toPercent(y)
+          stroke="#5555"
+          stroke-width=1.1
+          stroke-dasharray=0
           )
-
-
 
         // SERIES LINES
         svg.chart-body(
@@ -85,24 +88,44 @@ block page
             if i
               polyline(
                 fill="none"
-                stroke=(i==1 ? "#b90000" : "blue")
-                stroke-width=1
+                stroke=(i==1 ? "#b90000" : "#002868")
+                stroke-width=1.5
                 vector-effect="non-scaling-stroke"
                 points=(series.values.map( (y, ix) => {
-                  return [
+                  return y===null ? "" : [
                     100 * fx(ix),
                     100 * fy(maxY - y/1E+12)
                   ].join(" ");
                 })).join(",")
               )
 
-  
+          // TOOLTIP LINE
+          svg(height="100%")
+            line#guide(
+              y1=0
+              y2="100%"
+              x1=0
+              x2=0
+              stroke="#000"
+              stroke-width=0.5
+              stroke-dasharray=3
+            )
+          
+        #tooltip
+          .tt-year 1989
+          .usa &ensp;USA:&nbsp;
+            span 5.64
+          .chn &ensp;China:&ensp;
+            span 0.46
+
+  script(src="script.js")
   
 block append css
   style
     :sass
     
       $red: #b90000
+      $blue: #002868
       $scroll-h: 400px
       $graph-h: 120px
       
@@ -110,7 +133,9 @@ block append css
         height: $graph-h
         position: relative
         margin: 20px
+        margin-left: 40px
         box-sizing: border-box
+        border-bottom: 1px solid #ccc
       
       .chart-wrap
         position: relative
@@ -129,6 +154,32 @@ block append css
         position: absolute
         top: 0
     
+      #tooltip
+        position: absolute
+        top: 0
+        font-size: 12px
+        background: #fffd
+        box-shadow: 0 0 3px 1px #3333
+        padding: 6px 10px
+        transition: top 0.3s
+        text-align: left
+        
+        span
+          float: right
+        
+        .tt-year
+          font-weight: 500
+          
+        .usa:before,
+        .chn:before
+          content: '—'
+          font-weight: 700
+          color: $blue
+        .chn:before
+          color: $red
+        
+        > *
+          white-space: nowrap
     
       ::-webkit-scrollbar
         width: 5px
