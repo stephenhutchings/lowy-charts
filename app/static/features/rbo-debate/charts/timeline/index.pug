@@ -95,7 +95,7 @@ block page
                 points=(series.values.map( (y, ix) => {
                   return y===null ? "" : [
                     100 * fx(ix),
-                    100 * fy(maxY - y/1E+12)
+                    100 * fy(minY + maxY - y/1E+12)
                   ].join(" ");
                 })).join(",")
               )
