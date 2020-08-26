@@ -106,8 +106,8 @@ let gdp = [
   }
 ];
 
-let scrollPosition, usData, cnData, yrData, index;
-let nYears = 31, threshold = 100*29.99/nYears;
+let scrollPosition, usData, cnData, yrData;
+let index = 0, nYears = 31, threshold = 100*29.99/nYears;
 let guide = document.querySelector('#guide');
 let tooltip = document.querySelector('#tooltip');
 let yrDataEl = tooltip.querySelector('.tt-year');
@@ -129,10 +129,9 @@ function onscroll() {
 
 function onmouse(e) {
   mousePosition = 100*(e.clientX - graphWindow.offsetLeft) / graphWindow.offsetWidth;
-  guideX(mousePosition)
-  console.log(mousePosition);
-  // scrollPosition < threshold ? "" : scrollPosition = threshold;
-  // index = Math.floor(nYears*scrollPosition/100);
+  mousePosition < threshold ? "" : mousePosition = threshold;
+  mousePosition > 0 ? "" : mousePosition = 0;
+  guideX(mousePosition);
 }
 
 function guideX(x) {

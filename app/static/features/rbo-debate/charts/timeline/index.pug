@@ -29,6 +29,7 @@ block page
                 .event-wrap.flex
                   .event.txt-semi!= event.event
                   .impact.txt-semi.italic!= event.impact
+                        
     .sparkline
       - ln = chart.gdp[0].values.length
       - minY = 1
@@ -38,7 +39,7 @@ block page
       - fx = (i) => (i) / (ln-1)
       - fy = (y) => (y - minY) / (maxY-minY)
       - toPercent = (n) => (n * 100).toFixed(2) + "%"  
-      
+            
       // Y AXIS
       svg.chart-wrap(width="100%" height="100%")
       
@@ -118,6 +119,11 @@ block page
           .chn &ensp;China:&ensp;
             span 0.46
 
+    .sparkline-title.txt-semi.txt-center.txt-tu
+      | US-China GDP by Market Exchange Rate (
+      a.txt-italic(href="https://www.imf.org/external/pubs/ft/weo/2019/02/weodata/index.aspx") IMF
+      | )
+
   script(src="script.js")
   
 block append css
@@ -126,16 +132,23 @@ block append css
     
       $red: #b90000
       $blue: #002868
-      $scroll-h: 400px
+      $scroll-h: 380px
       $graph-h: 120px
       
       .sparkline
         height: $graph-h
         position: relative
         margin: 20px
+        margin-top: 30px
         margin-left: 40px
         box-sizing: border-box
         border-bottom: 1px solid #ccc
+      
+      .sparkline-title
+        margin-top: 20px
+        font-size: 13px
+        font-weight: 500
+        color: black
       
       .chart-wrap
         position: relative
@@ -181,6 +194,8 @@ block append css
         > *
           white-space: nowrap
     
+    
+    
       ::-webkit-scrollbar
         width: 5px
       ::-webkit-scrollbar-track
@@ -192,6 +207,13 @@ block append css
       ::-webkit-scrollbar-thumb:hover
         background: $red
       
+      a
+        text-decoration: none
+        transition-duration: 300ms
+        box-shadow: inset 0 -1px 0 0 $red
+        &:hover
+          color: $red
+      
       li
         list-style-type: none
         
@@ -200,7 +222,7 @@ block append css
         padding-left: 0
   
       .wrapper
-        height: 670px
+        height: 700px
         max-width: 700px
 
       .chart-title
@@ -230,6 +252,7 @@ block append css
         position: relative
         padding-right: 16px
         height: $scroll-h
+        border-bottom: 1px solid #ccc
         
       .fade
         position: fixed
@@ -242,6 +265,7 @@ block append css
         border-left: 1px solid $red
         padding-left: 20px
         margin-left: 10px
+        margin-bottom: 20px
         
         > .flex:last-child
           padding-bottom: 0
