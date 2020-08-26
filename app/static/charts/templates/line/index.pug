@@ -80,10 +80,10 @@ block page
                 polyline(
                   fill="none"
                   stroke=chart.colors[chart.series[i].color]
-                  stroke-dasharray=(item.highlight ? "" : 2)
-                  stroke-width=(item.highlight ? 2 : 1)
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
+                  stroke-dasharray=(item.dashed ? 10 : "")
+                  stroke-width=(item.widen ? 6 : 3)
+                  stroke-linejoin=(item.dashed ? "": "round")
+                  stroke-linecap=(item.dashed ? "": "round")
                   points=(item.values.map( (y, ix) => {
                     return isEmpty(y) ? "" : [
                       100 * fx(ix),
@@ -183,7 +183,7 @@ block page
 block append css
   style
     :sass
-  
+    
       .wrapper
         height: 550px
 
@@ -248,6 +248,9 @@ block append css
         height: 1em
         width: 1em
         background: black
+
+      polyline
+        vector-effect: non-scaling-stroke
 
       text
         font-size: 14px

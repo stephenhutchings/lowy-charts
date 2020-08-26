@@ -9,7 +9,7 @@ block append config
   - var cfawcDates = [1991, 2006, 2014, 2018]
   
 block page
-  .wrapper.flex
+  .wrapper.flex.flex-col
     .flex.flex-grow.flex-col
       .chart-title.txt-semi.txt-center= chart.title
       .chart-subtitle.cfawc.txt-tu.txt-cond.txt-center!= chart.subtitle
@@ -29,13 +29,22 @@ block page
                 .event-wrap.flex
                   .event.txt-semi!= event.event
                   .impact.txt-semi.italic!= event.impact
-          
+    .sparkline
+      each year in chart.gdp
+        .ph-sm= year[0]
+        .ph-sm= year[1]
+        .ph-sm= year[2]
   
 block append css
   style
     :sass
     
       $red: #b90000
+      $scroll-h: 400px
+      $graph-h: 150px
+      
+      .sparkline
+        height: $graph-h
     
       ::-webkit-scrollbar
         width: 5px
@@ -56,7 +65,7 @@ block append css
         padding-left: 0
   
       .wrapper
-        height: 500px
+        height: 650px
         max-width: 700px
 
       .chart-title
@@ -80,17 +89,18 @@ block append css
           margin-left: 31px
         &:last-child
           margin-left: -62px
-      
+              
       .scroll
         overflow-y: scroll
         position: relative
         padding-right: 16px
+        height: $scroll-h
         
       .fade
         position: fixed
         background: linear-gradient(180deg, #fff 0%, #fff0 5%, #fff0 95%, #fff 100%)
         width: 700px
-        height: 400px
+        height: $scroll-h
         pointer-events: none
 
       .timeline-wrap

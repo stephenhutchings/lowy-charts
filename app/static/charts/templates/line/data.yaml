@@ -35,7 +35,8 @@ series:
   -
     title: Series 1
     color: "dark"
-    highlight: true
+    widen: false
+    dashed: true
     values:
       - 1
       - 1
@@ -47,7 +48,8 @@ series:
   -
     title: Series 2
     color: "highlight"
-    highlight: false
+    widen: true
+    dashed: false
     values:
       - 2
       - 2
@@ -58,7 +60,8 @@ series:
   -
     title: Series 3
     color: "red"
-    highlight: false
+    widen: false
+    dashed: false
     values:
       - 3
       - 3
@@ -69,7 +72,8 @@ series:
   -
     title: Series 4
     color: "grey"
-    highlight: false
+    widen: false
+    dashed: false
     values:
       - 4
       - 4
