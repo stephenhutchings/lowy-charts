@@ -13,7 +13,7 @@ block page
     .flex.flex-grow.flex-col
       .chart-title.txt-semi.txt-center= chart.title
       .chart-subtitle.cfawc.txt-tu.txt-cond.txt-center!= chart.subtitle
-      .flex
+      .thead.flex
         each t in ['Events', 'Impact']
           .col-title.txt-tu.flex-1= t
       .scroll
@@ -147,7 +147,7 @@ block append css
       .sparkline-title
         margin-top: 20px
         font-size: 13px
-        font-weight: 500
+        font-weight: 400
         color: black
       
       .chart-wrap
@@ -226,7 +226,7 @@ block append css
         max-width: 700px
 
       .chart-title
-        margin: auto
+        margin: 0 auto
         font-size: 28px
         color: black
         
@@ -326,8 +326,19 @@ block append css
       @media (max-width: 767px)
         body
           font-size: 17px
+        .chart-title
+          font-size: 24px
+        .chart-subtitle
+          font-size: 15px
+          padding: 0 25px
+          width: auto
+          
         
       @media (max-width: 500px)
+        .thead
+          display: none
+        .scroll
+          height: 360px
         .event-wrap
           flex-direction: column
         .impact
