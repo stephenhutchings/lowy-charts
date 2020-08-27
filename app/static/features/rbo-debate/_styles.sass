@@ -104,7 +104,6 @@ iframe
   padding: .5em 1.5em
   font-weight: 400
 
-
 // Sizes
 
 .xl
@@ -120,6 +119,15 @@ iframe
 
 
 // layout
+
+.header-title
+  display: table
+  white-space: nowrap
+  margin: auto
+  width: 100%
+  left: 0
+
+
 
 .landing
   max-width: 850px
@@ -324,3 +332,23 @@ iframe
 
     &-all:before
       content: 'Responds to all articles'
+
+
+// medium
+@media screen and (max-width: 768px), screen and (max-height: 700px)
+
+  .article-w
+    width: 90%
+
+  .pg-title h1
+    font-size: 44px
+    line-height: 44px
+
+// small
+@media screen and (max-width: 540px), screen and (max-height: 700px)
+
+  .article-landing
+    height: 175vh
+
+  .pg-title
+    margin: 15vh auto
