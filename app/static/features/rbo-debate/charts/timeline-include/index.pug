@@ -25,7 +25,7 @@
                 .event.txt-semi!= event.event
                 .impact.txt-semi.italic!= event.impact
                       
-  #spark-wrap.fixed.bottom: .sparkline
+  #spark-wrap.op-0.bottom.transition-500: .sparkline
     - ln = chart.gdp[0].values.length
     - minY = 1
     - maxY = 22
@@ -146,15 +146,14 @@ style
         
         &.bottom
           bottom: 0
-          padding-bottom: 35px
       
+      .op-0
+        opacity: 0
+
       .visible
         opacity: 1!important
-        transition-duration: 0.7s
-      
-      #spark-wrap
-        opacity: 0
-      
+        transition-duration: 0.5s
+
       .scroll
         position: relative
         padding-right: 16px
@@ -285,7 +284,7 @@ style
       .sparkline
         height: $graph-h
         position: relative
-        margin: 30px 20px 20px 40px
+        margin: 30px 20px 60px 40px
         box-sizing: border-box
         border-bottom: 1px solid #ccc
         

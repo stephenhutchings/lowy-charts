@@ -107,7 +107,8 @@ let gdp = [
 ];
 
 let scrollPosition, usData, cnData, yrData;
-let navH = 55, index = 0, nYears = 31,
+let navH = 55, isSticky = false,
+    index = 0, nYears = 31,
     threshold = 100*29.99/nYears;
 
 // Elements
@@ -145,7 +146,11 @@ function onresize() {
 }
 
 function onscroll() {
-  window.pageYOffset + navH > titleBlockTop ? stickify() : titleBlock.classList.remove('fixed');
+  let atStart = (window.pageYOffset + navH > titleBlockTop);
+  let atEnd = (window.pageYOffset + window.innerHeight) > (scrollWindow.offsetTop + scrollWindow.offsetHeight + graphWindow.offsetHeight + 60);
+  let shouldSticky = atStart && !atEnd;
+  (!isSticky && shouldSticky || isSticky && !shouldSticky) ? stickify(atStart) : "";
+
   // scrollPosition = 100*(scrollWindow.scrollTop / heightOffset);
   // scrollPosition < threshold ? "" : scrollPosition = threshold;
   // guideX(scrollPosition);
@@ -177,9 +182,13 @@ function guideX(x) {
   tooltip.style.top =  x < 70 ?  0 :  `calc(100% - ${tooltip.offsetHeight}px)`;
 }
 
-function stickify() {
- titleBlock.classList.add('fixed');
- graphWrap.classList.add('visible');
+function stickify(atStart) {
+
+  titleBlock.classList.toggle('fixed');
+  graphWrap.classList.toggle('fixed');
+  !atStart ? graphWrap.classList.add('op-0') : graphWrap.classList.remove('op-0');
+
+  isSticky = !isSticky;
 }
 // function stickify() {
 //  titleBlock.classList.add('fixed') :
