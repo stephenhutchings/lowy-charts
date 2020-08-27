@@ -162,8 +162,8 @@ function onscroll() {
 }
 
 function onmouse(e) {
-  x = 100 * (e.clientX - footerPlotArea.offsetLeft) / footerPlotArea.offsetWidth;
-  console.log(footerPlotArea.offsetLeft);
+  let o = isSticky ? footerPlotArea.offsetLeft + footerSticky.offsetLeft : footerPlotArea.offsetLeft;
+  x = 100 * (e.clientX - o) / footerPlotArea.offsetWidth;
   guideX(x);
 }
 
