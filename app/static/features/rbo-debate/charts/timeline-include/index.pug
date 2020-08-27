@@ -6,8 +6,14 @@
 .embed-wrap.flex.flex-col.article-w
   .flex.flex-grow.flex-col
     .title-placeholder.article-w: .title-block
-      .chart-title.txt-semi.txt-center= chart.title
-      .chart-subtitle.cfawc.txt-tu.txt-cond.txt-center!= chart.subtitle
+      .chart-title.txt-semi.txt-center 
+        span Thesis, Antithesis, Synthesis: 
+        | China reacts to change
+      .chart-subtitle.cfawc.txt-tu.txt-cond.txt-center = Year of a
+        span  Central Foreign Affairs 
+        span.short  CFA 
+        | Work Conference 
+        span (CFAWC)
       .thead.flex
         each t in ['Events', 'Impact']
           .col-title.txt-tu.flex-1= t
@@ -210,6 +216,9 @@ style
         padding-bottom: 10px
         border-bottom: 1px solid #b90000
         
+        .short
+          display: none
+        
       .col-title
         color: $red
         font-size: 14px
@@ -350,21 +359,35 @@ style
 
     
       @media (max-width: 767px)
-        .embed-wrap
-          font-size: 17px
         .chart-title
           font-size: 24px
         .chart-subtitle
           font-size: 15px
           padding: 0 25px 10px
+        .sparkline
+          height: 100px
+          margin-top: 20px
+          margin-bottom: 50px
         
-      @media (max-width: 500px)
+      @media (max-width: 525px)
+        .chart-title
+          font-size: 20px
+          line-height: 1
+          font-weight: 400
+        .chart-subtitle
+          font-size: 14px          
         .thead
+          display: none
+        .title-block
+          padding-bottom: 0
+        .chart-title span,
+        .chart-subtitle span,
           display: none
         .chart-subtitle
           width: auto
-        .scroll
-          height: 360px
+          margin-bottom: 0
+          span.short
+            display: inline
         .event-wrap
           flex-direction: column
         .impact
