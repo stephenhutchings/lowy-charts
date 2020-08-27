@@ -112,7 +112,7 @@ let navH = 55, isSticky = false,
     threshold = 100*29.99/nYears;
 
 // Elements
-let wrap = document.querySelector('.wrapper');
+let wrap = document.querySelector('.embed-wrap');
 let tooltip = wrap.querySelector('#tooltip');
 let titlePlaceholder = wrap.querySelector('.title-placeholder');
 let titleBlock = wrap.querySelector('.title-block');

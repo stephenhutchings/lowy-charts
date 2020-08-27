@@ -3,7 +3,7 @@
 - var cfawcDates = [1991, 2006, 2014, 2018]
 - toPercent = (n) => (n * 100).toFixed(2) + "%"
   
-.wrapper.flex.flex-col.article-w
+.embed-wrap.flex.flex-col.article-w
   .flex.flex-grow.flex-col
     .title-placeholder.article-w: .title-block
       .chart-title.txt-semi.txt-center= chart.title
@@ -24,7 +24,7 @@
               .event-wrap.flex
                 .event.txt-semi!= event.event
                 .impact.txt-semi.italic!= event.impact
-                      
+
   #spark-wrap.op-0.bottom.transition-500: .sparkline
     - ln = chart.gdp[0].values.length
     - minY = 1
@@ -129,8 +129,8 @@ style
     $scroll-h: auto
     $graph-h: 120px  
     
-    .wrapper
-      margin: 20px 0 !important
+    .embed-wrap
+      margin: 20px 0
       font-size: 17px
       
       .title-block
@@ -341,7 +341,7 @@ style
 
     
       @media (max-width: 767px)
-        .wrapper
+        .embed-wrap
           font-size: 17px
         .chart-title
           font-size: 24px
