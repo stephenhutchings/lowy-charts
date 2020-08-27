@@ -25,7 +25,7 @@
                 .event.txt-semi!= event.event
                 .impact.txt-semi.italic!= event.impact
 
-  #spark-wrap.op-0.bottom.transition-500: .sparkline
+  #spark-wrap.bottom: .sparkline
     - ln = chart.gdp[0].values.length
     - minY = 1
     - maxY = 22
@@ -127,7 +127,13 @@ style
     $red: #b90000
     $blue: #002868
     $scroll-h: auto
-    $graph-h: 120px  
+    $graph-h: 120px
+    
+    @keyframes appear
+      from
+        opacity: 0
+      to
+        opacity: 1
     
     .embed-wrap
       margin: 20px 0
@@ -136,7 +142,11 @@ style
       .title-block
         top: 50px
         padding: 30px 0 10px
-        
+      
+      .sticky-footer
+        animation: appear 0.4s 1 forwards
+        border-top: 1px solid $red
+      
       .fixed
         width: inherit
         max-width: inherit
@@ -146,9 +156,7 @@ style
         
         &.bottom
           bottom: 0
-      
-      .op-0
-        opacity: 0
+
 
       .visible
         opacity: 1!important
