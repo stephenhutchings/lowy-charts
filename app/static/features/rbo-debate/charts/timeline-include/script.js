@@ -127,8 +127,6 @@ let usDataEl = tooltip.querySelector('.usa span');
 let cnDataEl = tooltip.querySelector('.chn span');
 
 // Dimensions
-let timelineHeight = wrap.querySelector('.timeline-wrap');
-let heightOffset = timelineHeight.offsetHeight - scrollWindow.offsetHeight;
 let titleBlockTop = titleBlock.offsetTop;
 let graphTop = graphWindow.offsetTop;
 
@@ -151,13 +149,15 @@ function onscroll() {
   let shouldSticky = atStart && !atEnd;
   (!isSticky && shouldSticky || isSticky && !shouldSticky) ? stickify(atStart) : "";
 
-  // scrollPosition = 100*(scrollWindow.scrollTop / heightOffset);
-  // scrollPosition < threshold ? "" : scrollPosition = threshold;
-  // guideX(scrollPosition);
+  if (atStart) {
+    scrollPosition = 100*( (window.pageYOffset - scrollWindow.offsetTop) / scrollWindow.offsetHeight);
+    scrollPosition < threshold ? "" : scrollPosition = threshold;
+    guideX(scrollPosition);
+  }
 }
 
 function onmouse(e) {
-  mousePosition = 100*(e.clientX - graphWindow.offsetLeft) / graphWindow.offsetWidth;
+  mousePosition = 100 * (e.clientX - graphWindow.offsetLeft) / graphWindow.offsetWidth;
   mousePosition < threshold ? "" : mousePosition = threshold;
   mousePosition > 0 ? "" : mousePosition = 0;
   guideX(mousePosition);
