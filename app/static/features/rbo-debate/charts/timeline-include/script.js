@@ -150,7 +150,7 @@ function onscroll() {
   (!isSticky && shouldSticky || isSticky && !shouldSticky) ? stickify(atStart) : "";
 
   if (atStart) {
-    scrollPosition = 100*( (window.pageYOffset - scrollWindow.offsetTop) / scrollWindow.offsetHeight);
+    scrollPosition = 100*( (window.pageYOffset + titleBlock.offsetHeight - scrollWindow.offsetTop) / scrollWindow.offsetHeight);
     scrollPosition < threshold ? "" : scrollPosition = threshold;
     guideX(scrollPosition);
   }
