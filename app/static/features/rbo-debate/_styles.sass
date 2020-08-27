@@ -347,6 +347,32 @@ iframe
   .logo
     display: none
 
+  .list
+    .flex
+      flex-direction: column
+    .col-1-2
+      width: 100%
+    .col-1-2:first-child
+      text-align: left
+    .col-1-2:last-child
+      margin-left: 0
+
+  .bracket
+    border: 1px solid $mute
+    width: calc(100% + 30px)
+    left: -15px
+    &:before
+      color: $mute
+      left: 0
+    &-left
+      border-right: 1px solid
+      border-bottom: none
+    &-right
+      border-left: 1px solid
+      border-top: none
+    &-right:before
+      bottom: calc(-100% - 10px)
+
   .pg-title h1
     font-size: 44px
     line-height: 44px
@@ -363,6 +389,9 @@ iframe
   .social-share-label
     display: none
 
+  .list
+    box-shadow: none
+    width: 95%
 
   .pg-title
     margin: 15vh auto

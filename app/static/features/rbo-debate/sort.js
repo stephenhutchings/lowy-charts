@@ -3,6 +3,7 @@
 var vh = window.innerHeight;
 var vw = window.innerWidth;
 
+var breakpoint = 768;
 var isFocused = false;
 
 
@@ -38,9 +39,10 @@ function focus(el) {
   let t = el.offsetTop;
   let h = el.offsetHeight;
   let map = JSON.parse(el.dataset.map);
-  let lhs = map[0] < 8 ? true : false;
+  let lhs = map[0] < 8 ? true : false;                        // lhs TRUE for first 7 articles
   let listItems = document.querySelectorAll('.list-item');    // Elements targeted for fading/sorting
   let bracket = document.querySelector('.bracket');           // Bracket to wrap around sorted els
+  let bpOffset = 25                                           // breakpoint offset for rhs sort positioning
 
   el.classList.add('focused');
   el.classList.remove('ptr');
@@ -56,7 +58,7 @@ function focus(el) {
   hSum = heights.length ? heights.reduce( (sum, h) => sum + h ) : 0;     // Sum all their heights
 
   if (targets.length > 1) {                         // Set top of mapped elements
-    tBlock = t + h/2 - hSum/2;
+    tBlock = (vw > breakpoint) ? t + h/2 - hSum/2 : lhs ? t - hSum - bpOffset : t + 1.25*h;
     tBlock = checkBlockBounds(tBlock, hSum);
     targets.forEach( (el, i) => {
       el.classList.add('target', 'z1');
@@ -68,14 +70,14 @@ function focus(el) {
     });
   }
   else if (targets.length==1){
-    tBlock = t;
+    tBlock = (vw > breakpoint) ? t : lhs ? t - hSum - bpOffset : t + h;
     targets[0].classList.remove('fade');
     targets[0].style.top = tBlock + "px";
   }
 
-  if (targets.length) {
-    bracket.style.top = tBlock + "px";
-    bracket.style.height = hSum-10 + "px";
+  if (targets.length) {                         // BRACKET POSITIONING
+    bracket.style.top = (vw < breakpoint && lhs) ? tBlock+hSum-1.5*bpOffset+"px" : tBlock + "px";
+    bracket.style.height = (vw > breakpoint) ? hSum-10 + "px" : "25px";
     bracket.classList.remove('hide');
     lhs ? bracket.classList.remove('bracket-left') : bracket.classList.remove('bracket-right');
     lhs ? bracket.classList.add('bracket-right') : bracket.classList.add('bracket-left');
@@ -130,14 +132,22 @@ function unfocus (e, el) {
 function spreadY(a) {
 
   let i = y = 0;
-  let n = a.length/2;
+  let n = a.length;
   let itemMargin = 0;
   let listPaddingBottom = 70;
   let list = document.querySelector('.list');
 
-  for (i; i < n; i++) {
-    a[i].style.top = a[i+n].style.top = y + 'px';
-    y += Math.max(a[i].offsetHeight, a[i+n].offsetHeight) + itemMargin;
+  if (vw > breakpoint) {
+    for (i; i < n/2; i++) {
+      a[i].style.top = a[i+n/2].style.top = y + 'px';
+      y += Math.max(a[i].offsetHeight, a[i+n/2].offsetHeight) + itemMargin;
+    }
+  }
+  else {
+    for (i; i < n; i++) {
+      a[i].style.top = y + 'px';
+      y += a[i].offsetHeight + itemMargin;
+    }
   }
 
   list.style.height=="" ? list.style.height = document.body.scrollHeight - list.offsetTop + listPaddingBottom + "px" : "";
