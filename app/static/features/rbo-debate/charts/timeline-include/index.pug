@@ -1,0 +1,368 @@
+- var datapath = "static/features/rbo-debate/charts/timeline-include/"
+- var chart = data.getOne(datapath)
+- var cfawcDates = [1991, 2006, 2014, 2018]
+- toPercent = (n) => (n * 100).toFixed(2) + "%"
+  
+.wrapper.flex.flex-col.article-w
+  .flex.flex-grow.flex-col
+    .title-placeholder.article-w: .title-block
+      .chart-title.txt-semi.txt-center= chart.title
+      .chart-subtitle.cfawc.txt-tu.txt-cond.txt-center!= chart.subtitle
+      .thead.flex
+        each t in ['Events', 'Impact']
+          .col-title.txt-tu.flex-1= t
+    .scroll
+      .fade
+      .timeline-wrap
+        each event in chart.events
+          .flex.flex-col.pv-sm
+            strong.year(
+              class=(event.year==0000 ? "hide" : "pv-sm")
+              class=(cfawcDates.includes(event.year) ? "cfawc" : "")
+            )!= event.year
+            if event.year != 2006 && event.year != 2018
+              .event-wrap.flex
+                .event.txt-semi!= event.event
+                .impact.txt-semi.italic!= event.impact
+                      
+  #spark-wrap.fixed.bottom: .sparkline
+    - ln = chart.gdp[0].values.length
+    - minY = 1
+    - maxY = 22
+    - stepsX = 5
+    - stepsY = 3
+    - fx = (i) => (i) / (ln-1)
+    - fy = (y) => (y - minY) / (maxY-minY)
+    - toPercent = (n) => (n * 100).toFixed(2) + "%"  
+          
+    // Y AXIS
+    svg.chart-wrap(width="100%" height="100%")
+    
+      // Y-Axis labels
+      for n, i in new Array(stepsY+1)
+        - y = 1 - (i / (stepsY))
+        svg(y=toPercent(y))
+          text(text-anchor="end" transform="translate(-8 4)")
+            = "$" + (minY + (maxY-minY)*(i/stepsY)) + "T"
+
+      // X-Axis labels
+      for x, i in [1989, 1999, 2009, 2019]
+        svg.x-label(
+          x=toPercent(i/3)
+          y="100%"
+        )
+          text(
+            text-anchor="middle"
+            transform="translate(0 20)"
+          )= x
+          text(
+            text-anchor="middle"
+            transform="translate(0 9)"
+            fill="#ccc"
+          ) ❘
+          
+          
+      // MINOR AXIS LINES
+      //line(
+        x1=toPercent(fx(0))
+        y1=toPercent(y)
+        x2=toPercent(fx(ln))
+        y2=toPercent(y)
+        stroke="#5555"
+        stroke-width=1.1
+        stroke-dasharray=0
+        )
+
+      // SERIES LINES
+      svg.chart-body(
+        height="100%"
+        width="100%"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      )
+        for series, i in chart.gdp
+          if i
+            polyline(
+              fill="none"
+              stroke=(i==1 ? "#b90000" : "#002868")
+              stroke-width=1.5
+              vector-effect="non-scaling-stroke"
+              points=(series.values.map( (y, ix) => {
+                return y===null ? "" : [
+                  100 * fx(ix).toFixed(4),
+                  100 * fy(minY + maxY - y/1E+12).toFixed(4)
+                ].join(" ");
+              })).join(",")
+            )
+
+        // TOOLTIP LINE
+        svg(height="100%")
+          line#guide(
+            y1=0
+            y2="100%"
+            x1=0
+            x2=0
+            stroke="#000"
+            stroke-width=0.5
+            stroke-dasharray=3
+          )
+        
+      #tooltip
+        .tt-year 1989
+        .usa &ensp;USA:&nbsp;
+          span 5.64
+        .chn &ensp;China:&ensp;
+          span 0.46
+
+    .sparkline-title.txt-semi.txt-center.txt-tu
+      | US-China GDP by Market Exchange Rate (
+      a.txt-italic(href="https://www.imf.org/external/pubs/ft/weo/2019/02/weodata/index.aspx") IMF
+      | )
+
+script(src="../../charts/timeline-include/script.js")
+
+style
+  :sass
+  
+    $red: #b90000
+    $blue: #002868
+    $scroll-h: auto
+    $graph-h: 120px  
+    
+    .wrapper
+      margin: 20px 0 !important
+      font-size: 17px
+      
+      .title-block
+        top: 50px
+        padding: 30px 0 10px
+        
+      .fixed
+        width: inherit
+        max-width: inherit
+        background: white
+        position: fixed
+        z-index: 1
+        
+        &.bottom
+          bottom: 0
+          padding-bottom: 35px
+      
+      .visible
+        opacity: 1!important
+        transition-duration: 0.7s
+      
+      #spark-wrap
+        opacity: 0
+      
+      .scroll
+        position: relative
+        padding-right: 16px
+        border-bottom: 1px solid #ccc
+    
+      .scroll::-webkit-scrollbar
+        width: 5px !important
+      .scroll::-webkit-scrollbar-track
+        background: #f3f3f3 !important
+        border-radius: 5px !important
+      .scroll::-webkit-scrollbar-thumb
+        background: lighten($red, 0) !important
+        border-radius: 5px !important
+      .scroll::-webkit-scrollbar-thumb:hover
+        background: $red !important
+      
+      .scroll
+        scrollbar-color: $red #f3f3f3
+      
+      a
+        text-decoration: none
+        transition-duration: 300ms
+        box-shadow: inset 0 -1px 0 0 $red
+        &:hover
+          color: $red
+      
+      li
+        list-style-type: none
+        
+      ul
+        margin-bottom: 0
+        padding-left: 0
+
+      .chart-title
+        margin: 0 auto
+        font-size: 28px
+        color: black
+        
+      .chart-subtitle
+        margin: 5px auto 10px
+        font-weight: 600
+        width: 100%
+        font-size: 16px
+        color: $red
+        padding-bottom: 10px
+        border-bottom: 1px solid #b90000
+        
+      .col-title
+        color: $red
+        font-size: 14px
+        &:first-child
+          margin-left: 31px
+        &:last-child
+          margin-left: -62px
+        
+      .fade
+        position: fixed
+        //background: linear-gradient(180deg, #fff 0%, #fff0 5%, #fff0 95%, #fff 100%)
+        width: 700px
+        height: $scroll-h
+        pointer-events: none
+
+      .timeline-wrap
+        border-left: 1px solid $red
+        padding-left: 20px
+        margin-left: 10px
+        margin-bottom: 20px
+        
+        > .flex:last-child
+          padding-bottom: 0
+          .year
+            padding-bottom: 0
+            margin-bottom: -10px
+
+      .year
+        color: $red
+        
+      .year:before,
+      .cfawc:before
+        content: ''
+        position: absolute
+        width: 12px
+        height: 12px
+        margin-left: -26px
+        margin-top: 6px
+        background: $red
+        border-radius: 50%
+        box-shadow: 0 0 0 2px white
+      
+      .cfawc:before
+        background: $red
+        box-shadow: 0 0 0 2px $red
+        border: 2px solid white
+        margin-top: 4px
+        margin-left: -28.5px
+        
+      .cfawc.chart-subtitle:before
+        margin-left: -22px
+        height: 10px
+        width: 10px
+        margin-top: 4px
+        
+      .event
+        color: black
+        
+      .impact
+        margin-left: 1.5em
+        color: #4b4f56
+          
+        
+      .flex > .event
+        flex: 0.8
+      .flex > .impact
+        flex: 1
+        
+      .hide
+        opacity: 0
+        height: 0
+        
+      .flex-1
+        flex: 1
+        
+      .rel
+        position: relative
+        
+      // GDP GRAPH STYLING //
+        
+      .sparkline
+        height: $graph-h
+        position: relative
+        margin: 30px 20px 20px 40px
+        box-sizing: border-box
+        border-bottom: 1px solid #ccc
+        
+      .sparkline-title
+        margin-top: 30px
+        font-size: 13px
+        font-weight: 400
+        font-style: italic
+        color: black
+      
+      .chart-wrap
+        position: relative
+      
+      svg
+        overflow: visible
+      
+      line,
+      polyline
+        vector-effect: non-scaling-stroke
+        
+      text
+        font-size: 12px
+      
+      .chart-body
+        position: absolute
+        top: 0
+    
+      #tooltip
+        position: absolute
+        top: 0
+        font-size: 12px
+        background: #fffd
+        box-shadow: 0 0 3px 1px #3333
+        padding: 6px 10px
+        transition: top 0.3s
+        text-align: left
+        
+        span
+          float: right
+        
+        .tt-year
+          font-weight: 500
+          
+        .usa:before,
+        .chn:before
+          content: '—'
+          font-weight: 700
+          color: $blue
+        .chn:before
+          color: $red
+        
+        > *
+          white-space: nowrap
+
+    
+      @media (max-width: 767px)
+        .wrapper
+          font-size: 17px
+        .chart-title
+          font-size: 24px
+        .chart-subtitle
+          font-size: 15px
+          padding: 0 25px 10px
+        
+      @media (max-width: 500px)
+        .thead
+          display: none
+        .chart-subtitle
+          width: auto
+        .scroll
+          height: 360px
+        .event-wrap
+          flex-direction: column
+        .impact
+          align-self: baseline
+          margin-left: 0
+          margin-top: 8px
+          font-style: italic
+          &:before
+            content: 'Impact: '
