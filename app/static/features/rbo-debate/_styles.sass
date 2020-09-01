@@ -265,14 +265,17 @@ iframe
     font-weight: 600
 
 .seven-chinas
-  width: 100%
+  width: 110%
   font-size: 0.8em
-  margin: 30px 0 40px
+  margin: 30px 0 40px -5%
   border-collapse: collapse
 
 .row-title td
   font-weight: 500
   padding-top: 20px
+
+.row-title:first-child td
+  border-top: 1px solid $red
 
 .row-then-now td
   vertical-align: top
@@ -283,6 +286,9 @@ iframe
   &:nth-child(2)
     width: 0
     vertical-align: middle
+
+.row-then-now:last-child td
+  border-bottom: 1px solid $red
 
 footer
 
