@@ -10,26 +10,25 @@ block append config
   - page.image = "http://interactives.lowyinstitute.org/features/rbo-debate/img/thumbnail.jpg"
   - page.feature = data.getOne("static/features/rbo-debate/data")
 
+
+
 block page
 
   .container
-
+    
+    include partials/mixin-readmore
     include partials/header
 
     .landing.mx-auto.txt-ff
       h1.title.txt-cond.txt-center China and the Rules-Based Order
-      h2.txt-italic.txt-semi.mx-auto.txt-center An expert debate: seven essays and responses about China’s approach to the rules-based international order.
-      .pv-md.article-w.mx-auto
+      h2.txt-semi.mx-auto.txt-center Experts debate: seven essays and responses about China’s approach to the rules-based international order.
+      .pv-sm.article-w.mx-auto
         p China’s growing economic and military power has prompted urgent questions about its approach to the rules-based international order. On the one hand, China could be expected to have a stake in maintaining the existing order which, after all, has provided the stability necessary for the country’s rise. On the other hand, it cannot be assumed that China supports all elements of the current order, which Beijing argues it had no hand in creating.&ensp;
-          a.strong.txt-bare.ease-out(onclick="readmore()") Continue&ensp;
-            svg.ease-out(width="15" height="15" viewBox="0 -2 15 15" fill="white" xmlns="http://www.w3.org/2000/svg")
-              path(d="M7.34185 0.358246C6.88568 0.835907 6.88568 1.60798 7.34185 2.08564L10.017 4.88687H1.16667C0.522668 4.88687 0 5.43416 0 6.10851C0 6.78285 0.522668 7.33015 1.16667 7.33015H10.017L7.34185 10.1314C6.88568 10.609 6.88568 11.3811 7.34185 11.8588C7.56935 12.097 7.86802 12.2167 8.16669 12.2167C8.46535 12.2167 8.76402 12.097 8.99152 11.8588L14.483 6.10851L8.99152 0.358246C8.53535 -0.119415 7.79802 -0.119415 7.34185 0.358246Z")
-        #read-more.max-h-0
-          :marked
-            Key components of the rules-based order were established by the United States as the dominant power after the Second World War. Hopes that China would peacefully integrate into the existing order were boosted when China acceded to the World Trade Organization in 2001. Instead, a much stronger China, led by Xi Jinping since 2013, has shown increased willingness to disregard international norms, most notably in the South China Sea.
-
-            To interpret and explain these issues, we asked a select group of experts about Beijing’s goals for the international order and the changes it seeks. Recognising that China’s relationship with the rules-based order is closely tied to its relationship with the United States, we also asked our experts what compromises China might agree to, and under what circumstances a US–China accommodation on the future of the order could be reached.
-
+          +readmore('Read more')
+        #read-more.ease-out.max-h-0
+          p Key components of the rules-based order were established by the United States as the dominant power after the Second World War. Hopes that China would peacefully integrate into the existing order were boosted when China acceded to the World Trade Organization in 2001. Instead, a much stronger China, led by Xi Jinping since 2013, has shown increased willingness to disregard international norms, most notably in the South China Sea.
+          p To interpret and explain these issues, we asked a select group of experts about Beijing’s goals for the international order and the changes it seeks. Recognising that China’s relationship with the rules-based order is closely tied to its relationship with the United States, we also asked our experts what compromises China might agree to, and under what circumstances a US–China accommodation on the future of the order could be reached.&ensp;
+            +readmore('Collapse', true)
 
         //
 

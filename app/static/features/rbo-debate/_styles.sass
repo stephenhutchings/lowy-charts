@@ -132,7 +132,7 @@ iframe
 .landing
   max-width: 850px
   padding-top: 160px
-  margin-bottom: 50px
+  margin-bottom: 20px
 
   h2
     font-weight: 400
@@ -147,12 +147,16 @@ iframe
 
   #read-more
     overflow: hidden
-    transition-duration: 0.3s
+    padding-bottom: 2px
+
+    p:last-child
+      margin-bottom: 1em
 
   a
     display: inline-flex
     align-items: baseline
     color: white
+    transition: box-shadow 0.3s
 
     &:hover
       box-shadow: 0 1px 0 0 $yellow
@@ -344,8 +348,8 @@ footer
   list-style-type: none
 .max-h-0
   max-height: 0
-.no-max-h
-  max-height: 9999px
+.lg-max-h
+  max-height: 1000px
 
 // Misc
 
