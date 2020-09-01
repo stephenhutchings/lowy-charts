@@ -26,7 +26,7 @@ block page
   )
     .row(style="min-height: 10vh")
     .pg-title.article-w.txt-center.mx-auto
-      h1.txt-cond.bg-fffd= page.attributes.title
+      h1.txt-cond.bg-fffd!= page.attributes.title
       h4.pg-author.sm.txt-tu.bg-fffd!= page.attributes.author + "<br>"
         .xs.txt-mute!= page.attributes.position
     .row(style="min-height: 20vh")
