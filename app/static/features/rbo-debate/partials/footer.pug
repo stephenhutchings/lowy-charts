@@ -2,16 +2,16 @@
 
 footer.mx-auto.article-w.pv-lg.txt-center
   if response
-    .md This article is a response to the following articles
+    .md.pv-md This article is a response to the following articles
     ul.bare-list
       - var articles = page.feature.articles
       each i in page.attributes.map
-        li: a(href=`/features/rbo-debate/articles/${articles[i-1].href}`)= articles[i-1].title  
+        li: a.txt-semi(href=`/features/rbo-debate/articles/${articles[i-1].href}`)!= articles[i-1].title  
   else
-    .md This article is mentioned in the following response articles
+    .md.pv-md This article is mentioned in the following responses
     ul.bare-list
       - var responses = page.feature.responses
       each i in page.attributes.map
-        li: a(href=`/features/rbo-debate/responses/${responses[i-8].href}`)= responses[i-8].title
+        li: a.txt-semi(href=`/features/rbo-debate/responses/${responses[i-8].href}`)!= responses[i-8].title
   
   h2: a(href="/features/rbo-debate/") Or see all Debate Threads

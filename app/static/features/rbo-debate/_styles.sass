@@ -113,7 +113,7 @@ iframe
 .md
   font-size: 22px
 .sm
-  font-size: 18px
+  font-size: 17px
 .xs
   font-size: 14px
 
@@ -134,10 +134,20 @@ iframe
   padding-top: 160px
   margin-bottom: 50px
 
+  h2
+    font-weight: 400
+    font-size: 32px
+    letter-spacing: 0!important
+    max-width: 750px
+
   p
     max-width: 700px
     margin-left: auto
     margin-right: auto
+
+  #read-more
+    overflow: hidden
+    transition-duration: 0.3s
 
   a
     display: inline-flex
@@ -270,6 +280,45 @@ iframe
     width: 0
     vertical-align: middle
 
+footer
+
+  li
+    margin-bottom: 0
+
+  a
+    position: relative
+    display: block
+    color: white
+    background: $red
+    margin-bottom: 1px
+    padding: 20px 10px
+    z-index: 1
+    overflow: hidden
+
+    &:before
+      content: ''
+      background: $red
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      opacity: 0
+      transition: transform 0.4s ease-in-out
+      transform: translateX(-100%)
+      z-index: -1
+
+    &:hover
+      color: white
+
+      &:before
+        opacity: 1
+        transform: translateX(0%)
+
+
+  @for $i from 1 through 6
+    li:nth-child(#{$i}) a
+      background: lighten($red, $i * 5)
 
 
 
@@ -293,6 +342,10 @@ iframe
   transition: ease-out 300ms
 .bare-list
   list-style-type: none
+.max-h-0
+  max-height: 0
+.no-max-h
+  max-height: 9999px
 
 // Misc
 
