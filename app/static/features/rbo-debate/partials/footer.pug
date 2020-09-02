@@ -1,17 +1,38 @@
 - var response = page.attributes.map[0] < 8
 
-footer.mx-auto.article-w.txt-center
-  if response
-    .md.pv-md This article is a response to the following articles
-    ul.bare-list
-      - var articles = page.feature.articles
-      each i in page.attributes.map
-        li: a.txt-semi(href=`/features/rbo-debate/articles/${articles[i-1].href}`)!= articles[i-1].title  
-  else
-    .md.pv-md This article is mentioned in the following responses
-    ul.bare-list
-      - var responses = page.feature.responses
-      each i in page.attributes.map
-        li: a.txt-semi(href=`/features/rbo-debate/responses/${responses[i-8].href}`)!= responses[i-8].title
+footer.mx-auto.article-w.txt-center.pv-lg
   
-  h2: a(href="/features/rbo-debate/") Or see all Debate Threads
+  .md
+    a.bg-red.txt-ff.p-sm.br-sm.fw-4(href="/features/rbo-debate")
+      span.icon.icon-left-arrow
+      | &ensp;Back to debates menu
+      
+  if response
+    .md.pv-md.fw-4.txt-spaced
+      span.sm.txt-tu OR
+      | <br>Read an article mentioned in this response:
+    - var articles = page.feature.articles
+    .list.flex.flex-wrap
+      each i in page.attributes.map
+        .list-item.ease-out
+          h4.xs.txt-tu.txt-mute.txt-left= articles[i-1].author
+          a.thumb.br-sm(href=`/features/rbo-debate/articles/${articles[i-1].href}`)
+            img(height="150" width="100%" src=`../../img/${articles[i-1].img}`)
+          h2.md.txt-semi.txt-left
+            a.txt-bare.ease-out(href=`/features/rbo-debate/articles/${articles[i-1].href}`)!= articles[i-1].title
+          p.sm.txt-semi.txt-justify!= "&ldquo;" + articles[i-1].quote + "&rdquo;"
+        
+  else
+    .md.pv-md.fw-4.txt-spaced
+      span.sm.txt-tu OR
+      | <br>Read responses to this article:
+    - var responses = page.feature.responses
+    .list.flex.flex-wrap
+      each i in page.attributes.map
+        .list-item.ease-out
+          h4.xs.txt-tu.txt-mute.txt-left= responses[i-8].author
+          a.thumb.br-sm(href=`/features/rbo-debate/responses/${responses[i-8].href}`)
+            img(height="150" width="100%" src=`../../img/${responses[i-8].img}`)
+          h2.md.txt-semi.txt-left
+            a.txt-bare.ease-out(href=`/features/rbo-debate/responses/${responses[i-8].href}`)!= responses[i-8].title
+          p.sm.txt-semi.txt-justify!= "&ldquo;" + responses[i-8].quote + "&rdquo;"
