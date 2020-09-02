@@ -37,6 +37,20 @@ block page
 
   include footer
 
+
+  script.
+    let breakpoint = 540;
+    document.addEventListener('DOMContentLoaded', trimTitleNbsp);
+    window.addEventListener('resize', trimTitleNbsp);
+    
+    function trimTitleNbsp() {
+      if (window.innerWidth < breakpoint) {
+        let title = document.querySelector('.article-landing h1')
+        let str = title.innerHTML;
+        title.innerHTML = str.replace('&nbsp;', ' ');
+      }
+    }
+
 block append css
   style
     include:sass ../_styles.sass
