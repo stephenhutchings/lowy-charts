@@ -7,6 +7,11 @@ $mute: #707070
 
 $header-height: 55px
 
+@keyframes zoomout
+  from
+    transform: scale(1.08)
+  to
+    transform: scale(1)
 
 // Root settings
 
@@ -194,12 +199,15 @@ p small
   padding: 70px
 
   .label
-    margin-top: -2.75em
+    margin-top: -2.25em
     font-weight: 300
     font-size: 16px
-    border-bottom: 1px solid rgba($red, 0.5)
+    // border-bottom: 1px solid rgba($red, 0.9)
     padding-bottom: 0.25em
     text-transform: uppercase
+
+    &.label-l
+      margin-left: auto
 
 
   &-item
@@ -256,8 +264,17 @@ p small
   max-width: 675px
 
 .article-landing
+  position: relative
+  overflow: hidden
   height: 100vh
-  background-size: cover!important
+
+  .bg-img
+    position: absolute
+    background-size: cover!important
+    animation: zoomout 6s ease forwards
+    z-index: -1
+    width: 100%
+    height: 100%
 
 .pg-title
 
@@ -278,7 +295,7 @@ p small
     line-height: 1.1
 
 .content
-  padding: 120px 0
+  padding-top: 60px
   line-height: 1.4
   font-weight: 300
 
@@ -489,8 +506,17 @@ footer
 // small
 @media screen and (max-width: 540px), screen and (max-height: 700px)
 
+  .xl
+    font-size: 32px
+  .lg
+    font-size: 26px
+  .md, p
+    font-size: 18px
+  .sm
+    font-size: 16px
+
   .article-landing
-    height: 175vh
+    height: 165vh
 
   #title-short
     display: inline
@@ -503,4 +529,4 @@ footer
     width: 95%
 
   .pg-title
-    margin: 15vh auto
+    margin: 50px auto
