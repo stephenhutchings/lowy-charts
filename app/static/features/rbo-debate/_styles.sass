@@ -286,6 +286,7 @@ p small
     padding: 0.5em
     margin-bottom: 0
     line-height: 1.1
+    min-width: 425px
 
   h4
     display: inline-block
@@ -537,3 +538,8 @@ footer
 
   .pg-title
     margin: 50px auto
+
+// small width only
+@media screen and (max-width: 540px)
+  .pg-title h1
+    min-width: 0
