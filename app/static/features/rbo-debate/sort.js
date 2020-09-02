@@ -41,8 +41,9 @@ function focus(el) {
   let map = JSON.parse(el.dataset.map);
   let lhs = map[0] < 8 ? true : false;                        // lhs TRUE for first 7 articles
   let listItems = document.querySelectorAll('.list-item');    // Elements targeted for fading/sorting
+  let thead = document.querySelectorAll('.label');            // Argument / Response table labels
   let bracket = document.querySelector('.bracket');           // Bracket to wrap around sorted els
-  let bpOffset = 25                                           // breakpoint offset for rhs sort positioning
+  let bpOffset = 25;                                          // breakpoint offset for rhs sort positioning
 
   el.classList.add('focused');
   el.classList.remove('ptr');
@@ -52,6 +53,7 @@ function focus(el) {
   el.querySelector('h2 a').classList.remove('no-ptr-ev');        // Activate link on article title
 
   listItems.forEach( (item, i) => item === el ? "" : item.classList.add('fade') );
+  thead.forEach( (item, i) => item === el ? "" : item.classList.add('fade') );
 
   targets = map.map( (v,i) => listItems[v-1] );     // Get DOM elements
   heights = targets.map( (el) => el.offsetHeight ); // Get their heights
@@ -101,6 +103,7 @@ function unfocus (e, el) {
     let focusedButton = focusedDiv.querySelector('.read-more');
     let focusedHeading = focusedDiv.querySelector('h2 a');
     let targets = document.querySelectorAll('.target');
+    let thead = document.querySelectorAll('.label');                    // Argument / Response table labels
     let bracket = document.querySelector('.bracket');                   // Bracket to wrap around sorted elmts
 
     targets.forEach( (el) => {
@@ -119,6 +122,7 @@ function unfocus (e, el) {
     bracket.classList.add('hide');
 
     listItems.forEach( el => el.classList.remove('fade') );
+    thead.forEach( el => el.classList.remove('fade') );
 
     spreadY(sortElArr);
 
@@ -136,6 +140,7 @@ function spreadY(a) {
   let itemMargin = 0;
   let listPaddingBottom = 70;
   let list = document.querySelector('.list');
+  let thead = document.querySelectorAll('.label')[1]; // Argument table label
 
   if (vw > breakpoint) {
     for (i; i < n/2; i++) {
@@ -147,7 +152,9 @@ function spreadY(a) {
     for (i; i < n; i++) {
       a[i].style.top = y + 'px';
       y += a[i].offsetHeight + itemMargin;
+      if (i==n/2-1) { thead.style.top = `${y+35}px`; y+= 35; } // Set the argument table header position
     }
+    console.log(1);
   }
 
   list.style.height=="" ? list.style.height = document.body.scrollHeight - list.offsetTop + listPaddingBottom + "px" : "";

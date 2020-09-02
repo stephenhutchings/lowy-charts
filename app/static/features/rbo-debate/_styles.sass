@@ -72,7 +72,7 @@ blockquote
 
 p small
   font-style: italic
-  font-weight: 400
+  font-weight: 300
   line-height: 1.2
   color: $mute
 
@@ -112,9 +112,9 @@ p small
   letter-spacing: 0.03em
 
 .title
-  font-weight: 300
-  font-size: 66px
-  line-height: 66px
+  font-weight: 200
+  font-size: 72px
+  line-height: 72px
 
 .pg-title h1
   font-size: 60px
@@ -135,6 +135,10 @@ p small
 .xs
   font-size: 14px
 
+.fw-4
+  font-weight: 400
+.fw-5
+  font-weight: 500
 
 // layout
 
@@ -146,17 +150,15 @@ p small
   left: 0
 
 
-
 .landing
-  max-width: 850px
+  max-width: 875px
   padding-top: 160px
   margin-bottom: 20px
 
   h2
-    font-weight: 400
     font-size: 32px
     letter-spacing: 0!important
-    max-width: 750px
+    max-width: 700px
 
   p
     max-width: 700px
@@ -191,6 +193,15 @@ p small
   max-width: 900px
   padding: 70px
 
+  .label
+    margin-top: -2.75em
+    font-weight: 300
+    font-size: 16px
+    border-bottom: 1px solid rgba($red, 0.5)
+    padding-bottom: 0.25em
+    text-transform: uppercase
+
+
   &-item
     padding-top: 10px
 
@@ -213,7 +224,7 @@ p small
     display: inline
 
   .flex
-    margin-top: 70px
+    margin-top: 80px
 
   .col-1-2:first-child
     margin-right: 30px
@@ -440,6 +451,9 @@ footer
     display: none
 
   .list
+    .label
+      position: absolute
+      width: 100%
     .flex
       flex-direction: column
     .col-1-2
