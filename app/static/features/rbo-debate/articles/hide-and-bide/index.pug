@@ -19,21 +19,23 @@ block content
   .pv-md
   
   .txt-center.title Seven Chinas
-  .txt-tu.txt-cond.txt-center.txt-italic.pv-xs
-    :marked
-      Beijing's geopolitical master narratives then and now
+  .md.txt-tu.txt-cond.txt-center.txt-italic.pv-xs Beijing's geopolitical master narratives then and now
 
   .table-section
     - let content = [ ['Self sufficient civilisation','We generate our own values, march to our own drum','SCS, tech policy, origins of COVID-19 can be adjudicated only by us'], ['Most humiliated nation','A senior civilisation, conquered and despised','Malicious accusations against us justify wolf diplomacy'], ['Leader of the developing world','Among the late developers, we lead','Autocrats stay the course with us'], ['Champion of plurality','We end the era of Western (US) hegemony','We instrumentalise multilateral fora'], ['Sovereign survivor','Leave us to survive as a communist power','We dismiss the regime-change agenda'], ['Last man standing', 'The West is in decline while we have deep pockets','The West can’t preserve its deep pockets post COVID-19 but we can'], ['Herald of the high frontier','We share in and safeguard the global commons','Global warming, COVID-19, the oceans, cyber security can’t be dealt with without us']]
     
     table.seven-chinas: tbody
+      tr.row-title.txt-center.txt-tu.txt-ff.bg-red
+        td: em 2018
+        td: .icon.icon-right-arrow
+        td: em 2020
       each row, i in content
         tr.row-title.txt-center.txt-tu
           td(colspan="3")!= (i+1) + ". " + row[0]
         tr.row-then-now.txt-center
-          td!= "<em>2018</em><br>" + row[1]
+          td!= row[1]
           td.icon.icon-right-arrow
-          td!= "<em>2020</em><br>" + row[2]
+          td!= row[2]
           
   .sm.txt-center.txt-italic
     :marked
