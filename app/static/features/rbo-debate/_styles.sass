@@ -371,8 +371,8 @@ footer
 
 
     &:last-child:nth-child(odd)
-      flex-basis: 65%
-      width: 65%
+      flex-basis: 60%
+      width: 60%
       margin-left: auto
       margin-right: auto
 
@@ -471,22 +471,14 @@ footer
     width: 100%
     margin-left: 0
 
-// medium
-@media screen and (max-width: 768px), screen and (max-height: 700px)
-
-  .article-w
-    width: 90%
-
-  .header-title
-    width: auto
-    left: 28px
-
-  .logo
-    display: none
+// medium width only
+@media screen and (max-width: 768px)
 
   .list
+    padding: 70px 40px
     .label
       position: absolute
+      border-bottom: 1px solid $red
       width: 100%
     .flex
       flex-direction: column
@@ -503,7 +495,8 @@ footer
     left: -15px
     &:before
       color: $mute
-      left: 0
+      font-size: 18px
+      left: 16px
     &-left
       border-right: 1px solid
       border-bottom: none
@@ -512,6 +505,20 @@ footer
       border-top: none
     &-right:before
       bottom: calc(-100% - 10px)
+
+
+// medium
+@media screen and (max-width: 768px), screen and (max-height: 700px)
+
+  .article-w
+    width: 90%
+
+  .header-title
+    width: auto
+    left: 28px
+
+  .logo
+    display: none
 
   .pg-title h1
     font-size: 44px
@@ -549,3 +556,11 @@ footer
 @media screen and (max-width: 540px)
   .pg-title h1
     min-width: 0
+
+  .landing
+    h1, h2
+      max-width: 90%
+      margin-left: auto
+      margin-right: auto
+    p
+      line-height: 1.4

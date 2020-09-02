@@ -14,9 +14,9 @@ block page
         thead
           tr
             th.txt-left(onclick="sortTable(this,true,0)") Rank
-              span.icon.icon-down-sm
-            th.txt-left(onclick="sortTable(this,false, 1)") Country
               span.icon.icon-down-sm.show
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm
         tbody
           each e, i in t.better
             tr
@@ -28,9 +28,9 @@ block page
         thead
           tr
             th.txt-left(onclick="sortTable(this,true, 0)") Rank
-              span.icon.icon-down-sm
-            th.txt-left(onclick="sortTable(this,false, 1)") Country
               span.icon.icon-down-sm.show
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm
         tbody.p-1
           - let next = t.better.length + 1
           each e, i in t.average
@@ -43,9 +43,9 @@ block page
         thead
           tr
             th.txt-left(onclick="sortTable(this,true, 0)") Rank
-              span.icon.icon-down-sm
-            th.txt-left(onclick="sortTable(this,false, 1)") Country
               span.icon.icon-down-sm.show
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm
         tbody
           - next = t.better.length + t.average.length + 1
           each e, i in t.worse
@@ -185,28 +185,6 @@ block append css
   script.
     var p = 1;
     var ready = false;
-    /* function pager() {
-      document.querySelector('.btns').classList.remove(`p-${p}`);
-      let tb = document.querySelectorAll('tbody');
-      if (p==2) {
-        Array.prototype.forEach.call(tb, function(el, i){
-          el.classList.remove(`p-${2}`);
-          el.classList.add(`p-${1}`);
-          document.querySelector('.btns').classList.add(`p-${1}`);
-          document.querySelector('.pg').innerHTML = '1 of 2';
-        });
-        p--;
-      }
-      else if (p==1) {
-        Array.prototype.forEach.call(tb, function(el, i){
-          el.classList.remove(`p-${1}`);
-          el.classList.add(`p-${2}`);
-          document.querySelector('.btns').classList.add(`p-${2}`);
-          document.querySelector('.pg').innerHTML = '2 of 2';
-        });
-        p++;
-      }
-    } */
     function flipSortIcon(el) {
       let icon = el.querySelector('.icon');
       if ( icon.classList.contains('show') ) {
@@ -271,9 +249,9 @@ block append css
       ready ? flipSortIcon(el) : "";
     }
     window.addEventListener('load', function () {
-      sortTable(document.getElementsByTagName('th')[1], false, 1);
-      sortTable(document.getElementsByTagName('th')[3], false, 1);
-      sortTable(document.getElementsByTagName('th')[5], false, 1);
+      sortTable(document.getElementsByTagName('th')[1], true, 1);
+      sortTable(document.getElementsByTagName('th')[3], true, 1);
+      sortTable(document.getElementsByTagName('th')[5], true, 1);
       ready = true;
     });
     

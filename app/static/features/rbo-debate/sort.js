@@ -1,20 +1,4 @@
-// Global variables
 
-var vh = window.innerHeight;
-var vw = window.innerWidth;
-
-var breakpoint = 768;
-var isFocused = false;
-
-
-// Setup
-
-document.addEventListener('DOMContentLoaded', init);
-document.addEventListener('click', e => isFocused ? unfocus(e, this) : "" );
-
-function init() {
-  initAnimateSort();
-}
 
 // Animate sort functions
 
@@ -138,7 +122,7 @@ function spreadY(a) {
   let i = y = 0;
   let n = a.length;
   let itemMargin = 0;
-  let listPaddingBottom = 70;
+  let listPaddingBottom = 150;
   let list = document.querySelector('.list');
   let thead = document.querySelectorAll('.label')[1]; // Argument table label
 
@@ -154,13 +138,11 @@ function spreadY(a) {
       y += a[i].offsetHeight + itemMargin;
       if (i==n/2-1) { thead.style.top = `${y+35}px`; y+= 35; } // Set the argument table header position
     }
-    console.log(1);
   }
 
-  list.style.height=="" ? list.style.height = document.body.scrollHeight - list.offsetTop + listPaddingBottom + "px" : "";
+  list.style.height = y + a[0].offsetHeight + listPaddingBottom + "px";  // Adjust height of list container
 
 }
-
 
 function checkBlockBounds(t, h) {
   let list = document.querySelector('.list');
