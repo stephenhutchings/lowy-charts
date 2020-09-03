@@ -62,7 +62,7 @@ function focus(el) {
   }
 
   if (targets.length) {                         // BRACKET POSITIONING
-    bracket.style.top = (vw < breakpoint && lhs) ? tBlock+hSum-1.5*bpOffset+"px" : tBlock + "px";
+    bracket.style.top = (vw <= breakpoint && lhs) ? tBlock+hSum-1.5*bpOffset+"px" : tBlock + "px";
     bracket.style.height = (vw > breakpoint) ? hSum-10 + "px" : "25px";
     bracket.classList.remove('hide');
     lhs ? bracket.classList.remove('bracket-left') : bracket.classList.remove('bracket-right');
