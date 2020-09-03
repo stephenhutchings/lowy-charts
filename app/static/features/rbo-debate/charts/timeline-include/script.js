@@ -111,7 +111,7 @@ let navH = 55, isSticky = false,
     index = 0, nYears = 28,
     threshold = 100*27.99/nYears;
 
-document.addEventListener('DOMContentLoaded', function() {setTimeout(init, 200)} );
+document.addEventListener('DOMContentLoaded', function() {setTimeout(init, 400)} );
 
 function init() {
   setGlobals();
