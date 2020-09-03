@@ -2,8 +2,6 @@ let gdp = [
   {
     "title": "Years",
     "values": [
-      1989,
-      1990,
       1991,
       1992,
       1993,
@@ -37,8 +35,6 @@ let gdp = [
   {
     "title": "China",
     "values": [
-      461066000000,
-      398623000000,
       415604000000,
       495671000000,
       623054000000,
@@ -72,8 +68,6 @@ let gdp = [
   {
     "title": "USA",
     "values": [
-      5641600000000,
-      5963130000000,
       6158130000000,
       6520330000000,
       6858550000000,
@@ -114,8 +108,8 @@ let wrap, headerSlot, headerSticky, footerSticky, footerPlotArea,
 let vh, headerH, footerH, stickyStart, stickyEnd;
 let x, usData, cnData, yrData;
 let navH = 55, isSticky = false,
-    index = 0, nYears = 31,
-    threshold = 100*29.99/nYears;
+    index = 0, nYears = 28,
+    threshold = 100*27.99/nYears;
 
 // Set global variables
 function setGlobals() {
@@ -134,7 +128,7 @@ function setGlobals() {
   yrDataEl = tooltip.querySelector('.tt-year');
   usDataEl = tooltip.querySelector('.usa span');
   cnDataEl = tooltip.querySelector('.chn span');
-  
+
 }
 
 // Dimensions

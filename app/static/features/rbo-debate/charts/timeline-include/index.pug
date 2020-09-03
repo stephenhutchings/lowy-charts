@@ -52,7 +52,7 @@
             = "$" + (minY + (maxY-minY)*(i/stepsY)) + "T"
 
       // X-Axis labels
-      for x, i in [1989, 1999, 2009, 2019]
+      for x, i in [1991, 2000, 2009, 2018]
         svg.x-label(
           x=toPercent(i/3)
           y="100%"
@@ -66,18 +66,6 @@
             transform="translate(0 9)"
             fill="#ccc"
           ) ❘
-          
-          
-      // MINOR AXIS LINES
-      //line(
-        x1=toPercent(fx(0))
-        y1=toPercent(y)
-        x2=toPercent(fx(ln))
-        y2=toPercent(y)
-        stroke="#5555"
-        stroke-width=1.1
-        stroke-dasharray=0
-        )
 
       // SERIES LINES
       svg.chart-body(
@@ -124,7 +112,8 @@
       | US-China GDP by Market Exchange Rate (
       a.txt-italic(href="https://www.imf.org/external/pubs/ft/weo/2019/02/weodata/index.aspx") IMF
       | )
-      
+
+// Script is appended in article template file    
     
 block append css
   style
@@ -349,6 +338,9 @@ block append css
           
           .tt-year
             font-weight: 500
+            
+          .usa, .chn
+            white-space: nowrap
             
           .usa:before,
           .chn:before
