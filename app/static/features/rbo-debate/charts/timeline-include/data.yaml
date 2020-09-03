@@ -1,48 +1,50 @@
 events:
-  - year: 1989
-    event: Tiananmen crisis.<br>Fall of the Berlin Wall.
-    impact: CCP prepares for survival in a "hostile, unipolar world"
-  - year: 1991
-    event: Formal end of the USSR.
-    impact: Deng Xiaoping promulgates "Hide & Bide" as governing foreign and security guidance. His Southern Tour restarts China's economic reforms.
+  - year: 1991 (CFAWC)
+    event: <b>December</b><br>Formal end of the USSR.
+    impact: <br>CCP prepares for survival in a “hostile, unipolar world”. Deng Xiaoping promulgates "Hide & Bide" as governing foreign and security guidance. His Southern Tour restarts China's economic reforms.
   - year: 1992
-    event: US-led defeat of Iraq in Kuwait compels PLA rethink of modern warfare; lessons drive PLA modernization, doctrine, strategy.
-    impact: PLA modernisers gain control of the PLA and begin driving its reforms. The CCP’s 14th Party Congress purges Yang Shangkun, who had opposed the modernisers for their opposition to the PLA’s 1989 intervention in Tiananmen Square.
+    event: <b>February</b><br>US-led defeat of Iraq in Kuwait.
+    impact: <br>US military success in Kuwait compels a PLA rethink. At the 1992 14th Party Congress, PLA modernisers (who opposed the intervention in Tiananmen square in 1989) gain control of the Army and begin driving its reforms.
   - year: 1999
-    event: US/NATO accidental bombing of PRC Embassy in Belgrade.
-    impact: Beijing views the US bombing as intentional and confirmation of US hostile intentions.
+    event: <b>May</b><br>US/NATO accidental bombing of PRC Embassy in Belgrade.
+    impact: <br>Beijing views the US bombing as intentional and confirmation of US hostile intentions.
   - year: 0000
-    event: Taiwan President Lee's declaration that cross-strait dialogue must be conducted on "state-to-state" basis
-    impact: The PLA begins major modernisation in preparation for a Taiwan conflict begins, defense budgets begin double-digit annual increases.
+    event: <b>July</b><br>Taiwan President Lee Teng-hui’s declaration that cross-strait dialogue must be conducted on "state-to-state" basis.
+    impact: <br>Defence budgets begin to grow rapidly and the PLA accelerates modernisation in preparation for a Taiwan conflict.
   - year: 2001
     event: >
-      Bush 43 Administration begins.<br><br>
-      US EP-3 aircraft and PLA-N fighter collide in mid-air off coast of Hainan island.<br><br>
+      <b>Jan&mdash;April</b><br>Presidency of George W. Bush begins.<br><br>
+      US EP-3 aircraft and Chinese fighter jet collide in mid-air off coast of Hainan island.<br><br>
       US announces unprecedented $18 billion arms sale to Taiwan.<br><br>
-      9/11 attacks on the US.
-    impact: Beijing views the first three events as confirmation of US "hegemonic" hostility to China's rise.
+    impact: <br>Beijing views these three events as confirmation of US "hegemonic" hostility to China's rise.
+  - year: 0000
+    event: <b>September</b><br>Al Qaida attacks on US.
+    impact: ""
   - year: 2003
-    event: US invasion of Iraq
-    impact: Beijing views US reaction to 9/11 as both a demonstration of US "hegemonic attitude" and as a “strategic blunder." Over time, China views the deepening US preoccupation with Middle East as a key factor in preserving peace and stability in Asia and engendering a "responsible" US attitude towards Taiwan.
-  - year:  2006
+    event: <b>March</b><br>US invasion of Iraq.
+    impact: <br>Over time, China views the deepening US preoccupation with the Middle East as a key factor in preserving peace and stability in Asia and engendering a "responsible" US attitude towards Taiwan.
+  - year: 2006 (CFAWC)
     event: ""
     impact: ""
-  - year:  2007&mdash;2010
+  - year:  2008
     event: Global Financial Crisis.
-    impact: The CCP views the GFC as another strategic blunder and China’s recovery as evidence of its superior system.
+    impact: CCP views the GFC as Washington’s "2nd strategic blunder" and China’s recovery as evidence of its superior system.
   - year:  0000
-    event: Taiwan election of KMT candidate President Ma, intensifying cross-strait economic, cultural, political relations.<br>
-    impact: Ma’s election is seen as reducing the US role in cross-strait affairs.
+    event: <b>March</b><br>Taiwan election of Kuomintang (KMT) candidate President Ma Ying-jeou, which led to intensifying cross-strait economic, cultural, political relations.
+    impact: <br>CCP views President Ma’s election as reducing the US role in cross-strait affairs.
+  - year: 2014 (CFAWC)
+    event: ""
+    impact: ""
+  - year: 2017
+    event: <b>January</b><br>Start of Trump Administration.
+    impact: >
+      <br>
+      CCP views the rise of populism in the US (and other Western democracies) as Washington’s "3rd strategic blunder" - and a direct consequence of its first two strategic blunders.<br><br>
+      CCP views the Trump Administration as intensifying both US decline and rivalry with China.
   - year: 0000
-    event: Arab Spring.
-    impact: ???
-  - year: 2014
-    event: Russian annexation of Crimea.<br>
-    impact: ???
-  - year: 2015&mdash;2016
-    event: European immigration crisis. Brexit and start of Trump Administration; NSC publishes National Security Strategy that identified China's as a strategic competitor and revisionist power. CCP assesses China's comprehensive power to be approaching that of the US, due to both Chinese growth and US decline.
-    impact: CCP views the Trump Administration as signifying an intensification of US decline as well as rivalry. More broadly, the CCP views the rise of populism in the US and Western democracies as yet another strategic blunder and a direct consequence of its first two strategic blunders in the past two decades.
-  - year: 2018
+    event: <b>December</b><br>US National Security Strategy that identifies China as a strategic competitor and “revisionist power”.
+    impact: <br>CCP assesses China's comprehensive power to be approaching that of the US, due to both Chinese growth and US decline.
+  - year: 2018 (CFAWC)
     event: ""
     impact: ""
 

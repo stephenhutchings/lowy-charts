@@ -1,6 +1,6 @@
 - var datapath = "static/features/rbo-debate/charts/timeline-include/"
 - var chart = data.getOne(datapath)
-- var cfawcDates = [1991, 2006, 2014, 2018]
+- var cfawcDates = ['1991 (CFAWC)', '2006 (CFAWC)', '2014 (CFAWC)', '2018 (CFAWC)']
 - toPercent = (n) => (n * 100).toFixed(2) + "%"
   
 .embed-wrap.flex.flex-col.article-w
@@ -187,6 +187,10 @@ style
       
       .scroll
         scrollbar-color: $red #f3f3f3
+      
+      b
+        font-style: italic
+        color: $red
       
       a
         text-decoration: none
