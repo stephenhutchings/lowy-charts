@@ -152,6 +152,11 @@ block append css
           
           &.bottom
             bottom: 0
+            
+        &.article-w,
+        .article-w
+          width: 90vw
+          max-width: 675px
 
 
         .visible
@@ -300,6 +305,7 @@ block append css
           border-bottom: 1px solid #ccc
           
         .sparkline-title
+          white-space: nowrap
           margin-top: 30px
           font-size: 13px
           font-weight: 400
@@ -354,7 +360,8 @@ block append css
             white-space: nowrap
 
       
-        @media (max-width: 767px)
+        @media (max-width: 768px)
+          
           .chart-title
             font-size: 24px
           .chart-subtitle
@@ -364,7 +371,8 @@ block append css
             height: 100px
             margin-top: 20px
             margin-bottom: 50px
-          
+
+
         @media (max-width: 525px)
           .chart-title
             font-size: 20px

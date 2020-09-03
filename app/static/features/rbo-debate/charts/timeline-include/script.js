@@ -111,6 +111,16 @@ let navH = 55, isSticky = false,
     index = 0, nYears = 28,
     threshold = 100*27.99/nYears;
 
+document.addEventListener('DOMContentLoaded', function() {setTimeout(init, 200)} );
+
+function init() {
+  setGlobals();
+  setDimensions();
+  window.addEventListener('scroll', onscroll);
+  window.addEventListener('resize', setDimensions);
+  footerPlotArea.addEventListener('mousemove', onmouse);
+}
+
 // Set global variables
 function setGlobals() {
 
@@ -134,31 +144,22 @@ function setGlobals() {
 // Dimensions
 function setDimensions() {
   vh = window.innerHeight;
+  stickyStart = wrap.offsetTop - navH;
+  stickyEnd = stickyStart + wrap.offsetHeight + navH;
   headerH = headerSticky.offsetHeight;
   footerH = footerSticky.offsetHeight;
-  stickyStart = wrap.offsetTop;
-  stickyEnd = stickyStart + wrap.offsetHeight;
   headerSlot.style.height = headerH + 'px';
-}
 
-// Event listeners
-document.addEventListener('DOMContentLoaded', init);
-window.addEventListener('scroll', onscroll);
-window.onresize = setDimensions;
-footerPlotArea.addEventListener('mousemove', onmouse);
-
-function init() {
-  setGlobals();
-  setDimensions();
-  onresize();
+  console.log(stickyEnd, footerH, headerH);
 }
 
 function onscroll() {
-  let atStart = window.pageYOffset + navH > stickyStart;
+  stickyStart = wrap.offsetTop - navH;
+  let atStart = window.pageYOffset >= stickyStart;
   let atEnd = window.pageYOffset + vh > stickyEnd;
   let shouldSticky = atStart && !atEnd;
-  (!isSticky && shouldSticky || isSticky && !shouldSticky) ? stickify(atStart) : "";
 
+  (!isSticky && shouldSticky || isSticky && !shouldSticky) ? stickify(atStart) : "";
   if (atStart) {
     x = 100 * ( (window.pageYOffset - stickyStart) / (stickyEnd - stickyStart - vh) );
     guideX(x);
