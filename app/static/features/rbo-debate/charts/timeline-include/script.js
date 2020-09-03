@@ -149,8 +149,6 @@ function setDimensions() {
   headerH = headerSticky.offsetHeight;
   footerH = footerSticky.offsetHeight;
   headerSlot.style.height = headerH + 'px';
-
-  console.log(stickyEnd, footerH, headerH);
 }
 
 function onscroll() {
