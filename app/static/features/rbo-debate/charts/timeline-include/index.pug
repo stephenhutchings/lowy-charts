@@ -26,7 +26,7 @@
               class=(event.year==0000 ? "hide" : "pv-sm")
               class=(cfawcDates.includes(event.year) ? "cfawc" : "")
             )!= event.year
-            if event.year != 2006 && event.year != 2018
+            if event.year != '2006 (CFAWC)' && event.year != '2014 (CFAWC)' && event.year != '2018 (CFAWC)'
               .event-wrap.flex
                 .event.txt-semi!= event.event
                 .impact.txt-semi.italic!= event.impact
