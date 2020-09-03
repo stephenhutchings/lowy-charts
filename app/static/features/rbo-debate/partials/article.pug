@@ -20,9 +20,7 @@ block prepend head
 block page
 
   include header
-  
-  
-  
+
   .article-landing.flex-cv
     .bg-img(style=`background: linear-gradient(0deg, rgba(185, 0, 0, 0.75), rgba(185, 0, 0, 0.6)), url(../../img/${page.attributes.img}) center no-repeat;`)
     .row(style="min-height: 10vh")
@@ -40,6 +38,8 @@ block page
   include footer
 
 
+block append customScripts
+  
   script.
     let breakpoint = 540;
     document.addEventListener('DOMContentLoaded', trimTitleNbsp);
@@ -52,7 +52,12 @@ block page
         title.innerHTML = str.replace('&nbsp;', ' ');
       }
     }
+    
+  if page.attributes.title == 'Counting on history'
+    script(src="../../charts/timeline-include/script.js")
 
 block append css
   style
     include:sass ../_styles.sass
+    
+    

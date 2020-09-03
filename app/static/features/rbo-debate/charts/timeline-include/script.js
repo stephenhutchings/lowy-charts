@@ -106,26 +106,36 @@ let gdp = [
   }
 ];
 
-let vh, headerH, footerH, stickyStart, stickyEnd; // Dimensions
+// Globals
+let wrap, headerSlot, headerSticky, footerSticky, footerPlotArea,
+    timeline, guide, tooltip, yrDataEl, usDataEl, cnDataEl;
+
+// Dimensions
+let vh, headerH, footerH, stickyStart, stickyEnd;
 let x, usData, cnData, yrData;
 let navH = 55, isSticky = false,
     index = 0, nYears = 31,
     threshold = 100*29.99/nYears;
 
-// Elements
-let wrap = document.querySelector('.embed-wrap');
-let headerSlot = wrap.querySelector('.title-placeholder');
-let headerSticky = wrap.querySelector('.title-block');
-let footerSticky = wrap.querySelector('#spark-wrap');
-let footerPlotArea = wrap.querySelector('.sparkline');
-let timeline = wrap.querySelector('.scroll');
+// Set global variables
+function setGlobals() {
 
-// Tooltip
-let guide = wrap.querySelector('#guide');
-let tooltip = wrap.querySelector('#tooltip');
-let yrDataEl = tooltip.querySelector('.tt-year');
-let usDataEl = tooltip.querySelector('.usa span');
-let cnDataEl = tooltip.querySelector('.chn span');
+  // Elements
+  wrap = document.querySelector('.embed-wrap');
+  headerSlot = wrap.querySelector('.title-placeholder');
+  headerSticky = wrap.querySelector('.title-block');
+  footerSticky = wrap.querySelector('#spark-wrap');
+  footerPlotArea = wrap.querySelector('.sparkline');
+  timeline = wrap.querySelector('.scroll');
+
+  // Tooltip
+  guide = wrap.querySelector('#guide');
+  tooltip = wrap.querySelector('#tooltip');
+  yrDataEl = tooltip.querySelector('.tt-year');
+  usDataEl = tooltip.querySelector('.usa span');
+  cnDataEl = tooltip.querySelector('.chn span');
+  
+}
 
 // Dimensions
 function setDimensions() {
@@ -144,6 +154,7 @@ window.onresize = setDimensions;
 footerPlotArea.addEventListener('mousemove', onmouse);
 
 function init() {
+  setGlobals();
   setDimensions();
   onresize();
 }
