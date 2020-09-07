@@ -1,12 +1,10 @@
-extend /partials/layout
-
-block append config
-  - var datapath = "static/features/rbo-debate/charts/popup-wto/data"
-  - _.extend(page, data.getOne(datapath))
-  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+- var page = {}
+- var datapath = "static/features/rbo-debate/charts/popup-wto/data"
+- _.extend(page, data.getOne(datapath))
+- toPercent = (n) => (n * 100).toFixed(2) + "%"
 
 block page
-  .wrapper.flex.flex-col
+  #infographic-wto.wrapper.flex.flex-col
     .txt-center.flex.flex-grow.flex-col
       
       strong.txt-lg.txt-semi= page.title
@@ -159,8 +157,9 @@ block append css
         height: 500px
         max-width: 600px
         color: black
-        border: 1px solid
-        padding: 20px
+        box-shadow: 0 0 20px 5px #aaa
+        background: white
+        padding: 40px
 
 
       .chart

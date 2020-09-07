@@ -16,7 +16,7 @@ block page
 
   .container
     
-    include partials/mixin-readmore
+    include partials/mixins/readmore
     include partials/header
 
     .landing.mx-auto.txt-ff
@@ -65,6 +65,6 @@ block append css
   style
     include:sass _styles.sass
 
-block append scripts
-  script(src="sort.js")
-  script(src="base.js")
+block append customScripts
+  script(src="./scripts/sort.js")
+  script(src="./scripts/base.js")
