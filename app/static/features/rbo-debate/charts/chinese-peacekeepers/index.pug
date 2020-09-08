@@ -1,0 +1,169 @@
+- var page = {}
+- var datapath = "static/features/rbo-debate/charts/chinese-peacekeepers/data"
+- _.extend(page, data.getOne(datapath))
+- toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  #infographic-chinese-peacekeepers.wrapper.flex.flex-col
+    svg.close(version='1.2' baseprofile='tiny' xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewbox='0 0 24 24')
+      path(stroke="white" stroke-width="2" d='M17.414 6.586c-.78-.781-2.048-.781-2.828 0l-2.586 2.586-2.586-2.586c-.78-.781-2.048-.781-2.828 0-.781.781-.781 2.047 0 2.828l2.585 2.586-2.585 2.586c-.781.781-.781 2.047 0 2.828.39.391.902.586 1.414.586s1.024-.195 1.414-.586l2.586-2.586 2.586 2.586c.39.391.902.586 1.414.586s1.024-.195 1.414-.586c.781-.781.781-2.047 0-2.828l-2.585-2.586 2.585-2.586c.781-.781.781-2.047 0-2.828z')
+    
+    .txt-center.flex.flex-grow.flex-col
+      strong.chart-title.txt-lg.txt-semi China and UN Peacekeeping
+      .description.sm
+        :marked
+          China is often within the top 10 of all troop contributors to UN peacekeeping and leads the permanent members of the Security Council in terms of number of troops on the&nbsp;ground
+          
+          It was the second highest contributor to UN Peacekeeping operations in 2019, behind only the United&nbsp;States.
+
+      .fw-4.sm.txt-semi 2019 Contributions to UN&nbsp;Peacekeeping
+      
+      .chart.flex-grow: .chart-content
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - ln = chart.axes[1].values.length
+        - fy = (i) => ( i ) / (ln)
+        - fx = (x) => (x - scale.minX) / (scale.maxX - scale.minX)
+        - fw = (x) => Math.abs(x) / (scale.maxX - scale.minX)
+                    
+        // CHART
+
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - ln = chart.axes[0].values.length
+        
+        svg(height="100%" width="100%")
+
+          g
+            - x0 = 0
+            
+            for x, i in chart.axes[1].values
+              - label = chart.axes[0].values[i]
+              - let sum = chart.axes[1].values.reduce( (s,x) => s + x)
+              - console.log(sum) 
+              
+              g.bars
+                  
+                rect(
+                  width=toPercent(fw(x))
+                  x=toPercent(fx(x0))
+                  height="100%"
+                  fill=chart.colors[i]
+                )
+                
+                text.chart-value.txt-cond(
+                  x=toPercent(fx(x0) + fw(x) / 2)
+                  y="50%"
+                  transform="translate(0 10)"
+                  text-anchor="middle"
+                  fill="#fff"
+                )
+                  =x.toFixed(1)+"%"
+                  
+                text.label.txt-cond(
+                  x=toPercent(fx(x0) + fw(x) / 2)
+                  y="110%"
+                  transform="translate(0 10)"
+                  text-anchor="middle"
+                  fill=chart.colors[i]
+                  class=i==1 ? "fw-4" : ""
+                )
+                  =label  
+
+                line(
+                  x1=toPercent(fx(x0) + fw(x))
+                  x2=toPercent(fx(x0) + fw(x))
+                  y1=0 y2="100%"
+                  stroke="white"
+                  stroke-width=2
+                )
+                
+                - x0 += x
+                
+
+block append css
+  style
+    :sass
+      
+      $red: #b90000
+    
+      #infographic-chinese-peacekeepers
+        position: relative
+        height: 420px
+        max-width: 600px
+        color: black
+        box-shadow: 0 0 20px 5px #aaa
+        background: white
+        padding: 30px 40px
+        
+        .description
+          p, p:last-child
+            margin-bottom: 0.75em
+            padding: 0 30px
+        
+        .chart
+          position: relative
+
+        .chart-content
+          position: absolute
+          top: 20px
+          left: 0
+          right: 0
+          bottom: 20px
+          
+        .chart-title
+          margin-bottom: 0.5em
+        
+        .chart-value,
+          font-size: 20px
+        .label
+          font-size: 18px
+          
+        svg
+          overflow: visible
+          
+        text
+          transform-origin: center
+        
+        .close
+          position: absolute
+          top: 0
+          right: 0
+          fill: #B90000
+          cursor: pointer
+          transition: 300ms
+          
+          &:hover
+            fill: lighten(#b90000,20)
+        
+        hr
+          margin: 20px 0
+          
+
+        @media (max-width: 600px)
+            
+          padding: 20px
+          
+          .description
+            p, p:last-child
+              font-size: 16px
+              padding: 0 0px
+          
+          .txt-lg
+            font-size: 18px
+            
+          .chart-value,
+          .label
+            font-size: 16px
+          
+        @media (max-width: 400px)
+          .chart-content
+            top: 10px
+            
+          .chart-value
+            transform: translate(0px, 6px)
+            
+          .chart-value,
+          .label
+            font-size: 14px
+          
