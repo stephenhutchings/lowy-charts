@@ -1,0 +1,35 @@
+extend ../../partials/article
+
+block append config
+  - page.attributes = data.getOne("static/features/rbo-debate/data").articles[6]
+
+block content
+  :marked
+    This is a placeholder article for testing in-text infographics.
+    
+    Here is the first one, <cite data-graph="wto">China on the WTO</cite>.
+    
+    Here is the second, <cite data-graph="un-leadership">China's International Leadership</cite>.
+    
+    The third, <cite data-graph="who">China at the WHO</cite>.
+    
+    
+    
+    .
+    
+    .
+    
+    .
+  //    
+    The fourth, <cite data-graph="">China on the UNSC</cite>.
+    
+    The fifth, <cite data-graph="wto">Chinese UN Peacekeepers</cite>.
+    
+    The sixth, <cite data-graph="wto">China's participation in peacekeeping</cite>.
+    
+    And finally, <cite data-graph="wto">multilateral organisations created by the PRC</cite>.
+
+  +infographic(1)
+  +infographic(2)
+  +infographic(3)
+  

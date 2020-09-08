@@ -1,6 +1,5 @@
 let breakpoint = 540;
 
-
 document.addEventListener('DOMContentLoaded', onload);
 document.addEventListener('click', closeModal);
 window.addEventListener('resize', onsize);
@@ -28,7 +27,11 @@ function infographic() {
 }
 
 function closeModal() {
-  document.querySelector('.active') ? document.querySelector('.active').style.display = 'none' : "";
+  let active = document.querySelector('.active');
+  if (active) {
+    active.style.display = 'none';
+    active.classList.remove('active');
+  }
 }
 
 function trimTitleNbsp() {

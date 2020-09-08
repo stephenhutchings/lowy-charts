@@ -1,0 +1,179 @@
+- var page = {}
+- var datapath = "static/features/rbo-debate/charts/who/data"
+- _.extend(page, data.getOne(datapath))
+- toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  #infographic-who.wrapper.flex.flex-col
+    svg.close(version='1.2' baseprofile='tiny' xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewbox='0 0 24 24')
+      path(stroke="white" stroke-width="2" d='M17.414 6.586c-.78-.781-2.048-.781-2.828 0l-2.586 2.586-2.586-2.586c-.78-.781-2.048-.781-2.828 0-.781.781-.781 2.047 0 2.828l2.585 2.586-2.585 2.586c-.781.781-.781 2.047 0 2.828.39.391.902.586 1.414.586s1.024-.195 1.414-.586l2.586-2.586 2.586 2.586c.39.391.902.586 1.414.586s1.024-.195 1.414-.586c.781-.781.781-2.047 0-2.828l-2.585-2.586 2.585-2.586c.781-.781.781-2.047 0-2.828z')
+    
+    .txt-center.flex.flex-grow.flex-col
+      strong.chart-title.txt-lg.txt-semi China at the World Health Organization
+      
+      .sm China currently provides <span class="fw-5 txt-red">12%</span> of the WHO's assessed contributions (compulsory member fees).
+      
+      .chart.flex-grow: .chart-content
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - ln = chart.axes[1].values.length
+        - fy = (i) => (i+0.35) / (ln)
+        - fx = (x) => (x - scale.minX) / (scale.maxX - scale.minX)
+        - fw = (x) => Math.abs(x) / (scale.maxX - scale.minX)
+              
+        // CHART
+
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - ln = chart.axes[0].values.length
+        
+        svg(x="35%" height="100%" width="70%")
+          g
+            for x, i in chart.axes[1].values
+              - label = chart.axes[0].values[i]
+              - x0 = 0
+              - minx = 0
+              svg(
+                x=toPercent(0)
+                y=toPercent(fy(i -  0.125))
+                width="100%"
+                height=toPercent(fy(0.5))
+              )
+                g.bars
+                  rect(
+                    width=toPercent(fw(x))
+                    x=toPercent(fx(x0))
+                    height="100%"
+                    fill=i==1 ? chart.colors[0] : chart.colors[1]
+                  )
+                  text.chart-value(
+                    x=toPercent(fx(x0) + fw(x))
+                    y="100%"
+                    transform="translate(4 0)"
+                    text-anchor="start"
+                    fill=i==1 ? chart.colors[0] : chart.colors[1]
+                  )
+                    = '$' + x + 'm'
+
+                svg(x=toPercent(fx(minx)) y="100%")
+                  text.label.txt-semi(
+                    y=0 x=-8
+                    text-anchor="end"
+                    fill=i==1 ? chart.colors[0] : chart.colors[1]
+                  )
+                    = label
+
+          //- Scale
+          svg.scale(y="105%")
+            line.scale-line(
+              x1=toPercent(fx(0)) x2=toPercent(fx(0))
+              y1="-105%" y2=0
+            )
+      
+      hr
+      
+      .txt-left.xs
+        .event
+          strong.txt-red November 2006
+          .event-description Margaret Chan appointed Director-General of the WHO. In office, she maintained several of Beijing’s goals, including supporting its plan to promote traditional Chinese medicine.
+        .event
+          strong.txt-red March 2020
+          .event-description Weeks before US President Donald Trump began talking about curbing funding to the agency, China announced a $20 million donation to the WHO to fight Covid-19.
+  
+
+block append css
+  style
+    :sass
+      
+      $red: #b90000
+    
+      #infographic-who
+        position: relative
+        height: 510px
+        max-width: 600px
+        color: black
+        box-shadow: 0 0 20px 5px #aaa
+        background: white
+        padding: 40px
+        
+        .chart
+          position: relative
+
+        .chart-content
+          position: absolute
+          min-height: 100px
+          top: 10px
+          left: 0
+          right: 0
+          bottom: 0
+        
+        .chart-value,
+        .label
+          font-size: 18px
+          
+        svg
+          overflow: visible
+        
+        .close
+          position: absolute
+          top: 0
+          right: 0
+          fill: #B90000
+          cursor: pointer
+          transition: 300ms
+          
+          &:hover
+            fill: lighten(#b90000,20)
+        
+        hr
+          margin: 20px 0
+          
+        .chart-title
+          margin-bottom: 0.5em
+        
+        .event
+          padding: 20px
+          &:first-child
+            padding-top: 0
+            padding-bottom: 30px
+            border-left: 1px solid $red
+              
+          &:last-child
+            margin-top: -30px
+            padding-bottom: 0
+          .event-description
+            position: relative
+          strong
+            &:before
+              content: ''
+              position: absolute
+              width: 12px
+              height: 12px
+              margin-left: -26px
+              margin-top: 0.25em
+              background: $red
+              border-radius: 50%
+              box-shadow: 0 0 0 4px white
+
+        @media (max-width: 600px)
+            
+          padding: 20px
+          //overflow: scroll
+          
+          .txt-lg
+            font-size: 18px
+            
+          .chart-value,
+          .label
+            font-size: 14px
+            
+          .event-description
+            line-height: 1.2
+            font-size: 13px
+            
+          .chart-content
+            bottom: 30px
+            
+          hr
+            display: none
+          
