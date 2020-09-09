@@ -2,6 +2,7 @@ let breakpoint = 540;
 
 document.addEventListener('DOMContentLoaded', onload);
 document.addEventListener('click', closeModal);
+document.addEventListener('keydown', onKeydown);
 window.addEventListener('resize', onsize);
 
 function onload() {
@@ -11,6 +12,10 @@ function onload() {
 
 function onsize() {
   trimTitleNbsp();
+}
+
+function onKeydown(e) {
+  e.key == "Escape" ? closeModal() : "";
 }
 
 function infographic() {

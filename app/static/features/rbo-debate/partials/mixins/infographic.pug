@@ -1,5 +1,5 @@
 mixin infographic(id)
-  .fixed.top-0.z10.display-none.article-w.mx-auto
+  .fixed.top-0.z10.display-none.fade-in.article-w.mx-auto
     case id
       when 1
         include ../../charts/wto/index
@@ -13,3 +13,5 @@ mixin infographic(id)
         include ../../charts/peacekeeping-contributions/index
       when 6
         include ../../charts/peacekeeping-participation/index
+      when 7
+        include ../../charts/prc-organisations/index

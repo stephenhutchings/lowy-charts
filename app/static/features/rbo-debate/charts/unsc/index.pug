@@ -37,10 +37,7 @@ block page
             - x0 = 0
             
             for x, i in chart.axes[1].values
-              - label = chart.axes[0].values[i]
-              - let sum = chart.axes[1].values.reduce( (s,x) => s + x)
-              - console.log(sum) 
-              
+              - label = chart.axes[0].values[i]              
               g.bars
                   
                 rect(
