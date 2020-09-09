@@ -86,12 +86,11 @@ block page
             li.legend-item
               span.legend-item-box(style=`background:${chart.colors[i]}`)
               span.legend-item-label!= item
+              
+        .info-src Source: 
+          a(target="_blank" href="https://www.wto.org/english/tratop_e/dispu_e/dispu_status_e.htm") WTO
 
-    //- .chart-notes.txt-muted
-      div!= marked(page.notes)
 
-      .chart-source.txt-muted
-        != marked(page.source)
 
 block append css
   style
@@ -176,17 +175,20 @@ block append css
           padding: 30px
             
           .chart-content
-            bottom: 45px
+            bottom: 30px
           .legend
             flex-wrap: wrap
             justify-content: center
             align-text: center
             max-width: 180px
-            margin-top: 10px
-            margin-left: auto
-            margin-right: auto
+            margin: -40px 0 10px auto
           .legend-item
             margin-top: 0
+          .legend-item-box
+            height: 0.8em
+            width: 0.8em
+            left: 3px
+            top: 6px
           .chart-content
             left: 4px
             right: 4px
