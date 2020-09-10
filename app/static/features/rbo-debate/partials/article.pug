@@ -26,6 +26,8 @@ block page
     .bg-img(style=`background: linear-gradient(0deg, rgba(185, 0, 0, 0.75), rgba(185, 0, 0, 0.6)), url(../../img/${page.attributes.img}) center no-repeat;`)
     .row(style="min-height: 10vh")
     .pg-title.article-w.txt-center.mx-auto
+      if page.attributes.map[0] < 8
+        .stamp.fw-5.txt-tu Response
       h1.txt-cond.bg-fffd!= page.attributes.title
       h4.pg-author.sm.txt-tu.bg-fffd!= page.attributes.author + "<br>"
         .xs.txt-mute!= page.attributes.position
