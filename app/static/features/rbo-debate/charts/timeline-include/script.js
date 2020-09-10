@@ -168,11 +168,32 @@ function onscroll() {
 function onmouse(e) {
   let o = isSticky ? footerPlotArea.offsetLeft + footerSticky.offsetLeft : footerPlotArea.offsetLeft;
   x = 100 * (e.clientX - o) / footerPlotArea.offsetWidth;
-  guideX(x);
+  guideX(x, true);
 }
 
-function guideX(x) {
+function guideX(x, isMouse) {
 
+  x < threshold ? "" : x = threshold;
+  x > 0 ? "" : x = 0;
+
+  if (!isMouse) {
+    guide.style.transition = "transform 0.4s";
+    tooltip.style.transition = "top 0.4s, left 0.4s";
+    if ( x < 10 )      { yr = 1991; x=yearToX(yr); }
+    else if ( x < 20 ) { yr = 1992; x=yearToX(yr); }
+    else if ( x < 41 ) { yr = 1999; x=yearToX(yr); }
+    else if ( x < 60 ) { yr = 2001; x=yearToX(yr); }
+    else if ( x < 71 ) { yr = 2003; x=yearToX(yr); }
+    else if ( x < 74 ) { yr = 2006; x=yearToX(yr); }
+    else if ( x < 92 ) { yr = 2008; x=yearToX(yr); }
+    else if ( x < 96 ) { yr = 2014; x=yearToX(yr); }
+    else if ( x < 98 ) { yr = 2017; x=yearToX(yr); }
+    else               { yr = 2018; x=yearToX(yr); }
+  }
+  else {
+    guide.style.transition = "transform 0s";
+    tooltip.style.transition = "top 0s, left 0s";
+  }
 
   x < threshold ? "" : x = threshold;
   x > 0 ? "" : x = 0;
@@ -182,15 +203,14 @@ function guideX(x) {
   cnData = gdp[1].values[index];
   usData = gdp[2].values[index];
 
-  guide.setAttribute('x1', x + "%");
-  guide.setAttribute('x2', x + "%");
-
   yrDataEl.innerHTML = yrData;
   usDataEl.innerHTML = (usData/1000000000000).toFixed(2);
   cnDataEl.innerHTML = (cnData/1000000000000).toFixed(2);
 
-  tooltip.style.left = x < 85 ? x + "%" : `calc(${x}% - ${tooltip.offsetWidth}px)`;
-  tooltip.style.top =  x < 70 ?  0 :  `calc(100% - ${tooltip.offsetHeight}px)`;
+  guide.style.transform = 'translateX(' + x + "%)";
+
+  tooltip.style.left = x < 64 ? x + "%" : `calc(${x}% - ${tooltip.offsetWidth}px)`;
+  tooltip.style.top =  x < 64 ?  0 :  `calc(100% - ${tooltip.offsetHeight}px)`;
 }
 
 function stickify(atStart) {
@@ -200,4 +220,8 @@ function stickify(atStart) {
   footerSticky.classList.toggle('sticky-footer');
 
   isSticky = !isSticky;
+}
+
+function yearToX(year) {
+  return (100*(year-1991)/(nYears-1)).toFixed(1);
 }
