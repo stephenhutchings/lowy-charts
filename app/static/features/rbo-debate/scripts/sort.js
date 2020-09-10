@@ -61,16 +61,30 @@ function focus(el) {
     targets[0].style.top = tBlock + "px";
   }
 
-  if (targets.length) {                         // BRACKET POSITIONING
+  if (targets.length) {      // BRACKET POSITIONING
+
+    lhs ? bracket.classList.remove('bracket-left') : bracket.classList.remove('bracket-right');
+    lhs ? bracket.classList.add('bracket-right') : bracket.classList.add('bracket-left');
     bracket.style.top = (vw <= breakpoint && lhs) ? tBlock+hSum-1.5*bpOffset+"px" : tBlock + "px";
     bracket.style.height = (vw > breakpoint) ? hSum-10 + "px" : "25px";
     bracket.classList.remove('hide');
-    lhs ? bracket.classList.remove('bracket-left') : bracket.classList.remove('bracket-right');
-    lhs ? bracket.classList.add('bracket-right') : bracket.classList.add('bracket-left');
-    map.length==6 && lhs ? bracket.classList.add('bracket-right-all') : bracket.classList.remove('bracket-right-all');
-    map.length==6 && !lhs ? bracket.classList.add('bracket-left-all') : bracket.classList.remove('bracket-left-all');
+
+    if (map.length < 6) {
+      bracket.classList.remove('bracket-left-all');
+      bracket.classList.remove('bracket-right-all');
+    }
+    else {
+      lhs ? bracket.classList.add('bracket-right-all') : bracket.classList.remove('bracket-right-all');
+      !lhs ? bracket.classList.add('bracket-left-all') : bracket.classList.remove('bracket-left-all');
+      if (vw > breakpoint) {                    // WHEN RESPONDS TO ALL ARTICLES
+        lhs ? bracket.classList.remove('bracket-right') : bracket.classList.remove('bracket-left');
+        bracket.style.top = (vw <= breakpoint && lhs) ? tBlock+hSum-1.5*bpOffset+"px" : t - 10 + "px";
+        bracket.style.height = (vw > breakpoint) ? 0 : "25px";
+      }
+    }
   }
 
+  bracket.classList.remove('hide');
   isFocused = true;
 }
 

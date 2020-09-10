@@ -512,7 +512,6 @@ footer
 
 .bracket
   position: absolute
-  min-height: 20px
   width: 20px
   border: 1px solid $red
   transition: opacity ease-out 400ms
@@ -532,10 +531,13 @@ footer
 
     &:before
       content: 'Responded to by'
-      left: calc(40px)
+      left: 40px
 
     &-all:before
       content: 'Mentioned in all response articles'
+      top: -0.67em
+      right: 40px
+
 
   &-right
     border-left: none
@@ -546,6 +548,8 @@ footer
 
     &-all:before
       content: 'Responds to all articles'
+      top: -0.67em
+      left: 40px
 
 
 // large
@@ -584,11 +588,16 @@ footer
     &-left
       border-right: 1px solid
       border-bottom: none
+      &-all:before
+        top: auto
     &-right
       border-left: 1px solid
       border-top: none
+      &-all:before
+        top: auto
     &-right:before
       bottom: calc(-100% - 10px)
+
 
 
 // medium
