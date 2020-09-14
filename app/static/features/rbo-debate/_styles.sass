@@ -34,14 +34,27 @@ $header-height: 55px
     opacity: 0
   100%
     opacity: 1
-
+@keyframes slide-up
+  0%
+    opacity: 0
+    margin-top: 20px
+  100%
+    opacity: 1
+    margin-top: 0
+@-webkit-keyframes slide-up
+  0%
+    opacity: 0
+    transform: translateY(-20px)
+  100%
+    opacity: 1
+    transform: translateY(0)
 
 // Root settings
 
 html
   overflow: visible
 
-body
+body.embed-false
   font-family: Sans
   font-size: 22px
   line-height: 1.25
@@ -74,6 +87,8 @@ header
   padding: 0 2em
   background: white
   box-shadow: 0px 4px 4px #0004
+  transition: opacity 0.5s
+  opacity: 0
 
 a
   text-decoration: none
@@ -292,6 +307,19 @@ cite
 .icon-social-facebook
   padding: 0 10px
 
+.lazy-line-painter
+  position: relative
+  height: 33vh
+  width: 100%
+  margin: auto
+  padding-top: 50px
+  margin-bottom: -33vh
+  svg
+    position: absolute
+    max-height: 100%
+  path
+    stroke: white
+    stroke-width: 0.75px
 
 // Article pages
 
@@ -451,6 +479,8 @@ footer
   display: none
 .inline-block
   display: inline-block
+.block
+  display: block
 .no-ptr-ev
   pointer-events: none
 .ptr
@@ -459,6 +489,8 @@ footer
   z-index: 1
 .z10
   z-index: 10
+.overflow-y-vis
+  overflow-y: visible!important
 .pos-abs
   position: absolute
 .ease-out
@@ -477,6 +509,8 @@ footer
   top: 0
 .left-0
   left: 0
+.flex-1
+  flex: 1 1 100%
 .col-1-3
   width: 33%
   flex-basis: 33%
@@ -495,10 +529,19 @@ footer
 .col-3-5
   width: 60%
   flex-basis: 60%
+.delay-2000
+  animation-delay: 2s!important
+.delay-homepage
+  animation-delay: 5.5s!important
 .fade-in
   animation: fade-in 0.5s 1 forwards
   -webkit-animation: fade-in 0.5s 1 forwards
-
+.fade-out
+  animation: fade-in 0.5s 1 reverse forwards
+  -webkit-animation: fade-in 0.5s 1 reverse forwards
+.slide-up
+  animation: slide-up 1s 1 .5s forwards
+  -webkit-animation: slide-up 1s 1 .5s forwards
 
 // Misc
 
@@ -629,6 +672,9 @@ footer
   .sm
     font-size: 16px
 
+  .landing
+    padding-top: 80px
+
   .article-landing
     height: 165vh
 
@@ -651,12 +697,22 @@ footer
     min-width: 0
 
   .landing
+
     h1, h2
       max-width: 90%
       margin-left: auto
       margin-right: auto
     p
       line-height: 1.4
+
+    h2
+      animation: slide-up 1s 1 5.5s forwards
+      -webkit-animation: slide-up 1s 1 5.5s forwards
+
+    .lazy-line-painter
+      svg
+        top: -180px
+
 
   footer
     .txt-justify

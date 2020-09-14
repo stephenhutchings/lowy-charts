@@ -5,6 +5,7 @@ var vw = window.innerWidth;
 
 var breakpoint = 768;
 var isFocused = false;
+var isHeader = false;
 
 
 // Setup
@@ -12,9 +13,15 @@ var isFocused = false;
 window.addEventListener('resize', resize);
 document.addEventListener('DOMContentLoaded', init);
 document.addEventListener('click', e => isFocused ? unfocus(e, this) : "" );
+document.addEventListener('scroll', scroll );
+
 
 function init() {
-  initAnimateSort();
+  window.scrollTop = 0;
+
+  scroll();
+  setTimeout( () => initAnimateSort(), 0);
+  setTimeout( () => document.querySelector('body').classList.add('overflow-y-vis'), 5500);
 }
 
 function resize() {
@@ -23,6 +30,10 @@ function resize() {
   spreadY([...document.querySelectorAll('.list-item')]);
 }
 
+function scroll() {
+  if (window.pageYOffset && !isHeader) { isHeader = !isHeader; document.querySelector('header').style.opacity = 1 }
+  else if (!window.pageYOffset && isHeader) { isHeader = !isHeader; document.querySelector('header').style.opacity = 0 }
+}
 
 // DOM Manipulation
 
