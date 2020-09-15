@@ -1,23 +1,23 @@
 extend /partials/layout
 
 block append config
-  - page.title = "‘New Malaysia’: Four key challenges in the near term"
-  - var events = data.getOne("static/charts/timeline-aus–india-partnership/events").events
+  - page.title = "Australia–India Strategic Partnership"
+  - var events = data.getOne("static/charts/aus–india-partnership/timeline/events").events
   - var years = _.pluck(events, "start")
 
 block page
 
   - n = years.length
-  - max = _.last(years)
-  - min = _.first(years)
-  - len = max - min + 10
+  - max = _.last(years) 
+  - min = _.first(years) - 4
+  - len = max - min + 4
 
   - vals = (0).toPrecision(len).split("").map( () => 1)
   - vals = vals.map( () => 1 / _.sum(vals) );
   - vals = vals.concat(vals).sort()
 
   - var p = function(i){return vals[i]}
-  - order = [[2,3,4,5,6,0,3,4,5,6,7,8,9,9,8,7,6,5,4,3,2,1,0,0,1,2,3,4,5,6,7,9,8,7,6,5,4,3,2,1]]
+  - order = [[0,2,4,6,8,0,2,0,2,0,0,1,3,4,5,6,7,8,9,9,8,7,6,5,4,3,2,1]]
 
 
   .wrapper
@@ -33,19 +33,19 @@ block page
           - j = j == "true" ? 21 : 0; m = 0;
           
           for e, i in list
-            - var k = (e.start - min), left = _.sum(vals.slice(0, k));
+            - var k = (e.start - min)
+            - var left = _.sum(vals.slice(0, k));
             - var dir = Math.floor(i / 10) % 2 == 0 ? -1 : 1
-            - console.log(i,j,k)
 
             .event.js-year(
               tabindex="0"
               style={left: (100 * left) + "%"}
               class=[
                 (j + i) == 0 ? "active" : "",
-                _.includes([4,13,14,15,22,26,27,31], i) ? "left" : "right",
+                _.includes([19,20,21,22,23,24,25,26,27], i) ? "left" : "right",
                 !e.highlight ? "top" : "bottom",
                 `item-${order[j > 0 ? 1 : 0][i]}`,
-                _.includes([1,2,12,13,14,15,22,26,27,31], i+j) ? "spaced" : "middle",
+                _.includes([4,12,13,18,19,26,27], i+j) ? "spaced" : "middle",
                 e.highlight ? "highlight" : ""
               ].join(" ")
               data-i=_.sortBy(events, "start").indexOf(e)
