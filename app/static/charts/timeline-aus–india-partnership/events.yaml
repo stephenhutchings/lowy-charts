@@ -1,0 +1,218 @@
+events:
+  - start: 1944
+    text: >
+      Australia appoints first high
+      <br>commissioner to India.
+
+  - start: 1945
+    text: >
+      India appoints first high
+      <br>commissioner to Australia.
+
+  - start: 1946
+    text: >
+      India’s first prime minister
+      <br>Jawaharlal Nehru articulates
+      <br>policy of non-alignment.
+
+  - start: 1947
+    text: >
+      India gains independence
+      <br>from Great Britain.
+
+  - start: 1950
+    highlight: false
+    text: >
+      An Australian among first
+      <br>military officers to be
+      <br>trained at India’s Defence
+      <br>Services Staff College.
+
+  - start: 1962
+    text: >
+      Sino–Indian border dispute
+      <br>erupts into the 1962
+      <br>border war.
+
+  - start: 1963
+    highlight: false
+    text: >
+      Australia, India, the United
+      <br>States, and the United Kingdom
+      <br>take part in joint air force
+      <br>exercises (‘shiksha’).
+
+  - start: 1973
+    highlight: false
+    text: >
+      Whitlam government legislation
+      <br>dismantles final remnants of
+      <br>White Australia Policy.
+
+  - start: 1974
+    text: >
+      India conducts first nuclear test,
+      <br>‘Peaceful Nuclear Explosion’,
+      <br><em>Pokhran-I.</em>
+
+  - start: 1986
+    highlight: false
+    text: >
+      Prime Minister Rajiv Gandhi visits
+      <br>Australia, the last prime
+      <br>ministerial visit for 28 years.
+
+  - start: 1996
+    text: >
+      Foreign Minister Alexander Downer
+      <br>delivers ‘New Horizons’ speech
+      <br>outlining economic prospects of
+      <br>bilateral relationship.
+
+  - start: 1998
+    text: >
+      India conducts <em>Pokhran-II</em> nuclear tests.
+
+  - start: 2000
+    text: >
+      <b>May</b><br>
+      Australia-India defence talks.
+      <br><b>July</b>
+      <br>Prime Minister John Howard
+      <br>visits India, the first prime
+      <br>ministerial visit since 1989.
+
+  - start: 2001
+    text: >
+      <b>August</b>
+      <br>Inaugural India–Australia
+      <br>Strategic Dialogue.
+
+  - start: 2004
+    text: >
+      Australia-India military
+      <br>cooperation on humanitarian
+      <br>assistance and relief operations
+      <br>following the Indian Ocean tsunami.
+
+  - start: 2006
+    highlight: false
+    text: >
+      <b>March</b>
+      <br>Australia-India Memorandum
+      <br>of Understanding on Defence
+      <br>Cooperation signed.
+
+  - start: 2007
+    text: >
+      First Quad dialogue involving
+      <br>Australia, India, the United
+      <br>States, and Japan.
+      <br><br><b>September</b>
+      <br>Australia participates in Malabar
+      <br>naval exercise in Bay of Bengal
+      <br>with the United States, India,
+      <br>Japan, and Singapore.
+
+  - start: 2008
+    text: >
+      Australia suspends
+      <br>participation in the Quad.
+
+
+  - start: 2009
+    highlight: false
+    text: >
+      <b>May</b>
+      <br>Indian students in Melbourne
+      <br>protest against racially-
+      <br>motivated attacks.
+      <br><br><b>November</b>
+      <br>Prime Minister Kevin Rudd visits India.
+
+  - start: 2011
+    highlight: false
+    text: >
+      Australia and India commence
+      <br>negotiations for a Comprehensive
+      <br>Economic Cooperation Agreement.
+      <br><br><b>December</b>
+      <br>Gillard government reverses
+      <br>former policy and agrees to
+      <br>export uranium to India.
+
+  - start: 2013
+    text: >
+      A K Antony makes first ever
+      <br>official visit to Australia
+      <br>by an Indian defence minister.
+      <br>
+      <br>India–China border dispute
+      <br>results in military stand-offs
+      <br>(and again in 2014, 2017, & 2020).
+
+
+  - start: 2014
+    text: >
+      <b>May</b>
+      <br>Narendra Modi elected
+      <br>prime minister of India.
+      <br><br><b>November</b>
+      <br>Framework for Security
+      <br>Cooperation signed between
+      <br>Australia and India.
+      <br>
+      <br>Indian PM Narendra Modi
+      <br>visits Australia — first
+      <br>Indian PM to visit in 28 years.
+
+  - start: 2015
+    text: >
+      <b>September</b>
+      <br>First major Australia–India
+      <br>bilateral naval exercise,
+      <br>AUSINDEX, Bay of Bengal.
+
+  - start: 2016
+    text: >
+      AUSTRA HIND Special Forces
+      <br>Australia–India bilateral
+      <br>military exercise.
+
+  - start: 2017
+    text: >
+      <b>November</b>: First meeting
+      <br>of revived Quad, Manila.
+
+  - start: 2018
+    highlight: false
+    text: >
+      <b>July</b>
+      <br>Indian Air Force’s
+      <br>first involvement as a
+      <br>full participant in Pitch
+      <br>Black exercise in Darwin.
+      <br><br>
+      <br>Release of India Economic
+      <br>Strategy 2035 by former DFAT
+      <br>Secretary Peter Varghese.
+  -
+    start: 2019
+    highlight: false
+    text: >
+      <b>July</b>: Prime Ministers
+      <br>Morrison and Modi meet
+      <br>at G20 Summit in Osaka.
+  -
+    start: 2020
+    highlight: false
+    text: >
+      <b>June</b>: Prime Ministers
+      <br>Morrison and Modi announce
+      <br>Comprehensive Strategic Partnership
+      <br>on maritime cooperation and cyber
+      <br>technology, Mutual Logistics
+      <br>Support Agreement for protection
+      <br>of classified information, and
+      <br>establishment of ministerial
+      <br>2+2 dialogue.
