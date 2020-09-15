@@ -21,7 +21,6 @@ function init() {
 
   scroll();
   setTimeout( () => initAnimateSort(), 0);
-  setTimeout( () => document.querySelector('body').classList.add('overflow-y-vis'), 5750);
 }
 
 function resize() {
