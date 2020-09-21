@@ -18,9 +18,9 @@ document.addEventListener('scroll', scroll );
 
 function init() {
   window.scrollTop = 0;
-
   scroll();
   setTimeout( () => initAnimateSort(), 0);
+  setModal();
 }
 
 function resize() {

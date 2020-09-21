@@ -15,18 +15,23 @@ block page
   .container
     
     include partials/mixins/readmore
+    include partials/mixins/infographic
     include partials/header
 
     .landing.mx-auto.txt-ff
-      h1.title.txt-cond.txt-center.slide-up.hide.block China and the Rules-Based Order
-      h2.txt-semi.mx-auto.txt-center.fw-4.slide-up.hide.block Lowy Debate: seven experts debate China’s approach to the rules-based international order.
+      h1.title.txt-cond.txt-center.slide-up.hide.block 
+        span China 
+        span and&nbsp;the 
+        span Rules&#8209;Based Order
+      h2.txt-semi.mx-auto.txt-center.fw-4.slide-up.hide.block Seven experts debate China’s approach to the rules&#8209;based international order
       //include partials/lineart
       .pv-sm.article-w.mx-auto
-        p.hide.slide-up.delay-homepage.ease-out China’s growing economic and military power has prompted urgent questions about its approach to the rules-based international order. On the one hand, China could be expected to have a stake in maintaining the existing order which, after all, has provided the stability necessary for the country’s rise. On the other hand, it cannot be assumed that China supports all elements of the current order, which Beijing argues it had no hand in creating.&ensp;
+        p.hide.slide-up.delay-homepage.ease-out China’s growing economic and military power has prompted urgent questions about its approach to the rules-based international order, which can be loosely defined as a shared commitment to conduct international affairs in accordance with laws, principles and practices embodied in institutions such as the <cite data-graph="un-leadership">United Nations</cite> and its <cite data-graph="peacekeeping-participation">peacekeeping missions</cite>, the World Bank and the International Monetary Fund. On the one hand, China could be expected to have a stake in maintaining the existing order which, after all, has provided the stability necessary for the country’s rise. On the other hand, it cannot be assumed that China supports all elements of the current order, which Beijing claims it had <cite data-graph="prc-organisations">no hand in creating</cite>.&ensp;
           +readmore('Read more')
         #read-more.ease-out.max-h-0
-          p Key components of the rules-based order were established by the United States as the dominant power after the Second World War. Hopes that China would peacefully integrate into the existing order were boosted when China acceded to the World Trade Organization in 2001. Instead, a much stronger China, led by Xi Jinping since 2013, has shown increased willingness to disregard international norms, most notably in the South China Sea.
-          p To interpret and explain these issues, we asked a select group of experts about Beijing’s goals for the international order and the changes it seeks. Recognising that China’s relationship with the rules-based order is closely tied to its relationship with the United States, we also asked our experts what compromises China might agree to, and under what circumstances a US–China accommodation on the future of the order could be reached.&ensp;
+          p Key components of the rules-based order were established by the United States as the dominant power after the Second World War. Hopes that China would peacefully integrate into the existing order were boosted when China acceded to the <cite data-graph="wto">World Trade Organization</cite> in 2001. But a much stronger China, led by President Xi Jinping since 2013, has shown increased willingness to disregard international norms, most notably in the South China Sea. 
+          p To interpret and explain these issues, we asked a select group of experts about Beijing’s goals for the international order and the changes it seeks. Recognising that China’s approach to the rules-based order is closely tied to its relationship with the United States, we also asked our experts what compromises China might agree to.
+          p This Lowy Institute feature presents the experts’ responses to these questions and their reactions to one another’s arguments.&ensp;
             +readmore('Collapse', true)
 
     .list.bxsh-yel.bg-ff.mx-auto.hide.slide-up.delay-homepage
@@ -60,11 +65,17 @@ block page
                 svg.ease-out(width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg")
                   path.ease-out(fill="#B90000" d="M6.08313 0.293243C5.70517 0.684233 5.70517 1.31622 6.08313 1.70721L8.29966 4.00015H0.966651C0.433059 4.00015 0 4.44814 0 5.00012C0 5.55211 0.433059 6.0001 0.966651 6.0001H8.29966L6.08313 8.29304C5.70517 8.68403 5.70517 9.31602 6.08313 9.70701C6.27163 9.902 6.51909 10 6.76655 10C7.01402 10 7.26148 9.902 7.44998 9.70701L12 5.00012L7.44998 0.293243C7.07202 -0.0977476 6.46109 -0.0977476 6.08313 0.293243Z")
 
+    +infographic(2)
+    +infographic(6)
+    +infographic(7)
+    +infographic(1)
+
 block append css
   style
     include:sass _styles.sass
 
 block append customScripts
   script(src="./scripts/lazy-line-painter-1.9.6.min.js")
+  script(src="./scripts/modal.js")
   script(src="./scripts/base.js")
   script(src="./scripts/sort.js")

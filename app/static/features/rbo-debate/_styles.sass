@@ -122,7 +122,8 @@ p small
   color: $mute
 
 cite
-  border-bottom: 1px dashed
+  border-bottom: 1px dashed #282200
+  color: #282200
   background: $yellow
   cursor: pointer
   font-style: normal
@@ -209,6 +210,18 @@ cite
   max-width: 875px
   padding-top: 160px
   margin-bottom: 20px
+
+  cite
+    border-bottom: 1.5px dotted $yellow
+    color: white
+    background: none
+    &:hover
+      color: #282200
+      background: lighten($yellow,8)
+
+
+  .article-w
+    max-width: 690px
 
   h2
     font-size: 32px
@@ -498,6 +511,8 @@ footer
   list-style-type: none
 .max-h-0
   max-height: 0
+.max-w-none
+  max-width: none
 .lg-max-h
   max-height: 1000px
 .br-sm
@@ -697,16 +712,26 @@ footer
 
   .landing
 
+    h1
+      font-size: 65px
+      span
+        &:first-child
+          display: block
+          line-height: 0.5em
+        &:nth-child(2)
+          font-size: 34px
+          margin: 2.5em
+          line-height: 0
+
+    h2
+      font-size: 30px
+
     h1, h2
       max-width: 90%
       margin-left: auto
       margin-right: auto
     p
       line-height: 1.4
-
-    h2
-      animation: slide-up 1s 1 5.75s forwards
-      -webkit-animation: slide-up 1s 1 5.75s forwards
 
     .lazy-line-painter
       svg
