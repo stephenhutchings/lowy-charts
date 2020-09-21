@@ -11,12 +11,12 @@ block append config
   - page.feature = data.getOne("static/features/rbo-debate/data")
 
 block page
-
+  
+  include partials/header
+  include partials/mixins/readmore
+  include partials/mixins/infographic
+  
   .container.relative
-    
-    include partials/mixins/readmore
-    include partials/mixins/infographic
-    include partials/header
 
     .landing.mx-auto.txt-ff
       h1.title.txt-cond.txt-center.slide-up.hide.block 
