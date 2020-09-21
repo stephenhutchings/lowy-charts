@@ -179,9 +179,8 @@ function guideX(x, isMouse) {
   if (!isMouse) {
     guide.style.transition = "transform 0.4s";
     tooltip.style.transition = "top 0.4s, left 0.4s";
-    if ( x < 10 )      { yr = 1991; x=yearToX(yr); }
-    else if ( x < 20 ) { yr = 1992; x=yearToX(yr); }
-    else if ( x < 41 ) { yr = 1999; x=yearToX(yr); }
+    if ( x < 20 )      { yr = 1991; x=yearToX(yr); }
+    else if ( x < 39 ) { yr = 1999; x=yearToX(yr); }
     else if ( x < 60 ) { yr = 2001; x=yearToX(yr); }
     else if ( x < 71 ) { yr = 2003; x=yearToX(yr); }
     else if ( x < 74 ) { yr = 2006; x=yearToX(yr); }
