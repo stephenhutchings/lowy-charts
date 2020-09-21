@@ -88,7 +88,7 @@ function focus(el) {
   isFocused = true;
 }
 
-function unfocus (e, el) {
+function unfocus(e, el) {
 
   let focusedDiv = document.querySelector('.focused');
 
@@ -136,7 +136,7 @@ function spreadY(a) {
   let i = y = 0;
   let n = a.length;
   let itemMargin = 0;
-  let listPaddingBottom = 150;
+  let listPaddingBottom = vw > breakpoint ? 225 : 375;
   let list = document.querySelector('.list');
   let thead = document.querySelectorAll('.label')[1]; // Argument table label
 
@@ -160,9 +160,10 @@ function spreadY(a) {
 
 function checkBlockBounds(t, h) {
   let list = document.querySelector('.list');
+  let creditsHeight = document.querySelector('#credits').offsetHeight;
   let listItemsOffset = (list.querySelector('.flex').offsetTop + list.querySelector('.flex').offsetHeight) - list.offsetTop;
   let listHeight = list.offsetHeight - listItemsOffset;
-  let bottomClearance = listHeight - t - h;
+  let bottomClearance = listHeight - t - h - creditsHeight;
 
   t < 0 ? t = 0 : "";
   bottomClearance < 0 ? t = t + bottomClearance : "";

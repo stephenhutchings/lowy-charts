@@ -339,6 +339,10 @@ cite, .cite
     stroke: white
     stroke-width: 0.75px
 
+#credits
+  border-top: 2px solid $yellow
+  background: #d01010
+
 // Article pages
 
 .btn-back
@@ -517,6 +521,8 @@ footer
   z-index: 20
 .overflow-y-vis
   overflow-y: visible!important
+.relative
+  position: relative
 .pos-abs
   position: absolute
 .ease-out
@@ -537,6 +543,8 @@ footer
   top: 0
 .left-0
   left: 0
+.bottom-0
+  bottom: 0
 .flex-1
   flex: 1 1 100%
 .col-1-3
@@ -551,6 +559,9 @@ footer
 .col-3-4
   width: 75%
   flex-basis: 75%
+.col-1-5
+  width: 20%
+  flex-basis: 20%
 .col-2-5
   width: 40%
   flex-basis: 40%
@@ -669,7 +680,8 @@ footer
     &-right:before
       bottom: calc(-100% - 10px)
 
-
+  #credits .flex
+    flex-direction: column
 
 // medium
 @media screen and (max-width: 768px), screen and (max-height: 700px)
@@ -735,7 +747,7 @@ footer
       width: 90%
       margin-left: auto
       margin-right: auto
-      
+
     h1
       font-size: 65px
       span
@@ -761,6 +773,16 @@ footer
       svg
         top: -180px
 
+
+  #credits
+    flex-direction: column
+    .col-2-5,
+    .col-3-5,
+      width: 100%
+      flex-basis: 100%
+      margin: 1em auto
+    .flex
+      flex-direction: row
 
   footer
     .txt-justify
