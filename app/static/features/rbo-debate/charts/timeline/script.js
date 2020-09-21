@@ -2,8 +2,6 @@ let gdp = [
   {
     "title": "Years",
     "values": [
-      1989,
-      1990,
       1991,
       1992,
       1993,
@@ -37,8 +35,6 @@ let gdp = [
   {
     "title": "China",
     "values": [
-      461066000000,
-      398623000000,
       415604000000,
       495671000000,
       623054000000,
@@ -72,8 +68,6 @@ let gdp = [
   {
     "title": "USA",
     "values": [
-      5641600000000,
-      5963130000000,
       6158130000000,
       6520330000000,
       6858550000000,
@@ -106,49 +100,128 @@ let gdp = [
   }
 ];
 
-let scrollPosition, usData, cnData, yrData;
-let index = 0, nYears = 31, threshold = 100*29.99/nYears;
-let guide = document.querySelector('#guide');
-let tooltip = document.querySelector('#tooltip');
-let yrDataEl = tooltip.querySelector('.tt-year');
-let usDataEl = tooltip.querySelector('.usa span');
-let cnDataEl = tooltip.querySelector('.chn span');
-let scrollWindow = document.querySelector('.scroll');
-let graphWindow = document.querySelector('.sparkline');
-let timelineHeight = document.querySelector('.timeline-wrap');
-let heightOffset = timelineHeight.offsetHeight - scrollWindow.offsetHeight;
+// Globals
+let wrap, headerSlot, headerSticky, footerSticky, footerPlotArea,
+    timeline, guide, tooltip, yrDataEl, usDataEl, cnDataEl;
 
-scrollWindow.addEventListener('scroll', onscroll);
-graphWindow.addEventListener('mousemove', onmouse);
+// Dimensions
+let vh, headerH, footerH, stickyStart, stickyEnd;
+let x, usData, cnData, yrData;
+let navH = 55, isSticky = false,
+    index = 0, nYears = 28,
+    threshold = 100*27.99/nYears;
+
+document.addEventListener('DOMContentLoaded', function() {setTimeout(init, 400)} );
+
+function init() {
+  setGlobals();
+  setDimensions();
+  window.addEventListener('scroll', onscroll);
+  window.addEventListener('resize', setDimensions);
+  footerPlotArea.addEventListener('mousemove', onmouse);
+}
+
+// Set global variables
+function setGlobals() {
+
+  // Elements
+  wrap = document.querySelector('.embed-wrap');
+  headerSlot = wrap.querySelector('.title-placeholder');
+  headerSticky = wrap.querySelector('.title-block');
+  footerSticky = wrap.querySelector('#spark-wrap');
+  footerPlotArea = wrap.querySelector('.sparkline');
+  timeline = wrap.querySelector('.scroll');
+
+  // Tooltip
+  guide = wrap.querySelector('#guide');
+  tooltip = wrap.querySelector('#tooltip');
+  yrDataEl = tooltip.querySelector('.tt-year');
+  usDataEl = tooltip.querySelector('.usa span');
+  cnDataEl = tooltip.querySelector('.chn span');
+
+}
+
+// Dimensions
+function setDimensions() {
+  vh = window.innerHeight;
+  stickyStart = wrap.offsetTop - navH;
+  stickyEnd = stickyStart + wrap.offsetHeight + navH;
+  headerH = headerSticky.offsetHeight;
+  footerH = footerSticky.offsetHeight;
+  headerSlot.style.height = headerH + 'px';
+}
 
 function onscroll() {
-  scrollPosition = 100*(scrollWindow.scrollTop / heightOffset);
-  scrollPosition < threshold ? "" : scrollPosition = threshold;
-  guideX(scrollPosition);
+  stickyStart = wrap.offsetTop - navH;
+  let atStart = window.pageYOffset >= stickyStart;
+  let atEnd = window.pageYOffset + vh > stickyEnd;
+  let shouldSticky = atStart && !atEnd;
+
+  (!isSticky && shouldSticky || isSticky && !shouldSticky) ? stickify(atStart) : "";
+  if (atStart) {
+    x = 100 * ( (window.pageYOffset - stickyStart) / (stickyEnd - stickyStart - vh) );
+    guideX(x);
+  }
+
 }
 
 function onmouse(e) {
-  mousePosition = 100*(e.clientX - graphWindow.offsetLeft) / graphWindow.offsetWidth;
-  mousePosition < threshold ? "" : mousePosition = threshold;
-  mousePosition > 0 ? "" : mousePosition = 0;
-  guideX(mousePosition);
+  let o = isSticky ? footerPlotArea.offsetLeft + footerSticky.offsetLeft : footerPlotArea.offsetLeft;
+  x = 100 * (e.clientX - o) / footerPlotArea.offsetWidth;
+  guideX(x, true);
 }
 
-function guideX(x) {
+function guideX(x, isMouse) {
 
+  x < threshold ? "" : x = threshold;
+  x > 0 ? "" : x = 0;
+
+  if (!isMouse) {
+    guide.style.transition = "transform 0.4s";
+    tooltip.style.transition = "top 0.4s, left 0.4s";
+    if ( x < 10 )      { yr = 1991; x=yearToX(yr); }
+    else if ( x < 20 ) { yr = 1992; x=yearToX(yr); }
+    else if ( x < 41 ) { yr = 1999; x=yearToX(yr); }
+    else if ( x < 60 ) { yr = 2001; x=yearToX(yr); }
+    else if ( x < 71 ) { yr = 2003; x=yearToX(yr); }
+    else if ( x < 74 ) { yr = 2006; x=yearToX(yr); }
+    else if ( x < 92 ) { yr = 2008; x=yearToX(yr); }
+    else if ( x < 96 ) { yr = 2014; x=yearToX(yr); }
+    else if ( x < 98 ) { yr = 2017; x=yearToX(yr); }
+    else               { yr = 2018; x=yearToX(yr); }
+  }
+  else {
+    guide.style.transition = "transform 0s";
+    tooltip.style.transition = "top 0s, left 0s";
+  }
+
+  x < threshold ? "" : x = threshold;
+  x > 0 ? "" : x = 0;
   index = Math.floor(nYears*x/100);
 
   yrData = gdp[0].values[index];
   cnData = gdp[1].values[index];
   usData = gdp[2].values[index];
 
-  guide.setAttribute('x1', x + "%");
-  guide.setAttribute('x2', x + "%");
-
   yrDataEl.innerHTML = yrData;
   usDataEl.innerHTML = (usData/1000000000000).toFixed(2);
   cnDataEl.innerHTML = (cnData/1000000000000).toFixed(2);
 
-  tooltip.style.left = x < 85 ? x + "%" : `calc(${x}% - ${tooltip.offsetWidth}px)`;
-  tooltip.style.top =  x < 70 ?  0 :  `calc(100% - ${tooltip.offsetHeight}px)`;
+  guide.style.transform = 'translateX(' + x + "%)";
+
+  tooltip.style.left = x < 64 ? x + "%" : `calc(${x}% - ${tooltip.offsetWidth}px)`;
+  tooltip.style.top =  x < 64 ?  0 :  `calc(100% - ${tooltip.offsetHeight}px)`;
+}
+
+function stickify(atStart) {
+
+  headerSticky.classList.toggle('fixed');
+  footerSticky.classList.toggle('fixed');
+  footerSticky.classList.toggle('sticky-footer');
+
+  isSticky = !isSticky;
+}
+
+function yearToX(year) {
+  return (100*(year-1991)/(nYears-1)).toFixed(1);
 }
