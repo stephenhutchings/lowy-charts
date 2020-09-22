@@ -3,7 +3,7 @@
 footer.mx-auto.article-w.txt-center.pv-lg
   
   .md
-    a.bg-red.txt-ff.p-sm.br-sm.fw-4(href="/features/rbo-debate")
+    a.bg-red.txt-ff.p-sm.br-sm.fw-4(href="/features/china-rules-based-order")
       span.icon.icon-left-arrow
       | &ensp;Back to debates menu
       
@@ -16,10 +16,10 @@ footer.mx-auto.article-w.txt-center.pv-lg
       each i in page.attributes.map
         .list-item.ease-out
           h4.xs.txt-tu.txt-mute.txt-left= articles[i-1].author
-          a.thumb.br-sm(href=`/features/rbo-debate/articles/${articles[i-1].href}`)
+          a.thumb.br-sm(href=`/features/china-rules-based-order/articles/${articles[i-1].href}`)
             img(height="150" width="100%" src=`../../img/${articles[i-1].img}`)
           h2.md.txt-semi.txt-left
-            a.txt-bare.ease-out(href=`/features/rbo-debate/articles/${articles[i-1].href}`)!= articles[i-1].title
+            a.txt-bare.ease-out(href=`/features/china-rules-based-order/articles/${articles[i-1].href}`)!= articles[i-1].title
           p.sm.txt-semi.txt-justify!= "&ldquo;" + articles[i-1].quote + "&rdquo;"
         
   else
@@ -31,8 +31,8 @@ footer.mx-auto.article-w.txt-center.pv-lg
       each i in page.attributes.map
         .list-item.ease-out
           h4.xs.txt-tu.txt-mute.txt-left= responses[i-8].author
-          a.thumb.br-sm(href=`/features/rbo-debate/responses/${responses[i-8].href}`)
+          a.thumb.br-sm(href=`/features/china-rules-based-order/responses/${responses[i-8].href}`)
             img(height="150" width="100%" src=`../../img/${responses[i-8].img}`)
           h2.md.txt-semi.txt-left
-            a.txt-bare.ease-out(href=`/features/rbo-debate/responses/${responses[i-8].href}`)!= responses[i-8].title
+            a.txt-bare.ease-out(href=`/features/china-rules-based-order/responses/${responses[i-8].href}`)!= responses[i-8].title
           p.sm.txt-semi.txt-justify!= "&ldquo;" + responses[i-8].quote + "&rdquo;"

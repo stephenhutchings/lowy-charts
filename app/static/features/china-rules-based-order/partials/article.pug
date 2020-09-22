@@ -6,23 +6,23 @@ extend /partials/layout
 
 block append config
   - page.includeFonts = false
-  - page.image = "http://interactives.lowyinstitute.org/features/rbo-debate/img/thumbnail.jpg"
+  - page.image = "http://interactives.lowyinstitute.org/features/china-rules-based-order/img/thumbnail.jpg"
   - page.article = __.filepath.match(/([^\/]+)\/index.pug$/)[1]
-  - page.feature = data.getOne("static/features/rbo-debate/data")
+  - page.feature = data.getOne("static/features/china-rules-based-order/data")
   - page.title = page.feature.title
   
 
 block prepend head
-  - page.url = "https://interactives.lowyinstitute.org/features/rbo-debate/"
+  - page.url = "https://interactives.lowyinstitute.org/features/china-rules-based-order"
   - page.url += "/" + page.article
-  - page.metaTitle = `${page.attributes.title} - RBO Debates – Lowy Institute`
+  - page.metaTitle = `${page.attributes.title} - China Debate – Lowy Institute`
 
 block page
 
   include mixins/infographic
   include header
 
-  a.btn-back.z20.pos-abs.m-md.txt-ff.top-0.left-0.icon.icon-left-arrow.txt-tu.sm.fw-5.ease-out(href="/features/rbo-debate/") &ensp;
+  a.btn-back.z20.pos-abs.m-md.txt-ff.top-0.left-0.icon.icon-left-arrow.txt-tu.sm.fw-5.ease-out(href="/features/china-rules-based-order/") &ensp;
     span debates menu
 
   .article-landing.flex-cv
