@@ -346,6 +346,10 @@ cite, .cite
 #credits
   border-top: 2px solid $yellow
   background: #c91010
+  width: 100%
+
+  > .flex
+    max-width: 1200px
 
 // Article pages
 
@@ -684,8 +688,17 @@ footer
     &-right:before
       bottom: calc(-100% - 10px)
 
-  #credits .flex
+  #credits > .flex
     flex-direction: column
+
+  #credits .flex
+    .col-2-5,
+    .col-3-5,
+      width: 100%
+      flex-basis: 100%
+      margin: 1em auto
+    .flex
+      flex-direction: row
 
 // medium
 @media screen and (max-width: 768px), screen and (max-height: 700px)
@@ -779,17 +792,6 @@ footer
     .lazy-line-painter
       svg
         top: -180px
-
-
-  #credits
-    flex-direction: column
-    .col-2-5,
-    .col-3-5,
-      width: 100%
-      flex-basis: 100%
-      margin: 1em auto
-    .flex
-      flex-direction: row
 
   footer
     .txt-justify
