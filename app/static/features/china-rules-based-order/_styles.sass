@@ -92,7 +92,7 @@ header
 
 a
   text-decoration: none
-  transition: 400ms ease-in-out
+  transition: color 400ms ease-in-out, background 400ms ease-in-out, box-shadow 400ms ease-in-out
   color: $dark
   &:hover
     color: $red
@@ -214,7 +214,7 @@ cite, .cite
 
 .landing
   max-width: 875px
-  padding-top: 160px
+  padding-top: 130px
   margin-bottom: 20px
 
   cite
@@ -225,6 +225,9 @@ cite, .cite
       color: #282200
       background: lighten($yellow,8)
 
+  hr
+    border-bottom: 0.5px solid white
+    margin: 36px auto 37px
 
   .article-w
     max-width: 690px
@@ -238,6 +241,7 @@ cite, .cite
     max-width: 700px
     margin-left: auto
     margin-right: auto
+    line-height: 1.35
 
   #read-more
     overflow: hidden
@@ -571,7 +575,7 @@ footer
 .delay-2000
   animation-delay: 2s!important
 .delay-homepage
-  animation-delay: .65s!important
+  animation-delay: 1.2s!important
 .fade-in
   animation: fade-in 0.5s 1 forwards
   -webkit-animation: fade-in 0.5s 1 forwards
