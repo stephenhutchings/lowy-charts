@@ -127,6 +127,7 @@ function setGlobals() {
   // Elements
   wrap = document.querySelector('.embed-wrap');
   headerSlot = wrap.querySelector('.title-placeholder');
+  chartTitle = wrap.querySelector('.chart-title');
   headerSticky = wrap.querySelector('.title-block');
   footerSticky = wrap.querySelector('#spark-wrap');
   footerPlotArea = wrap.querySelector('.sparkline');
@@ -214,6 +215,7 @@ function guideX(x, isMouse) {
 
 function stickify(atStart) {
 
+  chartTitle.style.opacity = chartTitle.style.opacity==1 ? 0 : 1;
   headerSticky.classList.toggle('fixed');
   footerSticky.classList.toggle('fixed');
   footerSticky.classList.toggle('sticky-footer');

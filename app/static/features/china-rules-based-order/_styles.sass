@@ -118,7 +118,7 @@ blockquote
 
   p:before
     content: '“ '
-  p:after
+  //p:after
     content: ' ”'
 
 p small
@@ -197,6 +197,8 @@ cite, .cite
 .xs
   font-size: 14px
 
+.fw-3
+  font-weight: 300
 .fw-4
   font-weight: 400
 .fw-5
@@ -230,7 +232,7 @@ cite, .cite
     margin: 36px auto 37px
 
   .article-w
-    max-width: 690px
+    max-width: 710px
 
   h2
     font-size: 32px
@@ -238,7 +240,7 @@ cite, .cite
     max-width: 700px
 
   p
-    max-width: 700px
+    max-width: 710px
     margin-left: auto
     margin-right: auto
     line-height: 1.35
@@ -347,6 +349,11 @@ cite, .cite
   border-top: 2px solid $yellow
   background: #c91010
   width: 100%
+
+  a
+    transition-duration: 300ms
+  a:hover
+    color: #fffd
 
   > .flex
     max-width: 1200px
@@ -788,10 +795,6 @@ footer
       margin-right: auto
     p
       line-height: 1.4
-
-    .lazy-line-painter
-      svg
-        top: -180px
 
   footer
     .txt-justify
