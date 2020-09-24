@@ -31,6 +31,87 @@
                 .event.txt-semi!= event.event
                 .impact.txt-semi.italic!= event.impact
 
+  #spark-wrap.bottom: .sparkline
+    - ln = chart.gdp[0].values.length
+    - minY = 1
+    - maxY = 22
+    - stepsX = 5
+    - stepsY = 3
+    - fx = (i) => (i) / (ln-1)
+    - fy = (y) => (y - minY) / (maxY-minY)
+    - toPercent = (n) => (n * 100).toFixed(2) + "%"  
+          
+    // Y AXIS
+    svg.chart-wrap(width="100%" height="100%")
+    
+      // Y-Axis labels
+      for n, i in new Array(stepsY+1)
+        - y = 1 - (i / (stepsY))
+        svg(y=toPercent(y))
+          text(text-anchor="end" transform="translate(-8 4)")
+            = "$" + (minY + (maxY-minY)*(i/stepsY)) + "T"
+
+      // X-Axis labels
+      for x, i in [1991, 2000, 2009, 2018]
+        svg.x-label(
+          x=toPercent(i/3)
+          y="100%"
+        )
+          text(
+            text-anchor="middle"
+            transform="translate(0 20)"
+          )= x
+          text(
+            text-anchor="middle"
+            transform="translate(0 9)"
+            fill="#ccc"
+          ) ❘
+
+      // SERIES LINES
+      svg.chart-body(
+        height="100%"
+        width="100%"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      )
+        for series, i in chart.gdp
+          if i
+            polyline(
+              fill="none"
+              stroke=(i==1 ? "#b90000" : "#002868")
+              stroke-width=1.5
+              vector-effect="non-scaling-stroke"
+              points=(series.values.map( (y, ix) => {
+                return y===null ? "" : [
+                  100 * fx(ix).toFixed(4),
+                  100 * fy(minY + maxY - y/1E+12).toFixed(4)
+                ].join(" ");
+              })).join(",")
+            )
+
+        // TOOLTIP LINE
+        svg(height="100%")
+          line#guide(
+            y1=0
+            y2="100%"
+            x1=0
+            x2=0
+            stroke="#000"
+            stroke-width=0.5
+            stroke-dasharray=3
+          )
+        
+      #tooltip
+        .tt-year 1989
+        .usa &ensp;USA:&nbsp;
+          span 5.64
+        .chn &ensp;China:&ensp;
+          span 0.46
+
+    .sparkline-title.txt-semi.txt-center.txt-tu
+      | US-China GDP by Market Exchange Rate (
+      a.txt-italic(href="https://www.imf.org/external/pubs/ft/weo/2019/02/weodata/index.aspx") IMF
+      | )
 
 // Script is appended in article template file    
     
@@ -53,19 +134,16 @@ block append css
           opacity: 0
         to
           opacity: 1
-      @keyframes slidedown
+      @keyframes slideup
         from
-          transform: translateY(-100%)
+          bottom: -100%
         to
-          transform: translateY(0)
-      @-webkit-keyframes slidedown
+          bottom: 0
+      @-webkit-keyframes slideup
         from
-          transform: translateY(-100%)
+          bottom: -100%
         to
-          transform: translateY(0)
-          
-      .slidedown
-        animation: slidedown 0.3s 1 forwards
+          bottom: 0
       
       .embed-wrap
         margin: 20px 0
@@ -103,6 +181,7 @@ block append css
         .scroll
           position: relative
           padding-right: 16px
+          border-bottom: 1px solid #ccc
       
         .scroll::-webkit-scrollbar
           width: 5px !important
