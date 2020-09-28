@@ -51,6 +51,43 @@
   color : $color-ff
   position: relative
   margin: 0 0 40px
+  .content
+    position: relative
+    cursor: pointer
+    &:after
+      content: '    '
+      position: absolute
+      right: 0
+      bottom: 0
+      padding:  0 0.5em
+      background: rgb(0,43,69)
+      background: linear-gradient(90deg, rgba(0,43,69,0) 0%, rgba(0,43,69,1) 75%, rgba(0,43,69,1) 100%)
+    .read-more
+      position: absolute
+      right: 0
+      bottom: -2em
+      font-weight: 600
+      transition: 300ms ease-out
+      pointer-events: all
+    &:hover .read-more
+      box-shadow: 0 1px 0 0 $color-qt
+      transform: translateY(-2px)
+    p
+      display: none
+    p:first-child
+      display: block
+      max-height: 4.25em
+      overflow: hidden
+  .content.open
+    cursor: default
+    &:after
+      display: none
+    .read-more
+      display: none
+    p
+      display: block
+    p:first-child
+      max-height: 99em
 
 .expert
   flex-direction: column
@@ -319,3 +356,7 @@
       height: 430px
     .image > img
       height: 500px
+
+  .commentary
+    .content p:first-child
+      max-height: 4.5em

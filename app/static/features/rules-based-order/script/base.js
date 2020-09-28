@@ -18,6 +18,7 @@ function onLoad() {
   createAnnotations();
   initContentsMenu();
   initSideMenu();
+  clickCommentary();
   setHistoryTimelines();
   togglePM(0, false);
 }

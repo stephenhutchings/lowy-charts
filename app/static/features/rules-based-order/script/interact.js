@@ -104,10 +104,16 @@ function initSideMenu() {
   });
 }
 
-// function resetWrapHeight(p, c) {
-//   let h = $(c).outerHeight(true);
-//   $(p).css('min-height', h+'px');
-// }
+function clickCommentary() {
+  let targets = document.querySelectorAll('.commentary .content p:first-child');
+  targets.forEach( t => {
+    let c = t.appendChild(document.createElement("div"));
+    c.classList.add('read-more');
+    c.innerHTML = vw < 770 ? 'Read more&ensp;<span style="font-size: 0.75em" class=" icon icon-right-arrow"></span>' : 'Read more';
+    t.addEventListener('click', () => t.parentElement.classList.add('open'));
+  });
+}
+
 
 function readMore() {
 
