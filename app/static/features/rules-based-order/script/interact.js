@@ -119,8 +119,7 @@ function readMore() {
 
   collapsed = !collapsed;
   let pv = 48;
-  let th = $('.intro-txt').outerHeight(true) + 5*pv;
-  let h = collapsed ? 0.9*vh : th;
+  let h = collapsed ? 0.9*vh : '999em';
   let html = collapsed ? 'Continue reading ...' : '<span class="txt-ml icon icon-upload"></span><br>Show less';
 
   $('.intro-wrap').animate({'max-height': h}, 400,"");

@@ -1,7 +1,7 @@
 
 - let intro = data.getOne("static/features/rules-based-order/partials/intro").intro[0]
 - let themes = data.getOne("static/features/rules-based-order/partials/intro").themes[0]
-- let governments = ["2007&mdash;2010 (Rudd Gov)", "2010&mdash;2013 (Gillard Gov)", "2013&mdash;2015 (Abbott Gov)", "2015&mdash;2018 (Turnbull Gov)", "2018&mdash; (Morrison Gov)"]
+- let governments = ["2007&mdash;2010 (Rudd Government)", "2010&mdash;2013 (Gillard Government)", "2013&mdash;2015 (Abbott Government)", "2015&mdash;2018 (Turnbull Government)", "2018&mdash; (Morrison Government)"]
 
 section
   .banner-wrap
@@ -14,6 +14,11 @@ section
           .loader
             for i in new Array(9)
               span.loader-bit
+        #lowy-authors
+          .txt-s.txt-tu.txt-center(style="opacity: 0.9; font-weight: 500") Research & Text
+          .flex-ch
+            .txt-sm.txt-semi.pv-xs
+              | Madeleine Nyst &mdash; Ben Scott &mdash; Sam Roggeveen
         .txt-s.txt-tu.txt-center(style="opacity: 0.9; font-weight: 500") With Expert Contributions From
         #experts.txt-semi
           .flex-ch
@@ -30,11 +35,6 @@ section
             .txt-nowrap.txt-center
               cite.medcalf.bg-ccnr
               | Rory Medcalf
-        #lowy-authors
-          .txt-s.txt-tu.txt-center(style="opacity: 0.9; font-weight: 500") Research & Text
-          .flex-ch
-            .txt-sm.txt-semi.pv-xs
-              | Madeleine Nyst &mdash; Ben Scott &mdash; Sam Roggeveen
           
 section
   .section-wrap.intro-wrap.pv-xl
@@ -46,8 +46,7 @@ section
 section.dark#theme-menu-wrap
   .section-wrap.pv-lg
     h1 An evolving policy
-    p Explore how the rules-based order has developed over time and in meaning.
-      |  Tap or hover on expert photos&ensp;<cite class="charlesworth" id="example-avatar" tooltip="I contain commentary."></cite>&ensp;and <cite ref="99"></cite>’s to hear from our experts and discover the various policy documents that reference the rules-based order.
+    p Explore how the rules-based order has developed over time and in meaning. Below, we identify ten recurring propositions about the rules-based order. Along the way, readers will see comments from experts who shaped the national debate and formulated government policy.
     p Scroll on, or select an item below to jump ahead.
   #theme-menu.flex.theme-links
     .col-2-3
