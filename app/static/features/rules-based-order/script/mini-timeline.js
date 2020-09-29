@@ -2,8 +2,6 @@
 
 // Set historyTimeline horizontal widths
 function setHistoryTimelines() {
-  // Show one node for screens < 900px. Two for > 1100px
-  let screenFactor = $(window).width() < 900 ? 2 : 1;
   $('.history-timeline').each( function(i) {
     $(this).css('width', "100%");
   });
