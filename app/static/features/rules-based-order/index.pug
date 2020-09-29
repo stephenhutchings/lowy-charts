@@ -41,9 +41,10 @@ block page
             .item
               if card.type == "quote"
                 include partials/quote
-              else if card.type == "historyTimeline" 
+              else if card.type == "historyTimeline"
+                .date.txt-sm!= card.date
                 include partials/history
-              else if card.type == "excerpt" 
+              else if card.type == "excerpt"
                 .date.txt-sm!= card.date
               else if card.type == "commentary"
                 .expert.flex

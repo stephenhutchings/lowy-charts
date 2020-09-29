@@ -4,10 +4,8 @@
 function setHistoryTimelines() {
   // Show one node for screens < 900px. Two for > 1100px
   let screenFactor = $(window).width() < 900 ? 2 : 1;
-  let historyNodes = [1, 3, 8, 5, 1];
   $('.history-timeline').each( function(i) {
-    let multiplier = 100;
-    $(this).css('width',multiplier*historyNodes[i] + "%");
+    $(this).css('width', "100%");
   });
 
   $('.x-scroller').each( (i, el) => showHideHistoryBtns(el) );

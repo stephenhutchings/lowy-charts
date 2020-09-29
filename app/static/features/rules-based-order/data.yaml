@@ -17,7 +17,7 @@ cards:
           ## Hilary Charlesworth
           ### Melbourne Laureate Professor, Melbourne Law School
         content: |
-          Kevin Rudd’s decision to launch a case in the ICJ against Japan over the legality of Japan’s ‘scientific whaling’ program was an example of Australia taking international law seriously.
+          “Kevin Rudd’s decision to launch a case in the ICJ against Japan over the legality of Japan’s ‘scientific whaling’ program was an example of Australia taking international law seriously.”
 
       - type: anchor
         year: 2008
@@ -53,6 +53,7 @@ cards:
 
       - type: historyTimeline
         index: 0
+        date: SKIP
         dates: [2007-2009]
         content:
           - title: Global Financial Crisis
@@ -100,7 +101,7 @@ cards:
 
           The rules-based order concept was also used to link Australia’s local, regional, and global interests:
 
-          >  These strategic interests are presented in geographical terms, as a hierarchy that reflects both relative priorities for action from a defence planning perspective, and our realistic capacity for influence through the employment of military power. They are interlocking — a stable rules-based global security order increases the likelihood of strategic stability in the Asia–Pacific region, which in turn makes more likely the maintenance of a secure immediate neighbourhood and ultimately a secure Australia.
+          > These strategic interests are presented in geographical terms, as a hierarchy that reflects both relative priorities for action from a defence planning perspective, and our realistic capacity for influence through the employment of military power. They are interlocking — a stable rules-based global security order increases the likelihood of strategic stability in the Asia–Pacific region, which in turn makes more likely the maintenance of a secure immediate neighbourhood and ultimately a secure Australia.
 
 
   - pm: gillard
@@ -138,11 +139,12 @@ cards:
 
       - type: historyTimeline
         index: 1
+        date: Mar
         dates: [March 2011]
         content:
-          - title: Libya United Nations Security Council Resolution 1973
+          - title: Libya United Nations Security Council Resolution&nbsp;1973
             description: |
-              With Libyan leader Muammar Gaddafi’s forces poised to crush an uprising, the United Nations Security Council passed a resolution authorising "all necessary measures" to protect civilians. UNSCR 1973 declared a no-fly zone over Libya, but specifically precluded a UN-mandated occupying ground force. Australia’s Foreign Minister Rudd, pressed for the no-fly zone, and commented publicly about the “tortuous” diplomatic effort it took to obtain the mandate. "Let us all hope and pray that this final resolve of the international community is not too late for the people of Libya", Mr Rudd said.
+              With Libyan leader Muammar Gaddafi’s forces poised to crush an uprising, the United Nations Security Council passed a resolution authorising "all necessary measures" to protect civilians. UNSCR 1973 declared a no-fly zone over Libya, but specifically precluded a UN-mandated occupying ground force. Australia’s Foreign Minister Rudd, pressed for the no-fly zone, and commented publicly about the “tortuous” diplomatic effort it took to obtain the mandate. “Let us all hope and pray that this final resolve of the international community is not too late for the people of Libya”, Mr Rudd said.
 
       - type: excerpt
         date: Sep
@@ -180,9 +182,6 @@ cards:
 
           > Australia’s future is irrevocably tied to the stability and sustainable security of our diverse region … We will continue to support a greater role for Asian countries in a rules-based regional and global order. Australia’s alliance with the United States and a strong US presence in Asia will support regional stability, as will China’s full participation in regional developments.
 
-      - type: excerpt
-        date: SKIP
-        content: |
           In her launch remarks at the Lowy Institute, Prime Minister Gillard gave the rules-based order a ‘regional’ face:
 
           > [A]ll countries in the region, particularly the major powers, have a deep interest in strategic stability. So we need not be pessimistic — but just as we work to shape the economic future of our region, so too do we work to shape our security environment. We are supporting the stabilising presence of the United States, a strong Defence Force, building habits of trust and co-operation in our region and a rules-based regional order. We have an ally in Washington — respect in Beijing — and more.
@@ -192,19 +191,20 @@ cards:
 
       - type: historyTimeline
         index: 2
+        date: Jan
         dates: [1 January 2013]
         content:
           - title: Australia’s term on the United Nations Security Council (2013–2014)
             description: Australia commenced a two-year term as a non-permanent member of the United Nations Security Council (UNSC). This was the fifth time Australia had sat on the UNSC since the organisation held its first session in January 1946, over which Australia presided. Australia's 2013–2014 term on the Council coincided with a marked increase in challenges to the rules-based order and an increasingly complex global security environment.
 
       - type: excerpt
-        date: Jan
+        date: SKIP
         content: |
           ## 2013 National Security Strategy
 
           In January 2013, the Gillard government released its National Security Strategy, outlining Australia’s national security risks, priorities, and capabilities. During her launch address, Prime Minister Gillard described the national security environment as “post 9/11”. The Strategy shifted Australia’s focus from non-state actors back to states.
 
-          The Strategy referred to the rules-based global order seven time, but in her remarks at the launch, Ms Gillard once again framed the rules-based order in regional terms:
+          The Strategy referred to the rules-based global order seven times, but in her remarks at the launch, Ms Gillard once again framed the rules-based order in regional terms:
 
           > We have long championed a multilateral, rules-based order in our region in which disputes are resolved peacefully, without the use or threat of force or coercion.
 
@@ -227,6 +227,7 @@ cards:
 
       - type: historyTimeline
         index: 2
+        date: Aug
         dates: [21 August 2013]
         content:
           - title: Syrian chemical weapons use and US President Barack Obama’s “red lines”
@@ -238,7 +239,7 @@ cards:
           ## Julie Bishop
           ### Chancellor, ANU
         content: |
-          I was concerned at the impact on US global authority from the failure to enforce the “red line”. US authority since the Second World War has come from an international understanding that under certain circumstances it will take military action. This situation increased the risks of miscalculation should some regimes believe that was no longer the case. Russia’s intervention was to support the Assad regime and to also take on a role of international leadership.
+          “I was concerned at the impact on US global authority from the failure to enforce the “red line”. US authority since the Second World War has come from an international understanding that under certain circumstances it will take military action. This situation increased the risks of miscalculation should some regimes believe that was no longer the case. Russia’s intervention was to support the Assad regime and to also take on a role of international leadership.”
 
       - type: commentary
         id: medcalf
@@ -246,7 +247,7 @@ cards:
           ## Rory Medcalf
           ### Head of ANU's National Security College
         content: |
-          This was a critical moment in the erosion of American credibility. Russia drew the clear impression that America was becoming risk-averse and hesitant, and proceeded to annex Crimea and foment conflict with Ukraine. But the repercussions of the “red line” failure reached to the heart of the Indo–Pacific too, with the intensification of China’s challenge in the South China Sea.
+          “This was a critical moment in the erosion of American credibility. Russia drew the clear impression that America was becoming risk-averse and hesitant, and proceeded to annex Crimea and foment conflict with Ukraine. But the repercussions of the “red line” failure reached to the heart of the Indo–Pacific too, with the intensification of China’s challenge in the South China Sea.”
 
   - pm: abbott
     details: |
@@ -278,10 +279,14 @@ cards:
           ## Hilary Charlesworth
           ### Melbourne Laureate Professor, Melbourne Law School
         content: |
-          During the Abbott government, Australia successfully nominated Professor James Crawford as a member of the International Court of Justice. He was elected as judge for a full term of nine years in November 2014. He is only the second Australian to serve in this capacity (the first was Sir Percy Spender).
+          “During the Abbott government, Australia successfully nominated Professor James Crawford as a member of the International Court of Justice. He was elected as judge for a full term of nine years in November 2014. He is only the second Australian to serve in this capacity (the first was Sir Percy Spender).”
+
+      - type: anchor
+        year: 2013
 
       - type: historyTimeline
         index: 2
+        date: Sep
         dates: [23 September 2013]
         content:
           - title: China declares air defence identification zone in East China Sea
@@ -300,6 +305,7 @@ cards:
 
       - type: historyTimeline
         index: 3
+        date: Feb
         dates: [February/March 2014]
         content:
           - title: Unrest in Ukraine and Crimea annexation
@@ -326,6 +332,7 @@ cards:
 
       - type: historyTimeline
         index: 4
+        date: July
         dates: [July 2014]
         content:
           - title: Downing of Malaysia Airlines flight MH17
@@ -333,11 +340,12 @@ cards:
 
       - type: commentary
         id: medcalf
+        short: true
         expert: |
           ## Rory Medcalf
           ### Head of ANU's National Security College
         content: |
-          For Australia, this was a critical and confronting moment: the loss of many Australian lives in a brutal breach of international law, and a test of whether the international community could be mobilised for a lawful and effective response.
+          “For Australia, this was a critical and confronting moment: the loss of many Australian lives in a brutal breach of international law, and a test of whether the international community could be mobilised for a lawful and effective response.”
 
       - type: excerpt
         date: Aug
@@ -352,8 +360,18 @@ cards:
           src: "img/abbott-1.jpg"
           caption: Prime Minister Tony Abbott’s media statement, Canberra, August 2014
 
+      - type: commentary
+        id: charlesworth
+        short: true
+        expert: |
+          ## Hilary Charlesworth
+          ### Melbourne Laureate Professor, Melbourne Law School
+        content: |
+          “Australia’s advocacy of an international rules-based order and its constant rejection of the notion that ‘might is right’ would be strengthened if Australia embraced its values in our domestic legal and political systems.”
+
       - type: historyTimeline
         index: 5
+        date: SKIP
         dates: [August 2014]
         content:
           - title: Australia-Indonesia Intelligence Agreement
@@ -362,6 +380,7 @@ cards:
 
       - type: historyTimeline
         index: 6
+        date: Sep
         dates: [September 2014]
         content:
           - title: Australia extends its air strikes from Iraq to include Syria
@@ -377,13 +396,13 @@ cards:
           “There had to be a clear legal basis to the military operations to protect Australian military personnel from any potential challenges in the international courts. We had to negotiate some sensitivities with the Iraqi government to ensure our aircraft had flight approvals, while the army needed appropriate approvals to deploy for the mission of training and supporting the Iraqi army.”
 
       - type: excerpt
-        date: Sep
+        date: SKIP
         content: |
           ## Prime Minister Tony Abbott’s address to the United Nations General Assembly, New York
 
           Prime Minister Abbott addressed the United Nations General Assembly in the final months of Australia’s two-year term on the United Nations Security Council. He discussed the role of the United Nations:
 
-          > “Like any institution, the United Nations is an imperfect instrument. Still, it’s better than might-is-right and it gives good arguments the best chance to prevail. Despite faults and failures, the UN has worked for peace and progress for nearly 70 years and Australia has been proud to play its part.”
+          > Like any institution, the United Nations is an imperfect instrument. Still, it’s better than might-is-right and it gives good arguments the best chance to prevail. Despite faults and failures, the UN has worked for peace and progress for nearly 70 years and Australia has been proud to play its part.
         media:
           class: "image"
           src: "img/abbott-2.jpg"
@@ -426,6 +445,7 @@ cards:
 
       - type: historyTimeline
         index: 7
+        date: Sep
         dates: [30 September 2015]
         content:
           - title: Russian military intervention in the Syrian Civil War
@@ -441,6 +461,7 @@ cards:
           “Russian bombing began while I was participating in the final meeting of the Friends of Syria group being held in New York. It was the most acrimonious multilateral meeting that I experienced and left many seasoned diplomats shocked. Russia and Iran coordinated in playing the spoiler role that disrupted the discussions and led to the collapse of talks.”
 
 
+
   - pm: turnbull
     details: |
       # Turnbull Government
@@ -450,13 +471,6 @@ cards:
       Prime Minister Malcolm Turnbull’s international agenda was dominated by the threat from the Islamic State terrorist organisation, increasingly assertive Chinese behaviour in Australia and abroad, the election of US President Donald Trump, and escalating tensions on the Korean Peninsula. The Turnbull government’s reaction included a series of major policy documents and internal reforms in which the rules-based order figured prominently.
 
     events:
-
-      - type: historyTimeline
-        index: 7
-        dates: [8 May 2018]
-        content:
-          - title: United States withdraws from the Iran nuclear deal
-            description: In May 2018, President Trump withdrew the United States from the Joint Comprehensive Plan of Action (JCPOA), an agreement reached during the Obama administration between Iran, the United States, and four other world powers. The JCPOA limited Iran’s nuclear activities in return for sanctions relief. The Trump administration reimposed sanctions and, a year later, ended waivers that had allowed some countries to continue buying oil from Iran.
 
       - type: anchor
         year: 2016
@@ -481,7 +495,7 @@ cards:
           ## Rory Medcalf
           ### Head of ANU's National Security College
         content: |
-          The release of the Defence White Paper in February 2016 marked a new high point in Australia’s championing of a rules-based order, and this concept was explicitly integrated in defining our ‘strategic defence interests’ and ‘strategic defence objectives’: in other words, what we would be willing to fight for. Although the term remained in use in the 2020 update to that White Paper, the emphasis shifted to shaping the strategic environment, deterring threats, and responding with force where necessary — and a new focus was placed on protecting regional resilience and national sovereignty.
+          “The release of the Defence White Paper in February 2016 marked a new high point in Australia’s championing of a rules-based order, and this concept was explicitly integrated in defining our ‘strategic defence interests’ and ‘strategic defence objectives’: in other words, what we would be willing to fight for. Although the term remained in use in the 2020 update to that White Paper, the emphasis shifted to shaping the strategic environment, deterring threats, and responding with force where necessary — and a new focus was placed on protecting regional resilience and national sovereignty.”
 
       - type: excerpt
         date: Mar
@@ -516,6 +530,7 @@ cards:
 
       - type: commentary
         id: bishop
+        short: true
         expert: |
           ## Julie Bishop
           ### Chancellor, ANU
@@ -546,16 +561,18 @@ cards:
 
       - type: historyTimeline
         index: 7
+        date: Sep
         dates: [3 September 2016]
         content:
-          - title: US President Barack Obama meets with Chinese President Xi Jinping
+          - title: US President Barack Obama meets with Chinese President Xi&nbsp;Jinping
             description: On 3 September 2016, President Obama met with President Xi for a bilateral meeting on the margins of the G20 Leaders Summit in Hangzhou, China. Following the meeting, President Obama released a statement saying he had emphasised “the importance for China, as a signatory to UNCLOS, to abide by its obligations under that treaty, which the United States views as critical to maintaining the rules-based international order”.
 
       - type: historyTimeline
         index: 8
+        date: Nov
         dates: [8 November 2016]
         content:
-          - title: Donald Trump elected President of the United States
+          - title: Donald Trump elected President of the United&nbsp;States
             description: On 8 November 2016, Donald Trump was elected the 45th president of the United States, ushering in the era of America First foreign policy. Mr Trump came to office as a lifelong sceptic of America’s post-war alliance network, and of free trade.
 
       - type: anchor
@@ -598,14 +615,15 @@ cards:
 
       - type: historyTimeline
         index: 9
+        date: June
         dates: [1 June 2017]
         content:
-          - title: United States announces withdrawal from Paris Agreement
+          - title: United States announces withdrawal from Paris&nbsp;Agreement
             description: On 1 June 2017, President Trump announced the United States’ withdrawal from the 2015 Paris Agreement, illustrating the scepticism towards international governance that had come to define his presidency.
 
 
       - type: excerpt
-        date: June
+        date: SKIP
         content: |
           ## Prime Minister Malcolm Turnbull’s address at the 16th Shangri-La Dialogue, Singapore
 
@@ -613,7 +631,7 @@ cards:
 
           > And we should be under no illusions: If we are to maintain the dynamism of the region then we must preserve the rules-based structure that has enabled it thus far. This means cooperation, not unilateral actions to seize or create territory or militarise disputed areas. This means competing within the framework of international law, not winning through corruption, interference or coercion.
 
-          >  Some fear that China will seek to impose a latter day Monroe Doctrine on this hemisphere in order to dominate the region, marginalising the role and contribution of other nations, in particular the United States. Such a dark view of our future would see China isolating those who stand in opposition to or are not aligned with its interests, while using its economic largesse to reward those toeing the line.
+          > Some fear that China will seek to impose a latter day Monroe Doctrine on this hemisphere in order to dominate the region, marginalising the role and contribution of other nations, in particular the United States. Such a dark view of our future would see China isolating those who stand in opposition to or are not aligned with its interests, while using its economic largesse to reward those toeing the line.
         media:
           class: "image"
           src: "img/turnbull-1.jpg"
@@ -622,11 +640,11 @@ cards:
       - type: excerpt
         date: July
         content: |
-          ## Joint Statements by Prime Minister Malcolm Turnbull and Foreign Minister Julie Bishop on two North Korean ballistic missile tests
+          ## Prime Minister Malcolm Turnbull and Foreign Minister Julie Bishop’s joint statements on North Korean missile tests, Canberra
 
           In July 2017, North Korea conducted two intercontinental ballistic missile tests. Prime Minister Turnbull and Foreign Minister Bishop released joint statements condemning both tests as violations of United Nations Security Council resolutions.
 
-          5th July:
+          5 July:
           > The world expects that we live in a rules-based system and this unacceptable missile launch is in breach of numerous United Nations Security Council resolutions.
 
           29 July:
@@ -634,6 +652,7 @@ cards:
 
       - type: commentary
         id: bishop
+        short: true
         expert: |
           ## Julie Bishop
           ### Chancellor, ANU
@@ -667,7 +686,9 @@ cards:
           ## Rory Medcalf
           ### Head of ANU's National Security College
         content: |
-          “This Foreign Policy White Paper remained forthright in its advocacy of a rules-based order, and made a solid pitch to connect liberal democratic values at home with a rules-based system internationally, making the argument that “our adherence to the rule of law extends beyond our borders” and “our support internationally for these values also serves to advance our national interests”. The 2017 Foreign Policy White Paper was emblematic of the worldview espoused by the government of Prime Minister Turnbull and Foreign Minister Bishop. It made good sense for a middle-sized power, a nation that cannot have its way in the world through strength alone. Still, these aspirations have been put under intense strain since then, with worsening Chinese coercion, President Trump’s deep disregard both for democratic safeguards and the liberal international system, and the comprehensive strategic shock of COVID-19 that has driven a fresh fixation on sovereignty and borders.”
+          “This Foreign Policy White Paper remained forthright in its advocacy of a rules-based order, and made a solid pitch to connect liberal democratic values at home with a rules-based system internationally, making the argument that “our adherence to the rule of law extends beyond our borders” and “our support internationally for these values also serves to advance our national interests”.
+
+          The 2017 Foreign Policy White Paper was emblematic of the worldview espoused by the government of Prime Minister Turnbull and Foreign Minister Bishop. It made good sense for a middle-sized power, a nation that cannot have its way in the world through strength alone. Still, these aspirations have been put under intense strain since then, with worsening Chinese coercion, President Trump’s deep disregard both for democratic safeguards and the liberal international system, and the comprehensive strategic shock of COVID-19 that has driven a fresh fixation on sovereignty and borders.”
 
       - type: commentary
         id: bishop
@@ -694,6 +715,7 @@ cards:
 
       - type: commentary
         id: maude
+        short: true
         expert: |
           ## Richard Maude
           ### Senior Director, Asia Society Policy Institute
@@ -723,6 +745,14 @@ cards:
 
           > Any absence of US and allied leadership within these and other institutions risks declining relevance and influence in global affairs — and others may fill the gap, bringing with them a different set of values and principles, and without the necessary commitment to preserving the best of the international rules-based order.
 
+      - type: historyTimeline
+        index: 10
+        date: Mar
+        dates: [6 March 2018]
+        content:
+          - title: Australia and Timor-Leste sign The Timor Sea&nbsp;Treaty
+            description: This was the first time the Conciliation Commission of UNCLOS had brokered a treaty. Australia unsuccessfully challenged the Commission’s competence after Timor-Leste initiated compulsory conciliation in April 2016. The Treaty created a permanent maritime boundary based on a median line between the Australian and Timorese coasts. The issues at stake included the ownership and exploitation of oil and gas reserves, and the consequences for Australian and Timorese maritime boundary agreements with Indonesia.
+
       - type: commentary
         id: medcalf
         expert: |
@@ -742,11 +772,12 @@ cards:
           “Australia’s participation in the conciliation process with Timor-Leste that resulted in the 2018 treaty was positive and reaffirmed the significance of the UNCLOS in resolving maritime delimitation disputes. It should be noted however, that Australia unsuccessfully challenged the competence of the Conciliation Commission. Australia also faced international criticism over Timor-Leste’s claims of espionage during the negotiations of the 2006 CMATS (the treaty between the two countries on certain maritime arrangements).”
 
       - type: historyTimeline
-        index: 10
-        dates: [6 March 2018]
+        index: 11
+        date: May
+        dates: [8 May 2018]
         content:
-          - title: Australia and Timor-Leste sign The Timor Sea Treaty
-            description: This was the first time the Conciliation Commission of UNCLOS had brokered a treaty. Australia unsuccessfully challenged the Commission’s competence after Timor-Leste initiated compulsory conciliation in April 2016. The Treaty created a permanent maritime boundary based on a median line between the Australian and Timorese coasts. The issues at stake included the ownership and exploitation of oil and gas reserves, and the consequences for Australian and Timorese maritime boundary agreements with Indonesia.
+          - title: United States withdraws from the Iran nuclear&nbsp;deal
+            description: In May 2018, President Trump withdrew the United States from the Joint Comprehensive Plan of Action (JCPOA), an agreement reached during the Obama administration between Iran, the United States, and four other world powers. The JCPOA limited Iran’s nuclear activities in return for sanctions relief. The Trump administration reimposed sanctions and, a year later, ended waivers that had allowed some countries to continue buying oil from Iran.
 
       - type: excerpt
         date: June
@@ -801,7 +832,11 @@ cards:
           ## Rory Medcalf
           ### Head of ANU's National Security College
         content: |
-          “With the government of Prime Minister Morrison, some questions were raised of how committed Australia would remain to the rules-based order it had long espoused. One line in the prime minister’s 2019 Lowy Lecture — criticising ‘negative globalism’ — became the focus of such concern. However, developments in 2020 have confirmed a continued, if modified, Australian commitment to international institutions and ‘practical multilateralism’, the theme of Foreign Minister Payne’s National Security College speech in June 2020. This new approach to the rules-based order includes Australia’s efforts to propel international coordination and investigation of the COVID-19 pandemic, and to mobilise in protection of interests and values against Chinese coercion and misinformation. Part of this push involves self-selecting coalitions of democracies and middle powers as well as selective use of multilateralism. Perhaps this foreshadows a policy of international engagement with a harder edge for a darker decade — and how much of the early twenty-first century rules-based order will survive the gathering storm remains a critical question.”
+          “With the government of Prime Minister Morrison, some questions were raised of how committed Australia would remain to the rules-based order it had long espoused. One line in the prime minister’s 2019 Lowy Lecture — criticising ‘negative globalism’ — became the focus of such concern.
+
+          However, developments in 2020 have confirmed a continued, if modified, Australian commitment to international institutions and ‘practical multilateralism’, the theme of Foreign Minister Payne’s National Security College speech in June 2020. This new approach to the rules-based order includes Australia’s efforts to propel international coordination and investigation of the COVID-19 pandemic, and to mobilise in protection of interests and values against Chinese coercion and misinformation.
+
+          Part of this push involves self-selecting coalitions of democracies and middle powers as well as selective use of multilateralism. Perhaps this foreshadows a policy of international engagement with a harder edge for a darker decade — and how much of the early twenty-first century rules-based order will survive the gathering storm remains a critical question.”
 
       - type: anchor
         year: 2018
