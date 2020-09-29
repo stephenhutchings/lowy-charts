@@ -39,15 +39,13 @@ block page
           - let skipDate = card.date == "SKIP" ? "skip-date" : ""
           .row(class=`${card.type} ${skipDate}`)
             .item
-              if card.type == "quote"
-                include partials/quote
-              else if card.type == "historyTimeline"
+              if card.type == "historyTimeline"
                 .date.txt-sm!= card.date
                 include partials/history
               else if card.type == "excerpt"
                 .date.txt-sm!= card.date
               else if card.type == "commentary"
-                .expert.flex
+                .expert.flex(class=(card.short ? "short" : ""))
                   img.image(src=`./img/${card.id}.jpg`)
                   div!= marked(card.expert)
 
