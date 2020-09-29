@@ -275,6 +275,7 @@ cards:
 
       - type: commentary
         id: charlesworth
+        short: true
         expert: |
           ## Hilary Charlesworth
           ### Melbourne Laureate Professor, Melbourne Law School
