@@ -39,12 +39,6 @@
   100%
     transform: scale(1)
 
-@keyframes appear
-  from
-    opacity: 0
-  to
-    opacity: 1
-
 @keyframes growIn
   0%
     background: white
@@ -75,21 +69,6 @@
     .delay-#{$i})
       animation-delay: ($i * 80ms)
 
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  20%))
-  // For Google Chrome
-  &::-webkit-scrollbar
-    width:  $size
-    height: $size
-  &::-webkit-scrollbar-thumb
-    background: $foreground-color
-    border-radius: $size
-  &::-webkit-scrollbar-track
-    background: $background-color
-    border-radius: $size
-  // For Internet Explorer
-  &
-    scrollbar-face-color: $foreground-color
-    scrollbar-track-color: $background-color
 
 .loader
   height: .5px
@@ -142,8 +121,6 @@
   background: -moz-linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
   background: -o-linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
   background: linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
-.scrollbar
-  @include scrollbars(7px, $color-gy-lt)
 .ib
   display: inline-block
 .inline
