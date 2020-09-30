@@ -33,10 +33,10 @@
   color: $color-gy-lt
   padding: 0.5em 10% 2em
 .historyTimeline
-  margin: 0
   border-top: 1.5px dotted $color-bl-dk
   background-color: $color-ff
   box-shadow: 0px 1px 2px #0004
+  padding-bottom: 20px
 
 .content h2
   font-family: 'Semi', sans-serif
@@ -45,7 +45,7 @@
   background-color: $color-bl-dk
   color : $color-ff
   position: relative
-  margin: 0 0 40px
+  margin: 0
   .content
     position: relative
     cursor: pointer
@@ -192,8 +192,6 @@
 	margin-left: -20px
 	margin-top: -20px
 
-.skip-date:not(.quote)
-  margin-top: -40px
 .skip-date .date
   display: none
 .commentary + .skip-date
@@ -251,6 +249,9 @@
 
 @media (min-width: 600px)
 
+  .skip-date:not(.quote)
+    margin-top: -40px
+
   .cardtype,
   .heading,
   .subheading
@@ -302,6 +303,7 @@
     background-color: $color-ff
 
   .historyTimeline
+    margin: 0 auto
     border-left: 10px solid $color-bl-dk
     width: 70%
     padding-bottom: 30px
@@ -309,6 +311,7 @@
     box-shadow: none
 
   .commentary
+    margin-bottom: 0
     border-left: 10px solid $color-bl-dk
   .expert
     flex-direction: row
