@@ -449,7 +449,7 @@ cards:
         date: Sep
         dates: [30 September 2015]
         content:
-          - title: Russian military intervention in the Syrian Civil War
+          - title: Russian military intervention in the Syrian Civil&nbsp;War
             description: |
               In September 2015, Russian aircraft began bombing rebel and Islamic State targets in Syria, marking a fundamental change in the dynamics of the Syrian Civil War. Co-opting the US position that the Islamic State represented the biggest threat in the region, Russian President Vladimir Putin was able to present the regime of Syrian President Bashar al-Assad as the best placed force to combat Islamic State.
 
