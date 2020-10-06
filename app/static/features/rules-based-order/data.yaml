@@ -130,7 +130,9 @@ cards:
 
           This appears to be one of the first times ‘rules-based order’ was used by a senior US government official — on this occasion, Secretary Clinton.
 
-          Commenting on the statement, Secretary Clinton said, “We obviously share the view that we want to see China’s rise be successful, bringing benefits to the Chinese people, but [we want China] to take on greater responsibility and a rules-based approach toward all of its neighbours.”
+          Commenting on the statement, Secretary Clinton said:
+
+          > We obviously share the view that we want to see China’s rise be successful, bringing benefits to the Chinese people, but [we want China] to take on greater responsibility and a rules-based approach toward all of its neighbours.
         media:
           class: image
           src: "img/gillard-1.jpg"
@@ -342,7 +344,7 @@ cards:
       - type: historyTimeline
         index: 4
         date: July
-        dates: [July 2014]
+        dates: [17 July 2014]
         content:
           - title: Downing of Malaysia Airlines flight MH17
             description: Malaysia Airlines flight MH17, en route from Amsterdam to Kuala Lumpur, was travelling over conflict-hit Ukraine on 17 July 2014 when it disappeared from radar. In October 2015, a 15-month investigation by the Dutch Safety Board found that the plane had crashed after being hit by a Russian-made Buk missile over eastern Ukraine. A total of 298 passengers, including 38 Australian citizens and residents, were killed.
@@ -374,6 +376,16 @@ cards:
         content: |
           “Australia’s advocacy of an international rules-based order and its constant rejection of the notion that ‘might is right’ would be strengthened if Australia embraced its values in our domestic legal and political systems.”
 
+      - type: excerpt
+        date: SKIP
+        content: ""
+        media:
+          class: "image no-content"
+          src: "img/abbott-1.jpg"
+          caption: |
+            Australian Prime Minister Tony Abbott (L) speaks alongside foreign minister Julie Bishop at a press conference in 2014  (Photo: Saeed Khan / AFP via Getty Images)
+
+
       - type: historyTimeline
         index: 5
         date: SKIP
@@ -382,15 +394,6 @@ cards:
           - title: Australia-Indonesia Intelligence Agreement
             description: |
               In August 2014, Foreign Minister Bishop and Indonesia Foreign Minister Marty Natalegawa signed a Joint Understanding in implementation of the Lombok Treaty. The Joint Understanding provided an agreed approach to enhance intelligence cooperation. It followed claims that Australia had spied on Indonesian President Susilo Bambang Yudhoyono. According to the Joint Understanding, neither country would "use any of their intelligence, including surveillance capacities, or other resources, in ways that would harm the interests of the Parties".
-
-      - type: excerpt
-        date: SKIP
-        content: ""
-        media:
-          class: "image"
-          src: "img/abbott-1.jpg"
-          caption: |
-            Australian Prime Minister Tony Abbott (L) speaks alongside foreign minister Julie Bishop at a press conference in 2014  (Photo: Saeed Khan / AFP via Getty Images)
 
       - type: historyTimeline
         index: 6
@@ -497,7 +500,7 @@ cards:
 
           The 2016 Defence White Paper identified the ‘rules-based order’ as one of Australia’s three core strategic defence interests and referred to it 56 times — a very sharp increase from the 2013 and 2009 White Papers. The 2016 Defence White Paper argued that the order had become more important due to “growing interconnectivity” and stressed the rules-based order’s capacity for evolution.
 
-          > The stability of the rules-based global order is essential for Australia’s security and prosperity. A rules- based global order means a shared commitment by all countries to conduct their activities in accordance with agreed rules which evolve over time, such as international law and regional security arrangements. This shared commitment has become even more important with growing interconnectivity, which means that events across the world have the potential to affect Australia’s security and prosperity. The Government is committed to making practical and effective military contributions to global security operations to maintain the rules-based order and address shared security challenges where it is in our interest to do so.
+          > The stability of the rules-based global order is essential for Australia’s security and prosperity. A rules-based global order means a shared commitment by all countries to conduct their activities in accordance with agreed rules which evolve over time, such as international law and regional security arrangements. This shared commitment has become even more important with growing interconnectivity, which means that events across the world have the potential to affect Australia’s security and prosperity. The Government is committed to making practical and effective military contributions to global security operations to maintain the rules-based order and address shared security challenges where it is in our interest to do so.
 
           The United States was described as being central to the stability of the rules-based order:
 
@@ -539,7 +542,7 @@ cards:
       - type: excerpt
         date: Jul
         content: |
-          ## Prime Minister Malcolm Turnbull and Defence Minister Marise Payne’s joint statement, Canberra
+          ## Prime Minister Malcolm Turnbull and Defence Minister Marise Payne’s joint statement on the South China Sea, Canberra
 
           In July 2016, the Permanent Court of Arbitration (‘PCA’ or ‘Tribunal’) in the Hague found in favour of the Philippines in its long running dispute with China over the South China Sea. The PCA found no basis to China’s “9 dash line” claim and said that artificial islands created by China could not be the basis of territorial claims. The decision became pivotal to debate about China’s ambitions, its commitment to the rules-based order, and the willingness of the United States and regional states to defend that order.
 
@@ -731,7 +734,7 @@ cards:
         content: |
           In his speech at the launch of the 2017 Foreign Policy White Paper, Prime Minister Turnbull emphasised that a policy which advanced the values of “freedom, democracy, the rule of law, [and] mutual respect” was in Australia’s interests.
 
-          > In the global ocean, there is always a risk, as Lee Kuan Yew observed: “The big fish will eat the little fish, and the little fish will eat the shrimps”. Or as the [Athenian] ambassador said to the Melians: “In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must.”<br><br>So whether it’s in Lee Kuan Yew’s words or Thucydides’, we will never agree that might is right. The rules- based order protects us all and it protects us, in particular.”
+          > In the global ocean, there is always a risk, as Lee Kuan Yew observed: “The big fish will eat the little fish, and the little fish will eat the shrimps”. Or as the [Athenian] ambassador said to the Melians: “In the real world, there is justice only between equals. As for the rest, the strong do as they will, and the weak suffer as they must.”<br><br>So whether it’s in Lee Kuan Yew’s words or Thucydides’, we will never agree that might is right. The rules-based order protects us all and it protects us, in particular.”
 
       - type: commentary
         id: maude

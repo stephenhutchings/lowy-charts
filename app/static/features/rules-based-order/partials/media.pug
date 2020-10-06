@@ -1,5 +1,6 @@
-
 - let type = card.media.class
+- let noContent = (type == "image no-content")
+
 if type == "video"
   .card.media.video
     iframe(
@@ -8,8 +9,8 @@ if type == "video"
       allowfullscreen
     )
   .caption.txt-xs!= card.media.caption
-else if type == "image"
-  .card.media.image
+else if type == "image" || noContent
+  .card.media(class=type)
     img(
       src=card.media.src
     )

@@ -1,6 +1,12 @@
 .dummy
   display: none
 
+.wrap
+  border-left: 3px solid $color-bl-dk
+  display: none
+.wrap.show
+  display: block
+
 .row
   display: flex
   flex-direction: column
@@ -16,8 +22,10 @@
     margin-bottom: 15px
 .media
   line-height: 0
-  margin: -40px 0 0 0
+  margin: -20px 0 0 0
   width: 100%
+  &.no-content
+    margin-top: -115px
 .video
   > iframe
     width: 100%
@@ -248,9 +256,6 @@
     height: 400px
 
 @media (min-width: 600px)
-
-  .skip-date:not(.quote)
-    margin-top: -40px
 
   .cardtype,
   .heading,
