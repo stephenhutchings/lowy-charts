@@ -1,5 +1,5 @@
 title: >
-  Defence, ODA and Diplomacy: Real funding
+  Defence, ODA and Diplomacy: Real Funding
 
 notes: >
   * Projections based on forward estimates
@@ -10,7 +10,7 @@ source: >
 charts:
   -
     title: >
-      Defence, ODA and Diplomacy: Real expenditures
+      Defence, ODA and Diplomacy: Real Funding
 
     subtitle: >
       Expenditure, $b, adjusted for inflation
@@ -19,7 +19,7 @@ charts:
       minY:  0
       maxY: 50000
     legend:
-      - DFAT/Ausaid
+      - DFAT/AusAID
       - ODA
       - Defence
     colors:
