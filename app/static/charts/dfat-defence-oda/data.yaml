@@ -1,0 +1,91 @@
+title: >
+  Defence, ODA and Diplomacy: Real funding
+
+notes: >
+  * Projections based on forward estimates
+
+source: >
+  Source: Defence and DFAT annual reports, portfolio budget statements and appropriations, Devpolicy Aid Tracker, ABS GDP and CPI data.
+
+charts:
+  -
+    title: >
+      Defence, ODA and Diplomacy: Real expenditures
+
+    subtitle: >
+      Expenditure, $b, adjusted for inflation
+
+    scale:
+      minY:  0
+      maxY: 50000
+    legend:
+      - DFAT/Ausaid
+      - ODA
+      - Defence
+    colors:
+      - "#394754"
+      - "#3B9193"
+      - "#3CC6C0"
+    axes:
+      -
+        title: Years
+        values:
+          - 1996-97
+          - 1997-98
+          - 1998-99
+          - 1999-00
+          - 2000-01
+          - 2001-02
+          - 2002-03
+          - 2003-04
+          - 2004-05
+          - 2005-06
+          - 2006-07
+          - 2007-08
+          - 2008-09
+          - 2009-10
+          - 2010-11
+          - 2011-12
+          - 2012-13
+          - 2013-14
+          - 2014-15
+          - 2015-16
+          - 2016-17
+          - 2017-18
+          - 2018-19
+          - 2019-20
+          - 2020-21*
+          - 2021-22*
+          - 2022-23*
+          - 2023-24*
+      -
+        title: Expenditure, $b, adjusted for inflation
+        values:
+          - [ 875,	2433,	19802 ]
+          - [ 1011,	2452,	20506 ]
+          - [ 992,	2565,	26487 ]
+          - [ 1153,	2866,	28551 ]
+          - [ 1080,	2509,	29073 ]
+          - [ 1133,	2638,	28781 ]
+          - [ 1101,	2672,	28696 ]
+          - [ 1118,	2812,	22261 ]
+          - [ 1084,	3058,	23119 ]
+          - [ 1096,	3618,	23932 ]
+          - [ 1213,	3900,	26054 ]
+          - [ 1328,	3946,	26828 ]
+          - [ 1231,	4591,	28603 ]
+          - [ 1244,	4639,	30460 ]
+          - [ 1312,	5009,	29399 ]
+          - [ 1248,	5488,	29955 ]
+          - [ 1348,	5623,	27063 ]
+          - [ 1438,	5470,	29371 ]
+          - [ 1389,	5355,	32057 ]
+          - [ 1452,	4257,	34139 ]
+          - [ 1429,	3954,	33550 ]
+          - [ 1373,	3965,	36246 ]
+          - [ 1435,	4316,	37261 ]
+          - [ 1473,	4044,	39398 ]
+          - [ 1586,	3864,	41168 ]
+          - [ 1427,	3807,	43394 ]
+          - [ 1395,	3835,	46313 ]
+          - [ 1365,	3668,	48109 ]
