@@ -1,0 +1,87 @@
+title: >
+  Table 1
+
+table:
+  better:
+    - New Zealand
+    - Vietnam
+    - Taiwan*
+    - Australia
+    - Slovak Republic
+    - Thailand
+    - China
+    - Latvia
+    - Malta
+    - Malaysia
+    - Lithuania
+    - Tunisia
+    - Uruguay
+    - South Korea
+    - Greece
+    - Morocco
+    - Slovenia
+    - Estonia
+    - Iceland
+    - Hungary
+    - Czech Republic
+    - Japan
+    - Croatia
+    - Norway
+    - Finland
+
+
+  average:
+    - Denmark
+    - Kenya
+    - Côte d'Ivoire
+    - Poland
+    - Bulgaria
+    - United Arab Emirates
+    - Ghana
+    - Senegal
+    - Nigeria
+    - Israel
+    - Philippines
+    - Luxembourg
+    - Austria
+    - Costa Rica
+    - Serbia
+    - Kazakhstan
+    - Indonesia
+    - Bahrain
+    - Romania
+    - Ukraine
+    - Singapore
+    - Portugal
+    - India
+    - Belarus
+    - Germany
+    - Switzerland
+
+  worse:
+    - Russia
+    - Canada
+    - Pakistan
+    - Ireland
+    - Turkey
+    - Qatar
+    - Kuwait
+    - Argentina
+    - Netherlands
+    - Saudi Arabia
+    - United Kingdom
+    - Belgium
+    - Colombia
+    - Iran
+    - South Africa
+    - Italy
+    - Spain
+    - Sweden
+    - Panama
+    - Ecuador
+    - United States
+    - Bolivia
+    - Mexico
+    - Chile
+    - Peru
+    - Brazil

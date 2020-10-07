@@ -1,0 +1,72 @@
+title: >
+  COVID-19: Health Outcomes in Australia and the G20
+
+subtitle: >
+  Counts are per million population
+
+source: >
+  Source: Worldometer, accessed 6 May
+
+charts:
+  -
+    title: >
+      Deaths
+
+    scale:
+      minY:  0
+      maxY: 100
+    axes:
+      -
+        title: Countries
+        values:
+          - text: Australia
+            highlight: true
+          - text: G20
+
+      -
+        title: ""
+        values:
+          - 4
+          - 98
+
+  -
+    title: >
+      Cases
+
+    scale:
+      minY:  0
+      maxY: 1200
+    axes:
+      -
+        title: Countries
+        values:
+          - text: Australia
+            highlight: true
+          - text: G20
+
+      -
+        title: ""
+        values:
+          - 270
+          - 1139
+
+  -
+    title: >
+      Tests
+
+    scale:
+      minY:  0
+      maxY: 30000
+    axes:
+      -
+        title: Countries
+        values:
+          - text: Australia
+            highlight: true
+          - text: G20
+
+      -
+        title: ""
+        values:
+          - 27006
+          - 14485

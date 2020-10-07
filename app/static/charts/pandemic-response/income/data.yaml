@@ -1,0 +1,49 @@
+title: >
+  Response to COVID-19 by Development
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  Country performance in response to COVID-19 is determined by a composite score based on six weighted indicators: total confirmed cases and deaths, total confirmed cases and deaths per million people, tests per confirmed case and tests per thousand people.
+
+subtitle: >
+  Proportion of countries in category
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 4
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: true
+
+series:
+  -
+    title: Category
+    values:
+      - High income
+      - Middle income
+
+  -
+    title: Better
+    color: "dark"
+    values:
+      - 43.18
+      - 18.18
+
+  -
+    title: Average
+    color: "grey"
+    values:
+      - 25.00
+      - 45.45
+
+  -
+    title: Worse
+    color: "orange"
+    values:
+      - 31.82
+      - 36.36

@@ -1,0 +1,28 @@
+title: >
+  Figure 3: When do you expect China’s emissions will peak?
+
+source: >
+  Source: China Carbon Forum
+
+charts:
+  -
+    title:
+    scale:
+      minY:  0
+      maxY: 50
+    axes:
+      -
+        title: Category
+        values:
+          - text: Already peaked
+          - text: 2021 - 2025
+          - text: 2026 - 2030
+            highlight: true
+          - text: &gt; 2030
+      -
+        title: "Opinion"
+        values:
+          - 9
+          - 26
+          - 45
+          - 20

@@ -1,0 +1,159 @@
+- var page = {}
+- var datapath = "static/features/china-rules-based-order/charts/peacekeeping-participation/data"
+- _.extend(page, data.getOne(datapath))
+- toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+
+  #infographic-peacekeeping-participation.wrapper.flex.flex-col
+    svg.close(version='1.2' baseprofile='tiny' xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewbox='0 0 24 24')
+      path(stroke="white" stroke-width="2" d='M17.414 6.586c-.78-.781-2.048-.781-2.828 0l-2.586 2.586-2.586-2.586c-.78-.781-2.048-.781-2.828 0-.781.781-.781 2.047 0 2.828l2.585 2.586-2.585 2.586c-.781.781-.781 2.047 0 2.828.39.391.902.586 1.414.586s1.024-.195 1.414-.586l2.586-2.586 2.586 2.586c.39.391.902.586 1.414.586s1.024-.195 1.414-.586c.781-.781.781-2.047 0-2.828l-2.585-2.586 2.585-2.586c.781-.781.781-2.047 0-2.828z')
+    
+    .flex.flex-grow.flex-col
+      strong.txt-center.chart-title.txt-lg.txt-semi China and UN peacekeeping
+      
+      .sm.txt-left China is one of the top 10 troop contributors to UN peacekeeping and has more peacekeepers deployed than any other Security Council permanent member.
+    
+      hr
+
+      .fw-5.sm.txt-center Peacekeeping contributions (soldiers) by P5 member country*
+
+      .chart.flex-grow: .chart-content
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - ln = chart.axes[1].values.length
+        - fy = (i) => (i+0.35) / (ln)
+        - fx = (x) => (x - scale.minX) / (scale.maxX - scale.minX)
+        - fw = (x) => Math.abs(x) / (scale.maxX - scale.minX)
+              
+        // CHART
+      
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - ln = chart.axes[0].values.length
+        
+        svg(x="35%" height="100%" width="70%")
+          g
+            for x, i in chart.axes[1].values
+              - label = chart.axes[0].values[i]
+              - x0 = 0
+              - minx = 0
+              svg(
+                x=toPercent(0)
+                y=toPercent(fy(i -  0.125))
+                width="100%"
+                height=toPercent(fy(0.5))
+              )
+                g.bars
+                  rect(
+                    width=toPercent(fw(x))
+                    x=toPercent(fx(x0))
+                    height="100%"
+                    fill=i ? chart.colors[1] : chart.colors[0]
+                  )
+                  text.chart-value(
+                    x=toPercent(fx(x0) + fw(x))
+                    y="100%"
+                    transform=i ? "translate(4 -4)"  : "translate(-4 -4)"
+                    text-anchor=i ? "start" : "end"
+                    fill=i ? chart.colors[1] : "white"
+                  )
+                    = x
+      
+                svg(x=toPercent(fx(minx)) y="100%")
+                  text.label.txt-semi(
+                    y=0 x=-8
+                    transform="translate(0 -4)"
+                    text-anchor="end"
+                    fill=i ? chart.colors[1] : chart.colors[0]
+                  )
+                    = label
+      
+          //- Scale
+          svg.scale(y="105%")
+            line.scale-line(
+              x1=toPercent(fx(0)) x2=toPercent(fx(0))
+              y1="-105%" y2=0
+            )
+            
+        .info-src *as of December 2019.&emsp;Source: 
+          a(target="_blank" href="https://chinapower.csis.org/china-un-mission/") CSIS
+
+      hr
+
+      .sm.txt-left(style="margin-bottom: 0") Chinese forces participated in the International Force in East Timor (INTERFET), United Nations Transitional Administration in East Timor (UNTAET), United Nations Mission in Liberia (UNMIL) and the UN Mission in Sudan (UNMIS); and are currently part of the UN-AU Hybrid Mission in Darfur (UNAMID), the UN Interim Force in Lebanon (UNIFIL), and the United Nations Organization Stabilization Mission in the Democratic Republic of the Congo (MONUSCO).
+
+
+block append css
+  style
+    :sass
+      
+      $red: #b90000
+    
+      #infographic-peacekeeping-participation
+        position: relative
+        height: 550px
+        max-width: 600px
+        color: black
+        box-shadow: 0 0 20px 5px #aaa
+        background: white
+        padding: 20px 30px
+        
+        .chart-title
+          margin-bottom: 1em
+
+        .chart
+          position: relative
+          min-height: 150px
+
+        .chart-content
+          position: absolute
+          min-height: 125px
+          top: 10px
+          left: 0
+          right: 0
+          bottom: 20px
+        
+        .chart-value,
+        .label
+          font-size: 16px
+          
+        svg
+          overflow: visible
+        
+        .sm
+          font-size: 16px
+          margin: 0 auto 0.75em
+          max-width: 460px
+        
+        .close
+          position: absolute
+          top: 0
+          right: 0
+          fill: #B90000
+          cursor: pointer
+          transition: 300ms
+          
+          &:hover
+            fill: lighten(#b90000,20)
+        
+        hr
+          margin: 10px 0
+          
+
+        @media screen and (max-width: 600px), screen and (max-height: 700px)
+            
+          padding: 15px
+          overflow-y: scroll
+          
+          .chart-content
+            top: 0
+          
+          .info-src
+            margin-top: 0.5em
+            margin-bottom: 1em
+          
+          .sm
+            font-size: 15px
+
+          

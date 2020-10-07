@@ -1,0 +1,35 @@
+title: >
+  China and the World Trade Organization
+
+charts:
+  -
+    title: Funding
+    scale:
+      minX: 0
+      maxX: 120
+      ticks: 0
+
+    colors:
+      - "#b90000"
+      - "#909090"
+
+    legend:
+      - Country
+
+    axes:
+      -
+        title: Country
+        values:
+          - USA
+          - China
+          - Japan
+          - Germany
+          - UK
+      -
+        title: Disputes
+        values:
+          - 115.8
+          - 57.4
+          - 41.0
+          - 29.1
+          - 21.9

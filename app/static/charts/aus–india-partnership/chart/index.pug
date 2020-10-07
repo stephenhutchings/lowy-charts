@@ -1,0 +1,240 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/aus–india-partnership/chart/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - fx = (i) => (i + 0.6) / (ln + 0.25)
+        - fy = (y) => (y - minY) / range
+        
+        svg(height="100%" width="100%")
+        
+          // Y-Axis labels
+          svg(height="100%")
+            - let steps = chart.axes.stepsY-1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = "$" + (minY + range*(i/steps))/1000 + "B"
+                
+          // Y-Axis minor lines
+          if chart.axes.minorLines
+            svg(height="100%")
+              for n, i in new Array(steps)
+                - y = (i / steps)
+                svg
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // X-Axis labels
+          for x, i in chart.series[0].values
+            svg.x-label(x=toPercent(fx(i)) y="100%")
+              text(
+                text-anchor=axes.rotateX ? "end" : "middle"
+                transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
+              )=x
+              
+          // OPTIONAL GUIDE LINE
+          if !isEmpty(axes.guideLine)
+            - var y = 100*fy(maxY + minY - axes.guideLine)+"%"
+            line(
+              x1="0" y1=y x2="100" y2=y
+              stroke="#333"
+              stroke-width=.25
+              stroke-dasharray=(false ? 1 : "")
+            )
+
+          // CHART LINES
+          svg(
+            height="100%"
+            width="100%"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          )
+            // SERIES LINES
+            for item, i in chart.series
+              if i
+                polyline(
+                  fill="none"
+                  stroke=chart.colors[chart.series[i].color]
+                  stroke-dasharray=(item.dashed ? 10 : "")
+                  stroke-width=(item.widen ? 6 : 3)
+                  stroke-linejoin=(item.dashed ? "": "round")
+                  stroke-linecap=(item.dashed ? "": "round")
+                  points=(item.values.map( (y, ix) => {
+                    return isEmpty(y) ? "" : [
+                      100 * fx(ix),
+                      100 * fy(maxY + minY - y)
+                    ].join(" ");
+                  })).join(",")
+                )
+      
+          for item, i in chart.series
+            if i
+              g
+                for val, ix in item.values
+                  if true
+                    circle(
+                      r=4
+                      cx=toPercent(fx(ix))
+                      cy=toPercent(fy(maxY + minY - val))
+                      fill=chart.colors[chart.series[i].color]
+                      stroke='#fff'
+                      stroke-width=0
+                    )
+                  svg.chart-value(
+                    x=toPercent(fx(ix))
+                    y=toPercent(fy(maxY + minY - val))
+                  )
+                    text(
+                      y=(_.includes([8,13,14,15,17],ix) ? 24 : -12)
+                      text-anchor=(_.includes([9,10,13,14,18],ix) ? "end" : "middle")
+                      fill=chart.colors[chart.series[i].color]
+                    )
+                      = (val/1000).toFixed(1)
+
+      .chart-source.pv-sm.txt-right.txt-muted.txt-cond!= chart.source
+      //.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 450px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 50px
+        right: 20px
+        bottom: 40px
+
+      .chart-content > svg
+        border-bottom: 1px solid #bbb
+
+      .chart-title
+        margin: auto
+        font-size: 20px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin-bottom: .75em
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-left: 2em
+        font-size: 15px
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+      
+      .chart-content:hover .chart-value
+        opacity: 1
+
+      @media (max-width: 700px)
+        
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 14px)
+
+        text
+          font-size: 13px
+          
+        .x-label:nth-child(even)
+          display: none
+          
+      @media (max-width: 450px)
+        .chart-content
+          bottom: 40px
+        .legend
+          flex-direction: column
+        .chart-title
+          font-size: 18px
+          padding: 0 2em
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
+
+          

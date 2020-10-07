@@ -1,0 +1,30 @@
+# This content fills both the menu of links on the first page and the footer
+# of links on the issue template.
+
+issues:
+  - href: "introduction"
+    title: Introduction
+  - href: "china"
+    title: Dealing with economic coercion
+  - href: "us-china"
+    title: Shaping the US approach to China
+  - href: "security"
+    title: Maintaining Australia’s security
+  - href: "who"
+    title: Strengthening the WHO
+  - href: "g20"
+    title: Curing the G20's irrelevance
+  - href: "power"
+    title: Forming middle-power coalitions
+  - href: "aus-economic"
+    title: Managing our economic recovery
+  - href: "ind-economic"
+    title: Assisting Indonesia
+  - href: "se-asia"
+    title: Stepping up in Southeast Asia
+  - href: "pacific"
+    title: Helping the Pacific
+  - href: "aid"
+    title: Reviving Australia’s aid program
+  - href: "diplomacy"
+    title: Revaluing Australia's diplomacy

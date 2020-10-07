@@ -1,0 +1,89 @@
+title: >
+  Defence, ODA and Diplomacy: Real expenditures
+
+notes: >
+  * Projections based on forward estimates
+
+source: >
+  Source: Defence and DFAT annual reports, portfolio budget statements and appropriations, Devpolicy Aid Tracker, ABS GDP and CPI data.
+
+charts:
+  -
+    title: >
+      Defence, ODA and Diplomacy: Real expenditures
+
+    subtitle: >
+      Expenditure, $b, adjusted for inflation
+
+    scale:
+      minY:  0
+      maxY: 50000
+    legend:
+      - DFAT/Ausaid
+      - ODA
+      - Defence
+    colors:
+      - "#394754"
+      - "#3B9193"
+      - "#3CC6C0"
+    axes:
+      -
+        title: Years
+        values:
+          - 1996-97
+          - 1997-98
+          - 1998-99
+          - 1999-00
+          - 2000-01
+          - 2001-02
+          - 2002-03
+          - 2003-04
+          - 2004-05
+          - 2005-06
+          - 2006-07
+          - 2007-08
+          - 2008-09
+          - 2009-10
+          - 2010-11
+          - 2011-12
+          - 2012-13
+          - 2013-14
+          - 2014-15
+          - 2015-16
+          - 2016-17
+          - 2017-18
+          - 2018-19
+          - 2019-20*
+          - 2020-21*
+          - 2021-22*
+          - 2022-23*
+      -
+        title: Expenditure, $b, adjusted for inflation
+        values:
+          - [ 947, 2475, 20144 ]
+          - [ 1096, 2495, 20860 ]
+          - [ 1164, 2610, 26945 ]
+          - [ 1198, 2916, 29045 ]
+          - [ 1166, 2553, 29575 ]
+          - [ 1183, 2684, 29278 ]
+          - [ 1106, 2718, 29192 ]
+          - [ 1050, 2860, 22646 ]
+          - [ 1053, 3111, 23519 ]
+          - [ 1066, 3680, 24346 ]
+          - [ 1198, 3968, 26505 ]
+          - [ 1179, 4014, 27292 ]
+          - [ 1262, 4670, 29098 ]
+          - [ 1281, 4720, 30987 ]
+          - [ 1476, 5095, 29907 ]
+          - [ 1523, 5583, 30473 ]
+          - [ 1561, 5721, 27531 ]
+          - [ 1685, 5564, 29879 ]
+          - [ 1664, 5448, 32612 ]
+          - [ 1760, 4330, 34729 ]
+          - [ 1757, 4022, 34130 ]
+          - [ 1749, 4033, 36873 ]
+          - [ 1823, 4391, 37906 ]
+          - [ 1726, 4044, 38562 ]
+          - [ 1679, 3902, 40662 ]
+          - [ 1540, 3807, 43246 ]
+          - [ 1518, 3807, 45965 ]

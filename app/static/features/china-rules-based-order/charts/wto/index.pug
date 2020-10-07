@@ -1,0 +1,202 @@
+- var page = {}
+- var datapath = "static/features/china-rules-based-order/charts/wto/data"
+- _.extend(page, data.getOne(datapath))
+- toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  #infographic-wto.wrapper.flex.flex-col
+    svg.close(version='1.2' baseprofile='tiny' xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewbox='0 0 24 24')
+      path(stroke="white" stroke-width="2" d='M17.414 6.586c-.78-.781-2.048-.781-2.828 0l-2.586 2.586-2.586-2.586c-.78-.781-2.048-.781-2.828 0-.781.781-.781 2.047 0 2.828l2.585 2.586-2.585 2.586c-.781.781-.781 2.047 0 2.828.39.391.902.586 1.414.586s1.024-.195 1.414-.586l2.586-2.586 2.586 2.586c.39.391.902.586 1.414.586s1.024-.195 1.414-.586c.781-.781.781-2.047 0-2.828l-2.585-2.586 2.585-2.586c.781-.781.781-2.047 0-2.828z')
+    .txt-center.flex.flex-grow.flex-col
+      strong.txt-lg.txt-semi= page.title
+      .sm.fw-300.txt-semi China was the 143rd member of the WTO, acceding in 2001.<br>It has since been involved in 65 disputes with 9 economies.
+      
+      .chart.flex-grow: .chart-content
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - ln = chart.axes[1].values.length
+        - fy = (i) => (i+0.4) / (ln)
+        - fx = (x) => (x - scale.minX) / (scale.maxX - scale.minX)
+        - fw = (x) => Math.abs(x) / (scale.maxX - scale.minX)
+                    
+        // CHART 2
+
+        - chart = page.charts[1]
+        - scale = chart.scale
+        - ln = chart.axes[1].values.length
+        
+        svg#chart-2(x="25%" height="100%" width="80%")
+          g
+            for xs, i in chart.axes[1].values
+              - label = chart.axes[0].values[i]
+              - x0 = 0
+              - minx = 0
+              svg(
+                x=toPercent(0)
+                y=toPercent(fy(i -  0.125))
+                width="100%"
+                height=toPercent(fy(0.5))
+              )
+                g.bars
+                  for x, j in xs
+                    - tx = x > 0 ? x0 : x
+                    rect(
+                      width=toPercent(fw(x))
+                      x=toPercent(fx(tx))
+                      height="100%"
+                      fill=chart.colors[j]
+                    )
+                    - if (x > 0) x0 += x
+                    - minx = Math.min(minx, tx)
+
+                    if Math.abs(x) > 4
+                      text.chart-value(
+                        x=toPercent(fx(tx) + fw(x) / 2)
+                        y="50%"
+                        transform="translate(0 4)"
+                        text-anchor="middle"
+                        fill=!j ? "#fff" : "#444"
+                      )
+                        =x
+
+                    else if x > 0
+                      text.chart-value(
+                        x=toPercent(fx(tx) + fw(x))
+                        y="50%"
+                        transform="translate(4 4)"
+                      )
+                        =x
+
+                svg(x=toPercent(fx(minx)) y="100%")
+                  text.label.txt-semi(
+                    y=-6 x=-8
+                    text-anchor="end"
+                  )
+                    = label
+
+          //- Scale
+          svg.scale(y="105%")
+            line.scale-line(
+              x1=toPercent(fx(0)) x2=toPercent(fx(0))
+              y1="-105%" y2=0
+            )
+
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          for item, i in chart.legend
+            li.legend-item
+              span.legend-item-box(style=`background:${chart.colors[i]}`)
+              span.legend-item-label!= item
+              
+        .info-src Source: 
+          a(target="_blank" href="https://www.wto.org/english/tratop_e/dispu_e/dispu_status_e.htm") WTO
+
+
+
+block append css
+  style
+    :sass
+    
+      #infographic-wto
+        
+        position: relative
+        height: 425px
+        max-width: 600px
+        color: black
+        box-shadow: 0 0 20px 5px #aaa
+        background: white
+        padding: 40px
+
+        .chart
+          position: relative
+
+        .chart-content
+          position: absolute
+          top: 14px
+          left: 0
+          right: 0
+          bottom: 10px
+
+        .chart-title,
+        .chart-subtitle
+          padding: 0 24px
+
+        .legend
+          font-size: 15px
+
+        .legend-item
+          margin: -18px 8px 0
+          padding-left: 24px
+          position: relative
+
+        .legend-item-box
+          position: absolute
+          left: 0
+          top: 3px
+          height: 1em
+          width: 1em
+          background: black
+
+        .scale-line
+          stroke: rgba(#000, 0.2)
+
+        .scale-line-dashed
+          stroke: rgba(#000, 0.5)
+
+        text
+          font-size: 14px
+
+          &:not([fill])
+            fill: currentColor
+
+        svg
+          overflow: visible
+
+        .chart-notes
+          font-size: 14px
+          padding-top: 20px
+          max-width: 840px
+
+        .chart-source
+          margin-top: 8px
+
+        .close
+          position: absolute
+          top: 0
+          right: 0
+          fill: #B90000
+          cursor: pointer
+          transition: 300ms
+          
+          &:hover
+            fill: lighten(#b90000,20)
+
+        @media (max-width: 600px)
+          
+          padding: 30px
+            
+          .chart-content
+            bottom: 30px
+          .legend
+            flex-wrap: wrap
+            justify-content: center
+            align-text: center
+            max-width: 180px
+            margin: -40px 0 10px auto
+          .legend-item
+            margin-top: 0
+          .legend-item-box
+            height: 0.8em
+            width: 0.8em
+            left: 3px
+            top: 6px
+          .chart-content
+            left: 4px
+            right: 4px
+          .label
+            transform: translateY(2px)
+          .bars rect
+            transform-origin: center
+            transform: scaleY(1.1)
+          #chart-2
+            width: 60%
+            margin-top: 10px

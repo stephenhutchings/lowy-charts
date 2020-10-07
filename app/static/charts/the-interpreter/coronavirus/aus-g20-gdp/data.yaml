@@ -1,0 +1,43 @@
+title: >
+  COVID-19: Economic Implications
+
+subtitle: >
+  Australia vs G20
+
+source: >
+  Source: IMF World Economic Outlook/Fiscal Monitor (April 8). Spending is direct Budget spending.
+
+notes: >
+  Notes:
+
+charts:
+  -
+    title: Title
+    subtitle: Subtitle
+    scale:
+      minX: -10
+      maxX: 10
+      ticks: 11
+
+    colors:
+      - "#ff1f2f"
+      - "#002a45"
+
+    legend:
+      - 2020 GDP Growth
+      - Budget Spending (% GDP)
+
+    groups:
+      - name: ""
+
+    axes:
+      -
+        title: Lenders
+        values:
+          - Australia
+          - G20
+      -
+        title: Debt
+        values:
+          - [-6.7, 10.6]
+          - [-4.6, 3.3]

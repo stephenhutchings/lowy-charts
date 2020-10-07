@@ -1,0 +1,53 @@
+title: >
+  Response to COVID-19 by Power
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  Country performance in response to COVID-19 is determined by a composite score based on six weighted indicators: total confirmed cases and deaths, total confirmed cases and deaths per million people, tests per confirmed case and tests per thousand people.
+
+subtitle: >
+  Proportion of countries in category
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 4
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: true
+
+series:
+  -
+    title: Year
+    values:
+      - Major powers
+      - Middle powers
+      - Minor powers
+
+  -
+    title: Better
+    color: "dark"
+    values:
+      - 16.67
+      - 29.17
+      - 39.02
+
+  -
+    title: Average
+    color: "grey"
+    values:
+      - 25.00
+      - 37.50
+      - 34.15
+
+  -
+    title: Worse
+    color: "orange"
+    values:
+      - 58.33
+      - 33.33
+      - 26.83

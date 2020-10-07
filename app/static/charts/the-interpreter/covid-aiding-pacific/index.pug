@@ -1,0 +1,206 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/the-interpreter/covid-aiding-pacific/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex.flex-col.txt-center
+    //.page-title= page.title
+    .col-wrap.flex-grow.flex.txt-sm
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - fx = (i) => (i + 0.75) / (chart.axes[1].values.length + 0.75)
+        - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              - let ticks = 8
+              for n, i in new Array(ticks)
+                - y = 1 - (i / (ticks-1))
+                svg(y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = scale.minY + (i/(ticks-1)) * (scale.maxY - scale.minY) + "%"
+
+            g
+              for vals, i in chart.axes[1].values
+                svg(
+                  x=toPercent(fx(i))
+                  width=toPercent(fx(0))
+                  height="100%"
+                )
+                  defs
+                    pattern(
+                      id="diagonalHatch"
+                      patternUnits="userSpaceOnUse" 
+                      width="4" 
+                      height="8" 
+                      patternTransform="rotate(-45 2 2)"
+                    )
+                      rect(width="4" height="8" fill="#faa500")
+                      path(d="M -1,2 l 6,0" stroke="#fff" stroke-width="0.5")
+                      
+                  - y = 1
+                  for val, j in vals
+                    if val
+                      rect(
+                        width="100%"
+                        height=toPercent(fy(val))
+                        y=toPercent(y-fy(val))
+                        fill=chart.colors[j]
+                        stroke=( j==3 && (i==7 || i==6) ? "#ee1607" : "" )
+                        stroke-width=( j==3 && (i==7 || i==6) ? 1 : 0 )
+                        stroke-dasharray=( j==3 && (i==7 || i==6) ? 4 : 0 )
+                      )
+                        title= val.toFixed(2) <= 1 ? `${val.toFixed(2)}` : ""
+                      text.chart-value(
+                        x="50%"
+                        y=toPercent(y - fy(val/2))
+                        text-anchor="middle"
+                        transform="translate(0 4.5)"
+                        class=( (j > 3) ? "" : "txt-fff" )
+                      )
+                        = val.toFixed(2) > 1 ? val.toFixed(2) : ""
+
+                    - y -= fy(val)
+
+                  text.axes(
+                    y="100%"
+                    x="50%"
+                    text-anchor="end"
+                    transform="rotate(-40) translate(-180 -30)"
+                  )
+                    = chart.axes[0].values[i]
+
+        ul.legend.txt-nowrap.list-bare.txt-left.flex-ch
+          for item, i in chart.legend
+            li.legend-item
+              span.legend-item-box(style=`background:${chart.colors[i]}`)
+              span.legend-item-label!= item
+
+    .chart-notes.txt-muted.txt-center
+      !=page.notes
+
+block append css
+  style
+    :sass
+      .wrapper
+        height: 475px
+        overflow: visible
+        position: relative
+
+      .page-title
+        margin-bottom: 12px
+
+      .col-wrap
+        margin: 0 -1em
+
+      .col-md
+        padding: 0 1em
+        width: 50%
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 10px
+        left: 45px
+        right: 15px
+        bottom: 110px
+        
+      .chart-content > svg
+        border-bottom: 1px solid #ccc
+
+      .chart-title
+        max-width: 440px
+        padding: 0 30px
+        margin: auto
+
+      .legend
+        width: 90%
+        flex-wrap: wrap
+        font-size: 15px
+        margin: auto
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-left: 24px
+        position: relative
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: 4px
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 14px
+        &:not([fill])
+          fill: currentColor
+
+      svg
+        overflow: visible
+
+      sup
+        line-height: 0
+        font-size: 10px
+
+      polyline
+        vector-effect: non-scaling-stroke
+        stroke-width: 4
+
+      .chart-notes
+        padding: 16px 20px 0
+        font-size: 13px
+        line-height: 1.5
+        position: absolute
+        top: 100%
+        width: 100%
+        margin: auto
+
+      .chart-source
+        font-size: 14px
+        max-width: 800px
+        margin: 12px 0 0
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        &.txt-fff
+          fill: #fff
+
+        .chart:hover &
+          opacity: 1
+
+      @media screen and (max-width: 705px)
+        .chart-content
+          top: -15px
+        .axes
+          transform: rotate(-40deg) translate(-180px, -35px)
+
+      @media screen and (max-width: 529px)
+        .chart-content
+          bottom: 80px
+        .axes
+          font-size: 13px
+          transform: rotate(-40deg) translate(-180px, -40px)
+        .chart-notes
+          width: 90%
+      
+      @media screen and (max-width: 434px)
+        .chart-content
+          top: 0
+        .axes
+          font-size: 12px
+          transform: rotate(-40deg) translate(-150px, -37px)

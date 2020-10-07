@@ -1,0 +1,52 @@
+//-
+  This is an example issue item page with the content removed. The blocks
+  relate to those defined in the layout that's extended – in this case that's
+  the issue template that we define here...
+
+extend ../../partials/issue
+
+block append config
+  - page.title = "Strengthening the WHO by giving it legal teeth"
+  - page.expert = "Hervé Lemahieu"
+  - page.expertrole = "Director, Asian Power and Diplomacy Program"
+
+block intro-image
+  img.bg-img(data-src="../../img/who.jpg")
+
+block intro-caption
+  :marked
+    Photo: <a href="https://commons.wikimedia.org/wiki/User:Yann">Yann Forget</a> 
+    <br><a href="https://commons.wikimedia.org/">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>
+
+block intro-description
+    :marked
+      “The best political choice for Australia now would be to promote greater legal authority and powers for the WHO. No other organisation can fill this role.”
+
+block scroller
+  +item(1)
+    .row
+      .col.p-lg.bg-ff.txt-expert-content
+        .block.txt-sans.txt-md.txt-dk.pv-lg.txt-left
+          .txt-border
+            :marked
+              COVID-19 was no ‘black swan’ event. In September 2019, an expert panel convened jointly by the World Health Organization and the World Bank warned of the “very real threat” of a global pandemic. Presciently, they noted that “the lack of continued political will at all levels” to prepare for a global health emergency would cost the world economy up to 4.8 per cent of global GDP. 
+              
+              Despite the warnings, the international community has struggled to deliver a coordinated response to what the UN Secretary-General has termed the largest global crisis since 1945. Quite apart from a health emergency and economic crisis, COVID-19 has unleashed a political pandemic of disinformation and blame that has increased the sense of disarray.
+              
+              The magnitude of human lives lost from COVID-19 calls into question the WHO's fitness for purpose in a global health emergency. Australia has an opportunity to strengthen a beleaguered but vital organisation. However, leading the charge will require us to address head-on the imbalances of power and responsibilities between the WHO and its member states that exacerbated the spread of the virus. 
+              
+              The WHO is the only global institution responsible for identifying when domestic public health issues become global ones. But the organisation has limited resources and no real legal authority to take countries to task for obfuscating an emerging epidemic. This has led to costly mistakes and compromised the WHO’s perceived neutrality and independence, which are both vital for the organisation’s work and its global legitimacy.
+              
+              WHO leaders likely chose to laud China's coronavirus performance in order to overcome Beijing’s reluctance to share vital information about the virus and secure access for its investigation teams into the country. This show of deference may have succeeded in clearing a political bottleneck, but it came at a significant reputational cost to the organisation and contributed to the political storm that followed. 
+              
+              The question of China’s influence on WHO decision-making is controversial and will no doubt be formally reviewed. But we must be careful in drawing conclusions. Pursuing a change in WHO leadership would, on its own, do little to address the structural flaws that often compel the WHO Secretariat to walk on political eggshells around its member states.
+              
+              Instead, if we are serious about ensuring the WHO’s independence and ability to deliver on its global health security mandate, Canberra has no alternative but to commit to deeper reforms. These include setting stronger international agreements on disease preparedness and response, a stricter set of International Health Regulations (IHR) under international law, and a bolstered WHO epidemic transparency and accountability mechanism to monitor non-compliance with the IHR. 
+              
+              In a stocktake of its performance, the WHO's successes are as important as its failures. It took just four days from when the virus' genome became available on 12 January, for the WHO to develop and share a test that laboratories around the world could use to detect the novel coronavirus in patients. 
+              
+              By 23 January, less than a month after the first cases of pneumonia with unknown causes were reported to the WHO, member states had all the basic information on fatality rates, severity, and transmissibility they needed to accurately judge the risk of COVID-19. By contrast, it took nearly six months to identify the virus responsible for the 2002–03 SARS outbreak.
+              
+              If this did not prompt rapid action by political leaders in Europe and the United States, it is at least in part because Western leaders responded to the WHO’s alerts with extraordinary indifference.
+              
+              COVID-19 has laid bare the tension between the primacy of nation states and the efficacy of global institutions. It has reminded us that in a multipolar world, technical cooperation will always be political. But the best political choice for Australia now would be to promote greater legal authority and powers for the WHO. No other organisation can fill this role.

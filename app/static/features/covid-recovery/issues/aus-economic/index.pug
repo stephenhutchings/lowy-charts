@@ -1,0 +1,37 @@
+//-
+  This is an example issue item page with the content removed. The blocks
+  relate to those defined in the layout that's extended – in this case that's
+  the issue template that we define here...
+
+extend ../../partials/issue
+
+block append config
+  - page.title = "Managing Australia’s economic recovery"
+  - page.expert = "John Edwards"
+  - page.expertrole = "Senior Fellow"
+
+block intro-image
+  img.bg-img(data-src="../../img/aus-economic.jpg")
+
+block intro-caption
+  :marked
+    Photo:<br><a href="https://unsplash.com/photos/FUh6nK3s0po">Christopher Burns / Unsplash</a>
+
+block intro-description
+    :marked
+      “Matching its success in containing the pandemic with success in constraining long-term unemployment is Australia’s next big challenge, and one no less formidable than the pandemic itself.”
+
+block scroller
+  +item(1)
+    .row
+      .col.p-lg.bg-ff.txt-expert-content
+        .block.txt-sans.txt-md.txt-dk.pv-lg.txt-left
+          .txt-border
+            :marked
+              After infecting more than 7000 Australians and killing over a hundred, the coronavirus epidemic in Australia is ending — sooner than expected, with far fewer lives lost than anticipated, and much less economic damage than initially expected. With total COVID-19 fatalities compared to population running at less than one eightieth of the rate in the United States or the United Kingdom, the handling of the pandemic by Australian governments, hospitals, health care workers, and public officials has been a striking success compared to both Australian expectations and the experience of similar societies.  
+              
+              Yet the damage is substantial, and will have lingering effect. The output loss has probably already topped 6 per cent of GDP and will for a while continue to increase. Including those stood down with either no work or very little, the number of unemployed people in the labour force more than doubled between March and April. With new spending programs also amounting to around 10 per cent of GDP to support employment and incomes, the Australian government budget deficit is heading to a record peacetime high. Business and household debt have also increased. In a sharp change to policy, the Reserve Bank of Australia has already more than doubled its holdings of Australian dollar government and private debt and announced a ceiling not only on the overnight or cash rate, but medium-term bond rates as well.
+              
+              As the health emergency ends, it is apparent that the pandemic will change the terms of the political and economic debate in Australia — as it may change the debate in other Western democracies. Stubbornly high unemployment will now be the central issue at the next election, likely to be in 2022. The choice for Australia — as in Europe and North America — will be between the rapidity with which increasing government debt can be reined in, and the rapidity with which jobs can be created and unemployment reduced. 
+              
+              Although the fiscal challenge to the Australian government is formidable, it is well within Australia’s means to manage the interest expense of the additional debt. Most of the fiscal deterioration arises from slower output growth over the next few years, rather than the direct cost of programs to support jobs and spending. Even given a severe contraction, net Australian government debt compared to GDP will likely remain well under that of most advanced economies. Because sovereign debt is very cheap and the cost of long-term unemployment is very expensive, it will not be sensible to aim for a rapid reduction of deficits at a time of high unemployment and fragile sentiment. On the contrary, the Australian government needs to find useful ways to extend deficits created by temporary spending. So, too, the Reserve Bank of Australia will likely find it needs to maintain very low short- and medium-term interest rates for several years to come. Matching its success in containing the pandemic with success in constraining long-term unemployment is Australia’s next big challenge, and one no less formidable than the pandemic itself.

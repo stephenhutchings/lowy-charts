@@ -1,0 +1,25 @@
+title: >
+  China and the UNSC
+
+charts:
+  -
+    title: Vetoes
+    scale:
+      minX: 0
+      maxX: 170
+      ticks: 0
+
+    colors:
+      - "#b90000"
+      - "#909090"
+
+    legend:
+      - Country
+
+    axes:
+      -
+        title: Country
+        values: [USA, Russia, UK, France, China]
+      -
+        title: Disputes
+        values: [80,38,24,14,14]

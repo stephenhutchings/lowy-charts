@@ -1,0 +1,53 @@
+title: >
+  Response to COVID-19 by Political System
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  Country performance in response to COVID-19 is determined by a composite score based on six weighted indicators: total confirmed cases and deaths, total confirmed cases and deaths per million people, tests per confirmed case and tests per thousand people.
+
+subtitle: >
+  Proportion of countries in category
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 4
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: true
+
+series:
+  -
+    title: Year
+    values:
+      - Authoritarian
+      - Hybrid
+      - Democratic
+
+  -
+    title: Better
+    color: "dark"
+    values:
+      - 18.18
+      - 11.11
+      - 38.60
+
+  -
+    title: Average
+    color: "grey"
+    values:
+      - 36.36
+      - 55.56
+      - 29.82
+
+  -
+    title: Worse
+    color: "orange"
+    values:
+      - 45.45
+      - 33.33
+      - 31.58

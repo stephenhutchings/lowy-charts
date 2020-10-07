@@ -1,0 +1,105 @@
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.url = "https://interactives.lowyinstitute.org/features/china-rules-based-order/"
+  - page.class = ""
+  - page.title = "China and the Rules-Based Order"
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.description = ""
+  - page.image = "https://interactives.lowyinstitute.org/features/china-rules-based-order/img/thumbnail.jpg"
+  - page.feature = data.getOne("static/features/china-rules-based-order/data")
+
+block page
+  
+  // COMMENT-OUT THIS TO DISABLE EMBARGO
+  //#embargo.fixed.flex-ch.bg-red.z20(style="width: 100vw; height: 100vh;")
+    .flex-cv.mx-auto(style="max-width: 650px; padding: 0 50px;")
+      .txt-center.txt-ff.pv-md The contents of this Lowy Institute digital feature are embargoed. By entering the site, you agree to not share this page or its contents until 12:01am Friday 25 September 2020.
+      .bg-yel.p-sm.mx-auto.ptr(onclick="this.parentElement.parentElement.style.display = 'none'") Accept
+      
+  
+  include partials/header
+  include partials/mixins/readmore
+  include partials/mixins/infographic
+  
+  .container.relative
+
+    .landing.mx-auto.txt-ff
+    
+      .slide-up.hide
+        h1.title.txt-cond.txt-center.block 
+          span China 
+          span and&nbsp;the 
+          span Rules&#8209;Based Order
+        hr.display-none
+        h2.txt-semi.mx-auto.txt-center.fw-4.block Seven experts debate China’s approach to the rules&#8209;based international order
+        hr.mx-auto.article-w
+        
+      .article-w.mx-auto.slide-up.hide.delay-homepage
+        .xs.txt-sans.txt-tu.fw-5(style="color: #fffd; letter-spacing: 0.02em; margin-bottom: 10px;") 
+          | Introduction: 
+          a(style="color: #fffd;" href="https://www.lowyinstitute.org/people/experts/bio/ben-scott-0" target="_blank") Ben Scott
+        p China’s growing economic and military power has prompted urgent questions about its approach to the rules-based international order, which can be loosely defined as a shared commitment to conduct international affairs in accordance with laws, principles and practices embodied in institutions such as the <cite data-graph="un-leadership">United Nations</cite>, regional security arrangements, trade agreements and multilateral financial institutions. On the one hand, China could be expected to have a stake in maintaining the existing order which, after all, has provided the stability necessary for the country’s rise. On the other hand, it cannot be assumed that China supports all elements of the current order, which Beijing claims it had no hand in creating.&ensp;
+          +readmore('Read more')
+        #read-more.ease-out.max-h-0
+          p Key components of the rules-based order were established by the United States, as the dominant power after the Second World War. Hopes that China would peacefully integrate into the existing order were boosted when China acceded to the <cite data-graph="wto">World Trade Organization</cite> in 2001. But a much stronger China, led by President Xi Jinping since 2013, has shown increased willingness to disregard international norms, most notably in the South China Sea. 
+          p To interpret and explain these issues, we asked a select group of experts about Beijing’s goals for the international order; the changes it seeks and what compromises China might agree to, especially with the United States.
+          p This Lowy Institute feature presents the experts’ responses to these questions and their reactions to one another’s arguments.&ensp;
+            +readmore('Collapse', true)
+
+    .list.bxsh-yel.bg-ff.mx-auto.pv-sm.hide.slide-up.delay-homepage
+      .preamble
+        .txt-sans.lg.txt-center.fw-5 Debate Threads
+        p.md.txt-center.txt-spaced Select an argument or response to see how the debates thread together.
+
+      .flex
+        .col-1-2.txt-right
+          h4.label.label-l.txt-red Arguments
+          .bracket.bracket-left.hide
+          for article in page.feature.articles
+            .list-item.ptr.ease-out(data-map=article.map)
+              h4.xs.txt-tu.txt-mute= article.author
+              h2.md.txt-semi
+                a.no-ptr-ev.txt-bare.ease-out(href=`articles/${article.href}`)!= article.title
+              p.sm.txt-semi!= article.quote
+              h4.read-more.hide.no-ptr-ev.xs.ease-out: a.txt-red(href=`articles/${article.href}`) Read article
+                svg(width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path.ease-out(fill="#B90000" d="M6.08313 0.293243C5.70517 0.684233 5.70517 1.31622 6.08313 1.70721L8.29966 4.00015H0.966651C0.433059 4.00015 0 4.44814 0 5.00012C0 5.55211 0.433059 6.0001 0.966651 6.0001H8.29966L6.08313 8.29304C5.70517 8.68403 5.70517 9.31602 6.08313 9.70701C6.27163 9.902 6.51909 10 6.76655 10C7.01402 10 7.26148 9.902 7.44998 9.70701L12 5.00012L7.44998 0.293243C7.07202 -0.0977476 6.46109 -0.0977476 6.08313 0.293243Z")
+
+        .col-1-2
+          h4.label.label-r.txt-red Responses
+          for response in page.feature.responses
+            .list-item.ptr.ease-out(data-map=response.map)
+              h4.xs.txt-tu.txt-mute= response.author
+              h2.md.txt-semi
+                a.no-ptr-ev.txt-bare.ease-out(href=`responses/${response.href}`)!= response.title
+              p.sm.txt-semi!= response.quote
+              h4.read-more.hide.no-ptr-ev.xs.txt-red.ease-out: a.txt-red(href=`responses/${response.href}`) Read article
+                svg.ease-out(width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path.ease-out(fill="#B90000" d="M6.08313 0.293243C5.70517 0.684233 5.70517 1.31622 6.08313 1.70721L8.29966 4.00015H0.966651C0.433059 4.00015 0 4.44814 0 5.00012C0 5.55211 0.433059 6.0001 0.966651 6.0001H8.29966L6.08313 8.29304C5.70517 8.68403 5.70517 9.31602 6.08313 9.70701C6.27163 9.902 6.51909 10 6.76655 10C7.01402 10 7.26148 9.902 7.44998 9.70701L12 5.00012L7.44998 0.293243C7.07202 -0.0977476 6.46109 -0.0977476 6.08313 0.293243Z")
+
+    #credits.pos-abs.bottom-0.p-md.txt-ff.sm
+      .flex.mx-auto
+        .col-3-5.ph-sm
+          .txt-semi This debate is part of the Lowy Institute's ‘Australia’s Security and the Rules-Based Order Project’ and is supported by the Department of Defence’s Strategic Policy Grants Program.
+        .col-2-5.flex
+          .flex-1.ph-sm
+            .txt-tu.xs Introduction & Editing
+            a.txt-semi.fw-5.txt-bare.txt-ff(href="https://www.lowyinstitute.org/people/experts/bio/ben-scott-0" target="_blank") Ben Scott
+          .flex-1.ph-sm
+            .txt-tu.xs Design
+            a.txt-semi.fw-5.txt-bare.txt-ff(href="https://twitter.com/__brodysmith" target="_blank") Brody Smith
+
+    +infographic(2)
+    +infographic(7)
+    +infographic(1)
+
+block append css
+  style
+    include:sass _styles.sass
+
+block append customScripts
+  script(src="./scripts/modal.js")
+  script(src="./scripts/base.js")
+  script(src="./scripts/sort.js")

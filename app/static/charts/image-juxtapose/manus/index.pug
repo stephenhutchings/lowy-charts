@@ -1,0 +1,153 @@
+extend /partials/layout
+
+block append config
+
+block page
+
+  .wrapper
+    .wall(style="background-image: url('manus-2.jpg')")
+    .window(style="background-image: url('manus-1.jpg')")
+    .slider
+      .label-left 20 Dec 2012
+      .label-right 25 Feb 2020
+      .drag-column
+      <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M5.8 9.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.4-.3.7s.1.5.3.7z"/></svg>
+      <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M5.8 9.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.4-.3.7s.1.5.3.7z"/></svg>
+      
+  
+  script.
+    
+    let vw = window.innerWidth;
+    
+    let wrap = document.querySelector('.wrapper');
+    let img = document.querySelector('.window');
+    let slider = document.querySelector('.slider');
+    let labelL = document.querySelector('.label-left');
+    let labelR = document.querySelector('.label-right');
+    
+    let l = wrap.getBoundingClientRect().left;
+    let w = wrap.getBoundingClientRect().width;
+    let mouseDown = false;
+    
+    let maintainAspectRatio = function() { vw < 800 ? wrap.style.height = 0.75*vw  + 'px' : "" };
+    
+    window.onload = maintainAspectRatio;
+    window.addEventListener("resize", () => { vw = window.innerWidth; maintainAspectRatio(); });
+    
+    wrap.addEventListener('mousemove', slide);
+    wrap.addEventListener('touchmove', slide);
+    wrap.addEventListener('mouseup', stop);
+    wrap.addEventListener('touchend', stop);
+    slider.addEventListener('mousedown', () => mouseDown = true);
+    slider.addEventListener('touchstart', () => mouseDown = true);
+      
+    function slide(e) {
+      if (mouseDown) {
+        let x = 100*(e.pageX-l)/w;
+        img.style.width = (100-x)+"%";
+        slider.style.left = `calc(${x}% - 48px)`;
+        labelL.style.opacity = labelR.style.opacity = 0;
+      }
+    }
+    
+    function stop(e) {
+      mouseDown = false;
+      labelL.style.opacity = labelR.style.opacity = 1;
+    }
+
+block append css
+
+  style
+    :sass
+    
+      img
+        user-select: none
+    
+      .wrapper
+        max-width: 800px
+        height: 600px
+        overflow: hidden
+        position: relative
+        
+        > *
+          box-sizing: border-box
+      
+      .relative
+        position: relative
+        
+      .slider
+        position: absolute
+        width: 100px
+        height: 100px
+        left: calc(50% - 50px)
+        top: calc(50% - 50px)
+        z-index: 1
+        border-radius: 50%
+        cursor: pointer
+        
+        &:hover .drag-column
+          transform: scaleX(1.1)
+        &:hover svg
+          width: 32px
+          height: 32px
+        
+        > *
+          position: absolute
+          
+      .drag-column
+        background: white
+        border-radius: 3px
+        left: calc(50% - 4px)
+        top: calc(50% - 40px)
+        width: 8px
+        height: 80px
+        transition-duration: 0.2s
+        
+      svg
+        fill: white
+        top: calc(50% - 15px)
+        transition-duration: 0.2s
+        
+        &:first-of-type
+          left: 15px
+          transform: rotate(90deg)
+        &:last-of-type
+          right: 15px
+          transform: rotate(-90deg)
+          
+        
+      .wall
+        height: 100%
+        width: 100%
+        background-size: cover
+        background-position: left top
+
+      .window
+        position: absolute
+        top: 0
+        right: 0
+        background-position: right top
+        background-size: cover
+        overflow: hidden
+        height: 100%
+        width: calc(50% + 2px)
+        border-left: 4px solid white
+        
+      .label-left,
+      .label-right
+        user-select: none
+        white-space: nowrap
+        color: white
+        font-size: 20px
+        font-weight: 600
+        line-height: 0
+        text-shadow: 0 0 8px #000
+        transition-duration: 1s
+        opacity: 1
+        top: 50%
+        
+      .label-left
+        right: 100%
+      
+      .label-right
+        left: 100%

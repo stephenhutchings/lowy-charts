@@ -1,0 +1,257 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/pandemic-response/table-ranks/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex
+    - let t = page.table
+    .flex-col
+      .head Better performing
+      table#better
+        thead
+          tr
+            th.txt-left(onclick="sortTable(this,true,0)") Rank
+              span.icon.icon-down-sm.show
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm
+        tbody
+          each e, i in t.better
+            tr
+              td.txt-right= i+1
+              td= e
+    .flex-col
+      .head Average performing
+      table#average
+        thead
+          tr
+            th.txt-left(onclick="sortTable(this,true, 0)") Rank
+              span.icon.icon-down-sm.show
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm
+        tbody.p-1
+          - let next = t.better.length + 1
+          each e, i in t.average
+            tr
+              td.txt-right= i + next
+              td= e
+    .flex-col
+      .head Worse performing
+      table#worse
+        thead
+          tr
+            th.txt-left(onclick="sortTable(this,true, 0)") Rank
+              span.icon.icon-down-sm.show
+            th.txt-left(onclick="sortTable(this,false, 1)") Country
+              span.icon.icon-down-sm
+        tbody
+          - next = t.better.length + t.average.length + 1
+          each e, i in t.worse
+            tr
+              td.txt-right= i + next
+              td= e
+
+    //.btns.flex-ch.p-1
+      .pg.txt-tu(onclick="pager()") 1 of 2
+      .down.icon.icon-down(onclick="pager()")
+      
+    .notes.txt-muted.txt-sm *Taiwan is included in the Index as a self-governing territory
+      
+block append css
+  style
+    :sass
+      .wrapper
+        justify-content: center
+        position: relative
+        height: 760px
+        max-width: 620px
+      .flex-col
+        margin: 10px 0
+        flex: 1
+      .head
+        font-size: 20px
+        border-bottom: 1px solid #4b4f56
+      th
+        cursor: pointer
+        background: white
+        padding: 6px 0 0
+        text-transform: uppercase
+        font-size: 14px
+        letter-spacing: 0.03em
+        user-select: none
+        
+      th:last-child,
+      td:last-child
+        padding-left: 0.25rem
+      
+      .p-2 tr:nth-child(-n+20)
+        display: none
+      
+      td
+        max-width: 0
+        white-space: nowrap
+        font-size: 15px
+      td:first-child
+        min-width: 35px
+        padding-right: 1.25em
+      td:last-child
+        min-width: 110px
+        
+      .icon
+        display: inline-block
+        font-size: 18px
+        padding: 0 2px
+        transition-duration: 250ms
+        vertical-align: inherit
+        opacity: 0.3
+        transform-origin: 50% 45%
+        &.show
+          opacity: 1
+        &.rot
+          transform: rotate(180deg)
+
+      .btns
+        position: absolute
+        background: white
+        width: 100%
+        bottom: 0
+        & .icon
+          margin: 0 0 50px
+          opacity: 1
+          height: 25px
+          width: 25px
+          line-height: 25px
+          text-align: center
+          color: #4b4f56
+          border-radius: 4px
+          cursor: pointer
+          
+        // &.p-1 .icon-up
+          opacity: 0
+          cursor: default
+        // &.p-2 .icon-down
+          transform: scaleY(-1)
+          
+      // .pg
+        font-size: 12px
+        margin-top: -50px
+        margin-left: -25px
+        z-index: 100
+      .notes
+        position: absolute
+        bottom: 0
+        text-align: center
+        width: 100%
+        font-size: 14px
+        padding-top: .5em
+        border-top: 1px solid #4b4f56
+        
+      @media (max-width: 620px)
+        html
+          overflow-y: auto
+          height: fit-content
+        .wrapper
+          height: auto
+          padding: 10px 10px
+          box-sizing: border-box
+        .flex
+          flex-direction: column
+        .notes
+          position: relative
+
+        table
+          width: 100%
+          table-layout: fixed
+          
+        .head
+          text-align: center
+          
+        th:first-child
+          text-align: right
+          
+        th:first-child
+          padding-right: 0.25em
+        td:first-child
+          padding-right: 1.25em
+        th:last-child,
+        td:last-child
+          width: 54%
+          padding-left: 0
+          
+
+
+  script.
+    var p = 1;
+    var ready = false;
+    function flipSortIcon(el) {
+      let icon = el.querySelector('.icon');
+      if ( icon.classList.contains('show') ) {
+        icon.classList.toggle('rot');
+      }
+      else {
+        el.parentNode.querySelector('th > .show').classList.remove('show');
+        icon.classList.toggle('show');
+      }
+    }
+    // from https://www.w3schools.com/howto/howto_js_sort_table.asp
+    function sortTable(el, numeric, n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = el.parentNode.parentNode.parentNode;
+      switching = true;
+      dir = "asc";
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          if (numeric) {
+            if (dir == "asc") {
+              if ( Number(x.innerHTML) > Number(y.innerHTML) ) {
+                shouldSwitch = true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if ( Number(x.innerHTML) < Number(y.innerHTML) ) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+          else {
+            if (dir == "asc") {
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount ++;
+        } else {
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+      ready ? flipSortIcon(el) : "";
+    }
+    window.addEventListener('load', function () {
+      sortTable(document.getElementsByTagName('th')[1], true, 1);
+      sortTable(document.getElementsByTagName('th')[3], true, 1);
+      sortTable(document.getElementsByTagName('th')[5], true, 1);
+      ready = true;
+    });
+    

@@ -1,0 +1,17 @@
+mixin infographic(id)
+  .ig.fixed.top-0.left-0.z10.max-w-none.txt-semi.display-none.fade-in.mx-auto
+    case id
+      when 1
+        include ../../charts/wto/index
+      when 2
+        include ../../charts/un-leadership/index
+      when 3
+        include ../../charts/who/index
+      when 4
+        include ../../charts/unsc/index
+      when 5
+        include ../../charts/peacekeeping-contributions/index
+      when 6
+        include ../../charts/peacekeeping-participation/index
+      when 7
+        include ../../charts/prc-organisations/index

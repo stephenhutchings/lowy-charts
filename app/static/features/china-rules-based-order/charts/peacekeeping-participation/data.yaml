@@ -1,0 +1,35 @@
+title: >
+  China and Peacekeeping
+
+charts:
+  -
+    title: Troops
+    scale:
+      minX: 0
+      maxX: 2545
+      ticks: 0
+
+    colors:
+      - "#b90000"
+      - "#909090"
+
+    legend:
+      - Country
+
+    axes:
+      -
+        title: Country
+        values:
+          - China
+          - France
+          - UK
+          - Russia
+          - USA
+      -
+        title: Troops
+        values:
+          - 2545
+          - 730
+          - 579
+          - 80
+          - 31

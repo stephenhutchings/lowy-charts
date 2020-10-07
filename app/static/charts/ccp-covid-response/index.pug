@@ -1,0 +1,132 @@
+extend /partials/layout
+ 
+block append config
+  - page.title = "Timeline: CCP Covid Crisis Response"
+  - var events = data.getOne("static/charts/ccp-covid-response/events").events
+  - var years = _.pluck(events, "start")
+  - var monthIds = _.pluck(events, "monthId")
+  - var months = _.pluck(events, "month")
+  - var months = _.uniq(months, true)
+
+  - vals = (0).toPrecision(2).split("").map(function(e, i){return 1})
+  - vals = vals.map(function(e){ return +(e / (_.sum(vals) * 2).toFixed(4))});
+  - vals = vals.concat(vals).sort()
+  
+  - var p = function(i){return vals[i]}
+  - order = [1,12,11,10,9,8,7,6,5,4,3,2,1,1,2,1,1]
+
+block page
+  .wrapper
+    - min = _.first(monthIds) - 1
+    - max = _.last(monthIds) + 1
+    - len = months.length
+    
+    .chart-title.txt-cond.txt-lg.txt-center
+      | Timeline of China’s COVID-19 Response
+
+    #controls
+      .btn.js-prev(tabindex="0")
+        .icon.icon-left-arrow
+      .btn.js-next(tabindex="0")
+        .icon.icon-right-arrow
+ 
+    #frame
+      #events
+        for list, j in _.groupBy(_.sortBy(events, "monthId"), "highlight")
+          - j = j == "true" ? 21 : 0
+          
+          for e, i in list
+          
+            - var k = (e.monthId - min)
+            - var left = _.sum(vals.slice(0, k))
+            - var m = e.day
+            - var dir = i < list.length-3 ? 1 : 0
+            //- var dir = Math.floor(i / 10) % 2 == 0 ? -1 : 1
+            
+            .event.js-year(
+              tabindex="0"
+              style={left: (100 * left) + "%"}
+              class=[
+                (j + i) == 0 ? "active" : "",              
+                dir ? "right" : "left", 
+                !e.highlight ? "top" : "bottom",
+                `item-${order[i]}`,
+                "spaced",
+                e.highlight ? "highlight" : ""
+              ].join(" ")
+              data-i=_.sortBy(events, "start").indexOf(e)
+            )
+              .event-marker
+              .event-year= e.day
+ 
+              .event-content(class= e.highlight ? "highlight" : "")
+                p.event-text!= e.text
+
+      #years
+        div(style="margin: auto")
+          for n, i in new Array(len+1)
+            - j = (min + i)
+            .year-label(
+              style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
+              class=c
+            )
+              = j ? months[j-1] : ""
+
+    #pager
+      span#page 1 
+      | &ensp;/&ensp;#{events.length}
+
+
+block append scripts
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.2.1/balancetext.js")
+  script.
+    $(document).ready(function(){
+      var count = 0,
+          $events = $(".event"),
+          $frame = $("#frame"),
+          $page = $("#page");
+
+      $(".js-next").click(function(){count++; update()})
+      $(".js-prev").click(function(){count--; update()})
+      $(".js-year").click(function(){count = $(this).data("i"); update()})
+      $(".js-year").hover(function(){count = $(this).data("i"); update()})
+
+      function update() {
+        if (document.activeElement) document.activeElement.blur()
+        
+        count = ($events.length + count) % $events.length
+
+        $active = $events
+          .removeClass("active")
+          .filter("[data-i='" + count + "']")
+          .addClass("active")
+
+        $page.html(count + 1)
+
+        outer = $frame.width()
+        inner = $("body").outerWidth()
+        offset = $active.position().left + 40
+        offset += $active.find(".event-text").position().left
+
+        if (inner < outer) {
+          if ($active.hasClass("right")) {
+            offset -= 40
+          } else {
+            offset -= inner
+            offset -= - $active.find(".event-year").width() - 20
+          }
+          $frame.css({
+            transform: "translate3d(" + (-Math.max(offset, 0) ) + "px,0,0)"
+          })
+        } else {
+          $frame.css({
+            transform: ""
+          })
+        }
+      }
+    })
+
+block append css
+  style
+    include:sass _styles.sass
+      

@@ -1,0 +1,67 @@
+title: >
+  International Covid-19 Financing support across the Pacific (% GDP)
+
+notes: |
+  [1] Announced  &emsp; [2] Available  &emsp;  [3] Proposed   &emsp;
+  <span class="txt-nowrap"><span style="font-size: 10px; padding:0 5px; color: white; background:#faa500; border: 2px dashed #ee1607">&nbsp;</span> Accessed</span>
+
+
+source: >
+  Source:
+
+charts:
+  -
+    title: >
+      International Covid-19 financing support across the Pacific (% GDP)
+
+    subtitle: ""
+    scale:
+      minY:  0
+      maxY: 14
+
+    legend:
+      - Multilateral assistance <sup>[1]</sup>
+      - Bilateral assistance <sup>[1]</sup>
+      - G20 bilateral debt standstill <sup>[1]</sup>
+      - IMF rapid financing windows <sup>[2]</sup>
+      - Broadened debt standstill <sup>[3]</sup>
+
+    colors:
+      - "#000"
+      - "#4b4f56"
+      - "#8b8f96"
+      - "#faa500"
+      - "#ffc52b"
+
+    axes:
+      -
+        title: ""
+        values:
+          - Tuvalu
+          - Kiribati
+          - Marshall Islands
+          - Tonga
+          - Palau
+          - Micronesia
+          - Samoa
+          - Solomon Islands
+          - Nauru
+          - Vanuatu
+          - Papua New Guinea
+          - Fiji
+
+      -
+        title: Number
+        values:
+          - [0.88, 4.68, 0.00, 8.09, 0.00]
+          - [0.11, 1.60, 0.08, 8.27, 1.02]
+          - [6.32, 0.00, 0.00, 2.16, 1.86]
+          - [3.05, 1.41, 0.30, 3.84, 1.31]
+          - [6.48, 0.00, 0.40, 1.45, 0.39]
+          - [4.07, 0.00, 0.18, 1.82, 1.64]
+          - [1.58, 0.76, 0.90, 2.43, 1.31]
+          - [1.79, 2.38, 0.08, 1.96, 0.43]
+          - [0.30, 2.73, 0.00, 3.52, 0.00]
+          - [1.08, 0.90, 0.81, 3.40, 0.34]
+          - [0.09, 0.06, 1.08, 1.52, 0.83]
+          - [0.00, 0.12, 0.05, 2.34, 0.74]

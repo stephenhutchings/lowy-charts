@@ -1,0 +1,26 @@
+title: >
+  Chinese Peacekeepers
+
+charts:
+  -
+    title: Contributions
+    scale:
+      minX: 0
+      maxX: 100
+      ticks: 0
+
+    colors:
+      - "#909090"
+      - "#b90000"
+      - "#909090"
+
+    legend:
+      - Country
+
+    axes:
+      -
+        title: Country
+        values: [USA, China, Other]
+      -
+        title: Contributions
+        values: [27.89,15.21,56.9]

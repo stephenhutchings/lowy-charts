@@ -1,0 +1,184 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/the-interpreter/confluence-covid-low/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex.flex-col
+    .txt-center.flex.flex-grow.flex-col
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - minY = Math.log(scale.minY)
+        - maxY = Math.log(scale.maxY)
+        - fx = (i, len) => (i + 0.75) / (len + 0.5)
+        - fy = (y) => (y - minY) / (maxY - minY)
+
+        .chart-title= page.title
+        .chart-subtitle.txt-muted.txt-sm!= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in [100, 200, 500, 1000, 2000, 5000]
+                - y = 100 * (1 - (Math.log(n) - minY) / (maxY-minY) ) + "%"
+                svg(y=y)
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = n
+
+                line(
+                  x1=0 x2="100%" y1=y y2=y
+                  stroke="#ddd"
+                  stroke-width=0.5
+                )
+
+            svg(width="100%" y="100%")
+              for year, i in chart.axes[0].values
+                - x = toPercent(fx(year, chart.axes[1].values.length))
+                if i < chart.axes[0].values.length - 1
+                  svg(x=x)
+                    text(
+                      text-anchor="middle"
+                      transform="translate(0 20)"
+                    )
+                      = year
+                      
+                  line(
+                    x1=x x2=x y1=0 y2="-100%"
+                    stroke="#ddd"
+                    stroke-width=0.5
+                  )
+
+            svg(
+              width="100%"
+              height="100%"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            )
+              for item, i in chart.legend
+                polyline(
+                  fill="none"
+                  stroke=chart.colors[i]
+                  points=(chart.axes[1].values.map((y, ix, a) => {
+                    return y[i] ? [
+                      100 * fx(ix, a.length),
+                      100 * fy(maxY + minY - Math.log(y[i]))
+                    ].join(" ") : "";
+                  })).join(",")
+                )
+
+            //for item, i in chart.legend
+              g
+                for val, ix in chart.axes[1].values
+                  circle(
+                    r=5
+                    cx=toPercent(fx(ix, chart.axes[1].values.length))
+                    cy=toPercent(fy(scale.maxY - val[i]))
+                    fill=chart.colors[i]
+                  )
+                  svg(
+                    x=toPercent(fx(ix, chart.axes[1].values.length))
+                    y=toPercent(fy(scale.maxY - val[i]))
+                  )
+                    text.chart-value(
+                      y=(val[i] == _.max(val) ? -12 : 24)
+                      text-anchor="middle"
+                      fill=chart.colors[i]
+                    )
+                      = val[i]
+
+
+        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+          - let order = [3,1,2,4,0]
+          for item, i in chart.legend
+            li.legend-item
+              span.legend-item-box(style=`background:${chart.colors[order[i]]}`)
+              span.legend-item-label!= chart.legend[order[i]]
+
+    .chart-source.txt-muted.txt-cond
+      !=page.source
+
+
+block append css
+  style
+    :sass
+      .wrapper
+        height: 600px
+        max-width: 750px
+        overflow: visible
+        position: relative
+
+      .chart
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 50px
+        right: 5px
+        bottom: 32px
+
+      .chart-content > svg
+        border-bottom: 1px solid #ccc
+
+      .chart-title
+        font-size: 17px
+        
+      .chart-title,
+      .chart-subtitle
+        padding: 0 24px
+
+      .legend
+        font-size: 15px
+        max-width: 320px
+        margin: auto
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-left: 24px
+        position: relative
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: 4px
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 14px
+
+        &:not([fill])
+          fill: currentColor
+
+      svg
+        overflow: visible
+
+      sup
+        line-height: 0
+
+      polyline
+        vector-effect: non-scaling-stroke
+        stroke-width: 4
+
+      .chart-source
+        font-size: 14px
+        margin: 12px auto 0
+        text-align: center
+        max-width: 470px
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 1
+
+      @media screen and (max-width: 600px)
+        .chart
+          padding-right: 0
+
+        .chart-subtitle
+          height: auto

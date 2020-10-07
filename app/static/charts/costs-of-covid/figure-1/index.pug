@@ -1,0 +1,298 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/costs-of-covid/figure-1/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex.flex-col
+
+    .page-title.txt-center= page.title
+
+    .col-wrap.txt-center.flex-grow.flex.txt-sm
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - fx = (i, len) => (i + 0.75) / (len + 0.5)
+        - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted.txt-sm!= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in new Array(scale.ticks)
+                - y = 1 - (i / (scale.ticks-1))
+                svg(class="y-label" y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY) + "%"
+
+                svg(class="y-minor")
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#9992"
+                    stroke-dasharray=((i%2) ? 5 : "")
+                  )
+
+            svg(width="100%" y="100%")
+              for year, i in chart.axes[0].values
+                svg(x=toPercent(fx(i, chart.axes[0].values.length)) )
+                  text(
+                    text-anchor="end"
+                    transform="rotate(-45) translate(-5 15)"
+                  )
+                    = !((i+4)%4) || i==chart.axes[0].values.length-1 ? year : ""
+
+            svg(
+              width="100%"
+              height="100%"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            )
+              for item, i in chart.legend
+                polyline(
+                  fill="none"
+                  stroke=chart.colors[i]
+                  stroke-linejoin="round"
+                  stroke-width=3
+                  points=(chart.axes[1].values.map((y, ix, a) => (
+                    [
+                      100 * fx(ix, a.length),
+                      100 * fy(scale.minY + scale.maxY - y[i])
+                    ].join(" ")
+                  ))).join(",")
+                )
+              
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[1]
+        - scale = chart.scale
+        - fx = (i, len) => (i) / (len-1)
+        - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+        
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted.txt-sm!= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in new Array(scale.ticks)
+                - y = 1 - (i / (scale.ticks-1))
+                svg(class="y-label" y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = "$" + (scale.minY + (i / (scale.ticks - 1)) * (scale.maxY - scale.minY)) + "B"
+
+                svg(class="y-minor")
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#9992"
+                    stroke-dasharray=((i%2) ? 5 : "")
+                  )
+
+            svg(width="100%" y="100%")
+              for year, i in chart.axes[0].values
+                svg(x=toPercent(fx(i, chart.axes[0].values.length)))
+                  text(
+                    text-anchor="end"
+                    transform="rotate(-45) translate(-5 15)"
+                  )
+                    = !((i+1)%2) || i==chart.axes[0].values.length-1 ? year : ""
+
+            svg(
+              width="100%"
+              height="100%"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            )
+              for item, i in chart.legend
+                polyline(
+                  fill="none"
+                  stroke=chart.colors[i]
+                  stroke-linejoin="round"
+                  stroke-width=3
+                  points=(chart.axes[1].values.map((y, ix, a) => (
+                    [
+                      100 * fx(ix, a.length),
+                      100 * fy(scale.minY + scale.maxY - y[i])
+                    ].join(" ")
+                  ))).join(",")
+                )
+
+    .chart-source.txt-muted.txt-semi
+      !=page.source
+      //.chart-source.txt-muted
+        !=page.notes
+
+
+      block append css
+        style
+          :sass
+            .wrapper
+              height: 500px
+              overflow: visible
+              position: relative
+      
+            .col-wrap
+              margin-top: 20px
+              
+            .col-md
+              padding: 0 1em
+              width: 50%
+      
+            .chart
+              box-sizing: border-box
+              position: relative
+      
+            .chart-content
+              position: absolute
+              top: 5px
+              bottom: 45px
+              .col-md:first-child &
+                left: 60px
+                right: 30px
+              .col-md:last-child &
+                left: 30px
+                right: 40px
+                
+            .chart-content > svg
+              border-bottom: 1px solid #ccc
+      
+            .page-title
+              margin-bottom: 0px
+              font-size: 18px
+      
+            .chart-title,
+            .chart-subtitle
+              .col-md:first-child &
+                padding-left: 60px
+                padding-right: 30px
+              .col-md:last-child &
+                padding-left: 30px
+                padding-right: 60px
+      
+            .chart-title
+              font-weight: 500
+              font-size: 15px
+              max-width: 320px
+              line-height: 1.2
+              margin: auto
+      
+            .chart-subtitle
+              height: 0
+              text-transform: uppercase
+              font-weight: 600
+              font-size: 10px
+              margin-bottom: -10px
+      
+            .legend
+              max-width: 100%
+              font-size: 13px
+              margin: auto
+              min-height: 3em
+              .col-md:first-child &
+                padding-left: 30px
+              .col-md:last-child &
+                padding-right: 30px
+ 
+            .legend-item
+              margin: 4px 8px 0
+              padding-left: 16px
+              position: relative
+      
+            .legend-item-box
+              position: absolute
+              left: 0
+              top: 4px
+              height: .8em
+              width: .8em
+              background: black
+      
+            text
+              font-size: 13px
+      
+              &:not([fill])
+                fill: currentColor
+      
+            svg
+              overflow: visible
+      
+            sup
+              line-height: 0
+      
+            polyline
+              vector-effect: non-scaling-stroke
+      
+            .br-top
+              border-top: 1px solid #888
+              padding: 4px 5px 0
+              margin-top: 5px
+              > *
+                margin: 0 4px
+      
+            .chart-source
+              padding-top: 1em
+              font-size: 12px
+              max-width: max-content
+              margin: auto
+      
+            .chart-value
+              opacity: 0
+              transition: opacity 300ms
+      
+              &.txt-fff
+                fill: #fff
+      
+              .chart:hover &
+                opacity: 1
+      
+            .hover-hide
+              transition: opacity 300ms
+      
+              .chart:hover &
+                opacity: 0
+                
+            .y-label:nth-last-child(2),
+            .y-minor:last-child
+              display: none
+      
+            @media screen and (max-width: 750px)
+              .wrapper
+                overflow: hidden
+                height: 750px
+              .chart-content
+                left: 75px!important
+                right: 35px!important
+              .chart-notes
+                padding-top: 0
+              .col-wrap
+                flex-direction: column
+                align-items: center
+              .col-md
+                max-width: 600px
+                width: 100%
+                height: 50%
+                &:first-child
+                  padding-bottom: 30px
+              .flex.br-top
+                flex-direction: column
+              .chart-source
+                padding-top: 4px
+                
+              .chart-title,
+              .chart-subtitle,
+              .legend
+                .col-md:first-child &
+                  padding: 0
+                .col-md:last-child &
+                  padding: 0
+                
+  
+      
+                  
