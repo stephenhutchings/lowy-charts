@@ -1,0 +1,691 @@
+html,body
+  font-family: 'Sans', sans-serif
+  letter-spacing: $ls-s
+  background-color: $color-bg!important
+  color: $color-bk
+  overflow: auto!important
+  height: auto
+
+// EMBARGO MODAL
+
+#embargo
+  min-height: 100vh
+  min-width: 100vw
+  color: white
+  background: #002b45
+  z-index: 100
+
+  .flex-cv
+    max-width: 540px
+
+  .btn
+    width: auto
+    background: $color-qt
+    padding: 0.25em 1em
+    border-radius: 10px
+    margin: 20px auto
+
+    &:hover
+      background: darken($color-qt, 10)
+
+// END EMBARGO MODAL
+
+
+blockquote
+  border: none
+  margin: 0
+  padding: 0 1em 1.4em 0
+  font-style: normal
+  line-height: 1.6em
+  font-size: inherit
+  font-family: "Semi", sans-serif
+  font-style: italic
+
+
+  &:last-child
+    padding-bottom: 0
+
+  p
+    font-size: .95em
+
+  p:before,
+  p:after
+    content: "“"
+    font-size: 22px
+    padding: 0 4px
+
+  p:after
+    content: "”"
+    padding: 0
+
+.intro-txt h2,
+.themes-txt h2
+  margin-top: 2em
+  font-weight: 500
+
+.intro-txt blockquote
+  padding: 0 2.5em 0 1.5em
+  margin-bottom: 1.4em
+
+.banner-wrap
+  display: flex
+  flex-direction: column
+
+.banner
+  position: relative
+  background-color: $color-bl-dk
+  display: flex
+  flex-direction: column
+  max-height: 100vh
+  min-height: 100vh
+  margin-top: 0
+
+  &-title
+    font-size: 18px
+    color: $color-ff
+    margin: auto
+    font-weight: 400
+    padding: 0 10px
+    text-transform: uppercase
+
+    span
+      display: inline-block
+      line-height: 1.25
+      font-weight: 200
+      font-size: 34px
+      text-transform: none
+      font-style: italic
+
+  &-caption
+    position: absolute
+    right: 10px
+    margin-top: 320px
+
+
+#experts
+  margin-top: 10px
+  line-height: 2rem
+  font-size: 1.1rem
+
+  > *
+    pointer-events: none
+
+  > .flex-ch
+    flex-direction: column
+
+  .txt-nowrap
+    margin: .4em 0
+
+  cite
+    height: 2rem
+    width: 2rem
+    margin: 0 .75em 0 0
+    animation: none
+
+#lowy-authors
+  display: block
+  margin-bottom: 20px
+
+  @media (min-width: 1085px) and (min-height: 700px)
+    margin-bottom: 40px
+
+.section-wrap
+  margin: 0 auto
+  box-sizing: border-box
+  position: relative
+  overflow: hidden
+  padding-left: 1em
+  padding-right: 1em
+
+.intro-wrap
+  max-height: 100vh
+
+  .faded
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    text-align: center
+    padding: 85px 0 25px
+
+.intro-txt
+  box-sizing: border-box
+
+section h1
+  padding: 1em 0 .75em 0
+  margin-bottom: 1.4em
+  border-bottom: 1px solid
+  font-weight: 700
+  text-transform: uppercase
+
+.timeline-section
+  background-color: white
+  min-height: 50vh
+  overflow: hidden
+  box-sizing: border-box
+
+#theme-menu
+  box-sizing: border-box
+  white-space: nowrap
+  width: 100%
+  padding: 1em 0 0
+
+  &.theme-links
+    max-height: 200vh
+
+.theme-links
+  flex-direction: column
+  transition-duration: .25s
+  align-items: center
+  max-height: 0
+  overflow: hidden
+  text-align: center
+
+  .col-1-2,
+  .col-1-3,
+  .col-2-3
+    width: 100%
+
+  h2
+    border-top: .5px solid rgba($color-bg, 0.4)
+    border-bottom: .5px solid rgba($color-bg, 0.4)
+    padding: 2rem 1rem
+    margin-bottom: 0
+    cursor: pointer
+    user-select: none
+    text-transform: uppercase
+    color: #d6dbe4
+    letter-spacing: 0.06em
+    font-weight: 600
+    font-size: 1.1rem
+
+    &:hover
+      background-color: $color-qt
+      color: $color-ff
+
+  .icon
+    float: right
+    padding-right: 1em
+
+  ul
+    list-style-type: none
+    padding: .25em 0
+
+  li
+    padding: .5em 0 .5em 1.5em
+    font-weight: 500
+
+    a
+      position: relative
+      text-decoration: none
+
+    a:hover
+        color: $color-ff
+
+#side-menu
+  z-index: 10
+  font-size: 13px
+  box-shadow: 0 1px 3px 0px $color-bl-dk
+  transition-duration: .3s
+
+  .menu-body
+    box-sizing: border-box
+
+  .button
+    position: absolute
+    top: 0
+    left: -25px
+    height: 50px
+    width: 50px
+    line-height: 50px
+    background: $color-bl-dk
+    border-radius: 100%
+
+  .icon
+    font-size: 18px
+    &:before
+      padding-left: 5px
+
+  ul
+    list-style-type: none
+    padding: 0
+    margin-top: .5em
+
+    &:hover
+      li
+        opacity: 0.75
+      li:hover
+        opacity: 1
+
+h2 cite,
+h3 cite
+  float: right
+  margin: 0 1.5em 0 0
+
+  + cite
+    margin-right: 6px
+
+blockquote p cite
+  position: absolute
+  margin-left: 2.5em
+
+  + cite
+    margin-left: 5.5em
+
+cite
+  position: relative
+  font-size: .8em
+  text-decoration: none
+  font-style: normal
+  vertical-align: top
+  cursor: pointer
+  padding: 5px 5px 5px 0
+  font-weight: 500
+  transition-duration: 200ms
+  animation: lift-shadow 2s infinite ease
+
+  &:hover
+    font-weight: 600
+    color: #888
+    text-shadow: 0px -4px black
+    animation: none
+
+  span
+    text-align: center
+    position: absolute
+    bottom: 110%
+    left: -125px
+    width: 250px
+    min-width: 250px
+    padding: 1em
+    border-radius: .5em
+    transition-duration: opacity .5s
+    background: $color-ff
+    color: $color-bk
+    font-size: .8rem
+    line-height: 1.6
+    letter-spacing: 0.4px
+    box-sizing: border-box
+    z-index: 100
+    text-shadow: none
+    display: none
+
+  &#example-avatar
+    animation: pulse-white 2s infinite ease
+
+  &#example-avatar span
+    min-width: 0
+    max-width: 180px
+    left: -90px
+    text-align: center
+
+  &.bishop,
+  &.maude,
+  &.medcalf,
+  &.charlesworth
+    display: inline-block
+    height: 1.75em
+    width: 1.75em
+    padding: 0
+    border-radius: 100%
+    &:hover
+      box-shadow: 0 0 0 1px $color-bl-dk
+
+  &.bishop
+    background-image: url('./img/bishop-xs.jpg')
+    animation: pulse 2s infinite ease
+  &.maude
+    background-image: url('./img/maude-xs.jpg')
+    animation: pulse 2s infinite 0.5s ease
+  &.medcalf
+    background-image: url('./img/medcalf-xs.jpg')
+    animation: pulse 2s infinite 1s ease
+  &.charlesworth
+    background-image: url('./img/charlesworth-xs.jpg')
+    animation: pulse 2s infinite 1.5s ease
+
+  &.bishop span,
+  &.maude span,
+  &.medcalf span,
+  &.charlesworth span
+    left: calc(-140px + 1em)
+    width: 280px
+    min-width: 280px
+    padding: 1em
+    text-align: left
+    background: $color-bl-dk
+    color: $color-ff
+    font-weight: 300
+    border: 1px solid $color-ff
+    transition-duration: 0.3s
+
+.btn
+  width: 40px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  border-radius: 50%
+  margin-right: 8px
+  transition: all 300ms
+  user-select: none
+  &-next
+    @extend .btn
+    float: right
+  &-prev
+    @extend .btn
+    float: left
+  .tiles &
+    display: none
+  .nav-tiles &
+    display: block
+
+.footer
+  border-top: 1px solid $color-gy-lt
+  margin-top: 50px
+  background: $color-ff
+  color: $color-gy-dk
+  text-align: center
+  padding: 2em 0
+
+  > *
+    width: 75%
+    margin: auto
+
+  ul
+    list-style-type: none
+    padding: 0
+    font-weight: 500
+    font-family: 'Semi', sans-serif
+    margin: 0.6em auto 1.4em
+
+  span
+    font-weight: 300
+    color: $color-gy-lt
+
+    a
+      text-decoration: none
+
+  h4
+    font-size: 14px
+    font-weight: 600
+    margin-bottom: 4px
+
+.logo
+  background: white
+  margin-top: -20px
+  display: block
+  svg
+    width: 160px
+    padding: 0 0 30px
+    margin: auto
+
+////////////// START MEDIA QUERIES ////////////////////
+
+@media (min-width: 400px)
+
+  .section-wrap
+    padding-left: 10%
+    padding-right: 10%
+
+@media (min-width: 600px) and (min-height: 600px)
+
+  .banner-title
+    font-size: 30px
+    span
+      font-size: 60px
+
+  #experts
+    font-size: 24px
+    line-height: 50px
+
+    > .flex-ch
+      flex-direction: row
+    .txt-nowrap
+      margin: 0.4em 1em
+
+    cite
+      height: 50px
+      width: 50px
+
+    cite.bishop span,
+    cite.maude span,
+    cite.medcalf span,
+    cite.charlesworth span,
+      min-width: 400px
+      left: calc(-200px + 1em)
+
+  .section-wrap
+    width: 100%
+    padding-left: 100px
+    padding-right: 100px
+
+  .btn
+    &:not(.nohover):hover,
+    &:focus
+      outline: none
+      color: #fff
+      border-color: #002B45
+      background: #002B45
+
+  cite.bishop span,
+  cite.maude span,
+  cite.medcalf span,
+  cite.charlesworth span
+    min-width: 300px
+    left: calc(-150px + 1em)
+
+  blockquote
+    padding-right: 3em
+    text-align: justify
+
+  .footer
+    text-align: left
+    display: flex
+    padding: 1em
+
+    > *
+      margin: 0 auto
+
+    h4
+      font-size: 13px
+
+    ul
+      font-size: 14px
+
+    div
+      padding: .5em 2em
+      max-width: 600px
+      &:first-child
+        flex: 2
+      &:last-child
+        flex: 1
+
+@media (min-width: 750px)
+
+  #theme-menu
+    padding: 0 0 2em
+    margin: auto
+
+  .theme-links
+    flex-direction: row
+    max-height: none
+    text-align: left
+
+    .col-1-3,
+    .col-2-3
+      padding: 1em 1em
+
+    .col-1-3
+      border-left: .5px solid rgba($color-bg, 0.4)
+
+    h2
+      cursor: default
+      border: none
+      padding: 0 1rem
+      color: #c6cbd4
+      pointer-events: none
+
+      span
+        display: none
+
+      &:hover
+        background-color: $color-bl-dk
+
+    ul
+      padding: 1em 0
+
+    li
+      padding: .5rem 1rem
+
+    li a
+
+      &:after
+        display: block
+        position: absolute
+        left: 0
+        bottom: -.3em
+        height: 1px
+        width: 0
+        background: none repeat scroll 0 0 transparent
+        transition: width 0.2s ease 0s, opacity 0.3s ease 0s
+        content: ""
+        background: $color-bg
+        opacity: 0
+
+      &:hover:after
+        width: 100%
+        opacity: 0.6
+
+@media (min-width: 900px)
+
+  .section-wrap
+    width: 100%
+    padding-left: 200px
+    padding-right: 200px
+
+
+@media (min-width: 1000px)
+
+  #theme-menu
+    width: 90%
+
+  .col-1-3,
+  .col-2-3
+    padding: 1em 3em
+
+
+@media (min-width: 1085px) and (min-height: 750px)
+  .section-wrap
+    width: 90%
+
+  .banner-title
+    font-size: 40px
+    span
+      font-size: 82px
+
+  #experts
+    font-size: 26px
+    line-height: 65px
+
+    cite
+      height: 65px
+      width: 65px
+
+  cite.bishop,
+  cite.maude,
+  cite.medcalf,
+  cite.charlesworth
+    height: 2.5em
+    width: 2.5em
+
+    span
+      font-size: 0.9rem
+      min-width: 350px
+      left: calc(-175px + 1em)
+
+  cite#example-avatar
+    height: 2em
+    width: 2em
+
+
+@media (min-width: 1200px)
+  .section-wrap
+    width: 85%
+    max-width: 1200px
+  #theme-menu
+    width: 80%
+    max-width: 950px
+
+
+@media print
+
+  ::-webkit-scrollbar
+    width: 0
+    height: 0
+
+  html,body
+    background-color: white!important
+
+  h1,h2,h3
+    break-after: avoid-page
+
+  p, span, li
+    orphans: 2
+    widows: 2
+
+  .banner, .historyTimeline, #theme-menu-wrap, .timeline-section, .content h2
+    page-break-inside: avoid
+
+  .top-header,
+  .fixed-side-menu,
+  .card-end
+    display: none
+
+  .wrap
+    display: block
+
+  #lowy-authors
+    display: block
+    margin-top: 50px
+
+  iframe, .embed-true
+    margin: 0
+    min-width: 100%
+
+  .intro-wrap
+    max-height: 10000px
+
+    span
+      display: none
+
+  #theme-menu
+    padding: 0 0 2em
+    margin: auto
+
+  .theme-links
+    flex-direction: row
+    max-height: none
+    text-align: left
+
+    .col-1-3,
+    .col-2-3
+      padding: 1em 1em
+
+    .col-1-3
+      border-left: .5px solid rgba($color-bg, 0.4)
+
+    h2
+      cursor: default
+      border: none
+      padding: 0 1rem
+      color: #c6cbd4
+      pointer-events: none
+
+      span
+        display: none
+
+    ul
+      padding: 1em 0
+
+    li
+      padding: .5rem 1rem

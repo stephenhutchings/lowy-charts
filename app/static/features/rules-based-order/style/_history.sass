@@ -1,0 +1,106 @@
+.history-wrap
+  position: relative
+  margin-bottom: -15px!important
+
+.history-title
+  text-align: center
+  text-transform: uppercase
+  font-weight: 500
+  color: $color-bl-dk
+
+.btnfw,.btnbw
+  position: absolute
+  bottom: 32px
+  width: 24px
+  height: 24px
+  cursor: pointer
+  z-index: 1
+  padding: 5px
+  background-size: cover
+
+.btnfw
+  right: -15px
+.btnbw
+  left: -15px
+  transform: rotate(180deg)
+
+.h-btn
+  display: block
+  &.disabled
+    display: none
+
+.history-timeline
+  position: relative
+  display: flex
+  align-items: flex-end
+  margin: 10px 0
+.node
+  transition: all 300ms
+  width: 100%
+.event
+  color: $color-bl-dk
+  max-width: 500px
+  margin: 0 auto
+  position: relative
+  border-radius: .25em
+.tl-date
+  margin: 1rem 0.5rem 0
+  color: $color-gy-lt
+.event-title
+  margin: 0.5rem
+  font-weight: 600
+  margin-top: .25rem
+.event-text
+  padding: 0 0.5rem
+
+
+//--------// MEDIA QUERIES //--------//
+
+// At this width, the layout changes from card to flat
+@media (min-width: 600px)
+
+  .h-btn
+    fill: #002b45
+    &.disabled
+      display: block
+      fill: #888
+      pointer-events: none
+
+  .btnfw,.btnbw
+    bottom: -45px
+    border: 1px solid $color-bl-dk
+    border-radius: 100%
+    transition-duration: 0.2s
+    &.disabled
+      border-color: #888
+      pointer-events: none
+
+    &:hover
+      background: $color-bl-dk
+      svg
+        fill: white
+
+
+  .btnfw
+    right: calc(50% - 40px)
+
+  .btnbw
+    left: calc(50% - 40px)
+    transform: rotate(180deg)
+
+// At this width, two history nodes are displayed at once.
+@media (min-width: 1100px)
+  .history-timeline
+    justify-content: center
+  .node
+    width: auto
+    flex: 1
+    cursor: default
+  .event
+    width: 95%
+    margin: auto
+    background: none
+    box-shadow: none
+    padding: 0
+  .event:after
+    display: none

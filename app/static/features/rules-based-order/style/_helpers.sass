@@ -1,0 +1,277 @@
+@keyframes pulse
+  0%
+    box-shadow: 0 0 0 -1px #002b45
+  100%
+    box-shadow: 0 0 3px 5px #002b4500
+
+@keyframes pulse-white
+  0%
+    box-shadow: 0 0 0 0 $color-qt
+  100%
+    box-shadow: 0 0 3px 5px rgba($color-qt, 0)
+
+@keyframes lift-shadow
+      0%
+        text-shadow: none
+      40%
+        text-shadow: none
+      60%
+        text-shadow: 0px -4px
+      80%
+        text-shadow: none
+      100%
+        text-shadow: none
+
+
+@keyframes slideup
+  0%
+    transform: translateY(-65px)
+  100%
+    transform: translateY(0)
+
+@keyframes grow
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)
+
+@keyframes growIn
+  0%
+    background: white
+    width: 235px
+    overflow: hidden
+  100%
+    background: white
+    width: 90px
+    overflow: hidden
+
+@keyframes animWidth
+  0%
+    transform: scaleY(0.5) scaleX(2) rotate(0deg)
+  35%
+    transform: scaleX(1) rotate(0deg)
+    background-color: #eee
+    opacity: 1
+  70%
+    transform: scaleX(1)
+  90%
+    transform: scaleX(1.86)
+  100%
+    opacity: 1
+    transform: scaleX(1.86)
+
+@media (min-width: 600px)
+  @for $i from 0 through 30
+    .delay-#{$i})
+      animation-delay: ($i * 80ms)
+
+
+.loader
+  height: .5px
+  margin: 35px auto 35px
+  position: relative
+  animation: 1.5s ease 1 forwards 3.5s growIn
+  overflow-y: hidden
+
+.loader-bit
+  animation: 2s cubic-bezier(0.7, 0.5, 1, 1) 1 forwards animWidth
+  background-color: white
+  border-radius: 0
+  display: inline-block
+  height: 100%
+  opacity: 0
+  vertical-align: top
+  transform: scale(1.5)
+  width: 14px
+  margin: 0 6px
+
+@for $i from 1 through 16
+  .loader-bit:nth-child(#{$i})
+    animation-delay: (1s + $i * 0s)
+
+.ptr
+  cursor: pointer
+.fixed
+  position: fixed
+  &-tl
+    @extend .fixed
+    left: 0
+    top: 0
+  &-b
+    @extend .fixed
+    bottom: 0
+  &-side-menu
+    @extend .fixed
+    right: -300px
+    top: 70px
+
+.hidden
+  display: none
+.disable
+  cursor: default
+  background: $color-gy-lt
+  opacity: 0.1
+.faded
+  background: transparent
+  background: -webkit-linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
+  background: -moz-linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
+  background: -o-linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
+  background: linear-gradient(transparent, rgba($color-bg,0.95), $color-bg)
+.ib
+  display: inline-block
+.inline
+  display: inline
+.br-max
+  border-radius: 100%
+.rot-90,
+.rot-90:before
+  transform: rotate(90deg)
+.flip
+  transform: scale(-1)
+.txt-bl
+  color: $color-bl-dk
+.txt-w
+  color: $color-ff
+.bg-ccnr
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+.dark
+  color: $color-ff
+  background-color: $color-bl-dk
+
+.fill
+  height: 100vh
+  min-height: 100vh
+  max-height: 100vh
+  max-width: 100vw
+  box-sizing: border-box
+  overflow: hidden
+
+.col-1-2
+  width: 50%
+  flex-basis: 50%
+.col-1-3
+  width: 33.3%
+  flex-basis: 33.3%
+.col-2-3
+  width: 66.7%
+  flex-basis: 66.7%
+
+
+.txt-xxl, .txt-xl,
+.txt-l, .txt-ml,
+h1,h2,h3,h4
+  font-family: 'Sans', sans-serif
+  font-weight : 400
+  margin-bottom: 1em
+
+  a
+    text-decoration: none
+
+h2 + h3
+  margin-top: -0.7em
+
+p
+  font-size: 16px
+
+.txt-xxl
+  font-size: 28px
+  line-height: 33px
+.txt-xl
+  font-size: 24px
+  line-height: 30px
+.txt-l, h1, h2
+  font-size: 20px
+  line-height: 27px
+.txt-ml,h3
+  font-size: 18px
+  line-height: 24px
+.txt-m,h4
+  font-size: 15px
+  line-height: 21px
+.txt-sm
+  font-size: 14px
+  line-height: 18px
+.txt-s, h5
+  font-size: 13px
+  line-height: 15px
+.txt-xs
+  font-size: 11px
+  line-height: 13px
+.txt-xxs
+  font-size: 10px
+  line-height: 12px
+
+.txt-w500
+  font-weight: 500
+.txt-w700
+  font-weight: 700
+
+@media (min-width: 350px)
+  .txt-m
+    font-size: 16px
+    line-height: 21px
+  .txt-sm
+    font-size: 15px
+    line-height: 20px
+
+
+@media (min-width: 600px)
+
+  .txt-xxl
+    font-size: 30px
+    line-height: 44px
+  .txt-xl
+    font-size: 26px
+    line-height: 38px
+  .txt-l, h1, h2
+    font-size: 22px
+    line-height: 31px
+  .txt-ml, h3
+    font-size: 20px
+    line-height: 29px
+  .txt-m, h4, p
+    font-size: 18px
+    line-height: 25px
+  .txt-sm
+    font-size: 17px
+    line-height: 23px
+  .txt-s, h5
+    font-size: 15px
+    line-height: 20px
+  .txt-xs
+    font-size: 12px
+    line-height: 14px
+
+
+@media (min-width: 1085px)
+
+  .txt-xl
+    font-size: 30px
+    line-height: 44px
+  .txt-l, h1, h2
+    font-size: 26px
+    line-height: 38px
+  .txt-ml, h3
+    font-size: 22px
+    line-height: 33px
+  .txt-m, h4
+    font-size: 20px
+    line-height: 30px
+  .txt-sm, p
+    font-size: 19px
+    line-height: 29px
+  .txt-s, h5
+    font-size: 16px
+    line-height: 21px
+  .txt-xs
+    font-size: 15px
+    line-height: 20px
+
+
+@media screen and (min-height: 650px)
+  .loader
+    margin-bottom: 50px

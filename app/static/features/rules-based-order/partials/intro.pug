@@ -1,0 +1,101 @@
+
+- let intro = data.getOne("static/features/rules-based-order/partials/intro").intro[0]
+- let themes = data.getOne("static/features/rules-based-order/partials/intro").themes[0]
+- let governments = ["2007&mdash;2010 (Rudd Government)", "2010&mdash;2013 (Gillard Government)", "2013&mdash;2015 (Abbott Government)", "2015&mdash;2018 (Turnbull Government)", "2018&mdash; (Morrison Government)"]
+
+section
+  .banner-wrap
+    .banner.bg-ccnr(style="background-image: url('./img/banner.jpg')").flex-ch
+      .flex-cv.txt-w
+        .banner-title.txt-cond.txt-center 
+          span Australia's Security and<br><span style='white-space: nowrap; margin-bottom: 10px'>the Rules–Based Order</span>
+          | <br/>
+          | Tracking a Decade of Policy Evolution
+          .loader
+            for i in new Array(9)
+              span.loader-bit
+        #lowy-authors
+          .txt-s.txt-tu.txt-center(style="opacity: 0.9; font-weight: 500") Research & Text
+          .flex-ch
+            .txt-sm.txt-semi.pv-xs
+              | Madeleine Nyst &mdash; Ben Scott &mdash; Sam Roggeveen
+        .txt-s.txt-tu.txt-center(style="opacity: 0.9; font-weight: 500") With Expert Contributions From
+        #experts.txt-semi
+          .flex-ch
+            .txt-nowrap.txt-center
+              cite.bishop.bg-ccnr
+              | Julie Bishop
+            .txt-nowrap.txt-center
+              cite.maude.bg-ccnr
+              | Richard Maude
+          .flex-ch
+            .txt-nowrap.txt-center
+              cite.charlesworth.bg-ccnr
+              | Hilary Charlesworth
+            .txt-nowrap.txt-center
+              cite.medcalf.bg-ccnr
+              | Rory Medcalf
+          
+section
+  .section-wrap.intro-wrap.pv-xl
+    .intro-txt!= marked(intro)    
+    span.ib.reveal.faded.txt-tu.txt-w700.txt-s.ptr.txt-center.p-sm(
+      onclick="readMore()"
+      ) Continue reading ...
+      
+section.dark#theme-menu-wrap
+  .section-wrap.pv-lg
+    h1 An evolving policy
+    p Explore how the rules-based order has developed over time and in meaning. Below, we identify ten recurring propositions about the rules-based order. Along the way, readers will see comments from experts who shaped the national debate and formulated government policy.
+    p Scroll on, or select an item below to jump ahead.
+  #theme-menu.flex.theme-links
+    .col-2-3
+      h2 The Rules-Based Order:
+        span.icon.icon-right-sm.icon-md
+      .flex.theme-links.txt-m
+        .col-1-2
+          ul
+            each theme, i in ["Is multilateral", "Reflects our values", "Has delivered peace", "Constrains power", "Is US dependent"]
+              li: a= theme
+        .col-1-2
+          ul
+            each theme, i in ["Could shape China", "Is global and regional", "Is fragile", "Needs to evolve", "Requires tangible deeds"]
+              li: a= theme
+    .col-1-3
+      h2 Timeline &emsp;
+        span.icon.icon-right-sm.icon-md
+      .theme-links.txt-m
+        ul
+          each government in governments
+            li: a!= government
+
+  #side-menu.fixed-side-menu.hidden.dark.flex-cv
+    .button.ptr(onclick="toggleSideMenu(this)")
+      span.icon.icon-cancel
+    .menu-body.p-md
+      .txt-tu.txt-muted.txt-w700 The rules-based order:
+      ul
+        each theme, i in ["Is multilateral", "Reflects our values", "Has delivered peace", "Constrains power", "Is US dependent", "Could shape China", "Is global and regional", "Is fragile", "Needs to evolve", "Requires tangible deeds"]
+          li.ptr.txt-bare= theme
+      .txt-tu.txt-muted.txt-w700 Timeline
+      ul
+        each government in governments
+          li.ptr.txt-bare!= government
+        
+
+section
+  .section-wrap.pv-xl(style="max-height: none; overflow: visible")
+    .themes-txt!= marked(themes)
+
+section(style="background-color: white")
+  .section-wrap.timeline-section.flex-cv.pv-md
+    h1 Timeline
+    .txt-m 
+      :marked
+        The timeline below highlights key moments in the evolution of the rules-based order in Australian government policy and rhetoric. From Kevin Rudd, the first Australian prime minister to use the term in an official capacity, through to current Prime Minister Scott Morrison, we track how the idea has been shaped by each cabinet and significant global events. Experts share their inside knowledge throughout.
+    iframe.chart.ngram(
+      width="100%" height="650px"
+      style="margin: 50px 0 20px"
+      src="https://project-rbo--lowy-charts.netlify.app/features/rules-based-order/charts/speeches"
+      frameborder=0 scrolling=no
+    )
