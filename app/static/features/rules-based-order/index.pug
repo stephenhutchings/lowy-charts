@@ -1,0 +1,96 @@
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.url = "https://interactives.lowyinstitute.org/features/rules-based-order/"
+  - page.class = ""
+  - page.title = "Rules Based Order"
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.description = "Tracking a decade of Australian policy evolution and the rules-based order."
+  - page.image = "https://interactives.lowyinstitute.org/features/rules-based-oder/img/thumbnail.jpg"
+  - var timeline = data.getOne("static/features/rules-based-order/data").cards
+  - var governements = [['Rudd', ' (2007&ndash;2010)'], ['Gillard', ' (2010&ndash;2013)'], ['Abbott', ' (2013&ndash;2015)'], ['Turnbull', ' (2015&ndash;2018)'], ['Morrison', ' (2018&mdash;)']]
+
+block page
+
+  // TEMP EMBARGO MODAL
+  
+  #embargo.fixed.flex.flex-ch
+    .flex-cv.txt-center.txt-lg
+      | The contents of this Lowy Institute digital feature are embargoed.
+      | By entering the site, you agree to not share this page or its contents until publicly launched.
+      .btn.ptr Accept
+  
+  // END EMBARGO MODAL
+
+  include partials/intro
+   
+  each era, i in timeline
+    .wrap(class=`${era.pm} ${!i ? "show" : ""}`)
+      .row.banner.bg-ccnr(style=`background-image: url('./img/banner-${era.pm}.jpg'); min-height: 350px`)
+        .banner-title.txt-center!= marked(era.details)
+        .banner-caption.txt-muted.txt-xs.txt-right!= era.caption
+      .row.pale: .item!= marked(era.summary)
+      
+      for card in era.events
+        if card.type == "anchor"
+          .anchor(id=`anchor-${card.year}`)= card.year            
+        else 
+          - let skipDate = card.date == "SKIP" ? "skip-date" : ""
+          .row(class=`${card.type} ${skipDate}`)
+            .item
+              if card.type == "historyTimeline"
+                .date.txt-sm!= card.date
+                include partials/history
+              else if card.type == "excerpt"
+                .date.txt-sm!= card.date
+              else if card.type == "commentary"
+                .expert.flex(class=(card.short ? "short" : ""))
+                  img.image(src=`./img/${card.id}.jpg`)
+                  div!= marked(card.expert)
+
+              if typeof card.content === 'string'
+                .content!= marked(card.content)
+                
+            if card.media != undefined
+              include partials/media
+      
+      
+      // PREV & NEXT PM BUTTONS
+      
+      .row.card-end(class=(i==0 || i==4 ? "nohover" : ""))
+        .flex-ch.txt-w500
+          if i
+            .flex-ch.col-1-2.dark.txt-tu.ptr(
+              onclick=(i ? "next(this, false)" : "")
+              style=`border-right: ${i!=4 ? "1px solid white" : ""}; box-sizing: border-box; position: relative;`
+            )
+              .btn.nohover.txt-w(style="position:absolute; left: 10px"): .icon.icon-left-arrow
+              span(style="padding-left: 1em")!=(i ? governements[i-1][0] : "")
+                span.gov!= governements[i-1][1]
+          if i!=4
+            .flex-ch.col-1-2.dark.txt-tu.ptr(
+              onclick=(i!=4 ? "next(this, true)" : "")
+              style=`border-left: ${i ? "1px solid white" : ""}; box-sizing: border-box; position: relative;`
+            )
+              span(style="padding-right: 1em")!=(i==4 ? "" : governements[i+1][0])
+                span.gov!= governements[i+1][1]
+              .btn.nohover.txt-w(style="position:absolute; right: 10px"): .icon.icon-right-arrow
+
+
+  include partials/header
+  include partials/footer
+  
+  
+block append css
+  style
+    include:sass _styles.sass
+
+block append scripts
+  script(type="text/javascript" src="script/base.js")
+  script(type="text/javascript" src="script/annotation.js")
+  script(type="text/javascript" src="script/interact.js")
+  script(type="text/javascript" src="script/mini-timeline.js")
+    
+    
+    
