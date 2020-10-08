@@ -15,14 +15,4 @@ else if type == "image" || noContent
       src=card.media.src
     )
   .caption.txt-xs!= card.media.caption
-    
-else if type == "quote"
-  .card.media.quote 
-    .top
-      img.image(src="img/quotations.svg")
-      .bar
-    .quotation.txt-l= card.media.quotation
-    .name.txt-l= card.media.name
-    .supp.txt-sm= card.media.supp
-      include social 
-    .footer
+  
