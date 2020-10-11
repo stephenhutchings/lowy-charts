@@ -25,26 +25,26 @@ cards:
       - type: excerpt
         date: Mar
         content: |
-          ## Prime Minister Kevin Rudd’s address at The Brookings Institution, Washington DC
+          ## Prime Minister Kevin Rudd’s address to the Brookings Institution, Washington DC
 
-          Mr Rudd’s first visit to Washington as prime minister included a speech at the Brookings Institution replete with references to world order, including the first known use of ‘rules-based order’ by an Australian prime minister:
+          Mr Rudd’s first visit to Washington as prime minister included a speech to the Brookings Institution replete with references to world order, including the first known use of ‘rules-based order’ by an Australian prime minister:
 
           > The idea of a “harmonious world” depends on China being a participant in the world order and, along with others, acting in accordance with the rules of that order … we look to China to make a strong contribution to strengthening the global and regional rules-based order.
 
-          Prime Minister Rudd then travelled to Beijing where he delivered the same message, telling an audience of Chinese students in Peking University that realisation of the Chinese goal of a “harmonious world” depended on China acting in accordance with the rules of the global order.
+          Prime Minister Rudd then travelled to Beijing where he delivered the same message, telling an audience of Chinese students at Peking University that realisation of the Chinese goal of a “harmonious world” depended on China acting in accordance with the rules of the global order.
 
         media:
           class: image
           src: "img/rudd-1.jpg"
           caption: |
-            Kevin Rudd Speaks at the Brookings Institution in Washington DC. (Photo: Mark Wilson / Getty Images)
+            Kevin Rudd Speaks to the Brookings Institution in Washington DC. (Photo: Mark Wilson / Getty Images)
 
       - type: excerpt
         date: June
         content: |
-          ## Prime Minister Kevin Rudd’s address at the Asia Society, Sydney
+          ## Prime Minister Kevin Rudd’s address to the Asia Society, Sydney
 
-          In a June 2008 address at the Asia Society, Prime Minister Rudd proposed a far-reaching ‘Asia–Pacific Community’, a new regional body that he described as the first step towards an Asian version of the European Union. The proposal got little regional traction, arguably demonstrating the limited regional appetite for closer multilateral ties.
+          In a June 2008 address to the Asia Society, Prime Minister Rudd proposed a far-reaching ‘Asia–Pacific Community’, a new regional body that he described as the first step towards an Asian version of the European Union. The proposal got little regional traction, arguably demonstrating the limited regional appetite for closer multilateral ties.
 
           > We need to have a vision for an Asia–Pacific Community, a vision that embraces: A regional institution which spans the entire Asia–Pacific region — including the United States, Japan, China, India, Indonesia and the other states of the region; [And] a regional institution which is able to engage in the full spectrum of dialogue, cooperation and action on economic and political matters and future challenges related to security. The purpose is to encourage the development of a genuine and comprehensive sense of community whose habitual operating principle is cooperation.
         media:
@@ -147,14 +147,14 @@ cards:
         date: Mar
         dates: [March 2011]
         content:
-          - title: Libya United Nations Security Council Resolution&nbsp;1973
+          - title: United Nations Security Council Resolution 1973&nbsp;on&nbsp;Libya
             description: |
               With Libyan leader Muammar Gaddafi’s forces poised to crush an uprising, the United Nations Security Council passed a resolution authorising "all necessary measures" to protect civilians. UNSCR 1973 declared a no-fly zone over Libya, but specifically precluded a UN-mandated occupying ground force. Australia’s Foreign Minister Rudd, pressed for the no-fly zone, and commented publicly about the “tortuous” diplomatic effort it took to obtain the mandate. “Let us all hope and pray that this final resolve of the international community is not too late for the people of Libya”, Mr Rudd said.
 
       - type: excerpt
         date: Sep
         content: |
-          ## Prime Minister Julia Gillard’s address at the AsiaLink Centre and the Asia Society, Melbourne
+          ## Prime Minister Julia Gillard’s address to the AsiaLink Centre and the Asia Society, Melbourne
 
           Prime Minister Gillard used her speech to AsiaLink and the Asia Society to announce the commissioning of a new White Paper on Australia’s place in what she termed ‘the Asian century’. The prime minister announced that this paper would consider how Australia could take greater advantage of the economic growth of Asia.
 
@@ -165,7 +165,7 @@ cards:
       - type: excerpt
         date: Oct
         content: |
-          ## Foreign Minister Kevin Rudd’s address at the Oxford Business Alumni Forum, Sydney
+          ## Foreign Minister Kevin Rudd’s address to the Oxford Business Alumni Forum, Sydney
 
           Foreign Minister Rudd’s speech to the Oxford Business Alumni Forum in Sydney included a wide-ranging discussion of the rise of China. Focusing on “Australia’s direction in a dual superpower world”, the foreign minister predicted that China would eclipse the United States as the world’s largest economy by 2019. He warned that “the worst outcome that you could ever imagine for a country like Australia, is that there be conflict or war between the United States and China”.
 
@@ -181,13 +181,13 @@ cards:
         content: |
           ## 2012 Australia in the Asian Century White Paper
 
-          In October 2012, Prime Minister Gillard released the government’s Australia in the Asian Century White Paper in an address at the Lowy Institute. The White Paper outlined twenty-five “national objectives” to prepare Australia for the rise of Asia in the twenty-first century. These included strengthening regional institutions, encouraging Asian language teaching in schools, strengthening the credentials of Australia’s universities, and increasing diplomatic presence in the region.
+          In October 2012, Prime Minister Gillard released the government’s Australia in the Asian Century White Paper in an address to the Lowy Institute. The White Paper outlined twenty-five “national objectives” to prepare Australia for the rise of Asia in the twenty-first century. These included strengthening regional institutions, encouraging Asian language teaching in schools, strengthening the credentials of Australia’s universities, and increasing diplomatic presence in the region.
 
           At several points, the White Paper argued that Australia should play a part in increasing the role of Asian countries in the rules-based order:
 
           > Australia’s future is irrevocably tied to the stability and sustainable security of our diverse region … We will continue to support a greater role for Asian countries in a rules-based regional and global order. Australia’s alliance with the United States and a strong US presence in Asia will support regional stability, as will China’s full participation in regional developments.
 
-          In her launch remarks at the Lowy Institute, Prime Minister Gillard gave the rules-based order a ‘regional’ face:
+          In her launch remarks to the Lowy Institute, Prime Minister Gillard gave the rules-based order a ‘regional’ face:
 
           > [A]ll countries in the region, particularly the major powers, have a deep interest in strategic stability. So we need not be pessimistic — but just as we work to shape the economic future of our region, so too do we work to shape our security environment. We are supporting the stabilising presence of the United States, a strong Defence Force, building habits of trust and co-operation in our region and a rules-based regional order. We have an ally in Washington — respect in Beijing — and more.
 
@@ -240,7 +240,7 @@ cards:
         date: Aug
         dates: [21 August 2013]
         content:
-          - title: Syrian chemical weapons use and US President Barack Obama’s “red lines”
+          - title: Syrian chemical weapons use and US President Barack Obama’s “red line”
             description: President Obama had said in August 2012 that a “red line for us is we start seeing a whole bunch of chemical weapons moving around or being utilized”. A year later, the Syrian regime shelled an area outside Damascus with rockets carrying the sarin nerve agent, killing over 1400 people. On 31 August 2013, President Obama announced that the United States “should take military action” but that he would seek authorisation from Congress before doing so. Congress did not authorise military action. In September 2013, Russia facilitated a deal under which Syria joined the Chemical Weapons Convention and handed over 1300 tons of chemical weapons for destruction.
 
       - type: commentary
@@ -267,7 +267,7 @@ cards:
     summary: |
       Prime Minister Tony Abbott’s foreign-policy agenda was shaped by a series of dramatic events. In 2014, the Islamic State terrorist organisation swept through Iraq and Syria, and Russia annexed Crimea. In July 2014, Russian-backed Ukrainian separatists shot down Malaysia Airlines flight MH17. In the same period, China became more internationally assertive, including by stepping up its island-building in the South China Sea.
 
-      As part of its effort to end illegal maritime immigration, the Abbott government initiated a policy of turning back boats or sending their passengers to offshore processing facilities. This policy was known as ‘Operation Sovereign Borders’. Some international lawyers and human rights groups argued that this was inconsistent with Australia’s international obligations.
+      As part of its effort to end maritime arrivals of asylum seekers, the Abbott government initiated a policy of turning back boats or sending their passengers to offshore processing facilities. This policy was known as ‘Operation Sovereign Borders’. Some international lawyers and human rights groups argued that this was inconsistent with Australia’s international obligations.
 
       While Prime Minister Abbott used the specific term ‘rules-based order’ less often than prime ministers Rudd, Gillard, and Turnbull, he often spoke against a world in which “might is right”, and used the phrase “good global citizen” to describe Australia, and what Australia wanted China to be.
 
@@ -333,7 +333,7 @@ cards:
       - type: excerpt
         date: June
         content: |
-          ## Prime Minister Tony Abbott and US President Barack Obama’s opinion piece in the Los Angeles Times
+          ## Prime Minister Tony Abbott and US President Barack Obama’s opinion piece in the _Los Angeles Times_
 
           The joint opinion piece was published in June 2014, during Mr Abbott’s first visit to Washington as prime minister. On the same day, he delivered a speech to the American Chamber of Commerce in which he expressed his confidence “that the coming century will indeed be the Asian century — but only if America is there too, to keep the peace and enforce the rules”.
 
@@ -424,7 +424,7 @@ cards:
           class: "image"
           src: "img/abbott-2.jpg"
           caption: |
-            Prime Minister of Australia Tony Abbott speaks at the 69th United Nations General Assembly in September 2014. (Photo: Andrew Burton / Getty Images)
+            Prime Minister of Australia Tony Abbott speaks to the 69th United Nations General Assembly in September 2014. (Photo: Andrew Burton / Getty Images)
 
 
       - type: excerpt
@@ -603,7 +603,7 @@ cards:
       - type: excerpt
         date: Mar
         content: |
-          ## Foreign Minister Julie Bishop’s address at the International Institute for Strategic Studies, Singapore
+          ## Foreign Minister Julie Bishop’s address to the International Institute for Strategic Studies, Singapore
 
           In March 2017, Foreign Minister Bishop delivered a speech to the International Institute for Strategic Studies in Singapore. The foreign minister’s address was an unusually assertive Australian statement on the ‘liberal’ element of the rules-based order:
 
@@ -646,9 +646,9 @@ cards:
       - type: excerpt
         date: June
         content: |
-          ## Prime Minister Malcolm Turnbull’s address at the 16th Shangri-La Dialogue, Singapore
+          ## Prime Minister Malcolm Turnbull’s address to the 16th Shangri-La Dialogue, Singapore
 
-          The prime minister’s keynote address at this regional security forum hosted by the International Institute for Strategic Studies in Singapore referred to a “US-anchored rules-based order”. Other references to the rules-based order placed it directly in the context of great power competition between the United States and China:
+          The prime minister’s opening speech to the International Institute for Strategic Shangri-La Dialogue in Singapore referred to a “US-anchored rules-based order”. Other references to the rules-based order placed it directly in the context of great power competition between the United States and China:
 
           > And we should be under no illusions: If we are to maintain the dynamism of the region then we must preserve the rules-based structure that has enabled it thus far. This means cooperation, not unilateral actions to seize or create territory or militarise disputed areas. This means competing within the framework of international law, not winning through corruption, interference or coercion.
 
@@ -657,7 +657,7 @@ cards:
           class: "image"
           src: "img/turnbull-1.jpg"
           caption: |
-            Australian Prime Minister Malcolm Turnbull delivers his opening speech at the Institute for Strategic Studies (IISS) during Shangri-La Dialogue (Photo: Roslan Rahman / AFP via Getty Images)
+            Australian Prime Minister Malcolm Turnbull delivers his opening speech to the Institute for Strategic Studies (IISS) during Shangri-La Dialogue (Photo: Roslan Rahman / AFP via Getty Images)
 
       - type: excerpt
         date: July
@@ -726,7 +726,7 @@ cards:
           ## Richard Maude
           ### Senior Director, Asia Society Policy Institute
         content: |
-          “The White Paper is also clear that Australia will support reforms that give new and emerging powers a greater role in the international system. It says Australia will be a willing partner in such a shared project. The White Paper is clear, though, that we should guard against illiberal changes to rules and norms. Change that undermined international law or the rights and freedoms set out in United Nations declarations, for example, would not be in Australia’s interests.”
+          “The White Paper is clear that Australia will support reforms that give new and emerging powers a greater role in the international system. It says Australia will be a willing partner in such a shared project. The White Paper is clear, though, that we should guard against illiberal changes to rules and norms. Change that undermined international law or the rights and freedoms set out in United Nations declarations, for example, would not be in Australia’s interests.”
 
       - type: excerpt
         date: SKIP
@@ -759,9 +759,9 @@ cards:
       - type: excerpt
         date: Jan
         content: |
-          ## Foreign Minister Julie Bishop’s address at the United States–Australia Dialogue, Los Angeles
+          ## Foreign Minister Julie Bishop’s address to the Australian American Leadership Dialogue, Los Angeles
 
-          Foreign Minister Bishop used her address at the annual United States–Australia Dialogue on Cooperation in the Indo–Pacific to stress the role of the United States in “developing, supporting and protecting” a rules-based order that was “designed to avoid the zero-sum outcomes of past eras”. She emphasised that rules, without values and principles, would not be in Australia’s interests.
+          Foreign Minister Bishop used her address to the annual Australian American Leadership Dialogue on Cooperation in the Indo–Pacific to stress the role of the United States in “developing, supporting and protecting” a rules-based order that was “designed to avoid the zero-sum outcomes of past eras”. She emphasised that rules, without values and principles, would not be in Australia’s interests.
 
           > The role of the power and influence of the United States in creating incentives for countries to abide by the rules cannot be overstated.
 
@@ -804,7 +804,7 @@ cards:
       - type: excerpt
         date: June
         content: |
-          ## Foreign Minister Julie Bishop’s statement on America’s withdrawal from the United Nations Human Rights Council
+          ## Foreign Minister Julie Bishop’s statement on US withdrawal from the United Nations Human Rights Council
 
           In June 2018, the Trump administration withdrew from the United Nations Human Rights Council (UNHRC). The UNHRC was formed in 2006 and the United States joined in 2009. The United States was critical of the UNHRC’s membership and disproportionate focus on Israel. Foreign Minister Bishop registered her disappointment about America’s withdrawal with a short statement:
 
@@ -866,7 +866,7 @@ cards:
       - type: excerpt
         date: Dec
         content: |
-          ## Prime Minister Scott Morrison’s address at the Sydney Institute, Sydney
+          ## Prime Minister Scott Morrison’s address to the Sydney Institute, Sydney
 
           In his speech, Prime Minister Morrison addressed issues in the Middle East and particularly the Iran nuclear deal, on which the Trump administration had reversed US policy. Mr Morrison connected these issues to Australia’s promotion of “the benefits of a rules-based order and in holding states to account”.
 
@@ -918,9 +918,9 @@ cards:
       - type: excerpt
         date: Nov
         content: |
-          ## Defence Minister Linda Reynolds’ address at the Hudson Institute, Washington DC
+          ## Defence Minister Linda Reynolds’ address to the Hudson Institute, Washington DC
 
-          Defence Minister Reynolds’ keynote address at the Hudson Institute, a Washington think tank, focused on the future of the Australia–US alliance. It took place against a background of growing disquiet among US allies about the Trump administration’s approach to alliances and the rules-based order:
+          Defence Minister Reynolds’ keynote address to the Hudson Institute, a Washington think tank, focused on the future of the Australia–US alliance. It took place against a background of growing disquiet among US allies about the Trump administration’s approach to alliances and the rules-based order:
 
           > ... let me be very blunt up front — our collective challenge is to establish a rules-based order, one that is fit-for-purpose in the twenty-first century. One that continues to deliver regional and global peace and also prosperity.
 
@@ -942,9 +942,9 @@ cards:
       - type: excerpt
         date: June
         content: |
-          ## Foreign Minister Marise Payne’s address at the National Security College, ANU, Canberra
+          ## Foreign Minister Marise Payne’s address to the National Security College, ANU, Canberra
 
-          Foreign Minister Payne’s address at the National Security College, ANU, was the first major statement of Australian foreign policy since the outbreak of COVID-19. The speech followed Australia’s call for an inquiry into the origins of the virus and China’s hostile reaction to that call. The foreign minister’s speech responded to these developments as well as Prime Minister Morrison’s announcement, in his 2019 Lowy Lecture, of an "audit of global institutions and rule-making processes".
+          Foreign Minister Payne’s address to the National Security College, ANU, was the first major statement of Australian foreign policy since the outbreak of COVID-19. The speech followed Australia’s call for an inquiry into the origins of the virus and China’s hostile reaction to that call. The foreign minister’s speech responded to these developments as well as Prime Minister Morrison’s announcement, in his 2019 Lowy Lecture, of an "audit of global institutions and rule-making processes".
 
         media:
           class: video
@@ -991,9 +991,9 @@ cards:
       - type: excerpt
         date: Aug
         content: |
-          ## Prime Minister Scott Morrison’s address at the Aspen Security Forum
+          ## Prime Minister Scott Morrison’s address to the Aspen Security Forum
 
-          The prime minister delivered a virtual address at the Aspen Security Forum, an annual colloquium for the US national security elite. After outlining his assessment of Australia’s deteriorating strategic situation, Mr Morrison noted that this had led some to “fret about the weakening of the rules-based international order. Fair enough.” The prime minister went on to underscore Australia’s support for “international engagement framed by agreed rules and norms, not crude economic or political coercion” and urged China to accept “broader strategic responsibility”.
+          The prime minister delivered a virtual address to the Aspen Security Forum, an annual colloquium for the US national security elite. After outlining his assessment of Australia’s deteriorating strategic situation, Mr Morrison noted that this had led some to “fret about the weakening of the rules-based international order. Fair enough.” The prime minister went on to underscore Australia’s support for “international engagement framed by agreed rules and norms, not crude economic or political coercion” and urged China to accept “broader strategic responsibility”.
 
           Prime Minister Morrison also reiterated the concerns he made about “negative globalism” at the 2019 Lowy Lecture:
 
@@ -1003,7 +1003,7 @@ cards:
 
           > ... positive globalism, where nations like Australia engage directly with others, as equal, sovereign nations, in the pursuit of common objectives through these fora.
 
-          Prime Minister Morrison used the concept of “international society”, formulated by Anglo–Australian scholar Hedley Bull, to frame his argument about globalism and the responsibilities of China and the United States. Mr Morrison described Bull’s seminal 1977 book, ‘The Anarchical Society’, as:
+          Prime Minister Morrison used the concept of “international society”, formulated by Anglo–Australian scholar Hedley Bull, to frame his argument about globalism and the responsibilities of China and the United States. Mr Morrison described Bull’s seminal 1977 book, _The Anarchical Society_, as:
 
           > ... one of the most influential works on global politics of the last half century … Bull coined the notion of ‘a society of states’ or ‘international society’ — said to exist when sovereign nations consider themselves to be ‘bound by a common set of rules in their relations and share in the working of common institutions ... As Hedley Bull argued, [multilateral institutions] are symptoms of a well-functioning society of states, not the cause … Together, China and the United States have a special responsibility to uphold what Bull described as ‘the common set of rules’ that build an international society. Now, that means respecting international law and the peaceful resolution of disputes, including trade disputes. It means a commitment to rules-based economic interaction. Neither coercion nor abdication from the international system is the way forward ... We must tend that garden and we must rebuild Bull’s ‘international society’ anew.
 
