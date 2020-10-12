@@ -1,0 +1,275 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/templates/butterfly/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted.p-sm!= chart.subtitle
+      
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - max = axes.max
+        - chartWidth = 0.4
+        - fx = (x) => chartWidth*Math.abs(x) / max
+        - fy = (i) => (i + 0.67) / (ln + 0.75)
+        
+        // Legend
+        svg.legend(height="2.25em" width="100%")
+        
+          svg(x="40%")
+            text(
+              text-anchor="end"
+              transform="translate(-20 0)"
+            )= chart.series[1].title
+            rect(
+              y="-0.8em" x="-12px"
+              width="1em" height="1em"
+              fill=chart.colors[chart.series[1].color]
+            )
+            
+          svg(x="60%")
+            rect(
+              y="-0.8em" x="-12px"
+              width="1em" height="1em"
+              fill=chart.colors[chart.series[2].color]
+            )
+            text(
+              text-anchor="start"
+              transform="translate(16 0)"
+            )= chart.series[2].title
+
+
+        svg.plot-area(height="100%" width="100%")
+          
+          // X-Axis labels
+          - let steps = chart.axes.steps-1
+          svg(width="40%")
+            line(x1="0" x2="100%" y1="18" y2="18" stroke="#666")
+            for n, i in new Array(steps+1)
+              - x = 1 - (i / (steps))
+              svg(x=toPercent(x))
+                if chart.axes.minorLines
+                  line( 
+                    y1="18" y2="100%"
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted ? 2 : "")
+                  )
+                line(x1="0" x2="0" y1="8" y2="18" stroke="#666")
+                text(text-anchor="middle")
+                  = -max*(i/steps).toFixed(2) + (axes.percentage ? "%" : "")
+                  
+          svg(x="60%" width="40%")
+            line(x1="0" x2="100%" y1="18" y2="18" stroke="#666")          
+            for n, i in new Array(steps+1)
+              - x = i / (steps)
+              svg(x=toPercent(x))
+                if chart.axes.minorLines
+                  line( 
+                    y1="18" y2="100%"
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted ? 2 : "")
+                  )
+                line(x1="0" x2="0" y1="8" y2="18" stroke="#666")
+                text(text-anchor="middle")
+                  = max*(i/steps).toFixed(2) + (axes.percentage ? "%" : "")
+
+
+          // Chart rects
+          g.bars
+            - const n = chart.series[0].values.length
+            for undef, i in new Array(n)
+              svg(
+                y=toPercent(fy(i))
+                height=toPercent(fy(0))
+                width="100%"
+              )
+                - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
+                - vals = axes.reverse ? vals.reverse() : vals
+
+                for v, j in vals
+                  - ci = axes.reverse ? vals.length-j : j+1
+                  - w = fx(v)
+                  if v > 0
+                    - x = 0.6
+                  else
+                    - x = 0.4-w
+                  rect(
+                    x=toPercent(x)
+                    height="100%"
+                    width=toPercent(w)
+                    fill=chart.colors[chart.series[ci].color]
+                  )
+                  - dx = Math.abs(v) > chart.axes.minInnerLabel ? 0 : v < 0 ? -25 : 25
+                  - xText = !dx ? x + w/2 : dx < 0 ? x : x+w
+                  text.chart-value(
+                    x=toPercent(xText)
+                    y="50%"
+                    text-anchor="middle"
+                    transform=`translate(${dx} 4.5)`
+                    style=`color: ${dx ? "black" : "white"}`
+                  )
+                    = v.toFixed(1) + (axes.percentage ? "%" : "")
+                    
+                // X-Axis labels
+                svg.category-label(x="50%" y="50%")
+                  text(
+                    text-anchor="middle"
+                    transform="translate(0 4.5)"
+                  )
+                    =chart.series[0].values[i]
+    
+
+      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+        span.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      
+      .tooltip
+
+  script.
+
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    const nLegendItems = 4;
+    const nSeries = 6;
+    /* --------------------- */
+    
+    const chart = document.querySelectorAll('.chart-content');
+    const rects = document.querySelectorAll('rect');
+    const vals = document.querySelectorAll('.chart-value');
+    const series = document.querySelectorAll('.category-label');
+    const tooltip = document.querySelector('.tooltip');
+    const legendItems = document.querySelectorAll('.legend-item-label');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let val = vals[i].innerHTML;
+        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
+        let cat = legendItems[i % nLegendItems].innerHTML;
+        let box = el.getBoundingClientRect();
+        
+        tooltip.innerHTML = val + " of " + ser + " countries were " + cat + " performing";
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
+        tooltip.style.opacity = 1;
+        
+      });
+      
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+      
+    }
+    
+  
+block append css
+  style
+    :sass
+  
+      .wrapper
+        height: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 30px
+        left: 50px
+        right: 20px
+        bottom: 50px
+
+      .chart-title
+        margin: auto
+        font-size: 24px
+        
+      .chart-subtitle
+        font-weight: 400
+        margin-top: -10px
+        font-size: 18px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 18px
+        margin-bottom: .75em
+        text-transform: uppercase
+        font-family: "Wide", sans-serif
+        font-weight: 500
+        letter-spacing: 0.04em
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-left: 2em
+        font-size: 15px
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+      
+      .chart-content:hover .chart-value
+        opacity: 1
+
+      @media (max-width: 700px)
+        
+        .category-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 14px)
+
+        text
+          font-size: 13px
+          
+      @media (max-width: 450px)
+        .chart-content
+          bottom: 40px
+        .legend
+          flex-direction: column
+        .chart-title
+          font-size: 18px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px

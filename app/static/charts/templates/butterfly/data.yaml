@@ -1,0 +1,53 @@
+title: >
+  Butterfly chart
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  max:  10 # ± max scale
+  steps: 6  # steps per side
+  percentage: true
+  minorLines: true
+  dotted: true
+  reverse: false
+  minInnerLabel: 2 # bars with lower absolute have value labels outside bar
+
+series:
+  -
+    title: Categories
+    values:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+
+  -
+    title: Series 1
+    color: "dark"
+    values:
+      - -0.5
+      - -9.5
+      - -1.5
+      - -5.5
+      - -1.5
+      - -2.5
+
+  -
+    title: Series 2
+    color: "highlight"
+    values:
+      - 0.8
+      - 6.0
+      - 7.0
+      - 3.0
+      - 8.0
+      - 3.0
