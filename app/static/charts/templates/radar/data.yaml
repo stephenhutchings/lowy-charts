@@ -1,0 +1,70 @@
+title: >
+  Radar chart
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  min:  0
+  max: 100
+  steps: 6
+  percentage: false
+  grid: true
+  rotate: 0
+
+# Data format: [x, y, r]
+series:
+  -
+    title: Categories
+    values:
+      - Category A
+      - Category B
+      - Category C
+      - Category D
+      - Category E
+      - Category F
+      - Category G
+      - Category H
+
+  -
+    title: Series 1
+    color: dark
+    values:
+      - 1
+      - 1
+      - 1
+      - 5
+      - 6
+      - 9
+      - 9
+      - 9
+  -
+    title: Series 2
+    color: highlight
+    values:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 8
+      - 8
+      - 8
+  -
+    title: Series 3
+    color: teal
+    values:
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2

@@ -1,0 +1,285 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/templates/radar/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  - ln = chart.series[0].values.length
+  
+  case ln
+    when 5:  - points = "200,50 58,154 112,321 288,321 342,154"
+    when 6:  - points = "350,200 275,70 125,70 50,200 125,330 275,330"
+    when 7:  - points = "200,50 82,106 54,232 135,335 265,335 347,234 316,108"
+    when 8:  - points = "200,50 94,94 50,200 94,306 200,350 306,306 350,200 306,94"
+    when 9:  - points = "200,50 104,86 53,174 70,275 148,341 251,342 330,275 348,174 297,86"
+    when 10: - points = "200,50 112,79 58,154 58,246 112,321 200,350 288,321 342,247 342,154 288,79"
+
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - viewBox = 400
+        - r0   = viewBox/2
+        - axes = chart.axes
+        - min  = axes.min
+        - max  = axes.max
+        - range = max - min
+        - rad2deg = (deg) => deg * Math.PI / 180
+        - fx = (r, theta) => r0 + r * Math.cos( 2*Math.PI*theta )
+        - fy = (r, theta) => r0 + r * Math.sin( 2*Math.PI*theta )
+        
+        svg(height="100%" width="100%")
+              
+          // AXES
+          svg(height="100%" width="100%" viewBox=`0 0 ${viewBox} ${viewBox}`)
+          
+            path#curve(
+              fill="none"
+              stroke="blue"
+              d="M-20,200a220,220 0 1,0 440,0a220,220 0 1,0 -440,0"
+            )
+
+            g.radial-lines
+              - clearance = 20
+              each undef, i in new Array(ln)
+                - r = r0 * i / (ln-1)
+                - x = fx(r0, i/(ln) )
+                - y = fy(r0, i/(ln) )
+                line(
+                  x1=r0 y1=r0 x2=x y2=y
+                  fill="none"
+                  stroke="#555"
+                  stroke-width=.5
+                  stroke-dasharray="1 2"
+                )  
+                - offset = (r0 + clearance) * 2*Math.PI * i/ln
+                text(
+                  x=offset.toFixed(0)
+                  fill="#888"
+                  text-anchor="middle"
+                ) 
+                  textPath.txt-tu(
+                    alignment-baseline="middle"
+                    xlink:href="#curve"
+                    side="right"
+                  )
+                    =chart.series[0].values[i]
+          
+            g.rings
+              - steps = axes.steps - 1
+              each undef, i in new Array(steps + 1)
+                - r = r0 * i / (steps)
+                circle(
+                  cx=r0 cy=r0 r=r
+                  fill="none"
+                  stroke="#555"
+                  stroke-width=.5
+                  stroke-dasharray="1 2"
+                )
+                if i
+                  rect(
+                    x=(r0-15) y=(r0-r-8)
+                    width=30
+                    height=16
+                    fill="white"
+                  )
+                  text.label-values(
+                    x=r0 y=(r0-r)
+                    fill="#555"
+                    text-anchor="middle"
+                    transform="translate(0 4)"
+                  )= min + range*(i/steps) + (axes.percentage ? "%" : "")      
+                
+                
+          // RADAR
+          //for series, s in chart.series
+            g
+              for v, i in chart.series[s].values
+                - x = toPercent(fx(v[0]))
+                - y = toPercent(fy(v[1]))
+                - r = v[2]*chart.axes.rScaleFactor
+                - color = chart.colors[chart.series[s].color]
+                circle(
+                  r=r
+                  cx=x
+                  cy=y
+                  fill=color+"dd"
+                  stroke=color
+                  stroke-width=2
+                  data-x=v[0]
+                  data-y=v[1]
+                  data-r=v[2]
+                )
+          
+      
+      .row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .chart-source.txt-center.txt-muted.txt-cond!= chart.source
+        span.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      
+      .tooltip
+
+  script.
+
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    const nLegendItems = 4;
+    const nSeries = 6;
+    /* --------------------- */
+    
+    const chart = document.querySelectorAll('.chart-content');
+    const circles = document.querySelectorAll('circle');
+    const vals = document.querySelectorAll('.chart-value');
+    const series = document.querySelectorAll('.label');
+    const tooltip = document.querySelector('.tooltip');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        circles.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let x = el.dataset.x;
+        let y = el.dataset.y;
+        let r = el.dataset.r;
+        let s = series[i].innerHTML;
+        let box = el.getBoundingClientRect();
+        
+        tooltip.innerHTML = s + " scored " + x + " on the x axis, " + y + " on the y axis, and is " + r + " in radius";
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
+        tooltip.style.opacity = 1;
+        
+      });
+      
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+      
+    }
+    
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 650px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 0
+        right: 0
+        bottom: 20px
+
+      .chart-title
+        margin: auto
+        font-size: 24px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+        
+      .label-values
+        font-size: 12px
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      text
+        font-size: 14px
+        text-shadow: 0 0 2px white
+
+      svg
+        overflow: visible
+        
+      .chart-source
+        margin-top: .5em
+        font-size: 15px
+      
+      .chart-notes
+        margin-left: 2em
+
+      @media (max-width: 700px)
+        
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 14px)
+
+        text
+          font-size: 13px
+          
+      @media (max-width: 450px)
+        .chart-content
+          bottom: 40px
+          left: 35px
+          right: 15px
+        .legend
+          flex-direction: column
+        .chart-title
+          font-size: 18px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
