@@ -10,14 +10,6 @@ block append config
   - chart = page
   - ln = chart.series[0].values.length
   
-  case ln
-    when 5:  - points = "200,50 58,154 112,321 288,321 342,154"
-    when 6:  - points = "350,200 275,70 125,70 50,200 125,330 275,330"
-    when 7:  - points = "200,50 82,106 54,232 135,335 265,335 347,234 316,108"
-    when 8:  - points = "200,50 94,94 50,200 94,306 200,350 306,306 350,200 306,94"
-    when 9:  - points = "200,50 104,86 53,174 70,275 148,341 251,342 330,275 348,174 297,86"
-    when 10: - points = "200,50 112,79 58,154 58,246 112,321 200,350 288,321 342,247 342,154 288,79"
-
 block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
@@ -39,14 +31,19 @@ block page
           // AXES
           svg(height="100%" width="100%" viewBox=`0 0 ${viewBox} ${viewBox}`)
           
+            - dTop = "M -20,200 a 220,220 0 1 1 0,1"
+            - dBot = "M 420,200 a 220,220 0 1 0 0,1"
             path#curve(
               fill="none"
               stroke="blue"
-              d="M-20,200a220,220 0 1,0 440,0a220,220 0 1,0 -440,0"
+              transform="rotate(0)"
+              transform-origin="center"
+              d=dBot
             )
+            // Path 'a' syntax: rX,rY rotation, arc, sweep, eX,eY
 
             g.radial-lines
-              - clearance = 20
+              - rx = 20
               each undef, i in new Array(ln)
                 - r = r0 * i / (ln-1)
                 - x = fx(r0, i/(ln) )
@@ -58,16 +55,15 @@ block page
                   stroke-width=.5
                   stroke-dasharray="1 2"
                 )  
-                - offset = (r0 + clearance) * 2*Math.PI * i/ln
                 text(
-                  x=offset.toFixed(0)
                   fill="#888"
                   text-anchor="middle"
                 ) 
+                  - offset = (r0 + rx) * 2*Math.PI * i/(ln)
                   textPath.txt-tu(
-                    alignment-baseline="middle"
                     xlink:href="#curve"
-                    side="right"
+                    alignment-baseline="middle"
+                    startOffset=offset.toFixed(0)
                   )
                     =chart.series[0].values[i]
           
