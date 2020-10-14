@@ -36,35 +36,23 @@ series:
     title: Series 1
     color: dark
     values:
-      - 1
-      - 1
-      - 1
-      - 5
-      - 6
-      - 9
-      - 9
-      - 9
+      - 10
+      - 20
+      - 30
+      - 40
+      - 50
+      - 60
+      - 70
+      - 80
   -
     title: Series 2
     color: highlight
     values:
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 8
-      - 8
-      - 8
-  -
-    title: Series 3
-    color: teal
-    values:
-      - 2
-      - 2
-      - 2
-      - 2
-      - 2
-      - 2
-      - 2
-      - 2
+      - 80
+      - 70
+      - 60
+      - 50
+      - 40
+      - 30
+      - 20
+      - 10

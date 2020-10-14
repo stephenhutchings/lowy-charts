@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/templates/radar/data"
+  - var datapath = "static/charts/api/2020/japan-india/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -15,7 +15,7 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - viewBox = 400
         - r0   = viewBox/2
@@ -72,7 +72,7 @@ block page
                 ) 
                   - href = i <= ln/2 ? "#curve-top" : "#curve-bot"
                   - offset = i <= ln/2 ? (r0 + rx) * 2*Math.PI * (i+1)/(ln) : (r0 + rx) * 2*Math.PI * (ln-i)/(ln)
-                  textPath.txt-tu(
+                  textPath.category-label.txt-tu(
                     xlink:href=href
                     alignment-baseline="middle"
                     startOffset=offset.toFixed(0)
@@ -139,7 +139,7 @@ block page
                       fill=color
                       text-anchor="middle"
                       transform="translate(0 -10)"
-                    )= v
+                    )= v.toFixed(1)
                     
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -150,7 +150,7 @@ block page
                 span.legend-item-label= chart.series[i].title
 
       .chart-source.txt-center.txt-muted.txt-cond!= chart.source
-        span.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+        //span.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
 
 
 block append css
@@ -166,10 +166,10 @@ block append css
 
       .chart-content
         position: absolute
-        top: 40px
+        top: 50px
         left: 0
         right: 0
-        bottom: 40px
+        bottom: 50px
 
       .chart-title
         margin: auto
@@ -226,14 +226,19 @@ block append css
           opacity: 1
         
       .axis-values
+        font-size: 11px
+        
+      .category-label
         font-size: 12px
+        text-transform: capitalize
+        font-weight: 500
 
       polyline
         vector-effect: non-scaling-stroke
 
       text
         font-size: 14px
-        text-shadow: 0 0 2px white
+        text-shadow: 1px 0 .5px white, -1px 0 .5px white, 0 1px .5px white, 0 -1px .5px white
 
       svg
         overflow: visible
@@ -257,14 +262,10 @@ block append css
       @media (max-width: 450px)
         .chart-content
           bottom: 40px
-          left: 35px
-          right: 15px
+          left: 25px
+          right: 25px
         .legend
           flex-direction: column
-        .chart-title
-          font-size: 18px
-        .chart-subtitle
-          font-size: 14px
         .chart-notes,
         .chart-source
           text-align: center

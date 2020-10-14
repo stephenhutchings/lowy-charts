@@ -1,0 +1,59 @@
+title: >
+  United States vs China
+
+source: >
+  <b>Source:</b> Lowy Institute Asia Power Index
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  min:  0
+  max: 100
+  steps: 6
+  percentage: false
+  grid: true
+  rotate: 0
+
+# Data format: [x, y, r]
+series:
+  -
+    title: Categories
+    values:
+      - Defence networks
+      - Cultural influence
+      - Economic capability
+      - Military capability
+      - Resilience
+      - Future resources
+      - Diplomatic influence
+      - Economic relationships
+
+  -
+    title: China
+    color: red
+    values:
+      - 24.08
+      - 61.92
+      - 92.49
+      - 66.84
+      - 70.60
+      - 85.72
+      - 91.13
+      - 98.93
+
+  -
+    title: United States
+    color: dark
+    values:
+      - 85.14
+      - 84.17
+      - 87.66
+      - 93.53
+      - 86.27
+      - 75.46
+      - 74.89
+      - 61.74
