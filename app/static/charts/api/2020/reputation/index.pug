@@ -130,16 +130,16 @@ block page
                 - name =  chart.series[s].names[i][0]
                 - below = chart.series[s].names[i][1] == true
                 
-                - dx = ["Brunei"].includes(name) ? -6 : ["Japan"].includes(name) ? -r-6 : 0
+                - dx = ["Brunei"].includes(name) ? -6 : ["Japan"].includes(name) ? -r-6 : ["United States"].includes(name) ? r : 0
                 - dy = below ? (r+14) : -(r+6)
-                - dy = ["Brunei", "Japan"].includes(name) ? 0 : name == "Cambodia" ? r+28 : dy
+                - dy = ["Brunei"].includes(name) ? 0 : name == "Cambodia" ? r+28 : ["Japan"].includes(name) ? 4 : ["United States"].includes(name) ? -r+2 : dy
                 - color = chart.colors[chart.series[s].color]
                 
                 text.label(
                   x=x
                   y=y
                   transform=`translate(${dx} ${dy})`
-                  text-anchor=["Brunei", "","Papua New Guinea", "Japan"].includes(name) ? "end" : ["Sri Lanka", "Laos", "Mongolia", "Philippines"].includes(name) ? "start" : "middle"
+                  text-anchor=["Brunei", "","Papua New Guinea", "Japan"].includes(name) ? "end" : ["Sri Lanka", "Laos", "Mongolia", "Philippines", "United States"].includes(name) ? "start" : "middle"
                   fill=color
                   data-name=name
                 )
@@ -154,12 +154,12 @@ block page
           svg(x="0" y="50%")
             text.axis-label.y(
               text-anchor="middle"
-              transform="rotate(-90) translate(0 -100)"
+              transform="rotate(-90) translate(0 -40)"
             )= chart.axes.yLabel 
       
 
       .chart-source.txt-center.txt-muted.txt-cond!= chart.source
-        span.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+        //span.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
       .tooltip
 
@@ -218,9 +218,9 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 110px
+        left: 50px
         right: 50px
-        bottom: 60px
+        bottom: 65px
 
       .chart-title
         margin: auto
@@ -285,6 +285,8 @@ block append css
       .chart-source
         margin-top: .5em
         font-size: 15px
+        a
+          transition-duration: 500ms
       
       .chart-notes
         margin-left: 2em
@@ -292,6 +294,19 @@ block append css
       .label
         font-size: 12px
         pointer-events: none
+
+      .y-label text
+        transform: rotate(-90deg) translate(0, -10px)
+        text-anchor: middle
+      .y-label:first-child text
+          text-anchor: start
+      .y-label:last-child text
+          text-anchor: end
+
+      .x-label:first-child text
+        text-anchor: start
+      .x-label:last-child text
+        text-anchor: end
 
       @media (max-width: 700px)
 
@@ -315,19 +330,6 @@ block append css
           font-size: 13px
         .label
           display: none
-          
-        .y-label text
-          transform: rotate(-90deg) translate(0, -10px)
-          text-anchor: middle
-        .y-label:first-child text
-            text-anchor: start
-        .y-label:last-child text
-            text-anchor: end
-          
-        .x-label:first-child text
-          text-anchor: start
-        .x-label:last-child text
-          text-anchor: end
           
         .axis-label
           font-size: 14px
