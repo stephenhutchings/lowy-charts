@@ -170,10 +170,12 @@ block page
     const enableTooltips = true;
     /* --------------------- */
     
-    const chart = document.querySelectorAll('.chart-content');
+    const chart = document.querySelector('.chart');
     const circles = document.querySelectorAll('circle');
     const series = document.querySelectorAll('.label');
     const tooltip = document.querySelector('.tooltip');
+    
+    var l0 = chart.offsetLeft;
     
     if (enableTooltips) {
       window.addEventListener('DOMContentLoaded', () => {
@@ -184,15 +186,21 @@ block page
     function addHoverEventListeners(el, i) {
       el.addEventListener('mouseover', () => {
         
-        let x = el.dataset.x;
-        let y = el.dataset.y;
-        let r = el.dataset.r;
-        let s = series[i].dataset.name;
-        let box = el.getBoundingClientRect();
+        let x = el.dataset.x,
+            y = el.dataset.y,
+            r = el.dataset.r,
+            s = series[i].dataset.name;
         
-        tooltip.innerHTML = "<b>"+s+"</b><br/>" + "Asia Power Index Score: " + r;
-        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
-        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
+        let box = el.getBoundingClientRect(),
+            top = box.top - tooltip.offsetHeight,
+            left = box.left + box.width/2 - tooltip.offsetWidth/2,
+            dx = l0-left;
+        
+        dx > 0 ? left += dx : "";
+        
+        tooltip.innerHTML  = "<b>"+s+"</b><br/>" + "Asia Power Index Score: " + r;
+        tooltip.style.left = left + 'px';
+        tooltip.style.top  = top + 'px';
         tooltip.style.opacity = 1;
         
       });

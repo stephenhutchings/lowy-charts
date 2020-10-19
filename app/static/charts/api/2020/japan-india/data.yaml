@@ -2,7 +2,7 @@ title: >
   Japan vs India
 
 source: >
-  <b>Source:</b> Lowy Institute Asia Power Index
+  <b>Source:</b> <a href="https://power.lowyinstitute.org/" target="_blank">Lowy Institute Asia Power Index</a>
 
 notes: >
   <b>Notes:</b> Lorem ipsum
@@ -51,7 +51,7 @@ series:
     color: orange
     values:
       - 26.29
-      - 43.68      
+      - 43.68
       - 25.32
       - 44.34
       - 54.49
