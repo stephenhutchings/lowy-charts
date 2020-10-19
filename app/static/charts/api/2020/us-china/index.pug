@@ -38,18 +38,15 @@ block page
             // Path 'a' syntax: { rX,rY rotation, arc, sweep, eX,eY }
             - top = "M -20,200 a 220,220 0 1 1 0,1"
             - bot = "M 420,200 a 220,220 0 1 0 0,1"
-            - rot = -90*(100/ln)
+            //- rot = -90*(100/ln)
+            //- console.log(rot)
             path#curve-top(
               fill="none"
-              transform=`rotate(${rot})`
-              transform-origin="center"
               d=top
             )
             - rot = 180
             path#curve-bot(
               fill="none"
-              transform=`rotate(${rot})`
-              transform-origin="center"
               d=bot
             )
 
@@ -232,6 +229,11 @@ block append css
         font-size: 12px
         text-transform: capitalize
         font-weight: 500
+        
+      #curve-top
+        transform: rotate(-45deg)
+      #curve-bot
+        transform: rotate(180deg)
         
       #curve-top,
       #curve-bot
