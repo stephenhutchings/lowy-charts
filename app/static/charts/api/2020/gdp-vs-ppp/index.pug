@@ -2,7 +2,8 @@ extend /partials/layout
 
 block append config
   - var chart  = data.getOne("static/charts/api/2020/gdp-vs-ppp/data")
-  - var byValue = function(e){return -e.gdp[0]};
+  - var byValueGDP = function(e){return -e.gdp[0]};
+  - var byValuePP = function(e){return -e.gdp[0]};
   - var inOrder = _.sortBy(chart.countries, byValue);
   - page.title = `GDP at current prices, top ${chart.limit} countries`
 
@@ -81,8 +82,6 @@ block page
       img(src="/img/lowyinstitute-logo.png")
 
     legend#chart-legend
-      label.chart-title-label.api
-        |  Asia-Pacific Countries
       label.chart-title-label.gdp
         | Market Exchange Rates
       label.chart-title-label.ppp
