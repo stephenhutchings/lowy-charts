@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/templates/butterfly/data"
+  - var datapath = "static/charts/api/2020/butterfly/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -21,14 +21,14 @@ block page
     .txt-center.flex.flex-grow.flex-col
       .titles(style=`padding-left: ${cntr ? 0 : rx1}%`)
         .chart-title= chart.title
-        .chart-subtitle.txt-muted.p-sm!= chart.subtitle
+        //.chart-subtitle.txt-muted.p-sm!= chart.subtitle
       
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
         - max = axes.max
         - fx = (x) => (rw/100)*Math.abs(x) / max
-        - fy = (i) => (i + 0.67) / (ln + 0.75)
+        - fy = (i) => (i + 0.7) / (ln + 0.75)
         
         // Legend
         svg.legend(height="2.25em" width="100%")
@@ -108,7 +108,7 @@ block page
                 svg.category-label(x=(cntr ? 50+lx-rw : lx)+"%" y="50%")
                   text(
                     text-anchor="middle"
-                    transform="translate(0 5.5)"
+                    transform="translate(0 4.5)"
                   )
                     =chart.series[0].values[i]
 
@@ -131,10 +131,10 @@ block page
                     x=toPercent(xText)
                     y="50%"
                     text-anchor="middle"
-                    transform=`translate(${dx} 5.5)`
+                    transform=`translate(${dx} 4.5)`
                     style=`color: ${dx ? "black" : "white"}`
                   )
-                    = v.toFixed(1) + (axes.percentage ? "%" : "")
+                    = v != 0 ? v.toFixed(1) + (axes.percentage ? "%" : "") : ""
     
 
       .chart-source.txt-center.txt-muted.txt-cond(style=`padding-left: ${cntr ? 0 : rx1}%`)!= chart.source
@@ -191,7 +191,7 @@ block append css
     :sass
   
       .wrapper
-        height: 550px
+        height: 710px
         max-width: 720px
 
       .chart
@@ -228,6 +228,9 @@ block append css
         text-transform: lowercase
         max-width: 180px
         box-sizing: border-box
+        
+      .category-label
+        font-size: 12px
 
       li
         list-style: none
@@ -257,6 +260,7 @@ block append css
         opacity: 0
         transition-duration: .4s
         pointer-events: none
+        font-size: 12px
       
       .chart-content:hover .chart-value
         opacity: 1

@@ -18,17 +18,19 @@ axes:
   dotted: true
   reverse: false
   minInnerLabel: 2 # bars with lower absolute have value labels outside bar
+  labelPosition: "left" # either "left" or "center"
+  xBreakpoints: [0,10,55] # x-position of each div (%)
 
 series:
   -
     title: Categories
     values:
-      - A
-      - B
-      - C
-      - D
-      - E
-      - F
+      - Category A
+      - Category B
+      - Category C
+      - Category D
+      - Category E
+      - Category F
 
   -
     title: Series 1
@@ -37,7 +39,7 @@ series:
       - -0.5
       - -9.5
       - -1.5
-      - -5.5
+      - -6.0
       - -1.5
       - -2.5
 
