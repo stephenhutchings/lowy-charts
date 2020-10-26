@@ -1,5 +1,5 @@
 title: >
-  Stacked bar chart
+  Stacked column chart
 
 source: >
   <b>Source:</b> Lorem ipsum
@@ -11,27 +11,28 @@ subtitle: >
   Subtitle goes here
 
 axes:
-  minX:  0
-  maxX: 12
-  stepsX: 13
+  minY:  0
+  maxY: 12
+  stepsY: 7
+  rotateX: false
   percentage: false
-  minorLines: true
-  dotted: [1,3,5,7,9,11,13] # Index of dotted gridlines
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
   reverse: false
 
 series:
   -
-    title: Category
+    title: Year
     values:
-      - Category A
-      - Category B
-      - Category C
-      - Category D
-      - Category E
-      - Category F
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
 
   -
-    title: Series 1
+    title: Category 1
     color: "dark"
     values:
       - 1
@@ -42,7 +43,7 @@ series:
       - 2
 
   -
-    title: Series 2
+    title: Category 2
     color: "highlight"
     values:
       - 2
@@ -52,7 +53,7 @@ series:
       - 2
       - 3
   -
-    title: Series 3
+    title: Category 3
     color: "red"
     values:
       - 2
@@ -62,7 +63,7 @@ series:
       - 3
       - 1
   -
-    title: Series 4
+    title: Category 4
     color: "grey"
     values:
       - 2

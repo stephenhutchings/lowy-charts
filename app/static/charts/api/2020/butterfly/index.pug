@@ -114,25 +114,32 @@ block page
 
                 for v, j in vals
                   - ci = axes.reverse ? vals.length-j : j+1
+                  - color = chart.colors[chart.series[ci].color]
+                  - lhs = (axes.reverse && !(ci-1)) || (!axes.reverse && (ci-1))
+                  
                   - w = fx(v)
+                  
                   if v > 0
                     - x = rx2/100
                   else
                     - x = cntr ? lx/100 - w : rx2/100 - w
+                    - xText = lhs ? x + 0.01 : x + w + 0.01
+                    - anchr = "start"
+
                   rect(
                     x=toPercent(x)
                     height="100%"
                     width=toPercent(w)
-                    fill=chart.colors[chart.series[ci].color]
+                    fill=color
                   )
-                  - dx = Math.abs(v) > chart.axes.minInnerLabel ? 0 : v < 0 ? -25 : 25
-                  - xText = !dx ? x + w/2 : dx < 0 ? x : x+w
+                  - dx = Math.abs(v) > chart.axes.minInnerLabel || (v>0 && lhs) ? 0 : v<0 ? -40 : 40
+                  - co = Math.abs(v) < chart.axes.minInnerLabel || (v>0 && lhs) ? color : "white"
                   text.chart-value(
                     x=toPercent(xText)
                     y="50%"
-                    text-anchor="middle"
+                    text-anchor=anchr
                     transform=`translate(${dx} 4.5)`
-                    style=`color: ${dx ? "black" : "white"}`
+                    style=`color: ${co}`
                   )
                     = v != 0 ? v.toFixed(1) + (axes.percentage ? "%" : "") : ""
     
@@ -191,7 +198,7 @@ block append css
     :sass
   
       .wrapper
-        height: 710px
+        height: 750px
         max-width: 720px
 
       .chart

@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/templates/stacked-bar/data"
+  - var datapath = "static/charts/the-interpreter/south-korea-and-trump/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -12,7 +12,7 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -44,7 +44,7 @@ block page
                     y1="0%"
                     x2=toPercent(x)
                     y2="100%"
-                    stroke="#5552"
+                    stroke="#5553"
                     stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
                   )
 
@@ -81,7 +81,7 @@ block page
                       transform="translate(0 4.5)"
                       style=`color: ${(j < 3 ? "white" : "")}`
                     )
-                      = v.toFixed(0) + (axes.percentage ? "%" : "")
+                      = v.toFixed(1) + (axes.percentage ? "%" : "")
 
                   - x0 += fx(v)
                     
@@ -102,7 +102,7 @@ block page
                 span.legend-item-label= chart.series[i].title
 
       .chart-source.txt-center.txt-muted.txt-cond!= chart.source
-        span.chart-notes!= chart.notes
+        .chart-notes!= chart.notes
       
       .tooltip
 
@@ -135,7 +135,11 @@ block page
         let c = cats[el.dataset.c].innerHTML.trim();
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = v + " of " + s + " were " + c;
+        c === "Total" ? c = "total" : c === "No Party" ? c = "unaligned" : "";
+        console.log(c, c.length)
+        s = s.toLowerCase();
+        
+        tooltip.innerHTML = v + "% of " + c + " voters said US—South Korea relations would " + s + " if Trump is reelected.";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -162,13 +166,15 @@ block append css
 
       .chart-content
         position: absolute
-        top: 0
-        left: 90px
-        right: 15px
+        top: 5px
+        left: 140px
+        right: 20px
         bottom: 30px
 
       .chart-title
         margin: auto
+        margin-bottom: 0.5em
+        padding: 0 2em
         font-size: 24px
         
       .chart-subtitle
@@ -220,10 +226,10 @@ block append css
 
       svg
         overflow: visible
-        
-      .chart-notes, .chart-source
-        margin-left: 2em
+      
+      .chart-source
         font-size: 15px
+        margin: 1em 0 0
         
       .chart-value
         opacity: 0
@@ -238,12 +244,11 @@ block append css
           font-size: 13px
         .chart-content
           bottom: 20px
-          left: 80px
+          left: 125px
         .legend
           flex-wrap: wrap
-
         .chart-title
-          font-size: 22px
+          font-size: 18px
         .chart-subtitle
           font-size: 14px
         .chart-notes,
