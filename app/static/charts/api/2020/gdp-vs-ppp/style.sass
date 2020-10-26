@@ -336,10 +336,22 @@ body
   margin-top: 8px
   font-weight: normal
 
-
 .chart-title-small
+  opacity: 0
   color: #7e8d94
   transition: opacity 300ms
+
+  &.projected
+    position: absolute
+    top: 24px
+    right: 0
+    white-space: nowrap
+    .projected &
+      opacity: 1
+
+  &.constant
+    .constant &
+      opacity: 1
 
 .chart-title-label
   text-transform: none

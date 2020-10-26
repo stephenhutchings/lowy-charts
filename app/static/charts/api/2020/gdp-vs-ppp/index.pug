@@ -2,8 +2,7 @@ extend /partials/layout
 
 block append config
   - var chart  = data.getOne("static/charts/api/2020/gdp-vs-ppp/data")
-  - var byValueGDP = function(e){return -e.gdp[0]};
-  - var byValuePP = function(e){return -e.gdp[0]};
+  - var byValue = function(e){return -e.gdp[0]};
   - var inOrder = _.sortBy(chart.countries, byValue);
   - page.title = `GDP at current prices, top ${chart.limit} countries`
 
@@ -15,8 +14,11 @@ block page
       h1.chart-title-main
         | Gross Domestic Product
 
-      small.chart-title-small
+      small.chart-title-small.constant
         | At current prices
+
+      small.chart-title-small.projected
+        | Forecast at current prices
 
     ul#axis-countries.list-bare
       for country in chart.countries
@@ -45,8 +47,8 @@ block page
 
     #scale
       #scale-strokes
-        for n, i in new Array(25)
-          .scale-stroke(style={opacity: (25 - i) / 25})
+        for n, i in new Array(35)
+          .scale-stroke(style={opacity: (35 - i) / 35})
             span.scale-stroke-label $#{i}T
 
     #controls
@@ -102,14 +104,9 @@ block css
       .country-bar-block
         .country-china &,
         .country-united-states &,
-        .country-india &,
         .country-japan &,
-        .country-russia &,
-        .country-south-korea &,
-        .country-taiwan &,
-        .country-thailand &,
-        .country-australia &,
-        .country-indonesia &
+        .country-india &,
+        .country-germany &
           background-color: #dbde00
 
           &.ppp
@@ -119,12 +116,7 @@ block css
       .country-bar
         .country-china &,
         .country-united-states &,
-        .country-india &,
         .country-japan &,
-        .country-russia &,
-        .country-south-korea &,
-        .country-taiwan &,
-        .country-thailand &,
-        .country-australia &,
-        .country-indonesia &
+        .country-india &,
+        .country-germany &
           color: #dbde00

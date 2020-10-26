@@ -121,6 +121,9 @@ block page
                   
                   if v > 0
                     - x = rx2/100
+                    - xText = lhs ? x - 0.01 : x + w - 0.01
+                    - anchr = "end"
+                    
                   else
                     - x = cntr ? lx/100 - w : rx2/100 - w
                     - xText = lhs ? x + 0.01 : x + w + 0.01
