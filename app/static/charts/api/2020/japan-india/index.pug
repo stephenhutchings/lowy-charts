@@ -104,8 +104,9 @@ block page
               if s
                 g.series
                   - color = chart.colors[chart.series[s].color]
+                  - fill = s==1 ? "rgba(0,43,69,0.065)" : s==2 ? "rgba(255,136,0,0.065)" : ""
                   polygon(
-                    fill=color+"11"
+                    fill=fill
                     stroke=color
                     stroke-width=3
                     

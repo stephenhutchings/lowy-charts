@@ -2,12 +2,13 @@ title: >
   Forecast GDP growth rates for year 2020
 
 source: >
-  <b>Source:</b> ??
+  <b>Source:</b> Lorem ipsum
 
 notes: >
   <b>Notes:</b> Lorem ipsum
 
-subtitle: ""
+subtitle: >
+  Subtitle goes here
 
 axes:
   max:  10 # ± max scale
@@ -16,7 +17,9 @@ axes:
   minorLines: true
   dotted: true
   reverse: true
-  minInnerLabel: 2 # bars with lower absolute have value labels outside bar
+  minInnerLabel: 1.5 # bars with lower absolute have value labels outside bar
+  labelPosition: "left" # either "left" or "center"
+  xBreakpoints: [0,10,55] # x-position of each div (%)
 
 series:
   -
@@ -38,7 +41,7 @@ series:
       - Sri Lanka
       - Thailand
       - New Zealand
-      - Papua New Guinea
+      - PNG
       - Pakistan
       - Australia
       - South Korea

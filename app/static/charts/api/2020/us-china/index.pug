@@ -32,7 +32,6 @@ block page
           // AXES
           svg(height="100%" width="100%" viewBox=`0 0 ${viewBox} ${viewBox}`)
           
-          
             // TEXTPATH BASE CURVE
             // NOTE: 'rot' will need some tweaking for charts with an odd-number of categories
             // Path 'a' syntax: { rX,rY rotation, arc, sweep, eX,eY }
@@ -106,8 +105,9 @@ block page
               if s
                 g.series
                   - color = chart.colors[chart.series[s].color]
+                  - fill = s==2 ? "rgba(0,43,69,0.065)" : s==1 ? "rgba(255,31,47,0.065)" : ""
                   polygon(
-                    fill=color+"11"
+                    fill=fill
                     stroke=color
                     stroke-width=3
                     
