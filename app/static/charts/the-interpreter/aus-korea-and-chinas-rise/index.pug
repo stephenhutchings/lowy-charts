@@ -28,9 +28,10 @@ block append css
   style
     :sass
       .wrapper
-        font-size: 13px
-        max-width: 600px
-        height: 850px
+        padding: 10px 0
+        font-size: 15px
+        max-width: 736px
+        height: 930px
       .row
         padding: 10px 0
         border-bottom: .5px solid #ddd
@@ -83,7 +84,8 @@ block append css
           width: min-content
           
       @media (max-width: 475px)
-        
+        .wrapper
+          height: 2120px
         .row
           flex-direction: column-reverse
           padding: 16px 0
