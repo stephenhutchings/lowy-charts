@@ -1,7 +1,7 @@
 events:
 
   - event: 2013&colon; Air Defense Identification Zone (ADIZ)
-    description: The US does not recognize China's unilateral declaration of ADIZ over the East China Sea.
+    description: The US does not recognise China's unilateral declaration of ADIZ over the East China Sea.
     response: >
       Australia <a href="https://www.abc.net.au/news/2013-11-26/an-aust-calls-in-china-ambassador-over-air-defence-zone-announc/5117974" target="_blank">criticizes ADIZ</a> as destabilizing.
       Korea seeks to cut a separate deal with China.
@@ -10,7 +10,7 @@ events:
     kor:
       link: 1
 
-  - event: 2015&colon; Asia Infrastructure Investment Bank (AIIB)
+  - event: 2015&colon; Asian Infrastructure Investment Bank (AIIB)
     description: China creates a new infrastructure investment bank for development projects around the world.
     response: >
        <a href="https://www.dfat.gov.au/international-relations/international-organisations/multilateral-development-banks/Pages/asian-infrastructure-investment-bank" target="_blank">Australia</a> and Korea join as charter members.
@@ -70,7 +70,7 @@ events:
   - event: 2020&colon; Hong Kong
     description: The US opposes Chinese suppression of political rights in Hong Kong.
     response: >
-      Australia <a href="https://www.theguardian.com/business/2020/may/20/coalition-eyes-australian-economic-sovereignty-with-boost-to-manufacturing" target="_blank">joins with the US, the UK, and Canada</a> in being critical of Chinese actions.
+      Australia <a href="https://www.theguardian.com/business/2020/may/20/coalition-eyes-australian-economic-sovereignty-with-boost-to-manufacturing" target="_blank">joins with the US, the UK and Canada</a> in being critical of Chinese actions.
       Korea does not comment on the issue.
     aus:
       link: -1
