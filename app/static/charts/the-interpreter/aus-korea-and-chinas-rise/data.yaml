@@ -3,8 +3,8 @@ events:
   - event: 2013&colon; Air Defense Identification Zone (ADIZ)
     description: The US does not recognise China's unilateral declaration of ADIZ over the East China Sea.
     response: >
-      Australia <a href="https://www.abc.net.au/news/2013-11-26/an-aust-calls-in-china-ambassador-over-air-defence-zone-announc/5117974" target="_blank">criticizes ADIZ</a> as destabilizing.
-      Korea seeks to cut a separate deal with China.
+      Australia <a href="https://www.abc.net.au/news/2013-11-26/an-aust-calls-in-china-ambassador-over-air-defence-zone-announc/5117974" target="_blank">criticises ADIZ</a> as destabilising.
+      South Korea seeks to cut a separate deal with China.
     aus:
       link: -1
     kor:
@@ -13,7 +13,7 @@ events:
   - event: 2015&colon; Asian Infrastructure Investment Bank (AIIB)
     description: China creates a new infrastructure investment bank for development projects around the world.
     response: >
-       <a href="https://www.dfat.gov.au/international-relations/international-organisations/multilateral-development-banks/Pages/asian-infrastructure-investment-bank" target="_blank">Australia</a> and Korea join as charter members.
+       <a href="https://www.dfat.gov.au/international-relations/international-organisations/multilateral-development-banks/Pages/asian-infrastructure-investment-bank" target="_blank">Australia</a> and South Korea join as charter members.
     aus:
       link: 1
     kor:
@@ -22,7 +22,7 @@ events:
   - event: 2018&colon; Belt and Road Initiative (BRI)
     description: The BRI is a massive, multi-national infrastructure development initiative by China connecting Eurasian continent through road, maritime, technology corridors.
     response: >
-      <a href="https://www.theguardian.com/world/2018/nov/06/scott-morrison-rebukes-victoria-for-signing-up-to-chinas-belt-and-road-initiative" target="_blank">Australia's national government</a> does not join, though the state of Victoria signs BRI deal. Korea does not join but expresses interest.
+      <a href="https://www.theguardian.com/world/2018/nov/06/scott-morrison-rebukes-victoria-for-signing-up-to-chinas-belt-and-road-initiative" target="_blank">Australia's national government</a> does not join, though the state of Victoria signs BRI deal. South Korea does not join but expresses interest.
     aus:
       link: 0
     kor:
@@ -32,7 +32,7 @@ events:
     description: The US calls on allies to exclude the Chinese telecom firm from 5G networks for security reasons.
     response: >
       Australia <a href="https://www.ft.com/content/e90c3800-aad3-11e8-94bd-cba20d67390c" target="_blank">excludes Huawei</a> from its 5G network (before the US does).
-      Korea allows Huawei into its 5G market.
+      South Korea allows Huawei into its 5G market.
     aus:
       link: -1
     kor:
@@ -42,7 +42,7 @@ events:
     description: The US opposes China’s island-building campaign in the South China Sea, declaring it unlawful.
     response: >
       Australia also <a href="https://www.dfat.gov.au/news/news/Pages/australia-supports-peaceful-dispute-resolution-in-the-south-china-sea" target="_blank">supports the international court</a> ruling.
-      Korea does not openly oppose China's SCS campaign.
+      South Korea does not openly oppose China's SCS campaign.
     aus:
       link: -1
     kor:
@@ -52,7 +52,7 @@ events:
     description: The US proposes an alliance of countries to promote responsible development assistance (vis-à-vis China).
     response: >
       Australia <a href="https://www.voanews.com/economy-business/us-led-initiative-aims-make-mark-global-infrastructure-development" target="_blank">joins</a> as charter member.
-      Korea does not join.
+      South Korea does not join.
     aus:
       link: -1
     kor:
@@ -61,7 +61,7 @@ events:
   - event: 2020&colon; Economic Prosperity Network (EPN)
     description: EPN is a US-led initiative for supply chain diversification out of China.
     response: >
-      The network dovetails with Australia's “<a href="https://www.theguardian.com/business/2020/may/20/coalition-eyes-australian-economic-sovereignty-with-boost-to-manufacturing" target="_blank">reshoring</a>” initiative. Korea has not explicitly supported it.
+      The network dovetails with Australia's “<a href="https://www.theguardian.com/business/2020/may/20/coalition-eyes-australian-economic-sovereignty-with-boost-to-manufacturing" target="_blank">reshoring</a>” initiative. South Korea has not explicitly supported it.
     aus:
       link: -1
     kor:
@@ -71,7 +71,7 @@ events:
     description: The US opposes Chinese suppression of political rights in Hong Kong.
     response: >
       Australia <a href="https://www.theguardian.com/business/2020/may/20/coalition-eyes-australian-economic-sovereignty-with-boost-to-manufacturing" target="_blank">joins with the US, the UK and Canada</a> in being critical of Chinese actions.
-      Korea does not comment on the issue.
+      South Korea does not comment on the issue.
     aus:
       link: -1
     kor:
@@ -81,7 +81,7 @@ events:
     description: The US calls for an investigation into origins of the pandemic in China.
     response: >
       Australia <a href="https://www.reuters.com/article/us-health-coronavirus-australia/australia-says-all-who-members-should-back-coronavirus-inquiry-idUSKCN225041" target="_blank">also calls for WHO</a> to investigate.
-      Korea does not.
+      South Korea does not.
     aus:
       link: -1
     kor:
