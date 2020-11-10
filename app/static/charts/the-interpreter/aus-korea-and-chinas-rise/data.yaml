@@ -38,6 +38,15 @@ events:
     kor:
       link: 1
 
+  - event: 2017—2018&colon; Free and Open Indo-Pacific (FOIP)
+    description: FOIP is a US strategy in support of an open, rules-based international order in Asia.
+    response: >
+      Australia <a href="https://share.america.gov/u-s-and-australia-supporting-free-and-open-indo-pacific/" target="_blank">supports</a> FOIP. South Korea does not.
+    aus:
+      link: -1
+    kor:
+      link: 1
+
   - event: 2015—2020&colon; South China Sea (SCS)
     description: The US opposes China’s island-building campaign in the South China Sea, declaring it unlawful.
     response: >
