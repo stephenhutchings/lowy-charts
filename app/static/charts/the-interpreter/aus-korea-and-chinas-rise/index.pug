@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - page.title = "US — South Korea and Australia"
+  - page.title = "US-China: South Korea and Australia"
   - var datapath = "static/charts/the-interpreter/aus-korea-and-chinas-rise/data"
   - _.extend(page, data.getOne(datapath))
   - events = page.events
@@ -85,7 +85,7 @@ block append css
           
       @media (max-width: 475px)
         .wrapper
-          height: 2120px
+          height: 2240px
         .row
           flex-direction: column-reverse
           padding: 16px 0
