@@ -1,7 +1,7 @@
 events:
 
   - event: 2013&colon; Air Defense Identification Zone (ADIZ)
-    description: The US does not recognise China's unilateral declaration of ADIZ over the East China Sea.
+    description: The US does not recognise China’s unilateral declaration of ADIZ over the East China Sea.
     response: >
       Australia <a href="https://www.abc.net.au/news/2013-11-26/an-aust-calls-in-china-ambassador-over-air-defence-zone-announc/5117974" target="_blank">criticises ADIZ</a> as destabilising.
       South Korea seeks to cut a separate deal with China.
@@ -22,7 +22,7 @@ events:
   - event: 2018&colon; Belt and Road Initiative (BRI)
     description: The BRI is a massive, multi-national infrastructure development initiative by China connecting Eurasian continent through road, maritime, technology corridors.
     response: >
-      <a href="https://www.theguardian.com/world/2018/nov/06/scott-morrison-rebukes-victoria-for-signing-up-to-chinas-belt-and-road-initiative" target="_blank">Australia's national government</a> does not join, though the state of Victoria signs BRI deal. South Korea does not join but expresses interest.
+      <a href="https://www.theguardian.com/world/2018/nov/06/scott-morrison-rebukes-victoria-for-signing-up-to-chinas-belt-and-road-initiative" target="_blank">Australia’s national government</a> does not join, though the state of Victoria signs BRI deal. South Korea does not join but expresses interest.
     aus:
       link: 0
     kor:
@@ -41,7 +41,7 @@ events:
   - event: 2017—2018&colon; Free and Open Indo-Pacific (FOIP)
     description: FOIP is a US strategy in support of an open, rules-based international order in Asia.
     response: >
-      Australia explicitly <a href="https://share.america.gov/u-s-and-australia-supporting-free-and-open-indo-pacific/" target="_blank">supports</a> FOIP. South Korea does not.
+      Australia <a href="https://share.america.gov/u-s-and-australia-supporting-free-and-open-indo-pacific/" target="_blank">supports</a> FOIP. South Korea does not explicitly support FOIP.
     aus:
       link: -1
     kor:
@@ -51,7 +51,7 @@ events:
     description: The US opposes China’s island-building campaign in the South China Sea, declaring it unlawful.
     response: >
       Australia also <a href="https://www.dfat.gov.au/news/news/Pages/australia-supports-peaceful-dispute-resolution-in-the-south-china-sea" target="_blank">supports the international court</a> ruling.
-      South Korea does not openly oppose China's SCS campaign.
+      South Korea does not openly oppose China’s SCS campaign.
     aus:
       link: -1
     kor:
@@ -70,7 +70,7 @@ events:
   - event: 2020&colon; Economic Prosperity Network (EPN)
     description: EPN is a US-led initiative for supply chain diversification out of China.
     response: >
-      The network dovetails with Australia's “<a href="https://www.theguardian.com/business/2020/may/20/coalition-eyes-australian-economic-sovereignty-with-boost-to-manufacturing" target="_blank">reshoring</a>” initiative. South Korea has not explicitly supported it.
+      The network dovetails with Australia’s “<a href="https://www.theguardian.com/business/2020/may/20/coalition-eyes-australian-economic-sovereignty-with-boost-to-manufacturing" target="_blank">reshoring</a>” initiative. South Korea has not explicitly supported it.
     aus:
       link: -1
     kor:
