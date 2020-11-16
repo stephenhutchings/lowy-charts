@@ -1,0 +1,80 @@
+title: >
+  Unsteady Confidence in American Leaders (Pew)
+
+source: >
+  <b>Source:</b> <a href="https://www.pewresearch.org/global/2020/09/15/us-image-plummets-internationally-as-most-say-country-has-handled-coronavirus-badly/">Pew Research Center</a>
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: Pandemic performance
+    values:
+      - Japan
+      - South Korea
+      - Australia
+      - Canada
+      - U.K.
+      - France
+      - Germany
+
+  -
+    title: George W. Bush (2007/8)
+    color: "dark"
+    values:
+      - 35
+      - 22
+      - 23
+      - 28
+      - 24
+      - 14
+      - 19
+
+  -
+    title: Barack Obama (2015)
+    color: "highlight"
+    values:
+      - 66
+      - 88
+      - 81
+      - 76
+      - 76
+      - 83
+      - 73
+
+  -
+    title: Donald Trump (2020)
+    color: "orange"
+    values:
+      - 25
+      - 17
+      - 23
+      - 2
+      - 19
+      - 11
+      - 1
+
+  -
+    title: Xi Jinping (2020)
+    color: "red"
+    values:
+      - 9
+      - 15
+      - 19
+      - 22
+      - 21
+      - 16
+      - 18

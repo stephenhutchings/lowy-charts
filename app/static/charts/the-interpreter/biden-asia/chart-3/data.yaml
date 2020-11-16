@@ -1,0 +1,150 @@
+title: >
+  Southeast Asian Skepticism of American&nbsp;Power
+
+subtitle: >
+    <em>Which country is the leading power?</em>
+
+source: >
+  <b>Source:</b> <a href="https://www.iseas.edu.sg/wp-content/uploads/pdfs/TheStateofSEASurveyReport_2020.pdf">ISEAS State of Southeast Asia 2020 Survey Report</a>
+
+notes: >
+  <b>1/</b> Example notes
+
+charts:
+  -
+    title: >
+      Political/Strategic Power
+
+    source: >
+      <b>Source:</b> Lorem ipsum
+
+    notes: >
+      <b>Notes:</b> Lorem ipsum
+
+    subtitle: >
+      Subtitle goes here
+
+    axes:
+      max:  100 # ± max scale
+      steps: 3  # steps per side
+      percentage: true
+      minorLines: false
+      dotted: true
+      reverse: false
+      minInnerLabel: 20 # bars with lower absolute have value labels outside bar
+      labelPosition: "left" # either "left" or "center"
+      xBreakpoints: [0,0,50] # x-position of each div (%)
+
+    series:
+      -
+        title: Categories
+        values:
+          - Brunei
+          - Cambodia
+          - Indonesia
+          - Laos
+          - Malaysia
+          - Myanmar
+          - Philippines
+          - Singapore
+          - Thailand
+          - Vietnam
+
+      -
+        title: China
+        color: "red-light"
+        values:
+          - 50
+          - 58
+          - 41
+          - 65
+          - 55
+          - 64
+          - 36
+          - 52
+          - 53
+          - 57
+
+      -
+        title: United States
+        color: "dark"
+        values:
+          - 15
+          - 27
+          - 32
+          - 0
+          - 26
+          - 17
+          - 38
+          - 33
+          - 29
+          - 28
+
+  -
+    title: >
+      Economic Power
+
+    source: >
+      <b>Source:</b> Lorem ipsum
+
+    notes: >
+      <b>Notes:</b> Lorem ipsum
+
+    subtitle: >
+      Subtitle goes here
+
+    axes:
+      max:  100 # ± max scale
+      steps: 3  # steps per side
+      percentage: true
+      minorLines: false
+      dotted: true
+      reverse: false
+      minInnerLabel: 20 # bars with lower absolute have value labels outside bar
+      labelPosition: "left" # either "left" or "center"
+      xBreakpoints: [0,0,50] # x-position of each div (%)
+
+    series:
+      -
+        title: Categories
+        values:
+          - Brunei
+          - Cambodia
+          - Indonesia
+          - Laos
+          - Malaysia
+          - Myanmar
+          - Philippines
+          - Singapore
+          - Thailand
+          - Vietnam
+
+      -
+        title: China
+        color: "red-light"
+        values:
+          - 86
+          - 89
+          - 77
+          - 78
+          - 79
+          - 85
+          - 61
+          - 81
+          - 87
+          - 76
+
+      -
+        title: United States
+        color: "dark"
+        values:
+          - 2
+          - 0
+          - 7
+          - 4
+          - 7
+          - 4
+          - 16
+          - 11
+          - 5
+          - 12

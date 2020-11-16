@@ -1,0 +1,358 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/the-interpreter/biden-asia/chart-3/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex.flex-col
+
+    .page-title.txt-center!= page.title
+    .page-subtitle.txt-center!= page.subtitle
+    
+    div
+      ul.legend.list-bare.txt-left.flex.flex-ch
+        for ax, i in new Array(page.charts[0].series.length)
+          if i
+            li.legend-item
+              span.legend-item-box(style=`background: ${page.colors[page.charts[0].series[i].color]}`)
+              span.legend-item-label= page.charts[0].series[i].title
+
+    .col-wrap.txt-center.flex-grow.flex.txt-sm
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[0]
+        - xbp   = chart.axes.xBreakpoints
+        - cntr  = chart.axes.labelPosition == "center"
+        - lx    = cntr ? xbp[1] : xbp[0]
+        - rx1   = cntr ? xbp[0] : xbp[1]
+        - rx2   = xbp[2]
+        - rw    = 100-rx2
+
+        .chart-title.align-left= chart.title
+        //.chart-subtitle.txt-muted.txt-sm= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+        
+          - ln = chart.series[0].values.length
+          - axes = chart.axes
+          - max = axes.max
+          - fx = (x) => (rw/100)*Math.abs(x) / max
+          - fy = (i) => (i + 0.67) / (ln + 0.75)
+
+          svg.plot-area(height="100%" width="100%")
+            
+            // X-Axis labels
+            - let steps = chart.axes.steps-1
+            svg.x-labels(y="-6px" x=rx1+"%" width=(rw+"%"))
+              line(x1="0" x2="100%" y1="12" y2="12" stroke="#666")
+              //line(x1="0" x2="100%" y1="100%" y2="100%" stroke="#666a")
+              for n, i in new Array(steps+1)
+                - x = 1 - (i / (steps))
+                svg(x=toPercent(x))
+                  if chart.axes.minorLines
+                    line( 
+                      y1="18" y2="100%"
+                      stroke="#5553"
+                      stroke-dasharray=(chart.axes.dotted && i!=0 ? 2 : "")
+                    )
+                  line(x1="0" x2="0" y1="6" y2="12" stroke="#666")
+                  text(text-anchor="middle")
+                    = max*(i/steps).toFixed(2) + (axes.percentage ? "%" : "")
+            svg.x-labels(y="-6px" x=rx2+"%" width=rw+"%")
+              line(x1="0" x2="100%" y1="12" y2="12" stroke="#666")
+              //line(x1="0" x2="100%" y1="100%" y2="100%" stroke="#666a")    
+              for n, i in new Array(steps+1)
+                - x = i / (steps)
+                svg(x=toPercent(x))
+                  if chart.axes.minorLines
+                    line( 
+                      y1="18" y2="100%"
+                      stroke="#5553"
+                      stroke-dasharray=(chart.axes.dotted && (!cntr && i!=0) ? 2 : "")
+                    )
+                  line(x1="0" x2="0" y1="6" y2="12" stroke="#666")
+                  text(text-anchor="middle")
+                    = max*(i/steps).toFixed(2) + (axes.percentage ? "%" : "")
+
+            // Rects
+            g.bars
+              - n = chart.series[0].values.length
+              for undef, i in new Array(n)
+                svg(
+                  y=toPercent(fy(i))
+                  height=toPercent(fy(0))
+                  width="100%"
+                )
+                  - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
+                  - vals = axes.reverse ? vals.reverse() : vals
+                  
+                  // Category labels
+                  svg.category-label(x=(cntr ? 50+lx-rw : lx)+"%" y="50%")
+                    line.y-axes-grid(x1=0 x2="100%")
+                    text(
+                      text-anchor="end"
+                      transform="translate(-10 5.5)"
+                    )
+                      =chart.series[0].values[i]
+
+                  for v, j in vals
+                    - ci = axes.reverse ? vals.length-j : j+1
+                    - w = fx(v)
+                    if ci > vals.length/2
+                      - x = rx2/100
+                    else
+                      - x = cntr ? lx/100 - w : rx2/100 - w
+                    rect(
+                      x=toPercent(x)
+                      height="100%"
+                      width=toPercent(w)
+                      fill=page.colors[chart.series[ci].color]
+                    )
+                    - dx = Math.abs(v) > chart.axes.minInnerLabel ? 0 : v < 0 ? -25 : 25
+                    - xText = !dx ? x + w/2 : dx < 0 ? x : x+w
+                    text.chart-value(
+                      x=toPercent(xText)
+                      y="50%"
+                      text-anchor="middle"
+                      transform=`translate(${dx} 5)`
+                      style=`color: ${dx ? "black" : "white"}`
+                    )
+                      = v.toFixed(0) + (axes.percentage ? "%" : "")
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[1]
+        - xbp   = chart.axes.xBreakpoints
+        - cntr  = chart.axes.labelPosition == "center"
+        - lx    = cntr ? xbp[1] : xbp[0]
+        - rx1   = cntr ? xbp[0] : xbp[1]
+        - rx2   = xbp[2]
+        - rw    = 100-rx2
+
+        .chart-title.align-left= chart.title
+          //.chart-subtitle.txt-muted.txt-sm= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+        
+          - ln = chart.series[0].values.length
+          - axes = chart.axes
+          - max = axes.max
+          - fx = (x) => (rw/100)*Math.abs(x) / max
+          - fy = (i) => (i + 0.67) / (ln + 0.75)
+  
+          svg.plot-area(height="100%" width="100%")
+            
+            // X-Axis labels
+            - steps = chart.axes.steps-1
+            svg.x-labels(y="-6px" x=rx1+"%" width=(rw+"%"))
+              line(x1="0" x2="100%" y1="12" y2="12" stroke="#666")
+              //line(x1="0" x2="100%" y1="100%" y2="100%" stroke="#666a")
+              for n, i in new Array(steps+1)
+                - x = 1 - (i / (steps))
+                svg(x=toPercent(x))
+                  if chart.axes.minorLines
+                    line( 
+                      y1="18" y2="100%"
+                      stroke="#5553"
+                      stroke-dasharray=(chart.axes.dotted && i!=0 ? 2 : "")
+                    )
+                  line(x1="0" x2="0" y1="6" y2="12" stroke="#666")
+                  text(text-anchor="middle")
+                    = max*(i/steps).toFixed(2) + (axes.percentage ? "%" : "")
+            svg.x-labels(y="-6px" x=rx2+"%" width=rw+"%")
+              line(x1="0" x2="100%" y1="12" y2="12" stroke="#666")
+              for n, i in new Array(steps+1)
+                - x = i / (steps)
+                svg(x=toPercent(x))
+                  if chart.axes.minorLines
+                    line( 
+                      y1="18" y2="100%"
+                      stroke="#5553"
+                      stroke-dasharray=(chart.axes.dotted && (!cntr && i!=0) ? 2 : "")
+                    )
+                  line(x1="0" x2="0" y1="6" y2="12" stroke="#666")
+                  text(text-anchor="middle")
+                    = max*(i/steps).toFixed(2) + (axes.percentage ? "%" : "")
+
+            // Rects
+            g.bars
+              - n = chart.series[0].values.length
+              for undef, i in new Array(n)
+                svg(
+                  y=toPercent(fy(i))
+                  height=toPercent(fy(0))
+                  width="100%"
+                )
+                  - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
+                  - vals = axes.reverse ? vals.reverse() : vals
+                  
+                  // Category labels
+                  svg.category-label(x=(cntr ? 50+lx-rw : lx)+"%" y="50%")
+                    line.y-axes-grid(x1=0 x2="100%")
+                    text(
+                      text-anchor="end"
+                      transform="translate(-10 5.5)"
+                    )
+                      =chart.series[0].values[i]
+
+                  for v, j in vals
+                    - ci = axes.reverse ? vals.length-j : j+1
+                    - w = fx(v)
+                    if ci > vals.length/2
+                      - x = rx2/100
+                    else
+                      - x = cntr ? lx/100 - w : rx2/100 - w
+                    rect(
+                      x=toPercent(x)
+                      height="100%"
+                      width=toPercent(w)
+                      fill=page.colors[chart.series[ci].color]
+                    )
+                    - dx = Math.abs(v) > chart.axes.minInnerLabel ? 0 : v < 0 ? -25 : 25
+                    - xText = !dx ? x + w/2 : dx < 0 ? x : x+w
+                    text.chart-value(
+                      x=toPercent(xText)
+                      y="50%"
+                      text-anchor="middle"
+                      transform=`translate(${dx} 5)`
+                      style=`color: ${dx ? "black" : "white"}`
+                    )
+                      = v.toFixed(0) + (axes.percentage ? "%" : "")
+
+    .flex
+      //.chart-notes.txt-muted
+        !=page.notes
+      .chart-source.txt-muted.txt-center
+        !=page.source
+
+
+block append css
+  style
+    :sass
+      .wrapper
+        height: 720px
+        max-width: 700px
+        overflow: visible
+        position: relative
+
+      .col-wrap
+        margin-top: .75rem
+        flex-direction: column
+        align-items: center
+        
+      .col-md
+        max-width: 600px
+        width: 100%
+        height: 50%
+        padding-bottom: 0
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 30px
+        bottom: 15px
+        left: 80px
+        right: 20px
+
+      .align-left
+        padding-left: 50px !important
+
+      .page-title
+        margin-bottom: 0px
+        font-size: 22px
+        font-weight: 400
+        
+      .x-labels 
+        line
+          stroke: #bbb
+        text
+          font-size: 12px
+          color: #999
+
+      .chart-title
+        text-transform: uppercase
+        font-weight: 600
+        font-size: 14px
+        max-width: 320px
+        line-height: 1.2
+        margin: auto
+
+      .chart-subtitle
+        height: 0
+        text-transform: uppercase
+        font-weight: 600
+        font-size: 10px
+        margin-bottom: -10px
+
+      .legend
+        max-width: 100%
+        font-size: 16px
+        margin: 6px auto
+        padding-left: 50px !important
+          
+      .legend-item
+        margin: 4px 2.1em 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: -1.5em
+        top: 4px
+        height: .8em
+        width: 1.1em
+        background: black
+        
+        .legend-item:first-child &
+          left: unset
+          right: -1.5em
+        
+      .y-axes-grid
+        stroke: #5553
+        stroke-width: 0.5
+        transform: translate(0,2px)
+
+      text
+        font-size: 13px
+
+        &:not([fill])
+          fill: currentColor
+
+      svg
+        overflow: visible
+
+      sup
+        line-height: 0
+
+      polyline
+        vector-effect: non-scaling-stroke
+        
+      .chart-notes
+        font-size: 12px
+        line-height: 1.2
+        flex: 1
+
+      .chart-source
+        font-size: 12px
+        flex: 1
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+        font-size: 12px
+
+        &.txt-fff
+          fill: #fff
+
+        .chart:hover &
+          opacity: 1
+
+      .hover-hide
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 0
