@@ -1,0 +1,71 @@
+title: >
+  Change in yearly defense spending
+
+source: >
+  <b>Source:</b> <a href="https://www.sipri.org/databases/milex">SIPRI</a> / <a href="https://media.defense.gov/2020/Sep/01/2002488689/-1/-1/1/2020-DOD-CHINA-MILITARY-POWER-REPORT-FINAL.PDF">US Defense</a>
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  maxL:  10 # ± max scale
+  maxR:  20 # ± max scale
+  steps: 3  # steps per side
+  percentage: true
+  minorLines: true
+  dotted: true
+  reverse: true
+  minInnerLabel: 2.5 # bars with lower absolute have value labels outside bar
+  labelPosition: "left" # either "left" or "center"
+  xBreakpoints: [0,10,40] # x-position of each div (%)
+
+series:
+  -
+    title: Categories
+    values:
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+
+  -
+    title: United States
+    color: "dark"
+    values:
+      - 4.55
+      - 1.94
+      - -3.60
+      - -6.34
+      - -4.63
+      - -2.15
+      - 0.95
+      - 1.08
+      - 5.53
+      - 7.22
+      - 3.00
+
+  -
+    title: China
+    color: "red-light"
+    values:
+      - 9.53
+      - 19.23
+      - 14.08
+      - 14.29
+      - 11.61
+      - 6.82
+      - 0.90
+      - 5.57
+      - 10.95
+      - 2.99
+      - 6.20

@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/templates/line/data"
+  - var datapath = "static/charts/the-interpreter/biden-asia/chart-5/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -12,8 +12,8 @@ block append config
 block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
-      .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart-title!= chart.title
+      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -81,7 +81,7 @@ block page
                   fill="none"
                   stroke=chart.colors[chart.series[i].color]
                   stroke-dasharray=(item.dashed ? 10 : "")
-                  stroke-width=(item.widen ? 6 : 3)
+                  stroke-width=(item.widen ? 5 : 3)
                   stroke-linejoin=(item.dashed ? "": "round")
                   stroke-linecap=(item.dashed ? "": "round")
                   points=(item.values.map( (y, ix) => {
@@ -93,36 +93,37 @@ block page
                 )
       
           for item, i in chart.series
-            g
-              for val, ix in item.values
-                if false
-                  circle(
-                    r=7
-                    cx=toPercent(fx(ix))
-                    cy=toPercent(fy(maxY + minY - val))
-                    fill=chart.colors[chart.series[i].color]
-                    stroke='#fff'
-                    stroke-width=0
-                  )
-                svg.chart-value(
-                  x=toPercent(fx(ix))
-                  y=toPercent(fy(maxY + minY - val))
-                  style=`color: ${chart.colors[chart.series[i].color]}`
-                )
+            if i
+              g
+                for val, ix in item.values
                   if false
-                    rect(
-                      y=(i % 2 == 0 ? -12 : 24) - 12
-                      height=14
-                      width=24
-                      x=-12
-                      fill="#fff"
+                    circle(
+                      r=4
+                      cx=toPercent(fx(ix))
+                      cy=toPercent(fy(maxY + minY - val))
+                      fill=chart.colors[chart.series[i].color]
+                      stroke='#fff'
+                      stroke-width=0
                     )
-                  text(
-                    y=(i % 1 == 0 ? -12 : 24)
-                    text-anchor="middle"
-                    fill=chart.colors[chart.series[i].color]
+                  svg.chart-value(
+                    x=toPercent(fx(ix))
+                    y=toPercent(fy(maxY + minY - val))
+                    style=`color: ${chart.colors[chart.series[i].color]}`
                   )
-                    = val
+                    if false
+                      rect(
+                        y=(i == 1 ? -12 : 24) - 12
+                        height=14
+                        width=24
+                        x=-12
+                        fill="#fff"
+                      )
+                    text(
+                      y=(i == 1 ? -12 : 28)
+                      text-anchor="middle"
+                      fill=chart.colors[chart.series[i].color]
+                    )
+                      = val + "%"
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -132,54 +133,8 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      .chart-source.txt-right.txt-muted!= chart.source
       
-      .tooltip
-
-  script.
-
-
-    /* --- USER TO UPDATE --- */
-    const enableTooltips = false;
-    const nLegendItems = 4;
-    const nSeries = 6;
-    /* --------------------- */
-    
-    const chart = document.querySelectorAll('.chart-content');
-    const rects = document.querySelectorAll('rect');
-    const vals = document.querySelectorAll('.chart-value');
-    const series = document.querySelectorAll('.x-label');
-    const tooltip = document.querySelector('.tooltip');
-    const legendItems = document.querySelectorAll('.legend-item-label');
-    
-    if (enableTooltips) {
-      window.addEventListener('DOMContentLoaded', () => {
-        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
-      });
-    }
-        
-    function addHoverEventListeners(el, i) {
-      el.addEventListener('mouseover', () => {
-        
-        let val = vals[i].innerHTML;
-        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
-        let cat = legendItems[i % nLegendItems].innerHTML;
-        let box = el.getBoundingClientRect();
-        
-        tooltip.innerHTML = val + " of " + ser + " countries were " + cat + " performing";
-        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
-        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
-        tooltip.style.opacity = 1;
-        
-      });
-      
-      el.addEventListener('mouseleave', () => { 
-        tooltip.style.opacity = 0;
-      });
-      
-    }
-    
   
 block append css
   style
@@ -238,17 +193,18 @@ block append css
 
       .legend-item
         margin: 4px 8px 0
-        padding-right: 0
+        padding-right: .5em
         position: relative
         white-space: nowrap
 
       .legend-item-box
         position: absolute
-        left: 0
-        top: .5em
-        height: 1em
-        width: 1em
+        left: -.5em
+        top: .75em
+        height: .35em
+        width: 1.5em
         background: black
+        border-radius: 3px
 
       polyline
         vector-effect: non-scaling-stroke
@@ -262,7 +218,7 @@ block append css
         
       .chart-notes, .chart-source
         margin-left: 2em
-        font-size: 15px
+        font-size: 13px
         
       .chart-value
         opacity: 0
@@ -281,11 +237,14 @@ block append css
         text
           font-size: 13px
           
-      @media (max-width: 450px)
+      @media (max-width: 550px)
         .chart-content
           bottom: 40px
         .legend
           flex-direction: column
+          margin: 1em auto
+        .legend-item
+          margin: 0
         .chart-title
           font-size: 18px
         .chart-subtitle
@@ -293,4 +252,4 @@ block append css
         .chart-notes,
         .chart-source
           text-align: center
-          font-size: 13px
+          margin-top: .5em

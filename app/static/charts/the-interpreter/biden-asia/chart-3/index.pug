@@ -111,7 +111,7 @@ block page
                       width=toPercent(w)
                       fill=page.colors[chart.series[ci].color]
                     )
-                    - dx = Math.abs(v) > chart.axes.minInnerLabel ? 0 : v < 0 ? -25 : 25
+                    - dx = Math.abs(v) > chart.axes.minInnerLabel ? 0 : v < 0 ? -20 : 20
                     - xText = !dx ? x + w/2 : dx < 0 ? x : x+w
                     text.chart-value(
                       x=toPercent(xText)
@@ -209,7 +209,7 @@ block page
                       width=toPercent(w)
                       fill=page.colors[chart.series[ci].color]
                     )
-                    - dx = Math.abs(v) > chart.axes.minInnerLabel ? 0 : v < 0 ? -25 : 25
+                    - dx = Math.abs(v) > chart.axes.minInnerLabel ? 0 : v < 0 ? -20 : 20
                     - xText = !dx ? x + w/2 : dx < 0 ? x : x+w
                     text.chart-value(
                       x=toPercent(xText)
@@ -265,6 +265,8 @@ block append css
         margin-bottom: 0px
         font-size: 22px
         font-weight: 400
+      .page-subtitle
+        margin: 6px auto
         
       .x-labels 
         line
@@ -279,30 +281,29 @@ block append css
         font-size: 14px
         max-width: 320px
         line-height: 1.2
-        margin: auto
-
-      .chart-subtitle
-        height: 0
-        text-transform: uppercase
-        font-weight: 600
-        font-size: 10px
-        margin-bottom: -10px
+        margin: 5px auto
 
       .legend
-        max-width: 100%
+        text-align: center
+        width: 100%
         font-size: 16px
-        margin: 6px auto
-        padding-left: 50px !important
+        margin: 4px auto
+        padding-bottom: 10px !important
+        border-bottom: 0.5px solid rgba(0,0,0,0.5)
           
       .legend-item
-        margin: 4px 2.1em 0
+        margin: 2px 2.1em 0
         position: relative
         white-space: nowrap
+        text-transform: uppercase
+        font-family: "Wide", sans-serif
+        font-weight: 500
+        font-size: 13px
 
       .legend-item-box
         position: absolute
         left: -1.5em
-        top: 4px
+        top: 3px
         height: .8em
         width: 1.1em
         background: black
@@ -344,6 +345,7 @@ block append css
         opacity: 0
         transition: opacity 300ms
         font-size: 12px
+        pointer-events: none
 
         &.txt-fff
           fill: #fff
