@@ -8,7 +8,7 @@ notes: >
   <b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  % who have confindence _______ will do the right thing regarding world&nbsp;affairs
+  % who have confidence _______ will do the right thing regarding world&nbsp;affairs
 
 axes:
   minY:  0
@@ -17,7 +17,7 @@ axes:
   rotateX: false
   percentage: true
   minorLines: true
-  dotted: [] # Index of dotted gridlines
+  dotted: [1,2,3,4] # Index of dotted gridlines
 
 series:
   -

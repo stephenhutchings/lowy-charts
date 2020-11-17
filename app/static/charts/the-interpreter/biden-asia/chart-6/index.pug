@@ -33,9 +33,9 @@ block page
         - fy = (i) => (i + 0.77) / (ln + 0.75)
         
         // Legend
-        svg.legend(height="2.25em" width="100%")
+        svg.legend(x=0 height="2.25em" width="100%")
         
-          svg(x=("9rem"))
+          svg(x=("144px"))
             text(
               text-anchor="end"
               transform="translate(-25 0)"
@@ -46,7 +46,7 @@ block page
               fill=chart.colors[chart.series[1].color]
             )
             
-          svg(x="11rem")
+          svg(x="176px")
             rect(
               y="-0.7em" x="-16px"
               width="1.1em" height=".8em"

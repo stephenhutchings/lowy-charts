@@ -143,6 +143,7 @@ block page
         const nCategories = 8;
         /* --------------------- */
         
+        const wrap = document.querySelector('.wrapper');
         const chart = document.querySelectorAll('.chart-content');
         const lines = document.querySelectorAll('polyline');
         const vals = document.querySelectorAll('.value-set');
@@ -150,9 +151,18 @@ block page
         const tooltip = document.querySelector('.tooltip');
         const legendItems = document.querySelectorAll('.legend-item-label');
         
+        var hover = false
+        
         if (enableTooltips) {
         window.addEventListener('DOMContentLoaded', () => {
           lines.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+        });
+        wrap.addEventListener('mouseover', () => {
+          if (hover) {
+            tooltip.style.opacity = 0;
+            rects.forEach( r => r.style.opacity = 1 )
+            hover = false
+          }
         });
         }
           
@@ -172,6 +182,9 @@ block page
           
           tooltip.innerHTML = cat;
           
+          hover = true
+          e.stopPropagation()
+          
         });
         el.addEventListener('mousemove', (e) => {
           tooltip.style.left = e.pageX - 40 + 'px';
@@ -182,6 +195,7 @@ block page
           tooltip.style.opacity = 0;
           lines.forEach( r => r.style.opacity = 1 )
           vals[i].style.opacity = 0
+          hover = false
         });
         }  
   

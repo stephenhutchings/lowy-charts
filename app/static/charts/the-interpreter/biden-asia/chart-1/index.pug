@@ -109,6 +109,7 @@ block page
     const nCategories = 4;
     /* --------------------- */
     
+    const wrap = document.querySelector('.wrapper');
     const chart = document.querySelectorAll('.chart-content');
     const rects = document.querySelectorAll('rect');
     const vals = document.querySelectorAll('.chart-value');
@@ -116,14 +117,23 @@ block page
     const tooltip = document.querySelector('.tooltip');
     const legendItems = document.querySelectorAll('.legend-item-label');
     
+    var hover = false
+    
     if (enableTooltips) {
       window.addEventListener('DOMContentLoaded', () => {
         rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
       });
+      wrap.addEventListener('mouseover', () => {
+        if (hover) {
+          tooltip.style.opacity = 0;
+          rects.forEach( r => r.style.opacity = 1 )
+          hover = false
+        }
+      });
     }
         
     function addHoverEventListeners(el, i) {
-      el.addEventListener('mouseover', () => {
+      el.addEventListener('mouseover', (e) => {
         
         rects.forEach( r => r.style.opacity = 0.25 )
         el.style.opacity = 1
@@ -143,12 +153,15 @@ block page
         tooltip.style.top = cat=="Barack Obama" ? box.top + 10 + 'px' : box.top - 80 + 'px';
         tooltip.style.opacity = 1;
         
-        tooltip.innerHTML = "In " + yr + ", " + val + " of people in " + ser + " were confident in " + cat;
+        tooltip.innerHTML = "In " + yr + ", " + val + " of people in " + ser + " were confident in " + cat
         
+        hover = true
+        e.stopPropagation()
       });
       el.addEventListener('mouseleave', () => { 
         tooltip.style.opacity = 0;
         rects.forEach( r => r.style.opacity = 1 )
+        hover = false
       });
     }
     

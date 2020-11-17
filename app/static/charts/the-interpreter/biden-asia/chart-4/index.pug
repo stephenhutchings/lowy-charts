@@ -109,6 +109,7 @@ block page
     const nCategories = 3;
     /* --------------------- */
     
+    const wrap = document.querySelector('.wrapper');
     const chart = document.querySelectorAll('.chart-content');
     const rects = document.querySelectorAll('rect');
     const vals = document.querySelectorAll('.chart-value');
@@ -116,15 +117,23 @@ block page
     const legendItems = document.querySelectorAll('.legend-item-label');
     const series = [ "China's Rise", "International Terrorism", "Climate Change", "COVID-19 Pandemic", "Foreign Interference" ]
     
+    var hover = false
     
     if (enableTooltips) {
       window.addEventListener('DOMContentLoaded', () => {
         rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
       });
+      wrap.addEventListener('mouseover', () => {
+        if (hover) {
+          tooltip.style.opacity = 0;
+          rects.forEach( r => r.style.opacity = 1 )
+          hover = false
+        }
+      });
     }
         
     function addHoverEventListeners(el, i) {
-      el.addEventListener('mouseover', () => {
+      el.addEventListener('mouseover', (e) => {
         
         rects.forEach( r => r.style.opacity = 0.5 )
         el.style.opacity = 1
@@ -141,10 +150,14 @@ block page
         
         tooltip.innerHTML = val + " of " + cat + " identify " + (j==3 ? "the " : "") + ser + " as a critical threat.";
         
+        hover = true
+        e.stopPropagation()
+        
       });
       el.addEventListener('mouseleave', () => { 
         tooltip.style.opacity = 0;
         rects.forEach( r => r.style.opacity = 1 )
+        hover = false
       });
     }
     

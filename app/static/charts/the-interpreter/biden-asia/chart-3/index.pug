@@ -357,13 +357,10 @@ block append css
         .chart:hover &
           opacity: 1
 
-      .hover-hide
-        transition: opacity 300ms
-
-        .chart:hover &
-          opacity: 0
-
       @media(max-width: 550px)
+        .chart-value
+          opacity: 1
+          font-size: 11px
         .subtitle-wrap
           flex-direction: column
         .legend
