@@ -1,5 +1,5 @@
 title: >
-  Unsteady Confidence in American Leaders (Pew)
+  Unsteady Confidence in American&nbsp;Leaders
 
 source: >
   <b>Source:</b> <a href="https://www.pewresearch.org/global/2020/09/15/us-image-plummets-internationally-as-most-say-country-has-handled-coronavirus-badly/">Pew Research Center</a>
@@ -8,7 +8,7 @@ notes: >
   <b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Subtitle goes here
+  % who have confindence _______ will do the right thing regarding world&nbsp;affairs
 
 axes:
   minY:  0
@@ -45,7 +45,7 @@ series:
 
   -
     title: Barack Obama (2015)
-    color: "highlight"
+    color: "blue-100"
     values:
       - 66
       - 88
@@ -57,7 +57,7 @@ series:
 
   -
     title: Donald Trump (2020)
-    color: "orange"
+    color: "highlight"
     values:
       - 25
       - 17

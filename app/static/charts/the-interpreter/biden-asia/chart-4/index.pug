@@ -11,9 +11,8 @@ block append config
   
 block page
   .wrapper.flex
-    .txt-center.flex.flex-grow.flex-col
-      .chart-title= chart.title
-      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+    .flex.flex-grow.flex-col
+      .chart-title!= chart.title
       .chart.flex-grow: .chart-content
         - ln = 5 //chart.series[0].values.length
         - axes = chart.axes
@@ -162,7 +161,7 @@ block append css
 
       .chart-content
         position: absolute
-        top: 20px
+        top: 40px
         left: 50px
         right: 20px
         bottom: 50px
@@ -171,8 +170,9 @@ block append css
         border-bottom: 1px solid #bbb
 
       .chart-title
-        margin: auto
-        font-size: 20px
+        font-size: 24px
+        text-align: left
+        font-weight: 600
         
       .chart-subtitle
         font-weight: 600
@@ -221,8 +221,6 @@ block append css
         
       rect
         transition-duration: 0.3s
-        &:hover
-          opacity: 1
 
       svg
         overflow: visible
@@ -260,6 +258,11 @@ block append css
           text-anchor: end
           transform: rotate(-45deg) translate(-8px, 14px)
           
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 12px
+          
         text
           font-size: 13px
           
@@ -272,13 +275,10 @@ block append css
           &:last-child
             margin-bottom: .5em
         .chart-title
-          font-size: 18px
+          font-size: 22px
         .chart-subtitle
           font-size: 14px
-        .chart-notes,
-        .chart-source
-          text-align: center
-          font-size: 12px
+
         .chart-value
           display: none
         text

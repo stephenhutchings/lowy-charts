@@ -1,0 +1,116 @@
+title: >
+  Increasingly unfavourable views of&nbsp;China
+
+source: >
+  <b>Source:</b> <a href="https://www.pewresearch.org/global/2020/10/06/unfavorable-views-of-china-reach-historic-highs-in-many-countries/">Pew Research Center</a>
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  % who have an unfavourable view
+
+axes:
+  minY: 20
+  maxY: 90
+  stepsY: 8
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+
+  -
+    title: Japan
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      - 83
+      - 78
+      - 85
+      - 86
+  -
+    title: South Korea
+    color: "red-light"
+    widen: false
+    dashed: false
+    values:
+      - 61
+      - 60
+      - 63
+      - 75
+  -
+    title: France
+    color: "blue-300"
+    widen: false
+    dashed: false
+    values:
+      - 52
+      - 54
+      - 62
+      - 70
+
+  -
+    title: Germany
+    color: "blue-200"
+    widen: false
+    dashed: false
+    values:
+      - 53
+      - 54
+      - 56
+      - 71
+
+  -
+    title: Canada
+    color: "teal"
+    widen: false
+    dashed: false
+    values:
+      - 40
+      - 45
+      - 67
+      - 73
+  -
+    title: United States
+    color: "teal-light"
+    widen: false
+    dashed: false
+    values:
+      - 47
+      - 47
+      - 60
+      - 73
+
+  -
+    title: Australia
+    color: "blue-100"
+    widen: false
+    dashed: false
+    values:
+      - 35
+      - 47
+      - 57
+      - 81
+
+  -
+    title: United Kingdom
+    color: "dark"
+    widen: false
+    dashed: false
+    values:
+      - 37
+      - 35
+      - 55
+      - 74

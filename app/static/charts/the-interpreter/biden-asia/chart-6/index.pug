@@ -19,9 +19,8 @@ block page
   - rw2 = 100-rx2
 
   .wrapper.flex
-    .txt-center.flex.flex-grow.flex-col
-      .titles
-        .chart-title= chart.title
+    .flex.flex-grow.flex-col
+      .chart-title= chart.title
         //.chart-subtitle.txt-muted.p-sm!= chart.subtitle
       
       .chart.flex-grow: .chart-content
@@ -36,7 +35,7 @@ block page
         // Legend
         svg.legend(height="2.25em" width="100%")
         
-          svg(x=("47%"))
+          svg(x=("9rem"))
             text(
               text-anchor="end"
               transform="translate(-25 0)"
@@ -47,7 +46,7 @@ block page
               fill=chart.colors[chart.series[1].color]
             )
             
-          svg(x="53%")
+          svg(x="11rem")
             rect(
               y="-0.7em" x="-16px"
               width="1.1em" height=".8em"
@@ -111,7 +110,7 @@ block page
                 // Category labels
                 svg.category-label(x=(cntr ? 50+lx-rw2 : lx)+"%" y="50%")
                   text(
-                    text-anchor="middle"
+                    text-anchor="start"
                     transform="translate(0 5.5)"
                   )
                     =chart.series[0].values[i]
@@ -176,15 +175,14 @@ block page
                 transform=`translate(${dx} 4.5)` 
                 style=`color: white`
               )
-                = '+' + vx != 0 ? vx.toFixed(1) + (axes.percentage ? "%" : "") : ""
+                = '+' + (vx != 0 ? vx.toFixed(1) + (axes.percentage ? "%" : "") : "")
 
             // Datum line
             svg(x=rx2+"%" width=(rw2+"%"))
               line(x1="0" x2="0" y1="18" y2="100%" stroke="#666" stroke-width=2)
 
 
-      .chart-source.txt-center.txt-muted(style=`padding-left: ${cntr ? 0 : rx1}%`)!= chart.source
-        //span.chart-notes.txt-right.txt-muted!= chart.notes
+      .chart-source.txt-center.txt-muted!= chart.source
     
   
 block append css
@@ -202,13 +200,14 @@ block append css
       .chart-content
         position: absolute
         top: 30px
-        left: 50px
+        left: 0
         right: 20px
         bottom: 50px
 
       .chart-title
-        margin: auto
         font-size: 24px
+        text-align: left
+        font-weight: 600
         
       .chart-subtitle
         font-weight: 400
@@ -251,7 +250,6 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        //margin-left: 2em
         font-size: 13px
         
       .chart-value
@@ -260,30 +258,29 @@ block append css
         transition-duration: .4s
         pointer-events: none
       
-      //.chart-content:hover .chart-value
-        opacity: 1
 
-      @media (max-width: 700px)
 
-        text
-          font-size: 12px
           
       @media (max-width: 450px)
+        text
+          font-size: 12px
         .chart-value
           font-size: 12px
         .mobile-hide
           display: none
         .chart-content
-          left: 32px
+          //left: 32px
           right: 14px
           bottom: 40px
         .legend
           flex-direction: column
         .chart-title
-          font-size: 18px
+          font-size: 22px
+          margin-bottom: -10px
         .chart-subtitle
           font-size: 14px
         .chart-notes,
         .chart-source
+          margin-top: 1em
           text-align: center
           font-size: 13px

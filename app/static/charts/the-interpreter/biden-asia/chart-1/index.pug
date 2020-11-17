@@ -11,9 +11,9 @@ block append config
   
 block page
   .wrapper.flex
-    .txt-center.flex.flex-grow.flex-col
-      .chart-title= chart.title
-      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+    .flex.flex-grow.flex-col
+      .chart-title!= chart.title
+      .chart-subtitle.txt-italic.txt-muted.pv-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -98,15 +98,15 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      //.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      .chart-source.txt-right.txt-muted!= chart.source
+      //.chart-notes.txt-right.txt-muted!= chart.notes
       
       .tooltip
       
   script.
     /* --- USER TO UPDATE --- */
     const enableTooltips = true;
-    const nCategories = 2;
+    const nCategories = 4;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
@@ -125,20 +125,30 @@ block page
     function addHoverEventListeners(el, i) {
       el.addEventListener('mouseover', () => {
         
+        rects.forEach( r => r.style.opacity = 0.25 )
+        el.style.opacity = 1
+        
+        let j   = Math.floor(i/nCategories)
+        let k   = i%nCategories
         let box = el.getBoundingClientRect();
         let val = vals[i].innerHTML;
-        let ser = series[i].innerHTML;
-        let cat = legendItems[i%nCategories].innerHTML;
+        let ser = series[j].innerHTML;
+        let cat = legendItems[k].innerHTML;
+        let yr  = k==0 ? "2007/8" : k==1 ? "2015" : "2020"
+        
+        cat = cat.match( /(.+)\s\(\d/ )[1]
+        j == 4 ? ser = "the " + ser : ""
         
         tooltip.style.left = box.left - 90 + 'px';
-        tooltip.style.top = box.top + 10 + 'px';
+        tooltip.style.top = cat=="Barack Obama" ? box.top + 10 + 'px' : box.top - 80 + 'px';
         tooltip.style.opacity = 1;
         
-        tooltip.innerHTML = val + " of " + ser + " were " + cat;
+        tooltip.innerHTML = "In " + yr + ", " + val + " of people in " + ser + " were confident in " + cat;
         
       });
       el.addEventListener('mouseleave', () => { 
         tooltip.style.opacity = 0;
+        rects.forEach( r => r.style.opacity = 1 )
       });
     }
     
@@ -156,7 +166,7 @@ block append css
 
       .chart-content
         position: absolute
-        top: 20px
+        top: 30px
         left: 50px
         right: 20px
         bottom: 40px
@@ -165,17 +175,18 @@ block append css
         border-bottom: 1px solid #bbb
 
       .chart-title
-        margin: auto
-        font-size: 20px
+        font-size: 24px
+        text-align: left
+        font-weight: 600
         
       .chart-subtitle
-        font-weight: 600
         height: 10px
         margin-top: -10px
         font-size: 15px
         
       .tooltip
         position: absolute
+        text-align: center
         left: 0
         background: #fffe
         padding: .75em
@@ -200,6 +211,7 @@ block append css
         margin: 4px 8px 0
         padding-right: 0
         position: relative
+        font-size: 14px
 
       .legend-item-box
         position: absolute
@@ -216,9 +228,12 @@ block append css
       svg
         overflow: visible
         
+      rect
+        transition-duration: 0.3s
+        
       .chart-notes, .chart-source
         margin-left: 2em
-        font-size: 15px
+        font-size: 13px
         
       .chart-value
         opacity: 0
@@ -248,7 +263,6 @@ block append css
           font-size: 11px
 
         .chart-source
-          font-size: 14px
           margin-top: .5rem
       
       @media (max-width: 500px)

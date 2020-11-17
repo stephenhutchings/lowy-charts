@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/the-interpreter/biden-asia/chart-5/data"
+  - var datapath = "static/charts/the-interpreter/biden-asia/chart-2/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -13,14 +13,14 @@ block page
   .wrapper.flex
     .flex.flex-grow.flex-col
       .chart-title!= chart.title
-      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart-subtitle.txt-italic.txt-muted.pv-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
         - minY = axes.minY
         - maxY = axes.maxY
         - range = maxY - minY
-        - fx = (i) => (i + 0.6) / (ln + 0.25)
+        - fx = (i) => (i + 0.25) / (ln - 0.4)
         - fy = (y) => (y - minY) / range
         
         svg(height="100%" width="100%")
@@ -81,7 +81,7 @@ block page
                   fill="none"
                   stroke=chart.colors[chart.series[i].color]
                   stroke-dasharray=(item.dashed ? 10 : "")
-                  stroke-width=(item.widen ? 5 : 3)
+                  stroke-width=(item.widen ? 5 : 4)
                   stroke-linejoin=(item.dashed ? "": "round")
                   stroke-linecap=(item.dashed ? "": "round")
                   points=(item.values.map( (y, ix) => {
@@ -94,7 +94,7 @@ block page
       
           for item, i in chart.series
             if i
-              g
+              g.value-set
                 for val, ix in item.values
                   if false
                     circle(
@@ -119,7 +119,7 @@ block page
                         fill="#fff"
                       )
                     text(
-                      y=(i == 1 ? -12 : 28)
+                      y=(i < 5 ? -9 : 20)
                       text-anchor="middle"
                       fill=chart.colors[chart.series[i].color]
                     )
@@ -134,14 +134,64 @@ block page
                 span.legend-item-label= chart.series[i].title
 
       .chart-source.txt-right.txt-muted!= chart.source
+
+      .tooltip
       
+      script.
+        /* --- USER TO UPDATE --- */
+        const enableTooltips = true;
+        const nCategories = 8;
+        /* --------------------- */
+        
+        const chart = document.querySelectorAll('.chart-content');
+        const lines = document.querySelectorAll('polyline');
+        const vals = document.querySelectorAll('.value-set');
+        const series = document.querySelectorAll('.x-label');
+        const tooltip = document.querySelector('.tooltip');
+        const legendItems = document.querySelectorAll('.legend-item-label');
+        
+        if (enableTooltips) {
+        window.addEventListener('DOMContentLoaded', () => {
+          lines.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+        });
+        }
+          
+        function addHoverEventListeners(el, i) {
+        el.addEventListener('mouseover', (e) => {
+          
+          lines.forEach( r => r.style.opacity = 0.1 )
+          el.style.opacity = 1
+          
+          vals[i].style.opacity = 1
+          
+          let cat = legendItems[i%nCategories].innerHTML;
+          
+          tooltip.style.left = e.pageX - 40 + 'px';
+          tooltip.style.top  = e.pageY + 10 + 'px';
+          tooltip.style.opacity = 1;
+          
+          tooltip.innerHTML = cat;
+          
+        });
+        el.addEventListener('mousemove', (e) => {
+          tooltip.style.left = e.pageX - 40 + 'px';
+          tooltip.style.top  = e.pageY + 10 + 'px';
+          tooltip.style.opacity = 1;
+        });
+        el.addEventListener('mouseleave', () => { 
+          tooltip.style.opacity = 0;
+          lines.forEach( r => r.style.opacity = 1 )
+          vals[i].style.opacity = 0
+        });
+        }  
   
 block append css
   style
     :sass
     
       .wrapper
-        height: 525px
+        height: 500px
+        max-width: 700px
 
       .chart
         box-sizing: border-box
@@ -149,7 +199,7 @@ block append css
 
       .chart-content
         position: absolute
-        top: 45px
+        top: 20px
         left: 40px
         right: 20px
         bottom: 40px
@@ -162,6 +212,25 @@ block append css
         text-align: left
         font-weight: 600
         
+      .chart-subtitle
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.4s
+        pointer-events: none
+        font-size: 14px
+        max-width: 180px
+        box-sizing: border-box
+
       li
         list-style: none
         margin: 0
@@ -170,6 +239,7 @@ block append css
       .legend
         font-size: 15px
         margin-bottom: .75em
+        flex-wrap: wrap
 
       .legend-item
         margin: 4px 8px 0
@@ -179,16 +249,19 @@ block append css
 
       .legend-item-box
         position: absolute
-        left: -.5em
-        top: .75em
-        height: .35em
-        width: 1.5em
+        left: -2px
+        top: 13px
+        height: .2em
+        width: 1.4em
         background: black
         border-radius: 3px
 
       polyline
         vector-effect: non-scaling-stroke
-
+        transition-duration: .2s
+        &:hover
+          stroke-width: 5px
+        
       text
         font-size: 14px
         fill: currentColor
@@ -200,33 +273,22 @@ block append css
         margin-left: 2em
         font-size: 13px
         
-      .chart-value
+      .value-set
         opacity: 0
-        transition-duration: .4s
+        transition-duration: .2s
         pointer-events: none
-      
-      .chart-content:hover .chart-value
-        opacity: 1
-
-      @media (max-width: 700px)
-        
-        .x-label text
-          text-anchor: end
-          transform: rotate(-45deg) translate(-8px, 14px)
-
-        text
-          font-size: 13px
           
       @media (max-width: 550px)
         .chart-content
-          bottom: 40px
+          bottom: 20px
+        text
+          font-size: 12px
         .legend
-          flex-direction: column
           margin: 1em auto
         .legend-item
-          margin: 0
+          font-size: 13px
         .chart-title
-          font-size: 22px
+          font-size: 18px
         .chart-subtitle
           font-size: 14px
         .chart-notes,

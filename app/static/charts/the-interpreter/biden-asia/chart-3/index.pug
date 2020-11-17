@@ -10,10 +10,9 @@ block append config
 block page
   .wrapper.flex.flex-col
 
-    .page-title.txt-center!= page.title
-    .page-subtitle.txt-center!= page.subtitle
-    
-    div
+    .page-title!= page.title
+    .flex.subtitle-wrap
+      .page-subtitle.txt-italic.txt-muted.pv-sm!= page.subtitle
       ul.legend.list-bare.txt-left.flex.flex-ch
         for ax, i in new Array(page.charts[0].series.length)
           if i
@@ -242,10 +241,9 @@ block append css
         align-items: center
         
       .col-md
-        max-width: 600px
         width: 100%
         height: 50%
-        padding-bottom: 0
+        padding: 1rem 2rem 0
 
       .chart
         box-sizing: border-box
@@ -255,18 +253,21 @@ block append css
         position: absolute
         top: 30px
         bottom: 15px
-        left: 80px
-        right: 20px
+        left: 90px
+        right: 26px
 
       .align-left
         padding-left: 50px !important
 
       .page-title
-        margin-bottom: 0px
-        font-size: 22px
-        font-weight: 400
+        font-size: 24px
+        text-align: left
+        font-weight: 600
+        
       .page-subtitle
-        margin: 6px auto
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
         
       .x-labels 
         line
@@ -281,15 +282,12 @@ block append css
         font-size: 14px
         max-width: 320px
         line-height: 1.2
-        margin: 5px auto
+        margin: 5px 0 0 -6rem
 
       .legend
-        text-align: center
-        width: 100%
         font-size: 16px
-        margin: 4px auto
+        margin-top: 6px
         padding-bottom: 10px !important
-        border-bottom: 0.5px solid rgba(0,0,0,0.5)
           
       .legend-item
         margin: 2px 2.1em 0
@@ -299,6 +297,9 @@ block append css
         font-family: "Wide", sans-serif
         font-weight: 500
         font-size: 13px
+        
+      .legend-item:first-child
+        margin-left: 5rem        
 
       .legend-item-box
         position: absolute
@@ -358,3 +359,14 @@ block append css
 
         .chart:hover &
           opacity: 0
+
+      @media(max-width: 550px)
+        .subtitle-wrap
+          flex-direction: column
+        .legend
+          justify-content: left
+        .legend-item:first-child
+          margin-left: 0
+          
+        
+      

@@ -1,6 +1,10 @@
 colors:
   dark: "#002b45"
   highlight: "#539ed4"
+  blue-100: "#2D6993"
+  blue-200: "#8b9eae"
+  blue-300: "#B7C1CE"
+  blue-400: "#d4e2e8"
   teal: "#008A97"
   teal-dark: "#076273"
   teal-light: "#78CDD1"
