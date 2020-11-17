@@ -143,8 +143,9 @@ block page
         let cat = legendItems[i%nCategories].innerHTML;
         let val = vals[i].innerHTML;
         let ser = series[j]
+        let l   = box.left < 90 ? box.left - 50 : box.left - 90
         
-        tooltip.style.left = box.left - 90 + 'px';
+        tooltip.style.left = l + 'px';
         tooltip.style.top = box.top + 10 + 'px';
         tooltip.style.opacity = 1;
         

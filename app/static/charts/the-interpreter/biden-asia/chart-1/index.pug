@@ -145,11 +145,12 @@ block page
         let ser = series[j].innerHTML;
         let cat = legendItems[k].innerHTML;
         let yr  = k==0 ? "2007/8" : k==1 ? "2015" : "2020"
+        let l   = box.left < 90 ? box.left - 40 : box.left - 90
         
         cat = cat.match( /(.+)\s\(\d/ )[1]
         j == 4 ? ser = "the " + ser : ""
         
-        tooltip.style.left = box.left - 90 + 'px';
+        tooltip.style.left = l + 'px';
         tooltip.style.top = cat=="Barack Obama" ? box.top + 10 + 'px' : box.top - 80 + 'px';
         tooltip.style.opacity = 1;
         
@@ -270,6 +271,9 @@ block append css
             x: ($i - 1)*20%
         
         .legend
+          font-size: 13px
+          
+        .tooltip text
           font-size: 13px
           
         text
