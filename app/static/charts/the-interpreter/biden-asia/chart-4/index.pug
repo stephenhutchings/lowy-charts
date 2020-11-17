@@ -112,9 +112,10 @@ block page
     const chart = document.querySelectorAll('.chart-content');
     const rects = document.querySelectorAll('rect');
     const vals = document.querySelectorAll('.chart-value');
-    const series = document.querySelectorAll('.x-label');
     const tooltip = document.querySelector('.tooltip');
     const legendItems = document.querySelectorAll('.legend-item-label');
+    const series = [ "China's Rise", "International Terrorism", "Climate Change", "COVID-19 Pandemic", "Foreign Interference" ]
+    
     
     if (enableTooltips) {
       window.addEventListener('DOMContentLoaded', () => {
@@ -130,9 +131,9 @@ block page
         
         let j   = Math.floor(i/nCategories)
         let box = el.getBoundingClientRect();
-        let val = vals[i].innerHTML;
-        let ser = series[j].innerHTML;
         let cat = legendItems[i%nCategories].innerHTML;
+        let val = vals[i].innerHTML;
+        let ser = series[j]
         
         tooltip.style.left = box.left - 90 + 'px';
         tooltip.style.top = box.top + 10 + 'px';
