@@ -1,0 +1,81 @@
+title: >
+  PNG’s debt as a share of GDP and<br>interest costs as a share of&nbsp;revenue
+
+source: >
+  <b>Source:</b> PNG budget papers
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  2008–20
+
+axes:
+  minY:  0
+  maxY: 50
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [1,2,3,4,5] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2008
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+
+  -
+    title: Debt/GDP
+    color: "dark"
+    widen: true
+    dashed: false
+    values:
+      - 32.1
+      - 31.1
+      - 26.1
+      - 24.2
+      - 26.9
+      - 34.7
+      - 35.5
+      - 29.0
+      - 32.4
+      - 31.9
+      - 35.4
+      - 39.8
+      - 49.4
+
+
+  -
+    title: Interest/(revenue minus grants)
+    color: "highlight"
+    widen: true
+    dashed: false
+    values:
+      - 6.3
+      - 7.8
+      - 5.1
+      - 5.0
+      - 5.3
+      - 5.8
+      - 8.5
+      - 10.6
+      - 14.0
+      - 16.2
+      - 15.8
+      - 18.0
+      - 19.6
