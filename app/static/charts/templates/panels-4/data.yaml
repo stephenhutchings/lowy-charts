@@ -1,0 +1,126 @@
+title: >
+  Figure 1: Chart Title
+
+source: >
+  <b>Source: </b>Source
+
+notes: >
+  <b>1/</b> Example<br>
+  <b>2/</b> Example<br>
+  <b>3/</b> Example
+
+charts:
+  -
+    title: >
+      A. Chart 1
+    subtitle: >
+      Subtitle here
+    scale:
+      ticks: 8
+      minY: 70
+      maxY: 105
+    legend:
+      - Cat A
+      - Cat B
+
+    colors:
+      - "#002b45"
+      - "#f2b000"
+    axes:
+      -
+        title: X Labels
+        values:
+          - 20-Jan
+          - 03-Feb
+      -
+        title: Series 1
+        values:
+          - [ 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, null, 100.00, 100.00, 100.00, 100.00 ]
+          - [ 99.97, 99.96, 99.56, 99.82, 99.35, 99.72, 99.91, 100.11, 99.72, 100.12, 99.30, 99.85 ]
+  -
+    title: >
+      B. Chart 2
+    subtitle: >
+      Subtitle here
+    scale:
+      ticks: [7,7]
+      minY: [0,0]
+      maxY: [150,3]
+    legend:
+      - name: Cat A
+        scale: 0
+      - name: Cat B
+        scale: 0
+    colors:
+      - "#B3BFCA"
+      - "#002a45"
+    axes:
+      -
+        title: Years
+        values:
+          - 2012
+          - 2013
+      -
+        title: Reserves
+        values:
+          - [ 4.5,  45.7, 110.5, 2.2 ]
+          - [ 12.9, 48.4, 106.5, 1.7 ]
+  -
+    title: >
+      C. Chart 3
+    subtitle: >
+      Subtitle here
+    scale:
+      minY: 0
+      maxY: 450
+      ticks: 10
+
+    legend:
+      - Cat A
+      - Cat B
+
+    colors:
+      - "#002a45"
+      - "#539ed4"
+
+    axes:
+      -
+        title: Year
+        values:
+          - 2008
+          - 2010
+
+      -
+        title: Number
+        values:
+          - [ 12, 83, 49, 3 ]
+          - [ 13, 84, 49, 3 ]
+  -
+    title: >
+      D. Chart 4
+    subtitle: >
+      Subtitle here
+    scale:
+      minY: 0
+      maxY: 300
+      ticks: 7
+
+    legend:
+      - Cat A
+      - Cat B
+
+    colors:
+      - "#519dd7"
+      - "#f80"
+
+    axes:
+      -
+        title: Year
+        values:
+          - 2014
+          - 2015
+      -
+        title: Number
+        values:
+          - [ 96, 29.7, 63 ]
+          - [ 97, 34.2, 64 ]

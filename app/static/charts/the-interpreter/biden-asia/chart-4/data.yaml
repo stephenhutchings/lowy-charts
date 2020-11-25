@@ -1,0 +1,60 @@
+title: >
+  Americans identification of critical&nbsp;threats
+
+source: >
+  <b>Source:</b> <a href="https://www.thechicagocouncil.org/publication/lcc/divided-we-stand">Chicago Council</a>
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [1, 3] # Index of dotted gridlines
+
+series:
+  -
+    title: Pandemic performance
+    values:
+      - [ "China's", "Rise" ]
+      - [ "International", "Terrorism" ]
+      - [ "Climate", "Change" ]
+      - [ "COVID-19", "Pandemic" ]
+      - [ "Foreign", "Interference" ]
+
+  -
+    title: Democrats
+    color: "dark"
+    values:
+      - 47
+      - 51
+      - 75
+      - 87
+      - 69
+
+  -
+    title: Independents
+    color: "grey"
+    values:
+      - 53
+      - 50
+      - 48
+      - 60
+      - 49
+
+  -
+    title: Republicans
+    color: "red"
+    values:
+      - 67
+      - 62
+      - 21
+      - 48
+      - 41

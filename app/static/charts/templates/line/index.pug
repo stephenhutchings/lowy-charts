@@ -107,6 +107,7 @@ block page
                 svg.chart-value(
                   x=toPercent(fx(ix))
                   y=toPercent(fy(maxY + minY - val))
+                  style=`color: ${chart.colors[chart.series[i].color]}`
                 )
                   if false
                     rect(

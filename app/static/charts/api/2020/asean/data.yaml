@@ -1,0 +1,72 @@
+title: >
+  ASEAN Power
+
+source: >
+  <b>Source:</b> <a href="https://power.lowyinstitute.org/" target="_blank">Lowy Institute Asia Power Index</a>
+
+notes: >
+  Notes: ??
+
+charts:
+  -
+    title: Illustrative scenarios for Pacific debt sustainability to 2024
+    subtitle: Public and publicly guaranteed debt, % of GDP
+    scale:
+      minX: -5
+      maxX: 30
+      ticks: 8
+
+    colors:
+      - "#076273"
+      - "#008A97"
+      - "#78CDD1"
+      - "#B7C1CE"
+      - "#8b9eae"
+      - "#539ed4"
+      - "#2D6993"
+      - "#002b45"
+
+    legend:
+      - Economic Capability
+      - Military Capability
+      - Resilience
+      - Future Resources
+      - Diplomatic Influence
+      - Economic Relationships
+      - Defence Networks
+      - Cultural Influence
+
+    groups:
+      - name: Middle Powers
+        start: 0
+      - name: Minor Powers
+        start: 6
+
+    axes:
+      -
+        title: Countries
+        values:
+          - Singapore
+          - Thailand
+          - Malaysia
+          - Indonesia
+          - Vietnam
+          - Philippines
+          - Brunei
+          - Myanmar
+          - Cambodia
+          - Laos
+
+      -
+        title: Power
+        values:
+          - [ 2.864, 4.268, 3.283, 0.720, 5.478, 4.391, 3.918, 2.508 ]
+          - [ 1.553, 2.449, 3.289, 0.542, 4.584, 3.114, 2.402, 2.917 ]
+          - [ 1.572, 1.925, 3.655, 0.742, 4.714, 3.017, 2.052, 2.979 ]
+          - [ 1.651, 2.853, 3.526, 1.307, 5.228, 1.846, 1.622, 1.877 ]
+          - [ 1.267, 3.565, 2.456, 0.772, 5.237, 2.227, 1.767, 1.951 ]
+          - [ 1.164, 1.070, 2.276, 0.589, 3.309, 1.461, 2.244, 1.224 ]
+          - [ 0.602, 0.529, 2.914, 0.179, 2.378, 1.314, 0.832, 0.366 ]
+          - [ 0.295, 1.855, 1.813, 0.407, 2.397, 1.008, 0.235, 0.682 ]
+          - [ 0.065, 0.483, 1.813, 0.123, 2.379, 0.994, 0.987, 0.495 ]
+          - [ 0.166, 0.203, 1.779, 0.086, 2.251, 0.954, 0.350, 0.254 ]

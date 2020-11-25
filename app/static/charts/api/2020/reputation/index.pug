@@ -1,0 +1,345 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/api/2020/reputation/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title!= chart.title
+      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - rangeX = maxX - minX
+        - rangeY = maxY - minY
+        - fx = (x) =>  (x - minX) / rangeX
+        - fy = (y) => 1-(y - minY) / rangeY
+        
+        svg(height="100%" width="100%")
+        
+          // Y-AXIS LABELS
+          svg(height="100%")
+            - steps = chart.axes.stepsY-1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
+              - v = minY + rangeY*(i/steps)
+              - l = v==0 ? "Deteriorated" : v==50 ? "Unchanged" : v==100 ? "Improved" : ""
+
+              svg.y-label(y=toPercent(y))
+                text(
+                  text-anchor="end"
+                  transform="translate(-8 4)"
+                )!= l
+                  
+          // X-AXIS LABELS
+          svg(width="100%" y="100%")
+            - steps = chart.axes.stepsX-1
+            for n, i in new Array(steps+1)
+              - x = i / steps
+              - v = minX + rangeX*(i/steps)
+              - l = v==0 ? "Not effective" : v==50 ? "Moderately effective" : v==100 ? "Very effective" : ""
+
+              svg.x-label(x=toPercent(x))
+                text(
+                  text-anchor=axes.rotateX ? "end" : "middle"
+                  transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
+                )= l
+                
+          // MINOR GRID
+          if chart.axes.gridX
+            - steps = chart.axes.stepsX - 1
+            svg(height="100%")
+              for n, i in new Array(steps + 1)
+                - x = i / steps
+                svg
+                  line(
+                    x1=toPercent(x)
+                    y1="0"
+                    x2=toPercent(x)
+                    y2="100%"
+                    stroke="#5553"
+                  )
+          if chart.axes.gridY
+            - steps = chart.axes.stepsY - 1
+            svg(width="100%")
+              for n, i in new Array(steps + 1)
+                - y = i / steps
+                svg
+                  line(
+                    x1="0"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5553"
+                  )
+              
+          // INTERCEPTS
+          if !isEmpty(axes.interceptX)
+            - x = toPercent( fx(maxX + minX - axes.interceptX) )
+            line(
+              x1=x y1="0" x2=x y2="100%" 
+              stroke="#333"
+              stroke-width=1
+            )
+          if !isEmpty(axes.interceptY)
+            - y = toPercent( fy((maxY + minY) - axes.interceptY) )
+            line(
+              x1="0" y1=y x2="100%" y2=y
+              stroke="#333"
+              stroke-width=1
+            )
+
+          // BUBBLES
+          for series, s in chart.series
+            g
+              for v, i in chart.series[s].values
+                - x = toPercent(fx(v[0]))
+                - y = toPercent(fy(v[1]))
+                - r = v[2]*chart.axes.rScaleFactor
+                - color = chart.colors[chart.series[s].color]
+                circle(
+                  r=r
+                  cx=x
+                  cy=y
+                  fill=color+"bb"
+                  stroke=color
+                  stroke-width=1.5
+                  data-x=v[0]
+                  data-y=v[1]
+                  data-r=v[2]
+                )
+                
+          // LABELS
+          for series, s in chart.series
+            g
+              for v, i in chart.series[s].values
+                - x = toPercent(fx(v[0]))
+                - y = toPercent(fy(v[1]))
+                - r = v[2]*chart.axes.rScaleFactor
+                - name =  chart.series[s].names[i][0]
+                - below = chart.series[s].names[i][1] == true
+                
+                - dx = ["Brunei"].includes(name) ? -6 : ["Japan"].includes(name) ? -r-6 : ["United States"].includes(name) ? r : 0
+                - dy = below ? (r+14) : -(r+6)
+                - dy = ["Brunei"].includes(name) ? 0 : name == "Cambodia" ? r+28 : ["Japan"].includes(name) ? 4 : ["United States"].includes(name) ? -r+2 : dy
+                - color = chart.colors[chart.series[s].color]
+                
+                text.label(
+                  x=x
+                  y=y
+                  transform=`translate(${dx} ${dy})`
+                  text-anchor=["Brunei", "","Papua New Guinea", "Japan"].includes(name) ? "end" : ["Sri Lanka", "Laos", "Mongolia", "Philippines", "United States"].includes(name) ? "start" : "middle"
+                  fill=color
+                  data-name=name
+                )
+                  = name == "Papua New Guinea" ? "" : name == "Brunei" ? "PNG, Brunei" : name
+
+          // AXIS LABELS
+          svg(x="50%"  y="100%")
+            text.axis-label.x(
+              text-anchor="middle"
+              transform="translate(0 50)"
+            )= chart.axes.xLabel
+          svg(x="0" y="50%")
+            text.axis-label.y(
+              text-anchor="middle"
+              transform="rotate(-90) translate(0 -40)"
+            )= chart.axes.yLabel 
+      
+
+      .chart-source.txt-center.txt-muted.txt-cond!= chart.source
+        //span.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      
+      .tooltip
+
+  script.
+
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    /* --------------------- */
+    
+    const chart = document.querySelector('.chart');
+    const circles = document.querySelectorAll('circle');
+    const series = document.querySelectorAll('.label');
+    const tooltip = document.querySelector('.tooltip');
+    
+    var l0 = chart.offsetLeft;
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        circles.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let x = el.dataset.x,
+            y = el.dataset.y,
+            r = el.dataset.r,
+            s = series[i].dataset.name;
+        
+        let box = el.getBoundingClientRect(),
+            top = box.top - tooltip.offsetHeight,
+            left = box.left + box.width/2 - tooltip.offsetWidth/2,
+            dx = l0-left;
+        
+        dx > 0 ? left += dx : "";
+        
+        tooltip.innerHTML  = "<b>"+s+"</b><br/>" + "Asia Power Index Score: " + r;
+        tooltip.style.left = left + 'px';
+        tooltip.style.top  = top + 'px';
+        tooltip.style.opacity = 1;
+        
+      });
+      
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+      
+    }
+    
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 650px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 50px
+        right: 50px
+        bottom: 65px
+
+      .chart-title
+        margin: auto
+        font-size: 24px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        max-width: 250px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+        
+      text
+        font-size: 14px
+        text-shadow: 0 0 2px white
+        
+      .axis-label
+        font-size: 16px
+        fill: #777
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      svg
+        overflow: visible
+        
+      .chart-source
+        margin-top: .5em
+        font-size: 15px
+        a
+          transition-duration: 500ms
+      
+      .chart-notes
+        margin-left: 2em
+        
+      .label
+        font-size: 12px
+        pointer-events: none
+
+      .y-label text
+        transform: rotate(-90deg) translate(0, -10px)
+        text-anchor: middle
+      .y-label:first-child text
+          text-anchor: start
+      .y-label:last-child text
+          text-anchor: end
+
+      .x-label:first-child text
+        text-anchor: start
+      .x-label:last-child text
+        text-anchor: end
+
+      @media (max-width: 700px)
+
+        text
+          font-size: 13px
+          
+      @media (max-width: 450px)
+        .chart-content
+          bottom: 80px
+          left: 45px
+          right: 15px
+        .legend
+          flex-direction: column
+        .chart-title
+          font-size: 18px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
+        .label
+          display: none
+          
+        .axis-label
+          font-size: 14px
+        .axis-label.y
+          transform: rotate(-90deg) translate(0, -35px)!important

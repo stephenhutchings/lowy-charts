@@ -1,0 +1,70 @@
+title: >
+  Bubble chart
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  xLabel: x label
+  minX:  0
+  maxX: 100
+  stepsX: 11
+  rotateX: false
+  interceptX: 50 # value of optional vertical line. set 'null' if disabled
+  percentageX: false
+  gridX: true
+
+  yLabel: y label
+  minY:  0
+  maxY: 100
+  stepsY: 11
+  interceptY: 50 # value of optional horizontal line. set 'null' if disabled
+  percentageY: false
+  gridY: true
+
+  rScaleFactor: 10
+
+
+# Data format: [x, y, r]
+series:
+  -
+    title: Series 1
+    color: dark
+    names:
+      - [ Name 1 ]
+      - [ Name 2 ]
+      - [ Name 3 ]
+      - [ Name 4 ]
+      - [ Name 5 ]
+      - [ Name 6 ]
+    values:
+      - [ 10, 10, 1.0 ]
+      - [ 20, 15, 1.0 ]
+      - [ 30, 19, 1.0 ]
+      - [ 40, 50, 1.5 ]
+      - [ 50, 60, 1.5 ]
+      - [ 88, 90, 1.5 ]
+
+  -
+    title: Series 2
+    color: highlight
+    names: # [name, position label below bubble? ]
+      - [ Name 7, true ]
+      - [ Name 8 ]
+      - [ Name 9 ]
+      - [ Name 10 ]
+      - [ Name 11 ]
+      - [ Name 12, true ]
+    values:
+      - [ 10, 10, 2.0 ]
+      - [ 15, 20, 2.0 ]
+      - [ 19, 30, 2.0 ]
+      - [ 50, 40, 2.0 ]
+      - [ 60, 50, 2.0 ]
+      - [ 90, 88, 2.0 ]

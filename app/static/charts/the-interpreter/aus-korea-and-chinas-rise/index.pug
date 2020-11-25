@@ -1,0 +1,101 @@
+extend /partials/layout
+
+block append config
+  - page.title = "US-China: South Korea and Australia"
+  - var datapath = "static/charts/the-interpreter/aus-korea-and-chinas-rise/data"
+  - _.extend(page, data.getOne(datapath))
+  - events = page.events
+
+block page
+
+  .wrapper.flex.flex-col
+    each e in events
+      .row.flex
+        .col.flex-1-3.relative
+          .scale
+          if e.aus.link == e.kor.link
+            .label(class=(e.aus.link < 0 ? "left-0" : e.aus.link > 0 ? "right-0" : "mid")) AU,&thinsp;SK
+          else
+            .label(class=(e.aus.link < 0 ? "left-0" : e.aus.link > 0 ? "right-0" : "mid")) AU
+            .label(class=(e.kor.link < 0 ? "left-0" : e.kor.link > 0 ? "right-0" : "mid")) SK
+        .col.flex-1
+          span: b!= e.event + "<br>"
+          span!= e.description + " " + e.response
+          
+          
+block append css
+
+  style
+    :sass
+      .wrapper
+        padding: 10px 0
+        font-size: 15px
+        height: 1020px
+        max-width: 736px
+      .row
+        padding: 10px 0
+        border-bottom: .5px solid #ddd
+      .col
+        margin: 0 10px
+      .label
+        position: absolute
+        font-weight: 600
+        top: 4px
+        
+      .left-0
+        left: 0
+      .right-0
+        right: 0
+      .mid
+        left: calc(50% - 24px)
+      .relative
+        position: relative
+      .absolute
+        position: absolute
+      .fw-6
+        font-weight: 600
+      .flex-1
+        flex: 1
+      .flex-1-3
+        flex: 0.3
+        
+      .scale
+        top: 24px
+        height: 10px
+        width: 100%
+        color: #999
+        background: rgb(218,218,218)
+        background: radial-gradient(circle, #dadada 0%, #c5c5c5 100%)
+        background: linear-gradient(90deg, rgb(65,97,126) 0%, rgb(190,190,190) 40%, rgb(190,190,190) 60%, rgb(254,91,93) 100%)
+        position: absolute
+        font-size: 10px
+        font-weight: 500
+        &:before
+          content: "LINK"
+          position: absolute
+          left: 0
+          top: calc(100% + 4px)
+        &:after
+          content: "DELINK"
+          position: absolute
+          right: 0
+          text-align: right
+          top: calc(100% + 4px)
+          
+      @media (max-width: 715px)
+        .wrapper
+          height: 1380px
+          
+      @media (max-width: 475px)
+        .wrapper
+          height: 2355px
+        .row
+          flex-direction: column-reverse
+          padding: 16px 0
+        .flex-1-3
+          min-height: 75px
+          margin-top: 10px
+
+      @media (max-width: 350px)
+        .wrapper
+          height: 2500px

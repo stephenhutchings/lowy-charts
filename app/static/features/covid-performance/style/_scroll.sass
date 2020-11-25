@@ -1,0 +1,13 @@
+@import app/static/features/covid-performance/style/_vars.sass
+
+#scroller
+  overflow: auto
+  height: 100%
+  scroll-behavior: smooth
+  scroll-snap-type: y mandatory
+  position: relative
+  background-color: $dark
+  
+  &.scrolling
+    scroll-behavior: initial
+    scroll-snap-type: initial

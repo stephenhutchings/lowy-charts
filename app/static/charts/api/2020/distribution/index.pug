@@ -1,0 +1,47 @@
+extend /partials/layout
+
+block page
+  .wrapper.flex.flex-col
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title.txt-white Distribution of Asia Power Index countries
+      
+      .chart.flex-grow: .chart-content
+        iframe(class="lowy-chart" frameborder="0" height="450px" src="https://power.lowyinstitute.org/embed/chart/distribution/power/" width="100%")
+
+
+block append css
+  style
+    :sass
+      .wrapper
+        box-sizing: border-box
+        height: 560px
+        padding: 20px
+        background: #252E3F
+
+      .chart
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 40px
+        right: 40px
+        bottom: 0
+        
+      .chart-title
+        font-size: 26px
+        opacity: 0.8
+        padding: 0 24px
+
+      
+      @media(max-width: 600px)
+        
+        .wrapper
+          padding: 20px 0
+          
+        .chart-content
+          left: 5px
+          right: 5px
+          
+        iframe
+          height: 430px

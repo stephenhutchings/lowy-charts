@@ -7,21 +7,11 @@ block append config
   - page.title = "Rules Based Order"
   - page.metaTitle = `${page.title} - Lowy Institute`
   - page.description = "Tracking a decade of Australian policy evolution and the rules-based order."
-  - page.image = "https://interactives.lowyinstitute.org/features/rules-based-oder/img/thumbnail.jpg"
+  - page.image = "https://interactives.lowyinstitute.org/features/rules-based-order/img/thumbnail.jpg"
   - var timeline = data.getOne("static/features/rules-based-order/data").cards
   - var governements = [['Rudd', ' (2007&ndash;2010)'], ['Gillard', ' (2010&ndash;2013)'], ['Abbott', ' (2013&ndash;2015)'], ['Turnbull', ' (2015&ndash;2018)'], ['Morrison', ' (2018&mdash;)']]
 
 block page
-
-  // TEMP EMBARGO MODAL
-  
-  #embargo.fixed.flex.flex-ch
-    .flex-cv.txt-center.txt-lg
-      | The contents of this Lowy Institute digital feature are embargoed.
-      | By entering the site, you agree to not share this page or its contents until publicly launched.
-      .btn.ptr Accept
-  
-  // END EMBARGO MODAL
 
   include partials/intro
    

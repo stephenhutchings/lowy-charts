@@ -1,0 +1,60 @@
+title: >
+  Japan vs India
+
+source: >
+  <b>Source:</b> <a href="https://power.lowyinstitute.org/" target="_blank">Lowy Institute Asia Power Index</a>
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  min:  0
+  max: 90
+  steps: 10
+  percentage: false
+  grid: true
+  rotate: 0
+
+# Data format: [x, y, r]
+series:
+  -
+    title: Categories
+    values:
+      - Defence networks
+      - Cultural influence
+      - Economic capability
+      - Military capability
+      - Resilience
+      - Future resources
+      - Diplomatic influence
+      - Economic relationships
+
+
+  -
+    title: Japan
+    color: dark
+    values:
+      - 47.40
+      - 47.44
+      - 32.07
+      - 28.25
+      - 37.95
+      - 12.01
+      - 88.79
+      - 47.46
+
+  -
+    title: India
+    color: orange
+    values:
+      - 26.29
+      - 43.68
+      - 25.32
+      - 44.34
+      - 54.49
+      - 49.17
+      - 65.87
+      - 23.65

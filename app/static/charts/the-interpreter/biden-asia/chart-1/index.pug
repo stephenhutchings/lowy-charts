@@ -1,0 +1,301 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/the-interpreter/biden-asia/chart-1/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  - colors = []
+  
+block page
+  .wrapper.flex
+    .flex.flex-grow.flex-col
+      .chart-title!= chart.title
+      .chart-subtitle.txt-italic.txt-muted.pv-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - fx = (i) => (i+0.05) / (ln)
+        - fy = (y) => (y - minY) / range
+        
+        svg(height="100%" width="100%")
+        
+          // Y-Axis labels
+          svg(height="100%")
+            - let steps = chart.axes.stepsY-1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
+                
+          // Y-Axis minor lines
+          if chart.axes.minorLines
+            svg(height="100%")
+              for n, i in new Array(steps)
+                - y = (i / steps)
+                svg
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // Chart rects
+          g
+          
+            for seriesname, i in chart.series[0].values
+              svg(
+                x=toPercent(fx(i))
+                y=toPercent(fy(minY))
+                width=toPercent(1/(ln+1))
+                height="100%"
+              )
+              
+                g.bars
+
+                  for set, j in chart.series.filter( (s, i) => i )
+                    - y = set.values[i]
+                    - w = 100/(chart.series.length-1)
+                  
+                    rect(
+                      x=(j*w)
+                      y=toPercent(fy(maxY) - fy(y))
+                      width=w
+                      height=toPercent(fy(y))
+                      fill=chart.colors[set.color]
+                    )
+
+                    text.chart-value(
+                        x=(j*w)
+                        y=toPercent(fy(maxY) - fy(y))
+                        text-anchor="middle"
+                        transform=`translate(${w/2} -10)`
+                      )
+                        = y + (axes.percentage ? "%" : "")
+
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(
+                      text-anchor=axes.rotateX ? "end" : "middle"
+                      transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
+                    )
+                      =seriesname
+      
+      .row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .chart-source.txt-right.txt-muted!= chart.source
+      //.chart-notes.txt-right.txt-muted!= chart.notes
+      
+      .tooltip
+      
+  script.
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    const nCategories = 4;
+    /* --------------------- */
+    
+    const wrap = document.querySelector('.wrapper');
+    const chart = document.querySelectorAll('.chart-content');
+    const rects = document.querySelectorAll('rect');
+    const vals = document.querySelectorAll('.chart-value');
+    const series = document.querySelectorAll('.x-label');
+    const tooltip = document.querySelector('.tooltip');
+    const legendItems = document.querySelectorAll('.legend-item-label');
+    
+    var hover = false
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+      wrap.addEventListener('mouseover', () => {
+        if (hover) {
+          tooltip.style.opacity = 0;
+          rects.forEach( r => r.style.opacity = 1 )
+          hover = false
+        }
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', (e) => {
+        
+        rects.forEach( r => r.style.opacity = 0.25 )
+        el.style.opacity = 1
+        
+        let j   = Math.floor(i/nCategories)
+        let k   = i%nCategories
+        let box = el.getBoundingClientRect();
+        let val = vals[i].innerHTML;
+        let ser = series[j].innerHTML;
+        let cat = legendItems[k].innerHTML;
+        let yr  = k==0 ? "2007/8" : k==1 ? "2015" : "2020"
+        let l   = box.left < 90 ? box.left - 40 : box.left - 90
+        
+        cat = cat.match( /(.+)\s\(\d/ )[1]
+        j == 4 ? ser = "the " + ser : ""
+        
+        tooltip.style.left = l + 'px';
+        tooltip.style.top = cat=="Barack Obama" ? box.top + 10 + 'px' : box.top - 80 + 'px';
+        tooltip.style.opacity = 1;
+        
+        tooltip.innerHTML = "In " + yr + ", " + val + " of people in " + ser + " were confident in " + cat
+        
+        hover = true
+        e.stopPropagation()
+      });
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+        rects.forEach( r => r.style.opacity = 1 )
+        hover = false
+      });
+    }
+    
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 30px
+        left: 50px
+        right: 20px
+        bottom: 40px
+
+      .chart-content > svg
+        border-bottom: 1px solid #bbb
+
+      .chart-title
+        font-size: 24px
+        text-align: left
+        font-weight: 600
+        
+      .chart-subtitle
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        text-align: center
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 13px
+        max-width: 180px
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin-bottom: .75em
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        font-size: 14px
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 13px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      rect
+        transition-duration: 0.3s
+        
+      .chart-notes, .chart-source
+        margin-left: 2em
+        font-size: 13px
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+
+
+      @media (max-width: 850px)
+        .chart-content
+          left: 40px
+          right: 5px
+          bottom: 40px
+          top: 30px
+          
+        rect
+          width: 20%
+          
+        $n-series: 5
+        @for $i from 2 through $n-series
+          rect:nth-of-type(#{$i})
+            x: ($i - 1)*20%
+        
+        .legend
+          font-size: 13px
+          
+        .tooltip text
+          font-size: 13px
+          
+        text
+          font-size: 11px
+
+        .chart-source
+          margin-top: .5rem
+      
+      @media (max-width: 500px)
+        .chart-content
+          bottom: 60px
+        .chart-title
+          font-size: 18px
+        .chart-subtitle
+          font-size: 14px
+        .chart-source
+          text-align: center
+          font-size: 12px
+        .chart-value
+          display: none
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 14px)
+        .legend
+          flex-direction: column

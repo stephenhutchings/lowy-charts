@@ -1,0 +1,261 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/the-interpreter/south-korea-and-trump/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - range = maxX - minX
+        - fx = (x) => (x - minX) / range
+        - fy = (i) => (i + 0.7) / ln
+        
+        svg(height="100%" width="100%")
+        
+          // X-Axis labels
+          svg(width="100%" y="100%")
+            - let steps = chart.axes.stepsX-1
+            for n, i in new Array(steps+1)
+              - x = i / (steps)
+              svg.x-label(x=toPercent(x))
+                text(text-anchor="middle" transform="translate(0 18)")
+                  = (minX + range*(i/steps)).toFixed(0) + (axes.percentage ? "%" : "")
+                
+          // X-Axis minor lines
+          if chart.axes.minorLines
+            svg(width="100%")
+              for n, i in new Array(steps+1)
+                - x = (i / steps)
+                svg
+                  line(
+                    x1=toPercent(x)
+                    y1="0%"
+                    x2=toPercent(x)
+                    y2="100%"
+                    stroke="#5553"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // Chart rects
+          g.bars
+            - const n = chart.series[0].values.length
+            for undef, i in new Array(n)
+              svg(
+                y=toPercent(fy(i)-fy(-0.15) )
+                height=toPercent(fy(0))
+                width="100%"
+              )   
+                - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
+                - vals = axes.reverse ? vals.reverse() : vals
+                - x0 = 0
+
+                for v, j in vals
+                  - ci = axes.reverse ? vals.length-j : j+1
+
+                  if v > 0
+                    rect(
+                      x=toPercent(x0)
+                      width=toPercent(fx(v))
+                      height="100%"
+                      fill=chart.colors[chart.series[ci].color]
+                      data-v=v
+                      data-c=i
+                      data-s=j
+                    )
+                    text.chart-value(
+                      x=toPercent(x0 + fx(v/2))
+                      y="50%"
+                      text-anchor="middle"
+                      transform="translate(0 4.5)"
+                      style=`color: ${(j < 3 ? "white" : "")}`
+                    )
+                      = v.toFixed(1) + (axes.percentage ? "%" : "")
+
+                  - x0 += fx(v)
+                    
+                // Y-Axis labels
+                svg.y-label(x="0%" y="50%")
+                  text(
+                    text-anchor="end"
+                    transform="translate(-16, 5)"
+                  )
+                    =chart.series[0].values[i]
+      
+      .row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .chart-source.txt-center.txt-muted.txt-cond!= chart.source
+        .chart-notes!= chart.notes
+      
+      .tooltip
+
+  script.
+
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    const nLegendItems = 4;
+    const nCategories = 6;
+    /* --------------------- */
+    
+    const tooltip = document.querySelector('.tooltip');
+    const chart = document.querySelectorAll('.chart-content');
+    const recs = document.querySelectorAll('rect');
+    const cats = document.querySelectorAll('.y-label text');
+    const sers = document.querySelectorAll('.legend-item-label');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        recs.forEach( (r, i) => addHoverEventListeners(r, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let v = el.dataset.v;
+        let s = sers[el.dataset.s].innerHTML.trim();
+        let c = cats[el.dataset.c].innerHTML.trim();
+        let box = el.getBoundingClientRect();
+        
+        c === "Total" ? c = "total" : c === "No Party" ? c = "unaligned" : "";
+        console.log(c, c.length)
+        s = s.toLowerCase();
+        
+        tooltip.innerHTML = v + "% of " + c + " voters said US—South Korea relations would " + s + " if Trump is reelected.";
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
+        tooltip.style.opacity = 1;
+        
+      });
+      
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+      
+    }
+    
+  
+block append css
+  style
+    :sass
+  
+      .wrapper
+        height: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 5px
+        left: 140px
+        right: 20px
+        bottom: 30px
+
+      .chart-title
+        margin: auto
+        margin-bottom: 0.5em
+        padding: 0 2em
+        font-size: 24px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin: 8px 0
+
+      .legend-item
+        margin: 4px 8px
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+      
+      .chart-source
+        font-size: 15px
+        margin: 1em 0 0
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+      
+      .chart-content:hover .chart-value
+        opacity: 1
+          
+      @media (max-width: 400px)
+        text
+          font-size: 13px
+        .chart-content
+          bottom: 20px
+          left: 125px
+        .legend
+          flex-wrap: wrap
+        .chart-title
+          font-size: 18px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          font-size: 13px
+        .y-label text
+          transform: translate(-10px, 6px)
+        .x-label:nth-of-type(even)
+          display: none
+          

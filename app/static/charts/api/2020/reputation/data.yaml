@@ -1,0 +1,93 @@
+title: >
+  International reputations and the COVID‑19&nbsp;pandemic
+
+source: >
+  <b>Source:</b> <a href="https://power.lowyinstitute.org/" target="_blank">Lowy Institute Asia Power Index</a>
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Size of bubble = relative power in Asia
+
+axes:
+  xLabel: Domestic handling of COVID-19
+  minX:  0
+  maxX: 100
+  stepsX: 11
+  rotateX: false
+  interceptX: 50 # value of optional vertical line. set 'null' if disabled
+  percentageX: false
+  gridX: true
+
+  yLabel: International reputation
+  minY:  0
+  maxY: 100
+  stepsY: 11
+  interceptY: 50 # value of optional horizontal line. set 'null' if disabled
+  percentageY: false
+  gridY: true
+
+  rScaleFactor: 0.25
+
+
+# Data format: [x, y, r]
+series:
+  -
+    title: Series 1
+    color: dark
+    names:
+      - [ Australia ]
+      - [ Bangladesh ]
+      - [ Brunei ]
+      - [ Cambodia, true ]
+      - [ China ]
+      - [ India, true ]
+      - [ Indonesia ]
+      - [ Japan, true ]
+      - [ North Korea ]
+      - [ South Korea ]
+      - [ Laos, true ]
+      - [ Malaysia, true ]
+      - [ Mongolia ]
+      - [ Myanmar ]
+      - [ Nepal, true ]
+      - [ New Zealand, true ]
+      - [ Pakistan ]
+      - [ Philippines ]
+      - [ Russia ]
+      - [ Singapore, true ]
+      - [ Sri Lanka ]
+      - [ Taiwan ]
+      - [ Thailand, true ]
+      - [ United States ]
+      - [ Vietnam, true ]
+      - [ Papua New Guinea ]
+
+    values:
+      - [ 88.0,  77.4,  32.4 ]
+      - [ 22.0,  40.6,  9.2 ]
+      - [ 48.0,  50.2,  9.1 ]
+      - [ 48.0,  46.8,  7.3 ]
+      - [ 71.3,  24.8,  76.1 ]
+      - [ 12.0,  18.8,  39.7 ]
+      - [ 10.2,  19.5,  19.9 ]
+      - [ 74.0,  66.3,  41.0 ]
+      - [ 16.0,  26.9,  12.3 ]
+      - [ 84.6,  87.1,  31.6 ]
+      - [ 56.7,  50.2,  6.0 ]
+      - [ 48.0,  47.2,  20.7 ]
+      - [ 74.0,  68.3,  5.6 ]
+      - [ 48.0,  53.0,  8.7 ]
+      - [ 35.0,  46.0,  4.4 ]
+      - [ 100.0, 98.3,  19.0 ]
+      - [ 15.2,  33.0,  15.2 ]
+      - [ 22.0,  31.1,  13.3 ]
+      - [ 2.5,   18.5,  33.5 ]
+      - [ 75.0,  60.6,  27.4 ]
+      - [ 51.7,  50.2,  8.3 ]
+      - [ 100.0, 100.0, 16.7 ]
+      - [ 78.7,  52.6,  20.8 ]
+      - [ 0.0,   0.0,   81.6 ]
+      - [ 97.8,  93.2,  19.2 ]
+      - [ 48.0,  50.2,  3.8 ]

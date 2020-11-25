@@ -127,7 +127,7 @@ block page
         
         let box = el.getBoundingClientRect();
         let val = vals[i].innerHTML;
-        let ser = series[i].innerHTML;
+        let ser = series[Math.floor(i/nCategories)].innerHTML;
         let cat = legendItems[i%nCategories].innerHTML;
         
         tooltip.style.left = box.left - 90 + 'px';

@@ -1,0 +1,60 @@
+title: >
+  If Donald Trump is reelected president in the US, do you think the US — South Korea relations will improve, worsen, or stay about the same?
+
+source: >
+  <b>Source:</b> Western Kentucky University via Macromill Embrain.
+
+notes: >
+  <b>Note:</b> 1200 survey respondents. Quota sampling based on age, gender, and region.
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  minX:  0
+  maxX: 100
+  stepsX: 11
+  percentage: true
+  minorLines: true
+  dotted: [1,3,5,7,9] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - Total
+      - Democratic Party
+      - United Future Party
+      - Justice Party
+      - No Party
+
+  -
+    title: Improve
+    color: "teal"
+    values:
+      - 9.83
+      - 11.09
+      - 8.78
+      - 9.88
+      - 7.32
+
+  -
+    title: Stay about the same
+    color: "grey"
+    values:
+      - 43.5
+      - 44.18
+      - 43.92
+      - 32.1
+      - 43.9
+
+  -
+    title: Worsen
+    color: "red"
+    values:
+      - 46.67
+      - 44.73
+      - 47.3
+      - 58.02
+      - 48.78

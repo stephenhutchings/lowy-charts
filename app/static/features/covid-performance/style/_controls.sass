@@ -1,0 +1,47 @@
+@import app/static/features/covid-performance/style/_vars.sass
+
+#controls
+  position: fixed
+  bottom: 4px
+  left: 50%
+  border-radius: 4px
+  transform: translateX(-50%)
+  background: rgba($dark, 0.8)
+  z-index: 100
+  transition: opacity 300ms
+  text-align: center
+
+.btn,
+#pager-progress
+  display: inline-block
+  line-height: 24px
+
+.btn
+  width: 24px
+  height: 24px
+  margin-left: 12px
+
+  &:before
+    vertical-align: middle
+
+  &:focus,
+  &:hover
+    text-shadow: 0 0 4px #fff
+
+.pager-item
+  width: 4px
+  height: 4px
+  background: white
+  margin: 0
+
+  &.active
+    background: #22273d
+    box-shadow: 0 0 0 4px rgba(#fff, 0.2)
+
+#pager-total
+  color: rgba(#fff, 0.5)
+
+#pager-index
+  display: inline-block
+  width: 1.2em
+  text-align: right
