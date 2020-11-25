@@ -308,6 +308,7 @@ block append scripts
         $wrapper  = $("#wrapper")
 
         showBox = (e) =>
+          e.preventDefault()
           e.stopImmediatePropagation()
           toggleBox(e.currentTarget.dataset.id)
 
@@ -329,6 +330,7 @@ block append scripts
           , if wait then 200 else 0
 
         showRef = (e) =>
+          e.preventDefault()
           $wrapper.addClass("show-ref")
 
         hideRef = (e) =>
