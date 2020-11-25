@@ -1,0 +1,341 @@
+extend /partials/layout
+
+block append config
+  - page.title = "A middle power moment";
+  - ref = (id) => `<sup><a href="#ref-${id}">${id}</a></sup>`;
+
+block page
+  #wrapper(ontouchstart="")
+    header
+      h1 Chinese military capabilities deployed to the South China&nbsp;Sea 
+      p.txt-muted Select an island group for details
+
+    include map.svg
+
+    #info
+
+      aside.box.box-paracel
+        button.hide &times;
+        h2.box-title Paracel Islands
+
+        dl
+          dt Combat aircraft
+          dd J-11B!{ref(2)}, J-10!{ref(3)}, Likely JH-7 bombers!{ref(4)}, H&#8209;6K
+
+          dt Berthing
+          dd Yes
+
+          dt Over the horizon awareness/targeting!{ref(1)}
+          dd Type 305A radar, Island Reef Information System (Bombay Reef)!{ref(5)}, Harbin BZK 005 drones
+
+          dt Long range missiles
+          dd HQ-9 SAM (rotating), YJ-62 anti-ship cruise missiles (permanent), Possibly DF-26B and DF-21D anti-ship ballistic missiles!{ref(6)}
+
+          dt Short range missiles
+          dd TEL surface-to-air missiles and/or anti-ship cruise missiles!{ref(7)}
+
+      aside.box.box-spratly
+        button.hide &times;
+        h2.box-title Spratly Islands
+
+        dl
+          dt Combat aircraft
+          dd Military transport aircraft Xian Y-7 and Shaanxi Y-8, Hangars likely to host J-10 and/or J-11 and H-6 bombers!{ref(8)}
+
+          dt Berthing
+          dd Yes!{ref(9)}
+
+          dt Over the horizon awareness/targeting!{ref(1)}
+          dd Radomes!{ref(10)}, High frequency array radar facility!{ref(11)}, “Elephant cage” direction-finding radar!{ref(13)}, Observation towers, X-band over the horizon radars
+
+          dt Long range missiles
+          dd HQ-9B surface-to-air missiles!{ref(14)}, YJ-12B anti-ship cruise missiles, Potential deployment of ground launch cruise missiles!{ref(15)}
+
+          dt Short range missiles
+          dd Significant development of point defense capabilities, including large anti-aircraft guns and phalanx close-in weapon system
+
+      aside.box.box-hainan
+        button.hide &times;
+        h2.box-title Hainan Island
+
+        dl
+          dt Combat aircraft
+          dd JH-7A, J-11B, J-11BH, J-11!{ref(16)}, H&#8209;6
+  
+          dt Berthing
+          dd Yes, Jin-class submarine!{ref(17)}, Shang-class Type 093 nuclear attack submarine!{ref(18)}
+
+          dt Over the horizon awareness/targeting!{ref(1)}
+          dd High frequency radars (300km), Low frequency radars (50km), Shaanxi KJ-200 airborne early warning!{ref(19)}, Long range Harbin BZK-005 drones, Guizhou Soar Dragon “Xiang Long” WZ-7 unmanned aerial vehicle!{ref(20)}
+
+          dt Long range missiles
+          dd HQ-9 surface-to-air missiles!{ref(21)}, Possibly D-21D and/or DF-26 anti-ship ballistic missiles!{ref(22)}
+
+          dt Short range missiles
+          dd Possible HQ-6A short-medium-range surface-to-air missiles, Possible defense capabilities include LD2000 land-based 30mm close-in weapon system system and HN-6 man-portable air-defence systems!{ref(23)}
+
+      aside#ref-box
+        button.hide-ref &rarr;
+        h3.box-title References
+       
+        ol
+          li#ref-1 China is currently building and placing Ocean E-Stations (海洋E站) in the SCS that “informatize” the maritime environment for the broader goal of increasing maritime domain awareness (MDA). Largely divided into Island Reef Information System (IRIS) and Anchored Floating Platform Information System (AFPIS), these stations would allow China to track and make sense of what is happening in the air, surface, and subsurface. There are currently five known IRIS platforms known to have been deployed in the SCS; see footnote 4 for further information. AFPIS, also known as “the underwater great wall”, is essentially an underwater observation system thought to be under planning/development phase. More specifically, seabed sensors linked by fiber optic cables detect adversary submarines. These are connected to a central processing and monitoring facility in Shanghai. The system is similar to the US’s SOSUS network, which used sensor arrays to detect Soviet submarines. If completed, it would significantly erode the undersea warfare advantage held by U.S. and Russian submarines, and contribute to China’s future ability to control the SCS. For information regarding the underwater great wall, see Eli Huang, “China’s Cable Strategy: Exploring Global Undersea Dominance,” RealClear Defense, December 4, 2017, <a target="_blank" rel="nofollow" href="https://www.realcleardefense.com/articles/2017/12/04/chinas_cable_strategy_exploring_global_undersea_dominance_112720.html">https://www.realcleardefense.com/articles/2017/12/04/chinas_cable_strategy_exploring_global_undersea_dominance_112720.html</a>.
+          li#ref-2 J-11Bs were dispatched from Woody Island to Paracel chain in December 2017. Jesse Johnson, “China Confirms Deployment of Fighters to South China Sea Island for First Time,” <em>The Japan Times</em>, December 2, 2017, <a target="_blank" rel="nofollow" href="https://www.japantimes.co.jp/news/2017/12/02/asia-pacific/china-confirms-deployment-fighters-south-china-sea-island-first-time/">https://www.japantimes.co.jp/news/2017/12/02/asia-pacific/china-confirms-deployment-fighters-south-china-sea-island-first-time/</a>.
+          li#ref-3 At least four J-10 fighters were deployed to Woody Island since 2017. Brad Lendon, “Satellite Image Shows Chinese Fighter Jets Deployed to Contested Island,” <em>CNN</em>, June 21, 2019, <a target="_blank" rel="nofollow" href="https://www.cnn.com/2019/06/20/asia/china-fighters-satellite-image-woody-island-intl-hnk/index.html">https://www.cnn.com/2019/06/20/asia/china-fighters-satellite-image-woody-island-intl-hnk/index.html</a>.
+          li#ref-4 In July 2020, four aircraft that fit the dimensions and appearance of the JH-7, an anti-ship fighter-bomber in service with the PLAAF and PLANAF appeared on Woody Island for a live fire drill. Previously, JH-7 bombers had not been used in live-fire drills since 2016. Drake Long, “Eight Chinese Fighter Jets Show up at Woody Island in the South China Sea,” <em>Radio Free Asia</em>, July 17, 2020, <a target="_blank" rel="nofollow" href="https://www.rfa.org/english/news/china/woody-jets-07172020145710.html">https://www.rfa.org/english/news/china/woody-jets-07172020145710.html</a>.; James Patterson, “South China Sea Tensions: PLA Airforce Sends More Fighter Jets To Disputed Island,” International Business Times, July 22, 2020, <a target="_blank" rel="nofollow" href="https://www.ibtimes.com/south-china-sea-tensions-pla-airforce-sends-more-fighter-jets-disputed-island-3015231">https://www.ibtimes.com/south-china-sea-tensions-pla-airforce-sends-more-fighter-jets-disputed-island-3015231</a>.
+          li#ref-5 Type 305A radars were deployed in July 2016. Bombay Reef Information System was deployed in June – July 2018. This is the first identified “Ocean E-Station” out of the five platforms known to have been deployed to the SCS. According to Biddle and Oelrich (2016), these radar stations will be one of the most significant and reliable assets in sensing and targeting mobile targets over wide areas in a long-term competition. OTH radars can detect targets at ranges beyond the physical horizon, but require frequencies too low to provide the resolution needed for directing weapons to targets, making them useful for early warning but not targeting. Space-based radars and forward-deployed airborne radars can increase detection ranges during peacetime but are vulnerable to attack in the early stages of conflict. For information related to China’s Island Reef Information Systems in the SCS, see “China Quietly Upgrades a Remote Reef,” Asia Maritime Transparency Initiative, November 20, 2018, <a target="_blank" rel="nofollow" href="https://amti.csis.org/china-quietly-upgrades-bombay-reef/">https://amti.csis.org/china-quietly-upgrades-bombay-reef/</a>.; Michael Dahm, “Chinese &lsquo;Ocean E-Stations’ Deployed to the South China Sea,” Asia Maritime Transparency Initiative, December 10, 2018, <a target="_blank" rel="nofollow" href="https://amti.csis.org/chinese-ocean-e-stations-deployed-south-china-sea/">https://amti.csis.org/chinese-ocean-e-stations-deployed-south-china-sea/</a>.; and Franz-Stefan Gady, “Has China Withdrawn A Long-Range Missile Battery From Woody Island?,” <em>The Diplomat</em>, July 26, 2016, <a target="_blank" rel="nofollow" href="https://thediplomat.com/2016/07/has-china-withdrawn-a-long-range-missile-battery-from-woody-island/">https://thediplomat.com/2016/07/has-china-withdrawn-a-long-range-missile-battery-from-woody-island/</a>. For an analysis of sensing and targeting capabilities of various sensors, see Stephen Biddle and Ivan Oelrich, “Future Warfare in the Western Pacific: Chinese Antiaccess/Area Denial, U.S. AirSea Battle, and Command of the Commons in East Asia,” <em>International Security</em> 41, no. 1 (July 1, 2016): 7&ndash;48, <a target="_blank" rel="nofollow" href="https://doi.org/10.1162/ISEC_a_00249">https://doi.org/10.1162/ISEC_a_00249</a>.
+          li#ref-6 In August 2020, China tested DF-26B and DF-21D “carrier killer” anti-ship ballistic missiles (ASBMs) from a location near the Paracel Islands. Geoff Ziezulewicz, “US Navy Sends Warship near Disputed Islands a Day after China’s ’carrier Killer’ Missile Test,” Navy Times, August 28, 2020, <a target="_blank" rel="nofollow" href="https://www.navytimes.com/news/your-navy/2020/08/28/us-navy-sends-warship-near-disputed-islands-a-day-after-chinas-carrier-killer-missile-test/">https://www.navytimes.com/news/your-navy/2020/08/28/us-navy-sends-warship-near-disputed-islands-a-day-after-chinas-carrier-killer-missile-test/</a>.; “DOD Statement on Recent Chinese Ballistic Missile Launches,” U.S. DEPARTMENT OF DEFENSE, accessed November 24, 2020, <a target="_blank" rel="nofollow" href="https://www.defense.gov/Newsroom/Releases/Release/Article/2327641/dod-statement-on-recent-chinese-ballistic-missile-launches/">https://www.defense.gov/Newsroom/Releases/Release/Article/2327641/dod-statement-on-recent-chinese-ballistic-missile-launches/</a>.
+          li#ref-7 “Exercises Bring New Weapons To The Paracels,” <em>Asia Maritime Transparency Initiative, </em>May 24, 2018, <a target="_blank" rel="nofollow" href="https://amti.csis.org/exercises-bring-new-weapons-paracels/">https://amti.csis.org/exercises-bring-new-weapons-paracels/</a>.
+          li#ref-8 “Built It and They Will Come”, <em>Asia Maritime Transparency Initiative, </em>August 1, 2016, <a target="_blank" rel="nofollow" href="https://amti.csis.org/build-it-and-they-will-come/">https://amti.csis.org/build-it-and-they-will-come/</a>.
+          li#ref-9 Alexander Neill, “China’s Creeping Saturation of the South China Sea,” <em>IISS</em> (blog), August 3, 2018, <a target="_blank" rel="nofollow" href="https://www.iiss.org/blogs/analysis/2018/08/china-saturation-south-china-sea-subi-reef">https://www.iiss.org/blogs/analysis/2018/08/china-saturation-south-china-sea-subi-reef</a>.
+          li#ref-10 There are seven radomes on Fiery Cross Reef and 12 on Subi Reef. When installed on top of observation towers, radomes have an extended range and target detection size. Ground-level domes could conceal satellite antennas serving as satellite-communications ground earth stations, space-tracking systems or SIGINT collection systems. With two ground-level radars and at least one elevated radome on a tower on the three center-most islands (Gaven, Johnson South and Hughes reefs), such a reduced configuration of radars is only useful for surveillance within the island chains. The large radome on Mischief Reef very probably houses a VHF-band or UHF-band radar. Alexander Neill and Meia Nouwens, “China’s Radar Installations in the Spratly Islands &ndash; What Do They Tell Us about Its Ambitions for the South China Sea?,” <em>IISS</em> (blog), February 19, 2018, <a target="_blank" rel="nofollow" href="https://www.iiss.org/blogs/analysis/2018/02/china-radar">https://www.iiss.org/blogs/analysis/2018/02/china-radar</a>.; J. Michael Dahm, “Air and Surface Radar: A Survey of Technologies and Capabilities on China’s Military Outposts in the South China Sea,” South China Sea Military Capability Series (John’s Hopkins Applied Physics Laboratory, July 2020).
+          li#ref-11 These would be used for early warning and detection at great distance, sometimes up to several thousand km. Neill and Nouwens, “China’s Radar Installations in the Spratly Islands &ndash; What Do They Tell Us about Its Ambitions for the South China Sea?”
+          li#ref-12 Neill and Nouwens.
+          li#ref-13 Dahm, “Air and Surface Radar: A Survey of Technologies and Capabilities on China’s Military Outposts in the South China Sea.”
+          li#ref-14 There are also structures intended to house SAM systems. Platforms deployed at Spratlys would be protected from the elements, like corrosive seawater. With the roofs closed, the shelters would also conceal launchers from view, thwarting overhead surveillance and preventing adversaries from knowing how many launchers (if any) are present at any given time. Finally, in the event of actual conflict, the structures could withstand indirect strikes or small weapons fire. They are also built very close to the point defenses. “A Look At China’s Sam Shelters In The Spratlys,” <em>Asia Maritime Transparency Initiative, </em>February 23, 2017, <a target="_blank" rel="nofollow" href="https://amti.csis.org/chinas-sam-shelters-spratlys/">https://amti.csis.org/chinas-sam-shelters-spratlys/</a>.
+          li#ref-15 Robert Farley, “China Knows It Can’t Protect Every Island It Builds (Think South China Sea),” The National Interest, October 8, 2019, <a target="_blank" rel="nofollow" href="https://nationalinterest.org/blog/buzz/china-knows-it-cant-protect-every-island-it-builds-think-south-china-sea-86371">https://nationalinterest.org/blog/buzz/china-knows-it-cant-protect-every-island-it-builds-think-south-china-sea-86371</a>.
+          li#ref-16 Damen Cook, “A Closer Look at China’s Critical South China Sea Submarine Base,” <em>The Diplomat</em>, March 18, 2017, <a target="_blank" rel="nofollow" href="https://thediplomat.com/2017/03/a-closer-look-at-chinas-critical-south-china-sea-submarine-base/">https://thediplomat.com/2017/03/a-closer-look-at-chinas-critical-south-china-sea-submarine-base/</a>.
+          li#ref-17 The 11,000-ton Jin-class submarines are stationed on the southern coast of China’s Hainan Island, close to deep water channels leading into and out of the SCS. Torode and Lague, “China’s Furtive Fleet of Nuclear Missile-Laden Submarines Tests the Pentagon.”
+          li#ref-18 In August 2020, what appeared to be a Shang-class nuclear attack submarine was seen emerging from a submarine bunker at Yulin Naval Base on Hainan Island, which houses China&apos;s nuclear ballistic missile submarine fleet. Tyler Rogoway, “Image Shows Chinese Submarine Entering Mysterious Cave Facility At South China Sea Base,” The Drive, accessed November 24, 2020, <a target="_blank" rel="nofollow" href="https://www.thedrive.com/the-war-zone/35837/image-shows-chinese-submarine-entering-mysterious-cave-facility-at-south-china-sea-base">https://www.thedrive.com/the-war-zone/35837/image-shows-chinese-submarine-entering-mysterious-cave-facility-at-south-china-sea-base</a>.
+          li#ref-19 Mike Yeo, “Can China Enforce a South China Sea ADIZ?,” <em>USNI News</em> (blog), July 18, 2016, <a target="_blank" rel="nofollow" href="https://news.usni.org/2016/07/18/analysis-can-china-enforce-south-china-sea-air-defense-identification-zone">https://news.usni.org/2016/07/18/analysis-can-china-enforce-south-china-sea-air-defense-identification-zone</a>.
+          li#ref-20 Office of the Secretary of Defense, “Annual Report to Congress: Military and Security Developments Involving the People’s Republic of China 2019.”
+          li#ref-21 “China Deploys Surface-to-Air Missiles on Hainan Island in Bid to Create South China Sea No-Fly Zone,” The Japan Times, May 20, 2017, <a target="_blank" rel="nofollow" href="https://www.japantimes.co.jp/news/2017/05/20/asia-pacific/china-deploys-surface-air-missiles-hainan-island-bid-create-south-china-sea-no-fly-zone-report/">https://www.japantimes.co.jp/news/2017/05/20/asia-pacific/china-deploys-surface-air-missiles-hainan-island-bid-create-south-china-sea-no-fly-zone-report/</a>.
+          li#ref-22 Ankit Panda, “The PLARF’s New Hainan Island Base and China’s Recent Anti-Ship Ballistic Missile Tests,” <em>The Diplomat</em>, July 3, 2019, <a target="_blank" rel="nofollow" href="https://thediplomat.com/2019/07/the-plarfs-new-hainan-island-base-and-chinas-recent-anti-ship-ballistic-missile-tests/">https://thediplomat.com/2019/07/the-plarfs-new-hainan-island-base-and-chinas-recent-anti-ship-ballistic-missile-tests/</a>.;“China Deploys Surface-to-Air Missiles on Hainan Island in Bid to Create South China Sea No-Fly Zone.”; Bates Gill, “First Salvo: Missile Tests Mark Intensified US-China Competition,” <em>The Interpreter</em> (blog), July 5, 2019, <a target="_blank" rel="nofollow" href="https://www.lowyinstitute.org/the-interpreter/first-salvo-missile-tests-mark-intensified-us-china-competition">https://www.lowyinstitute.org/the-interpreter/first-salvo-missile-tests-mark-intensified-us-china-competition</a>.
+          li#ref-23 Images indicate that the Hainan air defense brigade operates HQ-9 long-range SAMs, HQ-6A short-medium-range SAM, LD2000 land-based 30mm CIWS system and HN-6 MANPADS. “Hainan Island Shelters PLA Chinese Navy Only Air Defense Brigade,” Army Recognition, May 26, 2020, <a target="_blank" rel="nofollow" href="https://www.armyrecognition.com/may_2020_news_defense_global_security_army_industry/hainan_island_shelters_pla_chinese_navy_only_air_defense_brigade.html">https://www.armyrecognition.com/may_2020_news_defense_global_security_army_industry/hainan_island_shelters_pla_chinese_navy_only_air_defense_brigade.html</a>.
+
+
+block append css
+  style
+    :sass
+      svg
+        display: block
+        margin: 0
+        overflow: visible
+
+      aside
+        position: absolute
+        top: 12px
+        right: 12px
+        transition: all 300ms
+        opacity: 0
+        border-radius: 4px
+        pointer-events: none
+        overflow: hidden
+
+      #ref-box
+        width: 280px
+        padding: 12px 0 0 16px
+        background: #fff
+        border-radius: 0 4px 4px 0
+        z-index: 1
+
+        .box-title
+          border-bottom-color: #C3CCD3
+
+        ol
+          margin: 0
+          padding: 8px 16px 16px 24px
+          height: 400px
+          overflow: auto
+          scroll-behavior: smooth
+          scroll-padding-block-start: 9px
+          font-size: 14px
+
+        a
+          word-break: break-word
+
+        button
+          font-size: 24px
+          font-feature-settings: "case" 1
+
+      .box
+        padding: 12px 0 0 12px
+        width: 264px
+        color: #fff
+        background: rgba(#1A1F23, 0.98)
+        z-index: 10
+        transform: translate3d(50%, 0, 0)
+
+        sup
+          display: none
+
+      button
+        position: absolute
+        top: 6px
+        right: 6px
+        background: none
+        border: 0
+        color: inherit
+        font-family: inherit
+        font-size: 32px
+        padding: 0
+        width: 40px
+        height: 40px
+        font-weight: 400
+        border-radius: 50%
+        transition: all 300ms
+        display: none
+
+        &:hover,
+        &:focus
+          outline: none
+          background: rgba(#c3ccd2, 0.3)
+
+      .box-title
+        padding-bottom: 8px
+        font: inherit
+        font-weight: 600
+        line-height: 32px
+        margin: 0 12px 0 0
+        border-bottom: 1px solid rgba(#fff, 0.3)
+
+      dl
+        max-height: 400px
+        margin: 0
+        padding: 12px 12px 12px 0
+        overflow: auto
+        background: rgba(#1A1F23, 0.98)
+
+      dt
+        text-transform: uppercase
+        font-weight: 600
+        letter-spacing: 0.1em
+        font-size: 12px
+        margin-bottom: 4px
+        color: #c3ccd2
+
+      dd
+        margin-bottom: 16px
+
+      sup
+        font-size: 75%
+        vertical-align: 0.3em
+
+      sup a
+        text-decoration: none
+        padding: 0 1px
+        position: relative
+
+        &:before
+          content: ""
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          margin: -8px
+
+        &:hover,
+        &:focus
+          color: #ff9204
+
+      .show-paracel .box-paracel,
+      .show-spratly .box-spratly,
+      .show-hainan .box-hainan,
+      .show-ref #ref-box
+        opacity: 1
+        transform: translate3d(0, 0, 0)
+        pointer-events: all
+
+        sup,
+        button
+          display: initial
+
+      .show-ref .box
+        transform: translate3d(-288px, 0, 0)
+
+      .showing .circle
+        opacity: 0.1
+
+      .show-paracel [data-id=paracel] .circle,
+      .show-spratly [data-id=spratly] .circle,
+      .show-hainan [data-id=hainan] .circle
+        stroke: #ff9204
+        fill: rgba(0, 10, 30, 0.1)
+        transform: scale(1.05)
+        opacity: 1
+
+      body
+        font-family: Sans, sans-serif
+        display: flex
+        width: 1px
+        min-width: 100%
+        *width: 100%
+
+      header
+        position: absolute
+        z-index: 1
+        right: 20px
+        top: 20px
+        text-align: right
+        max-width: 40%
+        background: #EAEFF1
+
+      h1
+        font-family: inherit
+        font-weight: 600
+        font-size: 18px
+        line-height: 1.2
+
+      p
+        font-size: 15px
+
+      #wrapper
+        margin: auto
+        position: relative
+        overflow: hidden
+        max-width: 100%
+        background: #EAEFF1
+
+      @media (max-width: 736px)
+        svg
+          margin-left: calc(#{(-736px * 0.25)} + 25vw)
+
+      @media (max-width: 600px)
+        header p
+          display: none
+
+        [data-id="hainan"] .location-label
+          transform: translate(-8px, 24px)
+
+
+block append scripts
+  script
+    :coffee
+      $(document).ready =>
+        timeout = null
+        className = ""
+        $wrapper  = $("#wrapper")
+
+        showBox = (e) =>
+          e.stopImmediatePropagation()
+          toggleBox(e.currentTarget.dataset.id)
+
+        hideBox = (e) =>
+          toggleBox(false)
+
+        toggleBox = (id) =>
+          return if id is className
+
+          wait = className
+          
+          $wrapper
+            .removeClass("show-#{className} show-ref showing")
+            .toggleClass("showing", id)
+          
+          window.clearTimeout timeout
+          timeout = window.setTimeout => 
+            $wrapper.addClass("show-#{(className = id)}")
+          , if wait then 200 else 0
+
+        showRef = (e) =>
+          $wrapper.addClass("show-ref")
+
+        hideRef = (e) =>
+          $wrapper.removeClass("show-ref")
+
+        $(".show").on("click", showBox)
+        $(".hide").on("click", hideBox)
+       
+        $("[href^=\"#ref\"]").on("click", showRef)
+        $(".hide-ref").on("click", hideRef)
