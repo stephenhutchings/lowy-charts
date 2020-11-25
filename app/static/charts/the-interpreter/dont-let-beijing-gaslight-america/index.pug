@@ -330,8 +330,15 @@ block append scripts
           , if wait then 200 else 0
 
         showRef = (e) =>
-          e.preventDefault()
           $wrapper.addClass("show-ref")
+          try
+            $(e.target.hash)
+              .get(0)
+              .scrollIntoView(behavior: "smooth")
+            e.preventDefault()
+          catch err
+            console.log(err)
+          
 
         hideRef = (e) =>
           $wrapper.removeClass("show-ref")
