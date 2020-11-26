@@ -332,13 +332,12 @@ block append scripts
         showRef = (e) =>
           $wrapper.addClass("show-ref")
           try
-            $(e.target.hash)
-              .get(0)
-              .scrollIntoView(behavior: "smooth")
+            el = $(e.target.hash).get(0)
+            top = el.offsetTop - 60
+            el.parentNode.scroll({ top, behavior: "smooth" })
             e.preventDefault()
           catch err
             console.log(err)
-          
 
         hideRef = (e) =>
           $wrapper.removeClass("show-ref")
