@@ -1,0 +1,99 @@
+$blue: #002b45
+$dark: #22273d
+$lite: #d7d7e2
+$mid:  #5c6172
+$red:  #f7434c
+
+.bg-dark
+  background: $dark
+.bg-blue
+  background: $blue
+.bg-fff
+  background: #fff
+.bg-bk
+  background: #000
+.bg-lite
+  background: $lite
+.bg-red
+  background: $red
+.bg-blue-a
+  background: rgba($blue, 0.2)
+.bg-fff-a
+  background: rgba(#fff, 0.2)
+  
+.txt-dark
+  color: $dark
+.txt-blue
+  color: $blue
+.txt-fff
+  color: #fff
+.txt-bk
+  color: #000
+.txt-lite
+  color: $lite
+.txt-mid
+  color: $mid
+
+.fill-no
+  fill: none
+.fill-dark
+  fill: $dark
+.fill-blue
+  fill: $blue
+.fill-red
+  fill: $red
+.fill-fff
+  fill: #fff
+.fill-bk
+  fill: #000
+.fill-lite
+  fill: $lite
+.fill-a
+  fill-opacity: 0.2
+.stroke
+  stroke: #fff
+  vector-effect: non-scaling-stroke
+
+
+.mask-l
+  fill: url(#mask-l)
+.mask-r
+  fill: url(#mask-r)
+.mask-t
+  fill: url(#mask-t)
+.mask-b
+  fill: url(#mask-b)
+
+
+.fill-l2r
+  fill: url(#fade-l2r)
+.fill-v
+  fill: url(#fade-v)
+.fill-h
+  fill: url(#fade-h)
+.stroke-v
+  fill: none
+  stroke: url(#fade-v)
+.stroke-h
+  fill: none
+  stroke: url(#fade-h)
+.fade
+  opacity: 0.25
+.line
+  fill: none
+  vector-effect: non-scaling-stroke
+
+  &.dashed
+    stroke-dasharray: 864 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+
+  &.red
+    stroke: $red
+    stroke-dashoffset: 40
+  &.lite
+    stroke: $lite
+    stroke-dashoffset: 44
+  &.fff
+    stroke: white
+    stroke-dashoffset: 0
+  &.other
+    opacity: 0.5

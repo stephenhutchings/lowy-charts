@@ -1,21 +1,161 @@
-.slide
-  .posr.fw.fh.flex-cv(data-view="in-viewport")
-    .slide-inner.flex.flex-jc
-      .mx-auto
-        .type.undo.txt-lg.txt-dk.pv-sm(
-          data-view="type, in-viewport"
-          data-duration=300
-          style="transform: translate3d(0, 180px, 0)"
-        )
-          span.line.bg-ff.hide.txt-mono 1989
+- labels = data.getOne("static/features/covid-performance/data/geography").labels
+- values = data.getOne("static/features/covid-performance/data/geography").values
+- colors = data.getOne("static/features/covid-performance/data/geography").colors
+- scalex = [ 13, 209 ]
+- scaley = [  0, 100 ]
+- rangex = scalex[1] - scalex[0]
+- rangey = scaley[1] - scaley[0]
 
-        .type.txt-lg.txt-ff.pv-sm(
-          data-view="type, in-viewport"
-          data-duration=3000
-          data-delay=1000
-        )
-          span.line.bg-dk.hide.txt-mono “Political turbulence
-          span.line.bg-dk.hide.txt-mono and an anti-revolutionary
-          span.line.bg-dk.hide.txt-mono riot, supported by foreign
-          span.line.bg-dk.hide.txt-mono enemies to subvert the
-          span.line.bg-dk.hide.txt-mono socialist system.”
+.frame-inner(data-view="in-viewport")
+  
+  #type-wrap
+  
+    .type.txt-md.txt-ff.txt-left(
+      data-view="slide, in-viewport"
+      data-duration=1800
+    )
+      h1.line Lorem Ipsum
+      p.line.txt-lite
+        | Noster ingeniis e vidisse. O cillum litteris praesentibus nam illum se est 
+        | tempor probant eu fugiat possumus graviterque, vidisse quae quo iudicem 
+        | reprehenderit. Expetendis aliqua quorum laborum quid ne ita labore vidisse, 
+        | illum eiusmod et ullamco ad fore o fabulas hic multos quo summis voluptatibus 
+        | laborum culpa occaecat qui hic duis nescius cupidatat est hic id dolore fugiat.
+      
+  #chart-wrap
+
+    svg#chart(
+      data-view="line, in-viewport"
+      data-duration=5000
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    )
+      defs
+        linearGradient#fade-l2r(x1="0%" x2="100%" y1="0%" y2="0%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=1 stop-color="#4c5162")
+        linearGradient#fade-h(x1="0%" x2="100%" y1="0%" y2="0%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="50%" stop-opacity=1 stop-color="#4c5162")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#fade-v(x1="0%" x2="0%" y1="0%" y2="100%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="50%" stop-opacity=1 stop-color="#4c5162")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#mask-l(x1="0%" x2="100%" y1="0%" y2="0%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=0 stop-color="#22273d")
+        linearGradient#mask-r(x1="0%" x2="100%" y1="0%" y2="0%")
+          stop(offset="0%" stop-opacity=0 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#mask-t(x1="0%" x2="0%" y1="0%" y2="100%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=0 stop-color="#22273d")
+        linearGradient#mask-b(x1="0%" x2="0%" y1="0%" y2="100%")
+          stop(offset="0%" stop-opacity=0 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#gradient
+          stop(offset="0" stop-color="#d7d7e2")
+          stop(offset="100%" stop-color="#d7d7e2" stop-opacity=0)
+    
+      // X LABEL
+      svg(width="100%" height="100%")
+        for n, i in new Array(rangex)
+          if (i % 14 == 0 || i == rangex-1)
+            - x = i / rangex * 100 + "%"
+            g.fade-in(class=("delay-" + ~~(i * 3 / 30)))
+              rect.fill-v(x=x width=2 y=0 height="100%")
+              g
+                rect.fill-dark(
+                  x=x
+                  y="100%"
+                  transform="translate(-30 -16)"
+                  width=60 height=32
+                )
+                text.fade.fill-fff(
+                  x=x
+                  y="100%"
+                  text-anchor="middle"
+                  transform="translate(0 7)"
+                )
+                  = ((scalex[0] + i + 1) / 7).toFixed(0)
+
+        // Y LABEL
+        - steps = 6
+        for n, i in new Array(steps)
+          if i > 0 && i < steps-1
+            - y = (i) / (steps-1) * 100 + "%"
+            g.fade-in(class=("delay-" + i * 2))
+              rect.fill-h.fill-fff.fill-a(
+                x=0
+                y=y
+                width="100%"
+                height=2
+              )
+
+              g
+                rect.fill-dark(
+                  x="50%"
+                  y=y
+                  transform="translate(-40 -22)"
+                  width=80 height=44
+                )
+                text.fade.fill-fff(
+                  x="50%"
+                  y=y
+                  text-anchor="middle"
+                  transform="translate(0 7)"
+                )
+                  | #{20 * i}%
+
+      svg.fade-in.delay-1(
+        x="0"
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      )
+        //polyline.line(points="0,99 100,99.001" stroke="#fff" stroke-width=1)
+
+        for l, i in labels
+          if i
+            polyline.line(
+              class=colors[i]
+              stroke-width=4
+              points=(
+                values
+                  .map( (s,j,a) => [ j/(a.length - 1)*100, s[i] ]
+                    .map( e => e.toFixed(2) )
+                    .join(",")
+                  )
+                  .join(" ")
+              )
+            )
+
+      svg(width="100%" height="100%")
+        for l, i in labels
+          if i
+            - len = l.length
+            - w = len > 11 ? len * 8 : len > 9 ? len * 8.75 : len > 7 ? len * 10 : len * 11
+            svg.fade-in(
+              y=values[0][i] + "%"
+              x=-w+1
+            )
+              path(
+                d="M-8,-12l" + w + ",0l8,12l-8,12l-" + w + ",0Z"
+                class=`fill-${colors[i]}`
+                )
+              text.dogtag(
+                x=0
+                y=5
+                text-anchor="start"
+              )= l
+
+    #caption
+      .x.txt-mid.fade-in Weeks after 100th case
+        svg.inline(width='100', height='10', xmlns='http://www.w3.org/2000/svg')
+          path.fill-l2r(d='M.25 3.5l85.93-.02V-.07l13.8 5.5-13.53 4.55V6.76H.52L.25 3.5z')
+
+
+          
+      .y.txt-mid.fade-in COVID performance
