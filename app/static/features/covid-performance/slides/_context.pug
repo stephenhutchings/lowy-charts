@@ -1,9 +1,6 @@
 - text = data.getOne("static/features/covid-performance/data/text")
 
-#type-wrap(
-    data-view="slide, in-viewport"
-    data-duration=1800
-  )
+#type-wrap
   each p,i in text
     .context
       h1.capitalise!= p.name

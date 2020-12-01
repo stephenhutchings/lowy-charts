@@ -10,7 +10,6 @@ require.register "views/line", (exports, require, module) ->
     events:
       "enter": "enter"
       "exit": "exit"
-      "click": "click"
 
     initialize: (@data) ->
       @data.duration ?= 2000

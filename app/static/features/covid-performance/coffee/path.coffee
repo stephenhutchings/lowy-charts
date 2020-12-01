@@ -10,8 +10,6 @@ require.register "views/path", (exports, require, module) ->
 
   class PathView extends Backbone.View
     events:
-      "enter": "enter"
-      "exit": "exit"
       "click": "click"
 
     initialize: (@data) ->
@@ -24,11 +22,10 @@ require.register "views/path", (exports, require, module) ->
       val = @data.el.dataset.specifier
       
       @data.countries = [...$("[data-#{cat}=\"#{val}\"]")]
-      
 
     exit: ->
       
-      @data.countries.map( (d) -> d.style.opacity = 0 )
+      console.log "Exit"
       
     activate: (e) ->
       
