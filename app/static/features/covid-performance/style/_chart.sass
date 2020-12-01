@@ -1,43 +1,50 @@
-#frame
-  pointer-events: none
-  position: fixed
-  display: flex
-  left: 0
-  top: 0
-  right: 0
-  bottom: 0
-  z-index: 10
-  transition: opacity 300ms
-  
-.frame-inner
-  position: relative
-  width: 95vw
-  height: 100vh
-  max-width: 1400px
-  margin: auto
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2)
-  padding: 5rem 5rem 8rem
-  
-#chart-wrap
-  height: 100%
-  position: relative
-  padding: 2rem 3rem 5rem 4rem
+@import app/static/features/covid-performance/style/_vars.sass
 
-#chart
+$n: 2
+
+.pages
+  height: 100% * $n
+
+.line-chart-wrap
+  width: 100%
+  height: 100%/$n
+
+.line-chart
   position: relative
   width: 100%
   height: 100%
-  overflow: visible
+  z-index: 20
   
-  svg
-    overflow: visible
+.pathset
+  cursor: pointer
+  opacity: 0.85
+  transition: opacity 0.3s
+  
+  &.inactive  
+    opacity: 0.1
+    
+  &.active,
+  &:hover
+    opacity: 1
+    
+.country-line
+  opacity: 0
+  transition-duration: 0.2s
+  
+  &.active
+    opacity: 0.5
+  
+  &.active:hover
+    opacity: 1
+    stroke-width: 2
 
-.dogtag
+.dogtag  
   font-weight: bold
   text-transform: uppercase
   font-size: 12px
   
-#caption
+#chart-labels
+  
   text-transform: uppercase
   font-weight: 500
   font-size: 14px
@@ -46,20 +53,21 @@
   .x
     position: absolute
     bottom: 2rem
-    left: 3rem
+    left: 4rem
+    
   .y
     position: absolute
     top: calc(50% - 2rem)
-    right: -4rem
+    right: -10rem
     transform-origin: center
     transform: rotate(90deg)
-
-#type-wrap
-  margin: auto
-  max-width: 90%
-  
-  h1
-    font-size: 34px
-
-  p
-    font-size: 19px
+    line-height: 0.8
+    
+  path
+    stroke: $dark
+    
+  text
+    font-size: 10px
+    letter-spacing: 0.02em
+    font-weight: 400
+    

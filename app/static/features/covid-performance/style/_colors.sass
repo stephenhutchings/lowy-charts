@@ -48,6 +48,8 @@ $red:  #f7434c
   fill: #000
 .fill-lite
   fill: $lite
+.fill-mid
+  fill: $mid
 .fill-a
   fill-opacity: 0.2
 .stroke
@@ -67,6 +69,8 @@ $red:  #f7434c
 
 .fill-l2r
   fill: url(#fade-l2r)
+.fill-r2l
+  fill: url(#fade-r2l)
 .fill-v
   fill: url(#fade-v)
 .fill-h
@@ -79,7 +83,10 @@ $red:  #f7434c
   stroke: url(#fade-h)
 .fade
   opacity: 0.25
-.line
+  
+.line,
+.country-line
+  
   fill: none
   vector-effect: non-scaling-stroke
 
@@ -88,12 +95,9 @@ $red:  #f7434c
 
   &.red
     stroke: $red
-    stroke-dashoffset: 40
   &.lite
     stroke: $lite
-    stroke-dashoffset: 44
   &.fff
     stroke: white
-    stroke-dashoffset: 0
   &.other
     opacity: 0.5

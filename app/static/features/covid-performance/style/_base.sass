@@ -4,12 +4,17 @@ html, body
   height: 100%
   overflow: hidden !important
 
-body
+body,
+body.embed-false
   font-family: Sans, sans-serif
+  background-color: $dark
   color: white
   
 *
   box-sizing: border-box
+  
+svg
+  overflow: visible
 
 ::-webkit-scrollbar
   display: none
@@ -20,3 +25,13 @@ body
   position: relative
 .inline
   display: inline
+.capitalise
+  text-transform: capitalize
+.pointer
+  cursor: pointer
+  
+.inset-0
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0

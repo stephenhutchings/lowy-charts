@@ -5,9 +5,6 @@ block append config
 
 block page
   
-  #frame
-    include slides/_placeholder
-  
   #controls.p-xs.txt-ff
     #pager-progress
       span#pager-index 1
@@ -15,17 +12,13 @@ block page
     #btn-prev.btn.icon.icon-up
     #btn-next.btn.icon.icon-down
     #btn-fs.btn.icon.icon-expand
+      
+  
+  #frame: #frame-inner(data-view="in-viewport")
+    
+    include slides/_context
+    include slides/_chart
 
-  #scroller.bg-dk(
-    data-view="scroller"
-    data-pager=".pager-page"
-    data-index="#pager-index"
-    style="display: none"
-  )
-
-    //div(style="height: 200%")
-      include slides/_placeholder
-      include slides/_placeholder
 
 block customScripts
   
@@ -36,8 +29,8 @@ block customScripts
     include:sass style/_scroll.sass
     include:sass style/_controls.sass
     include:sass style/_colors.sass
+    include:sass style/_layout.sass
     include:sass style/_chart.sass
-    include:sass style/_slides.sass
     include:sass style/_transitions.sass
 
   script(type="text/javascript")
@@ -45,5 +38,6 @@ block customScripts
     include:coffee coffee/scroller.coffee
     include:coffee coffee/page.coffee
     include:coffee coffee/line.coffee
+    include:coffee coffee/path.coffee
     include:coffee coffee/slide.coffee
     include:coffee coffee/type.coffee

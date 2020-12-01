@@ -1,0 +1,62 @@
+- labels = data.getOne(`static/features/covid-performance/data/${cat}`).labels
+- values = data.getOne(`static/features/covid-performance/data/${cat}`).values
+- colors = data.getOne(`static/features/covid-performance/data/${cat}`).colors
+
+- scalex = [ 13, 209 ]
+- scaley = [  0, 100 ]
+- rangex = scalex[1] - scalex[0]
+- rangey = scaley[1] - scaley[0]
+
+.line-chart-wrap(data-view="in-viewport")
+
+  svg.line-chart.fade-in.delay-1(
+    width="100%"
+    height="100%"    
+    data-duration=4000
+    data-view="line, in-viewport"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  )
+    
+    for l, i in labels
+      
+      - len = l.length
+      - w = len > 11 ? len * 8 : len > 9 ? len * 8.75 : len > 7 ? len * 10 : len * 11
+      
+      g.pathset(
+        data-view="path"
+        data-category=cat
+        data-specifier=i
+        )
+      
+        svg.avg-lines(
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100" 
+          preserveAspectRatio="none"
+        )
+          
+          polyline.line(
+            class=colors[i]
+            stroke-width=4
+            points=(
+              values
+                .map( (s,j,a) => [ j/(a.length - 1)*100, s[i] ]
+                  .map( e => e.toFixed(2) )
+                  .join(",")
+                )
+                .join(" ")
+            )
+          )
+
+        svg.dogtag(
+          y=values[0][i] + "%"
+          x=-w+2
+          preserveAspectRatio="xMinYMin"
+        )
+          path(
+            d="M-8,-12l" + w + ",0l8,12l-8,12l-" + w + ",0Z"
+            class=`fill-${colors[i]}`
+            )
+          text(x=0 y=5 text-anchor="start")
+            = l

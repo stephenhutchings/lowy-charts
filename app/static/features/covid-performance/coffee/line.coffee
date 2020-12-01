@@ -10,12 +10,13 @@ require.register "views/line", (exports, require, module) ->
     events:
       "enter": "enter"
       "exit": "exit"
+      "click": "click"
 
     initialize: (@data) ->
       @data.duration ?= 2000
       @data.delay ?= 0
 
-      @lines = ({$el: $(el)} for el in @$(".line").toArray())
+      @lines = ({$el: $(el)} for el in @$("polyline.line").toArray())
 
       for line in @lines
         line.points = line.$el.attr("points").split(" ").map((e) -> e.split(",").map(parseFloat))
@@ -59,6 +60,5 @@ require.register "views/line", (exports, require, module) ->
     exit: ->
       @playing = false
       @$el.removeClass("complete playing")
-
 
   module.exports = LineView
