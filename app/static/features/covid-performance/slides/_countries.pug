@@ -6,7 +6,7 @@ svg#chart-countries(
   preserveAspectRatio="none"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-)
+)    
 
   for c, i in countries
     if isValid(c.rank)
@@ -32,14 +32,3 @@ svg#chart-countries(
           stroke-width=1
           d=toPath(c.rank)
         )
-        
-
-
-for c, i in countries
-  if isValid(c.rank)
-    svg(x="100%" y=c.rank[100] preserveAspectRatio="xMidYMid")
-      text(
-        text-anchor="end"
-        fill="white"
-      )
-        = c.name

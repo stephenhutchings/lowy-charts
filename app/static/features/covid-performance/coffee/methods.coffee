@@ -12,9 +12,10 @@ require.register "page-methods", (exports, require, module) ->
       a.classList.remove 'active'
       s.forEach (e) -> e.classList.remove 'inactive'
       
+      tooltip.innerText = ""
+      
       @hideActiveCountries()
       
     hideActiveCountries: -> 
       c = document.querySelectorAll '.country-line.active'
       c.forEach (p) -> p.classList.remove('active')
-      console.log "Hidden"
