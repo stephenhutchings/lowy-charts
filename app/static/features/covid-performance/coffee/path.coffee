@@ -1,12 +1,7 @@
 require.register "views/path", (exports, require, module) ->
-  easie = require("lib/easie")
-  active = null
   
-  interpolate = (x, y, p) ->
-    [
-      x[0] + (y[0] - x[0]) * p
-      x[1] + (y[1] - x[1]) * p
-    ]
+  easie   = require "lib/easie"
+  methods = require "page-methods"
 
   class PathView extends Backbone.View
     events:
@@ -16,7 +11,6 @@ require.register "views/path", (exports, require, module) ->
       
       @data.delay    ?= 0
       @data.duration ?= 2000
-      @data.active   ?= false
       
       cat = @data.el.dataset.category
       val = @data.el.dataset.specifier
@@ -29,42 +23,23 @@ require.register "views/path", (exports, require, module) ->
       
     activate: (e) ->
       
-      if active? then @deactivate(active) # Remove current active
-      
       p = e.parentElement
-      p.appendChild(e) # Move line to top layer
-      p.querySelectorAll('g').forEach( (g) -> if g isnt e then g.classList.add('inactive') ) # Dim siblings
+      p.appendChild e # Move line to top layer
+      p.querySelectorAll('g').forEach (g) -> if g isnt e then g.classList.add('inactive') # Dim siblings
       
-      @data.countries.map( (d) -> d.classList.add('active') ) # Show country paths
+      @data.countries.map (d) -> d.classList.add('active') # Show country paths
       
-      e.classList.add('active')
+      e.classList.add 'active'
       
-      active = e
-      
-      
-    deactivate: (e) ->
-      
-      p = e.parentElement
-      e.classList.remove('active')
-      p.querySelectorAll('.inactive').forEach( (g) -> g.classList.remove('inactive') ) # Reactivate siblings
-      
-      @data.countries.map( (d) -> d.classList.remove('active') ) # Hide country paths
-      
-      active = null
-      
-      
-    click: ->
-      
+    click: (ev) ->
       
       e = @data.el
-      a = @data.active
+      active = document.querySelector ".pathset.active"
       
-      if a then @deactivate(e) else @activate(e)
+      if active? then methods.deactivate()
+      if e isnt active then @activate(e)
       
-      console.log active
-      
-      @data.active = not a
-      
+      ev.stopPropagation()
 
 
   module.exports = PathView
