@@ -4,6 +4,7 @@
 
 - countries = data.getOne("static/features/covid-performance/data/countries")
 
+
 - scalex = [ 13, 209 ]
 - scaley = [  0, 100 ]
 - rangex = scalex[1] - scalex[0]
@@ -12,7 +13,6 @@
 #chart-wrap
   
   #chart-body
-  
 
     svg(
       width="100%"
@@ -100,27 +100,6 @@
                   transform="translate(0 7)"
                 )
                   | #{20 * i}%
-
-      // COUNTRY LINES
-      svg(
-        x="0" y="0"
-        width="100%"
-        height="100%"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      )
-      
-        for c, i in countries
-          if isValid(c.rank)
-            path.country-line.lite(
-              data-name=c.name
-              data-size=c.size
-              data-income=c.income
-              data-region=c.region
-              data-politics=c.politics
-              stroke-width=1
-              d=toPath(c.rank)
-            )
             
   #chart-labels
     

@@ -1,0 +1,45 @@
+svg#chart-countries(
+  x="0" y="0"
+  width="100%"
+  height="100%"
+  viewBox="0 0 100 100"
+  preserveAspectRatio="none"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+)
+
+  for c, i in countries
+    if isValid(c.rank)
+      
+      g
+  
+        path.country-line.transparent(
+          data-name=c.name
+          data-size=c.size
+          data-income=c.income
+          data-region=c.region
+          data-politics=c.politics
+          stroke-width=15
+          d=toPath(c.rank)
+        )  
+        
+        path.country-line.lite(
+          data-name=c.name
+          data-size=c.size
+          data-income=c.income
+          data-region=c.region
+          data-politics=c.politics
+          stroke-width=1
+          d=toPath(c.rank)
+        )
+        
+
+
+for c, i in countries
+  if isValid(c.rank)
+    svg(x="100%" y=c.rank[100] preserveAspectRatio="xMidYMid")
+      text(
+        text-anchor="end"
+        fill="white"
+      )
+        = c.name

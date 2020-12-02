@@ -1,13 +1,14 @@
 @import app/static/features/covid-performance/style/_vars.sass
 
-$n: 2
+$n: 3
 
 .pages
   height: 100% * $n
 
-.line-chart-wrap
+.line-chart-wrap  
   width: 100%
   height: 100%/$n
+  position: relative
   scroll-snap-align: start
 
 .line-chart
@@ -15,6 +16,12 @@ $n: 2
   width: 100%
   height: 100%
   z-index: 20
+  pointer-events: none
+  
+  polyline
+    pointer-events: stroke
+  .dogtag
+    pointer-events: all
   
 .pathset
   cursor: pointer
@@ -28,18 +35,25 @@ $n: 2
   &.active,
   &:hover
     opacity: 1
+
+#chart-body:hover .country-line.active
+  opacity: 0.2
     
 .country-line
   opacity: 0
-  transition: opacity 0.2s, stroke-width 0.2s
+  pointer-events: none
   
   &.active
-    opacity: 0.5
+    opacity: 0.4
+    
+  &.transparent.active
+    stroke: rgba($dark,0)
+    pointer-events: stroke
   
-  &.active:hover
-    opacity: 1
+  &.transparent:hover + &
+    opacity: 1!important
     stroke-width: 2
-
+    
 .dogtag  
   font-weight: bold
   text-transform: uppercase

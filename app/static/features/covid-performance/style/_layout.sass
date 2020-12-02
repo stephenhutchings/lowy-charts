@@ -40,7 +40,10 @@
     
 #chart-wrap
   position: relative
+  padding: 0 10rem 4.5rem
   height: 100%
+  
+#chart-countries
   padding: 0 10rem 4.5rem
   
 .pages
@@ -49,9 +52,15 @@
   > div
     margin-bottom: 4.5rem
 
-#chart-body
+#chart-body,
+#chart-countries
   position: relative
   width: 100%
   height: 100%
-  z-index: 20
+  z-index: 10
   
+#chart-countries
+  position: -webkit-sticky
+  position: sticky
+  top: 0
+  z-index: 15

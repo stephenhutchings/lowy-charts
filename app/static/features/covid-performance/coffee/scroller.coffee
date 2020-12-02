@@ -2,6 +2,7 @@ require.register "views/scroller", (exports, require, module) ->
   easie = require("lib/easie")
   utils = require("lib/utils")
   keycode  = require("lib/keycode")
+  methods  = require("page-methods")
 
   class ScrollerView extends Backbone.View
     events:
@@ -65,6 +66,8 @@ require.register "views/scroller", (exports, require, module) ->
 
       @$elements.items.removeClass("active").eq(i).addClass("active")
       @$elements.index.html(i + @data.offset)
+      
+      methods.deactivate()
 
     onKey: (e) ->
       type = keycode(e)
