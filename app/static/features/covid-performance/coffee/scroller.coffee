@@ -10,8 +10,9 @@ require.register "views/scroller", (exports, require, module) ->
       "hide": "onHide"
 
     initialize: ->
+      
       @$el.show()
-      @data = _.extend {min: 0, max: 1000, offset: 1}, @$el.data()
+      @data = _.extend {min: 0, max: 1000, offset: 0}, @$el.data()
 
       @data.support = window.CSS?.supports("scroll-snap-type: y mandatory")
 
@@ -66,8 +67,6 @@ require.register "views/scroller", (exports, require, module) ->
 
       @$elements.items.removeClass("active").eq(i).addClass("active")
       @$elements.index.html(i + @data.offset)
-      
-      methods.deactivate()
 
     onKey: (e) ->
       type = keycode(e)
@@ -82,13 +81,8 @@ require.register "views/scroller", (exports, require, module) ->
         e.preventDefault()
         @el.scrollTo top: (index + 1) * height, behavior: 'auto'
 
-    onPrev: ->
-      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      @scrollTo(index - 1)
-
-    onNext: ->
-      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      @scrollTo(index + 1)
+    onPrev: -> @scrollTo(@data.index - 1)
+    onNext: -> @scrollTo(@data.index + 1)
 
     scrollTo: (i) ->
       @$el.addClass("scrolling")
@@ -110,6 +104,9 @@ require.register "views/scroller", (exports, require, module) ->
           y: @el.scrollTop
           h: @el.offsetHeight
           index: index
+          
+        setTimeout(methods.updateText, 200)
+        methods.deactivate()
 
        if isEnd
         for child, i in @el.children

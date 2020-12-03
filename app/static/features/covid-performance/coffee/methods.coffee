@@ -1,5 +1,14 @@
 require.register "page-methods", (exports, require, module) ->
   
+  phrases      = require "data/text"
+  TextScramble = require "TextScramble"
+  
+  get = (s) -> document.querySelector s
+  
+  scramble = 
+    h: new TextScramble( get "#type-wrap h1" )
+    b: new TextScramble( get "#type-wrap p"  )
+    
   module.exports =
     
     deactivate: ->
@@ -19,3 +28,13 @@ require.register "page-methods", (exports, require, module) ->
     hideActiveCountries: -> 
       c = document.querySelectorAll '.country-line.active'
       c.forEach (p) -> p.classList.remove('active')
+      
+    updateText: ->
+      active = get(".line-chart-wrap.visible")?.dataset.name
+      console.log active
+      if active?
+        scramble.h.set(phrases[active].head)
+        scramble.b.set(phrases[active].body)
+      
+    
+    
