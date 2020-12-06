@@ -23,7 +23,7 @@ require.register "TextScramble", (exports, require, module) ->
       for i in [0..(len-1)]
         oc  = old[i] or ''
         nc  = txt[i] or ''
-        st  = mfloor( mrand() * 40 )
+        st  = mfloor( mrand() * 10 )
         end = mfloor( mrand() * 0 ) + st
         @queue.push { oc, nc, st, end }
       
