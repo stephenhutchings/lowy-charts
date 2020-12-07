@@ -1,31 +1,39 @@
 @import app/static/features/covid-performance/style/_vars.sass
 
-$n: 4
-
-.pages
-  height: 100% * $n
-
-.line-chart-wrap  
-  width: 100%
-  height: 100%/$n
-  position: relative
-  scroll-snap-align: start
-  margin: 4.5rem 0
-  padding-bottom: 4.5rem
 
 .line-chart
-  position: relative
   width: 100%
   height: 100%
   z-index: 20
   pointer-events: none
   
-  
   polyline
     pointer-events: stroke
   .dogtag
     pointer-events: all
+
+.chart-wrap
+  position: relative
+  padding: 1rem 0
+  height: 100%
+  max-height: 675px
   
+#chart-countries
+  padding: 0
+
+.chart-body,
+#chart-countries
+  position: relative
+  width: 100%
+  height: 100%
+  z-index: 10
+  
+#chart-countries
+  position: -webkit-sticky
+  position: sticky
+  top: 0
+  z-index: 15
+
 .pathset
   cursor: pointer
   opacity: 0.85
@@ -39,7 +47,7 @@ $n: 4
   &:hover
     opacity: 1
 
-#chart-body:hover .country-line.active
+.chart-body:hover .country-line.active
   opacity: 0.2
     
 .country-line
@@ -61,8 +69,18 @@ $n: 4
   font-weight: bold
   text-transform: uppercase
   font-size: 12px
+
+rect.fill-v
+
+  g:first-child &,
+  g:last-child &
+    opacity: 0.2
+    
+  g:nth-child(2) &,
+  g:nth-last-child(2) &
+    opacity: 0.5
   
-#chart-labels
+.chart-labels
   
   text-transform: uppercase
   font-weight: 500
@@ -71,13 +89,13 @@ $n: 4
   
   .x
     position: absolute
-    bottom: 2rem
-    left: 10rem
+    bottom: -1.5rem
+    left: 0
     
   .y
     position: absolute
-    top: calc(50% - 2rem)
-    right: -3rem
+    top: calc(50% - 1rem)
+    right: -12.5rem
     transform-origin: center
     transform: rotate(90deg)
     line-height: 0.8

@@ -13,11 +13,22 @@ block page
     #btn-next.btn.icon.icon-down
     #btn-fs.btn.icon.icon-expand
       
-  
-  #frame: #frame-inner(data-view="in-viewport")
-    
-    include slides/_context
-    include slides/_chart
+      
+  #scroller.inset-0(
+    data-view="scroller"
+    data-pager=".pager-page"
+    data-index="#pager-index"
+    style="display: none"
+  )
+    #scroller-inner(data-view="in-viewport")
+      //- include _intro
+      //- include slides/_countries
+      include slides/_pages
+      //- include slides/_sandbox
+      //- include slides/_outro
+      
+      //- include slides/_chart
+      //- include slides/_context
 
 
 block customScripts
@@ -26,7 +37,6 @@ block customScripts
     //include:sass _style.sass
     include:sass style/_vars.sass
     include:sass style/_base.sass
-    include:sass style/_scroll.sass
     include:sass style/_controls.sass
     include:sass style/_colors.sass
     include:sass style/_layout.sass

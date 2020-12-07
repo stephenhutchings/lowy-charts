@@ -1,4 +1,13 @@
-#frame
+@import app/static/features/covid-performance/style/_vars.sass
+
+$slides: 4
+
+#scroller 
+  overflow: auto
+  height: 100%
+  scroll-behavior: auto
+  scroll-snap-type: y mandatory
+  // -- 
   position: fixed
   display: flex
   left: 0
@@ -6,23 +15,28 @@
   right: 0
   bottom: 0
   z-index: 10
-  transition: opacity 300ms
   
-#frame-inner
+#scroller-inner
   position: relative
+  width: 95vw
+  max-width: 1400px
+  height: 100% * $slides
   display: flex
   flex-direction: column
-  width: 95vw
-  height: 100vh
-  max-height: 100vh
-  max-width: 1400px
   margin: auto
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.2)
 
-#type-wrap
-  max-width: 80%
+.slide-wrap
+  scroll-snap-align: start
   position: relative
-  padding: 4rem 0 1rem 10rem
+  height: 100% / $slides
+  width: 100%
+  margin: 4.5rem 0
+  padding: 4rem 10rem 4rem
+
+.type-wrap
+  max-width: 90%
+  position: relative
   
   h1
     font-size: 34px
@@ -37,30 +51,3 @@
     
     &:first-child
       display: block
-    
-    
-#chart-wrap
-  position: relative
-  padding: 0 10rem 4.5rem
-  height: 100%
-  max-height: 675px
-  margin-bottom: 0rem
-  
-#chart-countries
-  padding: 0 10rem 4.5rem
-  
-.pages
-  padding: 0 10rem
-
-#chart-body,
-#chart-countries
-  position: relative
-  width: 100%
-  height: 100%
-  z-index: 10
-  
-#chart-countries
-  position: -webkit-sticky
-  position: sticky
-  top: 0
-  z-index: 15

@@ -1,13 +1,13 @@
-//- include _intro
+// INTRO
 
-- cat = "politics"
-include _line
 
-- cat = "region"
-include _line
+each slide in ["politics", "region", "size", "income"]
+  .slide-wrap
+    - cat = slide
+    
+    include _context
+    include _chart
 
-- cat = "size"
-include _line
+// SANDBOX
 
-- cat = "income"
-include _line
+// CONCLUSION / METHODS

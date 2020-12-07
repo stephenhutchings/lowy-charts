@@ -2,71 +2,65 @@
 - values = data.getOne(`static/features/covid-performance/data/${cat}`).values
 - colors = data.getOne(`static/features/covid-performance/data/${cat}`).colors
 
-- scalex = [ 13, 209 ]
-- scaley = [  0, 100 ]
-- rangex = scalex[1] - scalex[0]
-- rangey = scaley[1] - scaley[0]
-
-.line-chart-wrap(data-view="in-viewport" data-name=cat)
-
-  svg.line-chart.fade-in.delay-1(
-    width="100%"
-    height="100%"    
-    data-duration=4000
-    data-view="line, in-viewport"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-  )
+svg.line-chart.fade-in.delay-1(
+  width="100%"
+  height="100%"    
+  data-name=cat
+  data-duration=4000
+  data-view="line, in-viewport"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+)
+  
+  for l, i in labels
     
-    for l, i in labels
-      
-      - split = l.split("<br>")
-      - lens  = split.map( i => i.length )
-      - len   = Math.max( ...lens )
-      
-      - h = lens.length == 1 ? 12 : 18
-      - y = lens.length == 1 ? 5 : -2
-      - w = len > 12 ? len * 8.5 : len > 11 ? len * 8 : len > 9 ? len * 8.75 : len > 7 ? len * 10 : len > 4 ? len * 11 : 44
-      - d = `M-8,-${h} l${w},0 l8,${h} l-8,${h} l-${w},0Z`
-      
-      g.pathset(
-        data-view="path"
-        data-category=cat
-        data-specifier=i
-        )
-      
-        svg.avg-lines(
-          width="100%"
-          height="100%"
-          viewBox="0 0 100 100" 
-          preserveAspectRatio="none"
-        )
-          
-          polyline.line(
-            class=colors[i]
-            stroke-width=4
-            points=(
-              values
-                .map( (s,j,a) => [ j/(a.length - 1)*100, s[i] ]
-                  .map( e => e.toFixed(2) )
-                  .join(",")
-                )
-                .join(" ")
-            )
+    - split = l.split("<br>")
+    - lens  = split.map( i => i.length )
+    - len   = Math.max( ...lens )
+    
+    - h = lens.length == 1 ? 12 : 18
+    - y = lens.length == 1 ? 5 : -2
+    - w = len > 12 ? len * 8.5 : len > 11 ? len * 8 : len > 9 ? len * 8.75 : len > 7 ? len * 10 : len > 4 ? len * 11 : 44
+    - d = `M-8,-${h} l${w},0 l8,${h} l-8,${h} l-${w},0Z`
+    
+    g.pathset(
+      data-view="path"
+      data-category=cat
+      data-specifier=i
+      )
+    
+      svg.avg-lines(
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100" 
+        preserveAspectRatio="none"
+      )
+        
+        polyline.line(
+          class=colors[i]
+          stroke-width=4
+          points=(
+            values
+              .map( (s,j,a) => [ j/(a.length - 1)*100, s[i] ]
+                .map( e => e.toFixed(2) )
+                .join(",")
+              )
+              .join(" ")
           )
-
-        svg.dogtag(
-          y=values[0][i] + "%"
-          x=-w+2
-          preserveAspectRatio="xMinYMin"
         )
-          path(
-            d=d
-            class=`fill-${colors[i]}`
-            )
-          text(x=0 y=y text-anchor="start")
-            = split[0]
-            
-            if split.length == 2
-              tspan(x=0 dy=12)
-                = split[1]
+
+      svg.dogtag(
+        y=values[0][i] + "%"
+        x=-w+2
+        preserveAspectRatio="xMinYMin"
+      )
+        path(
+          d=d
+          class=`fill-${colors[i]}`
+          )
+        text(x=0 y=y text-anchor="start")
+          = split[0]
+          
+          if split.length == 2
+            tspan(x=0 dy=12)
+              = split[1]

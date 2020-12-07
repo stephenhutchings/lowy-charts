@@ -100,7 +100,7 @@ require.register "views/scroller", (exports, require, module) ->
           h: @el.offsetHeight
           index: index
           
-        methods.updateText(index-1)
+        # methods.updateText(index-1)
         methods.deactivate()
 
        if isEnd

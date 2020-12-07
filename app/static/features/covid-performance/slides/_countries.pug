@@ -1,3 +1,9 @@
+- countries = data.getOne("static/features/covid-performance/data/countries")
+
+- toPoint = (p,i,n) => p ? [ (i/(n-1)*100).toFixed(2), p ].join(",") : ""
+- toPath  = a => a.map( (s,i) => !s ? "" : (!i || !a[i-1]) ? `M${toPoint(s,i,a.length)}` : `L${toPoint(s,i,a.length)}` ).filter( e => e != "" ).join(" ")
+- isValid = a => (_.uniq(a)).length > 1
+
 svg#chart-countries(
   x="0" y="0"
   width="100%"
@@ -6,8 +12,10 @@ svg#chart-countries(
   preserveAspectRatio="none"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-)    
+)
 
+  #tooltip
+    
   for c, i in countries
     if isValid(c.rank)
       
