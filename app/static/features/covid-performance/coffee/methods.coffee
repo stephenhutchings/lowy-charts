@@ -35,11 +35,10 @@ require.register "page-methods", (exports, require, module) ->
       active = getAll(".line-chart-wrap")[i]
       if active?
         id = active.dataset.name
-        console.log id
-        typeWrap.classList.add "txt-mid"
+        # typeWrap.classList.add "opacity-0"
         scramble.h.set(phrases[id].head)
         scramble.b.set(phrases[id].body)
-          .then () -> typeWrap.classList.remove "txt-mid"
+          # .then () -> typeWrap.classList.remove "opacity-0"
       
     
     
