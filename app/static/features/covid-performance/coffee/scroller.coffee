@@ -24,8 +24,8 @@ require.register "views/scroller", (exports, require, module) ->
       @listenTo this, "resize", @onResize
       $(document.body).on "fullscreenchange", _.bind(@setScale, this)
 
-      $("#btn-prev").click (e) => @onPrev(e)
-      $("#btn-next").click (e) => @onNext(e)
+      $("#btn-prev").click (e) => @scrollTo(@data.index - 1)
+      $("#btn-next").click (e) => @scrollTo(@data.index + 1)
       $("#btn-fs").click (e) => @onFS(e)
 
       timeout = null
@@ -81,13 +81,8 @@ require.register "views/scroller", (exports, require, module) ->
         e.preventDefault()
         @el.scrollTo top: (index + 1) * height, behavior: 'auto'
 
-    onPrev: -> @scrollTo(@data.index - 1)
-    onNext: -> @scrollTo(@data.index + 1)
-
     scrollTo: (i) ->
-      @$el.addClass("scrolling")
-      @$el.scrollTo i * @el.offsetHeight, =>
-        @$el.removeClass("scrolling")
+      @el.scrollTo top: (i) * @el.offsetHeight, behavior: 'auto'
 
     onScrollEnd: ->
       return if @inactive
@@ -105,7 +100,6 @@ require.register "views/scroller", (exports, require, module) ->
           h: @el.offsetHeight
           index: index
           
-        console.log "onScrollEnd"
         methods.updateText(index-1)
         methods.deactivate()
 
