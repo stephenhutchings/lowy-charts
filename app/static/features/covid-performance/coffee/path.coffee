@@ -16,10 +16,6 @@ require.register "views/path", (exports, require, module) ->
       val = @data.el.dataset.specifier
       
       @data.countries = [...$("[data-#{cat}=\"#{val}\"]")]
-
-    exit: ->
-      
-      console.log "Exit"
       
     activate: (e) ->
       

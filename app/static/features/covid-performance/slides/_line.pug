@@ -27,6 +27,7 @@
       - h = lens.length == 1 ? 12 : 18
       - y = lens.length == 1 ? 5 : -2
       - w = len > 11 ? len * 8 : len > 9 ? len * 8.75 : len > 7 ? len * 10 : len * 11
+      - d = `M-8,-${h} l${w},0 l8,${h} l-8,${h} l-${w},0Z`
       
       g.pathset(
         data-view="path"
@@ -59,7 +60,6 @@
           x=-w+2
           preserveAspectRatio="xMinYMin"
         )
-          - d = `M-8,-${h} l${w},0 l8,${h} l-8,${h} l-${w},0Z`
           path(
             d=d
             class=`fill-${colors[i]}`

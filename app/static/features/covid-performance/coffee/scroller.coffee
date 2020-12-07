@@ -105,7 +105,8 @@ require.register "views/scroller", (exports, require, module) ->
           h: @el.offsetHeight
           index: index
           
-        setTimeout(methods.updateText, 200)
+        console.log "onScrollEnd"
+        methods.updateText(index-1)
         methods.deactivate()
 
        if isEnd

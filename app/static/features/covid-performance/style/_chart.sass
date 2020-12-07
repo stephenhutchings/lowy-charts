@@ -1,6 +1,6 @@
 @import app/static/features/covid-performance/style/_vars.sass
 
-$n: 3
+$n: 4
 
 .pages
   height: 100% * $n
@@ -10,6 +10,8 @@ $n: 3
   height: 100%/$n
   position: relative
   scroll-snap-align: start
+  margin: 4.5rem 0
+  padding-bottom: 4.5rem
 
 .line-chart
   position: relative
@@ -17,6 +19,7 @@ $n: 3
   height: 100%
   z-index: 20
   pointer-events: none
+  
   
   polyline
     pointer-events: stroke

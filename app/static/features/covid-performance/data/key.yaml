@@ -1,11 +1,10 @@
 region:
   -
     n: 0
-    v: Americas
+    v: Asia-Pacific
   -
     n: 1
-    v: Asia-Pacific
-    
+    v: Americas
   -
     n: 2
     v: Europe

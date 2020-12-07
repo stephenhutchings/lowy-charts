@@ -4,6 +4,7 @@ require.register "page-methods", (exports, require, module) ->
   TextScramble = require "TextScramble"
   
   get = (s) -> document.querySelector s
+  getAll = (s) -> document.querySelectorAll s
   
   typeWrap = get "#type-wrap"
   scramble = 
@@ -30,10 +31,11 @@ require.register "page-methods", (exports, require, module) ->
       c = document.querySelectorAll '.country-line.active'
       c.forEach (p) -> p.classList.remove('active')
       
-    updateText: ->
-      active = get(".line-chart-wrap.visible")
+    updateText: (i) ->
+      active = getAll(".line-chart-wrap")[i]
       if active?
         id = active.dataset.name
+        console.log id
         typeWrap.classList.add "txt-mid"
         scramble.h.set(phrases[id].head)
         scramble.b.set(phrases[id].body)
