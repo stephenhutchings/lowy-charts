@@ -12,7 +12,7 @@ block append config
 block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
-      .chart-title= chart.title
+      .chart-title!= chart.title
       .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
