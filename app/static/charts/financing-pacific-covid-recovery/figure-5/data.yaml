@@ -12,8 +12,8 @@ subtitle: >
 
 axes:
   minY: 0
-  maxY: 5
-  stepsY: 6
+  maxY: 4
+  stepsY: 5
   rotateX: false
   percentage: true
   minorLines: true

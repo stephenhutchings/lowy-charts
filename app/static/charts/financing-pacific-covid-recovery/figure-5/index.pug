@@ -33,7 +33,7 @@ block page
                 text(text-anchor="end" transform="translate(-8 4)")
                   = minY + range*(i/steps) + (axes.percentage ? "%" : "")
             svg(y="50%")
-              text.y-label Annual servicing cost, %GDP                
+              text.y-label Annual servicing cost, % of GDP                
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -72,14 +72,31 @@ block page
                       width="100%"
                       fill=chart.colors[chart.series[ci].color]
                     )
-                    text.chart-value(
-                      x="50%"
-                      y=toPercent(y - fy(v/2))
-                      text-anchor="middle"
-                      transform="translate(0 4.5)"
-                      style="color: white"
-                    )
-                      = v > 0.2 ? v.toFixed(1) + (axes.percentage ? "%" : "") : ""
+                    
+                    if v > 0.1
+                      
+                      text.chart-value(
+                        x="50%"
+                        y=toPercent(y - fy(v/2))
+                        text-anchor="middle"
+                        transform="translate(0 4.5)"
+                        style="color: white"
+                      )= v.toFixed(1) + (axes.percentage ? "%" : "")
+                      
+                    else
+                      
+                      g.callout
+                        line(
+                          x1="100%" x2="118%" y1="100%" y2="100%"
+                          stroke=chart.colors[chart.series[ci].color]
+                          transform="translate(0 -4)"
+                          )
+                        text.chart-value(
+                          x="120%"
+                          y=toPercent(y - fy(v/2))
+                          text-anchor="start"
+                          style=`color: ${chart.colors[chart.series[ci].color]};`
+                        )= v.toFixed(1) + "%"
 
                   - y -= fy(v)
                     
@@ -140,7 +157,7 @@ block append css
         padding: 4px 16px 4px 24px
         
       .y-label
-        transform: rotate(-90deg) translate(-5rem, -3rem)
+        transform: rotate(-90deg) translate(-6rem, -3rem)
 
       .legend
         font-size: 15px
@@ -172,12 +189,14 @@ block append css
         margin-left: 2em
         font-size: 15px
         
-      .chart-value
+      .chart-value,
+      .callout
         opacity: 0
         transition-duration: .4s
         pointer-events: none
-      
-      .chart-content:hover .chart-value
+        
+      .chart-content:hover .chart-value,
+      .chart-content:hover .callout
         opacity: 1
 
       @media (max-width: 700px)

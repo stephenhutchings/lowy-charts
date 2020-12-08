@@ -43,7 +43,7 @@ series:
       - 2030
 
   -
-    title: Post-COVID trajectory
+    title: Post-COVID baseline
     color: "red"
     widen: false
     dashed: false
