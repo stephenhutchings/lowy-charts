@@ -1,0 +1,42 @@
+title: >
+  Figure 2: A limited fiscal response to COVID-19 in the Pacific
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Additional government spending compared to pre-crisis budget, % of GDP
+
+axes:
+  minY:  0
+  maxY: 10
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [1, 3] # Index of dotted gridlines
+
+series:
+  -
+    title: Fiscal Response
+    values:
+      - PNG
+      - Fiji
+      - Samoa
+      - Solomon Islands
+      - Vanuatu
+      - Tonga
+      
+  -
+    title: Series
+    color: "dark"
+    values:
+      - 0.6
+      - 0.8
+      - 1.6
+      - 3.6
+      - 3.7
+      - 6.0
