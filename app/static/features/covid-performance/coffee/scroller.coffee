@@ -12,7 +12,7 @@ require.register "views/scroller", (exports, require, module) ->
     initialize: ->
       
       @$el.show()
-      @data = _.extend {min: 0, max: 1000, offset: 0}, @$el.data()
+      @data = _.extend {min: 0, max: 1000, offset: 1}, @$el.data()
 
       @data.support = window.CSS?.supports("scroll-snap-type: y mandatory")
 
@@ -82,7 +82,7 @@ require.register "views/scroller", (exports, require, module) ->
         @el.scrollTo top: (index + 1) * height, behavior: 'auto'
 
     scrollTo: (i) ->
-      @el.scrollTo top: (i) * @el.offsetHeight, behavior: 'auto'
+      @el.scrollTo top: (i) * @el.offsetHeight, behavior: 'smooth'
 
     onScrollEnd: ->
       return if @inactive
@@ -100,7 +100,7 @@ require.register "views/scroller", (exports, require, module) ->
           h: @el.offsetHeight
           index: index
           
-        # methods.updateText(index-1)
+        # $("#chart-countries")
         methods.deactivate()
 
        if isEnd

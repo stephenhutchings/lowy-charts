@@ -24,6 +24,8 @@ require.register "views/line", (exports, require, module) ->
 
 
     enter: ->
+      console.log @$el
+      
       now = Date.now() + @data.delay
       @playing = true
 

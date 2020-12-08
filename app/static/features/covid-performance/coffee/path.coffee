@@ -6,6 +6,7 @@ require.register "views/path", (exports, require, module) ->
   class PathView extends Backbone.View
     events:
       "click": "click"
+      "mouseover": "append"
 
     initialize: (@data) ->
       
@@ -17,10 +18,18 @@ require.register "views/path", (exports, require, module) ->
       
       @data.countries = [...$("[data-#{cat}=\"#{val}\"]")]
       
-    activate: (e) ->
+    append: (event, e, p) ->
+      # Move line to top layer
+      e ?= @data.el
+      p ?= e.parentElement
+      p.appendChild e
       
+    activate: (ev) ->
+      
+      e = @data.el
       p = e.parentElement
-      p.appendChild e # Move line to top layer
+      @append(0,e,p)
+      
       p.querySelectorAll('g').forEach (g) -> if g isnt e then g.classList.add('inactive') # Dim siblings
       
       @data.countries.map (d) -> d.classList.add('active') # Show country paths
