@@ -12,12 +12,12 @@ subtitle: >
 
 axes:
   minY:  0
-  maxY: 10
-  stepsY: 6
+  maxY: 7
+  stepsY: 8
   rotateX: false
   percentage: true
-  minorLines: false
-  dotted: [1, 3] # Index of dotted gridlines
+  minorLines: true
+  dotted: [1,3,5,7] # Index of dotted gridlines
 
 series:
   -

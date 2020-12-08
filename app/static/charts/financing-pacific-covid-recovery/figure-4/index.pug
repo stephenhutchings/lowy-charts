@@ -42,7 +42,7 @@ block page
               for n, i in new Array(steps)
                 - y = (i / steps)
                 svg
-                  line(
+                  line.gridlines(
                     x1="0%"
                     y1=toPercent(y)
                     x2="100%"
@@ -95,8 +95,8 @@ block page
                   })).filter( e => e ).join(",")
                 )
                 
-          line(x1="65%" y1="71%" x2="65%" y2="46%" stroke="gray")
-          text(x="65%" y="75%" text-anchor="middle" style="font-style: italic; fill: gray") With recovery package
+          line(x1="65%" y1="78%" x2="65%" y2="46%" stroke="gray")
+          text(x="65%" y="82%" text-anchor="middle" style="font-style: italic; fill: gray") With recovery package
           
           for item, i in chart.series
             g
@@ -124,11 +124,12 @@ block page
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
-          for ax, i in new Array(chart.series.length)
-            if i==1 || i==2
+          - l = chart.series.length
+          for ax, i in new Array(l)
+            if (l-i)==1 || (l-i)==2
               li.legend-item
-                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
-                span.legend-item-label= chart.series[i].title
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[l-i].color]}`)
+                span.legend-item-label= chart.series[l-i].title
 
       //- .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       //- .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
@@ -229,9 +230,15 @@ block append css
       circle
         opacity: 0
         transition-duration: .4s
+        
+      .gridlines
+        transition-duration: .4s
       
+      .chart-content:hover .gridlines
+        opacity: 0
+
       .chart-content:hover .chart-value,
-      .chart-content:hover circle
+      .chart-content:hover circle,
         opacity: 1
 
       @media (max-width: 700px)

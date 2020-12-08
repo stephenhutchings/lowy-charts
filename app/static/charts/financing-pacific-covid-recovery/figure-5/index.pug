@@ -14,7 +14,6 @@ block page
       .chart-title!= chart.title
       .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
-        - console.log(chart)
         - ln = chart.series[0].values.length
         - axes = chart.axes
         - minY = axes.minY
@@ -33,6 +32,8 @@ block page
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
                   = minY + range*(i/steps) + (axes.percentage ? "%" : "")
+            svg(y="50%")
+              text.y-label Annual servicing cost, %GDP                
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -115,7 +116,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 50px
+        left: 65px
         right: 20px
         bottom: 40px
 
@@ -137,6 +138,9 @@ block append css
         list-style: none
         margin: 0
         padding: 4px 16px 4px 24px
+        
+      .y-label
+        transform: rotate(-90deg) translate(-5rem, -3rem)
 
       .legend
         font-size: 15px
