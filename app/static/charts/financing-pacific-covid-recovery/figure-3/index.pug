@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/financing-pacific-covid-recovery/figure-1/data"
+  - var datapath = "static/charts/financing-pacific-covid-recovery/figure-3/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -53,7 +53,7 @@ block page
 
           // X-Axis labels
           for x, i in chart.series[0].values
-            if [2010,2015,2020,2025].includes(x)
+            if [2015,2020,2025,2030].includes(x)
               svg.x-label(x=toPercent(fx(i)) y="100%")
                 text(
                   text-anchor=axes.rotateX ? "end" : "middle"
@@ -64,7 +64,7 @@ block page
           if !isEmpty(axes.guideLine)
             - var y = 100*fy(maxY + minY - axes.guideLine)+"%"
             line(
-              x1="0" y1=y x2="100" y2=y
+              x1="0" y1=y x2="100%" y2=y
               stroke="#333"
               stroke-width=.25
               stroke-dasharray=(false ? 1 : "")
@@ -94,18 +94,21 @@ block page
                     ].join(" ");
                   })).filter( e => e ).join(",")
                 )
-      
+                
+          line(x1="65%" y1="71%" x2="65%" y2="46%" stroke="gray")
+          text(x="65%" y="75%" text-anchor="middle" style="font-style: italic; fill: gray") With recovery package
+          
           for item, i in chart.series
             g
               for val, ix in item.values
-                if false
+                if true
                   circle(
-                    r=7
+                    r=3
                     cx=toPercent(fx(ix))
                     cy=toPercent(fy(maxY + minY - val))
                     fill=chart.colors[chart.series[i].color]
                     stroke='#fff'
-                    stroke-width=0
+                    stroke-width=1
                   )
                 svg.chart-value(
                   x=toPercent(fx(ix))
@@ -113,11 +116,11 @@ block page
                   style=`color: ${chart.colors[chart.series[i].color]}`
                 )
                   text(
-                    y=((i+1) % 2 == 0 ? -12 : 24)
+                    y=( (i != 1) && !(i==3 && [11,12].includes(ix)) ? -12 : 24)
                     text-anchor="middle"
                     fill=chart.colors[chart.series[i].color]
                   )
-                    = val ? val.toFixed(1) : ""
+                    = val && !( i==3 && ([5,6,13,14,15].includes(ix)) ) && !(i==1 && ix==4) ? val.toFixed(1) : ""
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -222,8 +225,13 @@ block append css
         opacity: 0
         transition-duration: .4s
         pointer-events: none
+        
+      circle
+        opacity: 0
+        transition-duration: .4s
       
-      .chart-content:hover .chart-value
+      .chart-content:hover .chart-value,
+      .chart-content:hover circle
         opacity: 1
 
       @media (max-width: 700px)
@@ -235,7 +243,7 @@ block append css
         text
           font-size: 13px
           
-      @media (max-width: 450px)
+      @media (max-width: 500px)
         .chart-content
           bottom: 40px
         .legend

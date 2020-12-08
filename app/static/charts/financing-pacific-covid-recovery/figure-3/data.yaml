@@ -1,0 +1,112 @@
+title: >
+  Figure 3: Pacific recovery – baseline vs stimulus
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Real GDP per capita, indexed (2019 = 100)
+
+axes:
+  minY:  80
+  maxY: 120
+  stepsY: 9
+  rotateX: false
+  percentage: false
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: "" # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+      - 2022
+      - 2023
+      - 2024
+      - 2025
+      - 2026
+      - 2027
+      - 2028
+      - 2029
+      - 2030
+
+  -
+    title: Post-COVID trajectory
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      - null
+      - null
+      - null
+      - null
+      - 100.000
+      - 91.963
+      - 92.524
+      - 94.224
+      - 95.544
+      - 96.475
+      - 97.414
+      - 98.603
+      - 99.789
+      - 101.018
+      - 102.306
+      - 103.629
+
+  -
+    title: Pre-COVID trajectory
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 96.306
+      - 98.247
+      - 100.028
+      - 98.439
+      - 100.000
+      - 100.750
+      - 101.431
+      - 102.505
+      - 103.812
+      - 105.242
+      - 106.623
+      - 107.925
+      - 109.224
+      - 110.570
+      - 111.980
+      - 113.430
+      
+  -
+    title: With recovery package
+    color: "dark"
+    widen: false
+    dashed: true
+    values:
+      - null
+      - null
+      - null
+      - null
+      - 100.000
+      - 91.963
+      - 92.524
+      - 94.788
+      - 97.278
+      - 100.016
+      - 102.831
+      - 105.985
+      - 108.565
+      - 110.573
+      - 111.983
+      - 113.432
