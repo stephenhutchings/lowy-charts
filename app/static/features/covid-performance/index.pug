@@ -8,7 +8,8 @@ block page
   #controls.p-xs.txt-ff
     #pager-progress
       span#pager-index 1
-      span#pager-total &ensp;/&ensp;4
+      span &ensp;/&ensp;
+      span#pager-total
     #btn-prev.btn.icon.icon-up
     #btn-next.btn.icon.icon-down
     #btn-fs.btn.icon.icon-expand
@@ -21,14 +22,7 @@ block page
     style="display: none"
   )
     #scroller-inner
-      //- include slides/_intro
-      include slides/_pages
-      //- include slides/_sandbox
-      //- include slides/_outro
-      
-      //- include slides/_chart
-      //- include slides/_context
-
+      include slides/_slides
 
 block customScripts
   

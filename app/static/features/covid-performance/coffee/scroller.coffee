@@ -20,6 +20,8 @@ require.register "views/scroller", (exports, require, module) ->
         pager: $(@$el.data("pager"))
         index: $(@$el.data("index"))
         items: $(".pager-item")
+        
+      $("#pager-total").html($('.slide-wrap').length)
 
       @listenTo this, "resize", @onResize
       $(document.body).on "fullscreenchange", _.bind(@setScale, this)
