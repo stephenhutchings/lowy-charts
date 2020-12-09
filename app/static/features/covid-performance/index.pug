@@ -14,15 +14,21 @@ block page
     #btn-next.btn.icon.icon-down
     #btn-fs.btn.icon.icon-expand
       
-      
   #scroller.inset-0(
     data-view="scroller"
     data-pager=".pager-page"
     data-index="#pager-index"
-    style="display: none"
   )
     #scroller-inner
       include slides/_slides
+
+  #modal
+    .absolute.btn-close
+    #modal-inner 
+      span.name.txt-bold Title
+      | &ensp;
+      span.text Region ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 block customScripts
   
@@ -34,6 +40,7 @@ block customScripts
     include:sass style/_colors.sass
     include:sass style/_layout.sass
     include:sass style/_chart.sass
+    include:sass style/_scroll.sass
     include:sass style/_transitions.sass
 
   script(type="text/javascript")
@@ -43,5 +50,5 @@ block customScripts
     include:coffee coffee/methods.coffee
     include:coffee coffee/line.coffee
     include:coffee coffee/path.coffee
-    include:coffee coffee/type.coffee
+    //- include:coffee coffee/type.coffee
     include:coffee coffee/data-text.coffee

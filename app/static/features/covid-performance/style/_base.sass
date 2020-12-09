@@ -9,15 +9,15 @@ body.embed-false
   font-family: Sans, sans-serif
   background-color: $dark
   color: white
-  
+  // for Firefox
+  scrollbar-face-color: $dark 
+  scrollbar-track-color: $dark
+
 *
   box-sizing: border-box
   
 svg
   overflow: visible
-
-::-webkit-scrollbar
-  display: none
 
 h1
   font-family: 'Sans', sans-serif
@@ -62,6 +62,20 @@ h1
     
     .slide-0 &
       opacity: 1
+
+  
+.btn-close
+  cursor: pointer
+  transition-duration: 0.3s
+  transform: rotate(90deg) scale(1, 1.2)
+  
+  &::before
+    content: "×"
+    content: "‣"
+  
+  &:hover
+    transform: rotate(90deg) translateX(2px) scale(1, 1.1)
+    
       
 .absolute
   position: absolute
@@ -74,8 +88,7 @@ h1
 .capitalise
   text-transform: capitalize
 .pointer
-  cursor: pointer
-  
+  cursor: pointer  
 .inset-0
   top: 0
   left: 0

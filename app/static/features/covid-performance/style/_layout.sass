@@ -25,6 +25,34 @@ $slides: 8
   flex-direction: column
   margin: auto
 
+#modal
+  position: fixed
+  width: 60%
+  left: 20%
+  bottom: 0
+  background: rgba(255,255,255,0.8)
+  color: $dark
+  z-index: 100
+  border-radius: 3px 3px 0 0
+  transition: all 0.2s
+  max-height: 0
+  
+  &.active
+    max-height: 150px
+  
+  .btn-close
+    font-size: 2rem
+    top: -0.25rem
+    right: 0.5rem
+    font-weight: 700
+    opacity: 0.5
+    
+#modal-inner
+  padding: 1.5rem
+  max-height: inherit
+  overflow-y: scroll
+  
+  
 .slide-wrap
   display: flex
   position: relative

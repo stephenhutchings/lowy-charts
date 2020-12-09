@@ -12,6 +12,7 @@ $(document).ready =>
   chartArea = getAll ".line-chart-wrap"
   countries = getAll ".country-line.transparent"
   tooltip   = get "#tooltip"
+  modalBtn  = get "#modal .btn-close"
   
   # State
   vh = document.documentElement.clientHeight
@@ -20,3 +21,7 @@ $(document).ready =>
   body.addEventListener 'click', (e) -> methods.deactivate()
   chartArea.forEach (el) -> el.addEventListener 'click', (e) -> e.stopPropagation()
   countries.forEach (el) -> el.addEventListener 'mouseover', (e) -> tooltip.innerText = this.dataset.name
+
+  modalBtn.addEventListener 'click', (e) -> 
+    modalBtn.parentElement.classList.toggle 'active'
+    e.stopPropagation()

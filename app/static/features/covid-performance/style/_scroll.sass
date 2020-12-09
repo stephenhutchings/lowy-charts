@@ -1,0 +1,20 @@
+@import app/static/features/covid-performance/style/_vars.sass
+
+body::-webkit-scrollbar,
+#scroller::-webkit-scrollbar
+  display: none
+
+#modal-inner
+  
+  &::-webkit-scrollbar
+    width: 4px
+    
+  &::-webkit-scrollbar-thumb
+    background: $red
+    border-radius: 5px
+    
+    &:window-inactive
+      background: $dark
+
+  &::-webkit-scrollbar-track
+    background: none
