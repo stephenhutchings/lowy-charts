@@ -100,7 +100,6 @@ require.register "views/scroller", (exports, require, module) ->
           h: @el.offsetHeight
           index: index
           
-        # $("#chart-countries")
         methods.deactivate()
 
        if isEnd
