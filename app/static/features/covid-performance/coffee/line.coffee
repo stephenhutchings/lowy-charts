@@ -25,7 +25,7 @@ require.register "views/line", (exports, require, module) ->
 
 
     enter: ->
-      console.log @$el
+      
       
       now = Date.now() + @data.delay
       @playing = true
@@ -58,6 +58,13 @@ require.register "views/line", (exports, require, module) ->
         else if @playing
           @$el.removeClass("playing").addClass("complete")
           @playing = false
+
+      
+      # HIDE AND MOVE COUNTRY LINES TO THE VISIBLE CHART ------
+      $('.country-line.active').each (i,c) -> c.classList.remove 'active'
+      @$el.parents('.chart-body').append $("#chart-countries"), $("#tooltip")
+      # -------------------------------------------------------
+
 
     exit: ->
       @playing = false
