@@ -1,3 +1,19 @@
-.slide-wrap
+.slide-wrap.sandbox
+  
   h1 Sandbox
-  p Options the command will insert Lorem Ipsum text with no word wrapping
+  p.inline 
+    label(for="country-input")  Search for countries to reveal on the chart.
+    input#country-input(type="text" name="country-input" placeholder="e.g. Australia")
+  
+  .pv-sm
+    
+  .active-country-list
+    .txt-tu.txt-sm Active countries
+    ul
+      li USA
+      li Australia
+      li India
+
+    
+  - cat="politics"  
+  include _chart
