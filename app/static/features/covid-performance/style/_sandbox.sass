@@ -68,19 +68,26 @@
   .open .combo-menu
     display: block
     
-  .combo-option
+  .option
     padding: 0.25em 0.5em
     cursor: default
     
-  .combo-option:hover
+  .option:hover
     background-color: rgba($hl,0.25)
     
-  .combo-option.option-current,
-  .combo-option.option-selected
+  .option.option-current,
+  .option.option-selected
     background-color: $hl
     
-
+  .option.disabled
+    background-color: $dark!important
+    // pointer-events: none
+    color: gray
     
+    &:after
+      font-style: italic
+      font-weight: 300
+      content: '  (data unavailable)'
     
   .selected-options
     margin: 0

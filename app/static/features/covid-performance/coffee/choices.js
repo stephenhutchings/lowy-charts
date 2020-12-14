@@ -2,8 +2,9 @@
 
 // ---------------- helpers & definitions ----------------- //
 
-// init combo
-const options = ['Apple', 'Banana', 'Blueberry', 'Boysenberry', 'Cherry', 'Durian', 'Eggplant', 'Fig', 'Grape', 'Guava', 'Huckleberry'];
+const options = ["Australia","Austria","Bahrain","Bangladesh","Belarus","Belgium","Bolivia","Brazil","Bulgaria","Canada","Chile","China","Colombia","Costa Rica","Cote d'Ivoire","Croatia","Cyprus","Czech Republic","Democratic Republic of Congo","Denmark","Dominican Republic","El Salvador","Estonia","Ethiopia","Finland","France","Germany","Ghana","Greece","Guatemala","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Kazakhstan","Kenya","Kuwait","Latvia","Libya","Lithuania","Luxembourg","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Malta","Mexico","Morocco","Mozambique","Myanmar","Namibia","Nepal","Netherlands","New Zealand","Nigeria","Norway","Oman","Pakistan","Panama","Paraguay","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saudi Arabia","Senegal","Serbia","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","Sweden","Switzerland","Taiwan","Thailand","Togo","Trinidad and Tobago","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Vietnam","Zambia","Zimbabwe"]
+
+const optionUnavailable = ["China","Luxembourg"]
 
 const Keys = {
   Backspace: 'Backspace',
@@ -177,9 +178,11 @@ Multiselect.prototype.init = function() {
    const optionEl = document.createElement('div');
    optionEl.setAttribute('role', 'option');
    optionEl.id = `${this.idBase}-${index}`;
-   optionEl.className = index === 0 ? 'combo-option option-current' : 'combo-option';
+   optionEl.className = index === 0 ? 'option option-current' : 'option';
    optionEl.setAttribute('aria-selected', 'false');
    optionEl.innerText = option;
+   
+   optionUnavailable.includes(option) ? optionEl.classList.add('disabled') : "";
 
    optionEl.addEventListener('click', () => { this.onOptionClick(index); });
    optionEl.addEventListener('mousedown', this.onOptionMouseDown.bind(this));
@@ -285,6 +288,9 @@ Multiselect.prototype.selectOption = function(index) {
 
  // update aria-selected
  const options = this.el.querySelectorAll('[role=option]');
+ 
+ if ( options[index].classList.contains('disabled') ) { return; }
+ 
  options[index].setAttribute('aria-selected', 'true');
  options[index].classList.add('option-selected');
 
