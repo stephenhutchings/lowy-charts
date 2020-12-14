@@ -1,43 +1,44 @@
-region:
-  -
-    n: 0
-    v: Asia-Pacific
-  -
-    n: 1
-    v: Americas
-  -
-    n: 2
-    v: Europe
-  -
-    n: 3
-    v: Middle East & Africa
-politics:
-  -
-    n: 0
-    v: Authoritarian
-  -
-    n: 1
-    v: Hybrid
-  -
-    n: 2
-    v: Democracy
-size:
-  -
-    n: 0
-    v: Small
-  -
-    n: 1
-    v: Medium
-  -
-    n: 2
-    v: Large
-income:
-  -
-    n: 0
-    v: Low
-  -
-    n: 1
-    v: Middle
-  -
-    n: 2
-    v: High
+-
+  region:
+    -
+      n: 0
+      v: Asia-Pacific
+    -
+      n: 1
+      v: Americas
+    -
+      n: 2
+      v: Europe
+    -
+      n: 3
+      v: Middle East & Africa
+  politics:
+    -
+      n: 0
+      v: Authoritarian
+    -
+      n: 1
+      v: Hybrid
+    -
+      n: 2
+      v: Democracy
+  size:
+    -
+      n: 0
+      v: Small
+    -
+      n: 1
+      v: Medium
+    -
+      n: 2
+      v: Large
+  income:
+    -
+      n: 0
+      v: Low
+    -
+      n: 1
+      v: Middle
+    -
+      n: 2
+      v: High

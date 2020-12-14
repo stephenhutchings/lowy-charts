@@ -1,19 +1,40 @@
+- keys = data.getOne(`static/features/covid-performance/data/key`)[0]
+
 .slide-wrap.sandbox
   
-  h1 Sandbox
-  p.inline 
-    label(for="country-input")  Search for countries to reveal on the chart.
-    input#country-input(type="text" name="country-input" placeholder="e.g. Australia")
-  
-  .pv-sm
+  h1 Explore data
+  p Drill down into the performance of individual countries and compare categories on a single chart.
     
-  .active-country-list
-    .txt-tu.txt-sm Active countries
-    ul
-      li USA
-      li Australia
-      li India
-
+  .active-category-list  
+    each key, i in keys
+      .category
+        .txt-tu.txt-xs= i
+        .items
+          each item, j in key
+            input.tgl(type="checkbox" id=`${i}-${j}`)
+            label.tgl-btn(for=`${i}-${j}`)= item.v
+  
     
   - cat="politics"  
   include _chart
+
+  //- .txt-tu.txt-xs Countries
+  .active-country-list  
+        
+    label#combo3-label.combo-label
+    span#combo3-remove(style='display: none') remove
+    // used as descriptive text for option buttons; if used within the button text itself, it ends up being read with the input name
+    ul#combo3-selected.selected-options
+    .js-multiselect
+      input#combo3.combo-input(
+        aria-activedescendant=''
+        aria-autocomplete='none'
+        aria-controls='listbox3'
+        aria-expanded='false'
+        aria-haspopup='listbox'
+        aria-labelledby='combo3-label combo3-selected'
+        role='combobox'
+        type='text'
+        placeholder="Start typing to activate countries ..."
+      )
+      #listbox3.combo-menu(role='listbox')
