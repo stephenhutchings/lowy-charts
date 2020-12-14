@@ -30,7 +30,6 @@ require.register "views/path", (exports, require, module) ->
       
       e = @data.el
       p = e.parentElement
-      # @append(0,e,p)
       
       p.querySelectorAll('g').forEach (g) -> if g isnt e then g.classList.add('inactive') # Dim siblings
       

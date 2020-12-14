@@ -3,9 +3,9 @@
 .slide-wrap.sandbox
   
   h1 Explore data
-  p Drill down into the performance of individual countries and compare categories on a single chart.
+  p Drill down into the performance of individual countries on a single chart.
     
-  .active-category-list  
+  //.active-category-list  
     each key, i in keys
       .category
         .txt-tu.txt-xs= i
@@ -15,7 +15,7 @@
             label.tgl-btn(for=`${i}-${j}`)= item.v
   
     
-  - cat="politics"  
+  - cat = null
   include _chart
 
   //- .txt-tu.txt-xs Countries
@@ -35,6 +35,6 @@
         aria-labelledby='combo3-label combo3-selected'
         role='combobox'
         type='text'
-        placeholder="Start typing to activate countries ..."
+        placeholder="Start typing to activate countries ... (max 6)"
       )
       #listbox3.combo-menu(role='listbox')

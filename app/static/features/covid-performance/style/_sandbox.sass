@@ -75,13 +75,14 @@
   .option:hover
     background-color: rgba($hl,0.25)
     
-  .option.option-current,
-  .option.option-selected
+  .option.option-current
     background-color: $hl
+
+  .option.option-selected
+    opacity: 0.5
     
   .option.disabled
     background-color: $dark!important
-    // pointer-events: none
     color: gray
     
     &:after

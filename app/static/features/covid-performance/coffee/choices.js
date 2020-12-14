@@ -6,6 +6,8 @@ const options = ["Australia","Austria","Bahrain","Bangladesh","Belarus","Belgium
 
 const optionUnavailable = ["China","Luxembourg"]
 
+var activeList = []
+
 const Keys = {
   Backspace: 'Backspace',
   Clear: 'Clear',
@@ -313,13 +315,20 @@ Multiselect.prototype.updateOption = function(index) {
  const optionEl = this.el.querySelectorAll('[role=option]')[index];
  const isSelected = optionEl.getAttribute('aria-selected') === 'true';
 
- if (isSelected) {
+ if (isSelected) { 
    this.removeOption(index);
  }
 
- else {
+ else { 
    this.selectOption(index);
+   activeList.push(optionEl.innerHTML)
  }
+ 
+ console.log( activeList )
+ 
+ let l = document.querySelectorAll(`[data-name=${optionEl.innerHTML}]`)
+ 
+ l.forEach( e => e.classList.add('active','thicker') )
 
  this.inputEl.value = '';
 }
@@ -330,6 +339,7 @@ Multiselect.prototype.updateMenuState = function(open, callFocus = true) {
  this.inputEl.setAttribute('aria-expanded', `${open}`);
  open ? this.el.classList.add('open') : this.el.classList.remove('open');
  callFocus && this.inputEl.focus();
+ 
 }
 
 // init multiselect
