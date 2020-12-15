@@ -5,6 +5,7 @@
 const options = ["Australia","Austria","Bahrain","Bangladesh","Belarus","Belgium","Bolivia","Brazil","Bulgaria","Canada","Chile","China","Colombia","Costa Rica","Cote d'Ivoire","Croatia","Cyprus","Czech Republic","Democratic Republic of Congo","Denmark","Dominican Republic","El Salvador","Estonia","Ethiopia","Finland","France","Germany","Ghana","Greece","Guatemala","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Kazakhstan","Kenya","Kuwait","Latvia","Libya","Lithuania","Luxembourg","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Malta","Mexico","Morocco","Mozambique","Myanmar","Namibia","Nepal","Netherlands","New Zealand","Nigeria","Norway","Oman","Pakistan","Panama","Paraguay","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saudi Arabia","Senegal","Serbia","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","Sweden","Switzerland","Taiwan","Thailand","Togo","Trinidad and Tobago","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Vietnam","Zambia","Zimbabwe"]
 
 const optionUnavailable = ["China","Luxembourg"]
+const classes = [".blue-1, .blue-2, .blue-3",".blue-4",".fff"]
 
 var activeList = []
 
@@ -172,7 +173,7 @@ const Multiselect = function(el, options) {
 Multiselect.prototype.init = function() {
  this.inputEl.addEventListener('input', this.onInput.bind(this));
  this.inputEl.addEventListener('blur', this.onInputBlur.bind(this));
- this.inputEl.addEventListener('click', () => this.updateMenuState(true));
+ // this.inputEl.addEventListener('click', () => this.updateMenuState(true));
  this.inputEl.addEventListener('keydown', this.onInputKeyDown.bind(this));
  this.listboxEl.addEventListener('blur', this.onInputBlur.bind(this));
 
@@ -196,6 +197,9 @@ Multiselect.prototype.init = function() {
 Multiselect.prototype.onInput = function() {
  const curValue = this.inputEl.value;
  const matches = filterOptions(this.options, curValue);
+ 
+ if (curValue.length == 0) { this.updateMenuState(false, false); }
+ else { this.updateMenuState(true); }
 
  // set activeIndex to first matching option
  // (or leave it alone, if the active option is already in the matching set)
@@ -203,11 +207,7 @@ Multiselect.prototype.onInput = function() {
  if (matches.length > 0 && !filterCurrentOption.length) {
    this.onOptionChange(this.options.indexOf(matches[0]));
  }
-
- const menuState = this.options.length > 0;
- if (this.open !== menuState) {
-   this.updateMenuState(menuState, false);
- }
+ 
 }
 
 Multiselect.prototype.onInputKeyDown = function(event) {
@@ -279,8 +279,15 @@ Multiselect.prototype.removeOption = function(index) {
  options[index].setAttribute('aria-selected', 'false');
  options[index].classList.remove('option-selected');
 
- // remove button
+ // Update chart lines
  const buttonEl = document.getElementById(`${this.idBase}-remove-${index}`);
+ const countryName = buttonEl.innerHTML.trim()
+ i = activeList.indexOf(countryName)
+ activeList.splice(i, 1)
+ this.updateLines(countryName, false)
+ console.log( activeList )
+ 
+ // remove button
  this.selectedEl.removeChild(buttonEl.parentElement);
 }
 
@@ -308,29 +315,55 @@ Multiselect.prototype.selectOption = function(index) {
 
  listItem.appendChild(buttonEl);
  this.selectedEl.appendChild(listItem);
+
 }
 
 Multiselect.prototype.updateOption = function(index) {
+ let i
  const option = this.options[index];
  const optionEl = this.el.querySelectorAll('[role=option]')[index];
  const isSelected = optionEl.getAttribute('aria-selected') === 'true';
+ const countryName = optionEl.innerHTML;
 
  if (isSelected) { 
-   this.removeOption(index);
+   this.removeOption(index)
  }
 
- else { 
-   this.selectOption(index);
-   activeList.push(optionEl.innerHTML)
+ else {
+   if (activeList.length < 5) {
+     this.selectOption(index);
+     activeList.push(countryName)
+     this.updateLines(countryName, true);
+   }
+   else {
+     // Flash placeholder text.
+     for ( i=0; i<=600; i+=150 ) {
+      setTimeout(() =>  this.inputEl.style.setProperty("--c", "#f7434c"), i);
+      setTimeout(() =>  this.inputEl.style.setProperty("--c", "gray"), i+75);
+     }
+   }
  }
- 
- console.log( activeList )
- 
- let l = document.querySelectorAll(`[data-name=${optionEl.innerHTML}]`)
- 
- l.forEach( e => e.classList.add('active','thicker') )
 
  this.inputEl.value = '';
+ this.updateMenuState(false);
+ console.log( activeList )
+ 
+}
+
+Multiselect.prototype.updateLines = function(country, add) {
+  
+  lines = document.querySelectorAll(`[data-name="${country}"]`)
+  
+  if (add) {
+    lines.forEach( e => e.classList.add('active','thicker') )
+  }
+  else {
+    console.log('remove')
+    lines.forEach( e => e.classList.remove('active') )
+  }
+  
+  // add country name to end
+  
 }
 
 Multiselect.prototype.updateMenuState = function(open, callFocus = true) {

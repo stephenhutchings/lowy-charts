@@ -14,7 +14,7 @@
   flex-wrap: nowrap
   height: 40px
   border-radius: 3px
-  margin: 3rem 0 -2rem
+  margin: -0.5rem 0 1rem
   
   > *
     height: 100%
@@ -30,6 +30,11 @@
     &:focus
       border: none
       outline: 0
+      
+  ::placeholder
+    font-family: 'Sans', sans-serif
+    font-weight: 500
+    color: var(--c, gray)
   
   ul
     list-style-type: none
@@ -49,13 +54,14 @@
     border: 1px solid rgba(0,0,0,.42)
     border-radius: 4px 4px 0 0
     display: none
-    max-height: 120px
+    max-height: 100px
     overflow-y: scroll
     left: 0
     position: absolute
     bottom: 100%
     width: 100%
     z-index: 100
+    opacity: 0.97
     
     &::-webkit-scrollbar
       width: 4px

@@ -13,10 +13,6 @@
           each item, j in key
             input.tgl(type="checkbox" id=`${i}-${j}`)
             label.tgl-btn(for=`${i}-${j}`)= item.v
-  
-    
-  - cat = null
-  include _chart
 
   //- .txt-tu.txt-xs Countries
   .active-country-list  
@@ -35,6 +31,9 @@
         aria-labelledby='combo3-label combo3-selected'
         role='combobox'
         type='text'
-        placeholder="Start typing to activate countries ... (max 6)"
+        placeholder="Start typing to show countries (max 5)"
       )
       #listbox3.combo-menu(role='listbox')
+
+  - cat = null
+  include _chart
