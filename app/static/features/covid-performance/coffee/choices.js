@@ -5,9 +5,9 @@
 const options = ["Australia","Austria","Bahrain","Bangladesh","Belarus","Belgium","Bolivia","Brazil","Bulgaria","Canada","Chile","China","Colombia","Costa Rica","Cote d'Ivoire","Croatia","Cyprus","Czech Republic","Democratic Republic of Congo","Denmark","Dominican Republic","El Salvador","Estonia","Ethiopia","Finland","France","Germany","Ghana","Greece","Guatemala","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Kazakhstan","Kenya","Kuwait","Latvia","Libya","Lithuania","Luxembourg","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Malta","Mexico","Morocco","Mozambique","Myanmar","Namibia","Nepal","Netherlands","New Zealand","Nigeria","Norway","Oman","Pakistan","Panama","Paraguay","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saudi Arabia","Senegal","Serbia","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","Sweden","Switzerland","Taiwan","Thailand","Togo","Trinidad and Tobago","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Vietnam","Zambia","Zimbabwe"]
 
 const optionUnavailable = ["China","Luxembourg"]
-const classes = [".blue-1, .blue-2, .blue-3",".blue-4",".fff"]
+const colors = ["#43dcff", "#80e7ff", "#b0f0ff", "#fff2a6", "#ffee76", "#ffe91d"]
 
-var activeList = []
+var activeList = [];
 
 const Keys = {
   Backspace: 'Backspace',
@@ -330,7 +330,7 @@ Multiselect.prototype.updateOption = function(index) {
  }
 
  else {
-   if (activeList.length < 5) {
+   if (activeList.length < 6) {
      this.selectOption(index);
      activeList.push(countryName)
      this.updateLines(countryName, true);
@@ -346,21 +346,32 @@ Multiselect.prototype.updateOption = function(index) {
 
  this.inputEl.value = '';
  this.updateMenuState(false);
- console.log( activeList )
  
 }
 
 Multiselect.prototype.updateLines = function(country, add) {
   
-  lines = document.querySelectorAll(`[data-name="${country}"]`)
+  let el
+  let targetLines = document.querySelectorAll(`[data-name="${country}"]`)
+  let targetLabel = document.querySelector(`[data-countryLabel="${country}"]`)
   
-  if (add) {
-    lines.forEach( e => e.classList.add('active','thicker') )
+  if (add) { 
+    targetLines.forEach( e => e.classList.add('active','thicker') ) 
+    targetLabel.classList.add('visible')
   }
   else {
-    console.log('remove')
-    lines.forEach( e => e.classList.remove('active') )
+    targetLabel.classList.remove('visible') 
+    targetLines.forEach( e => { 
+      e.classList.remove('active','thicker');
+      e.style.removeProperty('stroke');
+    })
   }
+  
+  activeList.forEach( (country, i) => {
+    el = document.querySelectorAll(`[data-name="${country}"]`)[1];
+    lb = document.querySelector(`[data-countrylabel="${country}"]`);
+    el.style.stroke = lb.style.color = colors[i];
+  })
   
   // add country name to end
   

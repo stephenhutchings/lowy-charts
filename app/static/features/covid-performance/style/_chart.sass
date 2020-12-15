@@ -33,6 +33,20 @@
   z-index: 15
   pointer-events: none
 
+#country-labels
+  position: absolute
+  pointer-events: none
+
+.country-line-label
+  opacity: 0
+  font-size: 14px
+  fill: currentColor
+  transform: translate(-4px, 4px)
+  transition: opacity 0.2s
+  
+  &.visible
+    opacity: 1
+
 .pathset
   cursor: pointer
   opacity: 0.8
@@ -52,21 +66,30 @@
   opacity: 0
   pointer-events: none
   stroke-linejoin: round
+  stroke-linecap: round
   
   &.active
     opacity: 0.4
     
   &.thicker.active
-    opacity: 0.8
-    stroke-width: 4
+    opacity: 0.9
+    stroke-width: 3
+    transition-duration: 0.1s
+    
+    &.transparent
+      stroke-width: 20
     
   &.transparent.active
     stroke: rgba($dark,0)
     pointer-events: stroke
   
-  &.transparent:hover + &
+  &.transparent:not(.thicker):hover + &
     opacity: 1!important
     stroke-width: 2
+    
+  &.transparent.thicker:hover + &
+    opacity: 1!important
+    stroke-width: 5
     
 .dogtag  
   font-weight: bold

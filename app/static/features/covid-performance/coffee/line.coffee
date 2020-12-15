@@ -62,7 +62,7 @@ require.register "views/line", (exports, require, module) ->
       
       # HIDE AND MOVE COUNTRY LINES TO THE VISIBLE CHART ------
       $('.country-line.active').each (i,c) -> c.classList.remove 'active'
-      @$el.parents('.chart-body').append $("#chart-countries"), $("#tooltip")
+      @$el.parents('.chart-body').append $("#chart-countries"), $("#tooltip"), $("#country-labels")
       # -------------------------------------------------------
 
 

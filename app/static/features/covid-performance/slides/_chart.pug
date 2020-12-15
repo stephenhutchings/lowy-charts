@@ -96,3 +96,22 @@ if cat
     if cat == null
       include _countries
       #tooltip
+      svg#country-labels.inset-0(
+        x="0" y="0"
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      )  
+        for c, i in countries
+          if isValid(c.rank)
+            
+            - x = (100 * c.rank.findIndex( v => v != null) / c.rank.length) + "%"
+            - y = c.rank.find( v => v != null ) + "%"
+            
+            text.country-line-label(
+              x=x y=y
+              text-anchor="end"
+              fill="white"
+              data-countrylabel=c.name
+            )= c.name
