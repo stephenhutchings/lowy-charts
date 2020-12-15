@@ -6,10 +6,10 @@ labels:
   - Middle East<br>and Africa
     
 colors: 
-  - fff
-  - red
-  - lite
-  - fff
+  - blue-1
+  - red-2
+  - red-1
+  - blue-3
     
 values:
   - [ 41.50, 52.46, 56.53, 37.63 ]

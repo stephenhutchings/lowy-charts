@@ -5,9 +5,9 @@ labels:
   - Democracy
     
 colors: 
+  - red-2
   - fff
-  - red
-  - lite
+  - blue-1
     
 values:
   - [ 29.86, 50.60, 52.40 ]

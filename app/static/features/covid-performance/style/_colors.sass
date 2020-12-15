@@ -2,25 +2,17 @@
 
 .bg-dark
   background: $dark
-.bg-blue
-  background: $blue
 .bg-fff
   background: #fff
 .bg-bk
   background: #000
 .bg-lite
   background: $lite
-.bg-red
-  background: $red
-.bg-blue-a
-  background: rgba($blue, 0.2)
 .bg-fff-a
   background: rgba(#fff, 0.2)
   
 .txt-dark
   color: $dark
-.txt-blue
-  color: $blue
 .txt-fff
   color: #fff
 .txt-bk
@@ -34,10 +26,25 @@
   fill: none
 .fill-dark
   fill: $dark
-.fill-blue
-  fill: $blue
+  
+.fill-blue-1
+  fill: $blue-1
+.fill-blue-2
+  fill: $blue-2
+.fill-blue-3
+  fill: $blue-3
+.fill-blue-4
+  fill: $blue-4
+.fill-red-1
+  fill: $red-1
+.fill-red-2
+  fill: $red-2
+.fill-red-3,
 .fill-red
-  fill: $red
+  fill: $red-3
+.fill-red-4
+  fill: $red-4
+
 .fill-fff
   fill: #fff
 .fill-bk
@@ -51,7 +58,6 @@
 .stroke
   stroke: #fff
   vector-effect: non-scaling-stroke
-
 
 .mask-l
   fill: url(#mask-l)
@@ -86,11 +92,22 @@
   fill: none
   vector-effect: non-scaling-stroke
 
+  &.blue-1
+    stroke: $blue-1
+  &.blue-2
+    stroke: $blue-2
+  &.blue-3
+    stroke: $blue-3
+  &.blue-4
+    stroke: $blue-4
+  &.red-1
+    stroke: $red-1
+  &.red-2,
   &.red
-    stroke: $red
-  &.lite
-    stroke: $lite
+    stroke: $red-2
+  &.red-3
+    stroke: $red-3
+  &.red-4
+    stroke: $red-4
   &.fff
     stroke: white
-  &.other
-    opacity: 0.5

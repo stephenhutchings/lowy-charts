@@ -6,8 +6,8 @@ labels:
     
 colors: 
   - fff
-  - red
-  - lite
+  - blue-3
+  - blue-1
     
 values:
   - [ 48.80, 46.36, 46.59 ]
