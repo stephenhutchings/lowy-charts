@@ -7,6 +7,8 @@ svg.line-chart.fade-in.delay-1(
   data-duration=4000
   data-view="line, in-viewport"    
 )
+
+  - wprev = 0
   
   for l, i in labels
     
@@ -45,9 +47,28 @@ svg.line-chart.fade-in.delay-1(
           )
         )
 
+      svg.dogtag-mobile(
+        x=wprev
+        y=-32
+      )
+        - wprev += w + 14
+        - h *= 1.25
+        - w *= 1.05
+        rect(
+          x=0 y=-h
+          width=w height=2*h
+          class=`fill-${colors[i]}`
+        )
+        text(x=w/2 y=y text-anchor="middle")
+          = split[0]
+          
+          if split.length == 2
+            tspan(x=0 dy=12)
+              = split[1]
+      
       svg.dogtag(
         y=values[0][i] + "%"
-        x=-w+2
+        x=-w+7
         preserveAspectRatio="xMinYMin"
       )
         path(

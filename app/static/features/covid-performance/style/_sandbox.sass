@@ -79,8 +79,11 @@
     opacity: 0.5
     
   .option.disabled
-    background-color: $dark!important
     color: gray
+    
+    &.option-current
+      background-color: rgba($hl,0.2)
+
     
     &:after
       font-style: italic

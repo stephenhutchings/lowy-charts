@@ -23,14 +23,16 @@ h1
   font-family: 'Sans', sans-serif
   font-weight: 400
 
+path, polyline
+  stroke-linejoin: round
+  stroke-linecap: round
+
 .intro
   
   h1
     font-family: 'Semi', 'Sans', sans-serif  
     line-height: 1
     font-weight: 200
-    
-  h1
     font-size: 86px
     
   h2
@@ -43,12 +45,14 @@ h1
     font-size: 20px
     line-height: 1.5
     text-align: justify
-    margin: 0 10rem
+    max-width: 750px
+    margin: 0 auto
     
   svg
     height: 2.5rem
     margin: 1rem auto
-    width: 85%
+    max-width: 850px
+    width: 100%
 
   .top-img
     bottom: 0
@@ -96,3 +100,48 @@ h1
   left: 0
   right: 0
   bottom: 0
+
+
+@media (max-width: 1100px)
+  
+  .intro
+    
+  
+@media (max-width: 600px)
+  
+  .intro
+    
+    h1, h2, p
+      text-align: left
+    
+    h1
+      font-size: 72px
+      margin-top: 2rem
+      word-spacing: 500px
+      
+    h2
+      margin-right: 3rem
+      
+    p
+      font-size: 18px
+      
+    svg
+      overflow: hidden
+      
+    .top-img
+      height: 65px
+      bottom: auto
+      left: auto
+      right: 1rem
+      top: calc(2rem + 76px)
+      align-items: flex-end
+      
+      img
+        width: 65px
+
+
+@media (max-width: 450px)
+      
+  .intro path
+    d: path('M100,2.05H53c-2.5,0-2.5,2-4.25,2s-1.5-4-3-4c-1.5,0-1.5,2-4.5,2H0')
+    d: path('M100,2.05H-100')

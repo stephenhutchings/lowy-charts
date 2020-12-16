@@ -2,11 +2,11 @@
 
 $slides: 8
 
-#scroller 
+#scroller
   overflow: auto
   height: 100%
   scroll-behavior: smooth
-  scroll-snap-type: y mandatory
+  scroll-snap-type: y proximity
   // -- 
   position: fixed
   display: flex
@@ -18,7 +18,7 @@ $slides: 8
   
 #scroller-inner
   position: relative
-  width: 95vw
+  width: 100vw
   max-width: 1400px
   height: 100% * $slides
   display: flex
@@ -78,3 +78,20 @@ $slides: 8
     
     &:first-child
       display: block
+
+@media (max-width: 1100px)
+  
+  .slide-wrap
+    padding: 3rem 4rem 4rem
+
+@media (max-width: 600px)
+  
+  #scroller
+    scroll-snap-type: none
+    
+  #scroller-inner
+    height: auto
+    
+  .slide-wrap
+    scroll-snap-align: none
+    padding: 2rem 1.25rem

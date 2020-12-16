@@ -51,9 +51,6 @@
   cursor: pointer
   opacity: 0.8
   
-  path
-    stroke-linejoin: round
-  
   &.inactive,
   &.inactive:hover
     opacity: 0.1
@@ -65,8 +62,6 @@
 .country-line
   opacity: 0
   pointer-events: none
-  stroke-linejoin: round
-  stroke-linecap: round
   
   &.active
     opacity: 0.4
@@ -91,10 +86,13 @@
     opacity: 1!important
     stroke-width: 5
     
-.dogtag  
+.dogtag
   font-weight: bold
   text-transform: uppercase
   font-size: 12px
+
+.dogtag-mobile
+  display: none
 
 rect.fill-v
 
@@ -142,3 +140,26 @@ rect.fill-v
   text-align: right
   right: 0
   top: -2rem
+
+@media (max-width: 1100px)
+  
+  .chart-wrap
+    padding: 1rem 2rem 1rem 4rem
+  
+@media (max-width: 600px)
+  
+  .chart-wrap
+    margin-top: 3rem
+    padding: 1rem
+    padding-left: 0
+  
+  .dogtag
+    display: none
+    
+  .dogtag-mobile
+    display: block
+  
+  .chart-body
+    
+    svg
+      min-height: 400px
