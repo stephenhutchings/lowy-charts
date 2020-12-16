@@ -3,6 +3,8 @@ require.register "views/scroller", (exports, require, module) ->
   utils = require("lib/utils")
   keycode  = require("lib/keycode")
   methods  = require("page-methods")
+  
+  SANDBOX = 5
 
   class ScrollerView extends Backbone.View
     events:
@@ -93,6 +95,19 @@ require.register "views/scroller", (exports, require, module) ->
       isEnd = @el.scrollTop % @el.offsetHeight is 0
 
       if index isnt @data.index
+        
+        #---- CHART INTERACTIONS ----#
+        
+        if @data.index is "#pager-index" then @data.index = 0
+        targetChart = $(".slide-wrap:nth-child(#{index+1}) .chart-body")
+        targetChart?.append $("#chart-countries"), $("#country-labels")
+          
+        if @data.index is SANDBOX then methods.clearSandbox()
+        methods.deactivate()
+        if index is SANDBOX then methods.fillSandbox()
+        
+        #------------------------------#
+        
         $("body")
           .removeClass("slide-#{@data.index}")
           .addClass("slide-#{index}")
@@ -102,9 +117,8 @@ require.register "views/scroller", (exports, require, module) ->
           h: @el.offsetHeight
           index: index
           
-        methods.deactivate()
-
        if isEnd
+         
         for child, i in @el.children
           visible = i - 1 <= @data.index <= i + 1
           child.classList.toggle("active", i is @data.index)

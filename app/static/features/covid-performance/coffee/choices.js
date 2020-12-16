@@ -5,7 +5,12 @@
 const options = ["Australia","Austria","Bahrain","Bangladesh","Belarus","Belgium","Bolivia","Brazil","Bulgaria","Canada","Chile","China","Colombia","Costa Rica","Cote d'Ivoire","Croatia","Cyprus","Czech Republic","Democratic Republic of Congo","Denmark","Dominican Republic","El Salvador","Estonia","Ethiopia","Finland","France","Germany","Ghana","Greece","Guatemala","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Kazakhstan","Kenya","Kuwait","Latvia","Libya","Lithuania","Luxembourg","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Malta","Mexico","Morocco","Mozambique","Myanmar","Namibia","Nepal","Netherlands","New Zealand","Nigeria","Norway","Oman","Pakistan","Panama","Paraguay","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saudi Arabia","Senegal","Serbia","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","Sweden","Switzerland","Taiwan","Thailand","Togo","Trinidad and Tobago","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Vietnam","Zambia","Zimbabwe"]
 
 const optionUnavailable = ["China","Luxembourg"]
-const colors = ["#43dcff", "#80e7ff", "#b0f0ff", "#fff2a6", "#ffee76", "#ffe91d"]
+const colors = ["#33ffdd",
+                "#33cfff",
+                "#339eff",
+                "#d25aff",
+                "#ff5ae0",
+                "#ff7be0"]
 
 var activeList = [];
 
@@ -285,7 +290,6 @@ Multiselect.prototype.removeOption = function(index) {
  i = activeList.indexOf(countryName)
  activeList.splice(i, 1)
  this.updateLines(countryName, false)
- console.log( activeList )
  
  // remove button
  this.selectedEl.removeChild(buttonEl.parentElement);
@@ -361,9 +365,10 @@ Multiselect.prototype.updateLines = function(country, add) {
   }
   else {
     targetLabel.classList.remove('visible') 
+    targetLabel.style.removeProperty('color') 
     targetLines.forEach( e => { 
-      e.classList.remove('active','thicker');
-      e.style.removeProperty('stroke');
+      e.classList.remove('active','thicker')
+      e.style.removeProperty('stroke')
     })
   }
   

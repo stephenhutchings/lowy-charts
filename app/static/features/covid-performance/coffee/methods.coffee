@@ -6,26 +6,53 @@ require.register "page-methods", (exports, require, module) ->
   typeWrap = get "#type-wrap"
     
   module.exports =
-    
+
     deactivate: ->
-      a = document.querySelector ".pathset.active"
-      if not a? then return
       
-      p = a.parentElement
-      s = p.querySelectorAll '.inactive' # Sibling lines
+      a = get ".pathset.active"
+      if a?
       
-      a.classList.remove 'active'
-      s.forEach (e) -> e.classList.remove 'inactive'
-      
-      tooltip.innerText = ""
+        p = a.parentElement
+        s = p.querySelectorAll '.inactive' # Sibling lines
+        
+        a.classList.remove 'active'
+        s.forEach (e) -> e.classList.remove 'inactive'
       
       get('#modal').classList.remove('active')
       get('#modal-inner').scrollTop = 0
-      
+            
       @hideActiveCountries()
       
     hideActiveCountries: -> 
-      c = document.querySelectorAll '.country-line.active'
+      
+      c = getAll '.slide-wrap:not(.sandbox) .country-line.active'
       c.forEach (p) -> p.classList.remove('active')
+        
+      l = getAll '.slide-wrap:not(.sandbox) .country-line-label.visible'
+      l.forEach (p) -> p.classList.remove('visible')
+    
+    clearSandbox: -> 
+      
+      c = getAll '.country-line.active'
+      c.forEach (p) -> 
+        p.style.removeProperty('stroke')
+        p.classList.remove('thicker')
+        
+      l = getAll '.country-line-label.visible'
+      l.forEach (p) -> p.style.removeProperty('color')
+    
+    fillSandbox: -> 
+      
+      c = getAll '.remove-option'
+      c.forEach (p) -> 
+        name  = p.innerText.trim()
+        color = window.getComputedStyle(p).getPropertyValue('background-color')
+        lines = getAll ".country-line[data-name=\"#{name}\"]"
+        label = get ".country-line-label[data-countrylabel=\"#{name}\"]"
+        
+        label.classList.add 'visible'
+        lines.forEach (l) -> l.classList.add 'thicker', 'active'
+
+        lines[1].style.stroke = label.style.color = color
     
     
