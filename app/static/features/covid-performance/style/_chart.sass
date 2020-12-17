@@ -93,6 +93,7 @@
 
 .dogtag-mobile
   display: none
+  pointer-events: all
 
 rect.fill-v
 
@@ -145,21 +146,37 @@ rect.fill-v
   
   .chart-wrap
     padding: 1rem 2rem 1rem 4rem
+    
+  .x-ticks
+    
+    .fill-dark
+      display: none
   
 @media (max-width: 600px)
   
   .chart-wrap
     margin-top: 3rem
-    padding: 1rem
-    padding-left: 0
+    padding: 1rem 2rem 1rem 0
+    
+    // To accomodate 4th label for "region" slide on mobile
+    .slide-wrap:nth-child(3) &
+      margin-top: 6rem
+
+  .chart-body
+    
+    > svg
+      min-height: 400px
   
   .dogtag
     display: none
     
   .dogtag-mobile
     display: block
-  
-  .chart-body
     
-    svg
-      min-height: 400px
+  .x-ticks
+    > g:nth-child(even)
+      display: none
+  
+  .chart-labels
+    .x svg
+      width: 10px

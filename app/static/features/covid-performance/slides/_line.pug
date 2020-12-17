@@ -54,17 +54,26 @@ svg.line-chart.fade-in.delay-1(
         - wprev += w + 14
         - h *= 1.25
         - w *= 1.05
-        rect(
-          x=0 y=-h
-          width=w height=2*h
-          class=`fill-${colors[i]}`
-        )
-        text(x=w/2 y=y text-anchor="middle")
-          = split[0]
-          
-          if split.length == 2
-            tspan(x=0 dy=12)
-              = split[1]
+        
+        if split.length == 1
+        
+          rect(
+            x=0 y=-h
+            width=w height=2*h
+            class=`fill-${colors[i]}`
+          )
+          text(x=w/2 y=y text-anchor="middle")
+            = split
+            
+        else if split.length == 2
+        
+          rect(
+            x=(w-wprev+10) y=(-2*h - 9)
+            width=1.8*w height=30
+            class=`fill-${colors[i]}`
+          )
+          text(x=(w-wprev+26) y=(-h-12) text-anchor="start")
+            = split.join(" ")
       
       svg.dogtag(
         y=values[0][i] + "%"

@@ -20,7 +20,7 @@ if cat
     )
       
       // X TICKS
-      svg(width="100%" height="100%")
+      svg.x-ticks(width="100%" height="100%")
         for n, i in new Array(rangex)
           if (i % 14 == 0 || i == rangex-1)
             - x = i / rangex * 100 + "%"
@@ -42,7 +42,7 @@ if cat
                   = ((scalex[0] + i + 1) / 7).toFixed(0)
                   
       // Y TICKS
-      svg(width="100%" height="100%")
+      svg.y-ticks(width="100%" height="100%")
         - steps = 6
         for n, i in new Array(steps)
           if i > 0 && i < steps-1
