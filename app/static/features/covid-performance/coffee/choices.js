@@ -326,11 +326,14 @@ Multiselect.prototype.selectOption = function(index) {
 }
 
 Multiselect.prototype.updateOption = function(index) {
+  
  let i
  const option = this.options[index];
  const optionEl = this.el.querySelectorAll('[role=option]')[index];
  const isSelected = optionEl.getAttribute('aria-selected') === 'true';
  const countryName = optionEl.innerHTML;
+ 
+ if ( !availableOptions.includes(countryName) ) { return; }
 
  if (isSelected) { 
    this.removeOption(index)
