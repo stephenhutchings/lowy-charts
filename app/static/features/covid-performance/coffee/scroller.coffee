@@ -50,7 +50,8 @@ require.register "views/scroller", (exports, require, module) ->
       , 1
 
     onResize: ->
-      @inactive = $(window).width() < 800 or $(window).height() < 720
+      @inactive = false
+      # @inactive = $(window).width() < 800 or $(window).height() < 720
 
       if @inactive
         @$elements.items.addClass("active")
@@ -70,7 +71,7 @@ require.register "views/scroller", (exports, require, module) ->
         , 40
 
       @$elements.items.removeClass("active").eq(i).addClass("active")
-      @$elements.index.html(i + @data.offset)
+      @$elements.index.html(i + @data.offset)      
 
     onKey: (e) ->
       type = keycode(e)
@@ -93,6 +94,7 @@ require.register "views/scroller", (exports, require, module) ->
 
       index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
       isEnd = @el.scrollTop % @el.offsetHeight is 0
+      
 
       if index isnt @data.index
         
