@@ -66,7 +66,7 @@ require.register "views/scroller", (exports, require, module) ->
         window.clearTimeout(@timeout)
         @timeout = window.setTimeout =>
           index = Math.round @el.scrollTop / @el.offsetHeight
-          @el.scrollTo top: index * @el.offsetHeight, behavior: 'auto'
+          @el.scrollTo top: index * @el.offsetHeight, behavior: 'smooth'
         , 40
 
       @$elements.items.removeClass("active").eq(i).addClass("active")
@@ -79,11 +79,11 @@ require.register "views/scroller", (exports, require, module) ->
 
       if type is "UP" or type is "LEFT"
         e.preventDefault()
-        @el.scrollTo top: (index - 1) * height, behavior: 'auto'
+        @el.scrollTo top: (index - 1) * height, behavior: 'smooth'
 
       if type is "DOWN" or type is "RIGHT"
         e.preventDefault()
-        @el.scrollTo top: (index + 1) * height, behavior: 'auto'
+        @el.scrollTo top: (index + 1) * height, behavior: 'smooth'
 
     scrollTo: (i) ->
       @el.scrollTo top: (i) * @el.offsetHeight, behavior: 'smooth'
