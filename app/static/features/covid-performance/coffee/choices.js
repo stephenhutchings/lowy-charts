@@ -342,7 +342,7 @@ Multiselect.prototype.updateOption = function(index) {
  }
 
  else {
-   if (activeList.length < 6) {
+   if (activeList.length < 5) {
      this.selectOption(index);
      activeList.push(countryName)
      this.updateLines(countryName, true);

@@ -51,7 +51,10 @@ require.register "views/scroller", (exports, require, module) ->
 
     onResize: ->
       @inactive = false
-      # @inactive = $(window).width() < 800 or $(window).height() < 720
+      @mobile = $(window).width() < 600
+      
+      if @mobile
+        @slidePoints = $('.slide-wrap').map (i,s) -> s.offsetTop
 
       if @inactive
         @$elements.items.addClass("active")
@@ -62,6 +65,8 @@ require.register "views/scroller", (exports, require, module) ->
       return if @inactive
 
       i  = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
+      
+      # console.log @el.scrollTop, @el.offsetHeight
 
       unless @data.support
         window.clearTimeout(@timeout)
@@ -91,12 +96,26 @@ require.register "views/scroller", (exports, require, module) ->
 
     onScrollEnd: ->
       return if @inactive
-
-      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      isEnd = @el.scrollTop % @el.offsetHeight is 0
+      
+      t = @el.scrollTop
+      h = @el.offsetHeight
+      index = @data.index
+      
+      if @mobile
+        @slidePoints.each (i,p) -> 
+          if p > t and p < t+h
+            if p < t + 0.5*h then index = i
+            else index = i - 1
+      
+      else 
+        index = Math.floor t / h + 0.5
+        
+      isEnd = t % h is 0
       
 
       if index isnt @data.index
+        
+        console.log index
         
         #---- CHART INTERACTIONS ----#
         
