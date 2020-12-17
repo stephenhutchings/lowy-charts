@@ -39,7 +39,7 @@ svg.line-chart.fade-in.delay-1(
           stroke-width=4
           points=(
             values
-              .map( (s,j,a) => [ j/(a.length - 1)*100, s[i] ]
+              .map( (s,j,a) => [ j/(a.length - 1)*100, 100-s[i] ]
                 .map( e => e.toFixed(2) )
                 .join(",")
               )
@@ -76,7 +76,7 @@ svg.line-chart.fade-in.delay-1(
             = split.join(" ")
       
       svg.dogtag(
-        y=values[0][i] + "%"
+        y=(100-values[0][i]) + "%"
         x=-w+7
         preserveAspectRatio="xMinYMin"
       )
