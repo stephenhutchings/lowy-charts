@@ -17,12 +17,12 @@
   //- .txt-tu.txt-xs Countries
   .active-country-list  
         
-    label#combo3-label.combo-label
-    span#combo3-remove(style='display: none') remove
+    label#input-label.combo-label
+    span#input-remove(style='display: none') remove
     // used as descriptive text for option buttons; if used within the button text itself, it ends up being read with the input name
-    ul#combo3-selected.selected-options
+    ul#input-selected.selected-options
     .js-multiselect
-      input#combo3.combo-input(
+      input#input.combo-input(
         aria-activedescendant=''
         aria-autocomplete='none'
         aria-controls='listbox3'
@@ -33,7 +33,7 @@
         type='text'
         placeholder="Start typing to show countries (max 6)"
       )
-      #listbox3.combo-menu(role='listbox')
+      #input-listbox.combo-menu(role='listbox')
 
   - cat = null
   include _chart

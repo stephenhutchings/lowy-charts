@@ -319,6 +319,8 @@ Multiselect.prototype.selectOption = function(index) {
  buttonEl.setAttribute('aria-describedby', `${this.idBase}-remove`);
  buttonEl.addEventListener('click', () => { this.removeOption(index); });
  buttonEl.innerHTML = selected + ' ';
+ 
+  console.log(listItem)
 
  listItem.appendChild(buttonEl);
  this.selectedEl.appendChild(listItem);
