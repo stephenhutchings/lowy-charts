@@ -104,6 +104,9 @@ rect.fill-v
   g:nth-child(2) &,
   g:nth-last-child(2) &
     opacity: 0.5
+
+.y-ticks
+  font-size: 14px
   
 .chart-labels
   
@@ -114,13 +117,13 @@ rect.fill-v
   
   .x
     position: absolute
-    bottom: -2.5rem
-    left: 0
+    bottom: -3rem
+    left: -0.5rem
     
   .y
     position: absolute
     top: calc(50% - 1rem)
-    right: -13rem
+    right: -14rem
     transform-origin: center
     transform: rotate(90deg)
     line-height: 0.8
@@ -156,7 +159,7 @@ rect.fill-v
   
   .chart-wrap
     margin-top: 3rem
-    padding: 1rem 2rem 1rem 0
+    padding: 1rem 1.5rem 1rem 0
     
     // To accomodate 4th label for "region" slide on mobile
     .slide-wrap:nth-child(3) &
@@ -176,7 +179,14 @@ rect.fill-v
   .x-ticks
     > g:nth-child(even)
       display: none
+      
+  .y-ticks text
+    display: none
   
   .chart-labels
     .x svg
       width: 10px
+      
+    .y  
+      right: -12.5rem
+      
