@@ -94,10 +94,10 @@ if cat
         xmlns:xlink="http://www.w3.org/1999/xlink"
       )  
         for c, i in countries
-          if isValid(c.rank)
+          if isValid(c.percentiles)
             
-            - x = (100 * c.rank.findIndex( v => v != null) / c.rank.length) + "%"
-            - y = (100 - c.rank.find( v => v != null )) + "%"
+            - x = (100 * c.percentiles.findIndex( v => v != null) / c.percentiles.length) + "%"
+            - y = (100 - c.percentiles.find( v => v != null )) + "%"
             
             text.country-line-label(
               x=x y=y

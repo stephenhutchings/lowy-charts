@@ -1,0 +1,120 @@
+- toPercent = (n) => (n * 100).toFixed(2) + "%"
+- toPoint = (p,i,n) => p ? [ (i/(n-1)*100).toFixed(2), 100-p ].join(",") : ""
+- toPath  = a => a.map( (s,i) => !s ? "" : (!i || !a[i-1]) ? `M${toPoint(s,i,a.length)}` : `L${toPoint(s,i,a.length)}` ).filter( e => e != "" ).join(" ")
+
+- countries = data.getOne("static/features/covid-performance/data/countries")
+- list = _.filter(countries, c => c.rank)
+- list = _.sortBy(list, 'rank')
+- n = list.length
+
+.slide-wrap
+  
+  - cat = "rankings"
+  include _context
+
+  .table-wrapper.flex
+    .flex-col
+      .table-head: table
+        thead
+          tr
+            th.txt-left(onclick="sortTable(this,true,0)") Rank
+              span.icon.icon-down-sm.show
+            th.txt-left(
+              onclick="sortTable(this,false, 1)"
+              ) Country
+              span.icon.icon-down-sm
+            th.txt-left(
+              ) Cases
+              
+      .country-list: table
+        tbody
+          each c, i in list
+            tr
+              td.txt-right= c.rank
+              td.flex.items-center
+                img(
+                  width="45px"
+                  alt=`Country flag of ${c.name}`
+                  src=`../../img/country-flags/png-100px/${c.code.toLowerCase()}.png`
+                  )
+                .name!= c.shortname || c.name
+              td.sparkline
+                svg(
+                  viewBox="0 0 100 100" preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                )
+                  path( d=toPath(c.percentiles) )              
+
+  script.
+    
+    var ready = false;
+    
+    function flipSortIcon(el) {
+      let icon = el.querySelector('.icon');
+      if ( icon.classList.contains('show') ) {
+        icon.classList.toggle('rot');
+      }
+      else {
+        el.parentNode.querySelector('th > .show').classList.remove('show');
+        icon.classList.toggle('show');
+      }
+    }
+    
+    // from https://www.w3schools.com/howto/howto_js_sort_table.asp
+    function sortTable(el, numeric, n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.querySelector('.country-list table');
+      switching = true;
+      dir = "asc";
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 0; i < (rows.length - 1); i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          if (numeric) {
+            if (dir == "asc") {
+              if ( Number(x.innerHTML) > Number(y.innerHTML) ) {
+                shouldSwitch = true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if ( Number(x.innerHTML) < Number(y.innerHTML) ) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+          else {
+            if (dir == "asc") {
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount ++;
+        } else {
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+      ready ? flipSortIcon(el) : "";
+    }
+    window.addEventListener('load', function () {
+      sortTable(document.getElementsByTagName('th')[1], true, 1);
+      ready = true;
+    });
+    

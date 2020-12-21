@@ -15,7 +15,7 @@ svg#chart-countries(
 )
 
   for c, i in countries
-    if isValid(c.rank)
+    if isValid(c.percentiles)
       
       g
   
@@ -26,7 +26,7 @@ svg#chart-countries(
           data-region=c.region
           data-politics=c.politics
           stroke-width=15
-          d=toPath(c.rank)
+          d=toPath(c.percentiles)
         )  
         
         path.country-line.lite(
@@ -36,5 +36,5 @@ svg#chart-countries(
           data-region=c.region
           data-politics=c.politics
           stroke-width=1
-          d=toPath(c.rank)
+          d=toPath(c.percentiles)
         )
