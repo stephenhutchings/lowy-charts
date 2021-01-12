@@ -2,14 +2,18 @@
 
 #controls
   position: fixed
-  bottom: 4px
+  bottom: -50px
   left: 50%
   border-radius: 4px
   transform: translateX(-50%)
   background: rgba($dark, 0.8)
   z-index: 100
-  transition: opacity 300ms
+  transition: opacity 300ms, bottom 0.3s
   text-align: center
+  
+  @for $i from 1 through 7
+    .slide-#{$i} &
+      bottom: 4px
 
 .btn,
 #pager-progress
@@ -45,3 +49,8 @@
   display: inline-block
   width: 1.2em
   text-align: right
+  
+@media (max-width: 600px)
+  
+  #controls
+    display: none

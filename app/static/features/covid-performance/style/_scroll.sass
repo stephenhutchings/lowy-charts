@@ -1,14 +1,20 @@
 @import app/static/features/covid-performance/style/_vars.sass
 
-#scroller
-  overflow: auto
-  height: 100%
-  // scroll-behavior: smooth
-  scroll-snap-type: y mandatory
-  position: relative
-  background-color: $dark
+body::-webkit-scrollbar,
+#scroller::-webkit-scrollbar
+  display: none
+
+#modal-inner
   
-  &.scrolling
-    scroll-behavior: initial
-    scroll-snap-type: initial
- 
+  &::-webkit-scrollbar
+    width: 4px
+    
+  &::-webkit-scrollbar-thumb
+    background: $red
+    border-radius: 5px
+    
+    &:window-inactive
+      background: $dark
+
+  &::-webkit-scrollbar-track
+    background: none

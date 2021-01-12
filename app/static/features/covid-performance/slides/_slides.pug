@@ -1,0 +1,13 @@
+include _intro
+  include _chart-defs
+
+each slide, i in ["politics", "region", "size", "income"]
+  .slide-wrap
+    - cat = slide
+    include _context
+    include _chart
+
+include _sandbox
+include _rankings
+include _methodology
+include _credits

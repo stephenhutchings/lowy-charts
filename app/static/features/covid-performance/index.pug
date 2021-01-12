@@ -4,40 +4,53 @@ block append config
   - page.title = "Covid Performance"
 
 block page
-  
-  #frame: .chart
-  
+    
   #controls.p-xs.txt-ff
     #pager-progress
       span#pager-index 1
-      span#pager-total &ensp;/&ensp;7
+      span &ensp;/&ensp;
+      span#pager-total
     #btn-prev.btn.icon.icon-up
     #btn-next.btn.icon.icon-down
     #btn-fs.btn.icon.icon-expand
-
-  #scroller.bg-dk(
+      
+  #scroller.inset-0(
     data-view="scroller"
     data-pager=".pager-page"
     data-index="#pager-index"
-    style="display: none"
   )
+    #scroller-inner
+      include slides/_slides
 
-    div(style="height: 200%")
-      include slides/_placeholder
-      include slides/_placeholder
+  #modal
+    .absolute.btn-close HIDE
+    #modal-inner
+      span.name.txt-bold Title
+      | &ensp;
+      span.text Region ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-block customScripts
-  
+block append css
   style
     //include:sass _style.sass
     include:sass style/_vars.sass
     include:sass style/_base.sass
-    include:sass style/_scroll.sass
     include:sass style/_controls.sass
-    include:sass style/_slides.sass
+    include:sass style/_colors.sass
+    include:sass style/_layout.sass
+    include:sass style/_chart.sass
+    include:sass style/_scroll.sass
+    include:sass style/_sandbox.sass
+    include:sass style/_transitions.sass
+    include:sass style/_table.sass
+
+block append customScripts
 
   script(type="text/javascript")
     include:coffee coffee/base.coffee
     include:coffee coffee/scroller.coffee
-    include:coffee coffee/page.coffee
-    include:coffee coffee/type.coffee
+    //- include:coffee coffee/page.coffee
+    include:coffee coffee/methods.coffee
+    include:coffee coffee/line.coffee
+    include:coffee coffee/path.coffee
+    include:coffee coffee/data-text.coffee
+    include coffee/choices.js

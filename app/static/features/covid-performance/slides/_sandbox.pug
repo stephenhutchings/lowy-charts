@@ -1,0 +1,39 @@
+- keys = data.getOne(`static/features/covid-performance/data/key`)[0]
+
+.slide-wrap.sandbox
+  
+  h1 Explore data
+  p Drill down into the performance of individual countries on a single chart.
+    
+  //.active-category-list  
+    each key, i in keys
+      .category
+        .txt-tu.txt-xs= i
+        .items
+          each item, j in key
+            input.tgl(type="checkbox" id=`${i}-${j}`)
+            label.tgl-btn(for=`${i}-${j}`)= item.v
+
+  //- .txt-tu.txt-xs Countries
+  .active-country-list  
+        
+    label#input-label.combo-label
+    span#input-remove(style='display: none') remove
+    // used as descriptive text for option buttons; if used within the button text itself, it ends up being read with the input name
+    ul#input-selected.selected-options
+    .js-multiselect
+      input#input.combo-input(
+        aria-activedescendant=''
+        aria-autocomplete='none'
+        aria-controls='listbox3'
+        aria-expanded='false'
+        aria-haspopup='listbox'
+        aria-labelledby='combo3-label combo3-selected'
+        role='combobox'
+        type='text'
+        placeholder="Start typing to show countries (max 5)"
+      )
+      #input-listbox.combo-menu(role='listbox')
+
+  - cat = null
+  include _chart

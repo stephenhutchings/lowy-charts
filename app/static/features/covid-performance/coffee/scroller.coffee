@@ -2,6 +2,9 @@ require.register "views/scroller", (exports, require, module) ->
   easie = require("lib/easie")
   utils = require("lib/utils")
   keycode  = require("lib/keycode")
+  methods  = require("page-methods")
+  
+  SANDBOX = 5
 
   class ScrollerView extends Backbone.View
     events:
@@ -9,6 +12,7 @@ require.register "views/scroller", (exports, require, module) ->
       "hide": "onHide"
 
     initialize: ->
+      
       @$el.show()
       @data = _.extend {min: 0, max: 1000, offset: 1}, @$el.data()
 
@@ -18,12 +22,14 @@ require.register "views/scroller", (exports, require, module) ->
         pager: $(@$el.data("pager"))
         index: $(@$el.data("index"))
         items: $(".pager-item")
+        
+      $("#pager-total").html($('.slide-wrap').length)
 
       @listenTo this, "resize", @onResize
       $(document.body).on "fullscreenchange", _.bind(@setScale, this)
 
-      $("#btn-prev").click (e) => @onPrev(e)
-      $("#btn-next").click (e) => @onNext(e)
+      $("#btn-prev").click (e) => @scrollTo(@data.index - 1)
+      $("#btn-next").click (e) => @scrollTo(@data.index + 1)
       $("#btn-fs").click (e) => @onFS(e)
 
       timeout = null
@@ -44,7 +50,11 @@ require.register "views/scroller", (exports, require, module) ->
       , 1
 
     onResize: ->
-      @inactive = $(window).width() < 800 or $(window).height() < 720
+      @inactive = false
+      @mobile = $(window).width() < 600
+      
+      if @mobile
+        @slidePoints = $('.slide-wrap').map (i,s) -> s.offsetTop
 
       if @inactive
         @$elements.items.addClass("active")
@@ -55,16 +65,18 @@ require.register "views/scroller", (exports, require, module) ->
       return if @inactive
 
       i  = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
+      
+      # console.log @el.scrollTop, @el.offsetHeight
 
       unless @data.support
         window.clearTimeout(@timeout)
         @timeout = window.setTimeout =>
           index = Math.round @el.scrollTop / @el.offsetHeight
-          @el.scrollTo top: index * @el.offsetHeight, behavior: 'auto'
+          @el.scrollTo top: index * @el.offsetHeight, behavior: 'smooth'
         , 40
 
       @$elements.items.removeClass("active").eq(i).addClass("active")
-      @$elements.index.html(i + @data.offset)
+      @$elements.index.html(i + @data.offset)      
 
     onKey: (e) ->
       type = keycode(e)
@@ -73,32 +85,50 @@ require.register "views/scroller", (exports, require, module) ->
 
       if type is "UP" or type is "LEFT"
         e.preventDefault()
-        @el.scrollTo top: (index - 1) * height, behavior: 'auto'
+        @el.scrollTo top: (index - 1) * height, behavior: 'smooth'
 
       if type is "DOWN" or type is "RIGHT"
         e.preventDefault()
-        @el.scrollTo top: (index + 1) * height, behavior: 'auto'
-
-    onPrev: ->
-      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      @scrollTo(index - 1)
-
-    onNext: ->
-      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      @scrollTo(index + 1)
+        @el.scrollTo top: (index + 1) * height, behavior: 'smooth'
 
     scrollTo: (i) ->
-      @$el.addClass("scrolling")
-      @$el.scrollTo i * @el.offsetHeight, =>
-        @$el.removeClass("scrolling")
+      @el.scrollTo top: (i) * @el.offsetHeight, behavior: 'smooth'
 
     onScrollEnd: ->
       return if @inactive
-
-      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      isEnd = @el.scrollTop % @el.offsetHeight is 0
+      
+      t = @el.scrollTop
+      h = @el.offsetHeight
+      index = @data.index
+      
+      if @mobile
+        @slidePoints.each (i,p) -> 
+          if p > t and p < t+h
+            if p < t + 0.5*h then index = i
+            else index = i - 1
+      
+      else 
+        index = Math.floor t / h + 0.5
+        
+      isEnd = t % h is 0
+      
 
       if index isnt @data.index
+        
+        console.log index
+        
+        #---- CHART INTERACTIONS ----#
+        
+        if @data.index is "#pager-index" then @data.index = 0
+        targetChart = $(".slide-wrap:nth-child(#{index+1}) .chart-body")
+        targetChart?.append $("#chart-countries"), $("#country-labels")
+          
+        if @data.index is SANDBOX then methods.clearSandbox()
+        methods.deactivate()
+        if index is SANDBOX then methods.fillSandbox()
+        
+        #------------------------------#
+        
         $("body")
           .removeClass("slide-#{@data.index}")
           .addClass("slide-#{index}")
@@ -107,8 +137,9 @@ require.register "views/scroller", (exports, require, module) ->
           y: @el.scrollTop
           h: @el.offsetHeight
           index: index
-
+          
        if isEnd
+         
         for child, i in @el.children
           visible = i - 1 <= @data.index <= i + 1
           child.classList.toggle("active", i is @data.index)

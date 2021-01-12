@@ -1,0 +1,204 @@
+@import app/static/features/covid-performance/style/_vars.sass
+
+
+.line-chart
+  width: 100%
+  height: 100%
+  z-index: 20
+  pointer-events: none
+  
+  polyline
+    pointer-events: stroke
+  .dogtag
+    pointer-events: all
+
+.chart-wrap
+  position: relative
+  padding: 1rem 0
+  height: 100%
+  max-height: 675px
+
+.chart-body
+  position: relative
+  width: 100%
+  height: 100%
+  z-index: 10
+  
+#chart-countries
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 15
+  pointer-events: none
+
+#country-labels
+  position: absolute
+  pointer-events: none
+
+.country-line-label
+  opacity: 0
+  font-size: 14px
+  fill: currentColor
+  transform: translate(-4px, 4px)
+  text-shadow: 1px 1px 6px $dark, -1px 1px 6px $dark, 1px -1px 6px $dark, -1px -1px 6px $dark
+  
+  &.visible
+    opacity: 1
+
+.pathset
+  cursor: pointer
+  opacity: 0.8
+  
+  &.inactive,
+  &.inactive:hover
+    opacity: 0.1
+    
+  &.active,
+  &:hover
+    opacity: 1
+    
+.country-line
+  opacity: 0
+  pointer-events: none
+  
+  &.active
+    opacity: 0.4
+    
+  &.thicker.active
+    opacity: 0.9
+    stroke-width: 3
+    transition-duration: 0.1s
+    
+    &.transparent
+      stroke-width: 20
+    
+  &.transparent.active
+    stroke: rgba($dark,0)
+    pointer-events: stroke
+  
+  &.transparent:not(.thicker):hover + &
+    opacity: 1!important
+    stroke-width: 2
+    
+  &.transparent.thicker:hover + &
+    opacity: 1!important
+    stroke-width: 5
+    
+.dogtag
+  font-weight: bold
+  text-transform: uppercase
+  font-size: 12px
+
+.dogtag-mobile
+  display: none
+  pointer-events: all
+
+rect.fill-v
+
+  g:first-child &,
+  g:last-child &
+    opacity: 0.2
+    
+  g:nth-child(2) &,
+  g:nth-last-child(2) &
+    opacity: 0.5
+
+.y-ticks
+  font-size: 14px
+  
+  tspan
+    font-size: 9px
+    letter-spacing: 0.1em
+    
+  
+.chart-labels
+  
+  text-transform: uppercase
+  font-weight: 500
+  font-size: 14px
+  letter-spacing: 0.02em
+  
+  .x
+    position: absolute
+    bottom: -3rem
+    left: -0.5rem
+    
+  .y
+    position: absolute
+    top: calc(50% - 1rem)
+    right: -13rem
+    transform-origin: center
+    transform: rotate(90deg)
+    line-height: 0.8
+    
+  path
+    stroke: $dark
+    
+  text
+    font-size: 10px
+    letter-spacing: 0.02em
+    font-weight: 400
+
+#tooltip
+  position: absolute
+  pointer-events: none
+  color: white
+  z-index: 30
+  text-align: right
+  right: 0
+  top: -2rem
+
+@media (max-width: 1100px)
+  
+  .chart-wrap
+    padding: 1rem 2rem 1rem 4rem
+    
+  .x-ticks
+    
+    .fill-dark
+      display: none
+  
+@media (max-width: 600px)
+  
+  .chart-wrap
+    margin-top: 3rem
+    padding: 1rem 3rem 1rem 0
+    
+    // To accomodate 4th label for "region" slide on mobile
+    .slide-wrap:nth-child(3) &
+      margin-top: 6rem
+
+  .country-line-label
+    display: none
+
+  .chart-body
+    
+    > svg
+      min-height: 400px
+  
+  .dogtag
+    display: none
+    
+  .dogtag-mobile
+    display: block
+    
+  .x-ticks
+    > g:nth-child(even)
+      display: none
+      
+  .x-ticks text,
+  .y-ticks text
+    font-size: 12px
+  
+  .chart-labels
+    
+    font-size: 12px    
+    
+    .x svg
+      width: 10px
+      
+    .y  
+      right: -12rem
+      

@@ -1,0 +1,92 @@
+svg.line-chart.fade-in.delay-1(
+  width="100%"
+  height="100%"    
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  data-name=cat
+  data-duration=4000
+  data-view="line, in-viewport"    
+)
+
+  - wprev = 0
+  
+  for l, i in labels
+    
+    - split = l.split("<br>")
+    - lens  = split.map( i => i.length )
+    - len   = Math.max( ...lens )
+    
+    - h = lens.length == 1 ? 12 : 18
+    - y = lens.length == 1 ? 5 : -2
+    - w = len > 12 ? len * 8.5 : len > 11 ? len * 8 : len > 9 ? len * 8.75 : len > 7 ? len * 10 : len > 4 ? len * 11 : 44
+    - d = `M-8,-${h} l${w},0 l8,${h} l-8,${h} l-${w},0Z`
+    
+    g.pathset(
+      data-view="path"
+      data-category=cat
+      data-specifier=i
+      )
+    
+      svg.avg-lines(
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100" 
+        preserveAspectRatio="none"
+      )
+        
+        polyline.line(
+          class=colors[i]
+          stroke-width=4
+          points=(
+            values
+              .map( (s,j,a) => [ j/(a.length - 1)*100, 100-s[i] ]
+                .map( e => e.toFixed(2) )
+                .join(",")
+              )
+              .join(" ")
+          )
+        )
+
+      svg.dogtag-mobile(
+        x=wprev
+        y=-32
+      )
+        - wprev += w + 14
+        - h *= 1.25
+        - w *= 1.05
+        
+        if split.length == 1
+        
+          rect(
+            x=0 y=-h
+            width=w height=2*h
+            class=`fill-${colors[i]}`
+          )
+          text(x=w/2 y=y text-anchor="middle")
+            = split
+            
+        else if split.length == 2
+        
+          rect(
+            x=(w-wprev+10) y=(-2*h - 9)
+            width=1.8*w height=30
+            class=`fill-${colors[i]}`
+          )
+          text(x=(w-wprev+26) y=(-h-12) text-anchor="start")
+            = split.join(" ")
+      
+      svg.dogtag(
+        y=(100-values[0][i]) + "%"
+        x=-w+7
+        preserveAspectRatio="xMinYMin"
+      )
+        path(
+          d=d
+          class=`fill-${colors[i]}`
+          )
+        text(x=0 y=y text-anchor="start")
+          = split[0]
+          
+          if split.length == 2
+            tspan(x=0 dy=12)
+              = split[1]

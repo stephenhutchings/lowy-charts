@@ -1,0 +1,47 @@
+title: >
+  Figure 3: Additional recovery financing&nbsp;needed
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  3-year total, US$ billions
+
+axes:
+  minY:  0
+  maxY: 4
+  stepsY: 5
+  percentage: false
+  minorLines: true
+  dotted: [1,3,5,7,9,11,13] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - Low estimate
+      - High estimate
+
+  -
+    title: PNG
+    color: "dark"
+    values:
+      - 1.5957
+      - 2.3936
+
+  -
+    title: Fiji
+    color: "highlight"
+    values:
+      - 0.4853
+      - 0.7279
+  -
+    title: Rest of Pacific
+    color: "grey"
+    values:
+      - 0.2662
+      - 0.4004
