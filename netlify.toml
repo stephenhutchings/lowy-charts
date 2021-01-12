@@ -14,7 +14,7 @@
 # Chinese Communities Poll is not part of this repo, but can be accessed from this domain
 [[redirects]]
   from = "/features/chinese-communities/*"
-  to = "https://lowy-institute-chinese-communities.netlify.app/:splat"
+  to = "https://lowy-institute-chinese-communities.netlify.app/features/chinese-communities/:splat"
   status = 200
 
 # ARCHIVED CONTENT
