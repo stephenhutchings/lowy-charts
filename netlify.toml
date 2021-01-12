@@ -1,5 +1,23 @@
+# LINKED PROJECTS
+# Typology of Terror is not part of this repo, but can be accessed from this domain
+[[redirects]]
+  from = "/features/typology-of-terror/*"
+  to = "https://lowy-digital-terrorism.netlify.com/features/typology-of-terror/:splat"
+  status = 200
 
-# Redirect archival content from old servers
+# PAM Project Evaluations is not part of this repo, but can be accessed from this domain
+[[redirects]]
+  from = "/pacific-aid-map/*"
+  to = "https://lowy-pam.netlify.app/pacific-aid-map/:splat"
+  status = 200
+
+# Chinese Communities Poll is not part of this repo, but can be accessed from this domain
+[[redirects]]
+  from = "/features/chinese-communities/*"
+  to = "https://lowy-institute-chinese-communities.netlify.app/:splat"
+  status = 200
+
+# ARCHIVED CONTENT
 # interactives.lowyinstitute.org
 [[redirects]]
   from = "/fonops_maps/Overview.html"
@@ -43,25 +61,15 @@
 # Moved content
 [[redirects]]
   from = "/features/indonesia-votes/"
-  to = "/features/indonesia-votes-2019"
+  to = "/features/indonesia-votes-2019/"
   status = 301
+
 [[redirects]]
   from = "/features/australian-attitudes-to-climate-change/"
   to = "https://www.lowyinstitute.org/issues/australia-climate-change"
   status = 301
 
-# Typology of Terror is not part of this repo, but can be accessed from this domain
-[[redirects]]
-  from = "/features/typology-of-terror/*"
-  to = "https://lowy-digital-terrorism.netlify.com/features/typology-of-terror/:splat"
-  status = 200
-
-# PAM Project Evaluations is not part of this repo, but can be accessed from this domain
-[[redirects]]
-  from = "/pacific-aid-map/*"
-  to = "https://lowy-pam.netlify.app/pacific-aid-map/:splat"
-  status = 200
-
+# OTHER CONFIG
 [[headers]]
   # Allow CORS on fonts for emails, etc.
   for = "/fonts/*"
