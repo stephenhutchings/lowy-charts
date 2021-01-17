@@ -35,10 +35,7 @@
   income:
     -
       n: 0
-      v: Low
+      v: Developing
     -
       n: 1
-      v: Middle
-    -
-      n: 2
-      v: High
+      v: Advanced
