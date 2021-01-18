@@ -23,8 +23,8 @@
               onclick="sortTable(this,false, 1)"
               ) Country
               span.icon.icon-down-sm
-            th.txt-left(
-              ) Cases
+            th.txt-center(
+              ) Average
               
       .country-list: table
         tbody
@@ -38,7 +38,9 @@
                   src=`../../img/country-flags/png-100px/${c.code.toLowerCase()}.png`
                   )
                 .name!= c.shortname || c.name
-              td.sparkline
+              td.txt-right= c.average.toFixed(1)
+              // Removed sparkline  
+              //td.sparkline
                 svg(
                   viewBox="0 0 100 100" preserveAspectRatio="none"
                   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

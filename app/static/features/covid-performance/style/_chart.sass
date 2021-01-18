@@ -58,6 +58,22 @@
   &.active,
   &:hover
     opacity: 1
+
+.median
+  
+  &-path
+    fill: none
+    stroke: lighten($mid, 10)
+    stroke-width: 2px
+    stroke-dasharray: 2
+    stroke-linecap: unset
+  
+  &-text
+    fill: lighten($mid, 10)
+    font-size: 10px
+    text-transform: uppercase
+    transform: translate(6px, 0px)
+    letter-spacing: 0.05em
     
 .country-line
   opacity: 0
@@ -128,7 +144,7 @@ rect.fill-v
   .y
     position: absolute
     top: calc(50% - 1rem)
-    right: -13rem
+    right: -12rem
     transform-origin: center
     transform: rotate(90deg)
     line-height: 0.8
