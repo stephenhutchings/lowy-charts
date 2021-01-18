@@ -165,6 +165,24 @@ rect.fill-v
   text-align: right
   right: 0
   top: -2rem
+  
+.rankings
+  
+  text
+    text-anchor: end
+    fill: white
+    font-size: 13px
+    opacity: 0.8
+    
+  .label
+    font-size: 13px
+    font-weight: 600
+    text-transform: uppercase
+    letter-spacing: 0.08em
+    
+  @for $i from 1 through 4
+    .offset-#{$i}
+      transform: translateY($i * -17px)
 
 @media (max-width: 1100px)
   

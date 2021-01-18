@@ -34,6 +34,7 @@ require.register "views/path", (exports, require, module) ->
       p.querySelectorAll('g').forEach (g) -> if g isnt e then g.classList.add('inactive') # Dim siblings
       
       @data.countries.map (d) -> d.classList.add('active') # Show country paths
+      $('.rankings').addClass('hidden')  # Hide table of averages
       
       e.classList.add 'active'
       

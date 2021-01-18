@@ -20,6 +20,9 @@ require.register "page-methods", (exports, require, module) ->
       
       get('#modal').classList.remove('active')
       get('#modal-inner').scrollTop = 0
+      
+      $('.rankings').removeClass('hidden')  # Reshow table of averages
+      
             
       @hideActiveCountries()
       

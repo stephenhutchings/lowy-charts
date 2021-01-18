@@ -6,6 +6,10 @@ colors:
   - fff
   - blue-1
   - blue-3
+
+averages:
+  - 45.0
+  - 57.4
     
 values:
   - [ 52.30, 40.21 ]

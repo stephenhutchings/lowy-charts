@@ -90,3 +90,18 @@ svg.line-chart.fade-in.delay-1(
           if split.length == 2
             tspan(x=0 dy=12)
               = split[1]
+
+  svg.rankings.fade-in.delay-1( y="96%" x="100%" )
+    
+    - grouped = labels.map( (l,i) => ({ label: l, mean: averages[i] }) )
+    - sorted  = grouped.sort( (a,b) => a.mean - b.mean ) // ascending order which gets flipped in offset
+    
+    text.label(class=("offset-" + labels.length)) Average scores
+  
+    for item, i in sorted
+      text.rank(
+        class=("offset-" + i)
+      )
+        = item.label.replace(/Middle East<br>and/g, "M. East & ")
+        
+        tspan( dx="8" )= item.mean.toFixed(1)

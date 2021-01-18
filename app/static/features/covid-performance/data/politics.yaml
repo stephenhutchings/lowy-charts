@@ -8,6 +8,11 @@ colors:
   - red-2
   - fff
   - blue-1
+
+averages:
+  - 49.2
+  - 41.6
+  - 50.8
     
 values:
   - [ 71.97, 41.95, 41.35 ]
