@@ -39,7 +39,7 @@ require.register "views/scroller", (exports, require, module) ->
         window.clearTimeout timeout
         timeout = window.setTimeout =>
           @onScrollEnd()
-        , if @data.support then 10 else 300
+        , if @data.support then 30 else 300
       )
 
       timeout = window.setTimeout =>
@@ -115,8 +115,6 @@ require.register "views/scroller", (exports, require, module) ->
 
       if index isnt @data.index
         
-        console.log index
-        
         #---- CHART INTERACTIONS ----#
         
         if @data.index is "#pager-index" then @data.index = 0
@@ -150,12 +148,6 @@ require.register "views/scroller", (exports, require, module) ->
 
 
         window.ga?("send", "event", "Scroller", "show", document.title, index)
-
-    onFS: ->
-      document.body.requestFullscreen?().then =>
-        index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-
-        @scrollTo(index)
 
     setScale: ->
       if document.fullscreenElement
