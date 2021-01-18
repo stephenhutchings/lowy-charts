@@ -3,7 +3,7 @@
   code: AU
   rank: 8
   average: 77.9
-  region: 1
+  region: 0
   politics: 2
   size: 1
   income: 1
@@ -33,7 +33,7 @@
   code: BD
   rank: 84
   average: 24.9
-  region: 1
+  region: 0
   politics: 1
   size: 2
   income: 0
@@ -63,7 +63,7 @@
   code: BO
   rank: 93
   average: 18.9
-  region: 0
+  region: 1
   politics: 1
   size: 1
   income: 0
@@ -73,7 +73,7 @@
   code: BR
   rank: 98
   average: 4.3
-  region: 0
+  region: 1
   politics: 2
   size: 2
   income: 0
@@ -93,7 +93,7 @@
   code: CA
   rank: 61
   average: 39.5
-  region: 0
+  region: 1
   politics: 2
   size: 1
   income: 1
@@ -103,7 +103,7 @@
   code: CL
   rank: 89
   average: 22
-  region: 0
+  region: 1
   politics: 2
   size: 1
   income: 0
@@ -113,7 +113,7 @@
   code: CO
   rank: 96
   average: 7.7
-  region: 0
+  region: 1
   politics: 2
   size: 1
   income: 0
@@ -123,7 +123,7 @@
   code: CR
   rank: 71
   average: 35.8
-  region: 0
+  region: 1
   politics: 2
   size: 0
   income: 0
@@ -183,7 +183,7 @@
   code: DO
   rank: 87
   average: 23.8
-  region: 0
+  region: 1
   politics: 2
   size: 1
   income: 0
@@ -193,7 +193,7 @@
   code: SV
   rank: 56
   average: 43
-  region: 0
+  region: 1
   politics: 2
   size: 0
   income: 0
@@ -273,7 +273,7 @@
   code: GT
   rank: 88
   average: 22.6
-  region: 0
+  region: 1
   politics: 1
   size: 1
   income: 0
@@ -303,7 +303,7 @@
   code: IN
   rank: 86
   average: 24.3
-  region: 1
+  region: 0
   politics: 2
   size: 2
   income: 0
@@ -313,7 +313,7 @@
   code: ID
   rank: 85
   average: 24.7
-  region: 1
+  region: 0
   politics: 2
   size: 2
   income: 0
@@ -373,7 +373,7 @@
   code: JM
   rank: 31
   average: 58.6
-  region: 0
+  region: 1
   politics: 2
   size: 0
   income: 0
@@ -383,7 +383,7 @@
   code: JP
   rank: 45
   average: 50.1
-  region: 1
+  region: 0
   politics: 2
   size: 2
   income: 1
@@ -473,7 +473,7 @@
   code: MY
   rank: 16
   average: 71
-  region: 1
+  region: 0
   politics: 2
   size: 1
   income: 0
@@ -483,7 +483,7 @@
   code: MV
   rank: 25
   average: 61
-  region: 1
+  region: 0
   politics: null
   size: 0
   income: 0
@@ -503,7 +503,7 @@
   code: MX
   rank: 97
   average: 6.5
-  region: 0
+  region: 1
   politics: 2
   size: 2
   income: 0
@@ -533,7 +533,7 @@
   code: MM
   rank: 24
   average: 62.3
-  region: 1
+  region: 0
   politics: 0
   size: 1
   income: 0
@@ -553,7 +553,7 @@
   code: NP
   rank: 70
   average: 36.6
-  region: 1
+  region: 0
   politics: 1
   size: 1
   income: 0
@@ -573,7 +573,7 @@
   code: NZ
   rank: 1
   average: 94.4
-  region: 1
+  region: 0
   politics: 2
   size: 0
   income: 1
@@ -603,7 +603,7 @@
   code: OM
   rank: 91
   average: 20.3
-  region: 1
+  region: 0
   politics: 0
   size: 0
   income: 0
@@ -613,7 +613,7 @@
   code: PK
   rank: 69
   average: 36.9
-  region: 1
+  region: 0
   politics: 1
   size: 2
   income: 0
@@ -623,7 +623,7 @@
   code: PA
   rank: 92
   average: 19.7
-  region: 0
+  region: 1
   politics: 2
   size: 0
   income: 0
@@ -633,7 +633,7 @@
   code: PY
   rank: 58
   average: 40.9
-  region: 0
+  region: 1
   politics: 2
   size: 0
   income: 0
@@ -643,7 +643,7 @@
   code: PH
   rank: 79
   average: 30.6
-  region: 1
+  region: 0
   politics: 2
   size: 2
   income: 0
@@ -743,7 +743,7 @@
   code: SG
   rank: 13
   average: 74.9
-  region: 1
+  region: 0
   politics: 2
   size: 0
   income: 1
@@ -783,7 +783,7 @@
   code: KR
   rank: 20
   average: 69.4
-  region: 1
+  region: 0
   politics: 2
   size: 1
   income: 1
@@ -803,7 +803,7 @@
   code: LK
   rank: 10
   average: 76.8
-  region: 1
+  region: 0
   politics: 2
   size: 1
   income: 0
@@ -833,7 +833,7 @@
   code: TW
   rank: 3
   average: 86.4
-  region: 1
+  region: 0
   politics: 2
   size: 1
   income: 1
@@ -843,7 +843,7 @@
   code: TH
   rank: 4
   average: 84.2
-  region: 1
+  region: 0
   politics: 2
   size: 1
   income: 0
@@ -863,7 +863,7 @@
   code: TT
   rank: 28
   average: 59.8
-  region: 0
+  region: 1
   politics: 2
   size: 0
   income: 0
@@ -933,7 +933,7 @@
   code: US
   rank: 94
   average: 17.3
-  region: 0
+  region: 1
   politics: 2
   size: 2
   income: 1
@@ -943,7 +943,7 @@
   code: UY
   rank: 12
   average: 75.8
-  region: 0
+  region: 1
   politics: 2
   size: 0
   income: 0
@@ -953,7 +953,7 @@
   code: VN
   rank: 2
   average: 90.8
-  region: 1
+  region: 0
   politics: 0
   size: 1
   income: 0
