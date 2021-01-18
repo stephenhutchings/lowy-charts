@@ -4,7 +4,7 @@ require.register "views/scroller", (exports, require, module) ->
   keycode  = require("lib/keycode")
   methods  = require("page-methods")
   
-  SANDBOX = 5
+  SANDBOX = 6
 
   class ScrollerView extends Backbone.View
     events:

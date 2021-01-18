@@ -4,8 +4,8 @@
 - rangey = scaley[1] - scaley[0]
 - median = data.getOne(`static/features/covid-performance/data/median`).values
 
-- toPoint = (p,i,n) => p ? [ (i/(n-1)*100).toFixed(2), 100-p ].join(",") : ""
-- toPath  = a => a.map( (s,i) => !s ? "" : (!i || !a[i-1]) ? `M${toPoint(s,i,a.length)}` : `L${toPoint(s,i,a.length)}` ).filter( e => e != "" ).join(" ")
+- toPoint = (p,i,n) => p!==null ? [ (i/(n-1)*100).toFixed(2), 100-p ].join(",") : ""
+- toPath  = a => a.map( (s,i) => s==null ? "" : (!i || a[i-1]==null) ? `M${toPoint(s,i,a.length)}` : `L${toPoint(s,i,a.length)}` ).filter( e => e != "" ).join(" ")
 - isValid = a => (_.uniq(a)).length > 1
 
 if cat
