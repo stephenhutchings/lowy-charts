@@ -9,6 +9,8 @@ require.register "page-methods", (exports, require, module) ->
 
     deactivate: ->
       
+      console.log "deactivate"
+      
       a = get ".pathset.active"
       if a?
       
@@ -22,16 +24,15 @@ require.register "page-methods", (exports, require, module) ->
       get('#modal-inner').scrollTop = 0
       
       $('.rankings').removeClass('hidden')  # Reshow table of averages
-      
             
       @hideActiveCountries()
       
     hideActiveCountries: -> 
       
-      c = getAll '.slide-wrap:not(.sandbox) .country-line.active'
+      c = getAll '.country-line.active'
       c.forEach (p) -> p.classList.remove('active')
         
-      l = getAll '.slide-wrap:not(.sandbox) .country-line-label.visible'
+      l = getAll '.country-line-label.visible'
       l.forEach (p) -> p.classList.remove('visible')
     
     clearSandbox: -> 

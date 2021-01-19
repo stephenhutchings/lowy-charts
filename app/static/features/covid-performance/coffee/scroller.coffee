@@ -51,7 +51,9 @@ require.register "views/scroller", (exports, require, module) ->
 
     onResize: ->
       @inactive = false
-      @mobile = $(window).width() < 600
+      @mobile = true # $(window).width() < 600
+                     # setting mobile to true to set slide indices
+                     # at .slide-wrap entry points, rather than i * 100vh
       
       if @mobile
         @slidePoints = $('.slide-wrap').map (i,s) -> s.offsetTop
@@ -101,8 +103,10 @@ require.register "views/scroller", (exports, require, module) ->
       h = @el.offsetHeight
       index = @data.index
       
+      # update index if the top of a new .slide-wrap
+      # container is in the top 50% of the screen
       if @mobile
-        @slidePoints.each (i,p) -> 
+        @slidePoints.each (i,p) ->
           if p > t and p < t+h
             if p < t + 0.5*h then index = i
             else index = i - 1
@@ -117,14 +121,14 @@ require.register "views/scroller", (exports, require, module) ->
         
         #---- CHART INTERACTIONS ----#
         
+        if @data.index is SANDBOX then methods.clearSandbox() # if leaving sandbox, clear it
+        methods.deactivate()                                  # hide all country lines in any case
+        if index is SANDBOX then methods.fillSandbox()        # if landing on sandbox, fill it
+
         if @data.index is "#pager-index" then @data.index = 0
         targetChart = $(".slide-wrap:nth-child(#{index+1}) .chart-body")
         targetChart?.append $("#chart-countries"), $("#country-labels")
           
-        if @data.index is SANDBOX then methods.clearSandbox()
-        methods.deactivate()
-        if index is SANDBOX then methods.fillSandbox()
-        
         #------------------------------#
         
         $("body")

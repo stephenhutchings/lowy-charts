@@ -107,7 +107,6 @@ function getActionFromKey(event, menuOpen) {
 function getIndexByLetter(options, filter) {
   const firstMatch = filterOptions(options, filter)[0];
   const allSameLetter = (array) => array.every((letter) => letter === array[0]);
-  console.log('testing string', filter);
   
   if (firstMatch) {
     return options.indexOf(firstMatch);
@@ -319,8 +318,6 @@ Multiselect.prototype.selectOption = function(index) {
  buttonEl.setAttribute('aria-describedby', `${this.idBase}-remove`);
  buttonEl.addEventListener('click', () => { this.removeOption(index); });
  buttonEl.innerHTML = selected + ' ';
- 
-  console.log(listItem)
 
  listItem.appendChild(buttonEl);
  this.selectedEl.appendChild(listItem);

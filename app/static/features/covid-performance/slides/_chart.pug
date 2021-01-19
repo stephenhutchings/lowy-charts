@@ -7,8 +7,10 @@
 - toPoint = (p,i,n) => p!==null ? [ (i/(n-1)*100).toFixed(2), 100-p ].join(",") : ""
 - toPath  = a => a.map( (s,i) => s==null ? "" : (!i || a[i-1]==null) ? `M${toPoint(s,i,a.length)}` : `L${toPoint(s,i,a.length)}` ).filter( e => e != "" ).join(" ")
 - isValid = a => (_.uniq(a)).length > 1
+- toAlias = cat =>  cat.replace("size", "Population Size").replace("income","Development Status").replace("region","Geography")
 
 if cat
+  
   - labels = data.getOne(`static/features/covid-performance/data/${cat}`).labels
   - values = data.getOne(`static/features/covid-performance/data/${cat}`).values
   - colors = data.getOne(`static/features/covid-performance/data/${cat}`).colors
@@ -16,7 +18,10 @@ if cat
       
 .chart-wrap
   
-  .chart-body(data-view="in-viewport")
+  if cat
+    h3= "By " + toAlias(cat)
+  
+  .chart-body(data-view="in-viewport")  
     
     svg(
       width="100%"
@@ -43,7 +48,7 @@ if cat
                   
       // Y TICKS
       svg.y-ticks(width="100%" height="100%")
-        - steps = 5
+        - steps = 11
         for n, i in new Array(steps)
           - y = (i) / (steps-1) * 100 + "%"
           g.fade-in(class=("delay-" + i * 2))
@@ -63,7 +68,7 @@ if cat
                 text-anchor="start"
                 transform="translate(14 7)"
               )
-                | #{100 - (25 * i)}
+                | #{100 - (100/(steps-1) * i)}
 
 
     // MEDIAN LINE
