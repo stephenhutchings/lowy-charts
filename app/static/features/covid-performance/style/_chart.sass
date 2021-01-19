@@ -60,14 +60,16 @@
 
 .pathset
   cursor: pointer
-  opacity: 0.8
+  transition: opacity 0.3s
   
+  &.dimmed
+    opacity: 0.2
+    
   &.inactive,
   &.inactive:hover
     opacity: 0.1
     
-  &.active,
-  &:hover
+  &.active
     opacity: 1
 
 .median
@@ -182,18 +184,18 @@ rect.fill-v
   text
     text-anchor: end
     fill: white
-    font-size: 13px
+    font-size: 15px
     opacity: 0.8
     
   .label
-    font-size: 13px
+    font-size: 14px
     font-weight: 600
     text-transform: uppercase
     letter-spacing: 0.08em
     
   @for $i from 1 through 4
     .offset-#{$i}
-      transform: translateY($i * -17px)
+      transform: translateY($i * -18px)
 
 @media (max-width: 1100px)
   

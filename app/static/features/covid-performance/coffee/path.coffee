@@ -9,6 +9,8 @@ require.register "views/path", (exports, require, module) ->
     events:
       "click": "click"
       "mouseover": "append"
+      "mouseenter": "hover"
+      "mouseleave": "hoveroff"
 
     initialize: (@data) ->
       
@@ -25,6 +27,20 @@ require.register "views/path", (exports, require, module) ->
       e ?= @data.el
       p ?= e.parentElement
       p.appendChild e
+      
+    hover: (event) ->
+      # Hide neighbouring pathsets
+      e = @data.el
+      e.parentElement
+        .querySelectorAll('.pathset').forEach (el) ->
+          if el isnt e then el.classList.add('dimmed')
+        
+    hoveroff: (event) ->
+      # Show neighbouring pathsets
+      e = @data.el
+      e.parentElement
+        .querySelectorAll('.dimmed').forEach (el) ->
+          if el isnt e then el.classList.remove('dimmed')
       
     activate: (ev) ->
       

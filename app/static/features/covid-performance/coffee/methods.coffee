@@ -9,8 +9,6 @@ require.register "page-methods", (exports, require, module) ->
 
     deactivate: ->
       
-      console.log "deactivate"
-      
       a = get ".pathset.active"
       if a?
       

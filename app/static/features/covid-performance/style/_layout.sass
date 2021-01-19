@@ -6,7 +6,7 @@ $slides: 10
   overflow: auto
   height: 100%
   scroll-behavior: smooth
-  scroll-snap-type: y proximity
+  // scroll-snap-type: y proximity
   // -- 
   position: fixed
   display: flex
@@ -39,7 +39,7 @@ $slides: 10
   max-height: 0
   
   &.active
-    max-height: 150px
+    max-height: 250px
   
   .btn-close
     font-size: 0.8rem
@@ -107,6 +107,11 @@ $slides: 10
   
   .slide-wrap
     padding: 3rem 4rem 4rem
+    
+@media (max-width: 900px)
+  
+  .slide-wrap.intro
+    height: auto
 
 @media (max-width: 600px)
   

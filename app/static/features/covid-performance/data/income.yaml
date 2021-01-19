@@ -3,9 +3,8 @@ labels:
   - Advanced
     
 colors: 
-  - fff
-  - blue-1
-  - blue-3
+  - pastel-1
+  - pastel-3
 
 averages:
   - 45.0

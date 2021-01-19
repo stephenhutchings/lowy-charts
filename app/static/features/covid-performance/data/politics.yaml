@@ -5,9 +5,9 @@ labels:
   - Democracy
     
 colors: 
-  - red-2
-  - fff
-  - blue-1
+  - pastel-1
+  - pastel-3
+  - pastel-5
 
 averages:
   - 49.2

@@ -4,9 +4,9 @@ labels:
   - Large
     
 colors: 
-  - fff
-  - blue-3
-  - blue-1
+  - pastel-1
+  - pastel-3
+  - pastel-5
 
 averages:
   - 56.5

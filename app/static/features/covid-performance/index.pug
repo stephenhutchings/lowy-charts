@@ -1,9 +1,21 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Covid Performance"
-
+  - page.title = "Covid Performance - Lowy Institute"
+  - page.metaTitle = "Covid Performance - Lowy Institute"
+  - page.description = ""
+  - page.url = "https://interactives.lowyinstitute.org/features/covid-performance/"
+  - page.image = "https://interactives.lowyinstitute.org/features/covid-performance/img/thumbnail.jpg"
+    
 block page
+  
+  include partials/_nav-list
+  include partials/_header
+  include partials/_social
+  
+  nav
+    +nav-list
+    include partials/_social
     
   //#controls.p-xs.txt-ff
     #pager-progress
@@ -42,6 +54,7 @@ block append css
     include:sass style/_sandbox.sass
     include:sass style/_transitions.sass
     include:sass style/_table.sass
+    include:sass style/_ui.sass
 
 block append customScripts
 

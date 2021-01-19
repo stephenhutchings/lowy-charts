@@ -5,6 +5,8 @@ $(document).ready =>
   # Functions
   get    = (s) -> document.querySelector s
   getAll = (s) -> document.querySelectorAll s
+  navTog = (e) -> nav.classList.toggle 'open'; navBtn.classList.toggle 'open'; e.stopPropagation();
+  navCls = ()  -> nav.classList.remove 'open'; navBtn.classList.remove 'open';
   
   # Elements
   body  = document.body
@@ -14,13 +16,24 @@ $(document).ready =>
   sandbox   = get ".sandbox"
   tooltip   = get "#tooltip"
   modalBtn  = get "#modal .btn-close"
+  navBtn    = get "#btn-nav"
+  navLks    = getAll "nav a"
+  nav       = get "nav"
   
-  # State
-  vh = document.documentElement.clientHeight
+  # Window sizes
+  vh = vw = mobile = 0
+  onResize = () ->
+    vh = document.documentElement.clientHeight
+    vw = document.documentElement.clientWidth
+    mobile = vw < 600
 
   # Events
-  body.addEventListener 'click', (e) -> methods.deactivate()
+  onResize()
+  window.addEventListener 'resize', (e) -> onResize()
+  body.addEventListener 'click', (e) -> methods.deactivate(); navCls();
   sandbox.addEventListener 'click', (e) -> e.stopPropagation()
+  nav.addEventListener 'click', (e) -> e.stopPropagation()
+  navBtn.addEventListener 'click', (e) -> navTog(e)
   chartArea.forEach (el) -> el.addEventListener 'click', (e) -> e.stopPropagation()
   
   countries.forEach (el) -> 
@@ -36,3 +49,6 @@ $(document).ready =>
   modalBtn.addEventListener 'click', (e) -> 
     modalBtn.parentElement.classList.toggle 'active'
     e.stopPropagation()
+    
+  navLks.forEach (a) -> 
+    a.addEventListener 'click', (e) -> if mobile then navCls()
