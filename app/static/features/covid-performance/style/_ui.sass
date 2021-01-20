@@ -24,6 +24,25 @@ header
   line-height: 14px
   transition: all 0.3s
 
+.btn-down
+  font-size: 0.9rem
+  text-transform: uppercase
+  font-weight: 600
+  opacity: 0.95
+  letter-spacing: 0.08em
+  background: $mid
+  color: white
+  padding: 6px 1em
+  cursor: pointer
+  transition-duration: 0.2s
+  
+  &::after
+    content: " ↓"
+
+  &:hover
+    opacity: 1
+    transform: translateY(1px)
+
 #btn-nav
   cursor: pointer 
   transition-duration: 0.3s
@@ -32,7 +51,7 @@ header
     transform: scale(1.05)
     
     path
-      fill: $pastel-3
+      fill: $pastel-1
   
   path
     fill: white
@@ -52,9 +71,6 @@ header
       
     &:hover
       transform: scale(1.05) rotate(90deg)
-      
-      path
-        fill: $pastel-1
 
 nav
   position: fixed

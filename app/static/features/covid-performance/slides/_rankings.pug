@@ -12,40 +12,43 @@
   - cat = "rankings"
   include _context
 
-  .type-wrap: .table-wrapper.flex
-    .flex-col
-      .table-head: table
-        thead
-          tr
-            th.txt-left(onclick="sortTable(this,true,0)") Rank
-              span.icon.icon-down-sm.show
-            th.txt-left(
-              onclick="sortTable(this,false, 1)"
-              ) Country
-              span.icon.icon-down-sm
-            th.txt-center(
-              ) Average
-              
-      .country-list: table
-        tbody
-          each c, i in list
+  .type-wrap(data-view="in-viewport")
+    .table-wrapper.flex
+      .flex-col
+        .table-head: table
+          thead
             tr
-              td.txt-right= c.rank
-              td.flex.items-center
-                img(
-                  width="45px"
-                  alt=`Country flag of ${c.name}`
-                  src=`../../img/country-flags/png-100px/${c.code.toLowerCase()}.png`
+              th.txt-left(onclick="sortTable(this,true,0)") Rank
+                span.icon.icon-down-sm.show
+              th.txt-left(
+                onclick="sortTable(this,false, 1)"
+                ) Country
+                span.icon.icon-down-sm
+              th.txt-center(
+                ) Average
+                
+        .country-list: table
+          tbody
+            each c, i in list
+              tr
+                td.txt-right= c.rank
+                td.flex.items-center
+                  img(
+                    width="45px"
+                    alt=`Country flag of ${c.name}`
+                    src=`../../img/country-flags/png-100px/${c.code.toLowerCase()}.png`
+                    )
+                  .name!= c.shortname || c.name
+                td.txt-right= c.average.toFixed(1)
+                // Removed sparkline  
+                //td.sparkline
+                  svg(
+                    viewBox="0 0 100 100" preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                   )
-                .name!= c.shortname || c.name
-              td.txt-right= c.average.toFixed(1)
-              // Removed sparkline  
-              //td.sparkline
-                svg(
-                  viewBox="0 0 100 100" preserveAspectRatio="none"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                )
-                  path( d=toPath(c.percentiles) )              
+                    path( d=toPath(c.percentiles) )  
+    
+    p.footnote * Please note: China was not included in this ranking due to a lack of publicly available data on testing.<br>&nbsp;Data for Taiwan is provided separately to that of China.  
 
   script.
     
