@@ -2,8 +2,10 @@
 
 .slide-wrap.sandbox
   
-  h1#country-explore Explore countries
-  p Drill down into the performance of individual countries on a single chart.
+  .type-wrap(data-view="in-viewport")
+  
+    h1#country-explore Sandbox
+    p To compare specific combinations of countries and categories, use the search bar to make up to five selections.
     
   //.active-category-list  
     each key, i in keys
@@ -14,7 +16,6 @@
             input.tgl(type="checkbox" id=`${i}-${j}`)
             label.tgl-btn(for=`${i}-${j}`)= item.v
 
-  //- .txt-tu.txt-xs Countries
   .active-country-list  
         
     label#input-label.combo-label
