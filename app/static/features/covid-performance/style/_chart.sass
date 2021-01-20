@@ -178,6 +178,23 @@ rect.fill-v
   text-align: right
   right: 0
   top: -2rem
+
+.click-instruction
+  opacity: 0.7
+  
+  > *
+    fill: $lite
+  
+  circle
+    fill: $pastel-3
+    transform-origin: top
+    opacity: 0.7
+    animation: light-pulse 1.25s infinite alternate ease-in
+    
+  text
+    font-size: 16px
+    font-weight: 600
+    letter-spacing: 0.08em
   
 .rankings
   
@@ -202,6 +219,9 @@ rect.fill-v
   .chart-wrap
     padding: 1rem 2rem 1rem 4rem
     
+  .chart-body
+    width: 85%
+    
   .x-ticks
     
     .fill-dark
@@ -221,6 +241,7 @@ rect.fill-v
     display: none
 
   .chart-body
+    width: 93%
     
     > svg
       min-height: 400px
@@ -247,5 +268,9 @@ rect.fill-v
       width: 10px
       
     .y  
-      right: -12rem
-      
+      right: -10rem
+
+@media (max-width: 400px)
+  
+  .chart-body
+    width: 88%      

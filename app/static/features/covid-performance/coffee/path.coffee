@@ -51,6 +51,7 @@ require.register "views/path", (exports, require, module) ->
       
       @data.countries.map (d) -> d.classList.add('active') # Show country paths
       $('.rankings').addClass('hidden')  # Hide table of averages
+      $('.click-instruction').addClass('hidden')  # Hide instruction
       
       e.classList.add 'active'
       
