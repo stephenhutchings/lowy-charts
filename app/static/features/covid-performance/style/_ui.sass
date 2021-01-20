@@ -63,10 +63,10 @@ nav
   z-index: 90
   height: 100vh
   padding: 5rem 2rem 2rem 2rem 
-  width: 350px
+  width: 290px
   transition-duration: .3s
   transform: translateX(100%)
-  background: $pastel-3
+  background: transparent
   color: white
   
   &.open
@@ -76,12 +76,11 @@ nav
     display: none
 
 .nav-list
-  font-size: 26px
+  font-size: 20px
   list-style-type: none
   
-  .type-wrap & li
-    font-size: 24px
-    margin-bottom: 0.3em
+  li
+    margin-bottom: 0.25em
   
   li, a
     user-select: none
@@ -95,7 +94,7 @@ nav
       content: ''
       position: absolute
       top: 100%
-      height: 4px
+      height: 3px
       left: 0
       width: 0
       opacity: 0
@@ -103,12 +102,17 @@ nav
       transition: all 0.3s
       
     &:hover
-      transform: translateY(-2px)
+      transform: translateY(-1px)
       color: white
 
     &:hover:after
       width: 100%
       opacity: 1
+      
+@for $i from 1 through 8
+  .slide-#{$i} .s-#{$i}:after
+    width: 100%
+    opacity: 1
     
 .social-share
   z-index: 80
@@ -149,6 +153,7 @@ nav
   nav
     padding-top: 7rem
     width: 100%
+    background: $pastel-3
     
     .social-share
       top: unset

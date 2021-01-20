@@ -19,7 +19,7 @@ require.register "page-methods", (exports, require, module) ->
         s.forEach (e) -> e.classList.remove 'inactive'
       
       get('#modal').classList.remove('active')
-      get('#modal-inner').scrollTop = 0
+      # get('#modal-inner').scrollTop = 0
       
       $('.rankings').removeClass('hidden')           # Reshow table of averages
       $('.click-instruction').removeClass('hidden')  # Reshow instruction

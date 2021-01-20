@@ -30,9 +30,9 @@ $(document).ready =>
   # Events
   onResize()
   window.addEventListener 'resize', (e) -> onResize()
-  body.addEventListener 'click', (e) -> methods.deactivate(); navCls();
+  body.addEventListener 'click', (e) -> methods.deactivate()
   sandbox.addEventListener 'click', (e) -> e.stopPropagation()
-  nav.addEventListener 'click', (e) -> e.stopPropagation()
+  # nav.addEventListener 'click', (e) -> e.stopPropagation()
   navBtn.addEventListener 'click', (e) -> navTog(e)
   chartArea.forEach (el) -> el.addEventListener 'click', (e) -> e.stopPropagation()
   
