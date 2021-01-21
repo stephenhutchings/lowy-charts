@@ -26,6 +26,7 @@ svg#chart-countries(
         )  
         
         path.country-line.lite(
+          class=(c.dashed ? "dashed" : "")
           data-name=c.name
           data-size=c.size
           data-income=c.income

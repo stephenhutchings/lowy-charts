@@ -116,6 +116,11 @@ ul + h1
   text-transform: capitalize
 .pointer
   cursor: pointer
+.border
+  border: 1px solid
+.border-rounded
+  border: 1px solid
+  border-radius: 100%
 .flex-1
   flex: 1
 .items-center
@@ -130,6 +135,30 @@ ul + h1
   font-size: 14px
   color: lighten($mid, 20)
   margin-top: .5em
+  
+  .sandbox &
+    box-sizing: content-box
+    font-size: 15px
+    margin-top: 1.5em
+    max-height: 0
+    transition: all 0.4s
+    overflow: hidden
+    position: relative  
+    opacity: 0
+    
+    @media(max-width: 600px)
+      margin-top: 4rem
+    
+    svg
+      top: 5px
+      right: 5px
+    
+  .sandbox &.open
+    opacity: 1
+    max-height: 225px
+    padding: .75em 1.5em .75em .75em
+    
+    
     
 @media (max-width: 600px), (orientation: portrait)
   

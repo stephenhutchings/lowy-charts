@@ -2,8 +2,6 @@
 
 // ---------------- helpers & definitions ----------------- //
 
-// Removed China and Luxembourg
-
 const options = [ "Australia","Austria","Bahrain","Bangladesh","Belarus","Belgium","Bolivia","Brazil","Bulgaria","Canada","Chile","China","Colombia","Costa Rica","Cote d'Ivoire","Croatia","Cyprus","Democratic Republic of Congo","Denmark","Dominican Republic","El Salvador","Estonia","Ethiopia","Finland","France","Germany","Ghana","Greece","Guatemala","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Kazakhstan","Kenya","Kuwait","Latvia","Libya","Lithuania","Madagascar","Malawi","Malaysia","Maldives","Malta","Mexico","Morocco","Mozambique","Myanmar","Namibia","Nepal","Netherlands","New Zealand","Nigeria","Norway","Oman","Pakistan","Panama","Paraguay","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saudi Arabia","Senegal","Serbia","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","Sweden","Switzerland","Taiwan","Thailand","Togo","Trinidad and Tobago","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Vietnam","Zambia","Zimbabwe" ]
 
 const colors = ["#33ffdd",
@@ -189,8 +187,6 @@ Multiselect.prototype.init = function() {
    optionEl.className = index === 0 ? 'option option-current' : 'option';
    optionEl.setAttribute('aria-selected', 'false');
    optionEl.innerText = option;
-   
-   option === "China" ? optionEl.classList.add('disabled') : "";
 
    optionEl.addEventListener('click', () => { this.onOptionClick(index); });
    optionEl.addEventListener('mousedown', this.onOptionMouseDown.bind(this));
@@ -277,6 +273,7 @@ Multiselect.prototype.onOptionMouseDown = function() {
 }
 
 Multiselect.prototype.removeOption = function(index) {
+
  const option = this.options[index];
 
  // update aria-selected
@@ -293,6 +290,9 @@ Multiselect.prototype.removeOption = function(index) {
  
  // remove button
  this.selectedEl.removeChild(buttonEl.parentElement);
+ 
+ // If China removed, hide china note
+ countryName === "China" ? document.querySelector('.sandbox .footnote').classList.remove('open') : ""
 }
 
 Multiselect.prototype.selectOption = function(index) {
@@ -329,8 +329,6 @@ Multiselect.prototype.updateOption = function(index) {
  const optionEl = this.el.querySelectorAll('[role=option]')[index];
  const isSelected = optionEl.getAttribute('aria-selected') === 'true';
  const countryName = optionEl.innerHTML;
- 
- if ( countryName === "China" ) { return; }
 
  if (isSelected) { 
    this.removeOption(index)
@@ -341,6 +339,7 @@ Multiselect.prototype.updateOption = function(index) {
      this.selectOption(index);
      activeList.push(countryName)
      this.updateLines(countryName, true);
+     countryName === "China" ? document.querySelector('.sandbox .footnote').classList.add('open') : "" 
    }
    else {
      // Flash placeholder text.
