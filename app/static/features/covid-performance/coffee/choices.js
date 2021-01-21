@@ -359,7 +359,7 @@ Multiselect.prototype.updateLines = function(country, add) {
   
   let el
   let targetLines = document.querySelectorAll(`[data-name="${country}"]`)
-  let targetLabel = document.querySelector(`[data-countryLabel="${country}"]`)
+  let targetLabel = document.querySelector(`[data-countrylabel="${country}"]`)
   
   if (add) { 
     targetLines.forEach( e => e.classList.add('active','thicker') ) 
