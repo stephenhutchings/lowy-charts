@@ -19,6 +19,8 @@ $(document).ready =>
     target = plist[ plist.length - 1 ]
     d.style.maxHeight = target.offsetTop + target.offsetHeight + "px"
     btn.style.display = 'none'
+    body.classList.add('slide-1')
+    body.classList.remove('slide-2')
     
   # Elements
   body  = document.body

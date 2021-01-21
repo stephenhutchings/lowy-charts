@@ -107,6 +107,6 @@ svg.line-chart.fade-in.delay-1(
       text.rank(
         class=("offset-" + i)
       )
-        = item.label.replace(/Middle East<br>and/g, "M. East & ")
+        = item.label.replace(/Middle East<br>and/g, "M. East & ").replace(/Democracy/g, "Democratic")
         
         tspan( dx="8" )= item.mean.toFixed(1)
