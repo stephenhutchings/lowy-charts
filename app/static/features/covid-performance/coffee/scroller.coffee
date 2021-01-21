@@ -53,8 +53,6 @@ require.register "views/scroller", (exports, require, module) ->
       
       @inactive = false
       @mobile = $(window).width() < 600
-      
-      console.log $(window).width()
 
       @slidePoints = $('.slide-wrap').map (i,s) -> s.offsetTop
 
@@ -66,8 +64,6 @@ require.register "views/scroller", (exports, require, module) ->
     onScroll: ->
       
       return if @inactive
-      
-      console.log 'Scrolling'
 
       t = @el.scrollTop
       h = @el.offsetHeight
@@ -112,11 +108,11 @@ require.register "views/scroller", (exports, require, module) ->
       
       #--- SLIDE-SPECIFIC ACTIONS ---#
       
-      if p is 0 and not @mobile
+      if p is 0 and $(window).width() > 1200
         get('nav').classList.add 'open'
         get('#btn-nav').classList.add 'open';
         
-      if i is 0 and not @mobile
+      if i is 0 and $(window).width() > 1200
         get('nav').classList.remove 'open'
         get('#btn-nav').classList.remove 'open';
         
@@ -127,8 +123,6 @@ require.register "views/scroller", (exports, require, module) ->
 
       t = @el.scrollTop
       isEnd = t % @data.h is 0
-    
-      console.log "ScrollEnd"
 
       if isEnd
       

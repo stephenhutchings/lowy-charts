@@ -7,7 +7,6 @@ header
   padding: 2.25rem 1.5rem
   z-index: 100
   line-height: 60px
-  font-weight: 600
   font-size: 14px
   letter-spacing: .06em
   display: flex
@@ -18,11 +17,20 @@ header
   > *
     pointer-events: all
   
+  .header-logo
+    width: 80px
+    
+    .slide-0 &
+      opacity: 0
+
 .header-logo
-  width: 80px
   white-space: normal
   line-height: 14px
   transition: all 0.3s
+  font-weight: 600
+  
+  .title &
+    margin-bottom: 1em
 
 .btn-down
   font-size: 0.9rem
@@ -42,6 +50,9 @@ header
   &:hover
     opacity: 1
     transform: translateY(1px)
+
+.btn-right::after
+  content: " →"
 
 #btn-nav
   cursor: pointer 
@@ -77,12 +88,11 @@ nav
   top: 0
   right: 0
   z-index: 90
-  padding: 5.5rem 1.5rem 2rem 0
-  width: 220px
+  padding: 4rem 1rem 2rem 0
+  width: 215px
   transition-duration: .3s
   transform: translateX(100%)
   background: transparent
-  box-shadow: -2px 0 10px rgba($dark, 0.8)
   color: white
   pointer-events: none
   
@@ -91,12 +101,9 @@ nav
     
   .social-share
     display: none
-    
-  ul
-    padding-left: 0
 
 .nav-list
-  font-size: 20px
+  font-size: 18px
   list-style-type: none
   pointer-events: all
   
@@ -138,7 +145,7 @@ nav
 .social-share
   z-index: 80
   position: fixed
-  top: 5rem
+  bottom: 1.25rem
   right: 21px
   display: flex
   flex-direction: column
@@ -163,21 +170,6 @@ nav
     &:hover
       background: $pastel-3
   
-@media (max-width: 1700px)
-  nav
-    width: 190px
-    padding-top: 4.75rem
-  .nav-list
-    font-size: 17px
-  .social-share 
-    top: 4rem
-    
-    .icon
-      width: 40px
-      height: 40px
-      line-height: 40px
-      font-size: 1.25rem
-  
 @media (max-width: 600px), (orientation: portrait)
   
   .social-share
@@ -195,7 +187,7 @@ nav
     .social-share
       top: unset
       right: 3rem
-      bottom: 6rem
+      bottom: 4.5rem
       display: flex
       flex-direction: row
       
