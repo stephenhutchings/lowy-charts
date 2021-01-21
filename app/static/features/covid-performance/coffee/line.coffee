@@ -15,7 +15,6 @@ require.register "views/line", (exports, require, module) ->
       @data.duration ?= 2000
       @data.delay ?= 0
       
-
       @lines = ({$el: $(el)} for el in @$("polyline.line").toArray())
 
       for line in @lines

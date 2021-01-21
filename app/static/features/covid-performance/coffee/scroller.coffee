@@ -4,8 +4,8 @@ require.register "views/scroller", (exports, require, module) ->
   keycode  = require("lib/keycode")
   methods  = require("page-methods")
   
-  get = (s) -> document.querySelector s  
-  
+  get = (s) -> document.querySelector s
+
   SANDBOX = 6
 
   class ScrollerView extends Backbone.View
@@ -28,8 +28,15 @@ require.register "views/scroller", (exports, require, module) ->
 
       @listenTo this, "resize", @onResize
 
+      # Trigger resize when overview is unfolded (DOM height changes)
+      @ovrvwBtn = $('#overview-body .btn-down')
+      @ovrvwBtn.on("click", (e) => 
+        window.setTimeout =>
+          @onResize()
+        , 510
+      )
+      
       timeout = null
-
       @$el.on("scroll", (e) => 
         @onScroll() 
         # call onScrollEnd() once no scroll events
@@ -41,10 +48,10 @@ require.register "views/scroller", (exports, require, module) ->
       )
 
     onResize: ->
+      
+      console.log "Resize"
       @inactive = false
       @mobile = $(window).width() < 600
-               # setting mobile to true to set slide indices
-               # at .slide-wrap entry points, rather than i * 100vh
 
       @slidePoints = $('.slide-wrap').map (i,s) -> s.offsetTop
 
