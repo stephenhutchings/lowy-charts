@@ -28,7 +28,6 @@ $slides: 10
   
 #modal-wrap
   z-index: 100
-  padding: 0 10rem
   position: fixed
   bottom: 0
   right: 0
@@ -37,11 +36,10 @@ $slides: 10
 #modal
   max-width: 1400px
   margin: auto
-  color: $dark
   max-height: 0
   border-radius: 3px 3px 0 0
   transition: all 0.2s
-  background: rgba(255,255,255,0.95)
+  padding: 0 10rem
   
   .btn-down
     display: none
@@ -49,15 +47,17 @@ $slides: 10
     left: calc(50% - 64px)
   
   &.active
-    max-height: 300px
+    max-height: 60vh
     
     .btn-down
       display: block
     
 #modal-inner
+  color: $dark
   padding: 2rem
   max-height: inherit
   overflow-y: scroll
+  background: rgba(255,255,255,0.95)
   
   h3
     font-size: 18px
@@ -100,38 +100,15 @@ $slides: 10
     display: block
     bottom: -2rem
     left: calc(50% - 70px)
-    
-  //  &::before
-      content: ''
-      position: absolute
-      width: 400%
-      height: 1px
-      background: $mid
-      top: -1.5rem
-      left: -150%
-
-@media (max-width: 1700px)
-  
-  #modal
-    width: 55%
-    left: 22.5%
-    
-@media (max-width: 1400px)
-  
-  #modal
-    width: 65%
-    left: 17.5%
 
 @media (max-width: 1100px)
   
+  #modal
+    padding: 0 4rem
   .slide-wrap
     padding: 3rem 4rem 4rem
     
 @media (max-width: 900px)
-  
-  #modal
-    left: 10%
-    width: 80%
   
   .slide-wrap.title
     height: auto
@@ -144,5 +121,4 @@ $slides: 10
     margin: 0
     
   #modal
-    left: 4%
-    width: 92%
+    padding: 0 1.25rem

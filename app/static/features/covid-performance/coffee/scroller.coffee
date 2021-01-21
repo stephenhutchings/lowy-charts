@@ -20,6 +20,8 @@ require.register "views/scroller", (exports, require, module) ->
       @slidePoints = $('.slide-wrap').map (i,s) -> s.offsetTop
 
       @data.support = window.CSS?.supports("scroll-snap-type: y mandatory")
+      
+      @mobile = $(window).width() < 600
 
       @$elements =
         pager: $(@$el.data("pager"))
@@ -49,9 +51,10 @@ require.register "views/scroller", (exports, require, module) ->
 
     onResize: ->
       
-      console.log "Resize"
       @inactive = false
       @mobile = $(window).width() < 600
+      
+      console.log $(window).width()
 
       @slidePoints = $('.slide-wrap').map (i,s) -> s.offsetTop
 
