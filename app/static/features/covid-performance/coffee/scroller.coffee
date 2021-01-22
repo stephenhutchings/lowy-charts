@@ -108,11 +108,11 @@ require.register "views/scroller", (exports, require, module) ->
       
       #--- SLIDE-SPECIFIC ACTIONS ---#
       
-      if p is 0 and $(window).width() > 1200
+      if p is 0 and $(window).width() > 1350
         get('nav').classList.add 'open'
         get('#btn-nav').classList.add 'open';
         
-      if i is 0 and $(window).width() > 1200
+      if i is 0 and $(window).width() > 1350
         get('nav').classList.remove 'open'
         get('#btn-nav').classList.remove 'open';
         
