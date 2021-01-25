@@ -1,7 +1,7 @@
-svg#noise(viewbox='0 0 1 1')
+svg#noise.inset-0(viewBox='0 0 1 1' preserveAspectRatio="none")
   defs
     filter#noise-filter
-      feturbulence(type='fractalNoise' basefrequency='3000' result='noisy')
-        fecolormatrix(type='saturate' values='0')
-          feblend(in='SourceGraphic' in2='noisy' mode='multiply')
+      feTurbulence(type='fractalNoise' baseFrequency='3000' result='noisy')
+      feColorMatrix(type='saturate' values='0')
+      feBlend(in='SourceGraphic' in2='noisy' mode='multiply')
   rect.fill-dark(width='1' height='1' filter='url(#noise-filter)')

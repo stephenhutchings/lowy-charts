@@ -102,6 +102,10 @@ ul + h1
     
     .slide-0 &
       opacity: 1
+
+#noise
+  z-index: -1
+  position: fixed
     
 .credits
   border-top: 1px solid
@@ -244,15 +248,26 @@ ul + h1
     .col-1-2
       padding: 1rem 0
 
-@media (min-height: 750px)
+@media (min-height: 750px) and (min-width: 1100px), (max-width: 1100px) and (max-height: 650px) and (orientation: landscape)
   
   .title .top-img
     height: 125px
     bottom: 3rem
     top: unset
     
+    @media (max-height: 650px)
+      bottom: -7rem
+    
     img
       width: 125px
+      
+   
+     
+
+@media (max-width: 700px) and (orientation: landscape)
+  
+  .title .top-img
+    bottom: -3rem
   
   
 @media (max-width: 450px)
