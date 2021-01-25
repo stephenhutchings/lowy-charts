@@ -3,8 +3,6 @@ getAll = (s) -> document.querySelectorAll s
   
 countries = getAll ".country-line.transparent"
 
-console.log('afhjkdsgh')
-
 # More events
 countries.forEach (el) -> 
   el.addEventListener 'mouseenter', (e) -> 

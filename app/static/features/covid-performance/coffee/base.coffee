@@ -31,7 +31,7 @@ $(document).ready =>
   tooltip   = get "#tooltip"
   overview  = get '#overview-body'
   ovrvwBtn  = get '#overview-body .btn-down'
-  modalBtn  = get "#modal .btn-down"
+  modalInn  = get "#modal-inner"
   nav       = get "nav"
   navBtn    = get "#btn-nav"
   navLks    = getAll "nav a"
@@ -54,6 +54,7 @@ $(document).ready =>
   body.addEventListener 'click', (e) -> methods.deactivate()
   ovrvwBtn.addEventListener 'click', (e) -> unfold(overview, ovrvwBtn)
   ovrvwBtn.addEventListener 'touch', (e) -> unfold(overview, ovrvwBtn)
+  modalInn.addEventListener 'click', (e) -> e.stopPropagation()
   sandbox.addEventListener 'click', (e) -> e.stopPropagation()
   navBtn.addEventListener 'click', (e) -> navTog(e)
   chartArea.forEach (el) -> el.addEventListener 'click', (e) -> e.stopPropagation()
@@ -68,10 +69,6 @@ $(document).ready =>
     el.addEventListener 'mouseleave', (e) -> 
       label = get ".slide-wrap:not(.sandbox) [data-countrylabel=\"#{el.dataset.name}\"]"
       label?.classList.remove "visible"
-
-  modalBtn.addEventListener 'click', (e) -> 
-    modalBtn.parentElement.classList.toggle 'active'
-    e.stopPropagation()
     
   navLks.forEach (a) -> 
     a.addEventListener 'click', (e) -> if mobile then navCls()

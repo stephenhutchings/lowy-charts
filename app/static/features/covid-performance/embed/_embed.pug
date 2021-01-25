@@ -10,7 +10,7 @@ block append config
 
 block page
   block defs
-  #wrapper
+  #wrapper(class=cat)
     block title 
     include ../slides/_chart-defs
     .flex.flex-col.h-full
@@ -21,17 +21,7 @@ block page
       
 block append css
   style
-    include:sass ../style/_vars.sass
-    include:sass ../style/_base.sass
-    include:sass ../style/_controls.sass
-    include:sass ../style/_colors.sass
-    include:sass ../style/_layout.sass
-    include:sass ../style/_chart.sass
-    include:sass ../style/_scroll.sass
-    include:sass ../style/_sandbox.sass
-    include:sass ../style/_transitions.sass
-    include:sass ../style/_table.sass
-    include:sass ../style/_ui.sass
+    include:sass ../_style.sass
     include:sass ./_embed.sass
 
 block append customScripts
