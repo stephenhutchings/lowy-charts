@@ -13,11 +13,12 @@ block page
   #wrapper
     block title 
     include ../slides/_chart-defs
-    include ../slides/_chart
-    .chart-note 
-      | Source: 
-      a(href="https://interactives.lowyinstitute.org/features/covid-performance/" target="_blank") Lowy Institute Covid Performance Index
-  
+    .flex.flex-col.h-full
+      include ../slides/_chart
+      .chart-note 
+        | Source: 
+        a(href="https://interactives.lowyinstitute.org/features/covid-performance/" target="_blank") Lowy Institute Covid Performance Index
+      
 block append css
   style
     include:sass ../style/_vars.sass

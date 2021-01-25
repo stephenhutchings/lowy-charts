@@ -236,9 +236,6 @@ rect.fill-v
   
 @media (max-width: 600px)
   
-  #chart-countries
-    display: none
-  
   .chart-wrap
     margin-top: 3rem
     padding: 1rem 3rem 1rem 0
@@ -247,9 +244,6 @@ rect.fill-v
     // To accomodate 4th label for "region" slide on mobile
     .slide-wrap:nth-child(5) &
       margin-top: 6rem
-
-  .country-line-label
-    display: none
 
   .chart-body
     width: 93%
@@ -270,6 +264,9 @@ rect.fill-v
   .x-ticks text,
   .y-ticks text
     font-size: 12px
+    
+  .y-ticks g:nth-child(even)
+    display: none
   
   .chart-labels
     
@@ -279,9 +276,13 @@ rect.fill-v
       width: 10px
       
     .y  
-      right: -10rem
+      top: calc(50% - 0.5rem)
+      right: -9.5rem
+      
+  .median-text
+    transform: translate(-20px, 10px)
 
 @media (max-width: 450px)
   
   .chart-body
-    width: 88%      
+    width: 88%

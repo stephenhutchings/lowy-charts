@@ -6,36 +6,85 @@ html,body
 
 body
   height: 100%
-  padding: 4rem 0
+  padding-top: 4rem
   overflow: hidden
   
 #wrapper
   height: 100%
   min-height: 100%
-  padding: 0 10rem 7rem
+  padding: 0 10rem 4rem
 
 h1
   max-width: none
   margin-bottom: 0
+  
+  + svg
+    margin-bottom: 1em
 
 a
   transition: all .3s
   box-shadow: 0 2px 0 0 #33ffdd
   
 .chart-note
-  font-size: 16px
   text-align: center
-  opacity: 0.85
-  margin-top: 4rem
+  opacity: 0.75
+  bottom: 1.5rem
+  font-size: 16px
   font-weight: 600
+  padding-bottom: 2rem
+  white-space: nowrap
 
 .chart-wrap
   min-height: 0
   margin-top: 0
   padding: 0
+  margin-bottom: 4.5rem
 
 .fade-in
   opacity: 1
   
-.flex
-  display: flex
+.h-full
+  height: 100%
+  
+@media (max-width: 1100px)
+  
+  #wrapper
+    padding: 0 7rem 5rem 8rem
+    
+  .chart-wrap
+    padding: 0
+    
+  .chart-body
+    width: 100%
+
+@media (max-width: 1000px)
+  
+  #wrapper
+    padding-bottom: 6rem
+  
+@media (max-width: 800px)
+    
+  body
+    padding-top: 3rem
+    
+  h1
+    font-size: 30px
+
+@media (max-width: 600px)
+  
+  #wrapper
+    padding: 0 1rem 6rem
+    
+  .chart-body > svg
+    min-height: 0
+    
+  .chart-wrap
+    margin-top: 3.5rem
+    margin-right: 3rem
+    
+  .dogtag-mobile > *
+    transform: translateY(-0.5rem)
+
+  .chart-note
+    font-size: 15px
+    font-weight: 400
