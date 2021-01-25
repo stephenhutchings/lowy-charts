@@ -1,7 +1,5 @@
 @import app/static/features/covid-performance/style/_vars.sass
 
-$slides: 10
-
 #scroller
   overflow: auto
   height: 100%
@@ -20,8 +18,7 @@ $slides: 10
   position: relative
   width: 100vw
   max-width: 1400px
-  height: auto 
-  // 100% * $slides
+  height: auto
   display: flex
   flex-direction: column
   margin: auto
@@ -73,11 +70,11 @@ $slides: 10
   &.title
     padding-bottom: 0
   
-  &:nth-child(3),
-  &:nth-child(4),
   &:nth-child(5),
   &:nth-child(6),
-  &:nth-child(7)
+  &:nth-child(7),
+  &:nth-child(8),
+  &:nth-child(9),
     margin-bottom: 6rem
     
   &.title
@@ -101,6 +98,37 @@ $slides: 10
     bottom: -2rem
     left: calc(50% - 70px)
 
+.methodology
+  
+  td
+    font-size: 15px
+    vertical-align: top
+  
+    p  
+      line-height: 1.5
+    
+    &:first-child
+      padding-right: 1.5rem
+      border-right: 1px dashed $mid
+    &:last-child
+      padding-left: 1.5rem
+
+@media (max-height: 675px)
+  
+  .methodology
+    tr
+      display: flex
+      flex-direction: column
+      
+    td
+      padding: 0
+      font-size: 16px
+      
+      &:first-child
+        border-right: none
+        padding-bottom: 1.5rem
+
+
 @media (max-width: 1100px)
   
   #modal
@@ -113,6 +141,7 @@ $slides: 10
   .slide-wrap.title
     height: auto
 
+  
 @media (max-width: 600px)
     
   .slide-wrap

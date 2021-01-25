@@ -53,6 +53,7 @@ $(document).ready =>
   window.addEventListener 'resize', (e) -> onResize()
   body.addEventListener 'click', (e) -> methods.deactivate()
   ovrvwBtn.addEventListener 'click', (e) -> unfold(overview, ovrvwBtn)
+  ovrvwBtn.addEventListener 'touch', (e) -> unfold(overview, ovrvwBtn)
   sandbox.addEventListener 'click', (e) -> e.stopPropagation()
   navBtn.addEventListener 'click', (e) -> navTog(e)
   chartArea.forEach (el) -> el.addEventListener 'click', (e) -> e.stopPropagation()

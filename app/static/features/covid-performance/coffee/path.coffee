@@ -57,7 +57,9 @@ require.register "views/path", (exports, require, module) ->
       
       $('#modal-inner .name').html(phrases[@cat][@val].name)
       $('#modal-inner .text').html(phrases[@cat][@val].text)
+      $('#modal-inner').scrollTop(0)
       $('#modal').addClass('active')
+      
       
     click: (ev) ->
       

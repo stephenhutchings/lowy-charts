@@ -6,7 +6,7 @@ require.register "views/scroller", (exports, require, module) ->
   
   get = (s) -> document.querySelector s
 
-  SANDBOX = 6
+  SANDBOX = 7
 
   class ScrollerView extends Backbone.View
     events:
@@ -101,18 +101,18 @@ require.register "views/scroller", (exports, require, module) ->
       if i is SANDBOX then methods.fillSandbox()  # if landing on sandbox, fill it
 
       if @data.index is "#pager-index" then @data.index = 0
-      targetChart = $(".slide-wrap:nth-child(#{i+1}) .chart-body")
+      targetChart = $(".slide-wrap:nth-child(#{i+2}) .chart-body")
       targetChart?.append $("#chart-countries"), $("#country-labels")
         
       #------------------------------#
       
       #--- SLIDE-SPECIFIC ACTIONS ---#
       
-      if p is 0 and $(window).width() > 1350
+      if p is 0 and $(window).width() > 1400
         get('nav').classList.add 'open'
         get('#btn-nav').classList.add 'open';
         
-      if i is 0 and $(window).width() > 1350
+      if i is 0 and $(window).width() > 1400
         get('nav').classList.remove 'open'
         get('#btn-nav').classList.remove 'open';
         
