@@ -5,7 +5,7 @@ svg.line-chart.fade-in.delay-1(
   xmlns:xlink="http://www.w3.org/1999/xlink"
   data-name=cat
   data-duration=4000
-  data-view="line, in-viewport"    
+  data-view=(page.embed ? "in-viewport" : "line, in-viewport")
 )
 
   - wprev = 0

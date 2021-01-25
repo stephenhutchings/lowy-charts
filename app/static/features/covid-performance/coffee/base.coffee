@@ -32,9 +32,11 @@ $(document).ready =>
   overview  = get '#overview-body'
   ovrvwBtn  = get '#overview-body .btn-down'
   modalBtn  = get "#modal .btn-down"
+  nav       = get "nav"
   navBtn    = get "#btn-nav"
   navLks    = getAll "nav a"
-  nav       = get "nav"
+  embBtns   = getAll ".btn-embed"
+  embWrps   = getAll ".embed-items"
   
   # Window sizes
   vh = vw = mobile = 0
@@ -72,3 +74,6 @@ $(document).ready =>
     
   navLks.forEach (a) -> 
     a.addEventListener 'click', (e) -> if mobile then navCls()
+    
+  embBtns.forEach (el,i) -> 
+    el.addEventListener 'click', (e) -> embWrps[i].classList.toggle 'open'

@@ -1,0 +1,40 @@
+extend /partials/layout
+//- The template chart wrapper for each embed page to inherit
+
+block append config
+  - page.title = "Test"
+  - page.title = "Covid Performance - Lowy Institute"
+  - page.metaTitle = "Covid Performance - Lowy Institute"
+  - page.image = "https://interactives.lowyinstitute.org/features/covid-performance/img/thumbnail.jpg"
+  - page.url = "https://interactives.lowyinstitute.org/features/covid-performance/"
+  - page.embed = true
+
+block page
+  block defs
+  #wrapper
+    block title 
+    include ../slides/_chart-defs
+    include ../slides/_chart
+    .chart-note 
+      | Source: 
+      a(href="https://interactives.lowyinstitute.org/features/covid-performance/" target="_blank") Lowy Institute Covid Performance Index
+  
+block append css
+  style
+    include:sass ../style/_vars.sass
+    include:sass ../style/_base.sass
+    include:sass ../style/_controls.sass
+    include:sass ../style/_colors.sass
+    include:sass ../style/_layout.sass
+    include:sass ../style/_chart.sass
+    include:sass ../style/_scroll.sass
+    include:sass ../style/_sandbox.sass
+    include:sass ../style/_transitions.sass
+    include:sass ../style/_table.sass
+    include:sass ../style/_ui.sass
+    include:sass ./_embed.sass
+
+block append customScripts
+  script(type="text/javascript")
+    include:coffee ./base.coffee
+    include:coffee ./path-embed.coffee

@@ -54,6 +54,35 @@ header
 .btn-right::after
   content: " →"
 
+.embed-items
+  position: absolute
+  right: 0
+  bottom: -7rem
+
+.btn-embed
+  font-weight: 600
+  line-height: 30px
+  letter-spacing: .04em
+  color: lighten($mid, 25)
+  text-transform: uppercase
+  transition: all .3s
+  padding: .25em .5em
+  font-size: 14px
+  border-radius: 4px
+  transition: all .3s
+  cursor: pointer
+  
+  svg
+    padding: 2px 0 4px
+  
+  path
+    fill: currentColor
+  
+  &:hover
+    background: $pastel-3
+    border-color: $pastel-3
+    color: white
+
 #btn-nav
   cursor: pointer 
   transition-duration: 0.3s
@@ -168,6 +197,46 @@ nav
       
     &:hover
       background: $pastel-3
+
+#embed-code
+  display: none
+  position: absolute
+  font-size: 16px
+  width: 290px
+  bottom: 110%
+  left: -95px
+  padding: 1rem
+  background: $pastel-3
+  z-index: 100
+  box-shadow: 0 0 10px rgba($mid, 0.5)
+  border-radius: 4px
+  font-weight: 500
+  animation: rise .5s forwards
+  opacity: 0
+  
+  .open &
+    display: block
+  
+  p
+    margin-bottom: .7em
+    line-height: 1.4
+    
+  textarea
+    width: 100%
+    box-sizing: border-box
+    margin: auto
+    resize: none
+    display: block
+    color: $dark
+    border: 0
+    padding: 8px
+    font-size: 14px
+    border-radius: 3px
+    font-family: monospace
+    -webkit-appearance: none
+    
+    &::-webkit-scrollbar
+      width: 0
   
 @media (max-width: 1100px), (orientation: portrait)
   

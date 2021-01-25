@@ -1,0 +1,16 @@
+- let code = [ "<iframe width=\"100%\" height=\"790\" src=\"https://interactives.lowyinstitute.org/features/covid-performance/embed/", cat, "\" frameborder=\"0\"></iframe>" ].join("")
+
+.embed-items
+  
+  .btn-embed.flex.border
+    .label Embed&nbsp;
+    svg(version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512")
+      path(d="M48 256L192 112 224 144 112 256 224 368 192 400 48 256ZM288 368L400 256 288 144 320 112 464 256 320 400 288 368Z")
+
+  #embed-code
+    p Copy and paste this code to embed this chart on your website.
+    textarea(
+      autocorrect="off"
+      spellcheck="false"
+      rows=5
+    )= code
