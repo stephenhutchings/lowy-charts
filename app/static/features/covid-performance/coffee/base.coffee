@@ -31,7 +31,9 @@ $(document).ready =>
   tooltip   = get "#tooltip"
   overview  = get '#overview-body'
   ovrvwBtn  = get '#overview-body .btn-down'
+  modal     = get "#modal"
   modalInn  = get "#modal-inner"
+  modalBtn  = get "#modal .btn-down"
   nav       = get "nav"
   navBtn    = get "#btn-nav"
   navLks    = getAll "nav a"
@@ -60,6 +62,10 @@ $(document).ready =>
   chartArea.forEach (el) -> el.addEventListener 'click', (e) -> e.stopPropagation()
   
   # More events
+  modalBtn.addEventListener 'click', (e) -> 
+    modal.classList.remove('active')
+    e.stopPropagation()
+  
   countries.forEach (el) -> 
     el.addEventListener 'mouseenter', (e) -> 
       label = get ".slide-wrap:not(.sandbox) [data-countrylabel=\"#{el.dataset.name}\"]"
