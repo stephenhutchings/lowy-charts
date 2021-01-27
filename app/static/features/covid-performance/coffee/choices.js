@@ -187,11 +187,14 @@ Multiselect.prototype.init = function() {
    optionEl.className = index === 0 ? 'option option-current' : 'option';
    optionEl.setAttribute('aria-selected', 'false');
    optionEl.innerText = option;
+   
+   if (option === "China") optionEl.classList.add('data-incomplete')
 
    optionEl.addEventListener('click', () => { this.onOptionClick(index); });
    optionEl.addEventListener('mousedown', this.onOptionMouseDown.bind(this));
 
    this.listboxEl.appendChild(optionEl);
+   
  });
 }
 
@@ -283,7 +286,7 @@ Multiselect.prototype.removeOption = function(index) {
 
  // Update chart lines
  const buttonEl = document.getElementById(`${this.idBase}-remove-${index}`);
- const countryName = buttonEl.innerHTML.trim()
+ const countryName = buttonEl.innerHTML.trim().replace(/[\*]/g,"")
  i = activeList.indexOf(countryName)
  activeList.splice(i, 1)
  this.updateLines(countryName, false)
@@ -315,7 +318,7 @@ Multiselect.prototype.selectOption = function(index) {
  buttonEl.id = `${this.idBase}-remove-${index}`;
  buttonEl.setAttribute('aria-describedby', `${this.idBase}-remove`);
  buttonEl.addEventListener('click', () => { this.removeOption(index); });
- buttonEl.innerHTML = selected + ' ';
+ buttonEl.innerHTML = selected === "China" ? selected + '* ' : selected + ' ';
 
  listItem.appendChild(buttonEl);
  this.selectedEl.appendChild(listItem);
