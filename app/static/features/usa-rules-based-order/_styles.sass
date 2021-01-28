@@ -95,17 +95,18 @@ header
 
 a
   text-decoration: none
-  transition: color 400ms ease-in-out, background 400ms ease-in-out, box-shadow 400ms ease-in-out
+  transition: color 300ms ease-in-out, background 300ms ease-in-out, box-shadow 300ms ease-in-out
   color: $dark
+  
   &:hover
     color: $red
+    
   &.bg-red:hover
     color: white
     background: lighten($red, 10)
 
   &.bare:hover
       color: inherit
-
 
 iframe
   overflow: hidden
@@ -265,9 +266,10 @@ cite, .cite
     align-items: baseline
     color: white
     transition: box-shadow 0.3s
+    box-shadow: inset 0 -1px 0 0 rgba(white,.5)
 
     &:hover
-      box-shadow: 0 1px 0 0 $yellow
+      box-shadow: inset 0 -1px 0 0 rgba(white,.95)
 
 
 .container
@@ -283,7 +285,7 @@ cite, .cite
   margin-bottom: 4rem
 
   .label
-    margin-top: -2.25em
+    margin-top: -2em
     font-weight: 500
     font-size: 22px
     padding-bottom: 0.25em
@@ -427,12 +429,12 @@ cite, .cite
   font-weight: 300
 
   a:not(.bare)
-    box-shadow: inset 0 -2px #fff, inset 0 -3px $mute
+    box-shadow: inset 0 -1px #fff, inset 0 -3px $red
     text-shadow: -2px 1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 2px 1px 0 #fff
 
     &:hover
       color: black
-      box-shadow: inset 0 -1px #fff, inset 0 -3px $red
+      box-shadow: inset 0 -0px #fff, inset 0 -3px $red
 
   strong
     font-weight: 600

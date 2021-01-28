@@ -22,7 +22,7 @@ footer.mx-auto.article-w.txt-center.pv-lg
             img(height="150" width="100%" src=`../../img/${articles[index].img}`)
           h2.md.txt-semi.txt-left
             a.txt-bare.ease-out(href=`/features/usa-rules-based-order/articles/${articles[index].href}`)!= articles[index].title
-          p.sm.txt-semi.txt-justify!= "&ldquo;" + articles[index].quote + "&rdquo;"
+          p.sm.txt-semi.txt-justify!= articles[index].quote
         
   else
     .md.pv-md.fw-4.txt-spaced
@@ -38,4 +38,4 @@ footer.mx-auto.article-w.txt-center.pv-lg
             img(height="150" width="100%" src=`../../img/${responses[index].img}`)
           h2.md.txt-semi.txt-left
             a.txt-bare.ease-out(href=`/features/usa-rules-based-order/responses/${responses[index].href}`)!= responses[index].title
-          p.sm.txt-semi.txt-justify!= "&ldquo;" + responses[index].quote + "&rdquo;"
+          p.sm.txt-semi.txt-justify!= responses[index].quote

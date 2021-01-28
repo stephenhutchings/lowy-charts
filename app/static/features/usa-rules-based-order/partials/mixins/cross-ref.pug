@@ -1,0 +1,10 @@
+mixin cross-ref(name)
+  case name
+    when 'goddard': - slug = 'using-rules-to-compete'
+    when 'kroenig': - slug = 'free-world-steering-body'
+    when 'lissner': - slug = 'first-rebuild-at-home'
+    when 'mazarr':  - slug = 'lead-from-behind'
+    when 'plekta':  - slug = 'use-trumps-leverage'
+    when 'porter':  - slug = 'rbo-a-dangerous-myth'
+
+  a(href=`/articles/${slug}`) name

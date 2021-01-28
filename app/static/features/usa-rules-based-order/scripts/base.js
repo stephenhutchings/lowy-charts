@@ -45,7 +45,7 @@ const onReady = () => {
     plist  = d.querySelectorAll('p')
     offset = plist[0].offsetTop
     target = plist[n].offsetTop
-    d.style.maxHeight = target - offset + "px"
+    d.style.maxHeight = target - offset + 5 + "px"
     console.log(offset, target)
   }
     
