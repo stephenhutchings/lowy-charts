@@ -1,0 +1,831 @@
+// Vars
+
+$red: #002b45
+$yellow: #df0000
+$yellow: #ff0000
+$hl: #ff0000
+$dark: #282200
+$mute: #707070
+
+$header-height: 55px
+
+@keyframes zoomout
+  0%
+    -webkit-transform: scale(1.08)
+    transform: scale(1.08)
+  100%
+    -webkit-transform: scale(1)
+    transform: scale(1)
+
+@-webkit-keyframes zoomout
+  0%
+    -webkit-transform: scale(1.08)
+    transform: scale(1.08)
+  100%
+    -webkit-transform: scale(1)
+    transform: scale(1)
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@-webkit-keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+@keyframes slide-up
+  0%
+    opacity: 0
+    transform: translateY(2rem)
+  100%
+    opacity: 1
+    transform: translateY(0)
+    
+@-webkit-keyframes slide-up
+  0%
+    opacity: 0
+    transform: translateY(2rem)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+// Root settings
+
+html
+  overflow: visible
+  scroll-behavior: smooth
+
+body.embed-false
+  font-family: Sans
+  font-size: 22px
+  line-height: 1.25
+  font-weight: 300
+  color: $dark
+  font-feature-settings: "liga" 0
+  text-rendering: geometricPrecision
+
+*
+  box-sizing: border-box
+
+p, pre, dl, dd, ul, ol, svg
+  margin-bottom: 1.5em
+
+  &:last-child
+    margin-bottom: 0
+
+h2, h3, h4
+  font-weight: 500
+  letter-spacing: 0.02em!important
+
+header
+  z-index: 10
+  position: fixed
+  width: 100%
+  height: $header-height
+  line-height: $header-height
+  letter-spacing: 0.06em
+  padding: 0 2em
+  background: white
+  box-shadow: 0px 4px 4px #0004
+  transition: opacity 0.5s
+  opacity: 0
+
+a
+  text-decoration: none
+  transition: color 400ms ease-in-out, background 400ms ease-in-out, box-shadow 400ms ease-in-out
+  color: $dark
+  &:hover
+    color: $red
+  &.bg-red:hover
+    color: white
+    background: lighten($red, 10)
+
+  &.bare:hover
+      color: inherit
+
+
+iframe
+  overflow: hidden
+  margin: 1.5em 0 2em
+
+blockquote
+  font-family: 'Semi', sans-serif
+  color: #333
+  font-size: 0.85em
+  padding: 0.5em 0 0.5em 1em
+  border: 0
+  border-left: 2px solid #b90000
+
+  p:before
+    content: '“ '
+  //p:after
+    content: ' ”'
+
+p small
+  font-style: italic
+  font-weight: 300
+  line-height: 1.2
+  color: $mute
+
+cite, .cite
+  border-bottom: 1px dashed #282200
+  color: #282200
+  background: $yellow
+  cursor: pointer
+  font-style: normal
+  transition: background 300ms
+
+  &:hover
+    background: darken($yellow,4)
+
+// Colors
+
+.bg-red
+  background: $red
+.bg-yel
+  background: $yellow
+.bg-ff
+  background: white
+.bg-fffd
+  background: #fffd
+.bxsh-yel
+  box-shadow: -15px 13px 0px 0.5px $yellow
+
+.txt-red
+  color: $red
+.txt-yel
+  color: $yellow
+.txt-dk
+  color: $dark
+.txt-mute
+  color: $mute
+.txt-ff
+  color: white
+
+
+// Typography
+
+.txt-spaced
+  line-height: 1.5
+
+.strong
+  font-weight: 600
+  font-style: normal
+  letter-spacing: 0.03em
+
+.title
+  font-weight: 200
+  font-size: 80px
+  line-height: 80px
+
+.pg-title h1
+  font-size: 60px
+  line-height: 60px
+  padding: .5em 1.5em
+  font-weight: 400
+
+// Sizes
+
+.xl
+  font-size: 38px
+.lg
+  font-size: 26px
+.md
+  font-size: 22px
+.sm
+  font-size: 17px
+.xs
+  font-size: 14px
+
+.fw-3
+  font-weight: 300
+.fw-4
+  font-weight: 400
+.fw-5
+  font-weight: 500
+.fw-6
+  font-weight: 600
+.fw-7
+  font-weight: 700
+
+// layout
+
+.header-title
+  display: table
+  white-space: nowrap
+  margin: auto
+  width: 100%
+  left: 0
+
+
+.landing
+  max-width: 800px
+  padding-top: 130px
+  margin-bottom: 5rem
+
+  cite
+    border-bottom: 1.5px dotted $yellow
+    color: white
+    background: none
+    &:hover
+      color: #282200
+      background: lighten($yellow,8)
+
+  hr
+    border-bottom: 1px solid rgba(white, 0.5)
+    margin: 36px auto 37px
+
+  h2
+    font-size: 32px
+    letter-spacing: 0!important
+    max-width: 700px
+
+  p
+    margin-left: auto
+    margin-right: auto
+    line-height: 1.35
+
+  #introduction
+    overflow: hidden
+    position: relative
+    padding-bottom: 4rem
+    
+    .btn-right
+      left: calc(50% - 70px)
+      bottom: 0
+
+    p:last-child
+      margin-bottom: 1em
+
+  a
+    display: inline-flex
+    align-items: baseline
+    color: white
+    transition: box-shadow 0.3s
+
+    &:hover
+      box-shadow: 0 1px 0 0 $yellow
+
+
+.container
+  background: $red
+
+.wrap
+  width: 100%
+
+.list
+  width: 90%
+  max-width: 900px
+  padding: 70px
+  margin-bottom: 4rem
+
+  .label
+    margin-top: -2.25em
+    font-weight: 500
+    font-size: 22px
+    padding-bottom: 0.25em
+    text-transform: none
+    font-style: italic
+
+    &.label-l
+      margin-left: auto
+
+
+  &-item
+    padding-top: 10px
+    
+    p
+      max-width: 280px
+      font-size: 16px
+
+  h2
+    color: $dark
+
+  h3
+    color: $red
+    margin-bottom: 1em
+
+  a:hover
+    color: lighten($red, 20)
+    svg path
+      fill: lighten($red, 20)
+
+  p
+    margin-bottom: 0.5em
+
+  svg
+    display: inline
+
+  .flex
+    margin-top: 80px
+
+  .col-1-2:first-child
+    margin-right: 2rem
+    .list-item
+      right: 0
+    
+  .col-1-2:last-child
+    margin-left: 2rem
+    .list-item
+      left: 0
+
+.col-1-2
+  width: 50%
+  flex-basis: 50%
+  position: relative
+  min-height: 10px
+
+.logo
+  max-width: 80px
+  line-height: 1.1
+  padding: 12.5px 0
+
+#title-short
+  display: none
+
+.icon-social-facebook
+  padding: 0 10px
+
+.lazy-line-painter
+  position: relative
+  height: 33vh
+  width: 100%
+  margin: auto
+  padding-top: 50px
+  margin-bottom: -33vh
+  svg
+    position: absolute
+    max-height: 100%
+  path
+    stroke: white
+    stroke-width: 0.75px
+
+#credits
+  border-top: 1px dashed rgba(white, 0.5)
+
+  a
+    transition-duration: 300ms
+  a:hover
+    color: #fffd
+
+  > .flex
+    max-width: 1200px
+
+// Article pages
+
+.btn-back
+  margin: 2rem
+  &:hover
+    color: white
+    transform: translateY(-2px)
+    
+.article-w
+  width: 100%
+  max-width: 710px    
+
+.article-landing
+  position: relative
+  overflow: hidden
+  height: 100vh
+
+  .bg-img
+    position: absolute
+    background-size: cover!important
+    animation: zoomout 6s ease forwards
+    -webkit-animation: zoomout 6s ease forwards
+    z-index: -1
+    width: 100%
+    height: 100%
+
+.pg-title
+
+  position: relative
+
+  h1
+    display: inline-block
+    padding: 0.5em
+    margin-bottom: 0
+    line-height: 1.1
+    min-width: 425px
+
+  h4
+    display: inline-block
+    padding: 1em 2.5em
+
+.pg-author
+
+  > div
+    padding-top: 4px
+    line-height: 1.1
+
+.content
+  padding-top: 60px
+  line-height: 1.4
+  font-weight: 300
+
+  a:not(.bare)
+    box-shadow: inset 0 -2px #fff, inset 0 -3px $mute
+    text-shadow: -2px 1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 2px 1px 0 #fff
+
+    &:hover
+      color: black
+      box-shadow: inset 0 -1px #fff, inset 0 -3px $red
+
+  strong
+    font-weight: 600
+
+  p > small
+    line-height: 1
+
+  & > p:first-child
+    font-weight: 500
+
+
+  .title
+    font-size: 2.5em
+    font-weight: 300
+
+    & + div
+      letter-spacing: 0
+
+.row-title td
+  font-weight: 500
+  padding-top: 20px
+
+.row-title:first-child td
+  vertical-align: middle
+  padding: 5px 0
+
+.row-then-now td
+  vertical-align: top
+  padding: 20px 10px
+  width: 50%
+  border-bottom: 1px solid #ccc
+
+  &:nth-child(2)
+    width: 0
+    vertical-align: middle
+
+.row-then-now:last-child td
+  border-bottom: 1px solid $red
+
+footer
+
+  .list
+    padding: 0
+    width: 100%
+
+  .list-item
+    width: 50%
+    flex-basis: 50%
+    padding: 20px 20px
+
+    &:last-child:nth-child(odd)
+      margin-left: auto
+      margin-right: auto
+
+  .thumb
+    position: relative
+    display: inline-block
+    margin-bottom: 10px
+    overflow: hidden
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      opacity: 0
+      background: $red
+      transition-duration: 0.3s
+
+    &:hover:before
+      opacity: 0.33
+
+// Modals
+.info-src
+
+// Helpers
+
+.hide
+  opacity: 0
+.fade
+  opacity: 0.05
+.show
+  opacity: 1
+.display-none
+  display: none
+.inline-block
+  display: inline-block
+.block
+  display: block
+.no-ptr-ev
+  pointer-events: none
+.ptr
+  cursor: pointer
+.z1
+  z-index: 1
+.z10
+  z-index: 10
+.z20
+  z-index: 20
+.overflow-y-vis
+  overflow-y: visible!important
+.relative
+  position: relative
+.pos-abs,
+.absolute
+  position: absolute
+.ease-out
+  transition: ease-out 300ms
+.bare-list
+  list-style-type: none
+.max-h-0
+  max-height: 0
+.max-w-none
+  max-width: none
+.lg-max-h
+  max-height: 1000px
+.br-sm
+  border-radius: 5px
+.fixed
+  position: fixed
+.top-0
+  top: 0
+.left-0
+  left: 0
+.bottom-0
+  bottom: 0
+.flex-1
+  flex: 1 1 100%
+.col-1-3
+  width: 33%
+  flex-basis: 33%
+.col-2-3
+  width: 67%
+  flex-basis: 67%
+.col-1-4
+  width: 25%
+  flex-basis: 25%
+.col-3-4
+  width: 75%
+  flex-basis: 75%
+.col-1-5
+  width: 20%
+  flex-basis: 20%
+.col-2-5
+  width: 40%
+  flex-basis: 40%
+.col-3-5
+  width: 60%
+  flex-basis: 60%
+.delay-2000
+  animation-delay: 2s!important
+.delay-duration-homepage
+  animation-delay:   0.6s!important
+  animation-duration: 1.5s!important
+.fade-in
+  animation: fade-in 0.5s 1 forwards
+  -webkit-animation: fade-in 0.5s 1 forwards
+.fade-out
+  animation: fade-in 0.5s 1 reverse forwards
+  -webkit-animation: fade-in 0.5s 1 reverse forwards
+.slide-up
+  animation: slide-up .8s 1 forwards
+  -webkit-animation: slide-up .8s 1 forwards
+
+// UI Components
+
+.btn-right
+  font-size: 0.9rem
+  text-transform: uppercase
+  font-weight: 600
+  opacity: 0.95
+  letter-spacing: 0.08em
+  background: $mute
+  color: white
+  padding: 6px 1em
+  cursor: pointer
+  transition-duration: 0.2s
+  z-index: 50
+  
+  &::after
+    content: " →"
+
+  &:hover
+    opacity: 1
+    transform: translateY(1px)
+
+// Misc
+
+.stamp
+  display: table
+  margin: auto
+  background: $red
+  color: white
+  font-size: 16px
+  padding: 8px
+
+.bracket
+  position: absolute
+  width: 20px
+  border: 1px solid $red
+  transition: opacity ease-out 400ms
+  left: calc(100% + 20px)
+
+  &:before
+    color: $red
+    position: absolute
+    font-style: italic
+    font-family: 'Semi', sans-serif
+    font-size: 20px
+    bottom: calc(100% + 10px)
+    white-space: nowrap
+
+  &-left
+    border-right: none
+
+    &:before
+      content: 'Responded to by'
+      left: 40px
+
+    &-all:before
+      content: 'Mentioned in all response articles'
+      top: -0.67em
+      right: 40px
+
+
+  &-right
+    border-left: none
+
+    &:before
+      content: 'Responds to these articles'
+      right: 40px
+
+    &-all:before
+      content: 'Responds to all articles'
+      top: -0.67em
+      left: 40px
+
+
+// large
+@media screen and (max-width: 980px), screen and (max-height: 700px)
+
+  .seven-chinas
+    width: 100%
+    margin-left: 0
+
+// medium width only
+@media screen and (max-width: 768px)
+
+  .list
+    padding: 70px 40px
+    .label
+      position: absolute
+      border-bottom: 1px solid $red
+      width: 100%
+    .flex
+      flex-direction: column
+    .col-1-2
+      width: 100%
+    .col-1-2:first-child
+      text-align: left
+    .col-1-2:last-child
+      margin-left: 0
+
+  .bracket
+    border: 1px solid $mute
+    width: calc(100% + 30px)
+    left: -15px
+    &:before
+      color: $mute
+      font-size: 18px
+      left: 16px
+    &-left
+      border-right: 1px solid
+      border-bottom: none
+      &-all:before
+        top: auto
+    &-right
+      border-left: 1px solid
+      border-top: none
+      &-all:before
+        top: auto
+    &-right:before
+      bottom: calc(-100% - 10px)
+
+  #credits > .flex
+    flex-direction: column
+
+  #credits .flex
+    .col-2-5,
+    .col-3-5,
+      width: 100%
+      flex-basis: 100%
+      margin: 1em auto
+    .flex
+      flex-direction: row
+
+// medium
+@media screen and (max-width: 768px), screen and (max-height: 700px)
+
+  .article-w
+    width: 90%
+
+  .ig
+    width: 90%
+    left: 5%
+
+  .header-title
+    width: auto
+    left: 28px
+
+  .logo
+    display: none
+
+  .pg-title h1
+    font-size: 44px
+    line-height: 44px
+
+// small
+@media screen and (max-width: 540px), screen and (max-height: 700px)
+
+  .xl
+    font-size: 32px
+  .lg
+    font-size: 26px
+  .md, p
+    font-size: 18px
+  .sm
+    font-size: 16px
+
+  .landing
+    padding-top: 80px
+
+  .article-landing
+    height: 165vh
+
+  #title-short
+    display: inline
+  #title-long,
+  .social-share-label
+    display: none
+
+  .list
+    box-shadow: none
+    width: 95%
+
+  .pg-title
+    margin: 50px auto
+
+// small width only
+@media screen and (max-width: 540px)
+  .pg-title h1
+    min-width: 0
+
+  .landing
+
+    hr
+      &:nth-of-type(2)
+        border-bottom: none
+      &:nth-of-type(1)
+        display: block
+        width: 90%
+        margin-left: auto
+        margin-right: auto
+
+    h1
+      font-size: 65px
+      span
+        &:first-child
+          display: block
+          line-height: 0.5em
+        &:nth-child(2)
+          font-size: 34px
+          margin: 2.5em
+          line-height: 0
+
+    h2
+      font-size: 30px
+
+    h1, h2
+      max-width: 90%
+      margin-left: auto
+      margin-right: auto
+    p
+      line-height: 1.4
+
+  footer
+    .txt-justify
+      text-align: left
+    .list-item
+      width: 100%
+      flex-basis: 100%
+
+  .info-src
+    text-align: center

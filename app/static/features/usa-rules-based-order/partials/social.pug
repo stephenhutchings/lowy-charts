@@ -1,0 +1,26 @@
+.social-share.fl-r.relative
+  span.social-share-label Share&emsp;
+  a.icon.icon-mail(
+    href=[
+      "mailto:add-recipient?subject=Debating%USA%20and%20the%20Rules-Based%20Order&body=From%20the%20Lowy%20Institute%3A%20",
+      encodeURIComponent(page.url),
+    ].join("")
+    target="_blank"
+  )
+  a.icon.icon-social-facebook(
+    href=[
+      "https://www.facebook.com/sharer.php?u=",
+      encodeURIComponent(page.url),
+    ].join("")
+    target="_blank"
+  )
+  a.icon.icon-social-twitter(
+    href=[
+      "https://twitter.com/share?url=",
+      encodeURIComponent(page.url),
+      "&text=",
+      encodeURIComponent(page.title),
+      "&via=LowyInstitute"
+    ].join("")
+    target="_blank"
+  )

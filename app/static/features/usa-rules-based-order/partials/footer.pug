@@ -1,0 +1,41 @@
+- nAuthors   = 6 
+- isResponse = page.attributes.map[0] <= nAuthors
+
+footer.mx-auto.article-w.txt-center.pv-lg
+  
+  .md
+    a.bg-red.txt-ff.p-sm.br-sm.fw-4(href="/features/usa-rules-based-order")
+      span.icon.icon-left-arrow
+      | &ensp;Back to debates menu
+      
+  if isResponse
+    .md.pv-md.fw-4.txt-spaced
+      span.sm.txt-tu OR
+      | <br>Read an article mentioned in this response:
+    - articles = page.feature.articles
+    .list.flex.flex-wrap
+      each i in page.attributes.map
+        - index = i - 1
+        .list-item.ease-out
+          h4.xs.txt-tu.txt-mute.txt-left= articles[index].author
+          a.thumb.br-sm(href=`/features/usa-rules-based-order/articles/${articles[index].href}`)
+            img(height="150" width="100%" src=`../../img/${articles[index].img}`)
+          h2.md.txt-semi.txt-left
+            a.txt-bare.ease-out(href=`/features/usa-rules-based-order/articles/${articles[index].href}`)!= articles[index].title
+          p.sm.txt-semi.txt-justify!= "&ldquo;" + articles[index].quote + "&rdquo;"
+        
+  else
+    .md.pv-md.fw-4.txt-spaced
+      span.sm.txt-tu OR
+      | <br>Read responses to this article:
+    - responses = page.feature.responses
+    .list.flex.flex-wrap
+      each i in page.attributes.map
+        - index = i - nAuthors - 1
+        .list-item.ease-out
+          h4.xs.txt-tu.txt-mute.txt-left= responses[index].author
+          a.thumb.br-sm(href=`/features/usa-rules-based-order/responses/${responses[index].href}`)
+            img(height="150" width="100%" src=`../../img/${responses[index].img}`)
+          h2.md.txt-semi.txt-left
+            a.txt-bare.ease-out(href=`/features/usa-rules-based-order/responses/${responses[index].href}`)!= responses[index].title
+          p.sm.txt-semi.txt-justify!= "&ldquo;" + responses[index].quote + "&rdquo;"

@@ -1,0 +1,53 @@
+//-
+  This layout is used to construct the article page. It in turn extends the
+  default `layout` defined below.
+
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.image = "https://interactives.lowyinstitute.org/features/usa-rules-based-order/img/thumbnail.jpg"
+  - page.article = __.filepath.match(/([^\/]+)\/index.pug$/)[1]
+  - page.feature = data.getOne("static/features/usa-rules-based-order/data")
+  - page.title = page.feature.title
+  
+
+block prepend head
+  - page.url = "https://interactives.lowyinstitute.org/features/usa-rules-based-order"
+  - page.url += "/" + page.article
+  - page.metaTitle = `${page.attributes.title} - USA Debate – Lowy Institute`
+
+block page
+
+  include header
+
+  a.btn-back.z20.pos-abs.m-md.txt-ff.top-0.left-0.icon.icon-left-arrow.txt-tu.sm.fw-5.ease-out(href="/features/usa-rules-based-order/") &ensp;
+    span Homepage
+
+  .article-landing.flex-cv
+    .bg-img(style=`background: linear-gradient(0deg, rgba(185, 0, 0, 0.75), rgba(185, 0, 0, 0.6)), url(../../img/${page.attributes.img}) center no-repeat;`)
+    .row(style="min-height: 10vh")
+    .pg-title.article-w.txt-center.mx-auto
+      if page.attributes.map[0] < 7
+        .stamp.fw-5.txt-tu Response
+      h1.txt-cond.bg-fffd!= page.attributes.title
+      h4.pg-author.sm.txt-tu.bg-fffd!= page.attributes.author + "<br>"
+        .xs.txt-mute!= page.attributes.position
+    .row(style="min-height: 20vh")
+    .pullquote.article-w.xl.txt-ff.txt-center.txt-semi.mx-auto.flex-cv
+      span!= "&ldquo;" + page.attributes.quote + "&rdquo;"
+
+  .content.article-w.txt-semi.mx-auto
+    block content
+
+  include footer
+
+
+block append customScripts
+  script(src="../../scripts/article.js")
+
+block append css
+  style
+    include:sass ../_styles.sass
+    
+    

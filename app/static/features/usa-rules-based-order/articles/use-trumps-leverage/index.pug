@@ -1,0 +1,14 @@
+extend ../../partials/article
+
+block append config
+  - page.attributes = data.getOne("static/features/usa-rules-based-order/data").articles[4]
+
+block content
+  :marked
+    Bits and bobs.
+    
+    <hr>
+    
+    **Daniel Tobin** is a faculty member in China Studies at the National Intelligence University (NIU), and Senior Associate (nonresident) with the Freeman Chair in China Studies at the Center for Strategic and International Studies (CSIS).
+
+    <hr>

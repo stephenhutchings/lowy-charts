@@ -1,0 +1,14 @@
+extend ../../partials/article
+
+block append config
+  - page.attributes = data.getOne("static/features/usa-rules-based-order/data").responses[5]
+
+block content
+  :marked
+    This and that
+
+    <hr>
+    
+    **Professor Wu Xinbo** is Professor and Dean, Institute of International Studies; and Director at the Center for American Studies, Fudan University.
+
+    <hr>

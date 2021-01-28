@@ -1,0 +1,89 @@
+articles:
+  
+  - href: "using-rules-to-compete"
+    title: Using rules to compete
+    author: Stacie Goddard
+    position: Professor of Political Science and<br>Faculty Director, Wellesley College.
+    img: "1.jpg"
+    quote: “…investing in rules and norms is not ancillary to great power politics...”
+    map: [8,9,10,11,12]
+  - href: "free-world-steering-body"
+    title: A free-world steering body
+    author: Matthew Kroenig
+    position: Professor of Government & Foreign<br>Service, Georgetown University
+    img: "2.jpg"
+    quote: “This is a time to deepen and expand US leadership and the rules-based system, not to scale it back.” 
+    map: [7,9,12]
+  - href: "first-rebuild-at-home"
+    title: First, rebuild at home
+    author: Rebecca Lissner
+    position: Asst. Professor, Strategic & Operational<br>Research, US Naval War College
+    img: "3.jpg"
+    quote: “...Washington must pursue a new approach that rejects both nationalism and nostalgia, while embracing self-discipline alongside global engagement.”
+    map: [7,8,12]
+  - href: "lead-from-behind"
+    title: Lead from behind
+    author: Michael Mazarr
+    position: Author and Senior Political<br>Scientist, RAND Corporation
+    img: "4.jpg"
+    quote: “…like the broader trend of neoliberal economics, the post-war order started to accelerate out of control.”
+    map: [8,9,12]
+  - href: "use-trumps-leverage"
+    title: Use Trump’s leverage
+    author: Danielle Pletka
+    position: Senior Fellow<br>American Enterprise Institute
+    img: "5.jpg"
+    quote: “When the rules are being abused to advance principles antithetical to our own…then the rules are not really rules anymore.”
+    map: [7,8,9,10,12]
+  - href: "rbo-a-dangerous-myth"
+    title: RBO&colon; A dangerous myth
+    author: Patrick Porter
+    position: Professor of International Security<br>& Strategy, University of Birmingham
+    img: "6.jpg"
+    quote: “To balance China, or tackle climate change, [the United States] must accommodate inhumane partners.”
+    map: [7,8,9,10,11]
+    
+responses:
+  
+  - href: "tiered-membership"
+    title: Tiered membership
+    author: Stacie Goddard
+    position: Professor of Political Science and<br>Faculty Director, Wellesley College.
+    img: "1.jpg"
+    quote: “The United States can support liberalism at home and among its allies without embedding these principles in a universal order.” 
+    map: [2,3,5,6]
+  - href: "enforce-the-liberal-order"
+    title: Enforce the liberal order
+    author: Matthew Kroenig
+    position: Professor of Government & Foreign<br>Service, Georgetown University
+    img: "2.jpg"
+    quote: “The use of force is a necessary (if sometimes unsavoury) part of enforcing an effective rules-based system.”
+    map: [1,3,4,5,6]
+  - href: "toward-a-new-world-order"
+    title: Toward a new world order
+    author: Rebecca Lissner
+    position: Asst. Professor, Strategic & Operational<br>Research, US Naval War College
+    img: "3.jpg"
+    quote: “For an America past the peak of its power, multilateralism will be a source of strength, not an admission of weakness.”
+    map: [1,2,4,5,6]
+  - href: "humility-and-limits"
+    title: Humility and limits
+    author: Michael Mazarr
+    position: Author and Senior Political<br>Scientist, RAND Corporation
+    img: "4.jpg"
+    quote: “…dangers arise when the drive for ordering becomes more theological than pragmatic…”
+    map: [1,5,6]
+  - href: "empower-parallel-organisations"
+    title: Empower parallel organisations
+    author: Danielle Pletka
+    position: Senior Fellow<br>American Enterprise Institute
+    img: "5.jpg"
+    quote: “Agreeing about the impossible is a fine place to begin to forge a path forward.”
+    map: [1,6]
+  - href: "abandon-democracy-evangelism"
+    title: Abandon democracy evangelism
+    author: Patrick Porter
+    position: Professor of International Security<br>& Strategy, University of Birmingham
+    img: "6.jpg"
+    quote: “Washington would be better advised to steer clear of grandiose doctrines and schemes to domesticate the world to its values.”
+    map: [1,2,3,4,5]
