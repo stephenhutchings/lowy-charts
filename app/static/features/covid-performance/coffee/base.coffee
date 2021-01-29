@@ -53,7 +53,7 @@ $(document).ready =>
   # Events
   onResize()
   window.addEventListener 'resize', (e) -> onResize()
-  body.addEventListener 'click', (e) -> methods.deactivate()
+  body.addEventListener 'click', (e) -> if not body.classList.contains('slide-7') then methods.deactivate()
   ovrvwBtn.addEventListener 'click', (e) -> unfold(overview, ovrvwBtn)
   ovrvwBtn.addEventListener 'touch', (e) -> unfold(overview, ovrvwBtn)
   modalInn.addEventListener 'click', (e) -> e.stopPropagation()
