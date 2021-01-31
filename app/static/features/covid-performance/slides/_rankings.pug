@@ -18,10 +18,10 @@
         .table-head: table
           thead
             tr
-              th.txt-left(onclick="sortTable(this,true,0)") Rank
+              th.txt-left(onclick="sortTable.call(this, \"rank\")") Rank
                 span.icon.icon-down-sm.show
               th.txt-left(
-                onclick="sortTable(this,false, 1)"
+                onclick="sortTable.call(this, \"name\")"
               ) 
                 | Country
                 span.hide-touchscreen /Territory
@@ -32,7 +32,7 @@
         .country-list: table
           tbody
             each c, i in list
-              tr
+              tr(data-rank=c.rank data-name=c.shortname || c.name)
                 td.txt-right= c.rank
                 td.flex.items-center
                   img(
@@ -54,75 +54,41 @@
     p.footnote * Please note: China was not included in this ranking due to a lack of publicly available data on testing.<br>&nbsp;Data for Taiwan is provided separately to that of China.  
 
   script.
-    
     var ready = false;
     
     function flipSortIcon(el) {
       let icon = el.querySelector('.icon');
-      if ( icon.classList.contains('show') ) {
-        icon.classList.toggle('rot');
-      }
-      else {
+      icon.classList.toggle('rot', !asc);
+
+      if ( !icon.classList.contains('show') ) {
         el.parentNode.querySelector('th > .show').classList.remove('show');
         icon.classList.toggle('show');
       }
     }
+
+    var asc  = true
+    var sort = "rank"
+    var tbody = document.querySelector('.country-list table tbody') 
+
+    var list = Array.from(tbody.children).map((row) => ({
+      html: row.outerHTML,
+      rank: +row.dataset.rank,
+      name: row.dataset.name.toLowerCase()
+    }))
     
-    // from https://www.w3schools.com/howto/howto_js_sort_table.asp
-    function sortTable(el, numeric, n) {
-      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-      table = document.querySelector('.country-list table');
-      switching = true;
-      dir = "asc";
-      while (switching) {
-        switching = false;
-        rows = table.rows;
-        for (i = 0; i < (rows.length - 1); i++) {
-          shouldSwitch = false;
-          x = rows[i].getElementsByTagName("TD")[n];
-          y = rows[i + 1].getElementsByTagName("TD")[n];
-          if (numeric) {
-            if (dir == "asc") {
-              if ( Number(x.innerHTML) > Number(y.innerHTML) ) {
-                shouldSwitch = true;
-                break;
-              }
-            } else if (dir == "desc") {
-              if ( Number(x.innerHTML) < Number(y.innerHTML) ) {
-                shouldSwitch = true;
-                break;
-              }
-            }
-          }
-          else {
-            if (dir == "asc") {
-              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                shouldSwitch = true;
-                break;
-              }
-            } else if (dir == "desc") {
-              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                shouldSwitch = true;
-                break;
-              }
-            }
-          }
-        }
-        if (shouldSwitch) {
-          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-          switching = true;
-          switchcount ++;
-        } else {
-          if (switchcount == 0 && dir == "asc") {
-            dir = "desc";
-            switching = true;
-          }
-        }
-      }
-      ready ? flipSortIcon(el) : "";
+    function sortTable(key) {
+      if (sort === key) asc = !asc
+
+      list = list.sort((a, b) => 
+        (a[key] < b[key] ? 1 : -1) * (asc ? -1 : 1)
+      )
+
+      tbody.innerHTML = list.map(row => row.html).join("")
+
+      sort = key
+      flipSortIcon(this)
     }
     window.addEventListener('load', function () {
-      sortTable(document.getElementsByTagName('th')[1], true, 1);
       ready = true;
     });
     
