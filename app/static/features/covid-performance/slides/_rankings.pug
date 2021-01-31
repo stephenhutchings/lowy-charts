@@ -39,6 +39,7 @@
                     width="45px"
                     alt=`Country flag of ${c.name}`
                     src=`../../img/country-flags/png-100px/${c.code.toLowerCase()}.png`
+                    loading="lazy"
                     )
                   .name!= c.shortname || c.name
                 td.txt-right= c.average.toFixed(1)
