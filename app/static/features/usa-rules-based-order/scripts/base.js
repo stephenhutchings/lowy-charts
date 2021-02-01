@@ -31,8 +31,7 @@ const onReady = () => {
   // Setup
   function resize() {
     vw = window.innerWidth
-    vh = window.innerHeight
-    spreadY([...document.querySelectorAll('.list-item')])
+    vh !== window.innerHeight ? vh = window.innerHeight : spreadY([...document.querySelectorAll('.list-item')])
   }
 
   function onScroll() {
