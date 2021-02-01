@@ -23,7 +23,7 @@ const onReady = () => {
   introBtn.addEventListener('touch', (e) => unfold(introTxt, introBtn) )
   
   // Initialisation
-  setTimeout( () => fold(introTxt, 2), 100)
+  setTimeout( () => fold(introTxt, 2), 90)
   setTimeout(initAnimateSort, 1000)
   window.scrollTo(0,0)
   onScroll()

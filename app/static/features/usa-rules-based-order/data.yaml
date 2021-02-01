@@ -51,7 +51,7 @@ responses:
     position: Professor of Political Science and<br>Faculty Director, Wellesley College.
     img: "5.jpg"
     quote: “The United States can support liberalism at home and among its allies without embedding these principles in a universal order.” 
-    map: [2,3,5,6]
+    map: [2,5,6]
   - href: "enforce-the-liberal-order"
     title: Enforce the liberal order
     author: Matthew Kroenig

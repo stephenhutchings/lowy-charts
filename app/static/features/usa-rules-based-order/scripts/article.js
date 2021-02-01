@@ -15,8 +15,8 @@ function onsize() {
 
 function scroll() {
   let trigger = window.innerHeight - window.pageYOffset < 0;
-  if (trigger && !isHeader) { isHeader = !isHeader; document.querySelector('header').style.opacity = 1 }
-  else if (!trigger && isHeader) { isHeader = !isHeader; document.querySelector('header').style.opacity = 0 }
+  if (trigger && !isHeader) { isHeader = !isHeader; document.querySelector('header').classList.add('visible') }
+  else if (!trigger && isHeader) { isHeader = !isHeader; document.querySelector('header').classList.remove('visible') }
 }
 
 function trimTitleNbsp() {

@@ -46,9 +46,7 @@ function focus(el) {
 
   if (targets.length > 1) {                         // Set top of mapped elements
     tBlock = (vw > breakpoint) ? t + h/2 - hSum/2 : lhs ? t - hSum - bpOffset : t + 1.2*h + bpOffset;
-    console.log(tBlock)
     tBlock = checkBlockBounds(tBlock, hSum);
-    console.log(tBlock)
     targets.forEach( (el, i) => {
       el.classList.add('target', 'z1');
       el.classList.remove('fade','ptr');
