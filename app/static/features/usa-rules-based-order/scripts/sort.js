@@ -69,7 +69,7 @@ function focus(el) {
     bracket.style.height = (vw > breakpoint) ? hSum-10 + "px" : "25px";
     bracket.classList.remove('hide');
 
-    if (map.length < 6) {
+    if (map.length < 5) {
       bracket.classList.remove('bracket-left-all');
       bracket.classList.remove('bracket-right-all');
     }
