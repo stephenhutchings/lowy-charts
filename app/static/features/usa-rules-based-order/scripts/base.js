@@ -2,7 +2,7 @@
 var vh = window.innerHeight
 var vw = window.innerWidth
 
-var breakpoint = 768
+var breakpoint = 767
 var isFocused = false
 var isHeader = false
 

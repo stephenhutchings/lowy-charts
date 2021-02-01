@@ -2,12 +2,11 @@ extend /partials/layout
 
 block append config
   - page.includeFonts = false
-  - page.url = "https://interactives.lowyinstitute.org/features/china-rules-based-order/"
-  - page.class = ""
-  - page.title = "USA and the Rules-Based Order"
+  - page.title = "America and the Rules-Based Order"
   - page.metaTitle = `${page.title} - Lowy Institute`
   - page.description = ""
-  - page.image = "https://interactives.lowyinstitute.org/features/china-rules-based-order/img/thumbnail.jpg"
+  - page.url = "https://interactives.lowyinstitute.org/features/usa-rules-based-order/"
+  - page.image = "https://interactives.lowyinstitute.org/features/usa-rules-based-order/img/thumbnail.jpg"
   - page.feature = data.getOne("static/features/usa-rules-based-order/data")
 
 block page
@@ -17,7 +16,6 @@ block page
     .flex-cv.mx-auto(style="max-width: 650px; padding: 0 50px;")
       .txt-center.txt-ff.pv-md The contents of this Lowy Institute digital feature are embargoed. By entering the site, you agree to not share this page or its contents until 12:01am Friday 25 September 2020.
       .bg-yel.p-sm.mx-auto.ptr(onclick="this.parentElement.parentElement.style.display = 'none'") Accept
-      
   
   include partials/header
   
@@ -37,7 +35,8 @@ block page
         h2.txt-semi.mx-auto.txt-center.fw-4.block Six experts debate America's approach to the rules&#8209;based international order
         
       #introduction
-        .xs.txt-sans.txt-tu.fw-7(style="letter-spacing: 0.05em; margin-bottom: 10px;") Ben Scott
+        h2.txt-semi.lg.fw-4 Introduction
+        .xs.txt-sans.txt-tu.fw-7(style="letter-spacing: 0.05em; margin-bottom: 10px;") By Ben Scott
         
         .absolute.btn-right.txt-sans Read more
         #introduction-text.txt-semi
@@ -89,7 +88,7 @@ block page
             span &emsp;
             a.name.txt-semi.fw-5.txt-bare.txt-ff(href="https://twitter.com/Ben_G_Scott" target="_blank") Ben Scott
           .flex-1.ph-sm
-            .txt-tu.xs Design
+            .txt-tu.xs Design / Dev
             a.name.txt-semi.fw-5.txt-bare.txt-ff(href="https://twitter.com/__brodysmith" target="_blank") Brody Smith
 
 block append css

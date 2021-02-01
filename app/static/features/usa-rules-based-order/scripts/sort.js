@@ -9,7 +9,6 @@ function initAnimateSort() {
   let sortElArr = [...sortElObj];          // Array list of sorting elements
 
   sortElObj.forEach( el => {                // Default setup for every sortable object
-    console.log( el )
     el.addEventListener('click', e => { isFocused ? unfocus(e, el) : focus(el); e.stopPropagation(); });
     el.classList.add('absolute');
   });
@@ -29,7 +28,7 @@ function focus(el) {
   let listItems = getAll('.list-item')    // Elements targeted for fading/sorting
   let thead = getAll('.label')            // Argument / Response table labels
   let bracket = get('.bracket')           // Bracket to wrap around sorted els
-  let bpOffset = 25                       // breakpoint offset for rhs sort positioning
+  let bpOffset = 35                       // breakpoint offset for rhs sort positioning
 
   el.classList.add('focused')
   el.classList.remove('ptr')
@@ -46,7 +45,7 @@ function focus(el) {
   hSum = heights.length ? heights.reduce( (sum, h) => sum + h ) : 0;     // Sum all their heights
 
   if (targets.length > 1) {                         // Set top of mapped elements
-    tBlock = (vw > breakpoint) ? t + h/2 - hSum/2 : lhs ? t - hSum - bpOffset : t + 1.25*h;
+    tBlock = (vw > breakpoint) ? t + h/2 - hSum/2 : lhs ? t - hSum - bpOffset : t + 1.2*h + bpOffset;
     tBlock = checkBlockBounds(tBlock, hSum);
     targets.forEach( (el, i) => {
       el.classList.add('target', 'z1');
@@ -67,7 +66,7 @@ function focus(el) {
 
     lhs ? bracket.classList.remove('bracket-left') : bracket.classList.remove('bracket-right');
     lhs ? bracket.classList.add('bracket-right') : bracket.classList.add('bracket-left');
-    bracket.style.top = (vw <= breakpoint && lhs) ? tBlock+hSum-1.5*bpOffset+"px" : tBlock + "px";
+    bracket.style.top = (vw <= breakpoint && lhs) ? tBlock+hSum-bpOffset+"px" : tBlock + "px";
     bracket.style.height = (vw > breakpoint) ? hSum-10 + "px" : "25px";
     bracket.classList.remove('hide');
 
