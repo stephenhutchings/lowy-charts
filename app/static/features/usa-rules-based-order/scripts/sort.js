@@ -24,7 +24,7 @@ function focus(el) {
   let t = el.offsetTop
   let h = el.offsetHeight
   let map = JSON.parse(el.dataset.map)
-  let lhs = map[0] <= n ? true : false    // lhs TRUE for first 7 articles
+  let lhs = map[0] <= n ? true : false    // lhs TRUE for first 6 articles
   let listItems = getAll('.list-item')    // Elements targeted for fading/sorting
   let thead = getAll('.label')            // Argument / Response table labels
   let bracket = get('.bracket')           // Bracket to wrap around sorted els
@@ -46,7 +46,9 @@ function focus(el) {
 
   if (targets.length > 1) {                         // Set top of mapped elements
     tBlock = (vw > breakpoint) ? t + h/2 - hSum/2 : lhs ? t - hSum - bpOffset : t + 1.2*h + bpOffset;
+    console.log(tBlock)
     tBlock = checkBlockBounds(tBlock, hSum);
+    console.log(tBlock)
     targets.forEach( (el, i) => {
       el.classList.add('target', 'z1');
       el.classList.remove('fade','ptr');
@@ -161,10 +163,9 @@ function spreadY(a) {
 
 function checkBlockBounds(t, h) {
   let list = get('.list');
-  let creditsHeight = get('#credits').offsetHeight;
   let listItemsOffset = (list.querySelector('.flex').offsetTop + list.querySelector('.flex').offsetHeight) - list.offsetTop;
   let listHeight = list.offsetHeight - listItemsOffset;
-  let bottomClearance = listHeight - t - h - creditsHeight;
+  let bottomClearance = listHeight - t - h;
 
   t < 0 ? t = 0 : "";
   bottomClearance < 0 ? t = t + bottomClearance : "";

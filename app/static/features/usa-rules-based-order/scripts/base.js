@@ -30,13 +30,19 @@ const onReady = () => {
 
   // Setup
   function resize() {
-    vw = window.innerWidth
-    vh !== window.innerHeight ? vh = window.innerHeight : spreadY([...document.querySelectorAll('.list-item')])
+    
+    if ( vw !== window.innerWidth ) {
+      vw = window.innerWidth
+      spreadY([...getAll('.list-item')])
+    }
+    
+    vh = window.innerHeight
+    
   }
 
   function onScroll() {
-    if (window.pageYOffset > 100 && !isHeader) { isHeader = !isHeader; document.querySelector('header').classList.add('visible') }
-    else if (window.pageYOffset <  100 && isHeader) { isHeader = !isHeader; document.querySelector('header').classList.remove('visible') }
+    if (window.pageYOffset > 100 && !isHeader) { isHeader = !isHeader; get('header').classList.add('visible') }
+    else if (window.pageYOffset <  100 && isHeader) { isHeader = !isHeader; get('header').classList.remove('visible') }
   }
 
   function fold (d,n) { 
