@@ -303,7 +303,7 @@ cite, .cite
     box-shadow: inset 0 -1px 0 0 rgba(white,.5)
 
     &:hover
-      box-shadow: inset 0 -1px 0 0 rgba(white,.95)
+      box-shadow: inset 0 -2px 0 0 rgba(white,1)
 
 
 .container
@@ -401,11 +401,20 @@ cite, .cite
 
 #credits
   border-top: 1px dashed rgba(white, 0.5)
-
+  
   a
+    box-shadow: inset 0 -1px 0 0 rgba(white,.5)
     transition-duration: 300ms
-  a:hover
-    color: #fffd
+    
+    &:hover
+      box-shadow: inset 0 -2px 0 0 rgba(white,1)  
+      color: #fffd
+    
+    &.name
+      box-shadow: inset 0 -2px 0 0 $yellow
+
+      &:hover
+        box-shadow: inset 0 -2px 0 0 lighten($yellow,20)
 
   > .flex
     max-width: 1200px
