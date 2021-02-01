@@ -178,10 +178,38 @@ cite, .cite
   letter-spacing: 0.03em
 
 .title
-  font-weight: 200
-  font-size: 80px
-  line-height: 80px
+  font-weight: 400
+  font-size: 72px
+  line-height: 62px
+  text-transform: uppercase
+  letter-spacing: 0.02em
+  justify-content: center
+  margin-bottom: 3rem
+  
+  span
+    display: block
+  
+  span:nth-child(2)
+    position: relative
+    display: inline-block
+    font-size: 0.5em
+    margin: .25em 0
+    
+    &:before,
+    &:after
+      content: ''
+      position: absolute
+      background: white
+      height: 1px
+      width: 100%
+      top: 50%
 
+    &:before
+      left: -110%
+      
+    &:after
+      right: -110%
+    
 .pg-title h1
   font-size: 60px
   line-height: 60px
@@ -223,9 +251,12 @@ cite, .cite
 
 
 .landing
+  
   max-width: 800px
-  padding-top: 130px
   margin-bottom: 5rem
+  
+  path
+    vector-effect: non-scaling-stroke
 
   cite
     border-bottom: 1.5px dotted $yellow
@@ -250,16 +281,19 @@ cite, .cite
     line-height: 1.35
 
   #introduction
-    overflow: hidden
     position: relative
     padding-bottom: 4rem
     
     .btn-right
       left: calc(50% - 70px)
-      bottom: 0
+      bottom: 2.5rem
 
     p:last-child
       margin-bottom: 1em
+  
+  #introduction-text
+    position: relative
+    overflow: hidden
 
   a
     display: inline-flex
@@ -586,6 +620,8 @@ footer
 .col-3-5
   width: 60%
   flex-basis: 60%
+.h-screen
+  height: 100vh
 .delay-2000
   animation-delay: 2s!important
 .delay-duration-homepage
@@ -765,9 +801,6 @@ footer
     font-size: 18px
   .sm
     font-size: 16px
-
-  .landing
-    padding-top: 80px
 
   .article-landing
     height: 165vh

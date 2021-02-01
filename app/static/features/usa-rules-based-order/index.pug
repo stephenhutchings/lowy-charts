@@ -24,17 +24,23 @@ block page
   .container.relative
 
     .landing.mx-auto.txt-ff
-    
-      .slide-up.hide
-        hr.display-none
-        h1.title.txt-semi.mx-auto.fw-4.block What should be the role of the rules‑based order in US foreign policy?
-        hr
+      
+      .h-screen.flex-cv.pv-lg
+                
+        h1.title.txt-semi.block.flex.flex-col.txt-center
+          span The United States 
+          span and&nbsp;the
+          span Rules&#8209;based order
+
+        include partials/us-map
+
+        h2.txt-semi.mx-auto.txt-center.fw-4.block Seven experts debate America's approach to the rules&#8209;based international order
         
-      .fade-in.hide.delay-duration-homepage
+      #introduction
         .xs.txt-sans.txt-tu.fw-7(style="letter-spacing: 0.05em; margin-bottom: 10px;") Ben Scott
         
-        #introduction.txt-semi
-          .absolute.btn-right.txt-sans Read more
+        .absolute.btn-right.txt-sans Read more
+        #introduction-text.txt-semi
           include partials/introduction
 
     .list.bxsh-yel.bg-ff.mx-auto.pv-sm.hide.fade-in.delay-duration-homepage

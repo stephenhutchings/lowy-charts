@@ -12,7 +12,7 @@ const getAll = (s) => document.querySelectorAll(s)
 const onReady = () => {
 
   // Elements
-  var introTxt = get('#introduction')
+  var introTxt = get('#introduction-text')
   var introBtn = get('#introduction .btn-right')
 
   // Listeners
@@ -25,7 +25,7 @@ const onReady = () => {
   // Initialisation
   setTimeout( () => fold(introTxt, 2), 100)
   setTimeout(initAnimateSort, 1000)
-  window.scrollTop = 0
+  window.scrollTo(0,0)
   onScroll()
 
   // Setup
@@ -46,7 +46,6 @@ const onReady = () => {
     offset = plist[0].offsetTop
     target = plist[n].offsetTop
     d.style.maxHeight = target - offset + 5 + "px"
-    console.log(offset, target)
   }
     
   function unfold (d, btn) { 
