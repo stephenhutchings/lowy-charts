@@ -36,8 +36,8 @@ const onReady = () => {
   }
 
   function onScroll() {
-    if (window.pageYOffset > 100 && !isHeader) { isHeader = !isHeader; document.querySelector('header').style.opacity = 1 }
-    else if (window.pageYOffset <  100 && isHeader) { isHeader = !isHeader; document.querySelector('header').style.opacity = 0 }
+    if (window.pageYOffset > 100 && !isHeader) { isHeader = !isHeader; document.querySelector('header').classList.add('visible') }
+    else if (window.pageYOffset <  100 && isHeader) { isHeader = !isHeader; document.querySelector('header').classList.remove('visible') }
   }
 
   function fold (d,n) { 

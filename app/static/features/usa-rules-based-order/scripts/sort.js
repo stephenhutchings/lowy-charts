@@ -137,7 +137,7 @@ function spreadY(a) {
   let i = y = 0;
   let n = a.length;
   let itemMargin = 0;
-  let listPaddingBottom = vw > breakpoint ? 225 : 375;
+  let listPaddingBottom = vw > breakpoint ? 225 : 175;
   let list = get('.list');
   let thead = getAll('.label')[1]; // Argument table label
 

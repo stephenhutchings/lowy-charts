@@ -92,6 +92,11 @@ header
   box-shadow: 0px 4px 4px #0004
   transition: opacity 0.5s
   opacity: 0
+  pointer-events: none
+  
+  &.visible
+    pointer-events: all
+    opacity: 1
 
 a
   text-decoration: none
@@ -730,6 +735,12 @@ footer
 // medium width only
 @media screen and (max-width: 767px)
 
+  #title-short
+    display: inline
+  #title-long,
+  .social-share-label
+    display: none
+
   .list
     padding: 70px 40px
     .label
@@ -748,8 +759,6 @@ footer
     width: 100%
     h4
       text-align: center
-    p
-      margin: auto
 
   .bracket
     border: 1px solid $mute
@@ -795,13 +804,6 @@ footer
     width: 90%
     left: 5%
 
-  .header-title
-    width: auto
-    left: 28px
-
-  .logo
-    display: none
-
   .pg-title h1
     font-size: 44px
     line-height: 44px
@@ -842,12 +844,6 @@ footer
     height: auto
     padding: 2rem 0 6rem
 
-  #title-short
-    display: inline
-  #title-long,
-  .social-share-label
-    display: none
-
   .list
     box-shadow: none
     width: 95%
@@ -857,6 +853,11 @@ footer
 
 // small width only
 @media screen and (max-width: 600px)
+
+  .header-title
+    left: 28px
+    display: none
+
   .pg-title h1
     min-width: 0
 
