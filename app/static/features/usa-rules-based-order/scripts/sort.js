@@ -9,6 +9,7 @@ function initAnimateSort() {
   let sortElArr = [...sortElObj];          // Array list of sorting elements
 
   sortElObj.forEach( el => {                // Default setup for every sortable object
+    console.log( el )
     el.addEventListener('click', e => { isFocused ? unfocus(e, el) : focus(el); e.stopPropagation(); });
     el.classList.add('absolute');
   });
@@ -20,24 +21,25 @@ function initAnimateSort() {
 function focus(el) {
 
   let i, targets, heights, hSum, tBlock, ti;
-  let t = el.offsetTop;
-  let h = el.offsetHeight;
-  let map = JSON.parse(el.dataset.map);
-  let lhs = map[0] < 8 ? true : false;                        // lhs TRUE for first 7 articles
-  let listItems = getAll('.list-item');    // Elements targeted for fading/sorting
-  let thead = getAll('.label');            // Argument / Response table labels
-  let bracket = get('.bracket');           // Bracket to wrap around sorted els
-  let bpOffset = 25;                                          // breakpoint offset for rhs sort positioning
+  let n = 6   // number of authors
+  let t = el.offsetTop
+  let h = el.offsetHeight
+  let map = JSON.parse(el.dataset.map)
+  let lhs = map[0] <= n ? true : false    // lhs TRUE for first 7 articles
+  let listItems = getAll('.list-item')    // Elements targeted for fading/sorting
+  let thead = getAll('.label')            // Argument / Response table labels
+  let bracket = get('.bracket')           // Bracket to wrap around sorted els
+  let bpOffset = 25                       // breakpoint offset for rhs sort positioning
 
-  el.classList.add('focused');
-  el.classList.remove('ptr');
-  el.querySelector('.read-more').classList.remove('no-ptr-ev');  // Activate link on 'read article' button
-  el.querySelector('.read-more').classList.add('show');       // Show 'read article' button
-  el.querySelector('h2 a').classList.add('txt-red');          // Colorise article title
-  el.querySelector('h2 a').classList.remove('no-ptr-ev');        // Activate link on article title
+  el.classList.add('focused')
+  el.classList.remove('ptr')
+  el.querySelector('.read-more').classList.remove('no-ptr-ev')  // Activate link on 'read article' button
+  el.querySelector('.read-more').classList.add('show')       // Show 'read article' button
+  el.querySelector('h2 a').classList.add('txt-red')          // Colorise article title
+  el.querySelector('h2 a').classList.remove('no-ptr-ev')        // Activate link on article title
 
-  listItems.forEach( (item, i) => item === el ? "" : item.classList.add('fade') );
-  thead.forEach( (item, i) => item === el ? "" : item.classList.add('fade') );
+  listItems.forEach( (item, i) => item === el ? "" : item.classList.add('fade') )
+  thead.forEach( (item, i) => item === el ? "" : item.classList.add('fade') )
 
   targets = map.map( (v,i) => listItems[v-1] );     // Get DOM elements
   heights = targets.map( (el) => el.offsetHeight ); // Get their heights
@@ -69,7 +71,7 @@ function focus(el) {
     bracket.style.height = (vw > breakpoint) ? hSum-10 + "px" : "25px";
     bracket.classList.remove('hide');
 
-    if (map.length < 5) {
+    if (map.length < n-1) {
       bracket.classList.remove('bracket-left-all');
       bracket.classList.remove('bracket-right-all');
     }
