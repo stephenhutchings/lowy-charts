@@ -9,9 +9,8 @@ block append config
   - page.image = "https://interactives.lowyinstitute.org/features/usa-rules-based-order/img/thumbnail.png"
   - page.article = __.filepath.match(/([^\/]+)\/index.pug$/)[1]
   - page.feature = data.getOne("static/features/usa-rules-based-order/data")
-  - page.title = page.feature.title + " | America and the Rules-Based Order"
+  - page.title = `America and the Rules-Based Order`
   
-
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/usa-rules-based-order"
   - page.url += "/" + page.article
