@@ -31,14 +31,17 @@ $(document).ready(function () {
 
   function start(e) {
     mouseDown = true
-    slide(e)
+    slide(e, true)
   }
 
-  function slide(e) {
+  function slide(e, isStart) {
     if (mouseDown) {
       e = e.touches ? e.touches[0] : e
       let x = e.pageX - l
       x = Math.min(Math.max(x, 0), w)
+
+      pos.style.transitionDuration = isStart ? "0.2s" : ""
+      neg.style.transitionDuration = isStart ? "0.2s" : ""
       pos.style.transform = `translate3d(${x}px, 0, 0)`
       neg.style.transform = `translate3d(${-x}px, 0, 0)`
       wrap.classList.add("active")
