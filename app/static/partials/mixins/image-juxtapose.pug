@@ -1,0 +1,39 @@
+mixin image-juxtapose(data)
+  .wrapper
+    .img(style=`background-image: url('${data.before.image}')`)
+    .window.move-pos
+      .overflow-hidden
+        .img.move-neg(style=`background-image: url('${data.after.image}')`)
+      .slider
+        .label-left= data.before.label
+        .label-right= data.after.label
+
+        svg.drag-icon(
+          xmlns="http://www.w3.org/2000/svg"
+          width="60"
+          height="80"
+        )
+          path.arrow-left(
+            d="M6,40l8.3,7.5c0.6,0.6,1.7,0.1,1.7-0.7V33.2c0-0.9-1-1.3-1.7-0.7L6,40z"
+          )
+
+          path.arrow-right(
+            d="M54,40l-8.3,7.5C45,48.1,44,47.6,44,46.8V33.2c0-0.9,1-1.3,1.7-0.7L54,40z"
+          )
+
+          path.column(
+            d="M30,80L30,80c-2.2,0-4-1.8-4-4V4c0-2.2,1.8-4,4-4h0c2.2,0,4,1.8,4,4v72C34,78.2,32.2,80,30,80z"
+          )
+
+    if data.source
+      p.source
+        strong Source&ensp;
+        = data.source
+
+block append scripts
+  script
+    include image-juxtapose.js
+
+block append css
+  style
+    include:sass image-juxtapose.sass

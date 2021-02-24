@@ -1,0 +1,19 @@
+extend /partials/layout
+
+include /partials/mixins/image-juxtapose
+
+block append config
+  - page.title = "India’s New Military Base on Mauritius’ Agalega Island – Jetty"
+
+block page
+  +image-juxtapose({
+    before: {
+      label: "October 2014",
+      image: "agalega-jetty-october-2014.jpg"
+    },
+    after: {
+      label: "December 2020",
+      image: "agalega-jetty-december-2020.jpg"
+    },
+    source: "Google Earth"
+  })
