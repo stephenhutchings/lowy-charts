@@ -85,7 +85,8 @@
     &:first-child
       display: block
 
-#overview-body
+#overview-body,
+#exclusions
   overflow: hidden
   transition-duration: .5s
   
@@ -108,6 +109,16 @@
       border-right: 1px dashed $mid
     &:last-child
       padding-left: 1.5rem
+
+#exclusions
+  font-size: 15px
+  margin-top: 3rem
+  padding-top: 2rem
+  border-top: 1px dashed $mid
+  
+  .btn-down
+    left: calc(50% - 180px)
+
 
 @media (max-height: 675px)
   
@@ -151,3 +162,11 @@
     
     &.active
       max-height: 65vh
+      
+  #exclusions
+    margin-bottom: 1rem
+    .btn-down
+      width: min-content
+      left: calc(50% - 105px)
+      
+  

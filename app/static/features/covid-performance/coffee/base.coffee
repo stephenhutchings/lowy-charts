@@ -39,6 +39,8 @@ $(document).ready =>
   navLks    = getAll "nav a"
   embBtns   = getAll ".btn-embed"
   embWrps   = getAll ".embed-items"
+  exclusns  = get "#exclusions"
+  exclusBtn = get "#exclusions .btn-down"
   
   # Window sizes
   vh = vw = mobile = 0
@@ -49,6 +51,7 @@ $(document).ready =>
     
   # Onload actions
   fold(overview, 2)
+  fold(exclusns, 0)
 
   # Events
   onResize()
@@ -56,6 +59,8 @@ $(document).ready =>
   body.addEventListener 'click', (e) -> if not body.classList.contains('slide-7') then methods.deactivate()
   ovrvwBtn.addEventListener 'click', (e) -> unfold(overview, ovrvwBtn)
   ovrvwBtn.addEventListener 'touch', (e) -> unfold(overview, ovrvwBtn)
+  exclusBtn.addEventListener 'click', (e) -> unfold(exclusns, exclusBtn)
+  exclusBtn.addEventListener 'touch', (e) -> unfold(exclusns, exclusBtn)
   modalInn.addEventListener 'click', (e) -> e.stopPropagation()
   sandbox.addEventListener 'click', (e) -> e.stopPropagation()
   navBtn.addEventListener 'click', (e) -> navTog(e)
