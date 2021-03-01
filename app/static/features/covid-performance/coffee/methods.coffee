@@ -47,7 +47,7 @@ require.register "page-methods", (exports, require, module) ->
       
       c = getAll '.remove-option'
       c.forEach (p) -> 
-        name  = p.innerText.trim()
+        name  = p.innerText.trim().replace('*','')
         color = window.getComputedStyle(p).getPropertyValue('background-color')
         lines = getAll ".country-line[data-name=\"#{name}\"]"
         label = get ".country-line-label[data-countrylabel=\"#{name}\"]"

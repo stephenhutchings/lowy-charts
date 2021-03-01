@@ -144,6 +144,8 @@ ul + h1
   position: relative
 .inline
   display: inline
+.block
+  display: block
 .hidden
   display: none
 .capitalise
@@ -197,7 +199,8 @@ ul + h1
     max-height: 225px
     padding: .75em 1.5em .75em .75em
     
-    
+    @media(max-width: 600px)
+      max-height: 475px
     
 @media (max-width: 600px), (orientation: portrait)
   
