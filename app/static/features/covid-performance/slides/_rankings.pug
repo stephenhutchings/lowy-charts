@@ -41,7 +41,7 @@
                     src=`../../img/country-flags/png-100px/${c.code.toLowerCase()}.png`
                     loading="lazy"
                     )
-                  .name!= c.shortname || c.name
+                  .name!= (c.name === "Sweden" ? '* ' : '') + ( c.shortname || c.name )
                 td.txt-right= c.average.toFixed(1)
                 //- Removed sparkline  
                 //- td.sparkline
