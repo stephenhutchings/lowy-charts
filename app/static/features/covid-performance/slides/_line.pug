@@ -80,14 +80,16 @@ svg.line-chart.fade-in.delay-1(
         x=-(1.05 * w / 1.25) + 7
         preserveAspectRatio="xMinYMin"
       )
+        - rotateSm = ["Medium"]
+        - rotateLg = ["Americas", "Asia-Pacific"]
         path(
           d=d
           class=`fill-${colors[i]}`
-          class=(split[0]=="Hybrid" ? "bump-up" : "")
+          class=(rotateSm.includes(split[0]) ? "rotate-sm" : rotateLg.includes(split[0]) ? "rotate-lg" : "")
           )
         text(
           x=0 y=y text-anchor="start"
-          class=(split[0]=="Hybrid" ? "bump-up" : "")
+          class=(rotateSm.includes(split[0]) ? "rotate-sm" : rotateLg.includes(split[0]) ? "rotate-lg" : "")
         )
           = split[0]
           

@@ -3,8 +3,8 @@
 - toPath  = a => a.map( (s,i) => !s ? "" : (!i || !a[i-1]) ? `M${toPoint(s,i,a.length)}` : `L${toPoint(s,i,a.length)}` ).filter( e => e != "" ).join(" ")
 
 - countries = data.getOne("static/features/covid-performance/data/countries")
-- list = _.filter(countries, c => c.rank)
-- list = _.sortBy(list, 'rank')
+- list = _.filter(countries, c => c.rankMar || c.rankJan)
+- list = _.sortBy(list, 'rankMar')
 - n = list.length
 
 .slide-wrap
@@ -13,6 +13,15 @@
   include _context
 
   .type-wrap(data-view="in-viewport")
+    
+    form(action="")
+      small.note Rankings as of
+      #date-selector
+        input#march(type="radio" name="date" value="march" checked)
+        label(for="march" onclick="changeDate('mar')") 13 March 2021
+        input#january(type="radio" name="date" value="january")
+        label(for="january" onclick="changeDate('jan')") 9 January 2021
+    
     .table-wrapper.flex
       .flex-col
         .table-head: table
@@ -32,8 +41,15 @@
         .country-list: table
           tbody
             each c, i in list
-              tr(data-rank=c.rank data-name=c.shortname || c.name)
-                td.txt-right= c.rank
+              tr(
+                data-name=c.shortname || c.name
+                data-rankjan=c.rankJan
+                data-rankmar=c.rankMar
+                data-avgjan=c.averageJan
+                data-avgmar=c.averageMar
+                class=(c.rankMar ? "" : "hidden")
+              )
+                td.rank.txt-right= c.rankMar
                 td.flex.items-center
                   img(
                     width="45px"
@@ -42,7 +58,7 @@
                     loading="lazy"
                     )
                   .name!= (c.name === "Sweden" ? '* ' : '') + ( c.shortname || c.name )
-                td.txt-right= c.average.toFixed(1)
+                td.avg.txt-right= c.averageMar ? c.averageMar.toFixed(1) : "N/A"
                 //- Removed sparkline  
                 //- td.sparkline
                   svg(
@@ -51,14 +67,22 @@
                   )
                     path( d=toPath(c.percentiles) )  
     
-    p.footnote
-      | <b>Please note</b><br>
-    
-      | 1. China was not included in this ranking due to a lack of data on daily number of tests performed in the country for the entirety of the examined period. Data for Taiwan is provided separately to that of China. <br>
+    .footnote
+      p#january-edition.hidden
+        | <b>Please note</b><br>
+      
+        | 1. China was not included in this ranking due to a lack of data on daily number of tests performed in the country for the entirety of the examined period. Data for Taiwan is provided separately to that of China.<br>
 
-      | 2. Sweden’s composite score is based on the country’s management of the pandemic during the latter half of the examined period only. Due to incomplete data, Sweden’s ranking does not account for the country’s experience with the pandemic during the country’s first wave of COVID-19 infections.<br>
+        | 2. Sweden’s composite score is based on the country’s management of the pandemic during the latter half of the examined period only. Due to incomplete data, Sweden’s ranking does not account for the country’s experience with the pandemic during the country’s first wave of COVID-19 infections.<br>
 
-      | 3. Please see the Methodology section for further details on exclusions and inclusions.<br>
+        | 3. Please see the Methodology section for further details on exclusions and inclusions.<br>
+
+      p#march-edition
+        | <b>Please note</b><br>
+      
+        | 1. China was not included in this ranking due to a lack of data on daily number of tests performed in the country for the entirety of the examined period. Data for Taiwan is provided separately to that of China.<br>
+
+        | 2. Countries with incomplete data for more than a third of the examined period are no longer included in this ranking. Please see the Methodology section for further details on exclusions and inclusions.<br>
 
   script.
     var ready = false;
@@ -72,30 +96,70 @@
         icon.classList.toggle('show');
       }
     }
-
+    
+    const NAN = -999
+    var list 
     var asc  = true
     var sort = "rank"
+    var date = "mar"
     var tbody = document.querySelector('.country-list table tbody') 
+    var rankHeaderEl = document.querySelector('.tableHead th')
 
-    var list = Array.from(tbody.children).map((row) => ({
+    const newList = () => Array.from(tbody.children).map(row => ({
+      name: row.dataset.name.toLowerCase(),
       html: row.outerHTML,
-      rank: +row.dataset.rank,
-      name: row.dataset.name.toLowerCase()
+      rankjan: +row.dataset.rankjan || NAN,
+      rankmar: +row.dataset.rankmar || NAN,
+      avgjan:  +row.dataset.averagejan || NAN,
+      avgmar:  +row.dataset.averagemar || NAN
     }))
     
     function sortTable(key) {
-      if (sort === key) asc = !asc
+      
+      let togglingDate = this === window
+      let col = key
+      
+      if (sort === key && !togglingDate) asc = !asc
+      if (key === 'rank') key += date
+        
+      list.map((l,i) => i < 10 ? console.log(l[key]) : "" )
 
       list = list.sort((a, b) => 
         (a[key] < b[key] ? 1 : -1) * (asc ? -1 : 1)
       )
-
+      
       tbody.innerHTML = list.map(row => row.html).join("")
-
-      sort = key
-      flipSortIcon(this)
+      
+      if (!togglingDate) {
+        sort = col
+        flipSortIcon(this)
+      }
     }
+    
+    function changeDate(month) {
+      date = month
+      Array.from(tbody.children).forEach(row => {
+        if (!row.dataset[`rank${date}`]) {
+          row.classList.add('hidden')
+        } else { 
+          row.classList.remove('hidden') 
+        }
+
+        row.querySelector('.avg').innerHTML  = row.dataset[`avg${date}`]
+        row.querySelector('.rank').innerHTML = row.dataset[`rank${date}`]
+      })
+      list = newList()
+      sortTable(sort)
+      toggleNotes()
+    }
+    
+    function toggleNotes() {
+      document.querySelector('#march-edition').classList.toggle('hidden')
+      document.querySelector('#january-edition').classList.toggle('hidden')
+    }
+    
     window.addEventListener('load', function () {
-      ready = true;
-    });
+      ready = true
+      list = newList()
+    })
     

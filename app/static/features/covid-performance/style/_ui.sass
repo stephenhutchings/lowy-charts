@@ -193,12 +193,32 @@ nav
     margin: auto
     box-sizing: border-box
     transition: all .3s
+    position: relative
     
-    &:first-child
+    &:not(:last-child)
       margin-bottom: .75rem
       
     &:hover
       background: $pastel-3
+      
+      span
+        opacity: 1
+        transform: translateX(0)
+      
+    span
+      display: block
+      position: absolute
+      pointer-events: none
+      opacity: 0
+      transform: translateX(1rem)
+      white-space: nowrap
+      font-size: 14px
+      right: 3rem
+      top: 0
+      padding: 0 1rem
+      background: rgba(0,0,0,0.4)
+      transition: all .3s
+      
 
 #embed-code
   display: none
@@ -276,6 +296,9 @@ nav
         line-height: 50px
       
       .icon:first-child
+        display: none
+        
+      .icon:not(:last-child)
         margin-bottom: 0
         margin-right: 1rem
   
