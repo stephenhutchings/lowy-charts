@@ -17,6 +17,12 @@
   to = "https://lowy-institute-chinese-communities.netlify.app/features/chinese-communities/:splat"
   status = 200
 
+# Diplomatic postings is not part of this repo, but can be accessed from this domain
+[[redirects]]
+  from = "/features/diplomatic-postings/*"
+  to = "https://lowy-institute-diplomatic-postings.netlify.app/features/diplomatic-postings/:splat"
+  status = 200
+
 # ARCHIVED CONTENT
 # interactives.lowyinstitute.org
 [[redirects]]
