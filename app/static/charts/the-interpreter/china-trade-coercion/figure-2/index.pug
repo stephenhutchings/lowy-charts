@@ -1,0 +1,345 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/the-interpreter/china-trade-coercion/figure-2/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted.txt-tu.pv-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[1].values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - fx = (i) => (i + 0.5) / (ln)
+        - fy = (y) => (y - minY) / range
+        - fxlabels = (i) => (i + 0.2) / (chart.series[0].values.length - .6)
+        
+        svg(height="100%" width="100%")
+        
+          // Y-Axis labels
+          svg(height="100%")
+            - let steps = chart.axes.stepsY-1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = (minY + range*(i/steps) + (axes.percentage ? "%" : "")) * axes.yMultiplier
+                
+          // Y-Axis minor lines
+          if chart.axes.minorLines
+            svg(height="100%")
+              for n, i in new Array(steps)
+                - y = (i / steps)
+                svg
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // X-Axis labels
+          for x, i in chart.series[0].values
+            svg.x-label(x=toPercent(fxlabels(i)) y="100%")
+              text(
+                text-anchor=axes.rotateX ? "end" : "middle"
+                transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
+              )=x
+              
+          // OPTIONAL GUIDE LINE
+          if !isEmpty(axes.guideLine)
+            - var y = 100*fy(maxY + minY - axes.guideLine)+"%"
+            line(
+              x1="0" y1=y x2="100" y2=y
+              stroke="#333"
+              stroke-width=.25
+              stroke-dasharray=(false ? 1 : "")
+            )
+            
+          // TOOLTIP GUIDE LINE
+          line#tt-line(
+            x1="0" y1="0"
+            x2="0" y2="0"
+            stroke="#555"
+            stroke-width=1
+            stroke-dasharray="1"
+          )
+
+          // CHART LINES
+          svg(
+            height="100%"
+            width="100%"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          )
+            // SERIES LINES
+            for item, i in chart.series
+              if i
+                polyline(
+                  fill="none"
+                  stroke=chart.colors[chart.series[i].color]
+                  stroke-dasharray=(item.dashed ? 10 : "")
+                  stroke-width=(item.widen ? 6 : 3)
+                  stroke-linejoin=(item.dashed ? "": "round")
+                  stroke-linecap=(item.dashed ? "": "round")
+                  points=(item.values.map( (y, ix) => {
+                    return isEmpty(y) ? "" : [
+                      100 * fx(ix),
+                      100 * fy(maxY + minY - y)
+                    ].join(" ");
+                  })).join(",")
+                )
+      
+          for item, i in chart.series
+            if i
+              g
+                for val, ix in item.values
+                  if false
+                    circle(
+                      r=2
+                      cx=toPercent(fx(ix))
+                      cy=toPercent(fy(maxY + minY - val))
+                      fill=chart.colors[chart.series[i].color]
+                      stroke='#fff'
+                      stroke-width=0
+                    )
+                  svg.chart-value(
+                    x=toPercent(fx(ix))
+                    y=toPercent(fy(maxY + minY - val))
+                    style=`color: ${chart.colors[chart.series[i].color]}`
+                  )
+                    if false
+                      rect(
+                        y=(i % 2 == 0 ? -12 : 24) - 12
+                        height=14
+                        width=24
+                        x=-12
+                        fill="#fff"
+                      )
+                    text(
+                      y=(i % 1 == 0 ? -12 : 24)
+                      text-anchor="middle"
+                      fill=chart.colors[chart.series[i].color]
+                    )
+                      = (val * axes.yMultiplier).toFixed(1)
+      
+      .row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .txt-center.txt-muted.txt-semi
+        .chart-notes.txt-italic!= chart.notes
+        .chart-source!= chart.source
+      
+      .tooltip
+        for i in [1,0]
+          .w-1(style=`background: ${chart.colors[chart.series[i+1].color]}`)
+            span
+
+  script.
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true
+    const nSeries = 2
+    const ttWidth = 90
+    const ttHeight = 60
+    const nDatapoints = 25
+    /* --------------------- */
+    
+    const chart = document.querySelector('.chart-content')
+    const vals = document.querySelectorAll('.chart-value text')
+    const tooltip = document.querySelector('.tooltip')
+    const tooltipLine = document.querySelector('#tt-line')
+    const tooltipVals = document.querySelectorAll('.tooltip span')
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        chart.addEventListener('mousemove', triggerTooltip)  
+        chart.addEventListener('mouseleave', () => {
+          tooltip.style.opacity = 0
+          tooltipLine.style.opacity = 0
+        })
+    })}
+    
+    const triggerTooltip = e => {
+      
+      let c = chart.getBoundingClientRect()
+      let x = (e.pageX - c.left) / c.width
+      let n = nDatapoints - 1
+      let o = x > 0.5 ? 0.5 : -0.5
+      let i = (x * n + 0).toFixed(0)
+
+      i = i < 0 ? 0 : i > n ? +n : +i
+      
+      let v = [
+        vals[i + n + 1],
+        vals[i]
+      ]
+      
+      console.log(i)
+      
+      tooltipLine.setAttribute('y1', v[0].parentElement.getAttribute('y'))
+      tooltipLine.setAttribute('y2', v[1].parentElement.getAttribute('y'))
+      tooltipLine.setAttribute('x1', v[0].parentElement.getAttribute('x'))
+      tooltipLine.setAttribute('x2', v[1].parentElement.getAttribute('x'))
+      tooltipLine.style.opacity = 1
+
+      let box = tooltipLine.getBoundingClientRect()
+      let offset = i > n/2 ? -100 : 10
+
+      tooltipVals.forEach((e,i) => e.innerHTML = `$${v[i].innerHTML.trim()}B`)
+      tooltip.style.top = box.top + box.height/2 - ttHeight/2 + 'px'
+      tooltip.style.left = box.left + offset + 'px'
+      tooltip.style.opacity = 1
+
+    }
+    
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 600px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 30px
+        right: 10px
+        bottom: 40px
+
+      .chart-content > svg
+        border-bottom: 1px solid #bbb
+
+      .chart-title
+        font-size: 28px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        pointer-events: none
+        font-size: 14px
+        max-width: 180px
+        box-sizing: border-box
+        width: 90px
+
+      .tooltip,
+      #tt-line
+        transition: opacity 0.3s
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin-bottom: .75em
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+        
+      .w-1
+        width: 0.25rem
+        height: 1rem
+        
+        &:first-child
+          margin-bottom: .25rem
+          
+        span
+          margin-left: 1rem
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-left: 2em
+        margin-top: .5em
+        font-size: 15px
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+
+      @media (max-width: 700px)
+        
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 14px)
+
+        text
+          font-size: 13px
+          
+      @media (max-width: 450px)
+        .chart-content
+          top: 35px
+          bottom: 40px
+        .legend
+          flex-direction: column
+          margin-top: 1rem
+        .legend-item
+          margin: 0 auto
+        .chart-title,
+        .chart-subtitle
+          margin-left: 0.5rem
+        .chart-title
+          font-size: 20px
+          font-weight: 500
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
+          margin: 0

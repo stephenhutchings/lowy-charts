@@ -1,0 +1,101 @@
+title: >
+  Australian exports sanctioned by China and redirected
+
+source: >
+  <b>Source:</b> Author’s calculations based on Australian Department of Foreign Affairs and Trade statistics
+
+notes: >
+  * Australian exports subject to China trade sanctions: barley, beef, coal, copper, cotton, seafood, sugar, timber, and wine.
+
+subtitle: >
+  AUD billions, annualised 3 month moving average
+
+axes:
+  minY:  0
+  maxY: 100000000
+  stepsY: 6
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+  yMultiplier: 0.000001 # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - Jan-19
+      - Apr-19
+      - Jul-19
+      - Oct-19
+      - Jan-20
+      - Apr-20
+      - Jul-20
+      - Oct-20
+      - Jan-21
+
+  -
+    title: Exports to China (sanctioned list*)
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      - 26712037
+      - 26223248
+      - 23264674
+      - 23110838
+      - 24916749
+      - 26733827
+      - 28574280
+      - 28990947
+      - 27159827
+      - 24930628
+      - 23230331
+      - 24230453
+      - 24254820
+      - 23633382
+      - 21211738
+      - 20995513
+      - 23517178
+      - 25592757
+      - 23957315
+      - 20185882
+      - 15888892
+      - 15150198
+      - 11600357
+      - 8804978
+      - 5401031
+
+  -
+    title: Exports to rest of world (sanctioned list*)
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 76437935
+      - 72615241
+      - 72248880
+      - 69339534
+      - 73264304
+      - 74322192
+      - 75468155
+      - 72500891
+      - 65816598
+      - 63761612
+      - 62596669
+      - 64077321
+      - 60037050
+      - 58004311
+      - 57881081
+      - 60114727
+      - 56693915
+      - 51359381
+      - 46407072
+      - 47344650
+      - 46542860
+      - 48935217
+      - 50674716
+      - 58013979
+      - 60284568
