@@ -1,0 +1,102 @@
+extend /partials/layout
+
+block append config
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .flex.flex-grow.flex-col
+      .chart-title The ‘bamboo ceiling’ in Australia's public and private&nbsp;sectors
+      .chart-subtitle.txt-muted.txt-tu.pv-sm % of senior staff with non-European backgrounds
+        
+      table(border="0")
+        tr
+          th 
+          th Government
+          th ASX200
+        tr
+          td CEOs / Heads<br>of department
+          td 1%
+          td 4%
+        tr
+          td Senior<br>executives
+          td 2.4%
+          td 5.8%
+          
+      .chart-source.txt-left.txt-muted.txt-semi 
+        | Source: Australian Human Rights Commission, Leading for Change: A Blueprint for Cultural Diversity and Inclusive Leadership Revisited (
+        a(href="https://humanrights.gov.au/our-work/race-discrimination/publications/leading-change-blueprint-cultural-diversity-and-0" target="_blank") access
+        | ) – April 2018
+
+  
+block append css
+  style
+    :sass
+  
+      .wrapper
+        height: 410px
+        max-width: 550px
+        margin: auto
+
+      .chart-title
+        font-size: 28px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        margin-bottom: 1rem
+        font-size: 15px
+        
+      .chart-source
+        font-size: 15px
+        
+      table
+        border-spacing: 0
+        border-collapse: collapse
+        
+      th
+        &:nth-child(2),
+        &:nth-child(3)
+          border-bottom: 1px solid
+      
+        
+      td, th
+        padding: 0.5rem
+        text-align: right
+        
+      td
+        
+        &:first-child
+          border-right: 1px solid
+          padding-right: 2rem
+          width: 110px
+          text-align: left
+          
+        &:nth-child(2),
+        &:nth-child(3)
+          font-size: 2.5rem
+          color: #002b45
+          
+      .chart-source
+        margin-top: 2rem
+      
+          
+      @media (max-width: 450px)
+      
+        .chart-source
+          font-size: 12px
+      
+      
+        .chart-subtitle
+          margin-bottom: 2rem
+          
+        .chart-title
+          font-size: 24px
+          font-weight: 500
+          
+        
+        td  
+          &:nth-child(2),
+          &:nth-child(3)
+            font-size: 1.5rem

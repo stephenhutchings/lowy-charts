@@ -1,0 +1,48 @@
+title: >
+  Proportion of APS employees with Chinese heritage by agency
+
+source: >
+  <b>Source:</b> Australian Public Service Employment Database
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Total headcount by heritage, December 2019
+
+axes:
+  minX: 0
+  maxX: 7
+  stepsX: 8
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: true
+
+series:
+  -
+    title: Department
+    values:
+      - ONI
+      - Attorney-General’s
+      - Defence
+      - PM&C
+      - DFAT
+      - Home Affairs
+      - Education
+      - Austrade
+      - Treasury
+
+  -
+    title: Chinese
+    color: "dark"
+    values:
+      - 1.6
+      - 1.7
+      - 1.9
+      - 2.1
+      - 2.3
+      - 2.7
+      - 3.7
+      - 4.1
+      - 5.9
