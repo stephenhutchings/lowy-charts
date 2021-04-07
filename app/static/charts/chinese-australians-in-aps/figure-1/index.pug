@@ -23,30 +23,6 @@ block page
         - fy = (i) => (i + 0.7) / ln
         
         svg(height="100%" width="100%")
-        
-          - let steps = chart.axes.stepsX-1
-          //- // X-Axis labels
-          //- svg(width="100%" y="100%")
-          //-   for n, i in new Array(steps+1)
-          //-     - x = i / (steps)
-          //-     svg.x-label(x=toPercent(x))
-          //-       text(text-anchor="middle" transform="translate(0 18)")
-          //-         = (minX + range*(i/steps)).toFixed(0) + (axes.percentage ? "%" : "")
-          //- 
-          //- // X-Axis minor lines
-          //- if chart.axes.minorLines
-          //- svg(width="100%")
-          //-   for n, i in new Array(steps+1)
-          //-     - x = (i / steps)
-          //-     svg
-          //-       line(
-          //-         x1=toPercent(x)
-          //-         y1="0%"
-          //-         x2=toPercent(x)
-          //-         y2="100%"
-          //-         stroke="#5552"
-          //-         stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
-          //-       )
 
           // Chart rects
           g.bars
@@ -101,7 +77,31 @@ block page
                         dy=18
                       )= label[1]
 
+          g.reference-lines
+            line(
+              y1="0" y2="104%"
+              x1=toPercent(fx(3.7))
+              x2=toPercent(fx(3.7))
+            )
+            line(y1="104%" y2="104%" x1=toPercent(fx(3.7)) x2=toPercent(fx(3.65)))
+            text(y="103%" x=toPercent(fx(3.7)) text-anchor="end" transform="translate(-8 8)")
+              | % of Australians who speak Chinese at home
+            line(
+              y1="0" y2="109%"
+              x1=toPercent(fx(5.6))
+              x2=toPercent(fx(5.6))
+            )
+            line(y1="109%" y2="109%" x1=toPercent(fx(5.6)) x2=toPercent(fx(5.55)))
+            text(y="108%" x=toPercent(fx(5.6)) text-anchor="end" transform="translate(-8 8)")
+              | % of Australians with Chinese heritage
+
+            text.chart-value(y="0%" x=toPercent(fx(3.7)) text-anchor="end" transform="translate(-8 10)")
+              | 3.7%
+            text.chart-value(y="0%" x=toPercent(fx(5.6)) text-anchor="end" transform="translate(-8 10)")
+              | 5.6%
+            
       .chart-source.txt-left.txt-muted.txt-semi!= chart.source
+      .chart-source.txt-left.txt-muted.txt-semi!= chart.notes
 
   
 block append css
@@ -109,7 +109,7 @@ block append css
     :sass
   
       .wrapper
-        height: 600px
+        height: 630px
 
       .chart
         box-sizing: border-box
@@ -120,7 +120,7 @@ block append css
         top: 0
         left: 140px
         right: 15px
-        bottom: 30px
+        bottom: 60px
 
       .chart-title
         font-size: 28px
@@ -184,13 +184,26 @@ block append css
         font-size: 20px
         font-weight: 400
         
-      
+      .reference-lines
+        color: #002b45
+        line
+          stroke: currentColor
+          stroke-width: 0.75
+          stroke-dasharray: 1.75
+        text
+          text-transform: uppercase
+          font-size: 11px
+          letter-spacing: 0.00em
+          font-weight: 400
+          
+        .chart-value
+          font-size: 14px
           
       @media (max-width: 400px)
         text
           font-size: 14px
         .chart-content
-          bottom: 16px
+          bottom: 60px
           left: 95px
         .chart-title
           font-size: 24px
@@ -206,3 +219,9 @@ block append css
           transform: translate(-10px, -4px)
         .chart-value
           transform: translate(4px, 4.5px)
+        .reference-lines 
+          text
+            text-transform: none
+            font-size: 10px
+          .chart-value
+            display: none
