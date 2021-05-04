@@ -65,7 +65,9 @@ events:
 
   - start: 2019
     text: >
-      India completes construction of the Darbuk – Shyok – Daulat Beg Oldi (DSDBO) Road in eastern Ladakh, allowing year-round ground access to remote northern military base. India abrogates Jammu and Kashmir’s autonomous status, and makes Jammu & Kashmir, and Ladakh, respectively, two separate Union Territories.
+      <span class="month">April</span>: India completes construction of the Darbuk – Shyok – Daulat Beg Oldi (DSDBO) Road in eastern Ladakh, allowing year-round ground access to remote northern military base.
+      <br>
+      <span class="month">August</span>: India abrogates Jammu and Kashmir’s autonomous status, and makes Jammu & Kashmir, and Ladakh, respectively, two separate Union Territories.
 
   - start: 2020
     text: >
