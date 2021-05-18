@@ -30,6 +30,8 @@ body {
 
 #drone,
 #range,
+#departure,
+#map-labels,
 #boat {
   position: absolute;
   z-index: 2;
@@ -46,11 +48,6 @@ body {
   top: calc(50% - 22px);
 }
 
-#range {
-  left: calc(48% - 90px);
-  top: calc(50% - 90px);
-}
-
 #range circle,
 #range path {
   vector-effect: non-scaling-stroke;
@@ -59,21 +56,18 @@ body {
 }
 
 #map-labels {
-  position: absolute;
   overflow: visible;
   fill: white;
-  z-index: 2;
   font-size: 14px;
   letter-spacing: 0.05em;
   font-family: Courier New;
   left: 0;
   top: 0;
   text-anchor: middle;
+  dominant-baseline: middle;
 }
 
-#tasman {
-  transform: translate(4px, 10px);
-  dominant-baseline: middle;
+.tasman {
   font-style: italic;
   font-size: 12px;
 }
