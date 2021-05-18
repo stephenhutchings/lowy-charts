@@ -24,7 +24,7 @@ block page
       g(transform='translate(-9,-9)')
         path(stroke='#fff' d='M2,2 l20,20z M22,2 l-20,20z')
         circle(cx='12' cy='12' r='7' stroke='#fff' fill='#ff3333')
-        animatemotion(dur='180s' fill='freeze')
+        animatemotion(dur='1800s' fill='freeze')
           mpath(xlink:href='#path')
     svg#range(width='100%' viewbox='0 0 1392 914' xmlns='http://www.w3.org/2000/svg')
       path(fill='none' stroke='#fff8' d='M618,490 l-30,20')
@@ -89,7 +89,7 @@ block page
       ++elapsed;
     };
 
-    setInterval(update, 100);
+    setInterval(update, 1000);
 
 block append css
   style
