@@ -5,35 +5,50 @@ block append config
   
 block page
   #frame
-    #timer
-      span#mins 30
-      | :
-      span#secs 00
+    #timer.flex
+      .flex-col.flex-center.ph-xs
+        .micro.pv-xs Time until target<br>is in range
+        .micro.pv-xs Time until target<br>is out of range
+      .flex-col.flex-center.ph-xs
+        #in-range.pv-xs
+          span.mins 20
+          | :
+          span.secs 00
+        #out-range.pv-xs
+          span.mins 30
+          | :
+          span.secs 00
     #map
     svg#drone(xmlns='http://www.w3.org/2000/svg' width='100%' viewbox='0 0 1392 914')
-      path#path(fill='none' stroke='' d='M380,220 C520,250 650,400 660,580' stroke-dasharray='2')
+      path#path(fill='none' stroke='' d='M450,260 C540,280 650,400 660,524' stroke-dasharray='2')
       g(transform='translate(-9,-9)')
         path(stroke='#fff' d='M2,2 l20,20z M22,2 l-20,20z')
         circle(cx='12' cy='12' r='7' stroke='#fff' fill='#ff3333')
-        animatemotion(dur='1800s' fill='freeze')
+        animatemotion(dur='180s' fill='freeze')
           mpath(xlink:href='#path')
     svg#range(width='100%' viewbox='0 0 1392 914' xmlns='http://www.w3.org/2000/svg')
-      circle(cx='48%' cy='50%' r='60' fill='none' stroke-dasharray='3')
-      path(fill='none' stroke='#fff' d='M670,457 l-58,-25 h-25')
+      path(fill='none' stroke='#fff8' d='M618,490 l-30,20')
+      circle(cx='48%' cy='50%' r='60' stroke="#f42" fill='none' stroke-dasharray='3')
     svg#departure(xmlns='http://www.w3.org/2000/svg' fill='white' width='100%' viewbox='0 0 1392 914')
       rect(x='19.25%' y='19.25%' width='10' height='10' fill='white')
       text.departure-point(x='11.2%' y='19%') Langebaanweg
       text.departure-point(dx='-8' dy='17.5' x='11.2%' y='19%') Airforce Base
     svg#map-labels(width='100%' viewbox='0 0 1392 914' xmlns='http://www.w3.org/2000/svg')
-      text.tasman(x='48%' y='50%' dy='10' text-align='center') HMAS
-      text.tasman(x='48%' y='50%' dy='22' text-align='center') Tasman
-      text#SAM(x='39.5%' y='47.3%' text-align='center') SAM Range
-      
+      text.tasman(x='48%' y='50%' dy='18' text-align='center') HMAS
+      text.tasman(x='48%' y='50%' dy='30' text-align='center') Tasman
+      text#SAM(x='552' y='516' text-align='center') SAM Range
         tspan(dy='16') 
         tspan(dx='-127' dy='16') 
         tspan(font-size='10' dy='-8') 
-    svg#boat(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' width='24')
-      path(fill='#fff' d='M3.6 17.3a1 1 0 001.9-.8l-1.1-2.8 6.6-1.4V17a1 1 0 002 0v-4.8l6.6 1.5-1 2.8a1 1 0 00.5 1.3 1 1 0 00.3.1 1 1 0 001-.6l1.5-4a1 1 0 000-.8 1 1 0 00-.7-.5l-3.2-.7V7a1 1 0 00-1-1h-2V3a1 1 0 00-1-1h-4a1 1 0 00-1 1v3H7a1 1 0 00-1 1v4.3l-3.2.7a1 1 0 00-.7.5 1 1 0 000 .8zM11 4h2v2h-2zM8 8h8v2.9l-3.8-.9h-.4l-3.8.9zm12.7 11.3a4.4 4.4 0 00-1 .4 2 2 0 01-2 0 4.6 4.6 0 00-4.6 0 2.1 2.1 0 01-2.1 0 4.6 4.6 0 00-4.6 0 2 2 0 01-2 0 4.4 4.4 0 00-1-.4A1 1 0 002 20a1 1 0 00.7 1.2 2.1 2.1 0 01.5.3 4 4 0 002 .5 4.1 4.1 0 002.1-.5 2.6 2.6 0 012.6 0 4.2 4.2 0 004.1 0 2.6 2.6 0 012.6 0 4 4 0 004 0 2.1 2.1 0 01.6-.3A1 1 0 0022 20a1 1 0 00-1.3-.7z')
+    svg#boat(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 860 921' width='34' fill="white")
+      <path d="M382 77v36h29l48-1h20v-11l1-36 1-25h-99v36z"/>
+      <path d="M291 75l1 22v15h13l12-1 2-22V68h-28v7z"/>
+      <path d="M544 91v22h25V68h-25v23z"/>
+      <path d="M291 132l-35 1 1 11 9 57c1 2 329 1 330-1a674 674 0 0010-67c-3-2-231-3-315-1z"/>
+      <path d="M256 223a2284 2284 0 00-39 3l-8 48-24 127v5l4-1a4455 4455 0 00242-102l41 17 185 79 17 7v-6l-20-114-10-51-2-10-7-1c-11-1-335-2-379-1z"/>
+      <path d="M337 364A128172 128172 0 0070 479a6550 6550 0 00121 265c6 9 17 23 26 32 21 21 43 33 67 37 36 5 75-14 106-54 5-5 14-17 19-26l11-16V531a17771 17771 0 00-2-202l-82 35zm13 76c9 5 14 13 14 23 0 19-18 31-34 24-10-5-15-13-15-23 0-6 0-8 3-13 6-12 20-17 32-11z"/>
+      <path d="M440 523v195l11 16c20 29 37 47 55 60 20 14 37 19 58 19 28 0 51-10 75-34 12-11 20-21 26-31l32-63a18827 18827 0 0092-207 32562 32562 0 00-348-149l-1 194zm92-82c12 6 17 20 12 32-6 14-23 20-35 13-9-6-13-12-13-23 0-9 2-14 6-18 7-7 19-9 30-4z"/>
+      <path d="M161 741l-10 15c-22 32-46 54-74 67-10 4-20 7-34 9l-12 2-1 13 1 13 14-2c23-3 40-9 57-20 15-9 25-16 44-35l18-18 4 4c22 27 41 43 63 54 52 26 111 20 159-18l35-34 4-5 7 6c32 32 39 37 57 48 31 18 70 23 106 14 29-7 46-18 78-50l20-19 15 15c37 39 65 54 113 59l5 1v-25l-12-3c-16-2-25-5-37-11-25-12-50-33-69-62-10-13-14-19-16-19l-8 10c-13 20-21 29-31 40-21 21-43 33-67 40-11 3-31 4-42 2-29-4-64-25-88-53a278 278 0 01-29-39c-2-1-3 0-11 11-14 22-24 34-39 46-46 39-92 46-139 22-14-8-24-15-37-28-13-12-20-21-31-37l-9-14-2-2-2 3z"/>
     svg#radar-circle-other(version='1.1' pointer-events='none')
       circle(cx='48%' cy='50%' r='0' fill-opacity='0' stroke='white' stroke-width='4px' stroke-opacity='0.2')
         animate(attributename='r' from='0' to='1220' dur='6s' repeatcount='indefinite' begin='0s')
@@ -43,8 +58,12 @@ block page
   script.
     const frame = document.querySelector("#frame");
     const drone = document.querySelector("#drone");
-    var minutes = document.querySelector("#mins");
-    var seconds = document.querySelector("#secs");
+    var inDiv = document.querySelector("#in-range");
+    var inMins = document.querySelector("#in-range .mins");
+    var inSecs = document.querySelector("#in-range .secs");
+    var outDiv = document.querySelector("#out-range");
+    var outMins = document.querySelector("#out-range .mins");
+    var outSecs = document.querySelector("#out-range .secs");
     const aspectRatio = 1392 / 914;
     const fitFrame = () => {
       let vh = window.innerHeight;
@@ -59,14 +78,18 @@ block page
     const update = () => {
       remaining = duration - elapsed;
       if (remaining < 0) return;
+      if (elapsed === 2 * duration / 3) inDiv.classList.add('flash-red')
+      if (elapsed === duration - 1) outDiv.classList.add('flash-red')
       let s = remaining % 60;
       let m = Math.floor(remaining / 60) % 60;
-      seconds.innerHTML = `0${s}`.slice(-2);
-      minutes.innerHTML = `0${m}`.slice(-2);
+      inSecs.innerHTML = `0${m < 10 ? 0 : s}`.slice(-2);
+      inMins.innerHTML = `0${m < 10 ? 0 : m - 10}`.slice(-2);
+      outSecs.innerHTML = `0${s}`.slice(-2);
+      outMins.innerHTML = `0${m}`.slice(-2);
       ++elapsed;
     };
 
-    setInterval(update, 1000);
+    setInterval(update, 100);
 
 block append css
   style

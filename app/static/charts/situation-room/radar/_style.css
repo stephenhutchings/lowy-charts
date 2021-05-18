@@ -15,11 +15,14 @@ body {
 
 #timer {
   position: absolute;
-  bottom: 3rem;
-  right: 4rem;
+  bottom: 2rem;
+  right: 2rem;
   z-index: 10;
   font-weight: bold;
   font-size: 2rem;
+  text-align: right;
+  padding: 0.5rem 1rem;
+  border: 1px solid
 }
 
 #frame {
@@ -37,6 +40,8 @@ body {
   z-index: 2;
 }
 
+#drone { z-index: 10; }
+
 #drone path {
   transform-box: fill-box;
   transform-origin: center;
@@ -44,15 +49,19 @@ body {
 }
 
 #boat {
-  left: calc(48% - 12px);
-  top: calc(50% - 22px);
+  left: calc(48% - 17px);
+  top: calc(50% - 30px);
 }
 
 #range circle,
 #range path {
   vector-effect: non-scaling-stroke;
-  stroke: #fff5;
   stroke-width: 1px;
+}
+
+#range circle {
+  transform-origin: 48% 50%;
+  animation: spin 60s infinite linear;
 }
 
 #map-labels {
@@ -130,6 +139,42 @@ body {
   pointer-events: none;
 }
 
+#in-range,
+#out-range {
+  line-height: 1
+}
+
 @keyframes spin {
   to { transform: rotate(360deg) }
+}
+
+@keyframes flash-red {
+  from { color: #fff }
+  to { color: #f00 }
+}
+
+.flash-red {
+  animation: flash-red .2s infinite alternate linear
+}
+
+.flex { display: flex; }
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.between { align-items: flex-end; }
+
+.micro {
+  font-family: 'Sans';
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px;  
+  opacity: 0.8
 }
