@@ -1,0 +1,70 @@
+extend /partials/layout
+ 
+block append config
+  - page.title = "Simulation Room Radar"
+  
+block page
+  #frame
+    #timer
+      span#mins 30
+      | :
+      span#secs 00
+    #map
+    svg#drone(xmlns='http://www.w3.org/2000/svg' width='100%' viewbox='0 0 1392 914')
+      path#path(fill='none' stroke='' d='M380,220 C520,250 650,400 660,580' stroke-dasharray='2')
+      g(transform='translate(-9,-9)')
+        path(stroke='#fff' d='M2,2 l20,20z M22,2 l-20,20z')
+        circle(cx='12' cy='12' r='7' stroke='#fff' fill='#ff3333')
+        animatemotion(dur='1800s' fill='freeze')
+          mpath(xlink:href='#path')
+    svg#range(xmlns='http://www.w3.org/2000/svg' width='180' viewbox='0 0 24 24')
+      circle(cx='12' cy='12' r='7' fill='none' stroke-dasharray='3')
+      path(fill='none' stroke='#fff' d='M12,12 l-6,-3 h-3')
+    svg#map-labels(x='0' y='0' height='100%' width='100%')
+      text#tasman(x='48%' y='50%' text-align='center')
+        | HMAS
+        tspan(dx='-48' dy='12') Tasman
+      text#SAM(x='41%' y='48%' text-align='center') SAM Range
+      text.departure-point(x='16.1%' y='17.5%' text-align='center')
+        tspan(dy='16') Langebaanweg
+        tspan(dx='-127' dy='16') Airforce Base
+        tspan(font-size='10' dy='-8') &#x25A0;
+    svg#boat(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' width='24')
+      path(fill='#fff' d='M3.6 17.3a1 1 0 001.9-.8l-1.1-2.8 6.6-1.4V17a1 1 0 002 0v-4.8l6.6 1.5-1 2.8a1 1 0 00.5 1.3 1 1 0 00.3.1 1 1 0 001-.6l1.5-4a1 1 0 000-.8 1 1 0 00-.7-.5l-3.2-.7V7a1 1 0 00-1-1h-2V3a1 1 0 00-1-1h-4a1 1 0 00-1 1v3H7a1 1 0 00-1 1v4.3l-3.2.7a1 1 0 00-.7.5 1 1 0 000 .8zM11 4h2v2h-2zM8 8h8v2.9l-3.8-.9h-.4l-3.8.9zm12.7 11.3a4.4 4.4 0 00-1 .4 2 2 0 01-2 0 4.6 4.6 0 00-4.6 0 2.1 2.1 0 01-2.1 0 4.6 4.6 0 00-4.6 0 2 2 0 01-2 0 4.4 4.4 0 00-1-.4A1 1 0 002 20a1 1 0 00.7 1.2 2.1 2.1 0 01.5.3 4 4 0 002 .5 4.1 4.1 0 002.1-.5 2.6 2.6 0 012.6 0 4.2 4.2 0 004.1 0 2.6 2.6 0 012.6 0 4 4 0 004 0 2.1 2.1 0 01.6-.3A1 1 0 0022 20a1 1 0 00-1.3-.7z')
+    svg#radar-circle-other(version='1.1' pointer-events='none')
+      circle(cx='48%' cy='50%' r='0' fill-opacity='0' stroke='white' stroke-width='4px' stroke-opacity='0.2')
+      animate(attributename='r' from='0' to='1220' dur='6s' repeatcount='indefinite' begin='0s')
+        circle(cx='48%' cy='50%' r='0' fill-opacity='0' stroke='white' stroke-width='2px' stroke-opacity='0.2')
+        animate(attributename='r' from='0' to='1220' dur='6s' repeatcount='indefinite' begin='2s')
+
+  script.
+    const frame = document.querySelector("#frame");
+    const drone = document.querySelector("#drone");
+    var minutes = document.querySelector("#mins");
+    var seconds = document.querySelector("#secs");
+    const aspectRatio = 1392 / 914;
+    const fitFrame = () => {
+      let vh = window.innerHeight;
+      frame.style.width = vh * aspectRatio + "px";
+    };
+
+    window.onload = fitFrame;
+    window.addEventListener("resize", fitFrame);
+
+    var elapsed = 0;
+    const duration = 30 * 60;
+    const update = () => {
+      remaining = duration - elapsed;
+      if (remaining < 0) return;
+      let s = remaining % 60;
+      let m = Math.floor(remaining / 60) % 60;
+      seconds.innerHTML = `0${s}`.slice(-2);
+      minutes.innerHTML = `0${m}`.slice(-2);
+      ++elapsed;
+    };
+
+    setInterval(update, 1000);
+
+block append css
+  style
+    include _style.css

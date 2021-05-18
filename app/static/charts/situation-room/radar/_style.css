@@ -1,0 +1,141 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #002b45!important;
+  color: white;
+  font-family: Courier New;
+}
+
+body {
+  overflow: hidden;
+}
+
+#timer {
+  position: absolute;
+  bottom: 3rem;
+  right: 4rem;
+  z-index: 10;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#frame {
+  margin: auto;
+  height: 100vh;
+  position: relative;
+}
+
+#drone,
+#range,
+#boat {
+  position: absolute;
+  z-index: 2;
+}
+
+#drone path {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin 60s infinite linear;
+}
+
+#boat {
+  left: calc(48% - 12px);
+  top: calc(50% - 22px);
+}
+
+#range {
+  left: calc(48% - 90px);
+  top: calc(50% - 90px);
+}
+
+#range circle,
+#range path {
+  vector-effect: non-scaling-stroke;
+  stroke: #fff5;
+  stroke-width: 1px;
+}
+
+#map-labels {
+  position: absolute;
+  overflow: visible;
+  fill: white;
+  z-index: 2;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  font-family: Courier New;
+  left: 0;
+  top: 0;
+  text-anchor: middle;
+}
+
+#tasman {
+  transform: translate(4px, 10px);
+  dominant-baseline: middle;
+  font-style: italic;
+  font-size: 12px;
+}
+
+#SAM {
+  dominant-baseline: middle;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.departure-point {
+  dominant-baseline: middle;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+#radar-svg {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 3;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+#map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-sizing: border-box;
+  background: url("https://www.lowyinstitute.org/sites/default/files/radar-bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#radar-circle-other {
+  width: 100%;
+  height: 100%;
+}
+
+#radar-circle-other {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg) }
+}
