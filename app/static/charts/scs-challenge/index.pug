@@ -1,0 +1,141 @@
+extend /partials/layout
+
+block append config
+  - page.title = "Timeline for ASEAN-China Code of Conduct Negotiations 1992-2020"
+  - var events = data.getOne("static/charts/scs-challenge/events").events
+  - var years = _.pluck(events, "start")
+
+block page
+
+  - n = years.length
+  - max = _.last(years) 
+  - min = _.first(years) - 4
+  - len = max - min + 4
+
+  - vals = (0).toPrecision(len).split("").map( () => 1)
+  - vals = vals.map( () => 1 / _.sum(vals) );
+  - vals = vals.concat(vals).sort()
+
+  - var p = function(i){return vals[i]}
+  - height = [[0,0,2,2,4,3,3,2,1,0]]
+  - spaced = []
+  - flip   = [4,5,6,7,8,9,16,17,18]
+
+
+  .wrapper
+    #controls
+      .btn.js-prev(tabindex="0")
+        .icon.icon-left-arrow
+      .btn.js-next(tabindex="0")
+        .icon.icon-right-arrow
+
+    #frame
+      #events
+        for list, j in _.groupBy(_.sortBy(events, "start"), "highlight")
+          - m = 0
+          - j = j === "true" ? 21 : 0
+          
+          for e, i in list
+            - k = (e.start - min)
+            - left = _.sum(vals.slice(0, k));
+            - dir  = flip.includes(i)
+            - dy   = spaced.includes(i+j)
+
+            .event.js-year(
+              tabindex="0"
+              style={left: (100 * left) + "%"}
+              class=[
+                (j + i) == 0 ? "active" : "",
+                dir ? "left" : "right",
+                dy ? "spaced" : "middle",
+                !e.highlight ? "top" : "bottom highlight",
+                `item-${height[j > 0 ? 1 : 0][i]}`
+              ].join(" ")
+              data-i=_.sortBy(events, "start").indexOf(e)
+            )
+              .event-marker
+              .event-year
+                if e.end
+                  | #{e.start}–#{e.end.toString().slice(2)}
+                else
+                  | #{e.start}
+
+              .event-content(class=(e.text.length > 200 ? 'long' : ''))
+                p.event-text!= e.text
+
+            - m = height[j > 0 ? 1 : 0][i]
+
+      #years
+        for n, i in new Array(len)
+          - var j = (min + i);
+          - var c = j % 10 == 0 ? "dec" : "yr";
+          if j % 1 == 0
+            .year(
+              style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
+              class=c
+            )
+          if j % 10 == 0
+            .year-label(
+              style={left: (100 * _.sum(vals.slice(0, i))) + "%"}
+              class=c
+            )
+              = j
+
+    #pager
+      span#page 1 
+      | &ensp;/&ensp;#{events.length}
+
+
+block append scripts
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.2.1/balancetext.js")
+  script.
+    $(document).ready(function(){
+      var count = 0,
+          $events = $(".event"),
+          $frame = $("#frame"),
+          $page = $("#page");
+
+      $(".js-next").click(function(){count++; update()})
+      $(".js-prev").click(function(){count--; update()})
+      $(".js-year").click(function(){count = $(this).data("i"); update()})
+      $(".js-year").hover(function(){count = $(this).data("i"); update()})
+
+      function update() {
+        if (document.activeElement) document.activeElement.blur()
+        
+        count = ($events.length + count) % $events.length
+
+        $active = $events
+          .removeClass("active")
+          .filter("[data-i='" + count + "']")
+          .addClass("active")
+
+        $page.html(count + 1)
+
+        outer = $frame.width()
+        inner = $("body").outerWidth()
+        offset = $active.position().left + 40
+        offset += $active.find(".event-text").position().left
+
+        if (inner < outer) {
+          if ($active.hasClass("right")) {
+            offset -= 40
+          } else {
+            offset -= inner
+            offset -= - $active.find(".event-year").width() - 20
+          }
+          $frame.css({
+            transform: "translate3d(" + (-Math.max(offset, 0) ) + "px,0,0)"
+          })
+        } else {
+          $frame.css({
+            transform: ""
+          })
+        }
+      }
+    })
+
+block append css
+  style
+    include:sass _styles.sass
+      
