@@ -1,0 +1,142 @@
+$color-primary: #673AB7
+$color-secondary: #FFF
+$color-tertiary: #002b45
+
+$size-base: 12px
+$size-small: $size-base / 2
+$size-large: $size-base * 2
+
+$clock-size: $size-base * 32
+$clock-size-small: $size-base * 12
+$clock-weight: $size-small
+$clock-weight-small: $size-small / 2
+$clock-seconds-length: 95%
+$clock-minutes-length: 85%
+$clock-hours-length: 75%
+
+html, body
+  height: 100%
+  display: flex
+  flex-direction: column
+  background-color: $color-primary
+  overflow: hidden
+  background: #002b45!important
+  
+.content
+  display: flex
+  justify-content: space-between
+  padding: 1rem
+  
+  .widget
+    padding: $size-large
+    margin: $size-large
+    
+    &.clock
+      position: relative
+      width: $clock-size
+      height: $clock-size
+      border-radius: 100%
+      box-sizing: border-box
+      background-color: $color-tertiary
+      
+      // specific to smaller clocks
+      &#beijing, &#washington, &#canberra
+        width: $clock-size-small
+        height: $clock-size-small
+        
+        &:before
+          border-width: $clock-weight-small
+
+        .hand
+          height: $clock-weight-small
+          top: ($clock-size-small - $clock-weight-small) / 2
+          transform-origin: right ($clock-weight-small / 2)
+
+      &#beijing, &#washington, &#canberra
+        .hand.seconds
+          display: none
+      
+      // clock rim
+      &:before
+        content: ''
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        border: $clock-weight solid $color-secondary
+        border-radius: 100%
+        box-sizing: border-box
+      
+      // clock shadow
+      .shadow
+        content: ''
+        width: 100%
+        height: 500px
+        position: absolute
+        top: 50%
+        left: 0
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)
+        transform: rotate(-45deg)
+        transform-origin: 50% 0%
+        opacity: 0.3
+        z-index: -1
+      
+      .hand
+        height: $clock-weight
+        position: absolute
+        top: ($clock-size - $clock-weight) / 2
+        background-color: $color-secondary
+        border-radius: 100% 0% 0% 100%
+        transform-origin: right ($clock-weight / 2)
+        // transition: all 0.08s cubic-bezier(0, 0, 0.52, 1.51) 0s
+        transition: all 0s
+        
+        &.seconds
+          width: 50 - (100 - $clock-seconds-length)
+          left: 100 - $clock-seconds-length
+          opacity: 0.25
+        
+        &.minutes
+          width: 50 - (100 - $clock-minutes-length)
+          left: 100 - $clock-minutes-length
+          opacity: 0.5
+        
+        &.hours
+          width: 50 - (100 - $clock-hours-length)
+          left: 100 - $clock-hours-length
+          opacity: 0.75
+      
+      .hand-cap
+        width: 5%
+        height: 5%
+        position: absolute
+        top: 47.5%
+        left: 47.5%
+        background-color: $color-secondary
+        border-radius: 100%
+        
+      .am-pm
+        position: absolute
+        left: 0
+        width: 100%
+        top: 60%
+        text-align: center
+        letter-spacing: 2px
+        opacity: 0.5
+        z-index: 0
+
+    label, .am-pm
+      display: block
+      width: 100%
+      position: absolute
+      top: -$size-base * 2
+      left: 0
+      font-weight: 500
+      font-size: 12px
+      text-transform: uppercase
+      text-align: center
+      letter-spacing: 4px
+      color: $color-secondary
+      opacity: 0.75
+      white-space: nowrap
