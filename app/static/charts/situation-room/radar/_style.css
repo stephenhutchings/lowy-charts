@@ -34,6 +34,7 @@ body {
 
 #drone,
 #range,
+#graticule,
 #departure,
 #map-labels,
 #boat {
@@ -68,7 +69,7 @@ body {
 #map-labels {
   overflow: visible;
   fill: white;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.05em;
   font-family: Courier New;
   left: 0;
@@ -79,13 +80,11 @@ body {
 
 .tasman {
   font-style: italic;
-  font-size: 12px;
 }
 
 #SAM {
   dominant-baseline: middle;
   font-style: italic;
-  font-size: 12px;
 }
 
 .departure-point {
@@ -172,10 +171,15 @@ body {
 
 .between { align-items: flex-end; }
 
-.micro {
+.micro,
+.mini {
   font-family: 'Sans';
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: 12px;  
   opacity: 0.8
+}
+
+.mini {
+  font-size: 17px;
 }

@@ -7,14 +7,14 @@ block page
   #frame
     #timer.flex
       .flex-col.flex-center.ph-xs
-        .micro.pv-xs Time until target<br>is in range
-        .micro.pv-xs Time until target<br>is out of range
+        .mini.pv-xs Time until target<br>is in range
+        .mini.pv-xs Time until target<br>is out of range
       .flex-col.flex-center.ph-xs
-        #in-range.pv-xs
+        #in-range.pv-sm
           span.mins 20
           | :
           span.secs 00
-        #out-range.pv-xs
+        #out-range.pv-sm
           span.mins 30
           | :
           span.secs 00
@@ -27,7 +27,7 @@ block page
         animatemotion(dur='1800s' fill='freeze')
           mpath(xlink:href='#path')
     svg#range(width='100%' viewbox='0 0 1392 914' xmlns='http://www.w3.org/2000/svg')
-      path(fill='none' stroke='#fff8' d='M618,490 l-30,20')
+      path(fill='none' stroke='#fff8' d='M610,470 l-30,8')
       circle(cx='48%' cy='50%' r='60' stroke="#f42" fill='none' stroke-dasharray='3')
     svg#departure(xmlns='http://www.w3.org/2000/svg' fill='white' width='100%' viewbox='0 0 1392 914')
       rect(x='19.25%' y='19.25%' width='10' height='10' fill='white')
@@ -35,11 +35,8 @@ block page
       text.departure-point(dx='-8' dy='17.5' x='11.2%' y='19%') Airforce Base
     svg#map-labels(width='100%' viewbox='0 0 1392 914' xmlns='http://www.w3.org/2000/svg')
       text.tasman(x='48%' y='50%' dy='18' text-align='center') HMAS
-      text.tasman(x='48%' y='50%' dy='30' text-align='center') Tasman
-      text#SAM(x='552' y='516' text-align='center') SAM Range
-        tspan(dy='16') 
-        tspan(dx='-127' dy='16') 
-        tspan(font-size='10' dy='-8') 
+      text.tasman(x='48%' y='50%' dy='32' text-align='center') Tasman
+      text#SAM(x='528' y='480' text-align='center') SAM Range
     svg#boat(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 860 921' width='34' fill="white")
       <path d="M382 77v36h29l48-1h20v-11l1-36 1-25h-99v36z"/>
       <path d="M291 75l1 22v15h13l12-1 2-22V68h-28v7z"/>
@@ -49,6 +46,10 @@ block page
       <path d="M337 364A128172 128172 0 0070 479a6550 6550 0 00121 265c6 9 17 23 26 32 21 21 43 33 67 37 36 5 75-14 106-54 5-5 14-17 19-26l11-16V531a17771 17771 0 00-2-202l-82 35zm13 76c9 5 14 13 14 23 0 19-18 31-34 24-10-5-15-13-15-23 0-6 0-8 3-13 6-12 20-17 32-11z"/>
       <path d="M440 523v195l11 16c20 29 37 47 55 60 20 14 37 19 58 19 28 0 51-10 75-34 12-11 20-21 26-31l32-63a18827 18827 0 0092-207 32562 32562 0 00-348-149l-1 194zm92-82c12 6 17 20 12 32-6 14-23 20-35 13-9-6-13-12-13-23 0-9 2-14 6-18 7-7 19-9 30-4z"/>
       <path d="M161 741l-10 15c-22 32-46 54-74 67-10 4-20 7-34 9l-12 2-1 13 1 13 14-2c23-3 40-9 57-20 15-9 25-16 44-35l18-18 4 4c22 27 41 43 63 54 52 26 111 20 159-18l35-34 4-5 7 6c32 32 39 37 57 48 31 18 70 23 106 14 29-7 46-18 78-50l20-19 15 15c37 39 65 54 113 59l5 1v-25l-12-3c-16-2-25-5-37-11-25-12-50-33-69-62-10-13-14-19-16-19l-8 10c-13 20-21 29-31 40-21 21-43 33-67 40-11 3-31 4-42 2-29-4-64-25-88-53a278 278 0 01-29-39c-2-1-3 0-11 11-14 22-24 34-39 46-46 39-92 46-139 22-14-8-24-15-37-28-13-12-20-21-31-37l-9-14-2-2-2 3z"/>
+    svg#graticule(xmlns='http://www.w3.org/2000/svg' width='100%' viewbox='0 0 1392 914')
+      path(stroke="#fff5" stroke-dasharray="4 8" d="M0,520 H1392")
+      rect(stroke="#fff5" stroke-dasharray="0" fill="#002b45" x="56" y="504" height="28" width="48")
+      text(stroke="white" fill="white" x="66" y="520" dominant-baseline="middle" opacity="0.5") 60°
     svg#radar-circle-other(version='1.1' pointer-events='none')
       circle(cx='48%' cy='50%' r='0' fill-opacity='0' stroke='white' stroke-width='4px' stroke-opacity='0.2')
         animate(attributename='r' from='0' to='1220' dur='6s' repeatcount='indefinite' begin='0s')
