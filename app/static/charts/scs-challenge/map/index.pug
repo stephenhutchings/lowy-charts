@@ -5,14 +5,18 @@ block append config
 block page
 
   .wrapper
-    
     .chart-title.txt-cond South China Sea Challenge
     .chart-subtitle Overlapping territorial claims
     
-    include _svg
-    
+    each country in ['china','brunei','vietnam','malaysia','indonesia','philippines']
+      button(onclick=`${country}.classList.toggle('opacity-0')`)= country
+
+    include map.svg
+
+    script(src="./script.js")
+
     //.fixed-bl
-    
+
       ul.legend.txt-nowrap.flex.flex-cv.list-bare
         for item, i in ["#003B36", "#5B7E67","#9C9E93","#ff6f30","#d74000"]
           li.legend-item
@@ -28,17 +32,22 @@ block page
         .row
           input(type="radio" id="vote" name="select" value="vote")
           label(for="vote") Yes vote to the referendum
-      
     
 
 block append css
 
   style
     :sass
+      
+      g
+        transition-duration: .3s
+      
+      .opacity-0
+        opacity: 0
 
       .wrapper
-        max-width: 800px
-        height: 660px
+        //- max-width: 800px
+        height: 100vh
         overflow: hidden
         position: relative
       
@@ -54,3 +63,6 @@ block append css
         font-weight: 500
         font-size: 1.2rem
         max-width: 450px
+          
+      #map
+        width: 100%

@@ -2,7 +2,7 @@ $color-primary: #673AB7
 $color-secondary: #FFF
 $color-tertiary: #000000
 
-$size-base: 12px
+$size-base: 16px
 $size-small: $size-base / 2
 $size-large: $size-base * 2
 
@@ -23,9 +23,12 @@ html, body
   background: $color-tertiary!important
   
 .content
+  height: 100vh
   display: flex
+  flex-direction: column
+  align-items: center
   justify-content: space-between
-  padding: 1rem
+  padding: 3em
   
   .widget
     padding: $size-large
@@ -128,12 +131,12 @@ html, body
 
     label, .am-pm
       display: block
-      width: 100%
+      width: 200%
       position: absolute
       top: -$size-base * 2
-      left: 0
+      left: -50%
       font-weight: 500
-      font-size: 12px
+      font-size: 16px
       text-transform: uppercase
       text-align: center
       letter-spacing: 4px
