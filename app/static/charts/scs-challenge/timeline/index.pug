@@ -2,7 +2,7 @@ extend /partials/layout
 
 block append config
   - page.title = "Timeline for ASEAN-China Code of Conduct Negotiations 1992-2020"
-  - var events = data.getOne("static/charts/scs-challenge/events").events
+  - var events = data.getOne("static/charts/scs-challenge/timeline/events").events
   - var years = _.pluck(events, "start")
 
 block page

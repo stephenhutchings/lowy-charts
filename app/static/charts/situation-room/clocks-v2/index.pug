@@ -1,0 +1,38 @@
+extend /partials/layout
+ 
+block append config
+  - page.title = "Clocks"
+
+
+block page
+  .content
+    #beijing.widget.clock(data-timezone="+8")
+      .shadow
+      .hand.seconds
+      .hand.minutes
+      .hand.hours
+      .hand-cap
+      .am-pm
+      label Beijing
+    #canberra.widget.clock(data-timezone="+10")
+      .shadow
+      .hand.seconds
+      .hand.minutes
+      .hand.hours
+      .hand-cap
+      .am-pm
+      label Canberra
+    #washington.widget.clock(data-timezone="-4")
+      .shadow
+      .hand.seconds
+      .hand.minutes
+      .hand.hours
+      .hand-cap
+      .am-pm
+      label Washington DC
+
+  script(src='clock.js')
+
+block append css
+  style
+    include:sass _style.sass

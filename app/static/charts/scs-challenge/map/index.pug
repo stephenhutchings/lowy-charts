@@ -1,0 +1,56 @@
+extend /partials/layout
+
+block append config
+
+block page
+
+  .wrapper
+    
+    .chart-title.txt-cond South China Sea Challenge
+    .chart-subtitle Overlapping territorial claims
+    
+    include _svg
+    
+    //.fixed-bl
+    
+      ul.legend.txt-nowrap.flex.flex-cv.list-bare
+        for item, i in ["#003B36", "#5B7E67","#9C9E93","#ff6f30","#d74000"]
+          li.legend-item
+            span.legend-item-box(style=`background:${item}`)
+            span.legend-item-label!= `${i*20}&ndash;${20+i*20}%`
+            
+      .input.flex.flex-cv
+        .radio-title.txt-tu.txt-xs.txt-bold
+          | Dataset
+        .row
+          input(type="radio" id="pop" name="select" value="pop" checked)
+          label(for="pop") Kanak population
+        .row
+          input(type="radio" id="vote" name="select" value="vote")
+          label(for="vote") Yes vote to the referendum
+      
+    
+
+block append css
+
+  style
+    :sass
+
+      .wrapper
+        max-width: 800px
+        height: 660px
+        overflow: hidden
+        position: relative
+      
+      .chart-title
+        line-height: 1.1
+        font-weight: 500
+        color: black
+        font-size: 1.8rem
+        max-width: 450px
+        
+      .chart-subtitle
+        margin-bottom: 12px
+        font-weight: 500
+        font-size: 1.2rem
+        max-width: 450px
