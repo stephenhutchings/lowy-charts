@@ -8,8 +8,9 @@ block page
     .chart-title.txt-cond South China Sea Challenge
     .chart-subtitle Overlapping territorial claims
     
-    each country in ['china','brunei','vietnam','malaysia','indonesia','philippines']
-      button(onclick=`${country}.classList.toggle('opacity-0')`)= country
+    .buttons
+      each country in ['china','brunei','vietnam','malaysia','indonesia','philippines']
+        button(onclick=`${country}.forEach(c => c.classList.toggle('opacity-0'))`)= country
 
     include map.svg
 
@@ -39,8 +40,22 @@ block append css
   style
     :sass
       
+      .buttons
+        margin-bottom: .5rem
+      
       g
         transition-duration: .3s
+          
+      button
+        background: none
+        padding: .4em .6em .4em 2.4em
+        border: 1px solid
+        border-radius: 4px
+        text-transform: uppercase
+        letter-spacing: 0.08em
+        
+        &:before
+          
       
       .opacity-0
         opacity: 0
