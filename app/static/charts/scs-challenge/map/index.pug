@@ -8,61 +8,29 @@ block page
     .chart-title.txt-cond South China Sea Challenge
     .chart-subtitle Overlapping territorial claims
     
+    label Click to toggle
     .buttons
-      each country in ['china','brunei','vietnam','malaysia','indonesia','philippines']
-        button(onclick=`${country}.forEach(c => c.classList.toggle('opacity-0'))`)= country
+      each country in ['china','vietnam','malaysia','indonesia','philippines','brunei']
+        button.active(
+          class=country
+          onclick=`toggle(${country}, this)`
+        )= country
 
     include map.svg
 
     script(src="./script.js")
-
-    //.fixed-bl
-
-      ul.legend.txt-nowrap.flex.flex-cv.list-bare
-        for item, i in ["#003B36", "#5B7E67","#9C9E93","#ff6f30","#d74000"]
-          li.legend-item
-            span.legend-item-box(style=`background:${item}`)
-            span.legend-item-label!= `${i*20}&ndash;${20+i*20}%`
-            
-      .input.flex.flex-cv
-        .radio-title.txt-tu.txt-xs.txt-bold
-          | Dataset
-        .row
-          input(type="radio" id="pop" name="select" value="pop" checked)
-          label(for="pop") Kanak population
-        .row
-          input(type="radio" id="vote" name="select" value="vote")
-          label(for="vote") Yes vote to the referendum
-    
 
 block append css
 
   style
     :sass
       
-      .buttons
-        margin-bottom: .5rem
-      
-      g
-        transition-duration: .3s
-          
-      button
-        background: none
-        padding: .4em .6em .4em 2.4em
-        border: 1px solid
-        border-radius: 4px
-        text-transform: uppercase
-        letter-spacing: 0.08em
-        
-        &:before
-          
-      
       .opacity-0
         opacity: 0
 
       .wrapper
-        //- max-width: 800px
         height: 100vh
+        max-height: 100vh
         overflow: hidden
         position: relative
       
@@ -78,6 +46,66 @@ block append css
         font-weight: 500
         font-size: 1.2rem
         max-width: 450px
+
+      .buttons
+        display: flex
+        flex-wrap: wrap
+        margin-bottom: .5rem
+      
+      g
+        transition-duration: .2s
+      
+      label
+        font-style: italic
           
-      #map
-        width: 100%
+      button
+        background: none
+        padding: .4em .6em .4em 2em
+        border: 1px solid
+        border-radius: 4px
+        text-transform: uppercase
+        letter-spacing: 0.08em
+        margin: .25em .5em
+        margin-left: 0
+        position: relative
+        cursor: pointer
+        opacity: 0.33
+        transition-duration: .2s
+        
+        &:focus
+          outline: none
+        
+        &:before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          padding: .5em
+          margin: 5px
+          border: 1px dashed
+          
+        &.active
+          opacity: 1
+        
+        &.china:before
+          color: #e44b4d
+          background: #e44b4d11
+        &.vietnam:before
+          color: #3bb880
+          background: #3bb88011
+        &.malaysia:before
+          color: #f4e20e
+          background: #f4e20e11
+        &.indonesia:before
+          color: #a08dff
+          background: #a08dff11
+        &.philippines:before
+          color: #06aadd
+          background: #06aadd11
+        &.brunei:before
+          color: #999999
+          background: #99999911
+        
+          
+              
+              
