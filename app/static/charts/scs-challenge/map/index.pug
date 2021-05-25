@@ -5,8 +5,7 @@ block append config
 block page
 
   .wrapper
-    .chart-title.txt-cond South China Sea Challenge
-    .chart-subtitle Overlapping maritime claims
+    .chart-title.txt-cond Overlapping maritime claims in the South China Sea
     
     label Click to toggle
     .buttons
@@ -39,7 +38,6 @@ block append css
         font-weight: 500
         color: black
         font-size: 1.8rem
-        max-width: 450px
         
       .chart-subtitle
         margin-bottom: 4px
@@ -57,6 +55,11 @@ block append css
       
       label
         font-style: italic
+          
+      [data-name] text
+        fill: white
+        stroke: #002b45
+        stroke-width: .5px
           
       button
         background: none
