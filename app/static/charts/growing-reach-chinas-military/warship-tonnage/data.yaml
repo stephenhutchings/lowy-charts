@@ -1,0 +1,104 @@
+title: >
+  Warship tonnage launched 2015&#8288;–&#8288;2019
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  '000s TONNES
+
+axes:
+  minY:  0
+  maxY: 600000
+  stepsY: 7
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - PLA Navy
+      - US Navy
+      - Indopacific democracies
+      - Quad navies
+
+
+
+  -
+    title: PLA
+    color: "red"
+    values:
+      - 585522
+      - 0
+      - 0
+      - 0
+
+  -
+    title: Pacific Fleet
+    color: "blue-100"
+    values:
+      - 0
+      - 237309
+      - 0
+      - 0
+      
+  -
+    title: Rest of Fleet
+    color: "blue-300"
+    values:
+      - 0
+      - 158206
+      - 0
+      - 0
+
+  -
+    title: JPN
+    color: "red-dark"
+    values:
+      - 0
+      - 0
+      - 75000
+      - 75000
+      
+  -
+    title: IND
+    color: "orange"
+    values:
+      - 0
+      - 0
+      - 45396
+      - 45396
+      
+  -
+    title: AUS
+    color: "teal-dark"
+    values:
+      - 0
+      - 0
+      - 58050
+      - 58050
+  
+  -
+    title: ROK
+    color: "teal"
+    values:
+      - 0
+      - 0
+      - 83177
+      - 0
+      
+  -
+    title: PHL
+    color: "yellow"
+    values:
+      - 0
+      - 0
+      - 5200
+      - 0
