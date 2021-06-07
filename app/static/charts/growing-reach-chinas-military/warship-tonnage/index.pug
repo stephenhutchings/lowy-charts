@@ -70,8 +70,8 @@ block page
                       width="100%"
                       fill=chart.colors[chart.series[ci].color]
                     )
-                    if (j === 1)
-                      svg(
+                    if (j === 1 && i === 1)
+                      svg#pacific-fleet(
                         y=toPercent(y-fy(v))
                         height=toPercent(fy(v))
                         width="100%"
@@ -96,7 +96,7 @@ block page
                           height="0"
                           x="90%" y="50%"
                           )
-                          text#pacific-fleet(
+                          text(
                             color="white"
                             text-anchor="middle"
                             transform-origin="center"
@@ -127,10 +127,11 @@ block page
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
           for ax, i in new Array(chart.series.length)
-            if i && i != 2 && i != 3
+            if i && i != 3
               li.legend-item
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
-                span.legend-item-label= chart.series[i].title
+                span.legend-item-label
+                  = i === 2 ? "US Pacific Fleet" : chart.series[i].title
 
       //- .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       //- .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
@@ -238,12 +239,13 @@ block append css
           transform: rotate(-20deg) translate(-8px, 14px)
 
         #pacific-fleet
+          display: none
           font-size: 10px!important
 
         text
           font-size: 13px
           
-      @media (max-width: 450px)
+      @media (max-width: 550px)
         .legend
           flex-wrap: wrap
         .chart-title

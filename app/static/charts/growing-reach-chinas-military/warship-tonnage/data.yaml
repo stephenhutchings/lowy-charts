@@ -1,5 +1,5 @@
 title: >
-  Warship tonnage launched 2015&#8288;–&#8288;2019
+  Warship tonnage launched 2016&#8288;–&#8288;2020
 
 source: >
   <b>Source:</b> Lorem ipsum
@@ -35,7 +35,7 @@ series:
     title: PLA
     color: "red"
     values:
-      - 585522
+      - 632847
       - 0
       - 0
       - 0
@@ -45,16 +45,16 @@ series:
     color: "blue-100"
     values:
       - 0
-      - 237309
-      - 0
-      - 0
+      - 257155
+      - 257155
+      - 257155
       
   -
     title: Rest of Fleet
     color: "blue-300"
     values:
       - 0
-      - 158206
+      - 171437
       - 0
       - 0
 
@@ -64,8 +64,8 @@ series:
     values:
       - 0
       - 0
-      - 75000
-      - 75000
+      - 51000
+      - 51000
       
   -
     title: IND
@@ -73,8 +73,8 @@ series:
     values:
       - 0
       - 0
-      - 45396
-      - 45396
+      - 41624
+      - 41624
       
   -
     title: AUS
@@ -82,8 +82,8 @@ series:
     values:
       - 0
       - 0
-      - 58050
-      - 58050
+      - 51700
+      - 51700
   
   -
     title: ROK
@@ -91,7 +91,7 @@ series:
     values:
       - 0
       - 0
-      - 83177
+      - 82378
       - 0
       
   -
