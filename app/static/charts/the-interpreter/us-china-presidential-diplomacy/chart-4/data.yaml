@@ -35,7 +35,7 @@ charts:
           - S. America
           - Oceania
       -
-        title: US Leaders
+        title: US leaders
         color: "blue-100"
         values:
           - 11
@@ -47,7 +47,7 @@ charts:
           - 11
           - 3
       -
-        title: Chinese Leaders
+        title: Chinese leaders
         color: "red"
         values:
           - 11
@@ -84,7 +84,7 @@ charts:
           - S. America
           - Oceania
       -
-        title: US Leaders
+        title: US leaders
         color: "blue-100"
         values:
           - 18
@@ -96,7 +96,7 @@ charts:
           - 10
           - 2
       -
-        title: Chinese Leaders
+        title: Chinese leaders
         color: "red"
         values:
           - 23
@@ -133,7 +133,7 @@ charts:
           - S. America
           - Oceania
       -
-        title: US Leaders
+        title: US leaders
         color: "blue-100"
         values:
           - 7
@@ -145,7 +145,7 @@ charts:
           - 6
           - 2
       -
-        title: Chinese Leaders
+        title: Chinese leaders
         color: "red"
         values:
           - 10

@@ -133,9 +133,14 @@ block page
         
         let box = el.getBoundingClientRect();
         let val = el.dataset.value;
-        let ser = el.dataset.series === "Middle East" ? "the Middle East" : el.dataset.series
         let cat = el.dataset.category;
-        let years = el.dataset.years;
+        let years = el.dataset.years.trim()
+        let ser = el.dataset.series
+          .replace("Middle East","the Middle East")
+          .replace("E.","eastern")
+          .replace("W.","western")
+          .replace("N.","North")
+          .replace("S.","South")
         
         rects.forEach(r => r.classList.add('dim'))
         el.classList.remove('dim')
