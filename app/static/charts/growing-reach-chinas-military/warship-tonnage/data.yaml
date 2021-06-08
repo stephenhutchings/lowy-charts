@@ -26,8 +26,8 @@ series:
     values:
       - PLA Navy
       - US Navy
-      - Indopacific democracies
       - Quad navies
+      - Indopacific democracies
 
 
 
@@ -47,7 +47,7 @@ series:
       - 0
       - 257155
       - 257155
-      - 257155
+      - 0
       
   -
     title: Rest of Fleet
@@ -91,8 +91,8 @@ series:
     values:
       - 0
       - 0
-      - 82378
       - 0
+      - 82378
       
   -
     title: PHL
@@ -100,5 +100,5 @@ series:
     values:
       - 0
       - 0
-      - 5200
       - 0
+      - 5200
