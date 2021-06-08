@@ -1,0 +1,62 @@
+title: >
+  Average annual countries visited by US and Chinese&nbsp;presidents
+
+source: >
+  <b>Source:</b> US Department of State; China's Ministry of Foreign Affairs; People’s Daily.
+
+notes: >
+  <b>Note:</b> Figure shows number of countries visited while in office divided by years in office.
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  minX:  0
+  maxX: 10
+  stepsX: 11
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - GHW Bush###1989–1992
+      - Yang Shangkun###1989–1992
+      - Bill Clinton###1993–2000
+      - Jiang Zemin###1993–2002
+      - GW Bush###2001–2008
+      - Hu Jintao###2003–2012
+      - Barack Obama###2009–2016
+      - Xi Jinping###2013–2019
+      - Donald Trump###2017–2019
+
+  -
+    title: US presidents
+    color: "blue-100"
+    values:
+      - 9.0
+      - 0
+      - 9.3
+      - 0
+      - 9.3
+      - 0
+      - 7.4
+      - 0
+      - 8.0
+
+  -
+    title: Chinese presidents
+    color: "red"
+    values:
+      - 0
+      - 5.5
+      - 0
+      - 7.2
+      - 0
+      - 6.9
+      - 0
+      - 9.7
+      - 0

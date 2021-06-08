@@ -1,0 +1,201 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/the-interpreter/us-china-presidential-diplomacy/chart-1/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .flex.flex-grow.flex-col
+      .chart-title!= chart.title
+      //- .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - range = maxX - minX
+        - fx = (x) => (x - minX) / range
+        - fy = (i) => (i + 0.7) / ln
+        
+        svg(height="100%" width="100%")
+        
+          // X-Axis labels
+          svg(width="100%" y="100%")
+            - let steps = chart.axes.stepsX-1
+            for n, i in new Array(steps+1)
+              - x = i / (steps)
+              svg.x-label(x=toPercent(x))
+                text(text-anchor="middle" transform="translate(0 18)")
+                  = (minX + range*(i/steps)).toFixed(0) + (axes.percentage ? "%" : "")
+                
+          // X-Axis minor lines
+          if chart.axes.minorLines
+            svg(width="100%")
+              for n, i in new Array(steps+1)
+                - x = (i / steps)
+                svg
+                  line(
+                    x1=toPercent(x)
+                    y1="0%"
+                    x2=toPercent(x)
+                    y2="100%"
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // Chart rects
+          g.bars
+            - const n = chart.series[0].values.length
+            for undef, i in new Array(n)
+              svg(
+                y=toPercent(fy(i)-fy(-0.15) )
+                height=toPercent(fy(0))
+                width="100%"
+              )   
+                - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
+                - vals = axes.reverse ? vals.reverse() : vals
+                - x0 = 0
+
+                for v, j in vals
+                  - ci = axes.reverse ? vals.length-j : j+1
+
+                  if v > 0
+                    rect(
+                      x=toPercent(x0)
+                      width=toPercent(fx(v))
+                      height="100%"
+                      fill=chart.colors[chart.series[ci].color]
+                      data-v=v
+                      data-c=i
+                      data-s=j
+                    )
+                    text.chart-value(
+                      x=toPercent(x0 + fx(v/2))
+                      y="50%"
+                      text-anchor="middle"
+                      transform="translate(0 4.5)"
+                      style=`color: ${(j < 3 ? "white" : "")}`
+                    )
+                      = v.toFixed(0) + (axes.percentage ? "%" : "")
+
+                  - x0 += fx(v)
+                    
+                // Y-Axis labels
+                - label = chart.series[0].values[i].split('###')
+                svg.y-label(x="0%" y="50%")
+                  text(
+                    text-anchor="end"
+                    transform="translate(-16, 0)"
+                  )=label[0]
+                    tspan(x="0" dy="18" font-size="12")=label[1]
+      
+      .row
+        ul.legend.list-bare.txt-left.flex
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .chart-source!= chart.source
+      .chart-notes!= chart.notes
+  
+block append css
+  style
+    :sass
+  
+      .wrapper
+        height: 650px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 115px
+        right: 15px
+        bottom: 30px
+
+      .chart-title
+        margin-right: auto
+        font-size: 32px
+        font-weight: 600
+        max-width: 490px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin: 8px 0!important
+
+      .legend-item
+        margin: 0 8px
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        font-size: 15px
+        margin-left: 0.5rem
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+      
+      .chart-content:hover .chart-value
+        opacity: 1
+          
+      @media (max-width: 400px)
+        text
+          font-size: 13px
+        .chart-content
+          bottom: 20px
+          left: 110px
+        .legend
+          flex-wrap: wrap
+          
+        .y-label text
+          transform: translate(-5px, -5px)
+
+        .chart-title
+          font-size: 22px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          font-size: 13px
+        .x-label:nth-of-type(even)
+          display: none
+          

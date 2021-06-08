@@ -1,0 +1,256 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/templates/grouped-column/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  - colors = []
+  
+block page
+  .wrapper.flex
+    .flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted.txt-tu!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - min = axes.min
+        - max = axes.max
+        - range = max - min
+        - fx = (x) => (x - min) / range
+        - fy = (i) => (i + 0.7) / (ln - 0.1)
+        
+        svg(height="100%" width="100%")
+                  
+          // Y-Axis labels
+          svg(height="100%" y="100%")
+            - steps = chart.axes.steps-1
+            for n, i in new Array(steps+1)
+              - y = (i / (steps))
+              svg(x=toPercent(y))
+                text(text-anchor="middle" transform="translate(0 20)")
+                  = min + range*(i/steps) + (axes.percentage ? "%" : "")
+                
+          // Y-Axis minor lines
+          if chart.axes.minorLines
+            svg(height="100%")
+              for n, i in new Array(steps + 1)
+                - x = (i / steps)
+                svg
+                  line(
+                    y1="0%"
+                    x1=toPercent(x)
+                    y2="100%"
+                    x2=toPercent(x)
+                    stroke="#5554"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // Chart rects
+          g
+          
+            for seriesname, i in chart.series[0].values
+              svg(
+                x="0"
+                y=toPercent(fy(i) - fy(-0.1))
+                height=toPercent(fy(0))
+                width="100%"
+              )
+              
+                g.bars
+                  - series = chart.series.filter( (s, i) => i )
+                  for set, j in series 
+                    - v = set.values[i]
+                    - thickness = 1 / series.length
+                  
+                    rect(
+                      y=toPercent(j*thickness)
+                      x=0
+                      height=toPercent(thickness)
+                      width=toPercent(fx(v))
+                      fill=chart.colors[set.color]
+                    )
+
+                    text.chart-value(
+                      y=toPercent(j*thickness + thickness/2)
+                      x=toPercent(fx(v/2))
+                      text-anchor="middle"
+                      transform=`translate(0 6)`
+                      style="color: white"
+                    )
+                      = v + (axes.percentage ? "%" : "")
+
+                    // X-Axis labels
+                    svg.x-label(y="50%")
+                      text(
+                        text-anchor="end"
+                        transform=`translate(-10 6)`
+                      )
+                        =seriesname
+      
+      .row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .chart-source!= chart.source
+      .chart-notes!= chart.notes
+      
+      .tooltip
+      
+  script.
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    const nCategories = 2;
+    /* --------------------- */
+    
+    const chart = document.querySelectorAll('.chart-content');
+    const rects = document.querySelectorAll('rect');
+    const vals = document.querySelectorAll('.chart-value');
+    const series = document.querySelectorAll('.x-label');
+    const tooltip = document.querySelector('.tooltip');
+    const legendItems = document.querySelectorAll('.legend-item-label');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let box = el.getBoundingClientRect();
+        let val = vals[i].innerHTML;
+        let ser = series[Math.floor(i/nCategories)].innerHTML;
+        let cat = legendItems[i%nCategories].innerHTML;
+        
+        tooltip.style.left = box.left - 90 + 'px';
+        tooltip.style.top = box.top + 10 + 'px';
+        tooltip.style.opacity = 1;
+        
+        tooltip.innerHTML = val + " of " + ser + " were " + cat;
+        
+      });
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+    }
+    
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 80px
+        right: 20px
+        bottom: 40px
+
+      .chart-title
+        font-size: 28px
+        font-weight: 600
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin-bottom: .75em
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        font-size: 15px
+        margin-right: auto
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+      
+        .chart-content:hover &
+          opacity: 1
+          
+      line
+        vector-effect: non-scaling-stroke
+
+      @media (max-width: 700px)
+        //.chart-content
+          left: 40px
+          right: 5px
+          bottom: 80px
+          top: 30px
+          
+          
+        text
+          font-size: 13px
+          
+      @media (max-width: 450px)
+        .legend-item
+          width: min-content
+        .chart-title
+          font-size: 18px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
+        .chart-value
+          display: none
