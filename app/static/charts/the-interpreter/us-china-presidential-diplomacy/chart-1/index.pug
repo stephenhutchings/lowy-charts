@@ -81,7 +81,7 @@ block page
                       transform="translate(0 4.5)"
                       style=`color: ${(j < 3 ? "white" : "")}`
                     )
-                      = v.toFixed(0) + (axes.percentage ? "%" : "")
+                      = v.toFixed(1) + (axes.percentage ? "%" : "")
 
                   - x0 += fx(v)
                     
@@ -166,7 +166,7 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        font-size: 15px
+        font-size: 14px
         margin-left: 0.5rem
         
       .chart-value

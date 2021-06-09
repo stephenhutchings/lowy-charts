@@ -5,7 +5,7 @@ source: >
   <b>Source:</b> US Department of State; China's Ministry of Foreign Affairs; People’s Daily.
 
 notes: >
-  <b>Note:</b> Data include multiple visits to the same country in a calendar year.
+  <b>Notes:</b> Data include multiple visits to the same country in a calendar year. Yang Shangkun served as Chinese president from 1988–1993 but only travel from 1989 onwards is included in this dataset.
 
 subtitle: >
   Subtitle goes here
@@ -23,13 +23,13 @@ series:
   -
     title: Category
     values:
-      - GHW Bush###1989–1992
-      - Yang Shangkun###1989–1992
-      - Bill Clinton###1993–2000
-      - Jiang Zemin###1993–2002
-      - GW Bush###2001–2008
-      - Hu Jintao###2003–2012
-      - Barack Obama###2009–2016
+      - GHW Bush###1989–1993
+      - Yang Shangkun###1989–1993
+      - Bill Clinton###1993–2001
+      - Jiang Zemin###1993–2003
+      - GW Bush###2001–2009
+      - Hu Jintao###2003–2013
+      - Barack Obama###2009–2017
       - Xi Jinping###2013–2019
       - Donald Trump###2017–2019
 
