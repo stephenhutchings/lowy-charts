@@ -11,7 +11,7 @@ block append config
 block page
   .wrapper.flex
     .flex.flex-grow.flex-col
-      .chart-title Visits to foreign countries by US and Chinese leaders, by region
+      .chart-title Visits to foreign countries by US and Chinese presidents, by region
       each chart, ci in page.charts
         .chart-subtitle.txt-muted.txt-tu!= chart.title
         .chart.flex-grow: .chart-content
