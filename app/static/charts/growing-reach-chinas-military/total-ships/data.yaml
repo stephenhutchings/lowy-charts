@@ -71,7 +71,7 @@ series:
       - 431
 
   -
-    title: PLA
+    title: PLA Navy
     color: "red"
     widen: true
     dashed: false
