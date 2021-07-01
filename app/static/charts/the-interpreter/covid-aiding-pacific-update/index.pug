@@ -72,14 +72,16 @@ block page
                           stroke-dasharray="4"
                         )
                         
-                      text.chart-value(
-                        x="50%"
-                        y=toPercent(y - fy(val/2))
-                        text-anchor="middle"
-                        transform="translate(0 4.5)"
-                        class=( (j > 3) ? "" : "txt-fff" )
-                      )
-                        = val.toFixed(2) > 1 ? val.toFixed(0) : ""
+                      if (val.toFixed(2) >= 1)
+                        - v = val.toFixed(2).split('.')
+                        text.chart-value(
+                          x="50%"
+                          y=toPercent(y - fy(val/2))
+                          text-anchor="middle"
+                          transform="translate(0 4.5)"
+                          class=( (j > 3) ? "" : "txt-fff" )
+                        )= v[0]
+                          tspan.decimal(dx="-2")= "." + v[1]
 
                     - y -= fy(val)
 
@@ -104,7 +106,7 @@ block append css
   style
     :sass
       .wrapper
-        height: 600px
+        height: 700px
         overflow: visible
         position: relative
 
@@ -187,6 +189,7 @@ block append css
         margin: 12px 0 0
 
       .chart-value
+        font-size: 12px
         opacity: 0
         transition: opacity 300ms
 
@@ -197,8 +200,12 @@ block append css
           opacity: 1
           
       .axes
-        transform: rotate(-40deg) translate(-123px, -27px)
+        transform: rotate(-40deg) translate(-151px, -40px)
           
+      @media screen and (max-width: 650px)
+        .decimal
+          display: none
+
       @media screen and (max-width: 550px)
         .chart-content
           top: 20px
@@ -207,17 +214,17 @@ block append css
           font-size: 18px
         .axes
           font-size: 12px
-          transform: rotate(-40deg) translate(-119px, -28px)
+          transform: rotate(-40deg) translate(-148px, -42px)
           
       @media screen and (max-width: 425px)
         .axes
-          transform: rotate(-40deg) translate(-102px, -23px)
+          transform: rotate(-40deg) translate(-132px, -38px)
 
       @media screen and (max-width: 350px)
         .axes
-          transform: rotate(-40deg) translate(-96px, -20px)
+          transform: rotate(-40deg) translate(-126px, -36px)
           
       @media screen and (max-width: 320px)
         .axes
           font-size: 11px
-          transform: rotate(-40deg) translate(-87px, -19px)
+          transform: rotate(-40deg) translate(-117px, -33px)
