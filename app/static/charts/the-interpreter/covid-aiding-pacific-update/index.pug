@@ -38,17 +38,7 @@ block page
                   width=toPercent(fx(0))
                   height="100%"
                 )
-                  defs
-                    pattern(
-                      id="diagonalHatch"
-                      patternUnits="userSpaceOnUse" 
-                      width="4" 
-                      height="8" 
-                      patternTransform="rotate(-45 2 2)"
-                    )
-                      rect(width="4" height="8" fill="#faa500")
-                      path(d="M -1,2 l 6,0" stroke="#fff" stroke-width="0.5")
-                      
+      
                   - y = 1
                   for val, j in vals
                     if val
@@ -85,13 +75,13 @@ block page
 
                     - y -= fy(val)
 
-                  text.axes(
-                    y="100%"
-                    x="50%"
-                    text-anchor="end"
-                    transform-origin="center"
-                  )
-                    = chart.axes[0].values[i]
+                  svg(y="100%" x="50%")
+                    g(transform="translate(0 16)")
+                      g.axes(transform="rotate(-40)")
+                        text(
+                          text-anchor="end"
+                        )
+                          = chart.axes[0].values[i]
 
         ul.legend.txt-nowrap.list-bare.txt-left.flex-ch
           for item, i in chart.legend
@@ -199,8 +189,8 @@ block append css
         .chart:hover &
           opacity: 1
           
-      .axes
-        transform: rotate(-40deg) translate(-151px, -40px)
+      /* .axes
+        transform: rotate(-40deg) */
           
       @media screen and (max-width: 650px)
         .decimal
@@ -212,19 +202,3 @@ block append css
           bottom: 55px
         .chart-title
           font-size: 18px
-        .axes
-          font-size: 12px
-          transform: rotate(-40deg) translate(-148px, -42px)
-          
-      @media screen and (max-width: 425px)
-        .axes
-          transform: rotate(-40deg) translate(-132px, -38px)
-
-      @media screen and (max-width: 350px)
-        .axes
-          transform: rotate(-40deg) translate(-126px, -36px)
-          
-      @media screen and (max-width: 320px)
-        .axes
-          font-size: 11px
-          transform: rotate(-40deg) translate(-117px, -33px)
