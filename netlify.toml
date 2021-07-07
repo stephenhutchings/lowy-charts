@@ -19,8 +19,8 @@
 
 # Diplomatic postings is not part of this repo, but can be accessed from this domain
 [[redirects]]
-  from = "/features/diplomatic-postings/*"
-  to = "https://lowy-institute-diplomatic-postings.netlify.app/features/diplomatic-postings/:splat"
+  from = "/features/diplomat-database/*"
+  to = "https://lowy-institute-diplomat-database.netlify.app/features/diplomat-database/:splat"
   status = 200
 
 # ARCHIVED CONTENT
