@@ -121,10 +121,10 @@ exports.config =
 
       order:
         before: [
-          "bower_components/underscore/underscore.js"
-          "bower_components/jquery/dist/jquery.js"
-          "bower_components/moment/moment.js"
-          "bower_components/backbone/backbone.js"
+          "vendor/js/underscore.js"
+          "vendor/js/jquery.js"
+          "vendor/js/moment.js"
+          "vendor/js/backbone.js"
         ]
 
     stylesheets:
